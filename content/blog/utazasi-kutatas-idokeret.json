@@ -1,0 +1,58 @@
+{
+  "slug": "utazasi-kutatas-idokeret",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Időkeret az utazási kutatásnak",
+    "excerpt": "Az utazási kutatás könnyen végtelen feladattá válik, mert mindig található még egy kép, ár vagy vélemény. Először döntsd el, milyen kérdésre keresel választ a következő keresési szakaszban.",
+    "sections": [
+      {
+        "heading": "A kutatás is használja az idődet",
+        "paragraphs": [
+          "Az utazási kutatás könnyen végtelen feladattá válik, mert mindig található még egy kép, ár vagy vélemény. Először döntsd el, milyen kérdésre keresel választ a következő keresési szakaszban. Például megfelelő-e egy környék a napirendedhez, vagy melyik eljutás fér bele a keretbe? Ha több külön kérdés van, különítsd el őket. A cél nem az összes lehetőség megismerése, hanem a következő döntéshez szükséges információ megszerzése. Adj a szakasznak saját időkeretet és kézzelfogható kimenetet, például három összehasonlítható változatot vagy egy konkrét szolgáltatói kérdés megfogalmazását. Így a böngészés végén látható lesz, történt-e előrelépés."
+        ]
+      },
+      {
+        "heading": "Használj három kutatási menetet",
+        "paragraphs": [
+          "Az első menetben gyűjts lehetőségeket, a másodikban hasonlítsd össze a tartalmukat, a harmadikban ellenőrizd a döntéshez fontos részleteket. Ne keverd folyamatosan a három feladatot. Ha összehasonlítás közben új ötletet találsz, tedd külön listára, és csak akkor nyisd meg, ha a jelenlegi változatok valóban nem felelnek meg. Az ellenőrzési menetnél az elsődleges szolgáltatói információt keresd az aktuális feltételekhez. A vélemények és inspirációs anyagok más szerepet töltenek be. A külön menetek segítenek abban, hogy egy újabb hangulatos kép ne indítsa újra az egész folyamatot akkor, amikor már csak egy gyakorlati kérdés maradt nyitva."
+        ]
+      },
+      {
+        "heading": "Állj meg egy előre választott feltételnél",
+        "paragraphs": [
+          "Képzeletbeli hétvégi utazásnál a kutatást lezárhatod, ha van két olyan változat, amely teljesíti az alapfeltételeket, a fontos költségek ismertek, és a döntő különbséget meg tudod nevezni. Ez saját szervezési szabály, nem azt állítja, hogy megtaláltad a piac legjobb ajánlatát. Ha az időkeret lejártakor még lényeges adat hiányzik, a következő feladat legyen pontosan annak tisztázása, ne újabb általános keresés. Írd fel, mit döntöttél és miért. Ha később új információ érkezik, ehhez a döntési alaphoz térhetsz vissza. A kutatás akkor szolgálja az utazást, ha a bizonytalanságot kezelhető kérdésekre bontja, és utána teret hagy a tényleges készülődésnek is."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Give travel research a time budget",
+    "excerpt": "Travel research can become endless because another image, price or opinion is always available. Begin by naming the question for the next search session.",
+    "sections": [
+      {
+        "heading": "Research also consumes your time",
+        "paragraphs": [
+          "Travel research can become endless because another image, price or opinion is always available. Begin by naming the question for the next search session. Perhaps you need to know whether a neighbourhood fits your routine or which journey fits your allowance. Separate different questions rather than blending them into one long browse. The aim is not to know every possibility, but to obtain information for the next decision. Give the session a time allowance and a tangible output, such as three comparable options or a specific question to send a provider. Progress then becomes visible at the end."
+        ]
+      },
+      {
+        "heading": "Use three research passes",
+        "paragraphs": [
+          "Gather possibilities in the first pass, compare their contents in the second and verify important decision details in the third. Avoid continuously mixing these tasks. If a new idea appears while comparing, put it on a separate list and return only if the existing options genuinely fail your requirements. During verification, use primary provider information for current conditions. Opinions and inspirational material have a different role. Separate passes make it less likely that another appealing image will restart the entire search when only one practical question remains unresolved and the rest of the decision is already reasonably clear."
+        ]
+      },
+      {
+        "heading": "Stop at a condition you chose beforehand",
+        "paragraphs": [
+          "For an imaginary weekend trip, you could stop researching when two options meet your basic requirements, important costs are known and you can name the deciding difference. This is an organising rule, not a claim to have found the best offer in the entire market. If essential information is missing when the time allowance ends, define the next task as resolving that precise gap rather than browsing generally again. Record what you decided and why. New information can then be considered against that decision basis. Research serves the journey when it converts uncertainty into manageable questions and eventually leaves room for the practical preparation that follows."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

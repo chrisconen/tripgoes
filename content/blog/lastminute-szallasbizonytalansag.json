@@ -1,0 +1,58 @@
+{
+  "slug": "lastminute-szallasbizonytalansag",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Mit jelent neked a szállás bizonytalansága?",
+    "excerpt": "A szállás bizonytalansága több különböző dolgot jelenthet.",
+    "sections": [
+      {
+        "heading": "Ne egyetlen kérdőjelként kezeld a szállást",
+        "paragraphs": [
+          "A szállás bizonytalansága több különböző dolgot jelenthet. Nem ugyanaz, ha a pontos épület neve hiányzik, ha a szobatípus nem egyértelmű, vagy ha egy szükséges szolgáltatásról nincs adat. Bontsd szét a kérdéseket helyszínre, elhelyezésre, ellátásra és használhatóságra. Mindegyik mellé írd oda, mit tudsz biztosan, honnan származik az információ, és mit kell még tisztázni. Egy általános kép vagy kategóriamegjelölés ne helyettesítse a számodra fontos részletet. A bizonytalanságot nem kell automatikusan elutasítani, de pontosan meg kell nevezni. Csak így tudod eldönteni, melyik nyitott kérdéssel tudsz együtt élni, és melyik változtatná meg alapvetően az út értelmét vagy megvalósíthatóságát."
+        ]
+      },
+      {
+        "heading": "Határozz meg elfogadható tartományokat",
+        "paragraphs": [
+          "Nem minden tulajdonsághoz szükséges egyetlen pontos válasz. Lehet, hogy több környék is megfelel, de a külön hálótér nélkülözhetetlen. Másnak az elhelyezkedés kötött, miközben a szoba mérete kevésbé fontos. Képzeletbeli párosnál az egyik utas rugalmas a berendezésben, de nem vállal nehezen kezelhető lépcsőzést; a másiknak a késői érkezés megoldhatósága az alapfeltétel. Írjátok le az elfogadható tartományt hétköznapi, ellenőrizhető nyelven. Ne a „kényelmes” vagy „jó helyen van” kifejezéssel kérdezzetek, hanem a tényleges használattal kapcsolatban. A konkrét válasz több segítséget ad, mint egy újabb általános jelző. A szükséges tulajdonságot mindig az adott foglalási változathoz kapcsoljátok, ne pusztán a szállás egészéhez."
+        ]
+      },
+      {
+        "heading": "A nyitott pontnak legyen következménye",
+        "paragraphs": [
+          "Minden tisztázatlan alapfeltétel mellé rendelj döntési következményt. Ha a választ a foglalás előtt kell tudnod, akkor addig a lehetőség nem tekinthető késznek. Ha egy részlet valóban rugalmas, írd oda, milyen eltérést vállalsz. Ezt ne utólag, a sürgetés hatására alakítsd ki. A szolgáltatótól kapott magyarázatot őrizd meg, és ellenőrizd, hogy a végleges visszaigazolás összhangban van-e vele. Ha a leírás továbbra is többféleképpen érthető, ne tégy úgy, mintha a kedvezőbb értelmezés biztos lenne. Egy bizonytalan ajánlat lehet elfogadható, ha a bizonytalanság határai beleférnek a saját igényeidbe. A cél nem minden meglepetés kizárása, hanem az alapvető szükségletek tudatos kezelése."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Decide how much hotel uncertainty you can accept",
+    "excerpt": "Accommodation uncertainty can mean several different things.",
+    "sections": [
+      {
+        "heading": "Do not treat accommodation as one question mark",
+        "paragraphs": [
+          "Accommodation uncertainty can mean several different things. A missing property name is not the same as an unclear room category or absent information about a necessary service. Separate questions about location, sleeping arrangements, meals, and practical usability. Beside each, record what is known, where the information came from, and what still needs clarification. A generic photograph or category label should not stand in for a detail that matters to you. Uncertainty does not automatically require rejection, but it must be described accurately. Only then can you decide which unknowns are tolerable and which could fundamentally change the purpose or feasibility of the trip."
+        ]
+      },
+      {
+        "heading": "Define acceptable ranges",
+        "paragraphs": [
+          "Not every feature requires one exact answer. Several neighbourhoods may work while a separate sleeping area is essential. Someone else may need a particular location but care less about room size. Imagine two travellers: one is flexible about furnishings but cannot accept difficult stairs; the other needs workable late arrival arrangements. Describe acceptable ranges in ordinary, checkable language. Instead of asking whether a place is comfortable or well located, ask about how you will actually use it. A specific answer is more helpful than another general adjective. Link the required feature to the exact booking option, rather than assuming a statement about the property as a whole applies to every room offered."
+        ]
+      },
+      {
+        "heading": "Give unresolved points a consequence",
+        "paragraphs": [
+          "Attach a decision consequence to every unconfirmed essential. If you need an answer before booking, the option is not ready until that answer arrives. If a detail is genuinely flexible, write down the variation you accept. Do this before urgency begins shaping your interpretation. Keep the provider’s explanation and compare it with the final confirmation. When a description still supports several readings, do not treat the most favourable one as certain. An uncertain offer may be acceptable when its range of possible outcomes fits your requirements. The goal is not to eliminate every surprise. It is to handle basic needs deliberately instead of hoping that unspecified details will happen to work out."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

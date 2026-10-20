@@ -1,0 +1,70 @@
+{
+  "slug": "hosszabb-tartozkodas-szallas",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Szállásválasztás hosszabb tartózkodásra",
+    "excerpt": "Hosszabb tartózkodásnál a szállás a mindennapok működésének helye is lesz.",
+    "sections": [
+      {
+        "heading": "Rajzolj egy hétköznapot",
+        "paragraphs": [
+          "Hosszabb tartózkodásnál a szállás a mindennapok működésének helye is lesz. A kiválasztás előtt írj le egy hétköznapi napot az ébredéstől az esti elpakolásig. Hol nyitod ki a bőröndöt, hová kerül a nedves kabát, milyen felületen eszel vagy dolgozol? Egy hétvégi út során elviselhető kerülő több hét alatt állandó súrlódássá válhat. A szobafotó helyett ezért először a saját ismétlődő tevékenységeid listáját készítsd el, és csak ezután keresd meg az ezekhez szükséges felszerelést."
+        ]
+      },
+      {
+        "heading": "A háztartási ritmus",
+        "paragraphs": [
+          "A hosszabb időszaknak külön háztartási ritmusa van. Gondold át a bevásárlás, a mosás, a hulladék elhelyezése és az ágyneműcsere rendjét. A mosógép megnevezése mellett kérdezz rá, hogy saját vagy közös használatú, hogyan férsz hozzá, és kapcsolódik-e hozzá külön díj. A konyháról is konkrétan érdeklődj: a hűtő, a főzőfelület és az edények közül mi áll valóban rendelkezésre? Ne alakíts ezekből általános kívánságlistát. Csak azt emeld kötelező feltétellé, ami a te napjaid működéséhez tényleg szükséges."
+        ]
+      },
+      {
+        "heading": "Különböző napirendek",
+        "paragraphs": [
+          "Egy képzeletbeli tíznapos tartózkodásnál az egyik utazó délelőtt dolgozna, a másik korán indulna felfedezni. Egyetlen látványos nagy tér helyett ilyenkor fontosabb lehet egy elválasztható munkasarok és az, hogy az indulás ne zavarja a másikat. Az internetet igénylő feladathoz kérj konkrét információt, és gondolj át egy tartalék munkavégzési lehetőséget. A hirdetésben szereplő kapcsolat önmagában nem bizonyítja, hogy minden feladathoz megfelelő lesz. A szükséges fényt, ülőhelyet és csatlakozókat külön ellenőrizd a szállással."
+        ]
+      },
+      {
+        "heading": "A teljes időszak próbája",
+        "paragraphs": [
+          "A teljes időszak áránál a takarítás és az esetleges közbenső szolgáltatások feltételeit is nézd meg. Rögzítsd, mit kérhetsz helyben, kihez fordulhatsz meghibásodáskor, és mely szabályok érintik a napi használatot. A foglalás előtt képzeletben játssz végig egy esős napot is, amikor többet maradsz bent. Ha azon a napon sem működik a tér, a szép környezet önmagában kevés. A döntés végén három indokot írj le, amelyek miatt ezt a szállást hosszabb időre is élhetőnek tartod."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Choose accommodation for a longer stay",
+    "excerpt": "For a longer stay, accommodation becomes part of everyday life rather than simply a place to sleep.",
+    "sections": [
+      {
+        "heading": "Describe an ordinary day",
+        "paragraphs": [
+          "For a longer stay, accommodation becomes part of everyday life rather than simply a place to sleep. Describe an ordinary day from waking up to putting things away at night. Where will you open your suitcase, hang a wet coat, eat or work? A minor inconvenience tolerated on a weekend can become a repeated frustration over several weeks. Start with your recurring activities, then identify the facilities needed to support them. Photographs should help answer those questions rather than define the entire choice."
+        ]
+      },
+      {
+        "heading": "The household routine",
+        "paragraphs": [
+          "A longer stay also creates a household routine. Think through shopping, laundry, rubbish disposal and changes of bed linen. If a washing machine is listed, ask whether it is private or shared, how access works and whether there is a separate charge. Be equally specific about the kitchen: establish which refrigerator, cooking equipment and utensils are actually available. Avoid turning the exercise into an unlimited wish list. Make something essential only when your own daily routine genuinely depends on it."
+        ]
+      },
+      {
+        "heading": "Different daily schedules",
+        "paragraphs": [
+          "Imagine a hypothetical ten-day stay in which one traveller works during the morning while the other leaves early to explore. A separate work corner and a quiet departure route may matter more than a large photogenic open room. If work depends on an internet connection, ask for relevant details and consider a fallback place to work. A connection mentioned in a listing does not demonstrate suitability for every task. Check the light, chair, usable surface and power outlets separately rather than inferring them from the room category."
+        ]
+      },
+      {
+        "heading": "Test the full stay",
+        "paragraphs": [
+          "When comparing the complete stay price, examine cleaning arrangements and any services provided during the visit. Record how to request help, whom to contact about a fault and which house rules affect everyday use. Finally, imagine a rainy day when you spend more time indoors. If the space does not work then, an attractive setting will not solve the problem. Finish with three concrete reasons why the accommodation remains practical over the full length of your stay. Those reasons give you a useful basis for comparing another property."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

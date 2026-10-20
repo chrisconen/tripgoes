@@ -1,0 +1,58 @@
+{
+  "slug": "kozos-koltsegek-elszamolas",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Közös költségek vita nélkül",
+    "excerpt": "A közös költségek rendezését könnyebb indulás előtt megbeszélni, amikor még nincs vita egy konkrét számláról. Döntsétek el, mely tételek közösek, kik között oszlanak meg, és mi marad személyes kiadás.",
+    "sections": [
+      {
+        "heading": "A szabály előzze meg a fizetést",
+        "paragraphs": [
+          "A közös költségek rendezését könnyebb indulás előtt megbeszélni, amikor még nincs vita egy konkrét számláról. Döntsétek el, mely tételek közösek, kik között oszlanak meg, és mi marad személyes kiadás. Nem minden költséget kell egyenlően osztani. Egy közösen használt szállás és egy csak néhány ember által választott program külön logikát követhet. A fontos az, hogy a résztvevők ugyanazt értsék a szabály alatt. Írjátok le röviden, és mondjatok rá egy példát. Ha a példa értelmezése eltér, még most tisztázzátok, ne akkor, amikor valaki már kifizette az egész összeget."
+        ]
+      },
+      {
+        "heading": "Egy közös nyilvántartást használjatok",
+        "paragraphs": [
+          "Minden közös tételhez tartozzon fizető, összeg, pénznem, érintett résztvevők és megosztási mód. A személyes kiadásokat ne keverjétek ide csak azért, mert ugyanazon a bizonylaton szerepelnek. Több pénznemnél egyezzetek meg abban is, milyen tényleges vagy becsült átváltást használtok, és ezt jelöljétek a bejegyzésnél. Egy ember vezetheti a táblát, de mindenki lássa a rá vonatkozó adatot és jelezhesse a hibát. Ne a különböző csevegésekből próbáljátok utólag összerakni, ki mire gondolt. A rendezett adatsor nem helyettesíti a megállapodást, de segít annak következetes alkalmazásában."
+        ]
+      },
+      {
+        "heading": "Röviden és rendszeresen egyeztessetek",
+        "paragraphs": [
+          "Szemléltető példában négy útitárs közös transzferét egyikük fizeti, egy másnapi programon viszont csak ketten vesznek részt. A két összeget külön résztvevői körrel rögzítsétek, még akkor is, ha ugyanaz az ember fizetett. Este vagy néhány naponta nézzétek át a nyitott tételeket, hogy a hibák ne gyűljenek fel. Az elszámolás végén mindenki ellenőrizze a saját egyenlegét, majd a rendezett összegeket jelöljétek lezártnak. Ha valaki más költési határt szeretne, azt ne a múltbeli számlák átírásával kezeljétek, hanem a következő közös döntések szabályán változtassatok. Így az elszámolás a megállapodást szolgálja, és kevesebb hely marad a kimondatlan feltételezéseknek."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Settle shared travel costs clearly",
+    "excerpt": "Shared costs are easier to discuss before departure, when no particular bill is already causing disagreement. Decide which expenses are shared, who participates in each and what remains personal.",
+    "sections": [
+      {
+        "heading": "Agree the rule before paying",
+        "paragraphs": [
+          "Shared costs are easier to discuss before departure, when no particular bill is already causing disagreement. Decide which expenses are shared, who participates in each and what remains personal. Equal division is not the only possible approach. Accommodation used by everyone and an activity chosen by only some companions may need different rules. What matters is that everyone understands the agreement in the same way. Write it briefly and work through an example. If people interpret that example differently, resolve the difference now rather than after one person has paid the entire amount on behalf of the group."
+        ]
+      },
+      {
+        "heading": "Keep one shared record",
+        "paragraphs": [
+          "Each shared entry needs a payer, amount, currency, participating people and division rule. Do not include personal purchases merely because they appear on the same receipt. With several currencies, also agree which actual or estimated conversion you will use and identify it in the entry. One person can maintain the record, but everyone should be able to see the information affecting them and report mistakes. Avoid reconstructing intentions later from several chat threads. A tidy record does not replace an agreement; it makes the agreement easier to apply consistently and makes unresolved items easier to identify."
+        ]
+      },
+      {
+        "heading": "Check briefly and regularly",
+        "paragraphs": [
+          "In an illustrative example, one companion pays for a transfer used by four people, while only two join an activity the next day. Record the two amounts with different participant lists even if the payer is the same. Review open entries each evening or every few days so mistakes do not accumulate. At the end, each person checks their balance and settled amounts are marked complete. If somebody wants a different spending limit, address that in the rules for future decisions rather than rewriting previous bills. This keeps settlement connected to what was agreed and reduces the space for assumptions that were never shared with the rest of the group."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "utazasi-keret-felosztas",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Utazási keret felosztása döntésekre",
+    "excerpt": "Az utazási keret akkor segít dönteni, ha az egész útra vonatkozik. Először írd fel azt az összeget, amelyet erre az utazásra szánsz, majd külön jelöld a már vállalt kiadásokat.",
+    "sections": [
+      {
+        "heading": "A teljes keretből indulj",
+        "paragraphs": [
+          "Az utazási keret akkor segít dönteni, ha az egész útra vonatkozik. Először írd fel azt az összeget, amelyet erre az utazásra szánsz, majd külön jelöld a már vállalt kiadásokat. A még el nem költött rész nem automatikusan szabad pénz: ebből kell kijönnie a később fizetendő, de szükséges tételeknek is. Oszd fel a tervet eljutásra, szállásra, napi életre, választott élményekre és tartalékra. Ezek szervezési kategóriák, nem kötelező százalékok. Az arányok attól függenek, mit szeretnél csinálni, hányan utaztok, és mennyi már rögzített elem van a foglalások között."
+        ]
+      },
+      {
+        "heading": "Adj minden összegnek döntési szerepet",
+        "paragraphs": [
+          "A szükséges és a választható kiadásokat jelöld eltérően. Egy már kiválasztott szállás fennmaradó díja más döntési helyzet, mint egy még csak fontolgatott program. A napi élet keretébe azokat a rendszeres költségeket tedd, amelyek a saját terveddel együtt járnak, majd külön kezeld az egyszeri élményeket. Így egy új ötletnél meg tudod mondani, melyik keretet érinti. Ne ugyanazt a pénzt oszd ki két helyen, például egyszer általános napi keretként, majd újra az abból fizetendő étkezéshez. A módszer célja nem az aprólékos elszámolás, hanem az, hogy a választások következménye előre látható legyen."
+        ]
+      },
+      {
+        "heading": "Számolj át egy változtatást",
+        "paragraphs": [
+          "Szemléltető példaként egy százezer egységes keretből hatvanezer már az eljutásé és a szállásé. Ha harmincezer a napi kiadások terve, tízezer marad minden másra és a tartalékra együtt. Egy nyolcezer egységes extra ezért nem pusztán a teljes keret kis része: a még szabad összeg jelentős hányadát használja el. A példa nem valós ár vagy ajánlott költési szint, csak az arányokat mutatja. Mielőtt elfogadod az extrát, nevezd meg, mit módosítasz miatta. Ha nincs vállalható változtatás, tedd félre az ötletet. A jó költségterv nem minden kívánságot teljesít, hanem érthetővé teszi, melyik döntés mire hagy teret."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Divide a travel budget into decisions",
+    "excerpt": "A travel budget helps you decide when it covers the whole trip. Write down the amount you intend to spend, then identify the commitments you have already made.",
+    "sections": [
+      {
+        "heading": "Start from the complete allowance",
+        "paragraphs": [
+          "A travel budget helps you decide when it covers the whole trip. Write down the amount you intend to spend, then identify the commitments you have already made. Money not yet paid is not automatically available: it may still be needed for necessary costs that come later. Divide the plan into getting there, accommodation, everyday spending, chosen experiences and a reserve. These are organising categories, not compulsory percentages. Their proportions depend on what you want to do, how many people are travelling and how much of the trip is already fixed. Begin with those circumstances rather than borrowing somebody else's ideal allocation."
+        ]
+      },
+      {
+        "heading": "Give each amount a decision role",
+        "paragraphs": [
+          "Mark necessary and optional costs differently. An outstanding balance for accommodation presents a different decision from an activity you are merely considering. Put recurring costs associated with your own itinerary into everyday spending, then handle one-off experiences separately. When a new idea appears, you can identify the part of the budget it would affect. Avoid assigning the same money twice, first to a general daily allowance and then again to meals that the allowance already includes. The purpose is not elaborate bookkeeping. It is to make the consequences of a choice visible before the money is committed."
+        ]
+      },
+      {
+        "heading": "Recalculate one proposed change",
+        "paragraphs": [
+          "As an arithmetic illustration, imagine an allowance of one thousand units, with six hundred committed to transport and accommodation. If everyday spending needs three hundred, only one hundred remains for other choices and the reserve together. An eighty-unit extra therefore uses a substantial part of the unallocated amount, even though it looks small beside the original total. These figures are not live prices or recommended spending levels. Before accepting the extra, name what you would change to make room for it. If there is no acceptable adjustment, set it aside. A useful budget makes the available choices understandable rather than promising that every wish can fit."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

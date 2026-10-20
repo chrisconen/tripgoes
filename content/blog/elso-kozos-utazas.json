@@ -1,0 +1,58 @@
+{
+  "slug": "elso-kozos-utazas",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Az első közös út tervezési megállapodása",
+    "excerpt": "Az első közös út előtt mindketten írjatok le három dolgot, amelytől jó lenne a nyaralás.",
+    "sections": [
+      {
+        "heading": "Két külön elképzelésből induljatok",
+        "paragraphs": [
+          "Az első közös út előtt mindketten írjatok le három dolgot, amelytől jó lenne a nyaralás. Ne egymás válaszait szerkesszétek, hanem először külön dolgozzatok. Az egyik ember számára a reggeli hosszú beszélgetés jelenti a pihenést, a másiknak az, hogy nyitáskor már a múzeumnál áll. Ezek nem apró részletek: ugyanazt a napot teljesen más módon alakítják. Beszéljétek át az alvást, étkezést, költést és egyedül töltött időt is. A cél nem a teljes egyezés. Olyan különbségeket kerestek, amelyeket érdemes előre beépíteni a tervbe, hogy útközben ne érdektelenségnek vagy önzésnek tűnjenek. Külön jelöljétek, ami örömöt ad, és ami valóban megterhelő lenne."
+        ]
+      },
+      {
+        "heading": "Készítsetek egy próbanapot",
+        "paragraphs": [
+          "Állítsatok össze egy képzeletbeli napot a felkeléstől a lefekvésig. Írjátok oda, mikor indulnátok el, mennyi gyaloglás esne jól, és hol lenne szabadon hagyott idő. Ha a nap már papíron feszültséget okoz, módosítsátok a ritmust. Hasznos lehet egy közös délelőtti program, külön délutáni idő és előre megbeszélt vacsora. A külön töltött órák nem jelentik a közös út kudarcát, ha mindketten ezt szeretnétek. A költségeknél beszéljétek meg, mely kiadás közös, és melyik személyes. Egy drágább fakultatív programot ne tegyetek kimondatlanul kötelezővé annak, aki inkább másra költene. A próbanap akkor működik, ha egyikőtöknek sem kell végig alkalmazkodnia."
+        ]
+      },
+      {
+        "heading": "Legyen egyszerű szabály a változtatásra",
+        "paragraphs": [
+          "Még indulás előtt válasszatok egy rövid mondatot, amellyel bármelyikőtök jelezheti, hogy elfáradt vagy túl sűrű lett a program. Ehhez társuljon használható megoldás: pihenő, külön folytatás vagy egy következő programpont elhagyása. Ne a nap közepén kelljen először eldönteni, hogy szabad-e változtatni. Este elég néhány perc arra, hogy megbeszéljétek, mi működött, és mit szeretnétek másképp holnap. Kerüljétek az egész utazás értékelését egyetlen rosszul sikerült helyzet alapján. Hazatérés után őrizzétek meg azt a két vagy három megállapodást, amely valóban segített. Ebből idővel saját közös utazási szokás alakulhat ki, nem pedig egy általános szabályrendszer, amelyhez egyikőtök sem illik."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "A planning agreement for your first trip together",
+    "excerpt": "Before your first trip together, each person should write three things that would make the holiday enjoyable.",
+    "sections": [
+      {
+        "heading": "Begin with two independent pictures",
+        "paragraphs": [
+          "Before your first trip together, each person should write three things that would make the holiday enjoyable. Work separately before editing each other’s answers. One traveller may associate relaxation with a long conversation over breakfast, while the other wants to be waiting outside a museum when it opens. These are not trivial details: they shape the same day very differently. Discuss sleep, meals, spending, and time alone as well. Complete agreement is not the objective. You are looking for differences that deserve a place in the plan, so they do not feel like indifference or selfishness once you are away. Separate enjoyable preferences from situations that would genuinely be difficult."
+        ]
+      },
+      {
+        "heading": "Design a trial day",
+        "paragraphs": [
+          "Build an imaginary day from waking up to going to bed. Note when you would leave, how much walking feels comfortable, and where unplanned time belongs. If the schedule already creates tension on paper, change its rhythm. A shared morning activity, separate afternoon time, and an agreed dinner may work well. Hours apart do not represent a failed shared holiday when both people want them. For spending, decide which costs are shared and which are personal. Avoid making an expensive optional activity silently compulsory for someone who would prefer to spend elsewhere. The trial day should leave both people with something they value, rather than requiring one person to adapt throughout."
+        ]
+      },
+      {
+        "heading": "Agree how to change the plan",
+        "paragraphs": [
+          "Before departure, choose a short phrase either person can use to say they are tired or the schedule has become too crowded. Attach a practical response to it: a break, continuing separately, or dropping the next activity. The middle of a difficult day should not be the first time you decide whether changes are allowed. A few minutes each evening are enough to discuss what worked and what should be different tomorrow. Avoid judging the whole holiday from one disappointing situation. After returning, keep the two or three agreements that helped in practice. Over time these can become your own shared travel habits, instead of a generic set of rules that suits neither of you."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

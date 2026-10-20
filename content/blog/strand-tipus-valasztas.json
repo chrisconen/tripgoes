@@ -1,0 +1,70 @@
+{
+  "slug": "strand-tipus-valasztas",
+  "category": "beach",
+  "image": "/assets/santorini.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Milyen strand illik a napodhoz?",
+    "excerpt": "A megfelelő strand kiválasztásához először azt írd le, hogyan szeretnéd ott tölteni a napot.",
+    "sections": [
+      {
+        "heading": "A kívánt strandnap",
+        "paragraphs": [
+          "A megfelelő strand kiválasztásához először azt írd le, hogyan szeretnéd ott tölteni a napot. Hosszú üldögélés, rövid megálló egy séta közben, közös családi idő vagy inkább a táj megfigyelése a cél? A homok, a kavics, a sziklás környezet és a kiépített sétány eltérő élményt adhat, de önmagában egyik sem jelent mindenkinek jobb választást. A fénykép látványát különítsd el a napi használattól. Egy hely akkor illik hozzád, ha a megközelítése és a helyszíni lehetőségei is támogatják az elképzelt napodat."
+        ]
+      },
+      {
+        "heading": "Hozzáférés és szolgáltatások",
+        "paragraphs": [
+          "A megközelítéshez nézd meg a tényleges belépési pontot, a lépcsőket, a szintkülönbséget és azt, milyen messziről kellene cipelni a holmidat. A fontos hozzáférési részleteket közvetlenül ellenőrizd, ne csak egy általános leírásra támaszkodj. A helyszíni szolgáltatásoknál ugyanez a feladat: ami a térképen vagy egy korábbi beszámolóban megjelenik, nem feltétlenül érhető el a te időpontodban. Az étkezés, a mosdó és a visszaút lehetőségei együtt alakítják, mennyire kényelmes számodra több órát ott maradni."
+        ]
+      },
+      {
+        "heading": "Különböző napokhoz más hely",
+        "paragraphs": [
+          "Képzeletbeli példánkban egy csendesebbnek látszó, távolabbi partszakasz és egy könnyebben elérhető, több lehetőséggel körülvett strand között választasz. Ha többször visszamennél a szállásra, a második illeszkedhet jobban a napodhoz. Ha egyszeri hosszabb kint tartózkodást tervezel, más szempontok kaphatnak súlyt. A társaság tagjai külön mondják el, mi fontos nekik, mert az „ideális strand” kifejezés mögött eltérő igények lehetnek. Nem szükséges a teljes nyaralásra egyetlen helyet kijelölni; többféle naphoz eltérő választás is illhet."
+        ]
+      },
+      {
+        "heading": "Aktuális körülmények és alternatíva",
+        "paragraphs": [
+          "A part látványa vagy népszerűsége alapján ne következtess a fürdés aktuális feltételeire. Az adott napon a helyi tájékoztatást, jelzéseket és a releváns szolgáltatói információt vedd figyelembe. A tervezési lista célja nem ilyen körülmények megjóslása, hanem a használati igényeid rendezése. A döntés végén jelölj egy első választást és egy könnyebben elérhető alternatívát. Ha a körülmények változnak, így nem új helyet kell teljesen elölről keresned, hanem két előre megértett lehetőség közül tudsz választani."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Which kind of beach fits your day?",
+    "excerpt": "Choose a beach by first describing how you want to spend the day there.",
+    "sections": [
+      {
+        "heading": "The day you want",
+        "paragraphs": [
+          "Choose a beach by first describing how you want to spend the day there. Is the aim to linger for hours, pause during a walk, spend time together as a family or mainly enjoy the landscape? Sand, pebbles, rocky surroundings and a developed promenade can offer different experiences, but none is universally better. Separate the appearance in a photograph from everyday use. A place suits you when access and facilities support the kind of day you actually imagine having."
+        ]
+      },
+      {
+        "heading": "Access and facilities",
+        "paragraphs": [
+          "Investigate the real entrance, steps, changes in level and how far you would need to carry your belongings. Verify important access details directly rather than relying only on a general description. Apply the same approach to facilities: something shown on a map or mentioned in an earlier account may not be available at your chosen time. Eating options, toilets and the return journey together affect whether remaining for several hours would feel convenient for you and the people travelling with you."
+        ]
+      },
+      {
+        "heading": "Different places for different days",
+        "paragraphs": [
+          "In a hypothetical comparison, one stretch of coast appears quieter but is farther away, while another is easier to reach and surrounded by more facilities. If you expect frequent returns to your room, the second may fit better. If you plan one longer visit, other considerations may carry more weight. Ask companions to state their priorities separately, because “ideal beach” can conceal different expectations. You do not need one choice for the whole holiday; different kinds of day can reasonably involve different places."
+        ]
+      },
+      {
+        "heading": "Current conditions and an alternative",
+        "paragraphs": [
+          "Do not infer current swimming conditions from a beach's appearance or popularity. Consider local notices, signals and relevant information on the day. The planning checklist is intended to organise your practical preferences, not to predict those conditions. Finish by identifying a first choice and an easier-to-reach alternative. When circumstances change, you then have two options whose practical arrangements you understand instead of needing to search for an entirely new place from the beginning while everyone is waiting to leave."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

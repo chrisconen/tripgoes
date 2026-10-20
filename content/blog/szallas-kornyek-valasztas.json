@@ -1,0 +1,58 @@
+{
+  "slug": "szallas-kornyek-valasztas",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Előbb környék, aztán szállás",
+    "excerpt": "Szálláskeresés előtt válassz néhány olyan pontot, amely a napjaidat valóban meghatározza.",
+    "sections": [
+      {
+        "heading": "Először a napi kapaszkodókat jelöld a térképen",
+        "paragraphs": [
+          "Szálláskeresés előtt válassz néhány olyan pontot, amely a napjaidat valóban meghatározza. Lehet köztük érkezési hely, rendszeresen látogatott környék, közös találkozópont vagy a hazautazás indulása. Ne jelölj meg minden elmentett látványosságot egyforma súllyal. Az a hely, ahová egyszer röviden elmennél, más jelentőségű, mint ahonnan minden reggel indulsz. Ezután nézd meg, mely környékek kapcsolódnak jól ezekhez a pontokhoz a saját mozgási szokásaid szerint. A térképen mért közelség mellé valós útvonalat keress: átkelő, emelkedő, lépcső vagy nagy kerülő módosíthatja a használhatóságot. Az elhelyezkedés értékét a napi útjaid adják, nem önmagában egy központi címke."
+        ]
+      },
+      {
+        "heading": "Az esti szokásokat is vedd figyelembe",
+        "paragraphs": [
+          "A környék kiválasztásánál gondold végig, hogyan szeretnél este visszatérni, enni és pihenni. Nem mindenkinek ugyanaz a nyüzsgés vagy távolság kényelmes. Képzeletbeli páros egyik változatban a legtöbb nappali programhoz közel lakik, de vacsoráért rendszeresen máshová indulna; a másik változatban kicsit többet utazik napközben, viszont az esti rutin egyszerűbb. Egyik sem általánosan jobb. Készíts három személyes szempontot, és ezek szerint nézz meg legfeljebb három környéket. Ne adj biztonsági vagy csendességi minősítést pusztán néhány fotó alapján. A konkrét szállás környezetéről, megközelítéséről és a számodra fontos részletekről célzott információt gyűjts, a bizonytalan pontokat pedig külön jelöld."
+        ]
+      },
+      {
+        "heading": "Csak ezután szűkíts konkrét szállásokra",
+        "paragraphs": [
+          "Amikor megvan a megfelelő környék vagy két elfogadható alternatíva, akkor kezdj szállást összehasonlítani. Így a szép szoba nem tereli el a figyelmet egy naponta nehézkes elhelyezkedésről. A végső jelöltnél nézd meg a tényleges bejáratot, a közlekedési megállótól vezető utat és a csomagokkal járható utolsó szakaszt. Ha a fotó és a térképes jelölés alapján nem egyértelmű a hely, kérj pontosítást. A kiválasztott szállás árát a környékből adódó napi eljutással együtt értékeld. Nem kell minden percre pénzértéket adnod, de legyen látható, mennyi mozgást vállalsz. A jó környékválasztás a későbbi napok apró döntéseit teszi könnyebbé, és ezért a teljes utazás minőségét befolyásolhatja."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Choose a neighbourhood before a hotel",
+    "excerpt": "Before searching for accommodation, choose a few points that will genuinely shape your days.",
+    "sections": [
+      {
+        "heading": "Map the anchors of your actual days first",
+        "paragraphs": [
+          "Before searching for accommodation, choose a few points that will genuinely shape your days. These might include arrival, an area you will visit repeatedly, a shared meeting point, or the departure location for returning home. Do not give every saved attraction equal weight. Somewhere you may visit briefly once matters differently from the place you leave each morning. Examine which neighbourhoods connect well to these anchors according to how you prefer to move. Add real routes to map distances: crossings, hills, stairs, and detours can change practical usability. The value of a location comes from your daily journeys, not simply from a central label."
+        ]
+      },
+      {
+        "heading": "Include evening habits",
+        "paragraphs": [
+          "Consider how you want to return, eat, and rest in the evening. Different travellers find different levels of activity and distance comfortable. Imagine a pair choosing between accommodation close to daytime activities but requiring regular dinner trips, and another location with longer daytime travel but a simpler evening routine. Neither is universally better. Choose three personal criteria and use them to assess no more than three areas. Do not assign safety or quietness ratings from a few photographs. Gather specific information about the actual property’s surroundings, access, and features that matter to you. Keep uncertain points separate instead of treating an attractive overall impression as confirmation of every detail."
+        ]
+      },
+      {
+        "heading": "Then narrow the search to properties",
+        "paragraphs": [
+          "Once you have a suitable neighbourhood or two acceptable alternatives, begin comparing accommodation. An appealing room will then be less likely to distract you from a location that complicates every day. For the final candidate, inspect the actual entrance, route from transport, and last stretch with luggage. Ask for clarification when photographs and the map marker do not make the location clear. Assess the room price alongside the daily travel created by its neighbourhood. You need not assign a monetary value to every minute, but make the movement you accept visible. Choosing the area well can simplify many small decisions during the stay, which is why location belongs early in the planning process."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

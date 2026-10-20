@@ -1,0 +1,58 @@
+{
+  "slug": "szallas-lemondasi-feltetelek",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Lemondási feltételek idővonala",
+    "excerpt": "A lemondási feltételeket mindig a konkrét szoba-, dátum- és foglalási változathoz keresd meg.",
+    "sections": [
+      {
+        "heading": "A saját foglalás szövegét bontsd részekre",
+        "paragraphs": [
+          "A lemondási feltételeket mindig a konkrét szoba-, dátum- és foglalási változathoz keresd meg. Ugyanazon szálláson eltérő ajánlatok jelenhetnek meg, ezért egy általános címke nem helyettesíti a részletes szöveget. Másold ki vagy mentsd el a lényeges részeket saját használatra: milyen időponthoz, összeghez és eseményhez kapcsolnak következményt. Válaszd külön az előrefizetést, a módosítást, a lemondást és a meg nem jelenést, ha a feltételek ezekről külön beszélnek. A cél a szöveg rendezett olvasása, nem jogi értelmezés készítése. Ha valami homályos vagy ellentmondó, a szolgáltatótól kérj a saját foglalásodra vonatkozó pontosítást, és ne töltsd ki a hiányt egy korábbi út emlékével."
+        ]
+      },
+      {
+        "heading": "Rajzolj idővonalat a megadott pontokból",
+        "paragraphs": [
+          "A feltételekben szereplő dátumokat és időpontokat tedd egymás után egy egyszerű sorba. Jelöld az alkalmazott időzónát, ha meg van adva, és tisztázd, ha nem egyértelmű. Minden ponthoz az eredeti szöveg szerinti következményt írd, ne saját, kedvezőbb rövidítést. Képzeletbeli esetben az egyik határidő a fizetéshez, a másik egy módosítási lehetőséghez kapcsolódik. Ezek összekeverése hibás döntéshez vezethet, még akkor is, ha mindkét dátum szerepel a naptárban. Az összegnél is nézd meg, mire vonatkozik a leírás. Ha egy kifejezés értelme bizonytalan, az idővonalon maradjon tisztázandó jelölés, amíg megfelelő választ nem kapsz. Egy rendezett ábra nem teszi automatikusan egyértelművé a homályos feltételt."
+        ]
+      },
+      {
+        "heading": "A naptárba ellenőrzést tegyél, ne feltételezést",
+        "paragraphs": [
+          "A fontos időpont elé tehetsz saját emlékeztetőt, hogy legyen lehetőséged átnézni a terveidet és szükség esetén intézkedni. Az emlékeztető nem módosítja a szolgáltató feltételeit és nem garantál semmilyen lehetőséget. Mielőtt változtatást kezdeményezel, nyisd meg az aktuális foglalási adatokat és a hozzájuk tartozó eljárást. Őrizd meg a tényleges visszaigazolást arról, ami történt, ne pusztán a saját elküldött kérésedet. Közös utazásnál legyen világos, ki figyeli az időpontokat, és kinek kell döntést hoznia a határ előtt. Így a feltételek nem egy elfelejtett hosszú szöveg maradnak, hanem követhető, ellenőrizhető feladatokká válnak. A bizonytalan részleteket azonban továbbra is a megfelelő szolgáltatóval kell tisztázni."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Put cancellation terms on a timeline",
+    "excerpt": "Find cancellation terms for the particular room, dates, and booking version.",
+    "sections": [
+      {
+        "heading": "Break down the terms for your own booking",
+        "paragraphs": [
+          "Find cancellation terms for the particular room, dates, and booking version. Different offers may exist at the same property, so a general label cannot replace the detailed wording. Copy or save relevant passages for personal use: which times, amounts, and events are linked to consequences. Separate prepayment, changes, cancellation, and non-arrival where the terms discuss them individually. The purpose is organised reading, not creating a legal interpretation. If something is unclear or contradictory, ask the provider to clarify it for your reservation. Do not fill the gap with a memory of a previous trip or a condition seen beside another price."
+        ]
+      },
+      {
+        "heading": "Put the stated points on a timeline",
+        "paragraphs": [
+          "Place the dates and times in a simple sequence. Mark the applicable time zone where stated and seek clarification when it is unclear. Beside each point, record the consequence described in the original wording rather than inventing a more favourable shorthand. Imagine one deadline concerns payment while another relates to a possible change. Confusing them can produce a mistaken decision even when both dates appear in your calendar. Check what any stated amount refers to as well. If the meaning of a phrase remains uncertain, retain an unresolved marker until an appropriate answer arrives. A tidy diagram does not automatically make ambiguous conditions clear or alter their substance."
+        ]
+      },
+      {
+        "heading": "Schedule a review, not an assumption",
+        "paragraphs": [
+          "You can place a personal reminder before an important time so there is an opportunity to review plans and act if needed. The reminder does not change provider terms or guarantee any option. Before requesting a change, open the current reservation details and the associated procedure. Keep the actual confirmation of what happened, not only a copy of your outgoing request. For a shared trip, make clear who monitors dates and who must decide before the relevant point. The terms then become a series of traceable checks rather than a forgotten block of text. Uncertain details still need clarification from the appropriate provider; organising them well is preparation for that conversation, not a substitute for it."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

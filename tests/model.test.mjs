@@ -2,6 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {calculate,selectDeals} from '../src/model.mjs';
 import {deals} from '../src/data.mjs';
+test('cost review fixes reject missing ground costs and use whole travellers',()=>{
+ assert.equal(calculate(deals[0],{travelers:2.7}).travelers,2);
+ assert.throws(()=>calculate({...deals[0],airport:'UNKNOWN'}),RangeError);
+ assert.throws(()=>calculate({...deals[0],base:NaN}),RangeError);
+});
 test('Amalfi includes return transport, bag, transfer and group multiplication',()=>{
  const r=calculate(deals[0]); assert.equal(r.perPerson,122700);assert.equal(r.group,245400);
  assert.equal(calculate(deals[0],{bag:false,transfer:false,city:'Győr',travelers:3}).perPerson,99900);

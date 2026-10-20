@@ -1,0 +1,58 @@
+{
+  "slug": "olcso-ut-dragabb-napok",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Olcsó eljutás, drágább napok",
+    "excerpt": "Egy kedvezőnek tűnő eljutás könnyen meghatározza az egész keresést, pedig az út többi napja külön költségszerkezetet hoz. Mielőtt a jegy alapján választasz, írj le egy hétköznapi napot a célállomáson.",
+    "sections": [
+      {
+        "heading": "Az eljutási ár csak egy sor",
+        "paragraphs": [
+          "Egy kedvezőnek tűnő eljutás könnyen meghatározza az egész keresést, pedig az út többi napja külön költségszerkezetet hoz. Mielőtt a jegy alapján választasz, írj le egy hétköznapi napot a célállomáson. Hol aludnál, hogyan közlekednél, hol ennél, és milyen programot választanál? A kérdésekre először saját igényből válaszolj, utána keress hozzájuk aktuális árat. Így nem egy elvont, legolcsóbb napot hasonlítasz össze a valós utaddal. Az eljutás egyszeri díja és a minden nap ismétlődő kiadások eltérően hatnak a teljes keretre, ezért külön sorban érdemes tartani őket."
+        ]
+      },
+      {
+        "heading": "Készíts két teljes változatot",
+        "paragraphs": [
+          "A két úti lehetőséghez ugyanannyi utazót, azonos utazási hosszt és hasonló napi ritmust használj. Számold hozzá az eljutáshoz kapcsolódó csatlakozást és az érkezés utáni utolsó szakaszt is. Ha valamelyik célpontnál még nincs biztos adat, hagyd becslésként jelölve, ne írj be nullát. A napi költségeknél azonos tartalmú szolgáltatásokat keress, különben a különbség egy része valójában eltérő igényből származik. Egy konyhás szállás és egy teljesen más étkezési terv összevethető, de akkor világosan nevezd meg, hogy két különböző nyaralási megoldást értékelsz, nem ugyanannak a szolgáltatásnak két árát."
+        ]
+      },
+      {
+        "heading": "Találd meg a fordulópontot",
+        "paragraphs": [
+          "Szemléltető számolásban az egyik eljutás negyven egységgel olcsóbb, de a választott napi terv húsz egységgel többe kerül. Két ilyen nap után az induló különbség eltűnik; további napoknál már a másik teljes változat lehet olcsóbb. Ez nem célállomásra vonatkozó árígéret, csak a fix és ismétlődő költség kapcsolatát mutatja. A végső döntésnél azt is írd fel, melyik út élményét szeretnéd jobban. A drágább teljes terv is lehet vállalható, ha tudatosan választod és belefér. A lényeg az, hogy a kedvező jegy ne takarja el a napok költségét, és a teljes összeg mellett az utazás valódi tartalma is látható maradjon."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "A cheap journey can mean expensive days",
+    "excerpt": "An appealing fare can dominate the search even though the remaining days have their own cost structure. Before choosing on that basis, describe an ordinary day at the destination.",
+    "sections": [
+      {
+        "heading": "The journey price is one line",
+        "paragraphs": [
+          "An appealing fare can dominate the search even though the remaining days have their own cost structure. Before choosing on that basis, describe an ordinary day at the destination. Where would you stay, how would you move around, where would you eat and what would you do? Answer from your preferences first, then look for current prices that match. This avoids comparing an abstract cheapest possible day with the trip you would actually take. A one-off journey cost and expenses repeated every day affect the total differently, so keep them on separate lines in the comparison."
+        ]
+      },
+      {
+        "heading": "Build two complete versions",
+        "paragraphs": [
+          "Use the same number of travellers, trip length and a comparable daily routine for both options. Include connections associated with the main journey and the final stretch after arrival. Where you lack reliable information, mark an estimate instead of entering zero. For everyday costs, compare services with similar contents; otherwise part of the difference comes from different expectations. Accommodation with a kitchen and a completely different meal plan can be compared, but describe them as two holiday approaches. They are not simply two prices for the same service. Naming that distinction makes the trade-off easier to discuss with companions before booking."
+        ]
+      },
+      {
+        "heading": "Find the point where totals cross",
+        "paragraphs": [
+          "In an arithmetic illustration, one journey costs forty units less, but its chosen daily routine costs twenty units more. After two such days the initial difference disappears; for additional days the other complete plan could cost less. This is not a destination price claim. It demonstrates the relationship between fixed and recurring expenses. In the final decision, also record which experience you would prefer. The higher total can still be a reasonable choice if you consciously want it and it fits your allowance. The objective is to prevent an attractive fare from hiding the cost of the days, while keeping the actual content of the holiday visible beside the final number."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "hajout-kikotok-ritmusa",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Kikötők és tengeri napok ritmusa",
+    "excerpt": "A hajóút ritmusát ne csak a felsorolt kikötők száma alapján értékeld.",
+    "sections": [
+      {
+        "heading": "Használható idő a parton",
+        "paragraphs": [
+          "A hajóút ritmusát ne csak a felsorolt kikötők száma alapján értékeld. Minden megállóhoz nézd meg a szolgáltató által közölt érkezési és indulási adatokat, majd külön gondold át a partra jutást és a visszatérést. A rendelkezésre álló időből az átjutás, a közlekedés és a szükséges tartalék is helyet kér. Ezeket nem lehet minden kikötőre egyetlen általános számmal helyettesíteni. A cél az, hogy összehasonlítható képet kapj a napjaidról, ne az, hogy a papíron szereplő órákat mind programmal töltsd ki."
+        ]
+      },
+      {
+        "heading": "A saját napjaid terhelése",
+        "paragraphs": [
+          "Jelöld a tervezett napokat a saját igénybevételük szerint. Egy közeli séta lehet könnyű, egy hosszabb kirándulás több figyelmet, korai indulást és közlekedési egyeztetést kívánhat. Ez személyes besorolás, nem általános minősítés egy városról. Ha egymás után több sűrű nap szerepel a tervben, valamelyiknél csökkentsd a programot. A hajó menetrendjét utasként nem rendezed át; a saját részvételed és a választott parti program változtatható. A tengeri napot is kezelheted pihenőként, de nem kötelező minden fedélzeti lehetőséget kipróbálnod."
+        ]
+      },
+      {
+        "heading": "Egy hét áttekintése",
+        "paragraphs": [
+          "Egy képzeletbeli hétnapos út második és harmadik napjára két hosszabb felfedezést terveztél, majd később újabb fontos kikötő következik. Ahelyett, hogy minden helyen teljes programot vállalnál, a harmadik napra választhatsz egyetlen közeli célpontot. Így az útvonal változtatása nélkül más lesz az egész hét terhelése. A példában nem konkrét kikötői időkkel számolunk: a módszer lényege az egymást követő döntések és a személyes pihenési igény áttekintése. A társaiddal is beszéld meg, ugyanazt értitek-e könnyű nap alatt."
+        ]
+      },
+      {
+        "heading": "Fő cél és elhagyható rész",
+        "paragraphs": [
+          "A végleges tervben minden naphoz írj egy fő célt és egy elhagyható részt. Ez megakadályozhatja, hogy egy kisebb csúszás után az egész napot elveszettnek érezd. A programokhoz kapcsolódó foglalási feltételeket külön tartsd nyilván, mert nem minden változtatás jár ugyanazzal a következménnyel. Indulás előtt és az út során is a hajó aktuális tájékoztatásából ellenőrizd a releváns időpontokat. A jól megválasztott ritmus nem maximális kihasználtságot jelent, hanem olyan egymásutánt, amelyben a fontos élményekhez marad figyelmed és kedved."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Balance port days and sea days",
+    "excerpt": "Assess a cruise's rhythm through more than the number of ports listed.",
+    "sections": [
+      {
+        "heading": "Usable time ashore",
+        "paragraphs": [
+          "Assess a cruise's rhythm through more than the number of ports listed. For each stop, examine the arrival and departure information supplied for the voyage, then consider the process of getting ashore and returning. Transfers, local travel and an appropriate margin all use part of the available time. A single universal allowance cannot describe every port. Your purpose is to build a comparable picture of the days, not to fill every hour printed on the itinerary with an activity."
+        ]
+      },
+      {
+        "heading": "The effort of your own plans",
+        "paragraphs": [
+          "Classify your planned days by the effort they require from you. A nearby walk may feel light, while a longer excursion can involve an early start, transport decisions and greater attention. This is a personal assessment rather than a rating of the destination. If several demanding days appear together, reduce the programme on one of them. Passengers do not rearrange the ship's schedule; they can change their own participation and shore plans. A sea day can provide rest without creating an obligation to try every onboard activity."
+        ]
+      },
+      {
+        "heading": "Review a whole week",
+        "paragraphs": [
+          "Imagine a hypothetical seven-day trip where you initially plan extensive exploring on days two and three, with another important port later. Instead of committing to full programmes at every stop, choose one nearby destination for day three. The whole week's pace changes without changing the itinerary. This example makes no claim about particular port times: it illustrates how to examine consecutive decisions alongside your own need for rest. Discuss the plan with companions too, since people can mean very different things by a light day."
+        ]
+      },
+      {
+        "heading": "One aim and one optional part",
+        "paragraphs": [
+          "For each day, write down one main aim and one optional part. This helps a small delay remain a manageable change instead of making the entire day feel lost. Keep the booking conditions for activities separately, since changing one commitment may have different consequences from changing another. Verify relevant times through the ship's current information before and during the voyage. A comfortable rhythm is not maximum utilisation. It is a sequence that leaves enough attention and enthusiasm for the experiences you consider important."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "kezipoggyasz-tervezes",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Kézipoggyász: mérésből induló csomagolás",
+    "excerpt": "Kézipoggyász tervezésekor először keresd meg az adott járathoz, díjcsomaghoz és utazási szakaszhoz tartozó aktuális tájékoztatást.",
+    "sections": [
+      {
+        "heading": "A pontos foglalásból indulj ki",
+        "paragraphs": [
+          "Kézipoggyász tervezésekor először keresd meg az adott járathoz, díjcsomaghoz és utazási szakaszhoz tartozó aktuális tájékoztatást. Ne egy korábbi út emlékéből vagy más utas által használt táskából következtess. Írd ki magadnak a számodra releváns méret-, tömeg- és darabszám-feltételeket a szolgáltató saját leírásából, valamint azt, mire vonatkoznak. Ha több szakasz vagy szolgáltató érintett, mindegyiket ellenőrizd. Ez a cikk nem ad általános mérethatárt, mert a csomagodat a tényleges foglaláshoz kell igazítani. A bizonytalan megfogalmazást tisztázd még csomagolás előtt. Így nem az indulás napján derül ki, hogy másik feltétel alapján készítetted össze a holmidat."
+        ]
+      },
+      {
+        "heading": "A megtöltött állapot számít a tervezésben",
+        "paragraphs": [
+          "A táskát a ténylegesen magaddal vitt tartalommal vizsgáld. Egy puha táska üresen más formát mutathat, mint megtöltve; a külső zsebek és kiálló részek is befolyásolhatják a használatát. Kövesd a szolgáltató mérésre vonatkozó leírását, és a saját mérésedet kezeld tájékozódásként, ne elfogadási ígéretként. Képzeletbeli hétvégi útnál előbb a biztos tevékenységekhez választasz ruhát, majd a maradék helyet vizsgálod. Ha csak erővel zárható a csomag, nézd át az egyszer használható vagy egymást helyettesítő tárgyakat. Ne azzal kezdj, hogy nagyobb táskát keresel. Előbb derüljön ki, mi indokolja valóban a térfogatot, és mi került be pusztán megszokásból."
+        ]
+      },
+      {
+        "heading": "Próbáld ki az útközbeni használatot",
+        "paragraphs": [
+          "A kész táskával járj végig egy rövid gyakorlati próbát: megemelés, cipelés, lerakás és a szükséges dolgok elővétele. Az út közben használt iratok és személyes tárgyak legyenek hozzáférhetők anélkül, hogy az egész csomagot szét kellene bontani. A szállítható tárgyakra vonatkozó szabályokat az illetékes szolgáltatói és hatósági forrásból külön ellenőrizd; a kényelmes elrendezés nem helyettesíti ezt. Készíts képet a saját csomagolási elrendezésedről, ha később szeretnéd megismételni, de ne ossz meg rajta személyes adatot. Hazatéréskor jegyezd fel, melyik rekesz és tárgy volt valóban hasznos. Ettől a következő csomagolás nemcsak kisebb lehet, hanem egyszerűbb is a tényleges utazási helyzetekben."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan cabin baggage by measuring first",
+    "excerpt": "For cabin baggage, first locate current information for the particular flight, fare selection, and journey segment.",
+    "sections": [
+      {
+        "heading": "Start with the exact booking",
+        "paragraphs": [
+          "For cabin baggage, first locate current information for the particular flight, fare selection, and journey segment. Do not infer the rules from a previous trip or another traveller’s bag. Copy the relevant size, weight, and item-count conditions from the provider’s own description and note precisely what they apply to. If several segments or providers are involved, check each. This article does not supply a universal size limit because your luggage needs to fit the actual booking. Clarify ambiguous wording before packing. That prevents the departure day from becoming the moment you discover that your preparation followed conditions belonging to a different fare or journey."
+        ]
+      },
+      {
+        "heading": "Assess the bag when it is filled",
+        "paragraphs": [
+          "Examine the bag with the contents you will actually carry. A soft bag may have a different shape when full, and outside pockets or protruding parts can affect how it fits. Follow the provider’s measurement instructions and treat your own measurement as information rather than a promise of acceptance. On an imaginary weekend trip, choose clothes for confirmed activities first and then examine the remaining space. If the bag closes only with force, review objects used once or items that could substitute for each other. Do not begin by looking for a larger bag. First establish which volume is justified and which objects were included simply through habit."
+        ]
+      },
+      {
+        "heading": "Test how you will use it in transit",
+        "paragraphs": [
+          "With the packed bag, try a short practical sequence: lifting, carrying, setting it down, and retrieving what you need. Keep documents and personal items required during the journey accessible without unpacking everything. Separately check rules for transporting particular objects with the relevant provider and official authority; convenient organisation does not replace that check. Photograph your packing arrangement if you want to repeat it later, but avoid sharing personal information in the image. After returning, note which compartments and objects were actually useful. The next packing attempt can then become easier in real travel situations, not merely smaller on paper. Practical access is part of a workable bag design."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "esos-nap-terv",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Esőnapterv, amely nem mentőöv",
+    "excerpt": "Az esőnap könnyen elveszett napnak tűnik, ha csak az eredeti program hiányát látod benne.",
+    "sections": [
+      {
+        "heading": "Az esőtervnek is legyen saját célja",
+        "paragraphs": [
+          "Az esőnap könnyen elveszett napnak tűnik, ha csak az eredeti program hiányát látod benne. Inkább készíts két külön napi változatot: egyet jó időre, egyet olyan helyzetre, amikor nem szeretnél sokáig a szabadban lenni. A másodiknak is legyen önálló célja, például egy város történetének megismerése, közös főzés vagy lassú olvasós délután. Ne töltsd fel automatikusan minden beltéri helyszínnel, amelyet találsz. Ha az eredeti nap pihenős lett volna, az esős változat se váljon kötelező múzeumi maratonná. A tartalékterv akkor értékes, ha a társaság valóban szívesen választaná, és nem pusztán büntetésként viselné el a rosszabb időjárás miatt."
+        ]
+      },
+      {
+        "heading": "Ellenőrizd a teljes láncot",
+        "paragraphs": [
+          "Egy beltéri program csak akkor használható esőben, ha az odajutás és a várakozás is vállalható. Nézd meg a szállástól vezető utat, a szükséges átszállásokat, a belépés módját és azt, hol tudsz utána enni. Az aktuális nyitvatartást és foglalási feltételeket közvetlenül a helyszín saját tájékoztatásából ellenőrizd. Képzeletbeli példában egy közeli kiállítás és hosszabb ebéd jobban működhet, mint három távoli látványosság. Írj a terv mellé egy rövid, fedett vagy könnyen megszakítható sétát is, ha később javul az idő. A cél a nap fokozatos alakíthatósága: ne kelljen minden javulásnál vagy újabb zápor esetén az egész útvonalat elölről megtervezni."
+        ]
+      },
+      {
+        "heading": "Dönts a megfelelő pillanatban",
+        "paragraphs": [
+          "Előre beszéljétek meg, mikor választotok a két változat közül. Ez lehet az előző esti egyeztetés vagy a reggeli indulás előtti ellenőrzés. Ne alapozz minden döntést egyetlen régen látott előrejelzésre, és ne próbálj minden bizonytalanságot napokkal korábban megszüntetni. A már lefoglalt programoknál nézd meg, milyen változtatás lehetséges, majd ehhez igazítsd a tartalékot. Különítsd el a kényelmetlen és a ténylegesen veszélyes körülményeket; utóbbiaknál az illetékes helyi tájékoztatás legyen mérvadó. Este értékeld azt, amit a nap adott, ne azt, amit az eredeti tervből kihagytatok. Így a következő útnál már lesz néhány bevált alternatíva, amelyhez nem társul kudarcérzés."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "A rainy-day plan worth looking forward to",
+    "excerpt": "A rainy day can feel wasted when it is defined only by the original activities you cannot do.",
+    "sections": [
+      {
+        "heading": "Give the rainy-day version a purpose",
+        "paragraphs": [
+          "A rainy day can feel wasted when it is defined only by the original activities you cannot do. Prepare two versions instead: one for pleasant outdoor conditions and another for a day when you do not want to remain outside for long. Give the second version its own purpose, such as exploring local history, cooking together, or spending an unhurried afternoon reading. Do not automatically fill it with every indoor attraction you can find. If the original day was meant for rest, the alternative should not become a compulsory museum marathon. A backup is useful when the group would genuinely enjoy choosing it, rather than simply tolerating it as a punishment for the weather."
+        ]
+      },
+      {
+        "heading": "Check the whole chain",
+        "paragraphs": [
+          "An indoor activity works in rain only if reaching it and waiting to enter are manageable too. Examine the route from your accommodation, transfers, entry arrangements, and somewhere to eat afterwards. Check current opening and booking information directly with the venue. In an illustrative scenario, a nearby exhibition followed by a long lunch might work better than three widely separated attractions. Add a short sheltered or easily interrupted walk in case conditions improve. The aim is to make the day adjustable in stages. You should not need to rebuild the complete route whenever the rain stops or another shower begins. Choose a small number of useful anchors and keep the space between them flexible."
+        ]
+      },
+      {
+        "heading": "Choose at a useful moment",
+        "paragraphs": [
+          "Agree beforehand when you will select a version: during the previous evening’s discussion or just before leaving in the morning. Avoid basing every decision on one old forecast, and do not attempt to remove all uncertainty several days ahead. For activities already booked, check what changes are possible and shape the backup around those limits. Distinguish uncomfortable conditions from dangerous ones; for the latter, follow relevant local official information. In the evening, assess what the day provided rather than everything you omitted from the first plan. You will then have a few proven alternatives for the next trip without associating them with failure. Flexibility works best when the alternative has real appeal of its own."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

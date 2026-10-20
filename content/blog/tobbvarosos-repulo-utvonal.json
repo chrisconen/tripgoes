@@ -1,0 +1,58 @@
+{
+  "slug": "tobbvarosos-repulo-utvonal",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Többvárosos repülőút visszafordulás nélkül",
+    "excerpt": "Többvárosos repülőút tervezésekor először azt rajzold fel, hogyan szeretnél a helyszínek között haladni.",
+    "sections": [
+      {
+        "heading": "Az útvonal formáját a földi napokból válaszd",
+        "paragraphs": [
+          "Többvárosos repülőút tervezésekor először azt rajzold fel, hogyan szeretnél a helyszínek között haladni. Ha a program természetesen egy irányba vezet, érdemes megvizsgálni, hogy más városból térj-e haza, mint ahová érkeztél. Ettől azonban a teljes út nem válik automatikusan egyszerűbbé. Az új hazautazási pont elérése, a köztes közlekedés és a foglalási feltételek külön ellenőrzést igényelnek. Ne csak a térkép alakja alapján válassz. Írd be minden hely mellé, mennyi ténylegesen használható időt szeretnél ott tölteni. A repülési megoldást ehhez igazítsd, ne az egész szárazföldi utat egy elsőként megtalált jegyváltozat köré erőltesd."
+        ]
+      },
+      {
+        "heading": "Hasonlítsd össze a visszatérést az előrehaladással",
+        "paragraphs": [
+          "Képzeletbeli nyolcnapos utazásban az első városban három, a második térségben négy éjszakát tervezel. Az egyik változat a végén visszavisz az első városba, a másik a második térség közeléből indul haza. Mindkettőnél számold a földi utat, a csomagmozgatást, a szükséges szállásváltást és a teljes várható kiadást. Ez csak szerkezeti példa, nem valódi útvonal vagy árígéret. Előfordulhat, hogy a visszatérés egyszerű és kényelmes, máskor egy egész használható napot foglal el. A különbséget ne rejtsd el az éjszakaszámban. Külön mutasd meg a két végpont közötti mozgást és azt az időt, amely ténylegesen a választott helyszínekre marad."
+        ]
+      },
+      {
+        "heading": "A különböző végpontokhoz igazítsd a részleteket",
+        "paragraphs": [
+          "Ha a két reptér eltér, ellenőrizd a közlekedési és egyéb kapcsolódó foglalások pontos végpontját. Bérelt eszköz, tárolt csomag vagy előre vállalt fuvar nem feltétlenül követi magától az útvonal módosulását. A poggyászra és az egyes repülési szakaszokra vonatkozó feltételeket külön nézd meg. A végső útitervben legyen minden naphoz helyszín és következő mozgás, de ne zsúfold tele a költözési napokat kötött programokkal. Foglalás előtt olvasd végig a teljes utat az első otthoni indulástól a hazatérésig. Ha egy szakasz csak homályos „majd átjutunk” megjegyzéssel szerepel, ott még hiányzik a terv. A többvárosos megoldás akkor értékes, ha valóban a kívánt földi útvonalat szolgálja."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan a multi-city flight itinerary",
+    "excerpt": "When planning multi-city flights, first draw how you want to move between places.",
+    "sections": [
+      {
+        "heading": "Choose the shape from your days on the ground",
+        "paragraphs": [
+          "When planning multi-city flights, first draw how you want to move between places. If the itinerary naturally progresses in one direction, examine returning from a different city than the one where you arrive. That does not automatically make the whole trip simpler. Reaching the new departure point, travelling between stops, and checking booking conditions remain separate tasks. Do not choose only because the route looks neat on a map. Write how much usable time you want in each place. Fit the flights around that purpose instead of forcing the entire ground itinerary to accommodate the first ticket combination you happen to find."
+        ]
+      },
+      {
+        "heading": "Compare returning with continuing forward",
+        "paragraphs": [
+          "Imagine an eight-day trip with three nights in the first city and four in a second region. One version returns to the first city at the end; another flies home from near the second region. For both, count ground transport, moving luggage, necessary accommodation changes, and complete expected spending. This is a structural example, not an actual route or price promise. Returning may be straightforward and comfortable in one case, while in another it occupies an entire usable day. Do not hide the difference inside the number of nights. Show movement between endpoints separately from the time actually left for the places you chose to visit."
+        ]
+      },
+      {
+        "heading": "Adapt details to the different endpoints",
+        "paragraphs": [
+          "If the airports differ, check the precise endpoints of transport and related bookings. A rented item, stored bag, or agreed lift does not automatically adapt when the route changes. Review baggage conditions and each flight segment separately. In the final itinerary, give every day a location and next movement, while avoiding a crowded programme of fixed activities on transfer days. Before booking, read through the complete journey from leaving home until returning. A segment described only as “we will get across somehow” still lacks a plan. Multi-city flights are useful when they serve the ground route you actually want, rather than making the diagram look more adventurous while leaving practical gaps unresolved."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

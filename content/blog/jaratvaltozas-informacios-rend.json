@@ -1,0 +1,58 @@
+{
+  "slug": "jaratvaltozas-informacios-rend",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Információs rend járatváltozás esetére",
+    "excerpt": "Járatváltozásnál könnyebb tájékozódni, ha előre tudod, melyik szereplőtől milyen információ érkezik.",
+    "sections": [
+      {
+        "heading": "Már foglaláskor tisztázd az információ útját",
+        "paragraphs": [
+          "Járatváltozásnál könnyebb tájékozódni, ha előre tudod, melyik szereplőtől milyen információ érkezik. Jegyezd fel a légitársaságot, a foglalás csatornáját és a saját foglalásod hivatalos elérését. Ezeket ne keverd össze egy általános menetrendi keresővel. A közvetítő és a szolgáltató külön szerepeket tölthet be, ezért a konkrét ügyintézési lehetőségeket a saját foglalásod alapján tisztázd. Ellenőrizd, hogy az elérhetőségi adataid pontosak-e. A foglalási azonosítót és személyes adatokat ne posztold nyilvános segítségkérésben. Egy előre rendezett információs lap nem akadályozza meg a változást, de csökkentheti azt az időt, amelyet a megfelelő üzenet vagy kapcsolattartási pont keresésére fordítasz egy váratlan helyzetben."
+        ]
+      },
+      {
+        "heading": "Tarts egyetlen aktuális idővonalat",
+        "paragraphs": [
+          "Amikor új értesítés érkezik, mentsd el a tényleges üzenetet és az idejét, majd hasonlítsd össze a korábbi foglalási adatokkal. A közös tervben legyen látható, melyik változat az aktuálisan visszaigazolt, és melyik még csak felajánlott vagy tisztázandó lehetőség. Képzeletbeli esetben egy módosított indulásról szóló üzenet után az útitárs még a régi képernyőképet használja. Ezt nem több üzenettel, hanem egy kijelölt aktuális összesítéssel érdemes kezelni. Ha két forrás eltérő adatot mutat, ne válassz automatikusan a kényelmesebb változatból. Kérj pontosítást az érintett szolgáltatótól vagy foglalási csatornától. A bizonytalanságot addig név szerint jelöld, amíg a konkrét útvonalra nem kapsz egyértelmű választ."
+        ]
+      },
+      {
+        "heading": "Kövesd végig a kapcsolódó foglalásokat",
+        "paragraphs": [
+          "A repülési idő változása a transzfert, szállásbejutást, közös találkozót vagy következő napot is érintheti. Nézd végig ezeket egyenként, és csak a ténylegesen érintett féllel egyeztess. A változtatási, visszatérítési vagy egyéb lehetőségekről a konkrét helyzethez tartozó hivatalos tájékoztatást keresd; ez a rendszerezési módszer nem ad általános jogosultsági ígéretet. Minden egyeztetés után frissítsd, mi rendezett és mi nyitott. A társaknak röviden a következő szükséges lépést mondd el, ne a teljes üzenetláncot küldd tovább magyarázat nélkül. Amikor a terv rendeződött, őrizd meg a releváns visszaigazolásokat. A cél egy követhető történet: mi változott, honnan tudod, és mely kapcsolódó feladatokat intéztétek már el."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Organise information before a flight changes",
+    "excerpt": "Flight changes are easier to follow when you already know which organisation provides which information.",
+    "sections": [
+      {
+        "heading": "Understand the information route when booking",
+        "paragraphs": [
+          "Flight changes are easier to follow when you already know which organisation provides which information. Record the airline, booking channel, and official way to access your reservation. Do not confuse these with a general schedule search. An intermediary and a service provider can have different roles, so clarify actual contact options for your booking. Check that your contact details are accurate. Never publish booking references or personal information when asking publicly for help. A prepared information sheet cannot prevent changes, but it can reduce time spent looking for the right message or contact point during an unexpected situation. Keep it short enough to find the essential information quickly."
+        ]
+      },
+      {
+        "heading": "Maintain one current timeline",
+        "paragraphs": [
+          "When a new notice arrives, save the actual message and its time, then compare it with the previous booking details. In the shared plan, distinguish the currently confirmed version from an offered option or something still requiring clarification. Imagine a changed departure notice arriving while a companion continues using an old screenshot. One designated current summary is more useful than simply sending more messages. If two sources show different details, do not automatically select the more convenient version. Ask the affected provider or booking channel to clarify. Name the uncertainty explicitly until you receive a clear answer for the particular itinerary. A visible unresolved point is preferable to an apparently settled but unverified assumption."
+        ]
+      },
+      {
+        "heading": "Follow the connected arrangements",
+        "paragraphs": [
+          "A changed flight time can affect a transfer, accommodation access, meeting, or the following day. Review these individually and contact the parties actually affected. For changes, refunds, or other options, seek official information relevant to the particular situation; this organising method offers no general promise about entitlements. After each conversation, update what is resolved and what remains open. Tell companions the next required action briefly instead of forwarding an unexplained chain of messages. When the plan is settled, retain the relevant confirmations. The objective is an understandable record of what changed, how you know, and which related tasks have been completed. That keeps the practical response focused even when information arrives in several stages."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

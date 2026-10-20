@@ -1,0 +1,70 @@
+{
+  "slug": "szigetvalasztas-kozlekedes",
+  "category": "beach",
+  "image": "/assets/santorini.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Szigetválasztás a közlekedés felől",
+    "excerpt": "Szigetválasztáskor az érkezési ponttól a tervezett bázisig vezető út legalább olyan fontos lehet, mint a fényképeken látható táj.",
+    "sections": [
+      {
+        "heading": "Az érkezés utolsó szakasza",
+        "paragraphs": [
+          "Szigetválasztáskor az érkezési ponttól a tervezett bázisig vezető út legalább olyan fontos lehet, mint a fényképeken látható táj. Először rajzold fel, hogyan jutnál a szigetre, hol érkeznél meg, és onnan hogyan mennél a szállásra. A fő közlekedési jegy még nem azonos a teljes eljutással. Ha több szakasz külön szolgáltatóhoz tartozik, a kapcsolatukat külön vizsgáld meg. A választás célja olyan sziget és bázis párosítása, amelynél a mindennapi mozgás is illeszkedik az utazási terveidhez."
+        ]
+      },
+      {
+        "heading": "A napi tevékenységek térképe",
+        "paragraphs": [
+          "A szállás helyét a kívánt tevékenységek térképén értékeld. Milyen gyakran mennél partra, településre, kikötőbe vagy kirándulásra? Ha ezek egymástól távol helyezkednek el, a napi közlekedés nagyobb szerepet kap. Ne a sziget teljes méretéből következtess a használható útvonalakra. Az aktuális közlekedési lehetőségeket a megfelelő szolgáltatóknál ellenőrizd az utazásod dátumára. Egy szezonális útleírás vagy régi térkép nem bizonyítja, hogy ugyanaz a szolgáltatás a te tartózkodásod idején is azonos módon rendelkezésre áll."
+        ]
+      },
+      {
+        "heading": "Az egész tartózkodás közlekedése",
+        "paragraphs": [
+          "Képzeletbeli példánkban két sziget közül az elsőre egyszerűbben jutsz el, de a kiválasztott szállásod több napi utat kívánna. A másodikra hosszabb az odautazás, viszont a tervezett napok gyalogosan összefüggő környéken telnének. A döntéshez ne csak az első napot nézd. Add össze a tartózkodás alatt várható átmeneteket, és mérlegeld a szervezési terhet is. Az eredmény attól függ, mennyi időt töltesz ott és mit szeretnél csinálni, ezért ugyanaz a választás különböző utazóknak más értéket adhat."
+        ]
+      },
+      {
+        "heading": "A visszaút ugyanolyan fontos",
+        "paragraphs": [
+          "A hazafelé vezető láncot a foglalás előtt ugyanolyan részletesen rajzold fel, mint az érkezést. Ha több külön kapcsolatot használsz, vizsgáld meg az időbeli függéseket és a lehetséges változásokat. A tartalékot a saját útvonaladhoz igazítsd, ne egy általános szigeti szabályból vedd át. A végső jegyzetben szerepeljen a beérkezési pont, a bázis, a napi közlekedés módja és a visszatérés terve. Így a sziget nem elszigetelt álomkép marad, hanem olyan utazási helyzet, amelynek az összekötő lépéseit is érted."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Choose an island through its transport needs",
+    "excerpt": "When choosing an island, the route from arrival point to your intended base may matter as much as the scenery in photographs.",
+    "sections": [
+      {
+        "heading": "The final part of arrival",
+        "paragraphs": [
+          "When choosing an island, the route from arrival point to your intended base may matter as much as the scenery in photographs. First map how you would reach the island, where you would arrive and how you would continue to the accommodation. The main ticket is not the whole journey. Where separate operators provide different stages, examine how those stages connect. The goal is to pair an island with a base whose everyday transport needs also fit your intended holiday."
+        ]
+      },
+      {
+        "heading": "Map everyday activities",
+        "paragraphs": [
+          "Evaluate the accommodation on a map of your activities. How often would you travel to beaches, towns, the port or excursions? When these are spread apart, daily transport becomes more important. Do not infer usable routes from the island's overall size. Check current services with the relevant operators for your travel dates. An old map or a seasonal travel account does not establish that the same service will operate in the same way during your own stay."
+        ]
+      },
+      {
+        "heading": "Transport across the whole stay",
+        "paragraphs": [
+          "In a hypothetical comparison, the first island is easier to reach but your selected accommodation would require several journeys each day. Reaching the second takes longer, yet the activities you want sit within one connected walkable area. Do not assess only the arrival day. Add the transitions expected over the entire stay and consider the organising effort too. The outcome depends on how long you remain and what you want to do. The same option can therefore offer quite different value to travellers with different routines."
+        ]
+      },
+      {
+        "heading": "The return matters equally",
+        "paragraphs": [
+          "Before booking, map the homeward chain as carefully as the arrival. If it includes separate connections, examine timing dependencies and possible changes. Match your margin to that particular route instead of adopting a universal island-travel rule. The final note should identify the arrival point, base, everyday transport approach and return plan. The island then becomes more than an appealing image: it becomes a travel situation whose connecting steps you understand and can assess before committing to the stay."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

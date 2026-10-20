@@ -1,0 +1,58 @@
+{
+  "slug": "kulon-jegyes-utvonal",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Külön jegyekből álló útvonal mérlegelése",
+    "excerpt": "Ha egy út több külön foglalásból áll, ne kezeld automatikusan egyetlen összefüggő szolgáltatásként.",
+    "sections": [
+      {
+        "heading": "Rajzold meg a foglalások határait",
+        "paragraphs": [
+          "Ha egy út több külön foglalásból áll, ne kezeld automatikusan egyetlen összefüggő szolgáltatásként. Írd egymás alá az egyes szakaszokat, a foglalási azonosítókat, az értékesítőket és az érintett szolgáltatókat. Az azonosítókat csak a saját, megfelelően kezelt dokumentumodban tartsd. Minden határnál vizsgáld meg, milyen feladat kerül hozzád: poggyász átvétele, új jelentkezés, másik indulási pont vagy külön helyi eljutás. A tényleges teendőket a szolgáltatóktól tisztázd, ne általános internetes tanácsból vezesd le. Az útvonalrajz célja az, hogy lásd, hol szakad meg az egyik megállapodás és kezdődik a következő. Ettől még nem minősíted a konstrukciót, csak láthatóvá teszed a saját szervezési felelősségedet."
+        ]
+      },
+      {
+        "heading": "Az egymásra épülő lépéseket külön értékeld",
+        "paragraphs": [
+          "Nézd meg, melyik későbbi szakasz függ az előző pontos teljesülésétől. Képzeletbeli útvonalban az első repülés után egy másik foglalású járat következik, majd egy időponthoz kötött szállásbejutás. Három külön feladatot kell összehangolni, és egy változás további egyeztetést indíthat el. Nem szükséges előre minden lehetséges eseményt megjósolni, de legyen világos, kitől kérsz információt és milyen lehetőséget vizsgálsz, ha a terv módosul. A költségtáblában a plusz eljutás és a szükséges várakozás is jelenjen meg. Egy alacsonyabb jegyösszeg önmagában nem mutatja meg a teljes konstrukció értékét. A saját időd és a vállalható szervezési teher ugyanúgy része az összehasonlításnak."
+        ]
+      },
+      {
+        "heading": "A tartalékterv legyen konkrét és vállalható",
+        "paragraphs": [
+          "Mielőtt külön jegyekből álló út mellett döntesz, gondold át, milyen változást tudnál ténylegesen kezelni. Lehetséges-e későbbi érkezés, van-e mozgástér a következő programban, és mekkora külön kiadás férne bele, ha szükség lenne rá? Ez személyes tervezési próba, nem ígéret arra, hogy bármely szolgáltató milyen segítséget nyújt. A konkrét foglalás változtatási és egyéb feltételeit közvetlenül ellenőrizd. Ha a tartalék csak olyan megoldásból áll, amelyet sem időben, sem költségben nem tudsz vállalni, az út a saját helyzetedhez túl szoros lehet. Hasonlítsd össze egyszerűbb útvonallal is. A tudatos választás alapja az, hogy a kapcsolódási pontokat és a fennmaradó bizonytalanságot is beleérted a teljes utazásba."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Assess a journey booked on separate tickets",
+    "excerpt": "When a journey consists of separate bookings, do not automatically treat it as one continuous service.",
+    "sections": [
+      {
+        "heading": "Draw the boundaries between bookings",
+        "paragraphs": [
+          "When a journey consists of separate bookings, do not automatically treat it as one continuous service. List each segment, booking reference, seller, and provider. Keep references only in your own appropriately managed document. At every boundary, examine tasks that may fall to you: collecting baggage, checking in again, reaching another departure point, or arranging separate local transport. Clarify actual requirements with the providers rather than deriving them from generic online advice. The route diagram should reveal where one arrangement ends and another begins. You are not yet judging the itinerary; you are making your own coordination responsibilities visible so the complete journey can be assessed accurately."
+        ]
+      },
+      {
+        "heading": "Evaluate dependent steps separately",
+        "paragraphs": [
+          "Identify later segments that depend on earlier ones working as planned. Imagine an itinerary with one flight, a separately booked onward flight, and accommodation with a particular arrival arrangement. Three distinct tasks need coordination, and a change can trigger further conversations. You need not predict every possible event, but know whom you would ask for information and what alternatives you would examine. Include additional transport and necessary waiting in the cost and time comparison. A smaller sum of ticket prices does not explain the value of the whole construction. Your time and the amount of organisation you can accept belong in the comparison alongside the money you expect to spend."
+        ]
+      },
+      {
+        "heading": "Make the backup specific and affordable",
+        "paragraphs": [
+          "Before choosing separate tickets, consider what changes you could actually manage. Could you arrive later, is the next activity flexible, and how much additional spending could you handle if necessary? This is a personal planning exercise, not a promise about assistance from any provider. Check the particular booking’s change and other conditions directly. If the backup consists only of something impossible for your available time or budget, the itinerary may be too tightly connected for your circumstances. Compare a simpler route as well. An informed choice includes the joining points and remaining uncertainty as part of the journey, rather than treating them as details to solve after buying the tickets."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

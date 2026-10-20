@@ -1,0 +1,58 @@
+{
+  "slug": "foglalasi-informaciok-rendje",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Foglalási információk egy helyen",
+    "excerpt": "A foglalási információk közös helye lehet egy rövid áttekintő oldal, amely az eredeti dokumentumokhoz vezet. Nem szükséges minden visszaigazolást és feltételt egyetlen hosszú szövegbe másolni.",
+    "sections": [
+      {
+        "heading": "Egy kezdőpont legyen, ne minden egy fájlban",
+        "paragraphs": [
+          "A foglalási információk közös helye lehet egy rövid áttekintő oldal, amely az eredeti dokumentumokhoz vezet. Nem szükséges minden visszaigazolást és feltételt egyetlen hosszú szövegbe másolni. A kezdőpont mutassa meg, melyik szolgáltatáshoz mi tartozik, mi a következő teendő, és hol található a hitelesebb eredeti anyag. A címeket az utazó szemszögéből írd: például az érkezési szállás vagy a hazautazás első szakasza könnyebben felismerhető lehet, mint egy önmagában álló azonosító. Az azonosítót ettől még őrizd meg a megfelelő helyen, de ne az legyen az egyetlen navigációs segítséged."
+        ]
+      },
+      {
+        "heading": "Rendezd állapot és szolgáltatás szerint",
+        "paragraphs": [
+          "Minden foglalásnál különüljön el a jelenlegi visszaigazolás, a korábbi változat és a saját teendőlista. Ha módosítás érkezik, a régi dokumentumot ne hagyd ugyanúgy a lista elején. Jelöld egyértelműen, melyik az aktuális változat, és röviden írd le a változás lényegét. A saját összefoglalóban szereplő időpontot ellenőrizd az eredeti anyaggal, különösen akkor, ha több szolgáltatás kapcsolódik egymáshoz. A különálló foglalásokat ne kezeld egyetlen vállalásként pusztán azért, mert ugyanabban a mappában vannak. A közös tárolási hely szervezési kapcsolatot hoz létre, nem változtatja meg a szolgáltatók tényleges feltételeit vagy felelősségét."
+        ]
+      },
+      {
+        "heading": "Próbálj megválaszolni három kérdést",
+        "paragraphs": [
+          "Képzeletbeli indulás előtti próbán kérdezd meg: hol kell lennem a következő szakasznál, mit kell ott bemutatnom, és kit kereshetek, ha egy részlet nem világos? A válaszokhoz néhány lépésben el kell jutnod az áttekintő oldalról. Ha hosszú levelezést kell végigolvasni, készíts rövid saját jegyzetet az eredeti forráshoz kapcsolva. A társaidnak csak a számukra szükséges dokumentumokat és hozzáférést add meg. Ne tedd nyilvánossá az egész gyűjteményt a könnyebb megosztás kedvéért. Hazatéréskor válaszd külön a későbbi elszámoláshoz szükséges adatokat és a már felesleges másolatokat. A rendezett rendszer így az út után sem marad ellenőrizetlenül gyarapodó, érzékeny adatokat tartalmazó irattár."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Keep booking information in one place",
+    "excerpt": "A central place for booking information can be a short overview linking to original documents. You do not need to copy every confirmation and condition into a single long text.",
+    "sections": [
+      {
+        "heading": "Use one starting point, not one enormous file",
+        "paragraphs": [
+          "A central place for booking information can be a short overview linking to original documents. You do not need to copy every confirmation and condition into a single long text. The starting page should show what belongs to each service, the next action and where the stronger original evidence can be found. Name entries from the traveller's perspective: arrival accommodation or the first return stage may be easier to recognise than an isolated reference number. Keep the identifier where it belongs, but do not rely on it as the only way to navigate an unfamiliar collection during the trip."
+        ]
+      },
+      {
+        "heading": "Organise by service and status",
+        "paragraphs": [
+          "For every booking, distinguish the current confirmation, earlier versions and your own task list. When a change arrives, do not leave the old document equally prominent. Mark which version is current and briefly describe the change. Check times copied into your own summary against the original material, especially where services connect. Do not treat separate bookings as one combined commitment merely because their documents share a folder. A common storage location creates an organising connection; it does not alter the providers' actual conditions or responsibilities. Keeping that boundary visible prevents a convenient filing system from becoming a misleading account of the arrangement."
+        ]
+      },
+      {
+        "heading": "Rehearse three questions",
+        "paragraphs": [
+          "Before an imaginary departure, ask where you need to be for the next stage, what you must present and whom you can contact if a detail is unclear. The overview should lead to those answers in a few steps. If it requires reading a long message chain, add a short note connected to the original source. Give companions only the documents and access they need. Do not make the entire collection public merely to simplify sharing. Afterwards, separate records needed for later reconciliation from unnecessary copies. The organised system should not become an unchecked and permanently growing archive of sensitive information once its immediate purpose is finished."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

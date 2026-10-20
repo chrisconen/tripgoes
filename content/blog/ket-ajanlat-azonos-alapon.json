@@ -1,0 +1,58 @@
+{
+  "slug": "ket-ajanlat-azonos-alapon",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Két utazási ajánlat azonos alapon",
+    "excerpt": "Két ajánlatot először alakíts ugyanarra az utazási igényre.",
+    "sections": [
+      {
+        "heading": "Készíts közös összehasonlítási alapot",
+        "paragraphs": [
+          "Két ajánlatot először alakíts ugyanarra az utazási igényre. Rögzítsd az utasok számát, a dátumot, az éjszakákat, a szobabeosztást és azt az ellátást, amelyet ténylegesen szeretnél használni. Ezek mellé kerüljön a szükséges poggyász, a helyi eljutás és a számodra fontos foglalási feltétel. Ne kezdd az értékelést azzal, hogy melyik kiemelt összeg kisebb. Ha az egyik ajánlat más tartalmat mutat, előbb jelöld meg az eltérést. A közös alap nem azt jelenti, hogy minden szolgáltatásnak egyformának kell lennie, hanem azt, hogy pontosan lásd, mely különbségért fizetsz vagy miről mondasz le. A hiányzó mező maradjon láthatóan tisztázandó, ne legyen üresen hagyott nulla."
+        ]
+      },
+      {
+        "heading": "Válaszd külön az összeget és az időt",
+        "paragraphs": [
+          "Szemléltető példában az A ajánlat száz egység, a B százöt egység. Az A változathoz még tíz egységnyi, számodra szükséges eljutást kell hozzáadni, a B ezt már tartalmazza. A kitalált számok alapján a teljes összegek sorrendje megfordul. De a döntés még ekkor sem automatikus: lehet, hogy az egyik út kényelmesebb érkezést vagy több használható időt ad. Az időt ne rejtsd el egy önkényes pénzösszegben, ha nem szeretnéd így értékelni. Legyen külön sor a helyi érkezésnek, a hazatérésnek és az út közbeni várakozásnak. Így felismerheted, hogy valójában alacsonyabb kiadás és kedvezőbb napirend között választasz, nem két azonos út között."
+        ]
+      },
+      {
+        "heading": "A végső eltéréseket fogalmazd meg mondatokban",
+        "paragraphs": [
+          "A táblázat után írj mindkét ajánlathoz egy rövid mondatot: ez akkor jobb nekem, ha melyik szempontot tartom fontosabbnak. Például az egyik a szűkebb kerethez, a másik a késő esti eljutás kerüléséhez illik jobban. Ha nem tudod megfogalmazni a különbséget, lehet, hogy még hiányzik egy adat, vagy túl sok lényegtelen mezőt gyűjtöttél. Foglalás előtt frissítsd ugyanabban a keresési körben a két fennmaradt változatot. A korábban mentett ár nem feltétlenül az aktuálisan választható tartalomra vonatkozik. Őrizd meg a döntéskor látott összesítést és a választás személyes indokát. Ettől az összehasonlítás később is érthető marad, nem pusztán két szám emléke lesz."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Compare two travel offers on equal terms",
+    "excerpt": "First adapt both offers to the same travel requirement.",
+    "sections": [
+      {
+        "heading": "Create a common comparison basis",
+        "paragraphs": [
+          "First adapt both offers to the same travel requirement. Fix the number of travellers, dates, nights, room arrangement, and meals you actually intend to use. Add necessary baggage, local transport, and booking conditions that matter to you. Do not begin by deciding which headline amount is smaller. If one offer describes a different product, mark that difference first. A common basis does not require every service to be identical. It lets you see precisely which differences you would pay for or give up. Keep missing fields visibly unresolved instead of allowing a blank space to function as a zero. Otherwise the less detailed offer can look artificially attractive."
+        ]
+      },
+      {
+        "heading": "Separate money from time",
+        "paragraphs": [
+          "In an illustrative example, offer A costs one hundred units and offer B costs one hundred and five. A needs an additional ten units for transport that you require, while B already includes it. These invented figures reverse the order of the complete prices. Yet the choice is still not automatic: one journey may offer a more convenient arrival or more usable time. You do not have to hide time inside an arbitrary monetary value if that is not how you prefer to evaluate it. Give arrival, return, and waiting their own rows. You can then recognise a choice between lower spending and a better daily rhythm rather than pretending the trips are identical."
+        ]
+      },
+      {
+        "heading": "Describe the remaining differences in sentences",
+        "paragraphs": [
+          "After completing the table, write one sentence for each offer explaining when it would suit you better. One may fit a tighter budget; the other may help avoid a difficult late arrival. If you cannot describe the difference clearly, information may still be missing or the table may contain too many irrelevant fields. Before booking, refresh both remaining options during the same research session. An old saved amount may not refer to the version currently available. Preserve the final summary and your personal reason for choosing. The comparison will then remain understandable later instead of becoming a vague memory of two numbers and a feeling that one looked cheaper."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

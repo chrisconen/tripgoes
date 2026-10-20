@@ -1,0 +1,58 @@
+{
+  "slug": "ai-utazasterv-ellenorzese",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "AI-utazásterv ellenőrzése lépésenként",
+    "excerpt": "Egy AI által készített útiterv jó kiindulópont lehet ötletek rendezéséhez, de a gördülékeny szöveg nem bizonyítja a részletek helyességét. Először bontsd szét a tervet: helyszínekre, dátumokra, nyitvatartásokra, közlekedési szakaszokra, költségekre és a személyes igényeidre vonatkozó feltételezésekre.",
+    "sections": [
+      {
+        "heading": "A szöveget bontsd ellenőrizhető állításokra",
+        "paragraphs": [
+          "Egy AI által készített útiterv jó kiindulópont lehet ötletek rendezéséhez, de a gördülékeny szöveg nem bizonyítja a részletek helyességét. Először bontsd szét a tervet: helyszínekre, dátumokra, nyitvatartásokra, közlekedési szakaszokra, költségekre és a személyes igényeidre vonatkozó feltételezésekre. Minden elem mellé írd oda, hogy ötlet, ellenőrizendő állítás vagy már megerősített adat. Az AI által adott forráshivatkozást is meg kell nyitni és tartalmilag ellenőrizni; a hivatkozás jelenléte önmagában nem igazol semmit. A saját keresési célodat is tartsd szem előtt, mert egy részletes terv akkor sem jó neked, ha olyan napirendet követ, amelyet valójában nem szeretnél."
+        ]
+      },
+      {
+        "heading": "Először a függőségeket vizsgáld",
+        "paragraphs": [
+          "A legsürgősebb ellenőrzés azoknál az elemeknél van, amelyekre a többi program épül. Ilyen lehet az érkezési hely, egy kötött belépés vagy a hazautazáshoz szükséges csatlakozás. A változó működési adatokat az érintett szolgáltató vagy helyszín aktuális elsődleges forrásából ellenőrizd, a dátumot is figyelve. A közlekedési szakaszokat ne csak külön-külön nézd: hagy-e a terv időt a két esemény között a tényleges átmenetre? A hiányzó adatot ne töltsd ki automatikusan optimista becsléssel. Ha egy alapfeltevés nem igazolható, állítsd meg az arra épülő rész tervezését, és keress egyszerűbb vagy jobban dokumentált változatot."
+        ]
+      },
+      {
+        "heading": "Készíts bizonyíthatóan szerényebb végleges tervet",
+        "paragraphs": [
+          "Képzeletbeli AI-terv egyetlen napra több távoli helyszínt javasol, mindegyikhez magabiztos időponttal. Az ellenőrzés után választhatsz egy fő programot és egy közeli, rugalmas kiegészítést, a többit pedig későbbi ötletként őrizheted meg. A végleges változatban legyen látható, melyik adatot mikor és honnan ellenőrizted, és hol maradt bizonytalanság. Az AI-tól kérhetsz rendezést vagy új megfogalmazást, de ne ezzel helyettesítsd a hiányzó bizonyítékot. Egy saját bevitelből számolt pontszám sem teszi hitelessé az alapadatot. A használható eredmény kevesebb állítást is tartalmazhat, ha azok összefüggnek, a fontos feltételek tisztázottak, és a terv végrehajtása a saját idődbe, keretedbe és igényeidbe ténylegesen belefér."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Check an AI-generated itinerary step by step",
+    "excerpt": "An AI-generated itinerary can help organise ideas, but fluent writing does not establish the accuracy of its details. Break the plan into places, dates, opening arrangements, transport stages, costs and assumptions about your preferences.",
+    "sections": [
+      {
+        "heading": "Split the text into checkable claims",
+        "paragraphs": [
+          "An AI-generated itinerary can help organise ideas, but fluent writing does not establish the accuracy of its details. Break the plan into places, dates, opening arrangements, transport stages, costs and assumptions about your preferences. Mark each as an idea, a claim requiring verification or information already confirmed. Open and inspect any source link supplied by the AI; the existence of a citation is not evidence by itself. Keep your own purpose visible too. A detailed plan is still unsuitable if it follows a daily routine you do not actually want, even when some individual details happen to be correct."
+        ]
+      },
+      {
+        "heading": "Check the dependencies first",
+        "paragraphs": [
+          "Prioritise elements on which the rest of the plan depends. These could include the arrival location, a fixed admission or a connection required for the journey home. Verify changing operational information through the provider's or site's current primary source, paying attention to dates. Assess transport stages together, not only individually: does the itinerary allow for the actual transition between successive events? Do not fill gaps automatically with optimistic estimates. If a foundational assumption cannot be established, stop developing the part that relies on it and seek a simpler or better-documented alternative before adding more detail to the itinerary."
+        ]
+      },
+      {
+        "heading": "Produce a more modest, traceable final plan",
+        "paragraphs": [
+          "Imagine an AI suggesting several distant places in one day, each with a confident timetable. After checking, you might keep one main activity and a nearby flexible addition, saving the rest as future ideas. The final version should show when and where important details were checked and where uncertainty remains. AI can help organise or rewrite information, but that does not replace missing evidence. A score calculated from your own entries does not authenticate those entries either. The useful outcome may contain fewer claims, provided they fit together, important conditions are established and the journey genuinely fits your available time, allowance and preferences. Traceable limits are more valuable than a comprehensive-looking schedule whose critical assumptions remain untested."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

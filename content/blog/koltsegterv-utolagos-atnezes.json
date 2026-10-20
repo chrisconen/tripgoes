@@ -1,0 +1,58 @@
+{
+  "slug": "koltsegterv-utolagos-atnezes",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Költségterv utólagos áttekintése",
+    "excerpt": "A hazatérés utáni költségáttekintés célja, hogy a következő terv pontosabb legyen. Kezdd a tervezett és a tényleges összeg összehasonlításával, de ne tekints minden eltérést kudarcnak.",
+    "sections": [
+      {
+        "heading": "Az eltérés önmagában nem hiba",
+        "paragraphs": [
+          "A hazatérés utáni költségáttekintés célja, hogy a következő terv pontosabb legyen. Kezdd a tervezett és a tényleges összeg összehasonlításával, de ne tekints minden eltérést kudarcnak. Lehet, hogy tudatosan választottál új programot, elhagytál egy korábbi ötletet, vagy egy bizonytalan részlet végül másként alakult. A szám mellé ezért rövid okot is írj. Az összeg azt mutatja meg, mekkora volt a változás; a magyarázat mutatja meg, hogyan érdemes legközelebb tervezni. A kettő együtt hasznosabb, mint egyetlen végösszeg vagy egy olyan értékelés, amely csak azt kérdezi, sikerült-e az eredeti kereten belül maradni."
+        ]
+      },
+      {
+        "heading": "Háromféle okot keress",
+        "paragraphs": [
+          "Jelöld külön a tervezési hiányt, a körülmények változását és a szándékos döntést. A kihagyott szükséges transzfer tervezési hiány lehet. Egy megváltozott utazási részlet más körülményt jelent. Egy külön kiválasztott élmény pedig tudatos döntésként kerülhet a naplóba. Ezek csak értelmezési kategóriák: a saját tételeidnél írd le a valódi helyzetet. Közben nézd meg azt is, melyik becslés volt kellően pontos, mert azt a módszert érdemes megtartani. Ne csak a problémás sorokat vizsgáld. Egy jól működő költségfelosztás vagy következetes közös elszámolás ugyanúgy használható tanulságot ad, mint egy elfelejtett költség."
+        ]
+      },
+      {
+        "heading": "Három módosítást vigyél tovább",
+        "paragraphs": [
+          "Képzeletbeli utazás után kiderülhet, hogy a szállás tervezése pontos volt, a napi közlekedés kimaradt részben, az egyik drágább programot viszont mindenki értékesnek tartotta. A következő tervben ezért ne csökkents minden kategóriát egyformán. Adj külön sort a közlekedésnek, tartsd meg a szállás becslési módját, és hagyj tudatos keretet a fontos élményre. Válassz legfeljebb három ilyen változtatást, hogy a tanulságok valóban használhatóak maradjanak. Az adatokat az utazás dátumával és a résztvevők számával együtt őrizd meg; később ezek nélkül félrevezető lehet az összehasonlítás. A múltbeli kiadás nem mai ajánlat, hanem saját tapasztalati adat egy következő döntés előkészítéséhez."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Review your travel budget after the trip",
+    "excerpt": "A budget review after returning home should improve the next plan. Start by comparing planned and actual totals, but do not treat every difference as a failure.",
+    "sections": [
+      {
+        "heading": "A difference is not automatically a mistake",
+        "paragraphs": [
+          "A budget review after returning home should improve the next plan. Start by comparing planned and actual totals, but do not treat every difference as a failure. You may have consciously added an activity, dropped an earlier idea or resolved an uncertain arrangement differently. Put a brief reason beside each meaningful change. The amount shows its size; the explanation shows how future planning could improve. Together they are more useful than a single final total or an assessment concerned only with whether you stayed within the original allowance. The review should explain decisions, not merely grade the result."
+        ]
+      },
+      {
+        "heading": "Look for three kinds of cause",
+        "paragraphs": [
+          "Distinguish missing planning information, changed circumstances and deliberate choices. A necessary transfer that was omitted could be a planning gap. An altered travel arrangement represents a change in circumstances. A specially chosen experience can be recorded as an intentional decision. These are interpretation categories, so describe what actually happened in your own entries. Also identify estimates that were sufficiently accurate, because their method may be worth keeping. Do not examine only the troublesome lines. A useful allocation or a consistent shared-expense process offers lessons just as an overlooked cost does, and preserving what worked avoids unnecessary reinvention on the next trip."
+        ]
+      },
+      {
+        "heading": "Carry forward three adjustments",
+        "paragraphs": [
+          "After an imaginary journey, you might find that accommodation estimates were sound, some everyday transport was omitted and everyone valued one more expensive activity. Do not respond by reducing every category equally. Add a separate transport line, retain the accommodation estimating method and consciously allow for a meaningful experience. Choose no more than three adjustments so the lessons remain usable. Keep the records with the travel dates and number of participants; comparisons can mislead when those details are missing. A past expense is not a current offer. It is personal historical information that can help frame the questions you need to answer before a future decision."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

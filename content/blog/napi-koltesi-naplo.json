@@ -1,0 +1,58 @@
+{
+  "slug": "napi-koltesi-naplo",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Egyszerű napi költési napló",
+    "excerpt": "A napi költési napló akkor marad használható, ha rövid idő alatt vezethető. Kezdetnek elég a dátum, az összeg, a pénznem és egy egyszerű kategória.",
+    "sections": [
+      {
+        "heading": "Csak négy adatot írj fel",
+        "paragraphs": [
+          "A napi költési napló akkor marad használható, ha rövid idő alatt vezethető. Kezdetnek elég a dátum, az összeg, a pénznem és egy egyszerű kategória. Ha más helyett is fizettél, adj hozzá egy külön megjegyzést, de ne alakíts minden tételből hosszú történetet. A napló célja, hogy lásd a még rendelkezésre álló keretet és a költés irányát. Nem kell minden vásárlást azonnal értékelned. Egy gyors esti rögzítés gyakran rendezettebb képet ad, mint a nap közbeni folyamatos ellenőrzés, feltéve, hogy a szükséges adatokat addig megőrzöd egy saját, elérhető formában."
+        ]
+      },
+      {
+        "heading": "Válaszd szét az eseményt és az elszámolást",
+        "paragraphs": [
+          "A vásárlás összege és a később megjelenő számlaterhelés eltérő információ lehet. Ha több pénznemet használsz, az eredeti összeget őrizd meg, az átváltott értéket pedig külön mezőben kezeld. Egy becsült átváltást ne tüntess fel végleges terhelésként. Hasonlóan külön jelöld az előre kifizetett tételt, hogy ne számold bele másodszor a helyszíni költésbe. A közös vacsora teljes kifizetése és a rád jutó rész sem ugyanaz. Ezzel a kis megkülönböztetéssel a napló alkalmas marad arra, hogy saját költséget számolj, miközben azt is látod, kinél van még rendezendő közös összeg."
+        ]
+      },
+      {
+        "heading": "Öt perc alatt nézd át a napot",
+        "paragraphs": [
+          "Képzeletbeli városlátogatáson az esti áttekintés három lépésből állhat: hiányzó tételek felírása, a kategóriák összesítése, majd a hátralévő napok keretének ellenőrzése. Ha egy nap drágább lett, előbb keresd meg az okot. Egy egyszeri belépő más változtatást kíván, mint a mindennap ismétlődő hosszabb transzfer. Csak ezután dönts arról, szükséges-e módosítani a következő napot. Ne alakíts a naplóból önvádlistát. Az adat arra való, hogy a még előtted álló döntéseket jobban lásd. Hazatéréskor mentsd el a kategóriaösszegeket és néhány rövid megfigyelést; ezekből a következő út terve könnyebben indul, mint egy rendezetlen bizonylathalomból."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Keep a simple daily spending log",
+    "excerpt": "A daily spending log remains useful when it takes little effort to maintain. Start with the date, amount, currency and a simple category.",
+    "sections": [
+      {
+        "heading": "Record only four basic fields",
+        "paragraphs": [
+          "A daily spending log remains useful when it takes little effort to maintain. Start with the date, amount, currency and a simple category. If you paid for somebody else, add a short note without turning every purchase into a long story. The aim is to see the remaining allowance and the direction of spending. You do not have to judge every purchase as it happens. A brief evening update can provide a clearer picture than constant checking throughout the day, provided you keep the details you will need in a form you can retrieve later."
+        ]
+      },
+      {
+        "heading": "Separate the event from settlement",
+        "paragraphs": [
+          "The amount at purchase and the charge appearing later in an account can be different pieces of information. If you use several currencies, preserve the original amount and put any converted value in a separate field. Do not label an estimated conversion as a final charge. Similarly, mark prepaid items so they are not counted again as new spending at the destination. Paying the whole restaurant bill is also different from paying your own share. These distinctions let the log describe your personal trip cost while still showing shared amounts that have not yet been settled between companions."
+        ]
+      },
+      {
+        "heading": "Review the day in five minutes",
+        "paragraphs": [
+          "On an imagined city break, an evening review could have three steps: add missing entries, total the categories and check the allowance for the remaining days. If a day cost more than expected, first identify the cause. A one-off admission fee calls for a different response from a long transfer repeated every day. Only then decide whether tomorrow's plan needs an adjustment. Avoid turning the log into a list of regrets. Its value is in clarifying the decisions still ahead of you. After returning home, save category totals and a few observations. Those will be easier to use for the next trip than an unsorted collection of receipts with no explanation."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

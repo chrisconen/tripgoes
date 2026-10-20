@@ -1,0 +1,58 @@
+{
+  "slug": "kozos-utazasi-dokumentum",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Közös utazási dokumentum egyértelmű felelősökkel",
+    "excerpt": "A közös utazási dokumentum akkor segít, ha világos belőle, mi az ötlet, mi az eldöntött részlet, és mi van már visszaigazolva. Ne keverd ezeket egyetlen folyamatos szövegbe.",
+    "sections": [
+      {
+        "heading": "A dokumentum állapotot mutasson",
+        "paragraphs": [
+          "A közös utazási dokumentum akkor segít, ha világos belőle, mi az ötlet, mi az eldöntött részlet, és mi van már visszaigazolva. Ne keverd ezeket egyetlen folyamatos szövegbe. Minden fontos elemhez tartozzon állapot, felelős és következő lépés. A felelős nem feltétlenül az, aki minden munkát elvégez; ő gondoskodik arról, hogy a kérdés ne maradjon észrevétlenül nyitva. A feladat legyen konkrét, például a szállás érkezési módjának tisztázása, ne általános felszólítás az utazás megszervezésére. Így a résztvevők tudják, miben segíthetnek, és nem ugyanazt a kutatást végzik el többször egymástól függetlenül."
+        ]
+      },
+      {
+        "heading": "A döntéshez írj rövid indokot",
+        "paragraphs": [
+          "Amikor valamit elfogadtok, jegyezzétek fel, miért azt választottátok és milyen feltételezésre épült. Elég néhány mondat. Ez megakadályozza, hogy egy később érkező ötlet az egész vitát újraindítsa anélkül, hogy bárki megértené a korábbi szempontokat. Az aktuális szolgáltatói forrás kapcsolódjon a döntéshez, de ne másoljátok át szükségtelenül az összes személyes foglalási adatot a közös térbe. A szerkesztési jogosultságok igazodjanak a feladathoz. A nyilvános hivatkozás kényelmesnek tűnhet, de nem minden utazási részlet való széles körbe. A dokumentum célja a közös szervezés, nem az, hogy minden résztvevő teljes személyes információkészletét egyetlen helyre gyűjtse."
+        ]
+      },
+      {
+        "heading": "Egy rövid változásnapló elég",
+        "paragraphs": [
+          "Képzeletbeli négyfős utazásnál egyikőtök a közlekedést, másikótok a szállást tisztázza. Ha változik az érkezés, ne csak az időpontot írjátok át. Jelöljétek, hogy a szállás érkezési egyeztetése is újraellenőrzést igényel, és rendeljétek hozzá a felelőst. A változásnaplóban elég a dátum, a módosult részlet és az érintett következő feladat. Indulás előtt mindenki nézze át a saját vállalását és a közös első napot. Az út alatt a dokumentum legyen röviden használható, a lezárt kutatási anyagokat tegyétek háttérbe. A jól működő közös felület nem a legtöbb bejegyzést tartalmazza, hanem azt teszi egyértelművé, hogy mi következik, ki intézi, és milyen információ alapján."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Share a travel document with clear owners",
+    "excerpt": "A shared travel document helps when readers can distinguish an idea, an agreed choice and a confirmed arrangement. Do not blend them into one continuous narrative.",
+    "sections": [
+      {
+        "heading": "Show the state of each arrangement",
+        "paragraphs": [
+          "A shared travel document helps when readers can distinguish an idea, an agreed choice and a confirmed arrangement. Do not blend them into one continuous narrative. Give each important item a status, owner and next action. The owner does not necessarily perform every task; they make sure the question does not remain unnoticed and unresolved. Make tasks concrete, such as checking accommodation arrival arrangements, rather than broadly asking somebody to organise the trip. Participants can then see where help is needed instead of independently repeating the same research while another important question receives no attention at all."
+        ]
+      },
+      {
+        "heading": "Record a short reason for decisions",
+        "paragraphs": [
+          "When you agree something, note why it was chosen and which assumption supported it. A few sentences are enough. This makes it less likely that a later idea restarts the entire discussion without anyone understanding the earlier criteria. Connect the relevant provider source with the decision, but avoid unnecessarily copying personal booking information into the shared space. Match editing access to the work involved. A public link may seem convenient, but not every travel detail belongs in a broad audience. The document exists to coordinate the trip, not to collect every participant's complete personal information in one location for convenience."
+        ]
+      },
+      {
+        "heading": "Keep a small change log",
+        "paragraphs": [
+          "Imagine four companions planning together, with one coordinating transport and another accommodation. If arrival changes, update more than the time. Mark that accommodation arrival arrangements need another check and assign that action. A change log only needs the date, changed detail and affected next task. Before departure, everyone reviews their own commitments and the shared first day. During travel, keep the useful view short and move completed research into the background. A successful shared document is not the one with the most entries. It makes the next step, its owner and the information behind it clear enough that the group can act without reconstructing the entire conversation."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

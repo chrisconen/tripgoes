@@ -1,0 +1,58 @@
+{
+  "slug": "foglalasi-reszletek-naploja",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Foglalási részletek és befizetések naplója",
+    "excerpt": "A foglalási napló ne csak azt tartalmazza, hogy valamit kiválasztottál. Különítsd el az érdeklődés, a visszaigazolt foglalás, a részleges fizetés és a lezárt fizetés állapotát.",
+    "sections": [
+      {
+        "heading": "A foglalásnak több állapota van",
+        "paragraphs": [
+          "A foglalási napló ne csak azt tartalmazza, hogy valamit kiválasztottál. Különítsd el az érdeklődés, a visszaigazolt foglalás, a részleges fizetés és a lezárt fizetés állapotát. A pontos elnevezésnél fontosabb, hogy minden bejegyzésből egyértelmű legyen, mi történt már meg és mi van még hátra. Írd fel a szolgáltató nevét, a foglalás azonosításához szükséges adatot, az utazási dátumot és a következő feladatot. Ne tárolj több érzékeny adatot, mint amennyire a saját szervezésedhez szükséged van. A napló feladata az áttekintés; az eredeti visszaigazolást és feltételeket ettől külön, rendezett helyen őrizd meg."
+        ]
+      },
+      {
+        "heading": "Külön mezőbe kerüljön a vállalás és a fizetés",
+        "paragraphs": [
+          "A teljes vállalt összeg, a már kifizetett rész és a még esedékes összeg legyen külön adat. Jegyezd fel a pénznemet és a fizetés határidejét is, ha van ilyen. Egy elküldött fizetési műveletet ne minősíts automatikusan szolgáltató által visszaigazolt rendezésnek: a saját feljegyzés és a másik fél igazolása külön bizonyíték. Ha változik a foglalás, ne egyszerűen töröld a korábbi összeget. Röviden jelöld, mi változott, mikor és milyen forrás alapján. Ez később segít megérteni, miért tér el a jelenlegi terv az eredeti költségbecsléstől, anélkül, hogy emlékezetből kellene visszaépíteni az egész történetet."
+        ]
+      },
+      {
+        "heading": "Hetente csak a nyitott feladatokat nézd",
+        "paragraphs": [
+          "Képzeletbeli többállomásos útnál lehet teljesen kifizetett szállás, később esedékes foglalási részlet és még csak kiszemelt transzfer. Egyetlen lista akkor hasznos, ha ezek állapot szerint rendezhetők. A rendszeres áttekintéskor a következő határidőt, a hiányzó visszaigazolást és a még nem tisztázott összeget keresd. A lezárt sorokat nem kell minden alkalommal újraolvasni. Indulás előtt végezz egy teljes ellenőrzést, majd legyen elérhető a szükséges információ az utazás során is. Hazatéréskor zárd le a még nyitott tételeket, és jelöld, mely összegek véglegesek. Így a napló nem puszta emlékeztető lesz, hanem követhető kapcsolat a döntés, a foglalás és a tényleges kifizetés között."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Track booking details and payments",
+    "excerpt": "A booking log should record more than the fact that you selected something. Distinguish an enquiry, a confirmed reservation, partial payment and completed payment.",
+    "sections": [
+      {
+        "heading": "A booking has several states",
+        "paragraphs": [
+          "A booking log should record more than the fact that you selected something. Distinguish an enquiry, a confirmed reservation, partial payment and completed payment. The precise labels matter less than making it clear what has happened and what remains outstanding. Record the provider, the information needed to identify the booking, travel dates and the next action. Avoid storing more sensitive information than your organising process requires. The log provides an overview; preserve original confirmations and conditions separately in an orderly location. A summary is useful for navigation, but it should not replace the documents on which the arrangement depends."
+        ]
+      },
+      {
+        "heading": "Separate commitments from payments",
+        "paragraphs": [
+          "Keep the total committed amount, amount already paid and remaining balance in different fields. Include currency and any payment deadline. Do not automatically treat a payment you initiated as settlement acknowledged by the provider: your own record and the other party's confirmation are separate evidence. When a booking changes, avoid simply deleting the previous amount. Note what changed, when and according to which source. This makes it possible to understand why the present plan differs from the initial estimate without reconstructing the whole sequence from memory or searching through several unrelated messages months after the decision was made."
+        ]
+      },
+      {
+        "heading": "Review the outstanding actions",
+        "paragraphs": [
+          "An imagined multi-stop journey might include fully paid accommodation, a reservation balance due later and a transfer that is still only under consideration. One list helps when it can be organised by status. During a regular review, look for the next deadline, a missing confirmation and amounts that remain unclear. Completed entries do not need to be reread every time. Before departure, make one complete check and ensure essential information remains accessible while travelling. After returning, close outstanding items and mark final amounts. The result connects the original decision, the confirmed arrangement and the actual payment in a sequence you can follow rather than merely reminding you that something was booked."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

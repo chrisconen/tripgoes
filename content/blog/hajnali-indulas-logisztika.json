@@ -1,0 +1,58 @@
+{
+  "slug": "hajnali-indulas-logisztika",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "A hajnali repülőjárat valódi logisztikája",
+    "excerpt": "A hajnali járat értékelésekor az első feladat nem az ébresztő beállítása, hanem az egész indulási lánc felrajzolása.",
+    "sections": [
+      {
+        "heading": "Számolj visszafelé a tényleges indulásból",
+        "paragraphs": [
+          "A hajnali járat értékelésekor az első feladat nem az ébresztő beállítása, hanem az egész indulási lánc felrajzolása. Az adott szolgáltató aktuális útmutatásából és a konkrét útvonalból indulj ki, majd visszafelé haladva írd be a reptér elérését, az otthoni készülődést és a szükséges átadásokat. Különítsd el a szolgáltatói határidőt a saját tervezett érkezésedtől. Ne használj minden útra ugyanazt az általános óraszámot. A korai eljutás tényleges lehetőségét ellenőrizd, ne nappali tapasztalatból következtess rá. Ha valaki visz, az ő vállalása, indulása és hazajutása is kerüljön a tervbe. Egy pontos repülési idő önmagában még nem jelent kész indulási megoldást."
+        ]
+      },
+      {
+        "heading": "Hasonlíts össze két teljes forgatókönyvet",
+        "paragraphs": [
+          "Az otthonról nagyon korán indulás és a reptérhez közelebbi előző éjszaka két külön napirendet jelent. Mindkettőnél számold az eljutást, az esti teendőket, a csomagmozgatást és a teljes várható kiadást. Képzeletbeli párosnál a közeli szállás csökkenti a reggeli utat, de előző este újabb áttelepülést és külön egyeztetést igényel. Más esetben a közvetlenül otthonról indulás egyszerűbb lehet. Nincs mindenkire érvényes győztes. A választást a saját pihenési szokásaidhoz és feladataidhoz igazítsd, ne egyetlen költségtételhez. A reggeli étkezés és a szükséges személyes tárgyak elérése is legyen átgondolva. Ezek kis részleteknek tűnnek, de az indulás napján sok felesleges keresést előzhetnek meg."
+        ]
+      },
+      {
+        "heading": "Csökkentsd a reggeli döntések számát",
+        "paragraphs": [
+          "Amit lehet, készíts elő előző este: lezárható csomag, elérhető foglalási adatok, megbeszélt találkozási pont és egy rövid reggeli lista. A listán csak az maradjon, amit valóban aznap kell elvégezni. Jelöld meg, milyen változás esetén lép életbe az alternatív eljutás, és hogyan ellenőrzöd annak használhatóságát. Ne hagyd az egész tartalékot arra a feltételezésre, hogy majd valaki elérhető lesz. A hajnali indulást a visszaúttal együtt is nézd meg, mert az otthon hagyott autó vagy az előre vállalt fuvar ott új feladatot jelenthet. Akkor működik jól a terv, ha a korai időpont ellenére minden résztvevő tudja a saját következő lépését, és nem kell félálomban új megoldásokat kitalálni."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "The real logistics of an early flight",
+    "excerpt": "For an early flight, begin by mapping the departure chain rather than setting an alarm.",
+    "sections": [
+      {
+        "heading": "Work backwards from the actual departure",
+        "paragraphs": [
+          "For an early flight, begin by mapping the departure chain rather than setting an alarm. Use current guidance from the relevant provider and details of the actual route, then work backwards through reaching the airport, preparing at home, and any handovers. Separate provider deadlines from your own planned arrival time. Avoid using one generic number of hours for every trip. Verify that early transport actually works instead of inferring it from daytime experience. If someone will drive you, include their agreement, departure, and journey home. A precise flight time alone does not mean that a complete departure arrangement exists."
+        ]
+      },
+      {
+        "heading": "Compare two complete scenarios",
+        "paragraphs": [
+          "Leaving home very early and staying near the airport the previous night create different routines. For each, count transport, evening tasks, moving luggage, and complete expected spending. Imagine two travellers for whom a nearby hotel shortens the morning journey but introduces another move and extra coordination the evening before. In another situation, leaving directly from home may be simpler. There is no universal winner. Match the choice to your own rest preferences and responsibilities rather than one expense. Think through breakfast and access to personal items too. These may appear to be small details, but they can prevent unnecessary searching during a departure when attention is already divided."
+        ]
+      },
+      {
+        "heading": "Reduce morning decisions",
+        "paragraphs": [
+          "Prepare what you can the evening before: a bag that closes, accessible booking information, an agreed meeting point, and a short morning list. Leave only tasks that truly need to happen that day. Identify what change would activate alternative transport and how you would check that it is usable. Do not build the entire backup on the assumption that someone will be available. Consider the return journey as well, since a parked car or an agreed lift can create another task then. The plan works when everyone knows their next step despite the early hour and does not need to invent new arrangements while still waking up. Preparation should remove decisions, not simply create a longer checklist."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

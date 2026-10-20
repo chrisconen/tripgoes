@@ -1,0 +1,58 @@
+{
+  "slug": "utazas-dontesi-naplo",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Döntési napló utazóknak",
+    "excerpt": "A döntési napló nem útibeszámoló, hanem rövid feljegyzés arról, miért választottál egy lehetőséget a többi helyett.",
+    "sections": [
+      {
+        "heading": "Rögzítsd a döntés pillanatát",
+        "paragraphs": [
+          "A döntési napló nem útibeszámoló, hanem rövid feljegyzés arról, miért választottál egy lehetőséget a többi helyett. Minden jelentős döntéshez elég öt mező: dátum, vizsgált lehetőségek, ismert tények, bizonytalan elemek és választási indok. Például a központi szállást azért választottad, mert rövid utazásnál csökkenteni szeretted volna a helyi közlekedést. A naplóban külön szerepeljen, hogy a gyalogos távolságot ellenőrizted, de az esti zajról csak vendégértékeléseket találtál. Így nem mosódik össze az adat, a mások véleménye és a saját következtetésed. Ez különösen akkor hasznos, ha több ember kutat párhuzamosan, vagy hetekkel később kell visszatérni egy félretett lehetőséghez."
+        ]
+      },
+      {
+        "heading": "Az indok legyen ellenőrizhető",
+        "paragraphs": [
+          "A „jobb ajánlat” kevés információt őriz meg. Írd helyette azt, hogy az adott változat belefért a teljes keretbe, megfelelő érkezési időt adott és rendelkezett a szükséges szobabeosztással. A forrás mellé jegyezd fel az ellenőrzés időpontját, az összeget pedig a tartalmával együtt rögzítsd. Egy képernyőkép önmagában nem mindig mutatja meg, hány utasra, milyen dátumra vagy mely feltételekre vonatkozott az ár. Ha valamit még tisztázni kell, rendeljen hozzá valaki felelőst és következő lépést. A napló ne váljon minden kattintás részletes archiválásává. A cél az, hogy a döntést befolyásoló különbségek röviden visszakereshetők legyenek, és a bizonytalanság ne tűnjön el a sok mentett adat között."
+        ]
+      },
+      {
+        "heading": "Utólag a folyamatot értékeld",
+        "paragraphs": [
+          "Hazatéréskor nézd meg, mely feltételezések igazolódtak, és melyek bizonyultak tévesnek. Egy jó döntési folyamat mellett is előfordulhat kellemetlen véletlen; egy gyengén ellenőrzött választás pedig szerencsésen alakulhat. Ezért ne csak az eredményt minősítsd. Vizsgáld meg, volt-e olyan információ, amelyet ésszerűen előre beszerezhettél volna, de kihagytál. Például egy nehézkes késő esti bejutás után a következő naplóba kerülhet külön érkezési ellenőrzés. Tarts meg legfeljebb három konkrét tanulságot. A túl hosszú utólagos szabálylista könnyen olvasatlan marad. A napló akkor ér valamit, ha a következő keresés elején valóban megnyitod, és a korábbi tapasztalatból egy jobb kérdést fogalmazol meg."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Keep a travel decision log",
+    "excerpt": "A decision log is not a travel diary.",
+    "sections": [
+      {
+        "heading": "Capture the moment of choice",
+        "paragraphs": [
+          "A decision log is not a travel diary. It is a short record of why you chose one possibility over another. Five fields are enough for an important decision: date, options considered, known facts, uncertain elements, and reason for choosing. You might select central accommodation because you want less local travel on a short visit. Record that you checked walking distances but found only guest opinions about evening noise. This keeps verified information, other people’s impressions, and your own inference separate. The distinction is especially useful when several people research in parallel or when you return to a postponed option weeks later. A concise explanation can save an entire repeated search."
+        ]
+      },
+      {
+        "heading": "Make the reason specific",
+        "paragraphs": [
+          "“Better deal” preserves little useful information. Instead, say that the option fitted the total budget, offered a workable arrival time, and had the required room arrangement. Record the check time beside the source and describe what any price includes. A screenshot alone may not reveal the number of travellers, dates, or conditions associated with an amount. If something needs clarification, assign an owner and a next action. Do not turn the log into a detailed archive of every click. Its purpose is to make the differences that influenced a decision easy to find again, while preventing uncertainty from disappearing inside a large collection of saved information. Keep each entry short enough to review before booking."
+        ]
+      },
+      {
+        "heading": "Evaluate the process afterwards",
+        "paragraphs": [
+          "After returning, identify which assumptions held and which were mistaken. A sound decision process can still lead to an unpleasant surprise, while a poorly checked choice may turn out well by luck. Judge more than the final outcome. Ask whether there was information you could reasonably have obtained beforehand but overlooked. A difficult late-night check-in, for example, might lead you to add an arrival check to the next log. Keep no more than three concrete lessons. A long retrospective rulebook is likely to remain unread. The log earns its place when you open it at the start of the next search and turn a previous experience into a better question, rather than simply collecting another document."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

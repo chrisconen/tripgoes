@@ -1,0 +1,58 @@
+{
+  "slug": "pihenoidos-utvonal",
+  "category": "responsible",
+  "image": "madeira",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Útvonal tervezett pihenőkkel",
+    "excerpt": "Ha a pihenést csak akkor tervezed meg, amikor valaki már elfáradt, kevesebb választási lehetőség marad. Indulj inkább abból, hogy a pihenő ugyanúgy része az útvonalnak, mint egy látványosság vagy találkozó.",
+    "sections": [
+      {
+        "heading": "A pihenő legyen útvonalpont",
+        "paragraphs": [
+          "Ha a pihenést csak akkor tervezed meg, amikor valaki már elfáradt, kevesebb választási lehetőség marad. Indulj inkább abból, hogy a pihenő ugyanúgy része az útvonalnak, mint egy látványosság vagy találkozó. Beszéljétek meg, kinek milyen ritmus kényelmes, és ne alakítsatok ebből teljesítményversenyt. A pihenés lehet ülés, csendesebb időszak vagy egyszerűen a kötött program megszakítása. A szükségletet az érintett ember fogalmazza meg. Nincs minden utazóra alkalmazható sétaidő vagy kötelező szünetarány; a saját tervhez olyan helyeket és döntési pontokat keressetek, amelyek többféle ritmust is lehetővé tesznek."
+        ]
+      },
+      {
+        "heading": "Rajzolj szakaszokat és kilépési pontokat",
+        "paragraphs": [
+          "A teljes nap helyett kisebb szakaszokban gondolkodj. Mindegyik végén legyen lehetőség folytatni, megállni vagy visszatérni. Nézd meg, milyen helyszín alkalmas tényleges pihenésre, és hogy annak használata milyen feltételtől függ. Egy térképre mentett kávézó még nem igazolja, hogy aznap nyitva lesz vagy lesz hely benne. Legyen egy másik, egyszerűbb változat is, amely kevesebb szervezést kíván. Ha a nap közben változik a társaság tempója, a korábban megbeszélt találkozási pont segít. Így nem kell minden döntésnél újratervezni a teljes útvonalat vagy magyarázkodni azért, mert valaki más ritmust választott."
+        ]
+      },
+      {
+        "heading": "Értékeld a nap működését",
+        "paragraphs": [
+          "Képzeletbeli városi sétán három környéket szeretnétek megismerni. A terv minden környék után tartalmaz egy rövid döntési pontot: maradt-e kedv és idő a következő szakaszhoz? Ha a második után visszafordultok, a nap ettől még teljes lehet. A lényeg az eredeti cél, például a közös felfedezés, nem a legtávolabbi pont elérése. Este azt beszéljétek át, hol volt kényelmes a szünet, és melyik szakasz lett hosszabb a vártnál. A következő napot ebből a tapasztalatból alakítsátok. Az ilyen útvonal nem kevesebb tervezést jelent, hanem olyan szerkezetet, amelyben a változtatás előre megengedett és könnyen végrehajtható marad."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build rest stops into your route",
+    "excerpt": "If you only plan a break after somebody is already tired, fewer choices remain. Instead, treat rest as part of the route just like a sight or meeting.",
+    "sections": [
+      {
+        "heading": "Make rest an actual stop",
+        "paragraphs": [
+          "If you only plan a break after somebody is already tired, fewer choices remain. Instead, treat rest as part of the route just like a sight or meeting. Discuss which rhythm feels comfortable for each traveller without turning the conversation into a performance contest. Rest might involve sitting, a quieter period or simply interrupting a scheduled activity. Let the person concerned describe the need. There is no walking duration or compulsory break ratio here that applies to everyone. Look for places and decision points that allow different rhythms within the journey you are actually planning to take."
+        ]
+      },
+      {
+        "heading": "Draw stages and exit points",
+        "paragraphs": [
+          "Think in smaller stages rather than treating the whole day as one route. At the end of each, make it possible to continue, stop or return. Check what kind of place would provide a useful break and what conditions affect access. A café saved on a map does not establish that it will be open or have space on the day. Include a simpler alternative that requires less organisation. If companions move at different speeds, an agreed meeting point helps. This prevents every adjustment from requiring a complete redesign or making somebody justify wanting a different pace from the rest of the group."
+        ]
+      },
+      {
+        "heading": "Evaluate how the day worked",
+        "paragraphs": [
+          "Imagine a city walk intended to explore three neighbourhoods. After each one, the plan includes a small decision: is there still interest and time for the next stage? Returning after the second can still complete a successful day. The relevant measure is the original purpose, such as exploring together, rather than reaching the most distant point. In the evening, discuss which breaks worked and which stages took longer than expected. Use those observations to shape the following day. This approach is not an absence of planning. It creates a structure in which changes are expected, acceptable and straightforward to make when the actual experience differs from the first sketch."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

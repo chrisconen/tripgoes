@@ -1,0 +1,58 @@
+{
+  "slug": "repulesi-nap-idovonal",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Idővonal a repülés napjára",
+    "excerpt": "A repülés napi idővonalán más szerepe van a szolgáltató által megadott határidőnek és a saját tervezett indulásodnak.",
+    "sections": [
+      {
+        "heading": "Jelöld külön a kötött és a saját időpontokat",
+        "paragraphs": [
+          "A repülés napi idővonalán más szerepe van a szolgáltató által megadott határidőnek és a saját tervezett indulásodnak. A kötött adatokat az aktuális foglalás és hivatalos tájékoztatás alapján írd ki, a saját célidőpontokat pedig ettől megkülönböztetve jelöld. Ezután visszafelé építsd fel az otthontól vezető utat. Ne használj olyan általános szabályt, amely nem veszi figyelembe az adott repteret, járatot és saját helyzetedet. A tervben a dátum és a helyi idő is szerepeljen. Több szakasznál külön ellenőrizd, melyik időpont melyik helyhez tartozik. Az idővonal akkor hasznos, ha nem kell indulás közben újra értelmezned, hogy egy szám a menetrendet vagy a saját elképzelésedet jelöli."
+        ]
+      },
+      {
+        "heading": "Adj felelőst az átadási pontokhoz",
+        "paragraphs": [
+          "A közös utazásban a bizonytalan pillanatok gyakran két feladat között keletkeznek. Ki ellenőrzi az eljutást, kinél van a közös foglalás, és ki jelzi a szállásnak az érkezést? Írd a nevet közvetlenül a feladat mellé. Képzeletbeli családi útvonalban az egyik felnőtt a közlekedési adatokat kezeli, a másik az indulás előtti otthoni teendőket, de a személyes információit mindenki maga is ellenőrzi. Ne legyen minden feladat egyetlen telefonhoz vagy emberhez kötve. A legfontosabb adatok rövid, offline változata segíthet, ha nincs kényelmes internetelérés. A lista ne tartalmazzon felesleges személyes részleteket; csak azt, amire a napi lépések követéséhez ténylegesen szükség van."
+        ]
+      },
+      {
+        "heading": "A változásra sorrenddel reagálj",
+        "paragraphs": [
+          "Ha az első eljutási szakasz módosul, ne egyszerre próbáld az egész napot újratervezni. Először ellenőrizd az érintett szolgáltató aktuális információját, majd nézd meg, melyik következő pontot érinti a változás. Frissítsd a saját célidőket, és szólj annak, akinek emiatt új feladata van. A korábbi változatot ne hagyd ugyanolyan érvényesnek látszani a közös dokumentumban. A repülési nap végén nem kell minden eltérést hibának tekinteni: az idővonal célja a követhetőség, nem a valóság percre pontos irányítása. Ha egy feladat rendre kimarad vagy túl sok figyelmet kér, a következő útnál egyszerűsítsd a helyét. A jó napi terv használat közben segít, nem csak indulás előtt néz ki rendezettnek."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a flight-day timeline",
+    "excerpt": "A provider’s deadline and your planned departure from home serve different purposes on a flight-day timeline.",
+    "sections": [
+      {
+        "heading": "Separate fixed times from your targets",
+        "paragraphs": [
+          "A provider’s deadline and your planned departure from home serve different purposes on a flight-day timeline. Copy fixed information from the current booking and official guidance, then mark personal target times differently. Work backwards through the route from home. Avoid relying on a generic rule that ignores the particular airport, flight, and your circumstances. Include dates and local times. With several segments, check which location each time belongs to. The timeline is useful when you do not need to reinterpret whether a number represents the published schedule or your own intention while already travelling. Clear labels matter more than making the page look densely organised."
+        ]
+      },
+      {
+        "heading": "Assign owners at handover points",
+        "paragraphs": [
+          "Uncertainty on a shared trip often appears between tasks. Who checks access transport, who has the shared booking, and who tells the accommodation about arrival? Put a name directly beside each job. In an imaginary family journey, one adult manages transport information and another handles final tasks at home, while everyone checks their own personal information. Avoid tying every task to one phone or person. A short offline version of essential details can help when convenient internet access is unavailable. Do not include unnecessary personal information; retain only what is needed to follow the day’s steps. Each person should understand both their task and whom they need to inform when it is complete."
+        ]
+      },
+      {
+        "heading": "Respond to changes in order",
+        "paragraphs": [
+          "If the first transport leg changes, do not try to rebuild the entire day simultaneously. Check current information from the affected provider, then identify which next point the change affects. Update your targets and notify anyone whose task has changed. Do not leave the older version looking equally current in the shared document. At the end of the day, every deviation need not be labelled a mistake: the purpose is to make the journey understandable, not to control reality minute by minute. If a task is repeatedly missed or demands too much attention, simplify its place next time. A useful daily plan helps while being used, rather than merely looking tidy before departure."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

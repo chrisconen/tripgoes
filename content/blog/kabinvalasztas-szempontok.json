@@ -1,0 +1,70 @@
+{
+  "slug": "kabinvalasztas-szempontok",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Kabinválasztás a napirended alapján",
+    "excerpt": "Kabinválasztáskor először azt írd le, mire használnád a saját teret az alváson túl.",
+    "sections": [
+      {
+        "heading": "Mire használod nappal?",
+        "paragraphs": [
+          "Kabinválasztáskor először azt írd le, mire használnád a saját teret az alváson túl. Nappal olvasnál, dolgoznál, átöltöznél két program között, vagy többnyire máshol lennél? Az ablak, az ülőhely és a tároló jelentősége ettől függ. Nincs mindenkinek megfelelő kabinkategória. A nagyobb vagy látványosabb megoldás akkor ér többet, ha olyan használatot támogat, amely valóban része lesz az utadnak. Egy kényelmesnek látszó fotó helyett ezért a tervezett tevékenységeidből készíts rövid ellenőrzőlistát a foglalás előtt."
+        ]
+      },
+      {
+        "heading": "Fény és kilátás",
+        "paragraphs": [
+          "A fény iránti igényt külön kezeld az alapterülettől. Gondold át, szeretnél-e nappali természetes fényt a saját térben, és mennyire fontos neked a kilátás. Az adott kategória pontos leírását olvasd el, mert egy ablak vagy erkély megnevezése nem árul el minden részletet az elhelyezkedésről. Ha korlátozott kilátás lehetséges, kérdezz rá a konkrét feltételre. A személyes kényelmi preferenciádból indulj ki; ne támaszd a döntést olyan egészségügyi vagy alvásra vonatkozó ígéretre, amelyet egy kabinfotó nem igazolhat."
+        ]
+      },
+      {
+        "heading": "Közös minimum és alaprajz",
+        "paragraphs": [
+          "Képzeletbeli példánkban két útitárs eltérően használná a kabint: egyikük délután olvasna, másikuk a közös tereket keresi. Először megegyeznek a közös minimumról, majd összevetik, mit ad a felárért a nagyobb kabin. Ezután a fedélzeti alaprajzon megnézik a fontos helyekhez vezető utat. Nemcsak a távolság számít, hanem a számukra lényeges közlekedési részletek is. A szomszédos helyiségekről, a liftek és nyilvános terek elhelyezkedéséről konkrét kérdést tesznek fel, ahelyett hogy a fedélzet számából következtetnének mindenre."
+        ]
+      },
+      {
+        "heading": "Foglalás vagy preferencia",
+        "paragraphs": [
+          "Végül különítsd el a foglalható kabint a pusztán jelzett preferenciától. Ha az ajánlatban a pontos kabin később derül ki, ne kezeld biztosnak a térképen kinézett helyet. Jegyezd fel a kabinkategóriát, az elhelyezkedésről szóló feltételt és azt, mely részleteket erősítette meg a szolgáltató. A döntést egy teljes napra teszteld: reggeli készülődés, nappali használat és esti elpakolás. A jó választás ezekhez a helyzetekhez illik, és a felárnak olyan előnyt ad, amelyet a saját utadon ténylegesen használni fogsz."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Choose a cabin around your routine",
+    "excerpt": "Start cabin selection by describing how you would use the space beyond sleeping.",
+    "sections": [
+      {
+        "heading": "How will you use it?",
+        "paragraphs": [
+          "Start cabin selection by describing how you would use the space beyond sleeping. Would you read, work, change between activities or spend most of the day elsewhere? The importance of a window, a comfortable seat and storage depends on those habits. There is no cabin category that suits everybody. A larger or more photogenic option adds value when it supports something you will actually do. Build a short checklist from your intended activities before allowing the photographs to shape your decision."
+        ]
+      },
+      {
+        "heading": "Daylight and views",
+        "paragraphs": [
+          "Treat your preference for daylight separately from floor area. Consider whether you want natural light in your own space and how much a view matters. Read the exact category description: a window or balcony label does not establish every detail of its position. If an obstructed view is possible, ask about the specific condition. Base the choice on personal comfort rather than on health or sleep promises that a cabin photograph cannot support. A preference does not need a medical explanation to be important to your trip."
+        ]
+      },
+      {
+        "heading": "Shared needs and deck plans",
+        "paragraphs": [
+          "In a hypothetical comparison, one companion expects to read in the cabin during afternoons while the other prefers public spaces. They agree on their shared minimum before asking what the larger cabin adds for its supplement. They then use the deck plan to trace routes to places that matter to them. Distance is only part of the question; relevant access details also deserve attention. They ask specifically about neighbouring spaces, lifts and public areas instead of assuming a deck number tells them everything about the location."
+        ]
+      },
+      {
+        "heading": "Booking or preference",
+        "paragraphs": [
+          "Finally, distinguish an actual bookable cabin from a preference that can merely be requested. If the exact cabin is assigned later, do not treat a location you selected on a plan as confirmed. Record the category, the location conditions and which details the provider has verified. Test the choice against a whole day: getting ready, daytime use and putting belongings away at night. A suitable cabin fits those situations and makes any additional cost buy an advantage you expect to use during this particular voyage."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

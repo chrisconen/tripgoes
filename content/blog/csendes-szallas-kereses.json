@@ -1,0 +1,70 @@
+{
+  "slug": "csendes-szallas-kereses",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Hogyan keress csendesebb szállást?",
+    "excerpt": "Csendesebb szállást úgy könnyebb keresni, ha előbb megnevezed, milyen zaj zavar téged, és mikor.",
+    "sections": [
+      {
+        "heading": "Nevezd meg a zavaró helyzetet",
+        "paragraphs": [
+          "Csendesebb szállást úgy könnyebb keresni, ha előbb megnevezed, milyen zaj zavar téged, és mikor. A késő esti zene, a hajnali szállítás, a folyosói beszélgetés és a nappali forgalom különböző kérdéseket kíván. Az általános „csendes helyet keresek” kérésből a szállás nehezen tud pontos igényt megérteni. Írd le inkább, hogy korán fekszel, napközben is pihennél, vagy egy adott napszakban nyugodt munkakörnyezetre lenne szükséged. Ezután a környéket és a konkrét szobát külön vizsgáld meg."
+        ]
+      },
+      {
+        "heading": "Környék és szobapozíció",
+        "paragraphs": [
+          "A térképen keresd meg a nagyobb utakat, közös udvarokat és a szállás közvetlen környezetét, de ezekből ne állíts fel biztos következtetést a zajszintről. A tájolás, a nyílászárók és a szoba épületen belüli helye is számít. Kérdezd meg, melyik irányba néz a lefoglalható szobatípus, és mi található mellette, felette vagy alatta. A lift, a közös konyha vagy a rendezvénytér közelségéről konkrét információt kérj. Az udvari elhelyezkedés sem automatikus garancia a csendre, hiszen az udvar használata eltérhet."
+        ]
+      },
+      {
+        "heading": "Kérés vagy megerősített tulajdonság",
+        "paragraphs": [
+          "Képzeletbeli példánkban két szoba közül választhatsz. Az egyik nagyobb és utcára néz, a másik kisebb, de a szállás szerint távolabb van a közös esti tértől. A választáshoz először azt döntsd el, a tágas hely vagy az esti nyugalom fontosabb. Ezután kérdezz rá, hogy az adott elhelyezkedés a foglalás része vagy csak kérésként rögzíthető. Ha csak kérés, ne számolj vele biztos tulajdonságként. Az értékelésekben ismétlődő, időpontot és helyzetet is megnevező tapasztalatokat keress, ne egyetlen indulatos mondatot."
+        ]
+      },
+      {
+        "heading": "Vállalható kompromisszum",
+        "paragraphs": [
+          "Az érkezés után érdemes korán jelezni, ha a kapott szoba nem felel meg a visszaigazolt elhelyezkedésnek. A megoldási lehetőségeket nyugodt, pontos leírással könnyebb egyeztetni, mint általános elégedetlenséggel. Foglalás előtt azonban ne feltételezd, hogy biztosan lesz másik szabad szoba. A keresés végén a megerősített jellemzőket, a nyitott kérdéseket és a vállalható kompromisszumot külön jegyezd fel. A cél nem a teljes csend megígérése, hanem az, hogy a számodra leginkább zavaró helyzetek esélyét tudatosabb választással csökkentsd."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "How to look for a quieter place to stay",
+    "excerpt": "Looking for somewhere quieter starts with identifying which sounds disturb you and when.",
+    "sections": [
+      {
+        "heading": "Name the disturbance",
+        "paragraphs": [
+          "Looking for somewhere quieter starts with identifying which sounds disturb you and when. Late music, early deliveries, conversations in corridors and daytime traffic require different questions. A general request for a quiet room gives the accommodation little information about your actual needs. Explain instead that you sleep early, rest during the day or need a calm place to work at particular times. Then assess the surrounding area and the individual room as two separate parts of the decision."
+        ]
+      },
+      {
+        "heading": "Area and room position",
+        "paragraphs": [
+          "Use a map to locate major roads, shared courtyards and the immediate surroundings, but do not treat those features as proof of a particular noise level. Room orientation, windows and position inside the building also matter. Ask which direction the bookable room category faces and what lies beside, above or below it. Seek specific information about lifts, shared kitchens and event spaces. A courtyard-facing room is not automatically quiet either: the way that courtyard is used may matter more than its position on a plan."
+        ]
+      },
+      {
+        "heading": "Request or confirmed feature",
+        "paragraphs": [
+          "In a hypothetical comparison, one room is larger and faces the street, while another is smaller but reportedly farther from a shared evening area. First decide whether space or evening calm matters more to you. Then establish whether the described room position forms part of the booking or can only be recorded as a request. If it is a request, keep it out of your list of confirmed features. When reading reviews, look for repeated accounts that describe a time and situation, rather than relying on one angry sentence."
+        ]
+      },
+      {
+        "heading": "An acceptable compromise",
+        "paragraphs": [
+          "After arrival, raise a discrepancy early if the room differs from a confirmed location. A calm and precise description makes possible solutions easier to discuss. Before booking, however, do not assume a spare alternative room will definitely be available. Keep confirmed characteristics, unanswered questions and acceptable compromises separate in your notes. The aim is not to promise complete silence. It is to reduce the likelihood of the situations that matter most to you through a more informed room choice and clearer communication."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

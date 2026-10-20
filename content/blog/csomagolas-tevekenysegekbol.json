@@ -1,0 +1,58 @@
+{
+  "slug": "csomagolas-tevekenysegekbol",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Csomagolj tevékenységekből kiindulva",
+    "excerpt": "A csomagolást kezdd azzal, hogy felsorolod az út során várható tevékenységeket.",
+    "sections": [
+      {
+        "heading": "Indulj a napjaidból, ne a szekrényből",
+        "paragraphs": [
+          "A csomagolást kezdd azzal, hogy felsorolod az út során várható tevékenységeket. Városi séta, hosszabb utazás, közös vacsora, strandolás vagy mosás más tárgyakat igényelhet. Minden tevékenységhez csak a valóban szükséges eszközöket rendeld hozzá. Ezután keresd meg az átfedéseket: ugyanaz a kényelmes felső több helyzetben is használható, egy ritka alkalomra választott cipő viszont sok helyet foglalhat. Ne az összes elképzelhető eseményre készülj fel. Jelöld külön a biztos, valószínű és pusztán lehetséges programokat. A biztos tevékenységek adják a csomag alapját; a többi tárgy csak akkor kerül be, ha valóban indokolható a helye és a cipelése."
+        ]
+      },
+      {
+        "heading": "Próbálj végig egy képzeletbeli napot",
+        "paragraphs": [
+          "Tegyük fel, hogy háromnapos utat tervezel, egy hosszú sétával és egy esti programmal. Rakd ki, mit viselnél az első reggeltől a következő reggelig, majd ismételd meg a többi nappal. Így hamar kiderül, hogy három külön összeállítás helyett néhány egymással használható darab is elég lehet. Ez szemléltető gyakorlat, nem mindenkire érvényes darabszám. Vedd figyelembe a saját komfortodat, a várható időjárást és azt, hogy lesz-e tényleges lehetőséged mosni vagy szárítani. A mosást ne tekintsd biztosnak pusztán azért, mert a szállás fotóján látszik egy gép. A szükséges szolgáltatást és annak használatát külön ellenőrizd, ha erre építed a csomag méretét."
+        ]
+      },
+      {
+        "heading": "A végén a megtöltött táskát vizsgáld",
+        "paragraphs": [
+          "A kiválasztott tárgyakat tedd a ténylegesen használt táskába, és próbáld megemelni, vinni, kinyitni. Mérd meg a megtöltött csomagot, majd vesd össze az adott szolgáltató és foglalás aktuális feltételeivel. A saját mérés tájékozódást ad, nem jelent automatikus elfogadási garanciát. Az útközben szükséges dolgok kerüljenek könnyen elérhető helyre, a ritkán használtak mélyebbre. Készíts egy rövid listát arról, mit hagytál ki tudatosan, és miért. Hazatéréskor ebből és a tényleges használatból tanulhatsz. Ha egy tárgy végig érintetlen maradt, legközelebb vizsgáld meg az eredeti indokát. A jó csomaglista a saját napjaidhoz igazodik, nem más utazók táskájának másolata."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Pack around activities",
+    "excerpt": "Begin packing by listing the activities you expect on the trip.",
+    "sections": [
+      {
+        "heading": "Start with your days, not your wardrobe",
+        "paragraphs": [
+          "Begin packing by listing the activities you expect on the trip. Walking around a city, a long journey, dinner together, beach time, and doing laundry may need different items. Assign only genuinely necessary equipment to each activity. Then find overlaps: one comfortable top may work in several situations, while shoes chosen for a rare occasion can occupy substantial space. Avoid preparing for every imaginable event. Separate confirmed, likely, and merely possible activities. Confirmed plans form the foundation of the bag; other items earn their place only when carrying them has a clear purpose. This approach makes packing a practical reflection of the trip rather than an inventory of everything you own."
+        ]
+      },
+      {
+        "heading": "Walk through an imaginary day",
+        "paragraphs": [
+          "Suppose you are planning a three-day visit with one long walk and an evening activity. Lay out what you would use from the first morning until the next, then repeat for the remaining days. You may discover that a few compatible pieces work better than three completely separate outfits. This is an illustrative exercise, not a universal item count. Consider your comfort, expected conditions, and whether washing and drying clothes will actually be possible. Do not assume laundry is available simply because a machine appears in an accommodation photograph. Confirm the facility and how you can use it if the size of your bag depends on that arrangement. An untested assumption can undo an otherwise efficient packing plan."
+        ]
+      },
+      {
+        "heading": "Assess the bag after it is packed",
+        "paragraphs": [
+          "Put the selected items into the bag you will actually use and try lifting, carrying, and opening it. Measure the filled bag and compare it with the current terms for your particular provider and booking. Your measurement is useful information, not an automatic guarantee of acceptance. Keep items needed during the journey accessible and place rarely used things deeper inside. Make a brief note of what you deliberately left out and why. After returning, compare those choices with actual use. If an item remained untouched, reconsider the original reason for taking it next time. A useful packing list adapts to your own days instead of copying another traveller’s luggage."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

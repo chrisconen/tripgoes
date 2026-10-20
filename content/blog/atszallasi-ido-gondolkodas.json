@@ -1,0 +1,58 @@
+{
+  "slug": "atszallasi-ido-gondolkodas",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Hogyan gondolkodj az átszállási időről?",
+    "excerpt": "Az átszállási időt ne pusztán két óraállás különbségeként nézd.",
+    "sections": [
+      {
+        "heading": "Az átszállás több egymás utáni feladat",
+        "paragraphs": [
+          "Az átszállási időt ne pusztán két óraállás különbségeként nézd. Gondold végig a kiszállást, a tájékozódást, az esetleges helyváltoztatást, az előírt ellenőrzéseket és a következő beszállási ponthoz jutást. Nem minden útvonal tartalmazza ugyanazokat a lépéseket, ezért az adott foglalás és repülőtér aktuális információjából indulj ki. Kérdezd meg, mely feladatot intézi a rendszer vagy a szolgáltató, és melyiket kell neked elvégezned. A poggyász útja és a következő szakaszra történő jelentkezés külön tisztázandó kérdés lehet. Egyetlen általános percszám nem tudja megmutatni, hogy a te konkrét helyzeted kényelmes vagy vállalható. Először a folyamatot kell megérteni, csak utána az időt értékelni."
+        ]
+      },
+      {
+        "heading": "A saját mozgásodat is vedd figyelembe",
+        "paragraphs": [
+          "A repülőtéri útvonal személyes terhelése eltérhet. Több csomag, kisebb gyermek, lassabb gyaloglás vagy külön segítségigény más szervezést kívánhat. Ezt ne minősítsd jó vagy rossz utazási képességnek; egyszerűen a saját terv egyik adata. Képzeletbeli példában ugyanaz a kapcsolat két embernek eltérő: egyikük könnyű táskával és ismert útvonallal érkezik, másikuk először jár ott és több közös feladatot intéz. A különbséget konkrét kérdésekkel kezeld, ne egy önkényes szorzóval. Nézd meg az átszállás hivatalos leírását, és kérj választ a nem világos lépésekre. Ha az út csak optimista feltételezések sorával fér össze, ezt a bizonytalanságot tartsd láthatóan a döntésben."
+        ]
+      },
+      {
+        "heading": "Az alternatívát a teljes úttal együtt értékeld",
+        "paragraphs": [
+          "Egy hosszabb kapcsolat több várakozást jelenthet, de lehetőséget adhat nyugodtabb mozgásra; egy rövidebb gyorsabbnak látszhat, de kevesebb mozgásteret hagyhat. Ezeket a saját útvonalad alapján mérlegeld, ne általános ígéretként kezeld. Vizsgáld meg, mi kapcsolódik az érkezéshez: további utazás, szállásbejutás vagy időponthoz kötött program. A szolgáltatóval tisztázd a konkrét foglalási és változási feltételeket, ne feltételezz automatikus megoldást. Ha egy kapcsolat nem illik a személyes helyzetedhez, hasonlítsd össze más indulással vagy egyszerűbb útvonallal. A jó döntés nem az átszállási idő önálló maximalizálása, hanem egy követhető teljes nap, amelynek lépéseit és még fennmaradó bizonytalanságait is érted."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "How to think about connection time",
+    "excerpt": "Do not view connection time only as the difference between two clock readings.",
+    "sections": [
+      {
+        "heading": "A connection is a sequence of tasks",
+        "paragraphs": [
+          "Do not view connection time only as the difference between two clock readings. Think through leaving the aircraft, finding your way, possible changes of location, required checks, and reaching the next boarding point. Routes do not all involve identical steps, so begin with current information for the particular booking and airport. Ask which tasks are handled by the provider or system and which you must complete yourself. Baggage routing and arrangements for the next segment may require separate clarification. One universal number of minutes cannot show whether your particular situation is comfortable or workable. Understand the sequence first, then evaluate the time available for it."
+        ]
+      },
+      {
+        "heading": "Include your own way of moving",
+        "paragraphs": [
+          "The practical effort of an airport route varies between travellers. More luggage, a young child, a slower walking pace, or assistance needs can require different organisation. This is not a judgement about travel ability; it is simply information for your plan. Imagine two people taking the same connection: one has a light bag and knows the route, while the other is visiting for the first time and manages several shared tasks. Address the difference with specific questions rather than an arbitrary multiplier. Read the official transfer description and clarify unclear steps. If the journey fits only through a chain of optimistic assumptions, keep that uncertainty visible when choosing."
+        ]
+      },
+      {
+        "heading": "Assess alternatives within the whole journey",
+        "paragraphs": [
+          "A longer connection may involve more waiting but allow calmer movement; a shorter one may look faster while leaving less room for adjustment. Evaluate these possibilities for your actual itinerary rather than treating them as general promises. Consider what depends on arrival: onward travel, access to accommodation, or a timed activity. Clarify booking and change conditions with the provider instead of assuming a solution will be automatic. If a connection does not suit your circumstances, compare another departure or a simpler route. The objective is not to maximise transfer time in isolation. It is to create an understandable day whose steps and remaining uncertainties you can recognise before committing to it."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

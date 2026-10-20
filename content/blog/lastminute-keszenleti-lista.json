@@ -1,0 +1,58 @@
+{
+  "slug": "lastminute-keszenleti-lista",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Lastminute készenléti lista",
+    "excerpt": "A lastminute utazás akkor kezelhető könnyebben, ha a keresés előtt tisztázod, mire vagy valóban kész.",
+    "sections": [
+      {
+        "heading": "A gyors döntés előkészítéssel kezdődik",
+        "paragraphs": [
+          "A lastminute utazás akkor kezelhető könnyebben, ha a keresés előtt tisztázod, mire vagy valóban kész. A készenléti lista nem lefoglalt utat jelent, hanem előre egyeztetett mozgásteret. Írd fel a lehetséges indulási napokat, a maximális teljes keretet, a vállalható utazási időt és a társak elérhetőségét. Külön jelöld, mely feltételek biztosak, és melyek igényelnek még munkahelyi vagy családi egyeztetést. A szabadság szóbeli lehetősége nem ugyanaz, mint a ténylegesen rendezett távollét. Ha valamelyik alapfeltétel nyitott, az ajánlatot még ne kezeld azonnal foglalhatónak. A lista értéke abban áll, hogy egy vonzó lehetőség megjelenésekor nem kell mindent az elejéről átbeszélned."
+        ]
+      },
+      {
+        "heading": "Különítsd el a készletet a vállalástól",
+        "paragraphs": [
+          "Nézd át, milyen tárgyak, információk és otthoni megoldások állnak már rendelkezésre. Lehet kész csomagolási listád, ismert eljutási lehetőséged a reptérre és előre megbeszélt segítséged az otthoni feladatokhoz. Ettől még az adott foglalás minden lényeges adatát külön ellenőrizni kell. Ne tekintsd a korábbi úton használt feltételeket automatikusan érvényesnek. Képzeletbeli példában két nap van indulásig: az első este a konkrét út alkalmasságát és a közös beleegyezést tisztázod, másnap a visszaigazolt foglaláshoz igazítod a csomagot és az eljutást. Ez munkaszervezési példa, nem általános foglalási határidő. A szolgáltató tényleges feltételei és a saját helyzeted határozzák meg, mi fér bele."
+        ]
+      },
+      {
+        "heading": "Legyen előre megfogalmazott megállási feltétel",
+        "paragraphs": [
+          "A készenléti listához írj néhány olyan kérdést, amelyre egyértelmű válasz nélkül nem lépsz tovább. Ilyen lehet a tényleges szállás, a végleges teljes összeg, az érkezési lehetőség vagy egy személyes igény teljesülése. A sürgetés ne változtassa ezeket mellékes részletté. Ha az ajánlat közben megszűnik, a felkészülésed nem veszett el: a következő keresésnél is használható. Időnként frissítsd a listát, mert a rendelkezésre álló napok, a társak és a keret változhatnak. A már nem aktuális elemeket töröld, ne hagyd őket biztos információnak látszani. Egy jó készenléti rendszer gyorsabbá teszi a tisztázott döntést, de nem helyettesíti a konkrét ajánlat ellenőrzését."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a lastminute readiness list",
+    "excerpt": "Lastminute travel becomes easier to manage when you establish what you are actually ready for before searching.",
+    "sections": [
+      {
+        "heading": "Fast decisions begin with preparation",
+        "paragraphs": [
+          "Lastminute travel becomes easier to manage when you establish what you are actually ready for before searching. A readiness list is not a booked trip; it is an agreed range of possibilities. Record possible departure dates, the maximum total budget, acceptable journey time, and companions’ availability. Mark which conditions are confirmed and which still require agreement at work or at home. The possibility of taking leave is different from an absence that has been arranged. If a basic condition remains open, do not treat an offer as immediately bookable. The list helps because an attractive opportunity no longer requires every conversation to begin again from the start."
+        ]
+      },
+      {
+        "heading": "Separate resources from commitments",
+        "paragraphs": [
+          "Review the items, information, and arrangements already available. You may have a packing list, a known way to reach the airport, and someone willing to help with tasks at home. Nevertheless, important details of the particular booking still need checking. Conditions used on a previous trip should not automatically be treated as current. In an imaginary example with two days before departure, the first evening is used to assess the actual journey and obtain explicit agreement; the next day is used to adapt packing and transport to the confirmed booking. This illustrates a workflow, not a universal booking deadline. The provider’s actual terms and your circumstances determine what is feasible."
+        ]
+      },
+      {
+        "heading": "Define when you will stop",
+        "paragraphs": [
+          "Add a few questions that must have clear answers before proceeding. These might concern the actual accommodation, final total, arrival arrangements, or a particular personal requirement. Urgency should not turn them into minor details. If the offer disappears while you check, the preparation is not wasted; it remains useful for the next search. Update the list periodically because available dates, companions, and spending limits can change. Remove outdated entries instead of leaving them looking like confirmed information. A good readiness system speeds up a clarified decision, but it does not replace checking the individual offer. Its strongest feature is knowing which groundwork is complete and which essential answers are still missing."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

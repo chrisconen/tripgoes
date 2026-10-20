@@ -1,0 +1,58 @@
+{
+  "slug": "tartalekkeret-utazashoz",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Tartalékkeret bizonytalan helyzetekre",
+    "excerpt": "A tartalékkeret szerepe az, hogy legyen mozgástér olyan költségeknél, amelyek még nem pontosan ismertek. Ha előre elosztod minden részét választható programokra, már nem tartalékról beszélsz.",
+    "sections": [
+      {
+        "heading": "Ne adj nevet minden tartalékegységnek",
+        "paragraphs": [
+          "A tartalékkeret szerepe az, hogy legyen mozgástér olyan költségeknél, amelyek még nem pontosan ismertek. Ha előre elosztod minden részét választható programokra, már nem tartalékról beszélsz. Először írd fel, mely területeken van bizonytalanság: például későbbi transzfer, változó napi közlekedés vagy egy még nem véglegesített szállásrészlet. Ne próbálj minden elképzelhető eseményt felsorolni. A saját útvonalad néhány valós bizonytalanságára figyelj. A tartalék mértéke személyes költségtervezési döntés; nincs minden útra megfelelő százalék, és az itt bemutatott módszer sem állít ilyen általános arányt."
+        ]
+      },
+      {
+        "heading": "Különítsd el a bizonytalant a kimaradttól",
+        "paragraphs": [
+          "Egy szükséges, de egyszerűen elfelejtett kiadás nem váratlan esemény. Ha például már tudod, hogy valamelyik szakaszhoz külön transzfer kell, annak tervezett összege a rendes költségsorba tartozik. A tartalék a fennmaradó eltérésekre ad helyet. Minden bizonytalan tételnél írd le, milyen információ csökkentené a bizonytalanságot, és hol tudod ellenőrizni. Ezzel a költségterv egy része kutatási feladattá válik: egy tisztázott kérdés után pontosabb lesz az alapkeret. A megmaradó tartalékot ne tekintsd automatikusan elkölthető jutalomnak már az út elején, mert a későbbi napokhoz is tartozhat nyitott kérdés."
+        ]
+      },
+      {
+        "heading": "Használj egyszerű feloldási szabályt",
+        "paragraphs": [
+          "Képzeletbeli úton dönthetsz úgy, hogy a tartalékhoz akkor nyúlsz, ha egy szükséges részlet megváltozik, vagy ha az eredeti terv csak aránytalan szervezéssel folytatható. A szabály legyen elég konkrét ahhoz, hogy útitársakkal is érthető legyen. Minden felhasználás után írd fel az okot és az új fennmaradó összeget, majd nézd át a hátralévő tervet. A tartalék nem tesz minden helyzetet megoldhatóvá, de láthatóvá teszi a vállalható mozgásteret. Hazatéréskor vizsgáld meg, mely felhasználás volt valódi változás, és melyik jelezte a tervezés hiányát. A következő útnál ez utóbbit már az alapkeretben szerepeltesd, így a tartalék valóban a bizonytalanság kezelésére marad."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a reserve for uncertain travel costs",
+    "excerpt": "A reserve creates room for costs that are not yet fully known. If you allocate all of it to optional activities in advance, it has stopped being a reserve.",
+    "sections": [
+      {
+        "heading": "Leave the reserve unassigned",
+        "paragraphs": [
+          "A reserve creates room for costs that are not yet fully known. If you allocate all of it to optional activities in advance, it has stopped being a reserve. Begin by identifying uncertainty in your own journey: perhaps a later transfer, variable daily transport or an accommodation detail still awaiting confirmation. You do not need to list every imaginable event. Concentrate on a few real uncertainties associated with the itinerary. The size of a reserve is a personal budgeting decision. There is no percentage in this method that claims to suit every trip, traveller or set of circumstances."
+        ]
+      },
+      {
+        "heading": "Distinguish uncertainty from omission",
+        "paragraphs": [
+          "A necessary expense that was simply forgotten is not an unexpected event. If you already know a transfer is required, its planned cost belongs in the normal budget. The reserve provides room for differences that remain after planning. For each uncertain item, write down what information would reduce uncertainty and where you could verify it. This turns part of the budgeting process into a small research task: clarifying a question improves the baseline. Do not immediately treat unused reserve money as a reward available for spending at the start. Later stages of the journey may still contain questions that have not yet been resolved."
+        ]
+      },
+      {
+        "heading": "Choose a simple release rule",
+        "paragraphs": [
+          "For an imaginary trip, you might use the reserve when a necessary arrangement changes or when continuing the original plan would involve disproportionate effort. Make the rule clear enough to discuss with companions. After using it, record the reason and remaining amount, then review the rest of the itinerary. A reserve does not make every situation manageable, but it shows the flexibility you are prepared to fund. At home, distinguish uses caused by actual changes from those caused by missing planning information. Include the latter in the baseline for a future trip, allowing the next reserve to retain its intended purpose instead of repeatedly covering the same omissions."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

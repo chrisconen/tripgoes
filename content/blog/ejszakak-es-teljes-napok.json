@@ -1,0 +1,58 @@
+{
+  "slug": "ejszakak-es-teljes-napok",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Éjszakák helyett használható napokat számolj",
+    "excerpt": "A lefoglalt éjszakák száma nem mutatja meg, mennyi időd marad arra, amiért utazol. Kezdj az első és az utolsó nap idővonalával: mikor indulsz otthonról, mikor érkezel a választott környékre, és mikor kell elindulnod visszafelé?",
+    "sections": [
+      {
+        "heading": "Rajzold meg az érkezést és a távozást",
+        "paragraphs": [
+          "A lefoglalt éjszakák száma nem mutatja meg, mennyi időd marad arra, amiért utazol. Kezdj az első és az utolsó nap idővonalával: mikor indulsz otthonról, mikor érkezel a választott környékre, és mikor kell elindulnod visszafelé? A köztes várakozást, a csomagok kezelését és az étkezést is számold bele. Nem kell minden percet előre kiosztani, de a nagy blokkoknak legyen helyük. Egy hároméjszakás út két különböző menetrenddel egészen más napi lehetőségeket adhat. A használható idő ezért önálló összehasonlítási szempont, amelyet az ár és az éjszakaszám mellett érdemes feltüntetni."
+        ]
+      },
+      {
+        "heading": "A szabad órát ne kezeld automatikusan programidőként",
+        "paragraphs": [
+          "Az idővonalon maradó minden óra nem feltétlenül alkalmas tartalmas programra. Egy késői érkezés után lehet, hogy csak egy könnyű vacsorát szeretnél, míg a hazautazás előtti időt csomagolásra és nyugodt kijutásra tartanád meg. Jelöld külön a kötött időt, a szabadon felhasználható blokkot és a tartalékot. A saját ritmusod alapján dönts arról, mekkora összefüggő időszak számít neked hasznosnak. Így nem azért választasz sűrűbb tervet, mert a táblázatban még látszik néhány üres mező. Az összehasonlításban mindkét útra ugyanazt a személyes mércét alkalmazd, különben a számolás csak látszólag lesz következetes."
+        ]
+      },
+      {
+        "heading": "Hasonlíts össze egy teljes élményt",
+        "paragraphs": [
+          "Képzeletbeli példában két ajánlat ugyanannyi éjszakát tartalmaz. Az egyiknél csak este érkezel és kora reggel távozol, a másiknál mindkét szélső napon marad egy nyugodt fél nap. Írd fel, mire használnád ténylegesen ezt a különbséget. Ha nem kívánsz további programot, az extra idő értéke számodra kisebb lehet; ha egy fontos találkozó fér bele, jelentősebb. A teljes költséget oszthatod használható napokkal is, de ezt csak saját összehasonlítási segédletként kezeld. A személyes érték nem fér bele egyetlen hányadosba. A végső döntéshez az idővonal mellé egy mondatban fogalmazd meg, melyik változat támogatja jobban az utazásod eredeti célját."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Count usable days as well as nights",
+    "excerpt": "The number of booked nights does not show how much time remains for the reason you are travelling. Begin with the first and last day: when do you leave home, reach the neighbourhood you chose and start the journey back?",
+    "sections": [
+      {
+        "heading": "Draw arrival and departure first",
+        "paragraphs": [
+          "The number of booked nights does not show how much time remains for the reason you are travelling. Begin with the first and last day: when do you leave home, reach the neighbourhood you chose and start the journey back? Include substantial waiting, handling bags and eating. You do not need to assign every minute, but the large blocks need space. Two three-night trips with different travel arrangements can offer very different opportunities. Usable time therefore deserves its own comparison field beside the price and number of nights, rather than being assumed from the accommodation booking alone."
+        ]
+      },
+      {
+        "heading": "Do not turn every free hour into an activity",
+        "paragraphs": [
+          "An unallocated hour is not automatically a suitable activity slot. After a late arrival, you might want only a simple meal. Before returning home, you may prefer time for packing and an unhurried departure. Mark fixed commitments, usable free blocks and buffers separately. Decide what length of uninterrupted time feels useful according to your own routine. This helps you avoid choosing a crowded plan merely because the spreadsheet contains empty cells. Apply the same personal measure to both options; otherwise the comparison looks consistent without actually treating the two journeys in the same way."
+        ]
+      },
+      {
+        "heading": "Compare a complete experience",
+        "paragraphs": [
+          "Imagine two offers containing the same number of nights. With one, you arrive late and leave early. With the other, both outer days contain a comfortable half-day. Write down how you would actually use that difference. If you do not want more activities, the additional time may matter less; if it allows an important meeting, it may matter more. You can also divide total cost by usable days, but treat that only as a personal comparison aid. Value cannot be reduced to one ratio. Beside the timeline, write a sentence explaining which version better supports the original purpose of your trip and why that advantage matters to you."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

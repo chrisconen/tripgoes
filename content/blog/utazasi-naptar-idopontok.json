@@ -1,0 +1,58 @@
+{
+  "slug": "utazasi-naptar-idopontok",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Utazási naptár és ellenőrzési időpontok",
+    "excerpt": "Az utazási naptárban a tényleges esemény és az ellenőrzés időpontja két külön dolog. Egy indulás, találkozó vagy belépés azt mutatja, mikor történik valami.",
+    "sections": [
+      {
+        "heading": "Kétféle időpontot különíts el",
+        "paragraphs": [
+          "Az utazási naptárban a tényleges esemény és az ellenőrzés időpontja két külön dolog. Egy indulás, találkozó vagy belépés azt mutatja, mikor történik valami. Az ellenőrzési emlékeztető azt, mikor kell újra megnézned a hozzá tartozó információt. Ha a kettőt összevonod, könnyen csak akkor veszed észre a nyitott kérdést, amikor már az eseményhez kellene készülni. Kezdd a kötött utazási pontokkal, majd minden bizonytalan vagy változható részlethez rendelj egy ésszerű ellenőrzési feladatot. Ne tegyél automatikusan minden napra ugyanannyi értesítést: az emlékeztetőnek konkrét kérdésre és elvégezhető következő lépésre kell mutatnia."
+        ]
+      },
+      {
+        "heading": "Az időzónát is tekintsd adatnak",
+        "paragraphs": [
+          "Több helyszínt érintő útnál írd le, melyik hely helyi idejéről van szó, és ellenőrizd, hogyan kezeli ezt a használt naptár. Ne emlékezetből alakíts át időpontokat. A szolgáltatói visszaigazolásból származó adatot őrizd meg, és a naptári bejegyzéshez kapcsolj forrást vagy rövid megjegyzést. A foglalás módosításakor ne csak a fő eseményt javítsd: a kapcsolódó indulási készülődést, transzfert és találkozót is nézd át. Egy változás több következő lépést érinthet. A naptár akkor segít, ha a függő feladatokat is láthatóvá teszi, nem csupán szépen felsorolja az eredetileg beírt időpontokat."
+        ]
+      },
+      {
+        "heading": "Tarts rövid heti áttekintést",
+        "paragraphs": [
+          "Képzeletbeli közelgő útnál a heti ellenőrzés során három dolgot keress: lejáró feladatot, hiányzó információt és megváltozott eseményt. Egy tisztázott kérdés emlékeztetőjét zárd le, hogy ne jelezzen tovább feleslegesen. Ha valami még nyitott, írd mellé, ki és mikor fogja megoldani. Indulás előtt próbáld végig az első napot a naptárból: látszik-e, hol kell lenned, és marad-e idő az egymást követő lépések között? Az üres helyet ne töltsd ki automatikusan programmal. Lehet, hogy az átmenethez vagy a nyugodt érkezéshez szükséges. A jó naptár nem az elfoglaltság látványát növeli, hanem a következő lépést teszi egyértelművé akkor, amikor valóban szükséged van rá."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a travel calendar with review dates",
+    "excerpt": "A travel calendar contains two different kinds of time. A departure, meeting or admission records when something happens.",
+    "sections": [
+      {
+        "heading": "Separate events from review moments",
+        "paragraphs": [
+          "A travel calendar contains two different kinds of time. A departure, meeting or admission records when something happens. A review reminder records when you should check the information associated with it again. If the two are merged, you may discover an unresolved question only when you should already be preparing for the event. Start with fixed travel points, then attach a sensible review task to uncertain or changeable details. Do not automatically create the same number of notifications every day. Each reminder should point to a specific question and an achievable next action, rather than simply announcing that the trip is getting closer."
+        ]
+      },
+      {
+        "heading": "Treat the time zone as information",
+        "paragraphs": [
+          "On a journey involving several locations, record whose local time is being used and check how your calendar handles it. Do not convert times from memory. Preserve the information supplied in the provider's confirmation and attach a source or brief note to the calendar entry. When a booking changes, update more than the main event: review connected preparation, transfers and meetings. One change may affect several next steps. A calendar helps when it reveals dependent tasks, rather than only presenting an attractive sequence of the times you entered at the beginning of the planning process."
+        ]
+      },
+      {
+        "heading": "Hold a brief weekly review",
+        "paragraphs": [
+          "For an imaginary approaching trip, look for three things during a weekly check: a task becoming due, missing information and an event that changed. Close reminders for resolved questions so they do not keep generating unnecessary notifications. For open items, identify who will act and when. Before departure, rehearse the first day from the calendar. Can you see where to be, and is there room between successive steps? Do not automatically fill blank space with another activity. It may be needed for transitions or a comfortable arrival. A useful calendar clarifies the next action when it matters instead of merely making the journey appear continuously occupied."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

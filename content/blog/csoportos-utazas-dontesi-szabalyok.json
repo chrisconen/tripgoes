@@ -1,0 +1,58 @@
+{
+  "slug": "csoportos-utazas-dontesi-szabalyok",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Döntési szabályok csoportos utazáshoz",
+    "excerpt": "Csoportos utazásnál gyakran nem a megfelelő szállás megtalálása a legnehezebb, hanem annak eldöntése, ki és mikor mondhat igent.",
+    "sections": [
+      {
+        "heading": "Előbb a döntés módjáról állapodjatok meg",
+        "paragraphs": [
+          "Csoportos utazásnál gyakran nem a megfelelő szállás megtalálása a legnehezebb, hanem annak eldöntése, ki és mikor mondhat igent. A keresés előtt rögzítsétek, mely kérdésekhez kell mindenki egyetértése, és melyekről dönthet kisebb kör. A közös költség felső határa vagy a dátum rendszerint minden résztvevőt érint, egy délutáni fakultatív séta viszont lehet szabad választás. Válasszatok szervezőt, de ne tegyétek őt automatikusan minden döntés kizárólagos felelősévé. Legyen külön feladata az adatgyűjtésnek, az ellenőrzésnek és a foglalásnak. A szerepek megosztása akkor segít, ha mindenki tudja, hol ér véget a saját feladata, és kitől várható a következő lépés."
+        ]
+      },
+      {
+        "heading": "A válaszadást tedd konkréttá",
+        "paragraphs": [
+          "Egy hosszú csoportos beszélgetésben az „ez jól néz ki” könnyen foglalási jóváhagyásnak látszik, pedig csak első benyomás. Készítsetek rövid döntési lapot a végleges dátummal, teljes várható költséggel, elhelyezéssel és lényeges feltételekkel. Kérjetek egyértelmű választ egy meghatározott időpontig. A hallgatás ne számítson beleegyezésnek. Előre beszéljétek meg azt is, mi történik, ha valaki nem válaszol: például kimarad az adott foglalási körből, vagy a csoport elhalasztja a döntést. Ne találjatok ki szabályt utólag egy konkrét ember miatt. Képzeletbeli hatfős társaságnál két rövid válaszadási kör áttekinthetőbb lehet, mint napokon át egymásra rakódó újabb és újabb ajánlatok."
+        ]
+      },
+      {
+        "heading": "Különítsétek el a közös és szabad részeket",
+        "paragraphs": [
+          "A közös út nem követeli meg, hogy minden percet együtt töltsetek. Jelöljétek a közös alapot: eljutás, szállás, néhány találkozási pont és az együtt vállalt költségek. A többi programhoz legyen világos csatlakozási lehetőség. Ha valaki kihagy egy tevékenységet, előre lehessen tudni, ez érinti-e mások befizetését vagy a közös közlekedést. Változás esetén egy kijelölt helyen frissítsétek a tervet, ne több beszélgetésben egymásnak ellentmondó változatok keringjenek. Indulás előtt mindenki ellenőrizze a saját nevét, dátumait és vállalásait. Hazatérés után röviden nézzétek át, melyik döntési szabály segített, és melyik okozott felesleges várakozást. A következő csoportos út ettől lehet egyszerűbb."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Decision rules for group travel",
+    "excerpt": "For a group trip, finding suitable accommodation is often easier than deciding who can approve it and when.",
+    "sections": [
+      {
+        "heading": "Agree how decisions will be made first",
+        "paragraphs": [
+          "For a group trip, finding suitable accommodation is often easier than deciding who can approve it and when. Before searching, identify decisions that require everyone’s agreement and those a smaller group can make. The upper limit for shared spending and the dates affect every participant; an optional afternoon walk can remain an individual choice. Appoint an organiser without automatically making that person solely responsible for everything. Separate collecting information, checking it, and making bookings into explicit tasks. Sharing work helps when each person understands where their responsibility ends and who owns the next action. Otherwise, several people may assume that someone else has completed the same essential check."
+        ]
+      },
+      {
+        "heading": "Ask for a precise response",
+        "paragraphs": [
+          "In a long group conversation, “that looks good” can easily be mistaken for booking approval even when it expresses only a first impression. Prepare a short decision sheet with final dates, complete expected cost, room arrangements, and important conditions. Ask for an explicit answer by a defined time. Silence should not count as consent. Agree in advance what happens when someone does not respond: they might sit out that booking round, or the whole group might delay the decision. Avoid inventing the rule afterwards around one person. In an imaginary group of six, two brief response rounds may be easier to manage than days of overlapping suggestions and newly discovered offers."
+        ]
+      },
+      {
+        "heading": "Separate shared plans from free choices",
+        "paragraphs": [
+          "Travelling together does not require spending every minute together. Mark the shared foundation: transport, accommodation, a few meeting points, and agreed common costs. Make joining other activities straightforward. If someone skips an outing, everyone should know beforehand whether that affects another person’s payment or shared transport. Update changes in one designated place instead of circulating contradictory versions across several conversations. Before departure, each traveller should check their own name, dates, and commitments. Afterwards, briefly review which decision rules helped and which created unnecessary waiting. The next group trip can then be simpler because the process has improved, rather than because one organiser works harder to absorb every uncertainty."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

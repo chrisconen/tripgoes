@@ -1,0 +1,58 @@
+{
+  "slug": "szallas-ertekelesek-olvasasa",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Szállásértékelések olvasása mintázatok szerint",
+    "excerpt": "Szállásértékelésekből könnyű általános hangulatot kapni, de nehezebb megtalálni azt, ami a saját utadhoz fontos.",
+    "sections": [
+      {
+        "heading": "A saját kérdéseddel kezdj olvasni",
+        "paragraphs": [
+          "Szállásértékelésekből könnyű általános hangulatot kapni, de nehezebb megtalálni azt, ami a saját utadhoz fontos. Mielőtt olvasni kezdesz, írj három konkrét kérdést. Például érdekelhet a szoba használható tere, az érkezési folyamat vagy egy meghatározott napszak zajossága. Ezután ezeket a részleteket keresd, ne pusztán a leglelkesebb vagy legdühösebb szövegeket. Figyeld, mikor íródott a beszámoló, milyen szobáról szól, és milyen helyzetben utazott a szerző, amennyiben ez kiderül. Más igényű vendég véleménye hasznos lehet, de nem automatikusan a te döntésed. Az összpontszám legyen tájékozódási jel, ne a konkrét követelmények ellenőrzésének helyettesítője."
+        ]
+      },
+      {
+        "heading": "Keresd a részletesen leírt ismétlődést",
+        "paragraphs": [
+          "Egyetlen szélsőséges élmény helyett nézd meg, ugyanaz a konkrét részlet több, egymástól különböző beszámolóban is megjelenik-e. A „kényelmetlen” kevésbé pontos, mint az, hogy két nagy csomag mellett alig maradt hely a közlekedésre. Képzeletbeli példában több vendég ugyanannak az utcai szobatípusnak esti zaját említi, miközben más szobákról nincs ilyen információ. Ebből nem következik, hogy minden szoba egyformán érintett, de jó kérdés adódik a szállás felé. A panasz hiánya sem bizonyítja, hogy egy tulajdonság biztosan megfelel. Kerüld a hitelességre vonatkozó vádakat pusztán a stílus alapján. Az olvasás célja ellenőrizhető kérdések gyűjtése, nem más vendégek szándékának találgatása."
+        ]
+      },
+      {
+        "heading": "Fordítsd a mintázatot foglalási kérdéssé",
+        "paragraphs": [
+          "A fontos ismétlődésből készíts rövid, konkrét megkeresést. Kérdezd meg például, mely szobatípus tartozik az általad választott foglaláshoz, milyen a bejárat megközelítése, vagy hol található a megadott szolgáltatás. A választ az értékelésekkel együtt kezeld, ne egyetlen új mondattal töröld a korábbi bizonytalanságot. Ha a részlet számodra alapfeltétel, legyen egyértelműen tisztázva a foglalás előtt. Ha csak kisebb kényelmi kérdés, dönthetsz elfogadható bizonytalanság mellett is. A végén írd le, milyen konkrét információ változtatta meg a véleményedet. Ez segít megkülönböztetni a hasznos kutatást attól a körkörös olvasástól, amelyben már ugyanazokat a mondatokat nézed újra, de a döntéshez nem kapsz több kapaszkodót."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Read accommodation reviews for patterns",
+    "excerpt": "Accommodation reviews can quickly create an overall mood while making personally relevant information harder to find.",
+    "sections": [
+      {
+        "heading": "Start reading with your own question",
+        "paragraphs": [
+          "Accommodation reviews can quickly create an overall mood while making personally relevant information harder to find. Before reading, write three specific questions. You might care about usable room space, arrival arrangements, or noise at a particular time. Look for those details instead of only the most enthusiastic or angry accounts. Notice when a review was written, which room it describes, and the writer’s travel circumstances where available. A guest with different needs can provide useful information without automatically deciding your choice. Treat an overall score as an orientation signal rather than a replacement for checking the requirements that matter to your stay."
+        ]
+      },
+      {
+        "heading": "Look for detailed repetition",
+        "paragraphs": [
+          "Rather than focusing on one extreme experience, examine whether the same specific detail appears in several different accounts. “Uncomfortable” is less precise than an explanation that two large bags left little space to move. Imagine several guests mentioning evening noise in the same street-facing room category while other room types remain unmentioned. This does not prove every room is affected, but it produces a useful question for the property. The absence of complaints also does not prove a feature will meet your needs. Avoid accusing reviews of dishonesty merely because of their style. The purpose of reading is to collect checkable questions, not to speculate about other guests’ motives."
+        ]
+      },
+      {
+        "heading": "Turn a pattern into a booking question",
+        "paragraphs": [
+          "Convert an important pattern into a short, precise enquiry. Ask which room type belongs to the selected booking, how the entrance is reached, or where a listed facility is located. Consider the answer alongside the reviews instead of allowing one new sentence to erase all previous uncertainty. If the detail is essential, clarify it before booking. If it concerns a minor preference, you may decide to accept some uncertainty. Finally, record which concrete information changed your view. This distinguishes useful research from circular reading in which the same sentences are revisited without improving the decision. Reviews work best when they help you ask better questions about the actual room you intend to reserve."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

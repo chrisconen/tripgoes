@@ -1,0 +1,58 @@
+{
+  "slug": "lastminute-ajanlat-ellenorzese",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Ajánlatellenőrzés foglalás előtt",
+    "excerpt": "Ajánlatellenőrzéskor először azt tisztázd, melyik felületen találtad a lehetőséget, ki értékesíti, és ki teljesíti a megnevezett szolgáltatásokat.",
+    "sections": [
+      {
+        "heading": "Tudd, kinek az ajánlatát látod",
+        "paragraphs": [
+          "Ajánlatellenőrzéskor először azt tisztázd, melyik felületen találtad a lehetőséget, ki értékesíti, és ki teljesíti a megnevezett szolgáltatásokat. Ezek nem feltétlenül ugyanazok a szereplők. Jegyezd fel a pontos ajánlati oldalt és az ellenőrzés idejét, majd keresd meg a foglalás tényleges feltételeit. A logó vagy egy vonzó fénykép nem magyarázza meg a szerepeket. Ha valami nem világos, az adott értékesítő saját hivatalos elérhetőségén kérj választ. Egy válasz megléte önmagában nem bizonyít minden állítást, de segít elválasztani a feltételezést a konkrétan vállalt tartalomtól. A cél nem általános bizalmi minősítés, hanem a saját foglalásod adatainak követhető ellenőrzése."
+        ]
+      },
+      {
+        "heading": "Kövesd végig ugyanazt az utat",
+        "paragraphs": [
+          "A hirdetéstől a végleges összesítésig minden lépésnél ellenőrizd, hogy ugyanaz a dátum, utasszám, szobatípus és ellátás maradt-e kiválasztva. Külön figyelj arra, hogy a kiemelt ár mire vonatkozott, és az általad használt változat mit tartalmaz. Képzeletbeli esetben a kezdeti oldal két utasra mutat példát, de a következő keresésben más létszám szerepel. Ilyenkor az árkülönbség nem feltétlenül hiba, hanem megváltozott keresési feltétel. A fontos az, hogy ezt észrevedd, és ne különböző tartalmakat hasonlíts össze. Ha egy szolgáltatás megnevezése eltér a folyamat két pontján, tisztázd a különbséget, mielőtt véglegesíted a választást. A hiányzó adatot ne töltsd ki emlékezetből."
+        ]
+      },
+      {
+        "heading": "Ments egy értelmezhető ellenőrzési nyomot",
+        "paragraphs": [
+          "A végső döntéshez őrizd meg a tényleges összesítést és a hozzá kapcsolódó feltételeket olyan formában, amelyből később is látható a dátum és a tartalom. Egy kivágott ár önmagában kevés. A személyes adatokat és foglalási azonosítókat ne tedd nyilvános összehasonlító táblába. Írj mellé röviden három választ: mit foglalsz, kitől foglalod, és milyen kérdés maradt nyitva. Ha az utolsó pont lényeges, még nem kész a döntés. A sürgető felirat nem oldja meg az eltéréseket. Ha minden alapadat egyezik, a mentett összesítés később segít a visszaigazolás ellenőrzésében. Így a foglalás nem egy felidézett benyomásra, hanem egy konkrétan azonosítható ajánlatra épül."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Check an offer before you book",
+    "excerpt": "Start by establishing where you found the offer, who sells it, and who provides the named services.",
+    "sections": [
+      {
+        "heading": "Identify whose offer you are viewing",
+        "paragraphs": [
+          "Start by establishing where you found the offer, who sells it, and who provides the named services. These roles may belong to different organisations. Record the exact offer page and check time, then locate the terms attached to the actual booking. A logo or appealing photograph does not explain these relationships. If anything is unclear, ask through the seller’s official contact channel. Receiving an answer does not prove every claim, but it helps separate assumptions from specifically described inclusions. The task is not to issue a universal trust rating. It is to make the details of your own proposed booking traceable and understandable before committing to them."
+        ]
+      },
+      {
+        "heading": "Follow the same trip through the process",
+        "paragraphs": [
+          "From advertisement to final summary, check that the same dates, traveller count, room type, and meal arrangement remain selected. Pay particular attention to what the headline amount referred to and what your chosen version contains. In an imaginary case, the first page illustrates two travellers while the next search uses a different party size. A price difference may then reflect changed search conditions rather than an error. What matters is noticing the change and avoiding a comparison between different products. If a service is described differently at two stages, clarify the difference before finalising the choice. Missing details should not be filled in from memory or from a previous booking."
+        ]
+      },
+      {
+        "heading": "Save a meaningful checking record",
+        "paragraphs": [
+          "Keep the actual final summary and associated terms in a form that preserves their date and scope. A cropped price alone provides little context. Do not place personal details or booking references in a public comparison document. Add three short answers: what you are booking, whom you are booking through, and which questions remain unresolved. If the last answer contains something essential, the decision is not ready. An urgent banner does not resolve inconsistent information. Once the basic details agree, the saved summary helps you check the confirmation later. The booking then rests on a specific identifiable offer rather than a remembered impression of something that looked attractive during the search."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

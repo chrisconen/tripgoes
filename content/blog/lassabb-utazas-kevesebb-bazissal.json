@@ -1,0 +1,58 @@
+{
+  "slug": "lassabb-utazas-kevesebb-bazissal",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Lassabb utazás, kevesebb szállásváltás",
+    "excerpt": "Egy új szállás nem csak egy másik ágyat jelent.",
+    "sections": [
+      {
+        "heading": "A szállásváltásnak teljes napirendje van",
+        "paragraphs": [
+          "Egy új szállás nem csak egy másik ágyat jelent. Csomagolás, kijelentkezés, eljutás, tájékozódás és ismételt berendezkedés kapcsolódik hozzá. Ezeket írd be a tervbe külön időblokként, még akkor is, ha a két település közel van egymáshoz. A térképen rövidnek látszó váltás után is maradhat kevés figyelmed a környékre. Kérdezd meg minden költözésnél, milyen valódi élményt tesz lehetővé. Ha csak azért került bele, mert még egy hely nevét szeretnéd kipipálni, érdemes megvizsgálni az egynapos kirándulást vagy a teljes elhagyást. A bázisok számát ne a rendelkezésre álló látnivalók, hanem a használható napok és a kívánt tempó alapján határozd meg."
+        ]
+      },
+      {
+        "heading": "Rajzolj köröket a lehetséges bázisok köré",
+        "paragraphs": [
+          "Válassz két vagy három lehetséges központot, és mindegyikhez gyűjts olyan programokat, amelyek reálisan elérhetők onnan. Ne pusztán kilométerekben gondolkodj: az indulási lehetőség, a visszaút és az esti étkezés is számít. Képzeletbeli hatnapos útnál egy városi bázis és egy vidéki bázis egyszerűbb lehet, mint öt külön szállás. Az első napokat helyi sétákra, a középsőket egy-egy kirándulásra, az utolsót tartalékidőre használhatod. A kirándulásokat úgy válaszd, hogy ne ugyanazt a hosszú szakaszt járd be újra minden reggel. Ha a bázis miatt rendszeresen túl sok az oda-vissza út, akkor a kevesebb szállás már nem szolgálja a lassabb utazást."
+        ]
+      },
+      {
+        "heading": "Használd ki az ismétlődés előnyét",
+        "paragraphs": [
+          "A több éjszakás tartózkodás értékét az adhatja, hogy nem kell minden nap mindent újra eldönteni. Megismerheted a környék ritmusát, visszatérhetsz egy kellemes sétához, és elhalaszthatsz egy programot, ha éppen nincs hozzá kedved. Hagyj ezért legalább egy olyan idősávot, amelyhez nincs foglalt jegy vagy kötelező eljutás. A szállás kiválasztásakor a napi használhatóságot is nézd: van-e hely leülni, elpakolni, egyszerűen reggelizni vagy nyugodtan pihenni. Hazatéréskor ne csak a meglátogatott helyek számát értékeld. Azt is jegyezd fel, mennyi idő ment szervezésre, és mikor érezted valóban szabadnak a napot. Ez segít a következő út bázisszámának megválasztásában."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Slower travel with fewer bases",
+    "excerpt": "A new place to stay means more than a different bed.",
+    "sections": [
+      {
+        "heading": "Moving accommodation has its own schedule",
+        "paragraphs": [
+          "A new place to stay means more than a different bed. Packing, checking out, travelling, finding your way, and settling in again all come with it. Put these tasks into separate time blocks, even when the towns are close together. A move that looks short on a map can still leave little attention for the destination. For every change of accommodation, ask what worthwhile experience it enables. If the main reason is to tick off another place name, consider a day trip or leaving it out altogether. Set the number of bases according to usable days and your preferred pace, rather than the number of attractions available."
+        ]
+      },
+      {
+        "heading": "Draw circles around possible bases",
+        "paragraphs": [
+          "Choose two or three potential centres and collect activities realistically reachable from each. Think beyond kilometres: departure options, the return journey, and evening meals matter too. On an imaginary six-day trip, one city base and one countryside base could be simpler than five different overnight stops. Use early days for local exploration, middle days for selected excursions, and the final day as flexible time. Choose outings that avoid repeating the same long stretch every morning. If staying in one place produces excessive travel in both directions each day, fewer hotels are no longer helping you travel slowly. Evaluate the entire daily pattern, not only the convenience of leaving your bag unpacked."
+        ]
+      },
+      {
+        "heading": "Make repetition useful",
+        "paragraphs": [
+          "A longer stay can be valuable because you do not have to decide everything again each morning. You can learn a neighbourhood’s rhythm, repeat a pleasant walk, and postpone an activity when you do not feel like doing it. Preserve at least one period without a booked ticket or compulsory journey. When choosing accommodation, consider daily usability: somewhere to sit, unpack, have a simple breakfast, or rest quietly. After returning, do not assess the trip only by the number of places visited. Record how much time went into organisation and when the day felt genuinely open. That evidence will help you choose the number of bases for a future trip. Slow travel is a practical arrangement of time, not a competition to stay in one place."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,10 +1,33 @@
-# TripGoes deployment
+# TripGoes
 
-The website is built from `main` by `.github/workflows/pages.yml` and served through GitHub Pages at `https://tripgoes.com`.
+Live at **https://tripgoes.com**. An original bilingual travel journal and transparent, browser-based travel price checker.
 
-Each push runs the deterministic cost-model tests, builds the HU/EN static output and checks custom-domain metadata before deployment. Actions are pinned to immutable revisions. Deployment uses GitHub's short-lived OIDC permission rather than a repository-stored deployment token.
+## What works
 
-## Local development
+- TripScore Lab in Hungarian and English: complete per-person costs, dated price history, median comparison, separate evidence coverage, up to three side-by-side analyses and JSON export.
+- 100 original bilingual guides: 200 static article pages, ten topics, accent-insensitive search, progressive browsing, contents navigation and related reading.
+- Responsive editorial interface, reduced-motion support, local fonts and licensed destination photography.
+- Sample trip discovery, filters, saved trips and the original complete-cost calculator.
+- Explicit direct provider links with no affiliate tracking or claimed commercial relationship.
+- Canonical URLs, matching locale alternates, article Open Graph metadata and a sitemap.
+
+## What the score means
+
+The score is a disclosed heuristic against the median of **supplied** prices. It is not a live market rank, a prediction, an independent verification or a booking recommendation.
+
+At least five distinct observation days spanning seven days are required. The newest observation must be no older than fourteen days; records outside ninety days are excluded. Route, departure date, nights, traveller count, currency and inclusions must match. Duplicate records cannot increase the number of observation days.
+
+The median earns 50 points, with 1.5 points per percentage point below or above it, bounded at 0–100. Evidence coverage is a separate capped indicator. User inputs cannot self-certify as verified provider data.
+
+## Content and commercial status
+
+The guides are original AI-assisted editorial work, not first-hand travel reports or independently expert-reviewed publications. The international reading room contains short attributed summaries, not full translations of third-party articles.
+
+Homepage trips, fares and histories remain labelled examples. There are no authenticated provider feeds, active affiliate IDs, email delivery, payments or booking services. Operator/contact details must be completed before a commercial launch. The new guides and checker are indexable; sample-led and pre-commercial information pages remain noindex.
+
+## Run and verify
+
+Node.js 24+, no npm dependencies:
 
 ```sh
 npm test
@@ -13,25 +36,14 @@ node --test --test-isolation=none tests/build.test.mjs
 npm run dev
 ```
 
-Node.js 24+; no package installation required. Open `http://127.0.0.1:4173/hu/`.
+Open `http://127.0.0.1:4173/hu/`.
 
-`SITE_ORIGIN` defaults to `https://tripgoes.com`. The built artifact contains only browser code, images, fonts and generated pages. Internal planning, local deployment credentials and the previous private Sites identity are not part of the GitHub publication.
+The build requires at least 100 complete bilingual source articles. `DRAFT_BUILD=1` is a local editorial preview option; it is not set in the deployment workflow.
 
-## DNS
+## Deployment
 
-Cloudflare remains the registrar and authoritative DNS provider. Configure the domain in GitHub Pages before pointing DNS there.
+Cloudflare manages the domain and DNS. GitHub Pages serves the site; a push to `main` runs the tests, builds the static files and publishes through the pinned GitHub Actions workflow. HTTPS is enforced.
 
-- Apex A: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- `www` CNAME: `chrisconen.github.io`
-- DNS-only records allow GitHub to validate the domain and provision HTTPS directly.
-- Preserve unrelated mail and verification records.
+Only application sources, assets, editorial JSON, tests and build configuration belong in this repository. Local CLI state, credentials, planning files and prior hosting configuration are excluded.
 
-GitHub automatically redirects `www` to the chosen apex domain. Enable enforced HTTPS after the certificate is issued.
-
-## Content status
-
-This is a publicly accessible demonstration of the TripGoes experience. Offers, scores, dates, price histories and exchange rates remain explicitly illustrative. `noindex` is intentional until verified provider data and operator details are available. Favorites and alert preferences stay in the browser; there is no email delivery, payment processing or live booking.
-
-## Recovery
-
-Revert an application commit and push to `main` to redeploy the previous version. Do not remove the Pages domain binding while DNS still points at GitHub. If hosting is retired, remove or repoint these web DNS records as part of the same change.
+Revert a release commit and push to `main` to restore the prior version. Keep the GitHub domain binding while DNS points to GitHub Pages. If retiring hosting, remove or repoint those DNS records as part of the same change.

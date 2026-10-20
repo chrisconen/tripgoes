@@ -1,0 +1,58 @@
+{
+  "slug": "szobatipus-ellenorzolista",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Szobatípus-ellenőrzés a fotókon túl",
+    "excerpt": "Egy szállás képgalériája több különböző helyiséget, szobatípust és közös teret is mutathat.",
+    "sections": [
+      {
+        "heading": "A foglalható szobát azonosítsd, ne a galériát",
+        "paragraphs": [
+          "Egy szállás képgalériája több különböző helyiséget, szobatípust és közös teret is mutathat. Először keresd meg, pontosan melyik szobaváltozat tartozik az általad választott ajánlathoz. A képet csak akkor kezeld konkrét támpontként, ha a leírás egyértelműen ehhez kapcsolja. Írd ki az ágyelrendezést, a helyiségek számát és minden olyan részletet, amely a saját társaságodnak fontos. A „tágas” vagy „ideális” jelző helyett a használhatóságot vizsgáld. Hol marad hely a csomagoknak, egyszerre lehet-e pihenni és készülődni, és szükséges-e külön tér? A cél nem műszaki felmérés készítése, hanem annak ellenőrzése, hogy a lefoglalt változat valóban a várt napi működést teszi lehetővé."
+        ]
+      },
+      {
+        "heading": "Rangsorold a kérdéseket a saját használat szerint",
+        "paragraphs": [
+          "Nem kell minden berendezési részletre rákérdezned. Válassz néhány alapfeltételt, majd különítsd el a kényelmi kívánságokat. Képzeletbeli háromfős társaságnál az ágyak pontos elrendezése és a fürdő megközelítése fontosabb lehet, mint a dekoráció. Más utazónál az emelet elérése, a munkafelület vagy az ablak tájolása számít. A kérdést konkrét foglalásra és létszámra tedd fel. Ne elégedj meg azzal, hogy a szállás általában rendelkezik egy tulajdonsággal, ha neked a kiválasztott szobában szükséges. A válaszban is figyeld, hogy az adott szobatípusról beszélnek-e. Ha csak lehetőségként írnak valamit, azt ne alakítsd át biztosan teljesülő tulajdonsággá a saját összehasonlító tábládban."
+        ]
+      },
+      {
+        "heading": "Végezz egy rövid használati próbát papíron",
+        "paragraphs": [
+          "Képzeld el, ahogy mindenki megérkezik a csomagjával, este lefekszik, reggel felkel és elindul. Hol keresztezik egymást a mozgások, és mihez kellene több hely vagy külön hozzáférés? Ez nem bizonyítja a szoba alkalmasságát, de megmutatja, milyen információ hiányzik. A fontos válaszokat őrizd meg a foglalási összesítés mellett, majd nézd meg, hogy a visszaigazolás ugyanazt a szobaváltozatot nevezi-e meg. Ha eltérés van, tisztázd a szolgáltatóval. A végső választásban egy kevésbé látványos, de jól használható szoba is előrébb kerülhet. A fotó hangulatot közvetít; a pontos szobatípus és az ellenőrzött részletek segítenek eldönteni, hogyan fogtok ténylegesen élni benne az ott töltött napok alatt."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Check a room type beyond its photos",
+    "excerpt": "A property gallery may show several rooms, categories, and shared spaces.",
+    "sections": [
+      {
+        "heading": "Identify the bookable room, not the gallery",
+        "paragraphs": [
+          "A property gallery may show several rooms, categories, and shared spaces. First identify the exact room version attached to your selected offer. Treat an image as specific evidence only when the description clearly links it to that version. Record bed arrangements, the number of separate spaces, and details that matter to your party. Examine usability rather than relying on adjectives such as spacious or ideal. Where will luggage fit, can someone rest while another gets ready, and do you need a separate area? The task is not to create a technical survey. It is to check whether the booked version can support the daily routine you expect."
+        ]
+      },
+      {
+        "heading": "Rank questions by how you will use the room",
+        "paragraphs": [
+          "You do not need to ask about every furnishing. Choose a few essentials and keep comfort preferences separate. In an imaginary group of three, the exact bed layout and bathroom access may matter more than decoration. Another traveller may prioritise access to the floor, a work surface, or window orientation. Ask about the particular booking and party size. A property having a feature somewhere is not enough when you require it in the selected room. Check that the reply also refers to the actual room category. If something is described as a possibility, do not convert it into a confirmed feature in your comparison sheet. Preserve the distinction until it is resolved."
+        ]
+      },
+      {
+        "heading": "Run a short usability exercise on paper",
+        "paragraphs": [
+          "Imagine everyone arriving with luggage, going to bed, getting up, and leaving in the morning. Where do movements overlap, and what might require extra space or separate access? This does not prove the room is suitable, but it reveals missing information. Keep important answers beside the booking summary and check whether the confirmation names the same room version. Clarify discrepancies with the provider. A less striking room may ultimately rank higher because it works better. Photographs communicate an atmosphere; the exact category and checked details help you decide how the group will actually live there during the stay. Both are useful, but they answer different questions."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

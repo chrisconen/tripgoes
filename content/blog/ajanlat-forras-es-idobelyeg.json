@@ -1,0 +1,58 @@
+{
+  "slug": "ajanlat-forras-es-idobelyeg",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Ajánlatok forrása és ellenőrzési ideje",
+    "excerpt": "Egy utazási ajánlat feljegyzése akkor használható később, ha nemcsak az ár marad meg belőle. Írd le az útvonalat, az utazási dátumokat, az utazók számát, a pénznemet és a szolgáltatás tartalmát.",
+    "sections": [
+      {
+        "heading": "Az összeg mellé írd oda, mit láttál",
+        "paragraphs": [
+          "Egy utazási ajánlat feljegyzése akkor használható később, ha nemcsak az ár marad meg belőle. Írd le az útvonalat, az utazási dátumokat, az utazók számát, a pénznemet és a szolgáltatás tartalmát. Jelöld, személyenkénti vagy teljes csoportra vonatkozó összeget láttál, és hogy mely kötelező tételek voltak már benne. Az ajánlat forrása mellé tedd oda az ellenőrzés idejét is. Így a későbbi összehasonlításnál tudni fogod, ugyanarról a tartalomról beszélsz-e. Egy alacsonyabb szám önmagában nem bizonyít kedvezőbb ajánlatot, ha közben más poggyász, szobatípus, utazási dátum vagy egyéb feltétel tartozik hozzá."
+        ]
+      },
+      {
+        "heading": "Válaszd szét a forrást és az állítást",
+        "paragraphs": [
+          "A szolgáltató saját oldalán látott összeg, egy keresőben megjelenő találat és egy másik utazó elmondása különböző eredetű információ. A naplóban ezt jelöld világosan, ne alakíts minden bejegyzést azonos bizonyosságú ármegfigyeléssé. Egy hivatkozás vagy képernyőkép segíthet visszakeresni a helyzetet, de önmagában nem garantálja, hogy a feltételek változatlanok vagy az ajánlat még foglalható. A saját megjegyzést külön mezőbe tedd. Ha valamit csak következtettél, például egy hiányzó költségtétel tartalmát, azt ne írd a szolgáltató által megerősített adatként. A napló így nemcsak számokat tárol, hanem az állítások határait is megőrzi a következő döntéshez."
+        ]
+      },
+      {
+        "heading": "Ugyanazt a kérdést ellenőrizd újra",
+        "paragraphs": [
+          "Képzeletbeli árfigyelésnél néhány nap múlva ismét megnézed az ajánlatot. Az új bejegyzést új időponttal rögzítsd, a régit ne írd felül. Előbb ellenőrizd, változott-e a tartalom, és csak azután hasonlítsd a teljes összegeket. Több egyező megfigyelésből készíthetsz saját összesítést, de a kevés, válogatott adat nem mutatja meg a teljes piacot. Ha nincs elég összehasonlítható előzmény, ezt mondd ki ahelyett, hogy biztos kedvezményt neveznél meg. Foglalás előtt az aktuális feltételeket újra ellenőrizd az érintett szolgáltatónál. A jó árnapló az előzményt teszi követhetővé; nem ígéri, hogy egy korábbi ár vagy a belőle számolt különbség ma is elérhető."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Record an offer's source and check time",
+    "excerpt": "A travel offer remains useful as a record only when more than its price survives. Note the route, travel dates, number of travellers, currency and included services.",
+    "sections": [
+      {
+        "heading": "Record what the amount described",
+        "paragraphs": [
+          "A travel offer remains useful as a record only when more than its price survives. Note the route, travel dates, number of travellers, currency and included services. State whether the amount was per person or for the group and which mandatory costs were already included. Add the source and check time. When comparing later, these details help establish whether the contents are actually alike. A lower number does not by itself demonstrate a better offer if it refers to different baggage, a room category, travel dates or other conditions that change the journey you would receive."
+        ]
+      },
+      {
+        "heading": "Distinguish the source from the claim",
+        "paragraphs": [
+          "An amount on the provider's own page, a search result and another traveller's account have different origins. Mark that distinction rather than treating every entry as equally certain price evidence. A link or screenshot may help reconstruct the situation, but cannot guarantee unchanged conditions or continuing availability. Put your interpretation in a separate field. If you inferred something, such as whether an omitted charge was included, do not record it as a provider-confirmed fact. The log should preserve the boundaries of the claims as well as the numbers, so a later decision does not unknowingly rely on a guess made during an earlier search."
+        ]
+      },
+      {
+        "heading": "Check the same question again",
+        "paragraphs": [
+          "Imagine revisiting an offer several days later. Save a new entry with a new observation time rather than overwriting the previous one. Check whether the contents changed before comparing complete amounts. Several matching observations can support your own summary, but a small selected history does not describe the whole market. If comparable evidence is insufficient, say so instead of naming a certain discount. Before booking, recheck current conditions with the provider concerned. A good price log makes the history traceable. It does not promise that an earlier amount, or a difference calculated from it, remains available when you are ready to act."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

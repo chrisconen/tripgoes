@@ -1,0 +1,70 @@
+{
+  "slug": "rovid-vagy-hosszu-hajout",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Rövid vagy hosszú hajóút?",
+    "excerpt": "Rövid és hosszú hajóutat a teljes utazás arányai alapján érdemes összehasonlítani.",
+    "sections": [
+      {
+        "heading": "Az egész szabadság arányai",
+        "paragraphs": [
+          "Rövid és hosszú hajóutat a teljes utazás arányai alapján érdemes összehasonlítani. A fedélzeten töltött éjszakák mellett számold meg az eljutással, a beszállással és a hazatéréssel érintett napokat is. Ezek nem elveszett napok, de másféle élményt jelentenek, mint egy szabadon tervezhető délután. A kérdés az, hogy a szervezés és az odautazás mennyi helyet foglal el az egész szabadságodból. Egy rövidebb út megfelelő próba lehet, de nem automatikusan egyszerűbb, ha a kikötő elérése bonyolult."
+        ]
+      },
+      {
+        "heading": "Két idővonal",
+        "paragraphs": [
+          "Készíts két idővonalat az otthoni indulástól a hazaérkezésig. Képzeletbeli példánkban az egyik változat három fedélzeti éjszakát és két külön utazási napot jelent, a másik hét fedélzeti éjszakát ugyanennyi odajutással. A második esetben az utazási szervezés nagyobb időszakon oszlik el, de több szabadságot és nagyobb teljes keretet igényel. Ez csak összehasonlítási példa, nem menetrendi ajánlat. A saját utad tényleges napjait és költségeit külön írd be, mert az arány a kikötő és a közlekedés választásával megváltozhat."
+        ]
+      },
+      {
+        "heading": "Mennyit szeretnél az új helyzetből?",
+        "paragraphs": [
+          "Az időtartam mellett azt is mérlegeld, mennyire ismered a hajóúti életformával kapcsolatos igényeidet. Ha még keresed a saját ritmusodat, fontos lehet, mennyit szeretnél egyszerre vállalni az új helyzetből. Ha már tudod, hogy szereted a hosszabb fedélzeti időt, más súlyt kaphatnak a tengeri napok és a kabin kényelmi részletei. Ne a hosszabb út mellett szóló érveket nevezd automatikusan jobb értéknek. Az a nap, amelyet már nem szívesen töltenél ugyanabban a keretben, számodra nem feltétlenül előny."
+        ]
+      },
+      {
+        "heading": "Az éjszakánkénti ár mellett",
+        "paragraphs": [
+          "A döntéshez tedd egymás mellé a teljes árat, a használható napokat, az útvonal változatosságát és a saját kíváncsiságodat. Az éjszakánkénti költség hasznos mutató lehet, de nem foglalja magában az összes döntési szempontot. Kérdezd meg magadtól, melyik változatot választanád akkor, ha nem látnál kiemelt kedvezményt mellette. Ezután nézd meg, belefér-e a teljes terv a rendelkezésre álló idődbe és keretedbe. A megfelelő hosszúság nem általános szám, hanem a saját utazási célodhoz és terhelhetőségedhez illő választás."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Choose between a short and a long cruise",
+    "excerpt": "Compare short and long cruises through the proportions of the whole trip.",
+    "sections": [
+      {
+        "heading": "The proportions of the holiday",
+        "paragraphs": [
+          "Compare short and long cruises through the proportions of the whole trip. Alongside nights on board, count the days affected by travel, embarkation and the journey home. Those are not necessarily wasted days, but they offer a different experience from a freely planned afternoon. The question is how much of your available holiday is occupied by reaching and leaving the ship. A short voyage may be a useful introduction without being automatically simpler if the port is difficult to reach."
+        ]
+      },
+      {
+        "heading": "Two timelines",
+        "paragraphs": [
+          "Draw two timelines from leaving home to returning. In a hypothetical example, one option contains three nights on board and two separate travel days, while another contains seven nights with the same travel overhead. The second spreads the travel arrangements across a longer holiday, but requires more leave and a larger complete budget. This is a comparison example, not a timetable or offer. Enter the actual days and costs for your own journey separately, since the balance changes with the port and transport selected."
+        ]
+      },
+      {
+        "heading": "How much novelty do you want?",
+        "paragraphs": [
+          "Consider how well you understand your preferences for life on board. If you are still discovering your preferred rhythm, the amount of unfamiliar experience you want to commit to may matter. If you already enjoy extended time aboard, sea days and cabin comfort may carry different weight. Do not automatically label the arguments for a longer voyage as better value. An additional day spent in a setting you no longer particularly want is not necessarily an advantage for your own holiday."
+        ]
+      },
+      {
+        "heading": "Beyond price per night",
+        "paragraphs": [
+          "Place the complete price, usable days, itinerary variety and your curiosity beside each other. Cost per night can be a useful indicator, but it does not capture every part of the decision. Ask which option you would choose if neither displayed a highlighted discount. Then check whether that complete plan fits the time and budget available to you. The right duration is not one universal number. It is the length that supports your particular travel purpose and the amount you want to take on."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "utazasi-osszehasonlito-tabla",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Utazási összehasonlító tábla tíz mezővel",
+    "excerpt": "Az utazási összehasonlító tábla célja nem az, hogy minden lehetséges adatot összegyűjtsön. Azt mutassa meg, miben különböznek a ténylegesen választható utak.",
+    "sections": [
+      {
+        "heading": "Tíz mezővel láthatóvá válik a különbség",
+        "paragraphs": [
+          "Az utazási összehasonlító tábla célja nem az, hogy minden lehetséges adatot összegyűjtsön. Azt mutassa meg, miben különböznek a ténylegesen választható utak. Kiindulásként használj tíz mezőt: útvonal, dátumok, utazók száma, időtartam, szállás tartalma, közlekedés tartalma, teljes ismert költség, nyitott költségek, módosítási feltételek és információforrás az ellenőrzés idejével. Az elnevezéseket a saját utadhoz alakíthatod. A lényeg, hogy azonos kérdésekre válaszolj minden sornál. Ha egy adat hiányzik, azt írd be hiányként. Az üres mező vagy a nulla könnyen azt a benyomást kelti, hogy a kérdés már tisztázott, pedig valójában még kutatási feladatot jelent."
+        ]
+      },
+      {
+        "heading": "Az összesítés előtt egyeztesd a tartalmat",
+        "paragraphs": [
+          "A teljes költség csak akkor hasonlítható össze, ha tudod, milyen szolgáltatást tartalmaz. Jelöld, személyenkénti vagy teljes csoportárat használsz, milyen pénznemben, és melyik tételt számítottad már bele. A szállásnál az éjszakák és a kiválasztott szobatípus is legyen egyértelmű. Ha a sorok eltérő utazási megoldásokat jelentenek, nevezd meg a különbséget, ne rejtsd el az összeg mögött. A módosítási feltételekről rövid saját összefoglalót készíthetsz, de tartsd mellette az eredeti forrást. A táblázat navigációs segítség, nem a szolgáltató feltételeinek helyettesítője, és nem igazolja automatikusan az aktuális foglalhatóságot."
+        ]
+      },
+      {
+        "heading": "Csak a döntő eltérést pontozd",
+        "paragraphs": [
+          "Képzeletbeli háromajánlatos összevetésben az egyik út rövidebb eljutást, a másik kedvezőbb teljes költséget, a harmadik kényelmesebb napirendet kínálhat. Először nevezz meg egy kizáró feltételt, majd két fontos személyes szempontot. Ezeket vizsgáld, mielőtt bonyolult összpontszámot építesz. Ha pontozol, a súlyokat írd le, és nézd meg, változik-e a döntés kis súlymódosítás mellett. Ha igen, az eredmény érzékeny a preferenciáidra, ezért ne kezeld objektív győztesként. A végén egy mondatban indokold meg a választást. Ha ehhez még nincs elég információ, a tábla már hasznos munkát végzett: megmutatta, pontosan melyik kérdést kell a foglalás előtt tisztázni."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a ten-field travel comparison sheet",
+    "excerpt": "A travel comparison sheet does not need every possible detail. It should show how the options you could actually choose differ.",
+    "sections": [
+      {
+        "heading": "Use ten fields to reveal differences",
+        "paragraphs": [
+          "A travel comparison sheet does not need every possible detail. It should show how the options you could actually choose differ. Start with ten fields: route, dates, number of travellers, duration, accommodation contents, transport contents, total known cost, unresolved costs, change conditions and information source with check time. Adapt the labels to your trip. The important point is answering the same questions for every row. Mark missing information explicitly. A blank cell or a zero can suggest a question has been resolved when it actually represents further research that must happen before the options can be assessed fairly."
+        ]
+      },
+      {
+        "heading": "Align contents before adding totals",
+        "paragraphs": [
+          "A total is comparable only when you know which services it contains. State whether the amount is per person or for the group, which currency it uses and which items are already included. Make accommodation nights and the selected room category clear. If rows represent different travel approaches, name the distinction instead of hiding it behind the price. You can summarise change conditions in your own words, but retain the original source beside the summary. The sheet helps you navigate information. It does not replace the provider's conditions or automatically establish that the arrangement remains available to book."
+        ]
+      },
+      {
+        "heading": "Score only the meaningful differences",
+        "paragraphs": [
+          "Imagine comparing three offers: one has a shorter journey, another a lower complete cost and the third a more comfortable daily routine. Identify one exclusion rule and two important personal criteria before creating an elaborate combined score. If you use points, write down the weights and see whether a small change alters the result. If it does, the outcome depends strongly on preferences and should not be presented as an objective winner. Finish by explaining the choice in one sentence. If you lack enough information to do that, the sheet has already served a useful purpose: it has identified the precise question still needing an answer before booking."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

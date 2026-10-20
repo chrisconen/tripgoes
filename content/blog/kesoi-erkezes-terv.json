@@ -1,0 +1,58 @@
+{
+  "slug": "kesoi-erkezes-terv",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Késő esti érkezés nyugodt megtervezése",
+    "excerpt": "Késő esti járatnál a szállás tényleges eléréséből indulj ki.",
+    "sections": [
+      {
+        "heading": "Az érkezés nem a leszállás pillanata",
+        "paragraphs": [
+          "Késő esti járatnál a szállás tényleges eléréséből indulj ki. A leszállás után még több lépés következhet, ezért a tervezett szállásérkezést ne azonosítsd a menetrendi repülési adattal. Írd fel a helyi dátumot is, különösen akkor, ha éjfél közelében mozog a terv. A szállással egyeztesd a bejutás módját, az elérhető segítséget és azt, hogyan jelezz, ha változik az érkezés. Ne feltételezd, hogy minden elhelyezés ugyanúgy kezeli az esti vendéget. A megállapodás konkrét foglalásra és napra vonatkozzon. Ha a válasz nem egyértelmű, tisztázd még az út előtt; a megérkezés pillanata rossz alkalom az alapvető eljárás kitalálására."
+        ]
+      },
+      {
+        "heading": "Egyszerűsítsd az utolsó szakaszt",
+        "paragraphs": [
+          "A termináltól vagy érkezési ponttól a szállásig tartó útvonalat külön ellenőrizd az adott napszakra. Nézd meg a tényleges felszállási vagy találkozási helyet, a csomagokkal járható utolsó szakaszt és az épület felismerhetőségét. Képzeletbeli helyzetben a nappal egyszerűnek tűnő több átszállás helyett az érkezés estéjén egy könnyebben követhető útvonal illik jobban az utazóhoz. Ez személyes kényelmi döntés, nem általános biztonsági minősítés. Legyen egyszerű étkezési elképzelésed is, amely nem függ egyetlen, még nem ellenőrzött hely nyitvatartásától. A szükséges címet és érkezési információt tedd elérhetővé internet nélkül. A bejutási kódokat és személyes adatokat viszont csak az arra jogosult útitársakkal oszd meg."
+        ]
+      },
+      {
+        "heading": "A következő reggelt is hagyd levegőhöz jutni",
+        "paragraphs": [
+          "A késői érkezés után ne automatikusan a lehető legkorábbi kötelező programmal indíts. Gondold végig, mennyi időt szeretnél a berendezkedésre, reggelire és tájékozódásra hagyni. Nem minden utasnak ugyanaz a ritmus kényelmes, ezért ezt közösen egyeztessétek. Ha az első reggelen már kötött program van, a teljes érkezési láncot ehhez is mérd. Legyen világos, mely információt kell frissíteni út közbeni változáskor: transzfer, bejutás, találkozási pont vagy következő napi indulás. Egyetlen kijelölt ember kezelheti a közös értesítést, miközben mindenki hozzáfér a saját fontos adataihoz. A nyugodtabb érkezés alapja nem egy optimista időbecslés, hanem néhány konkrétan egyeztetett lépés és egy könnyen követhető első este."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan a calmer late-night arrival",
+    "excerpt": "For a late flight, plan around actually reaching the accommodation.",
+    "sections": [
+      {
+        "heading": "Arrival is not the moment of landing",
+        "paragraphs": [
+          "For a late flight, plan around actually reaching the accommodation. Several steps may follow landing, so do not equate the scheduled flight arrival with your expected check-in time. Record the local date too, especially when the plan runs close to midnight. Agree access arrangements, available help, and how to report a changed arrival with the accommodation. Do not assume every property handles evening guests in the same way. The agreement should apply to the specific booking and day. If the answer is unclear, resolve it before travelling; the moment you arrive is a poor time to discover the basic process for getting inside."
+        ]
+      },
+      {
+        "heading": "Simplify the final leg",
+        "paragraphs": [
+          "Check the route from the terminal or arrival point to the accommodation for the actual time of day. Identify the boarding or meeting location, the final stretch with luggage, and how to recognise the building. In an imaginary situation, a route with several easy daytime changes may be less appealing on arrival night than one that is simpler to follow. This is a personal convenience judgement, not a general safety rating. Have a simple food plan that does not depend on the unverified opening hours of one place. Make the address and arrival information available offline. Share access codes and personal details only with companions who need them, rather than placing them in public planning documents."
+        ]
+      },
+      {
+        "heading": "Give the next morning room",
+        "paragraphs": [
+          "Avoid automatically scheduling the earliest possible compulsory activity after a late arrival. Consider how much time you want for settling in, breakfast, and finding your bearings. Travellers differ in their preferred rhythm, so agree this together. If the first morning already has a fixed commitment, assess the arrival chain against that too. Know which information needs updating when plans change en route: transfer, access, meeting location, or next-day departure. One person can manage shared communication while everyone retains access to their own essential details. A calmer arrival comes from several specifically agreed steps and an understandable first evening, not from a single optimistic estimate of how quickly you will reach the room."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

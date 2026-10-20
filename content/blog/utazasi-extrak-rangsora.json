@@ -1,0 +1,58 @@
+{
+  "slug": "utazasi-extrak-rangsora",
+  "category": "budgets",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Utazási extrák személyes rangsora",
+    "excerpt": "Egy utazási extra akkor értékelhető jól, ha meg tudod nevezni, milyen problémát old meg vagy milyen élményt ad hozzá. A kényelmesebb indulás, a több csomaghely és egy külön program nem ugyanabban a kategóriában versenyez.",
+    "sections": [
+      {
+        "heading": "Az extrák mögött keress konkrét feladatot",
+        "paragraphs": [
+          "Egy utazási extra akkor értékelhető jól, ha meg tudod nevezni, milyen problémát old meg vagy milyen élményt ad hozzá. A kényelmesebb indulás, a több csomaghely és egy külön program nem ugyanabban a kategóriában versenyez. Készíts rövid listát a felmerülő extrákról, és mindegyik mellé írj egy mondatot a várható használatról. Ha csak annyit tudsz mondani, hogy jó lenne, egyelőre hagyd bizonytalanként. Ez nem jelenti azt, hogy minden örömteli választást igazolni kell. A cél az, hogy különbséget tudj tenni a személyesen fontos kiegészítés és a foglalási folyamat közben véletlenül vonzóvá vált lehetőség között."
+        ]
+      },
+      {
+        "heading": "Rangsorolj gyakoriság és jelentőség szerint",
+        "paragraphs": [
+          "Nézd meg, az extra az egész utat érinti-e, naponta kerül-e elő, vagy egyetlen rövid helyzetben használod. Ezután jelöld, mennyire fontos neked az adott helyzet. Egy gyakran használt kiegészítés nem automatikusan jobb, ha közben kevés jelentősége van; egy ritka, de fontos élmény is kerülhet a lista elejére. A pároddal vagy csoportoddal külön készítsetek rangsort, majd keressétek meg az eltéréseket. Így láthatóvá válik, melyik közös extra szolgál valóban több embert, és melyik lenne inkább személyes választás. Az árat csak a tartalom és a használat tisztázása után tedd a sorrend mellé."
+        ]
+      },
+      {
+        "heading": "Vizsgáld meg a csere árát",
+        "paragraphs": [
+          "Képzeletbeli hétvégi útnál választhatsz egy kényelmi kiegészítés és egy különleges délutáni program között, de a keret csak az egyikre elég. Fogalmazd meg, mit nyersz és mit engedsz el mindkét döntésnél. Ha a kiegészítés olyan költséget is kivált, amelyet egyébként fizetnél, a nettó különbséget hasonlítsd össze, ne csak a feltüntetett árat. Az aktuális tartalmat és feltételeket a szolgáltatónál ellenőrizd. Végül jelöld ki előre azt az extrát, amelyről elsőként mondanál le, ha a teljes költség nőne. Ez csökkenti a későbbi kapkodást, és segít megőrizni azt a néhány elemet, amely a te utadhoz a legtöbbet adja."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Rank the travel extras that matter to you",
+    "excerpt": "A travel extra is easier to evaluate when you can name the problem it solves or the experience it adds. A more convenient departure, additional baggage space and a special activity do not perform the same role.",
+    "sections": [
+      {
+        "heading": "Give each extra a specific job",
+        "paragraphs": [
+          "A travel extra is easier to evaluate when you can name the problem it solves or the experience it adds. A more convenient departure, additional baggage space and a special activity do not perform the same role. Make a short list of proposed extras and describe the expected use of each in one sentence. If all you can say is that it would be nice, leave it undecided for now. Enjoyable choices do not need elaborate justification. The purpose is to distinguish something personally important from an option that became attractive simply because it appeared during the booking process."
+        ]
+      },
+      {
+        "heading": "Rank frequency and importance separately",
+        "paragraphs": [
+          "Consider whether the extra affects the entire journey, comes into use every day or serves one brief situation. Then assess how important that situation is to you. Frequent use does not automatically make an extra worthwhile if the benefit is small; a single meaningful experience may rank higher. With companions, make separate rankings before comparing them. This reveals which shared additions actually serve several people and which would be better treated as individual choices. Put the price beside the ranking only after clarifying the contents and expected use, so the promotional presentation does not decide what matters."
+        ]
+      },
+      {
+        "heading": "Consider the trade-off",
+        "paragraphs": [
+          "On an imaginary weekend trip, you might choose between a convenience upgrade and a distinctive afternoon activity because the allowance covers only one. Describe what each option adds and what accepting it would mean giving up. If an extra replaces another cost you would otherwise pay, compare the net difference instead of only its displayed price. Check current contents and conditions with the provider. Finally, identify the first extra you would remove if the overall cost increased. Making that decision in advance reduces hurried choices later and helps preserve the small number of additions that contribute most to the kind of trip you want."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

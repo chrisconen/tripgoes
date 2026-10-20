@@ -1,0 +1,70 @@
+{
+  "slug": "hajout-ajanlat-adatlap",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Készíts összehasonlítható hajóúti adatlapot",
+    "excerpt": "Két hajóúti ajánlat összehasonlításához először ugyanazokat a mezőket gyűjtsd ki mindkettőből.",
+    "sections": [
+      {
+        "heading": "Ugyanazok az alapmezők",
+        "paragraphs": [
+          "Két hajóúti ajánlat összehasonlításához először ugyanazokat a mezőket gyűjtsd ki mindkettőből. A hajó neve és az indulási dátum mellett szerepeljen az útvonal, az éjszakák száma, a kabinkategória és az utazók pontos összetétele. A személyenként feltüntetett összeg önmagában kevés, ha nem világos, milyen elhelyezésre és foglalásra vonatkozik. Az adatlap első feladata ezért nem a pontozás, hanem annak megmutatása, hogy valóban ugyanarról a szolgáltatási helyzetről beszéltek-e. Az eltérések maradjanak láthatók."
+        ]
+      },
+      {
+        "heading": "Az ár tartalmának állapotai",
+        "paragraphs": [
+          "A következő blokkban az ár tartalmát rögzítsd a konkrét ajánlat szövege alapján. Külön mezőt adj a kabinnak, az ellátásnak, a feltüntetett díjaknak és a választható extráknak. A „tartalmazza”, „nem tartalmazza” és „nem egyértelmű” állapotot ne mosd össze. Ha egy kötelező tétel nem tisztázott, a teljes ár még nem összehasonlítható biztosan. A fizetés ütemezése és a módosítás feltétele szintén megérdemel saját helyet, de ezek értelmezésénél mindig az aktuális szolgáltatói feltételekre támaszkodj, ne egy rövid reklámmondatra."
+        ]
+      },
+      {
+        "heading": "Az eltérés nem pusztán ár",
+        "paragraphs": [
+          "Képzeletbeli példánkban két ajánlat ugyanarra a hajóra és hétre szól. Az egyik egy megnevezett kabinhelyet tartalmaz, a másiknál a pontos kabin később derül ki. A második alacsonyabb összege ezért nem pusztán ugyanannak az ajánlatnak a kedvezőbb ára: eltérő bizonytalanságot is tartalmaz. Az adatlapban ezt külön sorban jelöld, és döntsd el, neked mennyit számít. Ugyanígy kezeld az eltérő ellátást vagy az indulási helyszínhez kapcsolódó utazást. A különbséget ne rejtsd el egyetlen összesített szám mögé."
+        ]
+      },
+      {
+        "heading": "Forrás és ellenőrzési idő",
+        "paragraphs": [
+          "Minden ajánlat mellé írd oda a forrást és az ellenőrzés időpontját. Mentsd el a releváns visszaigazolást vagy feltételt a saját foglalási jegyzeteid között, személyes adatokat nem tartalmazó összehasonlító nézettel együtt. A döntés előtt a még nyitott mezőket kérdezd meg, majd ellenőrizd újra az aktuális ajánlatot. Az adatlap nem garantálja, hogy az ár változatlan marad, és nem helyettesíti a foglalást. Arra szolgál, hogy később is meg tudd mondani, melyik ismert előnyért és melyik vállalt kompromisszumért választottad az adott utat."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Create a comparable cruise offer sheet",
+    "excerpt": "To compare two cruise offers, first collect the same fields from each.",
+    "sections": [
+      {
+        "heading": "The same starting fields",
+        "paragraphs": [
+          "To compare two cruise offers, first collect the same fields from each. Alongside the ship and departure date, record the itinerary, number of nights, cabin category and exact composition of the travelling party. A per-person amount is insufficient when the occupancy and booking conditions behind it are unclear. The sheet's first purpose is therefore not to award a score. It is to show whether the offers describe the same service situation, while keeping meaningful differences visible."
+        ]
+      },
+      {
+        "heading": "States of price inclusion",
+        "paragraphs": [
+          "In the next section, record price inclusions from the wording of the specific offer. Give separate fields to the cabin, meals, stated charges and optional extras. Keep included, excluded and unclear as three distinct states. If a required item is unresolved, the complete amount cannot yet be compared with confidence. Payment timing and amendment conditions deserve their own space too. When interpreting those fields, use the current provider terms rather than treating a short promotional statement as a complete explanation."
+        ]
+      },
+      {
+        "heading": "A difference beyond price",
+        "paragraphs": [
+          "In a hypothetical example, two offers concern the same ship and week. One includes a specified cabin location, while the other assigns the exact cabin later. The lower amount is therefore not simply a cheaper version of an identical offer: it also comes with a different uncertainty. Record that difference separately and decide how much it matters to you. Treat different meal arrangements or travel to embarkation in the same way. Do not allow a single total to hide what you would actually receive."
+        ]
+      },
+      {
+        "heading": "Source and check time",
+        "paragraphs": [
+          "Add the source and check time to each offer. Keep relevant confirmations or conditions in your private booking notes alongside a comparison view that contains no personal details. Before deciding, ask about unresolved fields and recheck the current offer. The sheet does not guarantee that a price will remain available and does not replace a booking. Its value is that you can later explain which known advantages and accepted compromises led you to choose the voyage, instead of relying on a remembered headline price."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

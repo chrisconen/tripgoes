@@ -1,0 +1,58 @@
+{
+  "slug": "lastminute-dontesi-hatarido",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Saját döntési határidő sürgetés helyett",
+    "excerpt": "A szolgáltató által jelzett időkorlát és a saját döntési határidőd nem ugyanaz.",
+    "sections": [
+      {
+        "heading": "Két külön határidőt kell felismerned",
+        "paragraphs": [
+          "A szolgáltató által jelzett időkorlát és a saját döntési határidőd nem ugyanaz. Az első egy adott ajánlat vagy folyamat része, amelynek pontos jelentését szükség esetén ellenőrizni kell. A második arról szól, meddig szánsz figyelmet a keresésre, és milyen adatok birtokában tudsz dönteni. Írd le előre a minimális információt: végleges tartalom, teljes vállalt összeg, megfelelő időpontok és a lényeges személyes igények teljesülése. Ha ezek nincsenek meg, a saját határidőd elérése nem teszi készre a foglalást. Ilyenkor a döntés lehet az is, hogy további tisztázás szükséges. A keret azért kell, hogy ne a folyamatos böngészés vagy egy sürgető felirat irányítsa az egész estédet."
+        ]
+      },
+      {
+        "heading": "Rendezd sorba a nyitott kérdéseket",
+        "paragraphs": [
+          "A keresési idő végén ne újabb tíz ajánlatot nyiss meg, hanem nézd át, mi hiányzik a két legjobb változatból. A kérdéseket fontosság szerint rendezd: mi változtatná meg a választást, és mi csupán érdekesség. Képzeletbeli esetben a késői bejutás tisztázása lényegesebb lehet, mint még egy fotó megtalálása a szobáról. Minden fontos kérdéshez legyen konkrét következő lépés és felelős. Ha a válasz várhatóan csak később érkezik, nevezd ezt meg nyíltan, ne próbáld feltételezéssel kitölteni az üres helyet. A kisebb részletek egy részét elengedheted, amennyiben nem alapfeltételei az útnak. Ez a sorrend csökkenti a kutatást anélkül, hogy a fontos ellenőrzéseket kihagynád."
+        ]
+      },
+      {
+        "heading": "A lezárás nem jóslat",
+        "paragraphs": [
+          "A döntéskor nem kell megmondanod, hogy holnap olcsóbb vagy drágább lesz-e az út. Azt mérlegeld, hogy a most ellenőrzött lehetőség megfelel-e a saját célodnak és keretednek. Ha igen, jegyezd fel az indokot, és a foglalás után zárd le az összehasonlító keresést. Ha nem, válassz tudatos következő lépést: más időszakot, egyszerűbb utat vagy későbbi újrakezdést. Ne hagyj minden böngészőlapot nyitva úgy, mintha a döntés még mindig függőben lenne. Egy saját határidő nem garantálja a legjobb árat és nem foglalja le az ajánlatot. Abban segít, hogy a rendelkezésre álló figyelmedből arányos, követhető döntési folyamatot alakíts ki."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Set your own booking decision deadline",
+    "excerpt": "A time limit displayed by a provider is different from your own decision deadline.",
+    "sections": [
+      {
+        "heading": "Recognise two different deadlines",
+        "paragraphs": [
+          "A time limit displayed by a provider is different from your own decision deadline. The first belongs to a particular offer or process and may need clarification. The second defines how long you intend to spend searching and what information you require before choosing. Write that minimum information in advance: final inclusions, the amount you will commit to, workable timings, and satisfaction of essential personal needs. Reaching your own deadline does not make a booking ready if those answers are missing. Your decision may instead be to seek clarification. The boundary exists so endless browsing or an urgent banner does not take control of the entire evening."
+        ]
+      },
+      {
+        "heading": "Put unresolved questions in order",
+        "paragraphs": [
+          "As research time ends, avoid opening ten more offers. Review what is missing from the two strongest options. Rank questions according to whether their answers could change the choice or would merely be interesting. In an imaginary situation, confirming late access to accommodation may matter more than finding another room photograph. Give each important question a specific next action and owner. If an answer will arrive later, state that openly rather than filling the gap with an assumption. Some smaller details can be left aside when they are not fundamental to the trip. This ordering reduces research without removing the checks that give the decision its foundation."
+        ]
+      },
+      {
+        "heading": "Closing the search is not a prediction",
+        "paragraphs": [
+          "You do not need to know whether the trip will cost more or less tomorrow. Assess whether the currently checked option meets your own purpose and spending limit. If it does, record the reason and close the comparison search after booking. If it does not, choose an explicit next step: another period, a simpler journey, or a later restart. Avoid leaving every browser tab open as if the choice remains permanently unresolved. A personal deadline neither guarantees the lowest price nor reserves an offer. It helps turn limited attention into a proportionate, understandable decision process. The useful outcome is a justified next action, including the possibility of deciding not to book."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

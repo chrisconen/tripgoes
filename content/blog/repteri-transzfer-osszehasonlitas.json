@@ -1,0 +1,58 @@
+{
+  "slug": "repteri-transzfer-osszehasonlitas",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Reptéri transzfer ajtótól ajtóig",
+    "excerpt": "Reptéri transzfert akkor tudsz jól összehasonlítani, ha nem csupán a reptér és a város neve szerepel a keresésben.",
+    "sections": [
+      {
+        "heading": "Pontosan nevezd meg a két végpontot",
+        "paragraphs": [
+          "Reptéri transzfert akkor tudsz jól összehasonlítani, ha nem csupán a reptér és a város neve szerepel a keresésben. Az érkezési termináltól a szállás tényleges bejáratáig gondolkodj. Vizsgáld meg a felszállási pont elérését, az esetleges várakozást, a köztes megállókat és az utolsó gyalogos szakaszt. Ezeket az aktuális szolgáltatói leírásból és a szállás információiból ellenőrizd. A városközpontig szóló út nem feltétlenül oldja meg a teljes érkezést. A csomagok száma és a társaság mérete is befolyásolhatja a választást, ezért a saját utascsoportodra keress adatot. Az összevetésben minden változat ugyanahhoz a tényleges célhoz vezessen, különben a rövidebb szolgáltatás látszólagos előnyt kaphat."
+        ]
+      },
+      {
+        "heading": "A megosztott és az önálló utat külön írd le",
+        "paragraphs": [
+          "A különböző megoldások nem csak árban térhetnek el. Nézd meg, ki határozza meg az indulást, hogyan találkozol a szolgáltatóval, milyen várakozás vagy más utasokhoz igazodás szerepel a leírásban. A pontos feltételeket ellenőrizd, ne a szolgáltatás neve alapján feltételezd. Képzeletbeli példában egy egyedül utazó, kis táskával érkező embernek más szempont fontos, mint több, közös csomaggal érkező társának. Az egyik rugalmasan vállalhat több gyaloglást, a másik a kevés átrendezést értékelheti. Az árakat a tényleges létszámra és igényekre számold. Egy személyenként jelzett összeg és egy egész járműre vonatkozó ajánlat csak megfelelő átszámítás után kerülhet azonos sorba."
+        ]
+      },
+      {
+        "heading": "Nézd meg a találkozás és változás feltételeit",
+        "paragraphs": [
+          "A foglalás előtt legyen egyértelmű, hol találkoztok, milyen információt kell megadnod, és hogyan jelzed a változást. Ha várakozási vagy más feltétel szerepel az ajánlatban, olvasd el az adott foglalásra vonatkozó részleteket. Ne feltételezz korlátlan rugalmasságot. Az érkezési adatok változásakor ellenőrizd, szükséges-e új egyeztetés. Mentsd el a kapcsolattartási információt, a foglalási összesítést és a cél pontos címét, de a személyes adatokat ne tedd nyilvánossá. A döntés indoka legyen röviden megfogalmazható: kisebb teljes kiadás, kevesebb lépés vagy jobb illeszkedés a csoporthoz. A legjobb transzfer számodra az, amelyiknek a teljes folyamatát érted és vállalod, nem feltétlenül az, amelyikhez a legrövidebb hirdetési leírás tartozik."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Compare airport transfers door to door",
+    "excerpt": "Airport transfers are easier to compare when the search contains more than the airport and city names.",
+    "sections": [
+      {
+        "heading": "Name both endpoints precisely",
+        "paragraphs": [
+          "Airport transfers are easier to compare when the search contains more than the airport and city names. Think from the actual arrival terminal to the accommodation entrance. Examine reaching the boarding point, possible waiting, intermediate stops, and the final walk. Check these against current provider descriptions and accommodation information. Transport to the city centre may not complete your arrival. Luggage and party size also influence the choice, so seek details for your own group. Every option should end at the same practical destination in the comparison. Otherwise, a service covering less of the journey can gain an artificial advantage through its shorter description or smaller quoted amount."
+        ]
+      },
+      {
+        "heading": "Describe shared and individual journeys separately",
+        "paragraphs": [
+          "Options can differ in more than price. Find out who determines departure, how you meet the provider, and what waiting or coordination with other passengers the description includes. Check actual conditions instead of assuming them from a service label. Imagine a solo traveller with a small bag and, separately, several companions with shared luggage. Their priorities may differ: one can comfortably walk farther while the others value fewer changes. Calculate prices for the actual number of people and requirements. A per-person amount and a quote for an entire vehicle belong in the same comparison only after being converted to the same scope. Keep the original quote wording available for checking."
+        ]
+      },
+      {
+        "heading": "Check meeting and change arrangements",
+        "paragraphs": [
+          "Before booking, know where you will meet, which information you must provide, and how to report a change. If the offer describes waiting or other conditions, read the details applying to the actual booking. Do not assume unlimited flexibility. When arrival details change, check whether another conversation is needed. Save contact information, the booking summary, and the precise destination address while keeping personal details out of public documents. Your reason for choosing should fit a short sentence: lower complete spending, fewer steps, or a better fit for the group. The right transfer is one whose complete process you understand and accept, not necessarily the one with the shortest advertisement."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

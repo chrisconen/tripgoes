@@ -1,0 +1,58 @@
+{
+  "slug": "teljes-koltseg-lastminute",
+  "category": "lastminute",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "A lastminute ajánlat teljes költsége",
+    "excerpt": "Egy lastminute ajánlat kiemelt összege csak akkor hasonlítható a saját keretedhez, ha tudod, mely kiadásokat fedi le.",
+    "sections": [
+      {
+        "heading": "Húzd meg az út költséghatárát",
+        "paragraphs": [
+          "Egy lastminute ajánlat kiemelt összege csak akkor hasonlítható a saját keretedhez, ha tudod, mely kiadásokat fedi le. A számolást az otthonod ajtajától a hazatérésig végezd. Kerüljön bele az indulási hely elérése, maga az utazás, a szállás, a helyi mozgás, az étkezés és minden olyan elem, amely nélkül számodra nem működik az út. Ne számíts bele automatikusan olyan szolgáltatást, amelynek meglétét nem ellenőrizted. Külön oszlopot kapjon a visszaigazolt összeg, a becslés és a még ismeretlen tétel. Az ismeretlen költség nem nulla; azt jelzi, hogy a döntéshez még hiányzik egy adat. Ez a különbség fontosabb lehet, mint a hirdetésben szereplő kedvezmény nagysága."
+        ]
+      },
+      {
+        "heading": "A személyes extrákat tedd láthatóvá",
+        "paragraphs": [
+          "A teljes költség nem minden utazónál ugyanaz. Akinek szükséges egy külön poggyász, egy meghatározott szobabeosztás vagy kényelmesebb transzfer, annak ez az alapváltozat része. Másnak ugyanez választható extra lehet. Szemléltető számításként képzelj el egy száz egységes csomagot, amelyhez húsz egységnyi eljutás és tizenöt egységnyi elengedhetetlen kiegészítés kapcsolódik. A használható összehasonlítási alap így százharmincöt egység, nem száz. Ezek kitalált számok, nem tényleges árak. A példából az következik, hogy a szükséges tételeket következetesen mindegyik ajánlatnál ugyanúgy kell számolni. A csak kedved szerint választott programokat külön sorban tartsd, így látod, mi módosítható, ha a keret szűkül."
+        ]
+      },
+      {
+        "heading": "A bizonytalanságot ne rejtsd el a végösszegben",
+        "paragraphs": [
+          "Az előzetes költségtervhez tehetsz saját tartalékot, de ezt ne nevezd biztosan felmerülő díjnak. Jelöld meg, mire szolgál: például egy még nem végleges helyi eljutás vagy egy szabadon választott étkezési szokás változására. A foglalás előtt frissítsd az alapadatokat, és ellenőrizd, hogy a kiválasztott dátumra, utasokra és tartalomra vonatkoznak. Ha egy lényeges tétel továbbra sem tisztázható, állítsd meg az összehasonlítást, vagy kezeld külön bizonytalan változatként az ajánlatot. Az alacsonyabb látható összeg nem feltétlenül jelent kisebb várható kiadást. A cél az, hogy a döntéskor pontosan tudd, mit vállalsz biztosan, mit becsülsz, és mely részek felett marad még saját választási lehetőséged."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Calculate the full cost of a lastminute offer",
+    "excerpt": "A headline lastminute price can be compared with your budget only when you know which expenses it covers.",
+    "sections": [
+      {
+        "heading": "Define the boundary of the trip",
+        "paragraphs": [
+          "A headline lastminute price can be compared with your budget only when you know which expenses it covers. Calculate from leaving your front door until returning home. Include reaching the departure point, the journey itself, accommodation, local movement, meals, and anything without which the trip would not work for you. Do not automatically count a service as included when you have not checked it. Give confirmed amounts, estimates, and unknown items separate columns. An unknown expense is not zero; it means information is still missing from the decision. That distinction can matter more than the size of the discount shown in an advertisement."
+        ]
+      },
+      {
+        "heading": "Make personal essentials visible",
+        "paragraphs": [
+          "The complete cost differs between travellers. Someone who requires an additional bag, a particular room arrangement, or a more convenient transfer should include it in their basic version of the trip. For another person it may be optional. As an illustrative calculation, imagine a package costing one hundred units, plus twenty for reaching the departure point and fifteen for essential additions. The useful comparison total becomes one hundred and thirty-five units. These are invented figures, not actual prices. The lesson is to include necessary items consistently for every offer. Keep activities chosen purely for enjoyment on separate lines so you can see what remains adjustable if the budget becomes tighter."
+        ]
+      },
+      {
+        "heading": "Do not hide uncertainty inside the total",
+        "paragraphs": [
+          "You may add a personal reserve to the preliminary budget, but do not describe it as a fee that will definitely arise. State its purpose, such as an unresolved local journey or variation in how you choose to eat. Before booking, refresh the underlying information and check that it applies to the selected dates, travellers, and inclusions. If an essential expense still cannot be clarified, pause the comparison or label that offer as an uncertain alternative. A smaller visible amount does not necessarily mean a smaller eventual spend. The aim is to know precisely what you are committing to, what you have estimated, and which parts remain under your control. This gives the final number a meaning beyond the headline."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

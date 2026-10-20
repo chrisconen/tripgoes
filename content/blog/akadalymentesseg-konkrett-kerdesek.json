@@ -1,0 +1,58 @@
+{
+  "slug": "akadalymentesseg-konkrett-kerdesek",
+  "category": "responsible",
+  "image": "madeira",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Akadálymentesség: konkrét kérdések foglalás előtt",
+    "excerpt": "Az akadálymentesség általános jelölése kevés ahhoz, hogy eldöntsd, egy hely megfelel-e a saját utazási igényeidnek. Kezdd a tényleges mozgás és használat leírásával: hogyan érkezel, milyen bejáratot használsz, hogyan jutsz a szobába, és milyen helyzetekhez kell pontos információ.",
+    "sections": [
+      {
+        "heading": "Az igényt írd le, ne csak a címkét keresd",
+        "paragraphs": [
+          "Az akadálymentesség általános jelölése kevés ahhoz, hogy eldöntsd, egy hely megfelel-e a saját utazási igényeidnek. Kezdd a tényleges mozgás és használat leírásával: hogyan érkezel, milyen bejáratot használsz, hogyan jutsz a szobába, és milyen helyzetekhez kell pontos információ. A listát az érintett utazó alakítsa, ne más találja ki helyette, mire lehet szüksége. A cél nem személyes egészségügyi részletek megosztása, hanem a szolgáltatás használhatóságának tisztázása. Már néhány konkrét kérdés sokkal több segítséget adhat, mint az általános ígéret, hogy a hely mindenki számára kényelmes vagy könnyen megközelíthető."
+        ]
+      },
+      {
+        "heading": "Kérj megfigyelhető választ",
+        "paragraphs": [
+          "A megfelelő kérdés olyan választ tesz lehetővé, amelyet össze tudsz vetni a saját követelményeiddel. Kérdezhetsz például a bejárati lépcsőről, az ajtó tényleges szabad szélességéről, a lifthez vezető útvonalról vagy a kiválasztott szobában elérhető kialakításról. A pontos mérést és az aktuális fényképet külön kérd, ha szükségesnek tartod; ne következtesd ki marketingképből. A válasz vonatkozzon a konkrét szobatípusra és az utazás idejére. Ha a szolgáltató nem tud valamit megerősíteni, jelöld nyitott kérdésként. Az is fontos adat, hogy egy lényeges feltétel még nincs ellenőrizve, és nem szabad kész tényként beírni a tervbe."
+        ]
+      },
+      {
+        "heading": "Ellenőrizd a teljes láncot",
+        "paragraphs": [
+          "Képzeletbeli hétvégi útnál a szoba megfelelőnek tűnhet, miközben az odavezető transzfer vagy az épület bejárata még tisztázatlan. Rajzold fel az út egymás utáni pontjait, és minden pont mellé írd az információ forrását. Ahol több szolgáltató találkozik, külön ellenőrizd az átadást: ki segít, hol történik, és mit igazoltak vissza? A szükséges válaszokat a döntés előtt kérd be, majd őrizd meg írásban. A társaidnak csak a szervezéshez szükséges részleteket oszd meg. A jól dokumentált terv nem ad minden helyzetre garanciát, de megmutatja, mely feltételek igazoltak, melyek feltételezések, és mely pontokon kell még változtatni a foglalás előtt."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Ask specific accessibility questions before booking",
+    "excerpt": "A general accessibility label is not enough to decide whether a place meets your travel requirements. Start by describing the actual sequence of use: arrival, entrance, route to the room and situations needing precise information.",
+    "sections": [
+      {
+        "heading": "Describe requirements rather than searching only for a label",
+        "paragraphs": [
+          "A general accessibility label is not enough to decide whether a place meets your travel requirements. Start by describing the actual sequence of use: arrival, entrance, route to the room and situations needing precise information. The traveller concerned should shape the requirements rather than somebody else deciding what they must need. The aim is not to share unnecessary personal health information. It is to establish whether a service can be used as intended. A few concrete questions can provide more useful information than a broad assurance that a place is comfortable or easy for everybody to access."
+        ]
+      },
+      {
+        "heading": "Ask for observable answers",
+        "paragraphs": [
+          "A useful question allows an answer you can compare with your own requirements. Examples include an entrance step, the actual clear width of a doorway, the route to a lift or arrangements in the selected room. Request measurements or current photographs separately if needed; do not infer them from promotional images. The response should concern the specific room category and intended dates. If the provider cannot confirm something, mark it as an open question. An essential condition that remains unverified is meaningful information. It should not silently become an established fact in the itinerary merely because other parts appear suitable."
+        ]
+      },
+      {
+        "heading": "Check the whole chain",
+        "paragraphs": [
+          "On an imagined weekend trip, the room may appear appropriate while the transfer or building entrance remains unclear. Draw the sequence of places and record the source of information at each point. Where services meet, check the handover separately: who is involved, where it happens and what has actually been confirmed. Obtain the necessary answers before deciding and preserve them in writing. Share only the details companions need for organising the trip. A documented plan cannot guarantee every outcome, but it shows which conditions are confirmed, which are assumptions and which still require a change before a booking can reasonably be assessed."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

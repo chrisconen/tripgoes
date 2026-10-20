@@ -1,0 +1,58 @@
+{
+  "slug": "utazas-tervezes-harom-korlattal",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Utazástervezés három valódi korláttal",
+    "excerpt": "Három világos határ többet segít, mint húsz nyitott keresőlap.",
+    "sections": [
+      {
+        "heading": "Válaszd külön a határt és a kívánságot",
+        "paragraphs": [
+          "Az utazás tervezését érdemes azzal kezdeni, amit valóban nem tudsz megváltoztatni. Ilyen lehet a rendelkezésre álló idő, a teljes költségkeret és az a terhelés, amely mellett még jól érzed magad. A tengerre néző szoba közben fontos kívánság lehet, de nem feltétlenül határ. Írd fel külön a két listát, majd minden határ mellé tegyél egy rövid indoklást. Ha nem tudod megmondani, miért kizáró feltétel valami, talán csak megszokott elvárás. A módszer célja nem az igények csökkentése, hanem az, hogy a keresés ne olyan utakra fordítsa az idődet, amelyek eleve nem működnének. A társaddal közösen kitöltött lap sok későbbi félreértést is megelőzhet."
+        ]
+      },
+      {
+        "heading": "Fordítsd le a határokat keresési szabályokra",
+        "paragraphs": [
+          "Képzeletbeli példánkban két embernek négy szabad napja van, péntek délután tud indulni, és hétfő este otthon kell lennie. A keretbe az eljutás, a szállás, az étkezés és a helyi mozgás is beleférjen. A harmadik határ az, hogy egyetlen napon se kelljen hosszú autóutat vállalniuk. Ebből már következik néhány használható szűrő: legfeljebb egy szállás, ellenőrizhető esti érkezés és rövid helyi transzfer. Nem kell még várost választaniuk. Előbb azt vizsgálják, mely útvonalak férnek bele ebbe a szerkezetbe. Így a vonzó fénykép csak olyan lehetőségek között dönt, amelyek ténylegesen megvalósíthatók. A kerethez ne a hirdetés kiemelt részárát, hanem a várható teljes kiadást hasonlítsd."
+        ]
+      },
+      {
+        "heading": "Hagyj egy tudatosan mozgatható elemet",
+        "paragraphs": [
+          "Három merev határ mellé válassz legalább egy rugalmas elemet. Lehet ez a város, a szálláskategória, az indulás pontos órája vagy a programok száma. Írd le azt is, milyen csere lenne számodra elfogadható: például kisebb szoba egy jobb környékért, vagy egyetlen látványosság elhagyása egy nyugodtabb délutánért. Amikor új ajánlat érkezik, először a határokat ellenőrizd, utána a cseréket mérlegeld. A foglalás előtt egyszer olvasd vissza az eredeti indokokat. Ha az út csak úgy működik, hogy minden kivételt megengedsz, valószínűleg nem illeszkedik a helyzetedhez. Ha viszont minden lényeges feltételt teljesít, nem szükséges tovább keresni egy elméleti, minden részletében tökéletes változatot."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan a trip around three real constraints",
+    "excerpt": "Three clear limits can help more than twenty open search tabs.",
+    "sections": [
+      {
+        "heading": "Separate limits from preferences",
+        "paragraphs": [
+          "Start with the parts of a trip that you genuinely cannot change. These might be available time, your complete spending limit, and the amount of effort that still allows you to enjoy the journey. A room with a sea view can be an important preference without being a firm boundary. Write two separate lists and add a brief reason beside each limit. If you cannot explain why something rules out an otherwise suitable trip, it may simply be a familiar expectation. This exercise is not about lowering your ambitions. It prevents you from spending research time on journeys that cannot work. Completing the page together also gives travel companions a shared starting point."
+        ]
+      },
+      {
+        "heading": "Turn boundaries into search rules",
+        "paragraphs": [
+          "Imagine two people who have four free days, can leave on Friday afternoon, and must return by Monday evening. Their budget must cover transport, accommodation, meals, and getting around locally. Their third boundary is avoiding a long drive on any day. Several useful search rules follow: one accommodation base, an arrival time that can be handled, and a manageable transfer. They do not need to choose a city yet. First they can identify routes that fit this structure. Attractive photographs then help them choose between workable options instead of distracting them from the original limits. Compare the complete expected spend with the budget, rather than using only the prominent headline price of an offer."
+        ]
+      },
+      {
+        "heading": "Keep one element deliberately flexible",
+        "paragraphs": [
+          "Alongside three firm boundaries, choose at least one flexible element. This could be the destination, accommodation category, exact departure time, or number of planned activities. Describe an acceptable trade: a smaller room in a more useful neighbourhood, for example, or one fewer attraction in exchange for a relaxed afternoon. When a new option appears, check the boundaries first and consider the trades second. Before booking, reread the reasons behind your original limits. If a journey works only after making exceptions to every rule, it probably does not fit your situation. If it meets the important conditions, you can stop looking for an imaginary version that is perfect in every detail. A clear stopping point is part of a good plan."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

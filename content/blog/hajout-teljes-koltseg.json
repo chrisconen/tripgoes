@@ -1,0 +1,70 @@
+{
+  "slug": "hajout-teljes-koltseg",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Hajóút teljes költségkerete",
+    "excerpt": "A hajóút teljes költségkeretét három külön dobozból építsd fel: a konkrét foglalási ajánlatból, az utazásodhoz szükséges további tételekből és a saját döntésű extrákból.",
+    "sections": [
+      {
+        "heading": "Három külön költségcsoport",
+        "paragraphs": [
+          "A hajóút teljes költségkeretét három külön dobozból építsd fel: a konkrét foglalási ajánlatból, az utazásodhoz szükséges további tételekből és a saját döntésű extrákból. Először a szolgáltató ajánlatát olvasd el, és másold ki, mit tartalmaz az ár. A kabin, az ellátás és az egyéb szolgáltatások tartalma csomagonként eltérhet. Amit nem találsz egyértelműen leírva, azt kérdésként jelöld. Így nem lesz egy ismeretlen díjból véletlenül nulla, és egy másik út tapasztalatából sem automatikus feltételezés."
+        ]
+      },
+      {
+        "heading": "Az eljutás és az egységek",
+        "paragraphs": [
+          "A második dobozba kerüljön az eljutás, az indulási kikötő körüli szállás, a szükséges transzfer és a hazatérés költsége. Minden sornál jelöld, hogy az összeg személyenként, szobánként vagy a teljes társaságra vonatkozik. A közösen használt szoba ára nem feltétlenül ugyanúgy változik, mint a személyre szóló jegyeké. Az egyes pénznemeket is őrizd meg az eredeti összeg mellett. Ha átváltással tervezel, a használt feltételezést külön írd oda, mert az összehasonlítás és a tényleges fizetés időpontja eltérhet."
+        ]
+      },
+      {
+        "heading": "Választott extrák",
+        "paragraphs": [
+          "A harmadik dobozban rangsorold a választható élményeket és fedélzeti vásárlásokat. Ne foglalj mindent csak azért, mert egy csomag egyszerűnek tűnik. Képzeletbeli példánkban a társaság egyetlen szervezett kirándulást tart fontosnak, a többi megállónál önálló sétát tervez. A keret ezért ehhez az egy kiemelt programhoz igazodik, a többi sor pedig becslés marad. Az étkezéshez, italokhoz vagy kapcsolódáshoz választott szolgáltatások pontos feltételeit mindig az adott ajánlatban ellenőrizd. A kategória neve nem bizonyítja, hogy minden kívánt használatot lefed."
+        ]
+      },
+      {
+        "heading": "Bizonytalanság láthatóan",
+        "paragraphs": [
+          "Az összesítés mellett tarts meg egy külön bizonytalansági listát. Ide kerülhet a még nem kiválasztott helyi közlekedés vagy egy később eldöntendő program. A tartalékot ne rejtsd el valamelyik tétel megemelésével, mert akkor később nehéz megérteni a változást. A foglalás után az igazolt összegeket és a becsléseket folyamatosan különítsd el. A keret akkor segít dönteni, ha látható belőle, mi már vállalt költség, mi változtatható, és mekkora mozgástered marad az utazás során anélkül, hogy minden nap újraszámolnád az egészet."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Build a complete cruise budget",
+    "excerpt": "Build a complete cruise budget from three separate groups: the specific booking offer, additional costs required for your journey and extras chosen by you.",
+    "sections": [
+      {
+        "heading": "Three cost groups",
+        "paragraphs": [
+          "Build a complete cruise budget from three separate groups: the specific booking offer, additional costs required for your journey and extras chosen by you. Start by reading the provider's offer and copying what the price includes. Cabin, meals and other services can differ between packages. Mark anything that is not clearly stated as a question. This prevents an unknown charge from accidentally becoming zero and stops experience from another voyage turning into an assumption about this one."
+        ]
+      },
+      {
+        "heading": "Travel and pricing units",
+        "paragraphs": [
+          "The second group contains travel to the departure area, accommodation around embarkation, required transfers and the journey home. For every item, note whether the amount is per person, per room or for the whole party. A shared room does not necessarily change in cost like individually priced tickets. Keep original currencies beside the amounts. If you convert them for planning, record the conversion assumption separately, since the comparison date and the eventual payment date may differ. The resulting total should remain traceable to its components."
+        ]
+      },
+      {
+        "heading": "Chosen extras",
+        "paragraphs": [
+          "In the third group, rank optional experiences and onboard purchases. Do not book everything merely because a bundle looks convenient. In a hypothetical example, a party considers one organised excursion essential and plans independent walks at other stops. Their budget therefore prioritises that particular activity, while other entries remain estimates. Check the exact conditions of any selected dining, beverage or connectivity service in the relevant offer. A package name does not demonstrate that every kind of use you want is covered by its terms."
+        ]
+      },
+      {
+        "heading": "Keep uncertainty visible",
+        "paragraphs": [
+          "Keep a separate uncertainty list beside the total. It might contain local transport not yet selected or an activity to be decided later. Do not hide a reserve by quietly increasing another line, because subsequent changes become harder to understand. After booking, continue to distinguish confirmed amounts from estimates. A budget supports decisions when it shows what is already committed, what can still change and how much room remains. You should be able to adjust one choice during the trip without rebuilding the entire calculation from memory."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

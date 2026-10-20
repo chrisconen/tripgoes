@@ -1,0 +1,70 @@
+{
+  "slug": "varosi-etkezes-tervezes",
+  "category": "citybreaks",
+  "image": "/assets/barcelona.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Étkezések helye a városi programban",
+    "excerpt": "Az étkezést érdemes a városi nap szerkezetének részeként kezelni, nem a programok között véletlenül megmaradó feladatként.",
+    "sections": [
+      {
+        "heading": "Időablak és keresési terület",
+        "paragraphs": [
+          "Az étkezést érdemes a városi nap szerkezetének részeként kezelni, nem a programok között véletlenül megmaradó feladatként. Először nézd meg, mely időpontok kötöttek, és mikor lesztek várhatóan olyan környéken, ahol kényelmesen tudtok enni. Nem szükséges minden éttermet előre kiválasztani. Elég lehet egy használható időablak és egy ésszerű keresési terület. A cél az, hogy ne a társaság egyszerre jelentkező éhsége kényszerítsen gyors döntésre egy olyan pillanatban, amikor a következő program miatt már sietnetek kell."
+        ]
+      },
+      {
+        "heading": "Eltérő étkezési ritmusok",
+        "paragraphs": [
+          "A napi ritmust és az eltérő igényeket külön beszéljétek meg. Valaki későn reggelizik, más korábban szeretne ebédelni; egyik ember hosszú leülős étkezést élvez, más rövidebb megállót választana. A közös időpont akkor működik, ha ezek nem csak a helyszínen derülnek ki. A számodra fontos étrendi vagy hozzáférési kérdéseket közvetlenül a vendéglátóhellyel egyeztesd. Egy általános megjelölésből vagy fényképből ne következtess az összes részletre. Ha a válasz nélkül nem tudsz dönteni, azt kezeld nyitott kérdésként."
+        ]
+      },
+      {
+        "heading": "A programhoz illő megálló",
+        "paragraphs": [
+          "Képzeletbeli példánkban egy délelőtti múzeum után kötött délutáni program következik. A két pont között keresel étkezési lehetőséget, nem a város másik oldalán található elmentett kedvenc köré szervezed az egész napot. Két megfelelő irányt tartasz észben, és az aktuális elérhetőség alapján választasz. Ha az egyik helyre foglalás kell, annak feltételeit külön ellenőrzöd. A példa nem zárja ki a célként választott éttermet: ha egy étkezés az út fő élménye, akkor inkább a többi programot érdemes köré rendezni."
+        ]
+      },
+      {
+        "heading": "Megosztott szervezés",
+        "paragraphs": [
+          "A szervezésből osszatok meg kisebb feladatokat. Egy ember kereshet a környéken, más ellenőrizheti az időpontot, de a választás szempontjait előre rögzítsétek. Így nem minden megállónál kell újra tárgyalni a keretről és a kívánt étkezés jellegéről. Hagyjatok helyet egy spontán döntésnek is, ha a nap jól alakul. A jó étkezési terv nem étteremlista, hanem néhány világos megállapodás arról, mikor, milyen környéken és milyen tempóban szeretnétek enni, hogy a nap többi része is kényelmesen működjön."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Fit meals into your city itinerary",
+    "excerpt": "Treat meals as part of the structure of a city day rather than as tasks fitted into accidental gaps.",
+    "sections": [
+      {
+        "heading": "A time window and search area",
+        "paragraphs": [
+          "Treat meals as part of the structure of a city day rather than as tasks fitted into accidental gaps. Identify fixed commitments and the times when you expect to be in a neighbourhood where eating would be convenient. You do not have to choose every restaurant beforehand. A usable time window and a reasonable search area may be enough. The aim is to avoid everyone becoming hungry at the moment when the next booking already requires you to hurry."
+        ]
+      },
+      {
+        "heading": "Different meal rhythms",
+        "paragraphs": [
+          "Discuss daily rhythms and different preferences separately. One person may breakfast late while another wants an earlier lunch; someone enjoys a long seated meal while another prefers a shorter stop. A shared time works better when these differences emerge before you arrive at a restaurant. Confirm important dietary or access requirements directly with the venue. Do not infer all the details from a broad label or a photograph. If you cannot decide without an answer, keep the question visibly unresolved instead of assuming it will be fine."
+        ]
+      },
+      {
+        "heading": "A stop that fits the programme",
+        "paragraphs": [
+          "In a hypothetical itinerary, a morning museum is followed by a fixed afternoon activity. Search for food between those locations rather than reorganising the whole day around a saved favourite on the other side of town. Keep two suitable directions in mind and choose according to current availability. Where a reservation is required, check the relevant conditions separately. This does not rule out travelling specifically for a meal. If the restaurant experience is a central purpose of the trip, arrange the other activities around it instead."
+        ]
+      },
+      {
+        "heading": "Share the organisation",
+        "paragraphs": [
+          "Share small planning tasks. One person can look locally while another checks timing, but agree the decision criteria first. You then avoid renegotiating the budget and type of meal at every stop. Leave room for a spontaneous choice when the day develops well. A useful meal plan is not a restaurant collection. It is a few clear agreements about when, in which area and at what pace you want to eat, allowing the rest of the day to work comfortably too."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

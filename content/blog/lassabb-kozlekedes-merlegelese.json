@@ -1,0 +1,58 @@
+{
+  "slug": "lassabb-kozlekedes-merlegelese",
+  "category": "responsible",
+  "image": "madeira",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Lassabb közlekedés tudatos mérlegelése",
+    "excerpt": "A lassabb közlekedési mód mérlegelésekor ne csak a fő szakasz menetidejét hasonlítsd össze. Rajzold fel az ajtótól ajtóig tartó utat, a várakozást, az átszállást és az érkezés utáni teendőket.",
+    "sections": [
+      {
+        "heading": "Hasonlíts utazást az utazással",
+        "paragraphs": [
+          "A lassabb közlekedési mód mérlegelésekor ne csak a fő szakasz menetidejét hasonlítsd össze. Rajzold fel az ajtótól ajtóig tartó utat, a várakozást, az átszállást és az érkezés utáni teendőket. Így láthatóvá válik, hol töltöd ténylegesen az időt. A lassabb út nem automatikusan kényelmesebb, olcsóbb vagy minden szempontból kedvezőbb; ezt a konkrét választások alapján lehet megvizsgálni. Először fogalmazd meg, mit szeretnél nyerni a változtatással. Lehet több nyugodt idő, kevesebb külön szakasz vagy egy önmagában érdekes utazási élmény. A cél segít eldönteni, milyen adatot érdemes a két változathoz összegyűjteni."
+        ]
+      },
+      {
+        "heading": "Az út közbeni időnek is adj szerepet",
+        "paragraphs": [
+          "Gondold végig, a hosszabb utazási időt hogyan tudnád és szeretnéd használni. Olvasás, pihenés, beszélgetés vagy egyszerű nézelődés különböző körülményeket kíván. Ne számolj automatikusan munkával vagy zavartalan alvással, ha ennek feltételei nincsenek ellenőrizve. A csomagok kezelése, a helyfoglalás és az esetleges éjszakai részletek is tartozzanak a vizsgálathoz. Ha több ember utazik, mindenki saját időértékét és igényét mondja el. Ami egyikőtöknek kellemes átmenet, másikótoknak túl hosszú kötöttség lehet. A jó összehasonlítás ezt a különbséget nem tünteti el egyetlen összesített pontszámmal, hanem a döntés részeként kezeli."
+        ]
+      },
+      {
+        "heading": "Próbáld kisebb léptékben",
+        "paragraphs": [
+          "Képzeletbeli első próbánál választhatsz olyan rövidebb utat, amelyen a lassabb módot anélkül tudod megismerni, hogy az egész nyaralás ezen múlna. Jegyezd fel, mi volt kényelmes, mennyi szervezést kívánt, és az érkezés után milyen napra maradt energiád. Ha környezeti hatást is szeretnél összehasonlítani, ahhoz megfelelő módszertanú, az adott útvonalra alkalmazható adat szükséges; puszta benyomásból ne állíts megtakarítást. A saját próba elsősorban a személyes használhatóságról ad információt. A következő alkalommal ezekből indulj ki, de az aktuális menetrendet, árat és feltételeket újra ellenőrizd. Így a választás tapasztalatra és konkrét adatokra épül, nem egy közlekedési mód általános idealizálására."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Consider slower transport thoughtfully",
+    "excerpt": "When considering a slower mode of transport, compare more than the duration of the main segment. Draw the door-to-door journey, including waiting, connections and tasks after arrival.",
+    "sections": [
+      {
+        "heading": "Compare complete journeys",
+        "paragraphs": [
+          "When considering a slower mode of transport, compare more than the duration of the main segment. Draw the door-to-door journey, including waiting, connections and tasks after arrival. This shows where the time is actually spent. A slower journey is not automatically more comfortable, less expensive or preferable in every respect; those questions depend on the specific alternatives. First describe what you want to gain from changing the plan. It might be quieter time, fewer separate stages or an interesting journey in its own right. That purpose helps identify which information you need to collect for the comparison."
+        ]
+      },
+      {
+        "heading": "Give time in transit a role",
+        "paragraphs": [
+          "Think about how you could and would like to use the longer journey. Reading, resting, talking and watching the scenery require different conditions. Do not automatically budget for productive work or undisturbed sleep when the necessary arrangements have not been established. Include luggage handling, seat arrangements and any overnight details in the assessment. With companions, let each person explain their own needs and view of the additional time. What feels like a pleasant transition to one person may feel like a long restriction to another. A useful comparison keeps that difference visible rather than hiding it inside one combined score."
+        ]
+      },
+      {
+        "heading": "Try it on a smaller scale",
+        "paragraphs": [
+          "For an imaginary first experiment, you could choose a shorter trip that lets you experience the slower mode without making an entire holiday depend on it. Record what felt comfortable, how much organisation it required and what kind of day you wanted after arrival. If environmental impact is also part of the comparison, use suitable route-relevant information with an explained method; do not claim a saving from impression alone. Your trial mainly provides evidence about personal suitability. Use those observations next time, while checking current schedules, prices and conditions again. The choice can then rest on experience and concrete information instead of a general idealisation of one mode of travel."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

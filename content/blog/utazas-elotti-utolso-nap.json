@@ -1,0 +1,58 @@
+{
+  "slug": "utazas-elotti-utolso-nap",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Az indulás előtti utolsó nap rendszere",
+    "excerpt": "Az indulás előtti nap könnyen újabb kereséssel telik el, miközben a tényleges előkészületek elmaradnak.",
+    "sections": [
+      {
+        "heading": "Zárd le a nagy tervezési kérdéseket",
+        "paragraphs": [
+          "Az indulás előtti nap könnyen újabb kereséssel telik el, miközben a tényleges előkészületek elmaradnak. Jelölj ki egy pontot, amikor lezárod a programterv szépítését, és csak a megvalósítást befolyásoló kérdésekkel foglalkozol. Ilyen a pontos indulás, az első eljutási szakasz, a foglalási adatok és az érkezési egyeztetés. A még nyitott ügyeket rövid listán tartsd: mi hiányzik, ki intézi és meddig kell választ kapni. Ne keverd össze a nélkülözhetetlen ellenőrzést egy új étterem keresésével. Ha egy nem alapvető program továbbra is bizonytalan, hagyd nyitva. Egy rövidebb, végrehajtható terv többet érhet, mint egy részletes, de induláskor még szerkesztés alatt álló dokumentum."
+        ]
+      },
+      {
+        "heading": "Oszd három munkacsoportra az előkészületet",
+        "paragraphs": [
+          "Különítsd el a személyes csomagot, az utazási információkat és az otthoni teendőket. Mindháromhoz legyen egy rövid befejezési feltétel. A csomag például akkor kész, ha lezárható és a szükséges tárgyak benne vannak; az információk akkor, ha elérhetők internet nélkül is; az otthoni rész akkor, ha az előre vállalt feladatokat elvégeztétek. Több utazó esetén név szerint osszátok ki a közös feladatokat. A „valaki letöltötte” nem ellenőrzés. Képzeletbeli párosnál egyikük kezeli a közlekedési adatokat, másikuk az érkezési üzenetet, de mindenki maga ellenőrzi a saját személyes adatait. A kész feladatot egy helyen jelöljétek, hogy ne kelljen emlékezetből rekonstruálni az állapotot."
+        ]
+      },
+      {
+        "heading": "Hagyj rövid listát a reggelre",
+        "paragraphs": [
+          "Este különítsd el azt a néhány tárgyat és feladatot, amely csak reggel kerülhet sorra. A napi használatú eszközök mellé tegyél emlékeztetőt, a szükséges indulási adatokat pedig egyetlen rövid lapon tartsd. Gondold végig az első húsz percet: ki kel előbb, mikor indul a csomag az ajtóhoz, és ki zárja le az otthoni teendőket. Ez szemléltető időtáv, nem előírt menetrend. A váratlan helyzetekre ne újabb hosszú listát készíts, hanem egy világos sorrendet: mi az, ami nélkül nem indulhatsz, és mi pótolható később. Az indulás előtti nap akkor sikeres, ha a reggeli döntések száma csökken, nem akkor, ha minden percét feladattal töltöd meg."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "A calm system for the day before departure",
+    "excerpt": "The day before departure can disappear into another search while practical preparation remains unfinished.",
+    "sections": [
+      {
+        "heading": "Close the major planning questions",
+        "paragraphs": [
+          "The day before departure can disappear into another search while practical preparation remains unfinished. Set a point when you stop polishing the itinerary and focus on matters that affect whether the journey works. These include the exact departure, first transport leg, booking details, and arrival arrangements. Keep unresolved issues on a short list: what is missing, who owns it, and when an answer is needed. Do not mix an essential check with searching for another restaurant. If a nonessential activity remains uncertain, leave it open. A shorter plan that can be followed may be more useful than a detailed document still being edited as you leave home."
+        ]
+      },
+      {
+        "heading": "Divide preparation into three work areas",
+        "paragraphs": [
+          "Separate personal luggage, travel information, and tasks at home. Give each a clear completion condition. A bag is ready when it closes and contains the necessary items; information is ready when it can be accessed offline; home preparation is ready when the agreed tasks are finished. With multiple travellers, assign shared jobs by name. “Someone downloaded it” is not a check. In an imaginary pair, one person handles transport information and the other sends the arrival message, while each checks their own personal details. Mark completed tasks in one place so nobody needs to reconstruct the situation from memory. This also prevents the same easy job being done twice while a less visible one is missed."
+        ]
+      },
+      {
+        "heading": "Leave a short list for morning",
+        "paragraphs": [
+          "In the evening, separate the few items and tasks that must wait until morning. Place a reminder beside things still in daily use and keep essential departure details on one short page. Think through the first twenty minutes: who gets up first, when bags move to the door, and who completes the final home tasks. This is an illustrative planning horizon, not a prescribed schedule. Instead of writing another long emergency checklist, establish an order of importance: what is essential before leaving and what can be handled later. The previous day has worked when morning requires fewer decisions, not when every available minute has been filled with preparation."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

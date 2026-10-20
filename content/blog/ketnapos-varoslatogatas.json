@@ -1,0 +1,70 @@
+{
+  "slug": "ketnapos-varoslatogatas",
+  "category": "citybreaks",
+  "image": "/assets/barcelona.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Kétnapos városnézés túlzsúfolás nélkül",
+    "excerpt": "Kétnapos városlátogatásnál először a valóban rendelkezésre álló időt jelöld ki.",
+    "sections": [
+      {
+        "heading": "A tényleges két nap",
+        "paragraphs": [
+          "Kétnapos városlátogatásnál először a valóban rendelkezésre álló időt jelöld ki. Az érkezés és a hazautazás napja csak akkor számít teljes programnapnak, ha a közlekedés és a szállás körüli teendők mellett ténylegesen marad rá idő. Rajzolj két egyszerű naposzlopot, és írd bele a már kötött pontokat. A megmaradó helyet ne töltsd ki azonnal. A rövid út értékét gyakran az adja, hogy néhány dolgot figyelemmel tudsz megélni, nem az, hogy minden ismert nevet érintesz."
+        ]
+      },
+      {
+        "heading": "Fél nap, egy fő cél",
+        "paragraphs": [
+          "Minden fél naphoz válassz egy fő célt, a környezetéhez pedig egy könnyen elhagyható lehetőséget. Így a közlekedés és a várakozás változása nem borítja fel az egész napot. Az egymáshoz közeli helyeket csoportosítsd, de ne csak a térképen mért távolság alapján. A folyó, a domborzat vagy a tényleges bejárat módosíthatja az útvonalat. A kötött belépési időt igénylő programhoz az aktuális szolgáltatói információból tervezz. Egy ajánlóban látott nyitvatartás nem elég a végső időzítéshez."
+        ]
+      },
+      {
+        "heading": "Egy képzeletbeli hétvége",
+        "paragraphs": [
+          "Képzeletbeli példánkban szombat délelőtt egy kiállítást választasz, utána a környék utcáit fedezed fel. Délután egy másik városrész kap helyet, de az ott kinézett második belépős program csak lehetőség marad. Vasárnap egy hosszabb séta és egy nyugodtabb étkezés a fő cél, a csomagok felvétele pedig külön időpontként szerepel. Ez nem mintamenetrend egy konkrét városhoz. Azt mutatja meg, hogyan kerülhet két különböző élmény egy napba anélkül, hogy minden átmenetből sietős feladat lenne."
+        ]
+      },
+      {
+        "heading": "Mit hagysz ki először?",
+        "paragraphs": [
+          "A tervhez nevezz meg egy elhagyási szabályt is: mi marad ki először, ha elfáradtok vagy több időt töltenétek valahol? Ezt a társakkal előre egyeztetve kevesebb helyszíni vita várható. Az étkezésnek és a pihenésnek adj valódi helyet, ne csak a látnivalók közé szorult maradék perceket. Indulás előtt végül ellenőrizd a fő célok aktuális elérhetőségét és a hazafelé vezető lépéseket. A kétnapos terv akkor kész, ha nemcsak azt tudod, mit szeretnél látni, hanem azt is, mit hagysz nyugodtan későbbre."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan a two-day city break without overload",
+    "excerpt": "For a two-day city break, first mark the time you truly have available.",
+    "sections": [
+      {
+        "heading": "The two days you really have",
+        "paragraphs": [
+          "For a two-day city break, first mark the time you truly have available. Arrival and departure days count as full sightseeing days only if transport and accommodation tasks leave enough usable time. Draw two simple day columns and enter commitments that are already fixed. Do not immediately fill every remaining gap. The value of a short visit often comes from paying attention to a few experiences, rather than briefly touching every familiar name on a list."
+        ]
+      },
+      {
+        "heading": "One main aim per half-day",
+        "paragraphs": [
+          "Choose one main aim for each half-day and one nearby option that can easily be dropped. This prevents changes in travel or waiting time from overturning the whole schedule. Group nearby places, but do not rely solely on map distance. A river, a hill or the actual entrance can change the route. For an activity with a fixed admission slot, plan from the provider's current information. Opening hours copied from an old recommendation are not enough for the final timing of your visit."
+        ]
+      },
+      {
+        "heading": "A hypothetical weekend",
+        "paragraphs": [
+          "In a hypothetical weekend, you choose an exhibition on Saturday morning and explore its surrounding streets afterwards. Another neighbourhood fills the afternoon, while a second ticketed activity there remains optional. On Sunday, a longer walk and an unhurried meal become the main aims, with luggage collection entered as a separate commitment. This is not a timetable for a particular city. It demonstrates how two different experiences can fit into a day without turning every transition into a hurried task."
+        ]
+      },
+      {
+        "heading": "What will you drop first?",
+        "paragraphs": [
+          "Add a rule for what you will drop first if you become tired or want to linger. Agreeing that with companions beforehand can reduce arguments on the day. Give meals and rest actual space instead of leaving them to whatever minutes remain between sights. Before departure, verify access to your main activities and the steps of the journey home. The plan is ready when you understand both what you want to experience and what you can comfortably leave for another visit."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

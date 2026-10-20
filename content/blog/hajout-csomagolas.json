@@ -1,0 +1,70 @@
+{
+  "slug": "hajout-csomagolas",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Hajóúti csomagolás helyzetek szerint",
+    "excerpt": "Hajóútra csomagolva ne tárgyak végtelen listájából indulj ki, hanem azokból a helyzetekből, amelyekben használni fogod őket.",
+    "sections": [
+      {
+        "heading": "Helyzetekből induló lista",
+        "paragraphs": [
+          "Hajóútra csomagolva ne tárgyak végtelen listájából indulj ki, hanem azokból a helyzetekből, amelyekben használni fogod őket. Külön kezeld az eljutást, a beszállás napját, a fedélzeti időt és a parti programokat. Ugyanaz a ruhadarab több helyzethez is megfelelhet, ezért az átfedések keresése csökkentheti a csomagot. Először a tervezett tevékenységeket írd le, utána rendelj hozzájuk felszerelést. Az olyan programhoz, amelyet csak bizonytalanul fontolgatsz, ne automatikusan egy teljes külön készletet tegyél a bőröndbe."
+        ]
+      },
+      {
+        "heading": "A beszállás napjának csomagja",
+        "paragraphs": [
+          "A beszállás napjára készíts külön, könnyen elérhető kis csomagot. Abba kerüljenek azok a saját szükségleteidhez tartozó dolgok, amelyeket akkor is szeretnél elérni, ha a nagyobb poggyász éppen nincs nálad. A konkrét poggyászkezelési eljárást a foglalásodhoz tartozó tájékoztatásban ellenőrizd; ne feltételezd, hogy minden hajón azonos. Az okmányokat és a fontos utazási információkat úgy rendezd, hogy ne kelljen értük az egész csomagot felbontani. A személyes adataidat tartalmazó iratokat tartsd elkülönítve a közösen használt programjegyzetektől."
+        ]
+      },
+      {
+        "heading": "Többféleképpen használható darabok",
+        "paragraphs": [
+          "Képzeletbeli példánkban több kikötői séta és néhány nyugodtabb fedélzeti nap szerepel a tervben. Ahelyett, hogy minden naphoz teljesen új összeállítást vinnél, olyan darabokat választasz, amelyek többféleképpen használhatók. A mosás lehetőségét azonban csak akkor számítsd biztosnak, ha a szolgáltató megerősítette a hozzáférést és a feltételeket. Az esti öltözködéshez az adott út aktuális útmutatását nézd meg. Egy másik társaság vagy egy régebbi hajóút szabálya nem helyettesíti a saját foglalásodhoz tartozó információt."
+        ]
+      },
+      {
+        "heading": "Egy teljes nap próbája",
+        "paragraphs": [
+          "A csomag végső ellenőrzését egy teljes elképzelt napon végezd el. Mi kell az induláshoz, a partra lépéshez, a visszatérés utáni átöltözéshez és az esti elpakoláshoz? Ami egyik helyzetben sem kap szerepet, annak az elvitelét gondold újra. A megengedett tárgyakat és poggyászfeltételeket a hajótársaságnál, az odautazás szabályait pedig az érintett közlekedési szolgáltatónál ellenőrizd. A két szakasz feltételei különbözhetnek. A cél olyan csomag, amelyhez könnyen hozzáférsz, és amely a tényleges utadat támogatja, nem minden elképzelhető lehetőséget egyszerre."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Pack for a cruise by situation",
+    "excerpt": "Pack for a cruise by starting with situations rather than an unlimited list of objects.",
+    "sections": [
+      {
+        "heading": "A list built from situations",
+        "paragraphs": [
+          "Pack for a cruise by starting with situations rather than an unlimited list of objects. Separate the journey to the port, embarkation day, time on board and shore activities. One item may serve several situations, so looking for overlaps can reduce luggage. Write down intended activities first and assign equipment afterwards. An activity you are only vaguely considering does not automatically justify a complete additional set of clothes or equipment in your suitcase."
+        ]
+      },
+      {
+        "heading": "An embarkation-day bag",
+        "paragraphs": [
+          "Prepare a small, accessible bag for embarkation day. Include the things relevant to your own needs that you would want available if the larger bag were temporarily elsewhere. Check the actual baggage process in the information for your booking; do not assume it works identically on every ship. Arrange documents and important travel information so you do not need to unpack everything to retrieve them. Keep papers containing personal information separate from programme notes you intend to share with the whole travelling party."
+        ]
+      },
+      {
+        "heading": "Items with several uses",
+        "paragraphs": [
+          "In a hypothetical itinerary, you expect several port walks and a few quieter days on board. Rather than packing a completely different outfit for every day, choose items that work in more than one combination. Count on laundry only after the provider has confirmed access and conditions. For evening clothing, consult the current guidance relevant to your voyage. A rule remembered from another operator or an older trip does not replace the information associated with your own booking."
+        ]
+      },
+      {
+        "heading": "Test a complete day",
+        "paragraphs": [
+          "Check the finished bag against one imagined complete day. What do you need to leave, go ashore, change after returning and put things away that evening? Reconsider items that have no role in any of those situations. Verify permitted items and luggage conditions with the cruise provider, and check the rules for your journey to the port with the relevant transport operator. Those are separate stages and their requirements may differ. The aim is accessible luggage that supports the trip you actually intend to take, rather than trying to prepare for every conceivable possibility at once."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

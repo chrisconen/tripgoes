@@ -1,0 +1,70 @@
+{
+  "slug": "kikotoi-nap-onallo-terv",
+  "category": "cruises",
+  "image": "/assets/cruise.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Önálló kikötői nap tervezése",
+    "excerpt": "Önálló kikötői napot visszafelé érdemes megtervezni: a hajó által közölt, rád vonatkozó visszaérkezési követelményből indulj ki.",
+    "sections": [
+      {
+        "heading": "Tervezés visszafelé",
+        "paragraphs": [
+          "Önálló kikötői napot visszafelé érdemes megtervezni: a hajó által közölt, rád vonatkozó visszaérkezési követelményből indulj ki. Ezután tedd mellé a hajóhoz jutás módját, a helyi közlekedést és a választott program idejét. Ne egy másik utazó régi beszámolójából vedd át a konkrét határidőt. A saját hajód aktuális tájékoztatása számít. A kikötőben töltött idő és a városban valóban használható idő nem feltétlenül azonos, ezért a partra jutás részleteit még a program kiválasztása előtt tisztázd."
+        ]
+      },
+      {
+        "heading": "Egy jól érthető fő útvonal",
+        "paragraphs": [
+          "Válassz egy fő célpontot, amelyhez érted az oda és vissza vezető utat. Az önálló nap nem attól értékes, hogy minél több távoli helyet érint. Nézd meg, hol történik a kiszállás, és szükség van-e további transzferre. A térképen jelöld a kiindulópontot, a fő programot és azt a pontot, ahol eldöntöd, belefér-e még valami. A visszafelé vezető utat külön vizsgáld meg; nem biztos, hogy ugyanott vagy ugyanúgy működik, mint az érkezés. Az aktuális közlekedési adatokat közvetlenül ellenőrizd."
+        ]
+      },
+      {
+        "heading": "Előre kijelölt választható rész",
+        "paragraphs": [
+          "Egy képzeletbeli kikötői napban délelőtt egy városrészt fedeznél fel, majd távolabb ebédelnél. Ha az első rész elhúzódik, a második helyett a visszaút közelében keresel étkezést. A program így nem esik szét, mert előre megnevezted, melyik része választható. Ne fix, mindenkire érvényes óraszámmal tervezd a tartalékot. Gondold végig, mennyire kiszámítható az út, milyen alternatíva van, és mekkora bizonytalanságot vállalsz. A társakkal egyeztetett találkozási pontot úgy válasszátok meg, hogy egyértelműen felismerhető legyen mindenkinek."
+        ]
+      },
+      {
+        "heading": "A visszatérés információi",
+        "paragraphs": [
+          "A naphoz készíts rövid, kapcsolat nélkül is elérhető jegyzetet a releváns címekkel, a hajó által megadott elérhetőséggel és a visszaút tervével. A telefon töltöttsége vagy a hálózat elérhetősége ne legyen az egyetlen tájékozódási alap. Az út során figyeld a megváltozott körülményeket, és szükség esetén korábban fordulj vissza. Az önállóság előnye a személyes tempó; ehhez hozzátartozik a program elengedése is, ha a visszatérés feltételei már nem elég tiszták. A jó tervben ez előre átgondolt döntés, nem kudarc."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Plan an independent day in port",
+    "excerpt": "Plan an independent port day backwards from the return requirement communicated for your voyage.",
+    "sections": [
+      {
+        "heading": "Plan backwards",
+        "paragraphs": [
+          "Plan an independent port day backwards from the return requirement communicated for your voyage. Add the process of reaching the ship, local travel and the time needed for your chosen activity. Do not copy a precise deadline from another traveller's old account. Your own ship's current information is what matters. Time in port is not necessarily the same as usable time in the city, so clarify the process of getting ashore before choosing the programme."
+        ]
+      },
+      {
+        "heading": "One understandable main route",
+        "paragraphs": [
+          "Select one main destination whose outward and return journeys you understand. An independent day does not become more valuable simply by including several distant places. Establish where you disembark and whether another transfer is required. Mark the starting point, your main activity and a decision point where you will assess whether anything else fits. Investigate the return journey separately; it may not use exactly the same stop or arrangement as the outward trip. Check current transport information directly rather than assuming a route is unchanged."
+        ]
+      },
+      {
+        "heading": "An optional part chosen in advance",
+        "paragraphs": [
+          "Imagine a hypothetical day exploring one neighbourhood in the morning and eating farther away afterwards. If the first part takes longer, replace the distant meal with somewhere along the return route. The day remains workable because you identified the optional element in advance. Do not use a single fixed buffer for every situation. Consider how predictable the journey is, what alternatives exist and how much uncertainty you are prepared to accept. Choose an unmistakable meeting point with companions, particularly if you plan to separate for part of the visit."
+        ]
+      },
+      {
+        "heading": "Return information",
+        "paragraphs": [
+          "Prepare a short offline note containing relevant addresses, the contact details supplied by the ship and your return plan. Phone battery and connectivity should not be your only means of finding your way. During the day, reassess changed circumstances and turn back earlier when needed. The benefit of independence is a personal pace, which includes letting go of an activity when the return arrangements are no longer sufficiently clear. In a good plan, that is an anticipated choice rather than a failure of the day."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

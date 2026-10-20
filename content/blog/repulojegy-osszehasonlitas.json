@@ -1,0 +1,58 @@
+{
+  "slug": "repulojegy-osszehasonlitas",
+  "category": "flights",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Repülőjegyek összehasonlítása az egész útra",
+    "excerpt": "Repülőjegyek összevetéséhez rajzold fel az otthontól a szállásig vezető teljes útvonalat, majd a hazautat is.",
+    "sections": [
+      {
+        "heading": "A járat csak az út egyik része",
+        "paragraphs": [
+          "Repülőjegyek összevetéséhez rajzold fel az otthontól a szállásig vezető teljes útvonalat, majd a hazautat is. A járat mellett szerepeljen a reptér elérése, a szükséges várakozás, az érkezés utáni közlekedés és a ténylegesen használható helyi idő. A keresőben rövidebbnek látszó repülés nem feltétlenül ad egyszerűbb napot, ha távolabbi indulást vagy nehézkes esti továbbutazást igényel. Ne adj minden járatnak azonos kiegészítő időt automatikusan. Az adott útvonalat és a szolgáltató aktuális tájékoztatását vizsgáld. A számolásban látszódjon, mely adat ellenőrzött, és melyik még csak saját becslés. Így a jegyár helyett már egy teljes utazási helyzetet hasonlítasz egy másikhoz."
+        ]
+      },
+      {
+        "heading": "Azonos személyes igényekkel számolj",
+        "paragraphs": [
+          "A szükséges poggyászt, ülési vagy elhelyezési igényt és más választott elemeket ugyanúgy kezeld minden változatnál. Ne az egyik járat legegyszerűbb változatát vesd össze a másik teljesebb csomagjával. Képzeletbeli példában az A járat olcsóbb, de korai otthoni indulást és plusz helyi transzfert igényel, a B drágább, viszont jobban illeszkedik a napirendedhez. A döntéshez először külön mutasd ki a teljes várható kiadást és a használható időt. Ezután nevezd meg, melyik különbség számít neked többet. Nem szükséges általános győztest hirdetni. Másik utas, más csomaggal és más indulási hellyel ugyanebből az összehasonlításból jogosan választhatja a másik megoldást."
+        ]
+      },
+      {
+        "heading": "A végleges útvonalat ellenőrizd újra",
+        "paragraphs": [
+          "A választás előtt nézd át külön az oda- és visszaút dátumát, helyi időpontját, tényleges repterét és a kiválasztott foglalási tartalmat. Ne feltételezd, hogy minden szakasz ugyanazokat a feltételeket követi. A pontos szabályokat az adott szolgáltatónál és foglalási változatnál ellenőrizd. A még nyitott kérdéseket ne rejtsd el egy összesített pontszámban. Ha például az érkezés utáni eljutás tisztázatlan, ez önálló feladat maradjon. Mentsd el a végleges összesítést, majd a visszaigazolásban hasonlítsd össze a lényeges adatokat. A jó összehasonlítás nem azt bizonyítja, hogy egy járat mindenki számára jobb, hanem azt, hogy a választott teljes út miért illik a te idődhöz, keretedhez és igényeidhez."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Compare flights as a whole journey",
+    "excerpt": "To compare flights, map the complete route from home to accommodation and the journey back.",
+    "sections": [
+      {
+        "heading": "The flight is only one part of the journey",
+        "paragraphs": [
+          "To compare flights, map the complete route from home to accommodation and the journey back. Alongside each flight, include reaching the airport, necessary waiting, transport after arrival, and usable time at the destination. A flight that appears shorter in a search result may produce a more complicated day if it requires a farther departure point or difficult evening transport. Avoid automatically adding identical extra time to every option. Examine the actual route and the provider’s current guidance. Make checked information and your own estimates visibly different. You are then comparing complete travel situations rather than two isolated ticket prices that may conceal very different practical requirements."
+        ]
+      },
+      {
+        "heading": "Use the same personal requirements",
+        "paragraphs": [
+          "Treat necessary baggage, seating needs, and other chosen elements consistently across options. Do not compare the simplest version of one flight with a more inclusive version of another. Imagine flight A costs less but requires an early departure from home and additional local transport, while B costs more but fits your daily rhythm better. Show complete expected spending and usable time separately before deciding. Then identify which difference matters more to you. A universal winner is unnecessary. Another traveller with different luggage and a different starting point may reasonably choose the other option from the same comparison. The useful result is an explanation of the trade, not a claim that one fare is objectively best."
+        ]
+      },
+      {
+        "heading": "Check the final itinerary again",
+        "paragraphs": [
+          "Before choosing, review outbound and return dates, local times, actual airports, and selected booking inclusions separately. Do not assume every segment follows identical conditions. Check precise rules with the relevant provider for the particular booking version. Keep unresolved questions outside any combined score. If onward transport after arrival remains unclear, it should remain an explicit task. Save the final summary and compare its important details with the confirmation. A good comparison does not prove that one flight suits everyone better. It shows why the selected complete journey fits your own time, budget, and requirements, while making the remaining assumptions easy to identify and resolve."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

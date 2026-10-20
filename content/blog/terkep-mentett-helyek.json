@@ -1,0 +1,58 @@
+{
+  "slug": "terkep-mentett-helyek",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Mentett helyekből használható térkép",
+    "excerpt": "A sok elmentett hely könnyen összekeveri az inspirációt a megvalósítható napi tervvel. Először válaszd külön a biztos célpontot, a választható ötletet és a későbbi utazásra félretett helyet.",
+    "sections": [
+      {
+        "heading": "A mentés még nem útiterv",
+        "paragraphs": [
+          "A sok elmentett hely könnyen összekeveri az inspirációt a megvalósítható napi tervvel. Először válaszd külön a biztos célpontot, a választható ötletet és a későbbi utazásra félretett helyet. Minden jelölés mellé írj röviden okot: miért szeretnél odamenni, és mennyi időt adnál neki? Ez segít akkor is, ha néhány hét múlva már nem emlékszel, melyik kép miatt mentetted el. Ne a pontok száma legyen az előrehaladás mércéje. Egy kisebb, jól megértett térkép több használható döntést támogat, mint egy olyan gyűjtemény, amelyben minden érdekesnek tűnő hely azonos jelentőséget kapott."
+        ]
+      },
+      {
+        "heading": "Környékekből építs csoportokat",
+        "paragraphs": [
+          "Nézd meg, mely helyek kapcsolhatók össze a tényleges közlekedési lehetőségekkel. A térképen közelinek látszó pontok között lehet olyan útvonal, amelyhez több idő vagy más szervezés kell, ezért a konkrét eljutást külön vizsgáld. Készíts kisebb környékcsoportokat, és mindegyikhez válassz egy fő okot a látogatásra. A többi hely maradhat lehetőség, ha aznap van hozzá kedv és idő. A nyitvatartást, a foglalási igényt és az aktuális hozzáférést külön ellenőrizd. Egy mentett jelölés nem bizonyítja, hogy a helyszín az utazásod napján a tervezett módon használható lesz, ezért a fontos pontokhoz ellenőrzési dátum is tartozzon."
+        ]
+      },
+      {
+        "heading": "Készíts kicsi napi nézetet",
+        "paragraphs": [
+          "Képzeletbeli hétvégére a teljes gyűjteményből válassz egy délelőtti és egy délutáni környéket, közéjük pedig hagyj valódi átmenetet. A napi térképen csak a szükséges pontok, a szállás és a fontos találkozási hely legyenek hangsúlyosak. A többi inspiráció maradhat egy másik listában. Indulás előtt próbáld végig, hogyan használnád a térképet gyaloglás közben: megtalálod-e gyorsan a következő pontot és a visszaút kezdetét? Ha túl sok jelölést kell átnézni, egyszerűsíts. Hazatéréskor tedd külön azokat a helyeket, amelyek valóban fontosak maradtak. Így a térkép nem gyarapodó feladathalmaz lesz, hanem olyan eszköz, amely segít a helyszínen kevésbé a képernyőre és inkább az utazásra figyelni."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Turn saved places into a useful map",
+    "excerpt": "A large collection of saved locations can blur the difference between inspiration and a workable day. First separate definite priorities, optional ideas and places for a future trip.",
+    "sections": [
+      {
+        "heading": "Saving a place is not an itinerary",
+        "paragraphs": [
+          "A large collection of saved locations can blur the difference between inspiration and a workable day. First separate definite priorities, optional ideas and places for a future trip. Add a short reason to each: why do you want to visit, and how much time would you give it? This remains useful weeks later when you may no longer remember the photograph that prompted the save. Do not measure progress by the number of pins. A smaller map whose contents you understand supports more practical decisions than a collection where every attractive place has been given equal importance."
+        ]
+      },
+      {
+        "heading": "Build groups around neighbourhoods",
+        "paragraphs": [
+          "Look for places that connect through the actual transport options. Points that appear close on a map may involve a route requiring more time or different organisation, so investigate the journey separately. Make small neighbourhood groups and identify one main reason to visit each. Other locations can remain possibilities if time and interest allow on the day. Check opening arrangements, booking needs and current access independently. A saved marker does not establish that the site can be used as intended on your travel date. Attach a check date to important information so an old note is not mistaken for a recent confirmation."
+        ]
+      },
+      {
+        "heading": "Create a small daily view",
+        "paragraphs": [
+          "For an imaginary weekend, select one morning neighbourhood and one afternoon neighbourhood from the full collection, leaving a real transition between them. In the daily view, emphasise only the necessary places, accommodation and important meeting points. Keep other inspiration in another list. Before departure, rehearse using the map while moving: can you quickly find the next point and the start of the return route? Simplify if too many markers compete for attention. Afterwards, retain separately the places that still matter to you. The map can then support looking at the destination instead of becoming an expanding collection of tasks that keeps your attention on the screen."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

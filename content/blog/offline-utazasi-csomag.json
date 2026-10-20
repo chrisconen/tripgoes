@@ -1,0 +1,58 @@
+{
+  "slug": "offline-utazasi-csomag",
+  "category": "tools",
+  "image": "hero",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Offline információcsomag utazáshoz",
+    "excerpt": "Az offline utazási csomag célja, hogy a legfontosabb lépésekhez akkor is legyen használható információd, ha éppen nem éred el a megszokott online felületet. Nem kell minden kutatási anyagot lemásolni.",
+    "sections": [
+      {
+        "heading": "A működéshez szükséges információt válaszd ki",
+        "paragraphs": [
+          "Az offline utazási csomag célja, hogy a legfontosabb lépésekhez akkor is legyen használható információd, ha éppen nem éred el a megszokott online felületet. Nem kell minden kutatási anyagot lemásolni. Válaszd ki a szállás címét, az érkezési tudnivalókat, a szükséges foglalási adatokat, a következő közlekedési szakaszt és a fontos kapcsolatokat. Ezeket a saját útvonalad alapján egészítsd ki. A csomag legyen kicsi és áttekinthető, hogy valóban megtaláld benne a keresett adatot. A hozzáférés működését előre próbáld ki, ne pusztán abból indulj ki, hogy valamit egyszer már megnyitottál a telefonodon."
+        ]
+      },
+      {
+        "heading": "Jelöld a másolat idejét és korlátját",
+        "paragraphs": [
+          "Az offline adat pillanatfelvétel. Tedd mellé, mikor mentetted, és milyen eredeti forrásból származik. Az állandóbb címadat és a változható indulási információ ne kapjon azonos bizonyosságot. Ha egy dokumentum belépéshez vagy szolgáltatás használatához kell, ellenőrizd a szolgáltató aktuális követelményeit; egy képernyőkép nem feltétlenül helyettesíti az elvárt formátumot. A saját jegyzeteidet különítsd el az eredeti visszaigazolástól. Így később tudni fogod, melyik adatot a szolgáltató közölte, és melyik volt a te szervezési összefoglalód. Ez különösen akkor fontos, ha útközben gyorsan kell egy részletet tisztázni."
+        ]
+      },
+      {
+        "heading": "Végezz kapcsolat nélküli próbát",
+        "paragraphs": [
+          "Képzeletbeli indulás előtti ellenőrzésnél nyisd meg a szükséges anyagokat tényleges hálózati kapcsolat nélkül. Keresd meg a szállás elérhetőségét, a következő szakasz adatait és a saját napi tervet. Ha valamelyikhez mégis új bejelentkezés vagy letöltés kell, a csomag azon a ponton nem működik önállóan. Javítsd a hiányt, és gondold végig, kell-e másik hozzáférési mód. Érzékeny adatból csak a szükséges mennyiséget tartsd meg, megfelelően védett helyen, és ne oszd szét automatikusan a teljes csomagot mindenkinek. Az út után töröld a felesleges másolatokat. Az offline változat értéke a korlátozott, kipróbált használhatóságában van, nem abban, hogy minél több dokumentumot sikerült összegyűjteni."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Prepare an offline travel information pack",
+    "excerpt": "An offline travel pack should keep essential steps workable when you cannot reach the online service you normally use. You do not need to copy every research document.",
+    "sections": [
+      {
+        "heading": "Select information needed for the next actions",
+        "paragraphs": [
+          "An offline travel pack should keep essential steps workable when you cannot reach the online service you normally use. You do not need to copy every research document. Select the accommodation address, arrival instructions, necessary reservation details, the next transport stage and important contacts. Add other items according to your actual route. Keep the pack small enough to navigate so you can find a detail when it matters. Test access beforehand rather than assuming something will remain available because you opened it once on your phone while connected. Familiarity with the screen is not the same as reliable offline access."
+        ]
+      },
+      {
+        "heading": "Mark the copy's date and limits",
+        "paragraphs": [
+          "Offline information is a snapshot. Record when you saved it and which original source it came from. A relatively stable address and changing departure information should not be treated as equally current. If a document is required to enter somewhere or use a service, check the provider's present requirements; a screenshot may not replace the expected format. Distinguish your own notes from original confirmations. This lets you see which information was supplied by the provider and which was your organising summary, especially when you need to clarify a detail quickly during the journey rather than reconstruct its history."
+        ]
+      },
+      {
+        "heading": "Test without a connection",
+        "paragraphs": [
+          "During an imagined pre-departure check, open the necessary material with network access actually unavailable. Find the accommodation contact, next journey stage and daily plan. If an item still requires a fresh login or download, that part is not functioning independently. Resolve the gap and consider whether another access method is needed. Retain only necessary sensitive information in an appropriately protected location, and do not automatically distribute the entire pack to every companion. Remove unnecessary copies after the trip. The value lies in limited, tested usefulness, not in collecting the largest possible number of documents under an offline label."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

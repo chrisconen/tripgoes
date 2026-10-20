@@ -1,0 +1,58 @@
+{
+  "slug": "rugalmas-datumablak",
+  "category": "planning",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Rugalmas dátumablak, rendezett döntés",
+    "excerpt": "A rugalmasság akkor hasznos, ha összehasonlítható ablakokra bontod.",
+    "sections": [
+      {
+        "heading": "Először a valódi mozgásteredet írd le",
+        "paragraphs": [
+          "A rugalmas dátum nem azt jelenti, hogy bármikor el tudsz utazni. Írd fel a legkorábbi lehetséges indulást, a legkésőbbi hazatérést és az elfogadható éjszakaszámot. Jelöld azokat a napokat is, amelyek szabadságot, gyermekfelügyeletet vagy munkatársi helyettesítést igényelnek. Egy első pillantásra kedvezőbb kedd könnyen rosszabb választás lehet, ha két további szervezési feladattal jár. A naptárban különítsd el a biztosan használható és a még egyeztetésre váró napokat. Ezután válassz legfeljebb három vizsgálható ablakot. A keresés így nem az egész hónap áttekinthetetlen figyeléséről szól, hanem néhány valós lehetőség pontos összevetéséről. A bizonytalan dátumot ne kezeld ugyanolyan kész lehetőségként, mint a már jóváhagyottat."
+        ]
+      },
+      {
+        "heading": "Azonos tartalmat hasonlíts össze",
+        "paragraphs": [
+          "Minden dátumablaknál ugyanazt az utazási szerkezetet vizsgáld. Ha az egyik változat három éjszakás, központi szállással és közvetlen eljutással, a másik pedig négy éjszakás, távoli szállással és átszállással, az árak különbsége nem tisztán a dátumokról szól. Készíts rövid táblát az indulásról, hazatérésről, használható nappali órákról, teljes költségről és szükséges szabadságról. Képzeletbeli példaként a csütörtöki indulás több szabadidőt adhat, de csak akkor ér valamit, ha az odaút nem emészti fel a plusz napot. A táblában az is látszódjon, mikor ellenőrizted az adatokat. Az egymástól távoli időpontban rögzített ajánlatok már eltérő helyzetet tükrözhetnek, ezért a végső összevetést friss ellenőrzéssel végezd."
+        ]
+      },
+      {
+        "heading": "Adj lezárást a keresésnek",
+        "paragraphs": [
+          "A rugalmasság könnyen folyamatos halogatássá változik, ha mindig újabb napot nyitsz meg. Jelölj ki egy keresési időszakot, majd egy időpontot, amikor a megmaradt változatok közül döntesz. Nem szükséges megjósolnod, később hogyan alakulnak az árak. Azt kell eldöntened, hogy a jelenleg ellenőrzött lehetőség megfelel-e a saját keretednek és céljaidnak. Ha egyik sem megfelelő, változtass egyetlen feltételen: például a célterületen vagy az éjszakaszámon. Ne mozdíts el mindent egyszerre, mert elveszíted, mitől lett jobb az eredmény. A kiválasztott dátum mellé írd oda a döntés indokát. Később így nem egy elszalasztottnak tűnő árhoz, hanem a ténylegesen vállalható feltételekhez tudod mérni a választásodat."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Flexible dates without endless searching",
+    "excerpt": "Flexibility becomes useful when you turn it into comparable windows.",
+    "sections": [
+      {
+        "heading": "Describe your actual flexibility",
+        "paragraphs": [
+          "Flexible dates do not mean that you can leave whenever you like. Record the earliest possible departure, latest return, and acceptable number of nights. Mark days that require leave, childcare, or a colleague to cover your work. A Tuesday that looks attractive at first can be less useful once two additional arrangements are included. Separate confirmed availability from dates that still need agreement. Then choose no more than three windows to investigate. Instead of monitoring an entire month without a clear purpose, you can examine a few realistic possibilities carefully. A tentative date should not be treated as equally ready to book as one that everyone has already approved."
+        ]
+      },
+      {
+        "heading": "Keep the comparison consistent",
+        "paragraphs": [
+          "Use the same trip structure for each window. If one option offers three nights, central accommodation, and a direct journey while another offers four nights, an outlying hotel, and a connection, their price difference is not simply about dates. Make a short table showing departure, return, usable daytime hours, total expected spending, and required leave. In an illustrative example, leaving on Thursday might provide more free time, but only if the journey does not consume the extra day. Record when you checked each figure. Offers collected far apart in time may reflect different circumstances. Refresh the shortlisted options together before making the final comparison, and keep assumptions separate from confirmed details."
+        ]
+      },
+      {
+        "heading": "Give the search a stopping point",
+        "paragraphs": [
+          "Flexibility can become permanent postponement if you keep opening another date. Set a research period and a time to decide between the remaining choices. You do not need to predict what prices will do later. Your task is to judge whether a currently checked option meets your own budget and purpose. If none does, change one condition, such as the destination area or number of nights. Avoid changing everything at once, because you will lose track of what improved the result. Write the reason for the selected date beside it. That makes it easier to evaluate your decision against the conditions you could actually accept, rather than against a price that later appears to have been missed."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}

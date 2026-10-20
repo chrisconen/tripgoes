@@ -1,0 +1,70 @@
+{
+  "slug": "szallas-erkezes-kommunikacio",
+  "category": "accommodation",
+  "image": "/assets/hero.jpg",
+  "readingMinutes": 3,
+  "hu": {
+    "title": "Érkezési egyeztetés a szállással",
+    "excerpt": "A szállással egyeztetett érkezés akkor használható, ha egyértelmű időponthoz és tényleges belépési folyamathoz kapcsolódik.",
+    "sections": [
+      {
+        "heading": "Érkezési sáv, helyi idő",
+        "paragraphs": [
+          "A szállással egyeztetett érkezés akkor használható, ha egyértelmű időponthoz és tényleges belépési folyamathoz kapcsolódik. A repülő vagy vonat tervezett érkezése nem ugyanaz, mint amikor a szállás ajtajához érsz. Becsüld meg a köztes utat, a poggyász kezelését és a szükséges átszállásokat is. Az első üzenetben a foglalás dátumát, a helyi idő szerinti várható érkezési sávot és az utazók számát add meg. Így a szállás konkrét helyzetre tud válaszolni, nem egy félreérthető időpontra."
+        ]
+      },
+      {
+        "heading": "A tényleges belépés",
+        "paragraphs": [
+          "Tisztázd, hogy személyesen vesznek-e át, recepcióhoz kell-e menned, vagy külön kulcsátvételi eljárás működik. Kérd el a pontos címet és a szükséges bejárat leírását, mert az épület utcai címe nem mindig elegendő a tájékozódáshoz. Ha lépcső, lift vagy más hozzáférési részlet fontos számodra, most kérdezz rá. A foglalási felületen kapott választ mentsd el úgy, hogy kapcsolat nélkül is megtaláld. A belépési kódokat és személyes foglalási adatokat azonban ne oszd meg nyilvános dokumentumban vagy csoportos közösségi bejegyzésben."
+        ]
+      },
+      {
+        "heading": "Késés és visszaigazolás",
+        "paragraphs": [
+          "Képzeletbeli példánkban az utazó este kilenc körül érne a szálláshoz, de a közlekedés bizonytalan. Ahelyett, hogy biztos érkezést ígérne, egy sávot jelez, és megkérdezi, mit tegyen, ha annál később jut oda. Fontos tudni, melyik csatornát figyelik és meddig. Egy elküldött üzenet nem egyenlő a visszaigazolással. Ha az érkezési feltétel a foglalás lényeges része, a válasz hiányát még indulás előtt rendezd. Ne feltételezd, hogy egy automatikus üzenet minden egyedi kérdésedre választ adott."
+        ]
+      },
+      {
+        "heading": "Három válasz egy helyen",
+        "paragraphs": [
+          "Az utazás napján csak akkor küldj új időbecslést, amikor érdemben változott a helyzet. Röviden írd le az új várható időt és azt, hogy szükséged van-e módosított átvételre. Váratlan fizetési vagy belépési üzenetnél az ismert foglalási csatornán ellenőrizd a kérést, ne a levélben megjelent ismeretlen elérhetőségre hagyatkozz. A jó érkezési jegyzet végül három dolgot tartalmaz: hová mész, hogyan jutsz be, és kit érsz el, ha a terv változik. Ennyiből fáradtan is könnyebb követni a következő lépést."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Agree arrival details with your accommodation",
+    "excerpt": "Arrival arrangements become useful when they describe a real time window and a clear way to enter the property.",
+    "sections": [
+      {
+        "heading": "An arrival window in local time",
+        "paragraphs": [
+          "Arrival arrangements become useful when they describe a real time window and a clear way to enter the property. Your train or flight arrival is not the moment you reach the accommodation door. Allow for the onward journey, luggage and any changes of transport. In your first message, give the booking date, your expected arrival window in local time and the number of guests. This lets the property respond to a specific situation rather than to an ambiguous arrival time."
+        ]
+      },
+      {
+        "heading": "The actual entry process",
+        "paragraphs": [
+          "Establish whether someone will meet you, whether you should go to reception or whether there is a separate key collection process. Ask for the precise address and the relevant entrance: a building's street address may not explain how to reach the correct door. If stairs, a lift or another access detail matters, raise it now. Save the reply where you can retrieve it without connectivity. Keep access codes and personal booking details out of public documents or open social group posts."
+        ]
+      },
+      {
+        "heading": "Delay and confirmation",
+        "paragraphs": [
+          "In a hypothetical situation, a traveller expects to reach the property around nine in the evening but faces an uncertain connection. Instead of promising an exact arrival, they provide a window and ask what to do if they arrive later. It matters which communication channel the property monitors and until when. A message sent is not a message confirmed. If late access is essential to the booking, resolve an unanswered request before departure. Do not assume an automated welcome message answers every individual question."
+        ]
+      },
+      {
+        "heading": "Three answers together",
+        "paragraphs": [
+          "On the travel day, send a revised estimate when the situation changes meaningfully. State the new expected time and whether you need different collection arrangements. If an unexpected payment or access instruction arrives, verify it through an established booking channel rather than relying on an unfamiliar contact in that message. A good arrival note ultimately answers three questions: where to go, how to get in and whom to contact when the plan changes. Keeping those answers together makes the next step easier to follow when you are tired."
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "updated": "2026-10-20",
+  "kind": "original",
+  "reviewStatus": "editorial"
+}
