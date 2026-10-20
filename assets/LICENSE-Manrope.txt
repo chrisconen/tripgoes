@@ -1,0 +1,192 @@
+﻿Copyright 2018 The Manrope Project Authors (h
+ttps://github.com/googlefonts/manrope)
+
+This 
+Font Software is licensed under the SIL Open 
+Font License, Version 1.1.
+This license is co
+pied below, and is also available with a FAQ 
+at:
+http://scripts.sil.org/OFL
+
+
+------------
+---------------------------------------------
+--
+SIL OPEN FONT LICENSE Version 1.1 - 26 Feb
+ruary 2007
+----------------------------------
+-------------------------
+
+PREAMBLE
+The goals
+ of the Open Font License (OFL) are to stimul
+ate worldwide
+development of collaborative fo
+nt projects, to support the font creation
+eff
+orts of academic and linguistic communities, 
+and to provide a free and
+open framework in w
+hich fonts may be shared and improved in part
+nership
+with others.
+
+The OFL allows the lice
+nsed fonts to be used, studied, modified and
+
+redistributed freely as long as they are not 
+sold by themselves. The
+fonts, including any 
+derivative works, can be bundled, embedded, 
+
+redistributed and/or sold with any software p
+rovided that any reserved
+names are not used 
+by derivative works. The fonts and derivative
+s,
+however, cannot be released under any othe
+r type of license. The
+requirement for fonts 
+to remain under this license does not apply
+t
+o any document created using the fonts or the
+ir derivatives.
+
+DEFINITIONS
+"Font Software" 
+refers to the set of files released by the Co
+pyright
+Holder(s) under this license and clea
+rly marked as such. This may
+include source f
+iles, build scripts and documentation.
+
+"Rese
+rved Font Name" refers to any names specified
+ as such after the
+copyright statement(s).
+
+"
+Original Version" refers to the collection of
+ Font Software components as
+distributed by t
+he Copyright Holder(s).
+
+"Modified Version" r
+efers to any derivative made by adding to, de
+leting,
+or substituting -- in part or in whol
+e -- any of the components of the
+Original Ve
+rsion, by changing formats or by porting the 
+Font Software to a
+new environment.
+
+"Author"
+ refers to any designer, engineer, programmer
+, technical
+writer or other person who contri
+buted to the Font Software.
+
+PERMISSION & CON
+DITIONS
+Permission is hereby granted, free of
+ charge, to any person obtaining
+a copy of th
+e Font Software, to use, study, copy, merge, 
+embed, modify,
+redistribute, and sell modifie
+d and unmodified copies of the Font
+Software,
+ subject to the following conditions:
+
+1) Nei
+ther the Font Software nor any of its individ
+ual components,
+in Original or Modified Versi
+ons, may be sold by itself.
+
+2) Original or M
+odified Versions of the Font Software may be 
+bundled,
+redistributed and/or sold with any s
+oftware, provided that each copy
+contains the
+ above copyright notice and this license. The
+se can be
+included either as stand-alone text
+ files, human-readable headers or
+in the appr
+opriate machine-readable metadata fields with
+in text or
+binary files as long as those fiel
+ds can be easily viewed by the user.
+
+3) No M
+odified Version of the Font Software may use 
+the Reserved Font
+Name(s) unless explicit wri
+tten permission is granted by the correspondi
+ng
+Copyright Holder. This restriction only ap
+plies to the primary font name as
+presented t
+o the users.
+
+4) The name(s) of the Copyright
+ Holder(s) or the Author(s) of the Font
+Softw
+are shall not be used to promote, endorse or 
+advertise any
+Modified Version, except to ack
+nowledge the contribution(s) of the
+Copyright
+ Holder(s) and the Author(s) or with their ex
+plicit written
+permission.
+
+5) The Font Softw
+are, modified or unmodified, in part or in wh
+ole,
+must be distributed entirely under this 
+license, and must not be
+distributed under an
+y other license. The requirement for fonts to
+
+remain under this license does not apply to 
+any document created
+using the Font Software.
+
+
+TERMINATION
+This license becomes null and v
+oid if any of the above conditions are
+not me
+t.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED 
+"AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRES
+S OR IMPLIED, INCLUDING BUT NOT LIMITED TO AN
+Y WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR 
+A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF C
+OPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. 
+IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIA
+BLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, I
+NCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER 
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING
+FROM, OUT OF THE USE OR INABILITY TO 
+USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS 
+IN THE FONT SOFTWARE.
+
+

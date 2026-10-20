@@ -1,0 +1,10 @@
+{
+  "name": "tripgoes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test --test-isolation=none tests/model.test.mjs"
+  }
+}
