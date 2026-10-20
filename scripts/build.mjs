@@ -4,6 +4,8 @@ import {loadArticles,journalIndex,journalArticle,articleImage,escapeHTML} from '
 import {checkerPage} from '../src/checker.mjs';
 import {renderRecommendations} from './recommendations.mjs';
 import {renderSharing} from '../src/sharing.mjs';
+import {createView} from '../src/views.mjs';
+import {plannerPage} from '../src/planner.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
 if(new URL(origin).protocol!=='https:')throw Error('SITE_ORIGIN must use HTTPS.');
@@ -13,21 +15,26 @@ await mkdir('dist',{recursive:true});
 await cp('src','dist/src',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});
 const shell=(await readFile('index.html','utf8')).replaceAll('{{origin}}',origin);
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score'];
-function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website'}){
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner'];
+function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
  const canonical=`${origin}/${lang}/${path}`;
+ const view=createView({lang,page:route.split('/')[0],pathname:`/${lang}/${path}`});
+ const main=content||(route?view.infoPage():view.home());
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
- const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:content+extras,image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
+ const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
+ values.page=pageOverride??route.split('/')[0];
+ values.extraStyles=route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
 for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
-  const title=route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;
-  await writeFile(`${dir}/index.html`,render({lang,route,title,content:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:route==='score'}));
-  if(route==='score')sitemap.push(`${origin}/${lang}/score/`);
+  const title=route==='planner'?(lang==='hu'?'Úttervező — teljes költség, több szabadidő | TripGoes':'Trip planner — whole-trip costs, more time away | TripGoes'):route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;
+  const description=route==='planner'?(lang==='hu'?'Hasonlíts össze három saját utazási ajánlatot: teljes költség, csoportkeret, éjszakák és használható órák. Számítás és választható mentés a böngésződben.':'Compare three travel offers of your own: whole-trip costs, group budget, nights and usable hours. Calculations and optional saving stay in your browser.'):undefined;
+  await writeFile(`${dir}/index.html`,render({lang,route,title,description,content:route==='planner'?`<main id="main">${plannerPage(lang)}</main>`:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:route==='score'||route==='planner'}));
+  if(route==='score'||route==='planner')sitemap.push(`${origin}/${lang}/${route}/`);
  }
  await mkdir(`dist/${lang}/blog`,{recursive:true});
  await writeFile(`dist/${lang}/blog/index.html`,render({lang,route:'blog',title:lang==='hu'?'Útinapló — 100 eredeti utazási útmutató | TripGoes':'Travel Journal — 100 original travel guides | TripGoes',description:lang==='hu'?'Utazástervezés, repülés, hajóutak és átlátható költségek. Száz eredeti magyar–angol útmutató a tudatosabb döntéshez.':'Planning, flights, cruises and transparent travel costs. One hundred original Hungarian and English guides for more thoughtful decisions.',content:journalIndex(articles,lang),indexable:!draft}));
@@ -39,7 +46,7 @@ for(const lang of ['hu','en']){
  }
 }
 await writeFile('dist/index.html',render({lang:'hu',title:copy.hu.metaTitle}));
-await writeFile('dist/404.html',render({lang:'hu',title:'404 — TripGoes'}));
+await writeFile('dist/404.html',render({lang:'hu',title:'404 — TripGoes',content:createView({lang:'hu',page:'404'}).infoPage(),pageOverride:'404'}));
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.map(url=>`<url><loc>${url}</loc></url>`).join('')}</urlset>\n`);
 await writeFile('dist/CNAME',new URL(origin).hostname+'\n');

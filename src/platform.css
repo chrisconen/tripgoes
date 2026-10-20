@@ -1,4 +1,5 @@
 /* TripGoes Journal & Score Lab — editorial green, paper, vermilion. */
+:root{--readable-muted:#52664f}
 [hidden]{display:none!important}
 .lab-hero,.journal-masthead{display:grid;grid-template-columns:1.12fr 1fr;gap:8%;padding-top:76px;padding-bottom:64px;align-items:end}
 .lab-hero h1,.journal-masthead h1{font-size:clamp(46px,5.6vw,82px);line-height:1.05;letter-spacing:-.065em;margin:22px 0 0;font-weight:700}
@@ -248,3 +249,19 @@
 @media(max-width:560px){.discovery-track{grid-auto-columns:86%;gap:16px}.discovery-gallery .discovery-track{grid-template-columns:1fr;gap:30px}.discovery-heading h2{font-size:39px}}
 @media(prefers-reduced-motion:reduce){.discovery-arrows button,.share-link,.share-button{transition:none}}
 @media print{.discovery,.share-bar{display:none!important}}
+
+/* Small editorial metadata remains legible on paper backgrounds. */
+.journal-meta,.journal-card-body>p,.discovery .journal-meta,.discovery .journal-card-body>p,.journal-credit,.article-credit,.article-byline,.article-breadcrumb,.provider-disclosure,.share-privacy{color:var(--readable-muted)}
+.journal-meta,.article-byline,.article-breadcrumb{font-size:11px}
+.journal-credit,.article-credit,.share-privacy{font-size:11px;line-height:1.8}
+.journal-card-body>p{font-size:13px}
+
+.decision-path{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;padding-top:45px;padding-bottom:55px;border-bottom:1px solid #d4decd}
+.decision-path h2{font-size:34px;letter-spacing:-.05em;line-height:1.2;margin:18px 0}
+.decision-path>a{border-left:1px solid #ced8c6;padding-left:30px;text-decoration:none;border-radius:2px}
+.decision-path>a:hover h3{text-decoration:underline;text-underline-offset:6px}
+.decision-path h3{font-size:23px;letter-spacing:-.04em;line-height:1.3}
+.decision-index{font-size:10px;letter-spacing:.12em;color:#52664f}
+.decision-path p:not(.eyebrow){font-size:13px;line-height:1.8;color:#52664f}
+.decision-path .text-link{font-size:12px}
+@media(max-width:760px){.decision-path{grid-template-columns:1fr;gap:25px}.decision-path>a{border-left:0;border-top:1px solid #ced8c6;padding:24px 0 0}.decision-path h2{font-size:32px}.decision-path h3{margin:16px 0}}

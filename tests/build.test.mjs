@@ -5,7 +5,7 @@ import {loadArticles,articleImage,escapeHTML} from '../scripts/journal.mjs';
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){
-  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','blog/']){
+  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','blog/']){
    const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
    assert.ok(html.includes(`href="https://tripgoes.com/${lang}/${route}"`));
    assert.ok(html.includes(`hreflang="hu" href="https://tripgoes.com/hu/${route}"`));
@@ -14,6 +14,23 @@ test('both locales have correct custom-domain metadata and complete templates',a
    assert.ok(!html.includes('chatgpt.site'));
   }
  }
+});
+
+test('every page has a readable static main and complete shared navigation',async()=>{
+ const files=(await readdir('dist',{recursive:true})).filter(path=>path.endsWith('.html'));
+ for(const file of files){
+  const html=await readFile(`dist/${file}`,'utf8');
+  assert.equal([...html.matchAll(/<main /g)].length,1,file);
+  assert.equal([...html.matchAll(/<footer>/g)].length,1,file);
+  assert.ok(html.includes('class="desktop-nav"'),file);
+  assert.ok(html.includes('<h1>'),file);
+  assert.ok(!html.includes('undefined'),file);
+ }
+ const app=await readFile('src/app.mjs','utf8');
+ assert.ok(!app.includes("$('#app').innerHTML="),'Static content must not be discarded');
+ const notFound=await readFile('dist/404.html','utf8');
+ assert.ok(notFound.includes('data-page="404"'));
+ assert.ok(!notFound.includes('class="hero container"'));
 });
 test('deployment includes domain and assets without source-only private material',async()=>{
  assert.equal((await readFile('dist/CNAME','utf8')).trim(),'tripgoes.com');

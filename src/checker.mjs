@@ -1,4 +1,5 @@
 import {analyzeOffer,SCORE_RULES} from './score.mjs';
+import {DRAFT_FIELDS,readDraft,saveDraft,deleteDraft} from './score-draft.mjs';
 const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const copy={
  hu:{
@@ -51,10 +52,14 @@ const flags={
  'supplied-inclusions-unverified':['A megadott szolgáltatástartalmat nem hitelesítettük.','The supplied inclusions have not been verified.']
 };
 const input=(name,label,type='text',extra='')=>`<label class="lab-field"><span>${label}</span><input name="${name}" type="${type}" ${extra}></label>`;
+const draftCopy={
+ hu:{title:'Folytasd később, ugyanitt.',help:'Egy piszkozatot menthetsz ebbe a böngészőbe, a magyar és angol felülethez közösen. Csak a Mentés gomb írja felül a korábbi piszkozatot. A betöltés lecseréli az aktuális űrlapot; a Tiszta lap nem törli a mentést. Közös eszközön más is hozzáférhet.',save:'Mentés / felülírás',load:'Mentett űrlap betöltése',remove:'Mentés törlése',none:'Még nincs mentett piszkozat.',available:'Mentett piszkozat:',saved:'Piszkozat elmentve ebbe a böngészőbe.',loaded:'Űrlap betöltve. Ellenőrizd az árakat és dátumokat, majd erősítsd meg újra az összehasonlíthatóságot. Az elemzést külön kell futtatnod.',deleted:'A mentett piszkozat törölve. A képernyőn látható űrlap megmaradt.',invalid:'A piszkozat nem menthető: javítsd a hibás dátumot, összeget vagy túl hosszú szöveget. Üres mezők menthetők.',corrupt:'A mentett piszkozat sérült vagy nem támogatott. Törölheted, vagy új mentéssel felülírhatod.',unavailable:'A böngésző tárolója most nem érhető el. A piszkozatművelet nem sikerült.',sample:'Mintapiszkozat: a szemléltető eredet megmaradt.',manual:'Saját bevitel; nincs hitelesítve.'},
+ en:{title:'Pick up where you left off.',help:'Save one draft in this browser, shared by the Hungarian and English pages. Only Save overwrites an earlier draft. Loading replaces the current form; Start fresh does not delete the saved draft. Other people using this device may access it.',save:'Save / overwrite draft',load:'Load saved form',remove:'Delete saved draft',none:'No draft has been saved yet.',available:'Saved draft:',saved:'Draft saved in this browser.',loaded:'Form loaded. Check prices and dates, then confirm comparability again. Run the analysis separately.',deleted:'Saved draft deleted. The form on screen has been kept.',invalid:'The draft could not be saved: correct invalid dates, amounts or overly long text. Empty fields can be saved.',corrupt:'The saved draft is damaged or unsupported. Delete it or overwrite it with a new draft.',unavailable:'Browser storage is unavailable. The draft operation did not succeed.',sample:'Sample draft: its illustrative origin has been preserved.',manual:'Your input; not authenticated.'}
+};
 export function checkerPage(lang){
- const t=copy[lang],hu=lang==='hu';
+ const t=copy[lang],d=draftCopy[lang],hu=lang==='hu';
  return `<main id="main" class="score-page"><section class="lab-hero container"><div><p class="eyebrow">${t.eye}</p><h1>${t.title}</h1></div><div><p class="lab-intro">${t.intro}</p><span class="lab-private">◈ ${t.private}</span><div class="lab-hero-actions"><button id="lab-example" class="button button-lime">${t.sample} ↗</button><button id="lab-clear" class="text-link">${t.clear}</button></div></div></section>
- <div class="lab-workspace container"><form id="score-form" class="lab-form"><section class="lab-form-section"><div class="lab-section-title"><span>01</span><h2>${t.offer}</h2></div><p>${t.offerHint}</p><div class="lab-fields">
+ <div class="lab-workspace container"><form id="score-form" class="lab-form"><section class="lab-draft" aria-labelledby="lab-draft-heading"><h2 id="lab-draft-heading">${d.title}</h2><p>${d.help}</p><div class="lab-draft-actions"><button type="button" id="lab-draft-save">${d.save}</button><button type="button" id="lab-draft-load" disabled>${d.load}</button><button type="button" id="lab-draft-delete" disabled>${d.remove}</button></div><p id="lab-draft-status" class="lab-draft-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p></section><section class="lab-form-section"><div class="lab-section-title"><span>01</span><h2>${t.offer}</h2></div><p>${t.offerHint}</p><div class="lab-fields">
  ${input('route',t.route,'text','required maxlength="120" placeholder="BUD → BCN"')}${input('departureDate',t.departure,'date','required')}
  ${input('nights',t.nights,'number','required min="0" max="365" step="1" value="3"')}${input('travelers',t.travelers,'number','required min="1" max="99" step="1" value="2"')}
  <label class="lab-field"><span>${t.currency}</span><select name="currency"><option ${hu?'selected':''}>HUF</option><option ${hu?'':'selected'}>EUR</option><option>GBP</option><option>USD</option></select></label>${input('price',t.price,'number','required min="0.01" max="1000000000" step="0.01" placeholder="49900"')}
@@ -68,12 +73,42 @@ export function checkerPage(lang){
 }
 export function initChecker(lang){
  const form=document.getElementById('score-form');if(!form)return;
- const t=copy[lang],hu=lang==='hu',history=document.getElementById('lab-history'),message=document.getElementById('lab-message'),result=document.getElementById('lab-result');
+ const t=copy[lang],d=draftCopy[lang],hu=lang==='hu',history=document.getElementById('lab-history'),message=document.getElementById('lab-message'),result=document.getElementById('lab-result');
  let evidence='user-entered',latest=null,comparisons=[],sequence=0;
  const today=()=>new Date().toISOString().slice(0,10);
  const shifted=days=>new Date(Date.now()+days*86400000).toISOString().slice(0,10);
  const money=(value,currency)=>new Intl.NumberFormat(hu?'hu-HU':'en-GB',{style:'currency',currency,maximumFractionDigits:2}).format(value);
  const field=name=>form.elements.namedItem(name);
+ const draftStatus=document.getElementById('lab-draft-status'),loadButton=document.getElementById('lab-draft-load'),deleteButton=document.getElementById('lab-draft-delete');
+ const historyValues=()=>[...history.children].map(el=>({date:el.querySelector('[data-history-date]').value,price:el.querySelector('[data-history-price]').value}));
+ const originLabel=value=>value==='sample'?d.sample:d.manual;
+ function updateDraftButtons(state){loadButton.disabled=state.status!=='ok';deleteButton.disabled=!['ok','invalid'].includes(state.status)}
+ function resetErrors(){form.querySelectorAll('[aria-invalid]').forEach(el=>{el.removeAttribute('aria-invalid');el.removeAttribute('aria-describedby')})}
+ function showFieldError(control,text){invalidate();message.textContent=text;control.setAttribute('aria-invalid','true');control.setAttribute('aria-describedby','lab-message');control.focus()}
+ function emptyResult(){latest=null;result.innerHTML=`<span class="eyebrow">TRIPSCORE</span><div class="lab-empty-orbit"><span>?</span><small>0 — 100</small></div><h2>${t.empty}</h2><p>${t.emptyText}</p>`;result.classList.remove('result-outdated')}
+ const stored=readDraft();updateDraftButtons(stored);
+ draftStatus.textContent=stored.status==='ok'?`${d.available} ${new Intl.DateTimeFormat(hu?'hu-HU':'en-GB',{dateStyle:'medium',timeStyle:'short'}).format(new Date(stored.draft.savedAt))}. ${originLabel(stored.draft.evidence)}`:stored.status==='invalid'?d.corrupt:stored.status==='unavailable'?d.unavailable:d.none;
+ document.getElementById('lab-draft-save').addEventListener('click',()=>{
+  const malformed=[...form.querySelectorAll('input')].find(control=>control.validity.badInput);
+  if(malformed){draftStatus.textContent=d.invalid;malformed.setAttribute('aria-invalid','true');malformed.setAttribute('aria-describedby','lab-draft-status');malformed.focus();return}
+  const state=saveDraft({fields:Object.fromEntries(DRAFT_FIELDS.map(key=>[key,field(key).value])),history:historyValues(),evidence});
+  if(state.status==='ok'){updateDraftButtons(state);draftStatus.textContent=`${d.saved} ${originLabel(evidence)}`}
+  else{draftStatus.textContent=state.status==='invalid'?d.invalid:d.unavailable;draftStatus.focus()}
+ });
+ loadButton.addEventListener('click',()=>{
+  const state=readDraft();updateDraftButtons(state);
+  if(state.status!=='ok'){draftStatus.textContent=state.status==='missing'?d.none:state.status==='invalid'?d.corrupt:d.unavailable;draftStatus.focus();return}
+  const draft=state.draft;resetErrors();form.reset();
+  for(const key of DRAFT_FIELDS)field(key).value=draft.fields[key];
+  evidence=draft.evidence;field('comparable').checked=false;history.replaceChildren();
+  if(draft.history.length)draft.history.forEach(item=>row(item.date,item.price));else for(let i=0;i<5;i++)row();
+  emptyResult();message.textContent='';draftStatus.textContent=`${d.loaded} ${originLabel(evidence)}`;field('route').focus();
+ });
+ deleteButton.addEventListener('click',()=>{
+  const state=deleteDraft();
+  if(state.status==='ok')updateDraftButtons({status:'missing'});
+  draftStatus.textContent=state.status==='ok'?d.deleted:d.unavailable;draftStatus.focus();
+ });
  function row(date='',price=''){
   const n=++sequence,el=document.createElement('div');el.className='lab-history-row';
   el.innerHTML=`<input type="date" aria-label="${t.date} ${n}" value="${e(date)}" max="${today()}" data-history-date><input type="number" aria-label="${t.total} ${n}" min="0.01" max="1000000000" step="0.01" value="${e(price)}" data-history-price><button type="button" class="lab-row-remove" aria-label="${t.remove} ${n}">×</button>`;
@@ -82,19 +117,21 @@ export function initChecker(lang){
  function invalidate(){if(latest){latest=null;message.textContent=t.staleResult;result.querySelectorAll('[data-result-action]').forEach(b=>b.disabled=true);result.classList.add('result-outdated')}}
  for(let i=0;i<5;i++)row();
  document.getElementById('lab-add').addEventListener('click',()=>{if(history.children.length>=30){message.textContent=t.limit;return}row();invalidate()});
- form.addEventListener('input',event=>{invalidate();if(['route','departureDate','nights','travelers','currency','inclusions'].includes(event.target.name))field('comparable').checked=false});
- document.getElementById('lab-clear').addEventListener('click',()=>{form.reset();evidence='user-entered';history.replaceChildren();for(let i=0;i<5;i++)row();latest=null;result.innerHTML=`<span class="eyebrow">TRIPSCORE</span><div class="lab-empty-orbit"><span>?</span><small>0 — 100</small></div><h2>${t.empty}</h2><p>${t.emptyText}</p>`;result.classList.remove('result-outdated');message.textContent='';field('route').focus()});
+ form.addEventListener('input',event=>{invalidate();event.target.removeAttribute('aria-invalid');event.target.removeAttribute('aria-describedby');if(['route','departureDate','nights','travelers','currency','inclusions'].includes(event.target.name))field('comparable').checked=false});
+ document.getElementById('lab-clear').addEventListener('click',()=>{resetErrors();form.reset();evidence='user-entered';history.replaceChildren();for(let i=0;i<5;i++)row();emptyResult();message.textContent='';field('route').focus()});
  document.getElementById('lab-example').addEventListener('click',()=>{
+  resetErrors();
   const values={route:'BUD → BCN',departureDate:shifted(21),nights:3,travelers:2,currency:hu?'HUF':'EUR',price:hu?49900:125,baggage:hu?12000:30,transfer:hu?8000:20,accommodation:hu?60000:150,other:0,inclusions:hu?'Retúr repülés, 3 éj, feladott poggyász':'Return flights, 3 nights, checked baggage'};
   for(const [k,v]of Object.entries(values))field(k).value=v;
   history.replaceChildren();[30,24,18,12,6,1].forEach((day,i)=>row(shifted(-day),hu?[158000,151000,154000,148000,146000,143000][i]:[395,378,385,370,365,358][i]));
   evidence='sample';field('comparable').checked=true;invalidate();message.textContent=t.sampleNote;form.requestSubmit();
  });
  form.addEventListener('submit',event=>{
-  event.preventDefault();message.textContent='';
-  const rows=[...history.children].map(el=>({date:el.querySelector('[data-history-date]').value,price:el.querySelector('[data-history-price]').value})).filter(r=>r.date||r.price);
-  if(rows.some(r=>!r.date||!r.price)){message.textContent=t.rowError;invalidate();return}
-  if(rows.length&&!field('comparable').checked){message.textContent=t.confirmError;invalidate();return}
+  event.preventDefault();message.textContent='';resetErrors();
+  const allRows=historyValues(),rows=allRows.filter(r=>r.date||r.price);
+  const missing=allRows.findIndex(r=>(r.date||r.price)&&(!r.date||!r.price));
+  if(missing>=0){const control=history.children[missing].querySelector(allRows[missing].date?'[data-history-price]':'[data-history-date]');showFieldError(control,t.rowError);return}
+  if(rows.length&&!field('comparable').checked){showFieldError(field('comparable'),t.confirmError);return}
   const data=Object.fromEntries(new FormData(form));
   const inclusionList=data.inclusions.split(',').map(s=>s.trim()).filter(Boolean);
   const signature={currency:data.currency,route:data.route,departureDate:data.departureDate,nights:data.nights,travelers:data.travelers,inclusions:inclusionList};

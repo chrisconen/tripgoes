@@ -1,0 +1,10 @@
+.lab-draft{margin:0 0 28px;padding:21px;border:1px solid #c6d3bd;background:#eff3e7;border-radius:9px}
+.lab-draft h2{font-size:19px;letter-spacing:-.5px;margin:0 0 10px}
+.lab-draft p{font-size:12px;line-height:1.8;color:#53684f}
+.lab-draft-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.lab-draft-actions button{font:inherit;font-size:12px;background:#fffefa;border:1px solid #aabb9e;border-radius:6px;padding:10px 13px;min-height:42px;color:#173f35}
+.lab-draft-actions button:first-child{background:#173f35;color:white;border-color:#173f35}
+.lab-draft-actions button:disabled{opacity:.55;cursor:not-allowed}
+.lab-draft .lab-draft-status{margin-top:12px;min-height:1.8em}
+.lab-form [aria-invalid=true]{border:2px solid #9b382d}
+@media print{.lab-draft{display:none!important}}

@@ -48,3 +48,18 @@ test('all 100 articles have distinct local photographs and complete reusable-ima
  }
  assert.equal(hashes.size,100);
 });
+
+test('card photographs preserve distinct identities and materially reduce payload',async()=>{
+ const articles=await loadArticles(),hashes=new Set();let total=0;
+ for(const a of articles){
+  const image=a.cardArtwork,bytes=await readFile(image.src.slice(1));
+  assert.equal(bytes.length,image.bytes,a.slug);
+  assert.equal(bytes[0],255);assert.equal(bytes[1],216);
+  assert.ok(image.width>=300&&image.width<=800,a.slug);
+  assert.ok(bytes.length<(await readFile(a.artwork.src.slice(1))).length,a.slug);
+  hashes.add(createHash('sha256').update(bytes).digest('hex'));
+  total+=bytes.length;
+ }
+ assert.equal(hashes.size,100);
+ assert.ok(total<8_000_000,`Card payload budget: ${total}`);
+});

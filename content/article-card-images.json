@@ -1,0 +1,602 @@
+{
+  "utazas-tervezes-harom-korlattal": {
+    "src": "/assets/journal/cards/utazas-tervezes-harom-korlattal.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 43630
+  },
+  "rugalmas-datumablak": {
+    "src": "/assets/journal/cards/rugalmas-datumablak.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 70128
+  },
+  "elso-kozos-utazas": {
+    "src": "/assets/journal/cards/elso-kozos-utazas.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 63185
+  },
+  "lassabb-utazas-kevesebb-bazissal": {
+    "src": "/assets/journal/cards/lassabb-utazas-kevesebb-bazissal.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 38517
+  },
+  "esos-nap-terv": {
+    "src": "/assets/journal/cards/esos-nap-terv.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 46769
+  },
+  "utazas-dontesi-naplo": {
+    "src": "/assets/journal/cards/utazas-dontesi-naplo.jpg",
+    "width": 500,
+    "height": 296,
+    "bytes": 30930
+  },
+  "csoportos-utazas-dontesi-szabalyok": {
+    "src": "/assets/journal/cards/csoportos-utazas-dontesi-szabalyok.jpg",
+    "width": 500,
+    "height": 331,
+    "bytes": 53894
+  },
+  "csomagolas-tevekenysegekbol": {
+    "src": "/assets/journal/cards/csomagolas-tevekenysegekbol.jpg",
+    "width": 500,
+    "height": 338,
+    "bytes": 54018
+  },
+  "utazas-elotti-utolso-nap": {
+    "src": "/assets/journal/cards/utazas-elotti-utolso-nap.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 58456
+  },
+  "hazateres-es-tanulsagok": {
+    "src": "/assets/journal/cards/hazateres-es-tanulsagok.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 23108
+  },
+  "lastminute-keszenleti-lista": {
+    "src": "/assets/journal/cards/lastminute-keszenleti-lista.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 74008
+  },
+  "teljes-koltseg-lastminute": {
+    "src": "/assets/journal/cards/teljes-koltseg-lastminute.jpg",
+    "width": 500,
+    "height": 328,
+    "bytes": 53444
+  },
+  "lastminute-ajanlat-ellenorzese": {
+    "src": "/assets/journal/cards/lastminute-ajanlat-ellenorzese.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 53624
+  },
+  "mikor-nem-jo-lastminute": {
+    "src": "/assets/journal/cards/mikor-nem-jo-lastminute.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 43130
+  },
+  "ket-ajanlat-azonos-alapon": {
+    "src": "/assets/journal/cards/ket-ajanlat-azonos-alapon.jpg",
+    "width": 500,
+    "height": 334,
+    "bytes": 74994
+  },
+  "lastminute-dontesi-hatarido": {
+    "src": "/assets/journal/cards/lastminute-dontesi-hatarido.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 65894
+  },
+  "indulasi-repter-rugalmassaga": {
+    "src": "/assets/journal/cards/indulasi-repter-rugalmassaga.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 43221
+  },
+  "lastminute-szallasbizonytalansag": {
+    "src": "/assets/journal/cards/lastminute-szallasbizonytalansag.jpg",
+    "width": 500,
+    "height": 289,
+    "bytes": 58669
+  },
+  "utitars-lastminute-egyeztetes": {
+    "src": "/assets/journal/cards/utitars-lastminute-egyeztetes.jpg",
+    "width": 500,
+    "height": 364,
+    "bytes": 28369
+  },
+  "lastminute-ertesitesek-rendszere": {
+    "src": "/assets/journal/cards/lastminute-ertesitesek-rendszere.jpg",
+    "width": 500,
+    "height": 332,
+    "bytes": 47539
+  },
+  "repulojegy-osszehasonlitas": {
+    "src": "/assets/journal/cards/repulojegy-osszehasonlitas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 26760
+  },
+  "kezipoggyasz-tervezes": {
+    "src": "/assets/journal/cards/kezipoggyasz-tervezes.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 44157
+  },
+  "atszallasi-ido-gondolkodas": {
+    "src": "/assets/journal/cards/atszallasi-ido-gondolkodas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 45739
+  },
+  "kulon-jegyes-utvonal": {
+    "src": "/assets/journal/cards/kulon-jegyes-utvonal.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 55072
+  },
+  "hajnali-indulas-logisztika": {
+    "src": "/assets/journal/cards/hajnali-indulas-logisztika.jpg",
+    "width": 500,
+    "height": 268,
+    "bytes": 24626
+  },
+  "kesoi-erkezes-terv": {
+    "src": "/assets/journal/cards/kesoi-erkezes-terv.jpg",
+    "width": 500,
+    "height": 297,
+    "bytes": 38250
+  },
+  "repteri-transzfer-osszehasonlitas": {
+    "src": "/assets/journal/cards/repteri-transzfer-osszehasonlitas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 53595
+  },
+  "repulesi-nap-idovonal": {
+    "src": "/assets/journal/cards/repulesi-nap-idovonal.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 60268
+  },
+  "jaratvaltozas-informacios-rend": {
+    "src": "/assets/journal/cards/jaratvaltozas-informacios-rend.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 50666
+  },
+  "tobbvarosos-repulo-utvonal": {
+    "src": "/assets/journal/cards/tobbvarosos-repulo-utvonal.jpg",
+    "width": 500,
+    "height": 358,
+    "bytes": 70839
+  },
+  "szallas-kornyek-valasztas": {
+    "src": "/assets/journal/cards/szallas-kornyek-valasztas.jpg",
+    "width": 500,
+    "height": 338,
+    "bytes": 46779
+  },
+  "szallas-ertekelesek-olvasasa": {
+    "src": "/assets/journal/cards/szallas-ertekelesek-olvasasa.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 45083
+  },
+  "apartman-vagy-szalloda": {
+    "src": "/assets/journal/cards/apartman-vagy-szalloda.jpg",
+    "width": 500,
+    "height": 272,
+    "bytes": 32356
+  },
+  "szobatipus-ellenorzolista": {
+    "src": "/assets/journal/cards/szobatipus-ellenorzolista.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 40741
+  },
+  "szallas-lemondasi-feltetelek": {
+    "src": "/assets/journal/cards/szallas-lemondasi-feltetelek.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 48763
+  },
+  "reggeli-ellatas-erteke": {
+    "src": "/assets/journal/cards/reggeli-ellatas-erteke.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 47107
+  },
+  "hosszabb-tartozkodas-szallas": {
+    "src": "/assets/journal/cards/hosszabb-tartozkodas-szallas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 37152
+  },
+  "csendes-szallas-kereses": {
+    "src": "/assets/journal/cards/csendes-szallas-kereses.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 102097
+  },
+  "csaladi-szallas-terek": {
+    "src": "/assets/journal/cards/csaladi-szallas-terek.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 33677
+  },
+  "szallas-erkezes-kommunikacio": {
+    "src": "/assets/journal/cards/szallas-erkezes-kommunikacio.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 55861
+  },
+  "elso-hajout-tervezes": {
+    "src": "/assets/journal/cards/elso-hajout-tervezes.jpg",
+    "width": 500,
+    "height": 281,
+    "bytes": 39393
+  },
+  "kabinvalasztas-szempontok": {
+    "src": "/assets/journal/cards/kabinvalasztas-szempontok.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 32985
+  },
+  "hajout-kikotok-ritmusa": {
+    "src": "/assets/journal/cards/hajout-kikotok-ritmusa.jpg",
+    "width": 500,
+    "height": 247,
+    "bytes": 33493
+  },
+  "hajout-teljes-koltseg": {
+    "src": "/assets/journal/cards/hajout-teljes-koltseg.jpg",
+    "width": 500,
+    "height": 328,
+    "bytes": 81582
+  },
+  "beszallas-elotti-ejszaka": {
+    "src": "/assets/journal/cards/beszallas-elotti-ejszaka.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 47821
+  },
+  "kikotoi-nap-onallo-terv": {
+    "src": "/assets/journal/cards/kikotoi-nap-onallo-terv.jpg",
+    "width": 500,
+    "height": 330,
+    "bytes": 67811
+  },
+  "hajout-csomagolas": {
+    "src": "/assets/journal/cards/hajout-csomagolas.jpg",
+    "width": 500,
+    "height": 335,
+    "bytes": 50072
+  },
+  "rovid-vagy-hosszu-hajout": {
+    "src": "/assets/journal/cards/rovid-vagy-hosszu-hajout.jpg",
+    "width": 500,
+    "height": 287,
+    "bytes": 30457
+  },
+  "hajout-tarsasag-egyeztetes": {
+    "src": "/assets/journal/cards/hajout-tarsasag-egyeztetes.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 49489
+  },
+  "hajout-ajanlat-adatlap": {
+    "src": "/assets/journal/cards/hajout-ajanlat-adatlap.jpg",
+    "width": 500,
+    "height": 334,
+    "bytes": 48068
+  },
+  "ketnapos-varoslatogatas": {
+    "src": "/assets/journal/cards/ketnapos-varoslatogatas.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 66085
+  },
+  "varosi-negyedek-utvonala": {
+    "src": "/assets/journal/cards/varosi-negyedek-utvonala.jpg",
+    "width": 500,
+    "height": 340,
+    "bytes": 53647
+  },
+  "muzeumi-nap-ritmusa": {
+    "src": "/assets/journal/cards/muzeumi-nap-ritmusa.jpg",
+    "width": 500,
+    "height": 301,
+    "bytes": 80254
+  },
+  "varosnezes-gyaloglas-pihenes": {
+    "src": "/assets/journal/cards/varosnezes-gyaloglas-pihenes.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 102475
+  },
+  "elso-esti-varosi-seta": {
+    "src": "/assets/journal/cards/elso-esti-varosi-seta.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 58591
+  },
+  "varoslatogatas-rossz-idoben": {
+    "src": "/assets/journal/cards/varoslatogatas-rossz-idoben.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 66282
+  },
+  "varosi-etkezes-tervezes": {
+    "src": "/assets/journal/cards/varosi-etkezes-tervezes.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 65402
+  },
+  "visszatero-varoslatogatas": {
+    "src": "/assets/journal/cards/visszatero-varoslatogatas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 83785
+  },
+  "egynapos-kirandulas-varosbol": {
+    "src": "/assets/journal/cards/egynapos-kirandulas-varosbol.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 61033
+  },
+  "varosnezo-berlet-merlegeles": {
+    "src": "/assets/journal/cards/varosnezo-berlet-merlegeles.jpg",
+    "width": 500,
+    "height": 247,
+    "bytes": 33593
+  },
+  "strandnyaralas-ritmus": {
+    "src": "/assets/journal/cards/strandnyaralas-ritmus.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 79395
+  },
+  "szigetvalasztas-kozlekedes": {
+    "src": "/assets/journal/cards/szigetvalasztas-kozlekedes.jpg",
+    "width": 500,
+    "height": 237,
+    "bytes": 38852
+  },
+  "strand-tipus-valasztas": {
+    "src": "/assets/journal/cards/strand-tipus-valasztas.jpg",
+    "width": 500,
+    "height": 341,
+    "bytes": 74052
+  },
+  "ket-sziget-egy-utban": {
+    "src": "/assets/journal/cards/ket-sziget-egy-utban.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 29355
+  },
+  "tengerpart-autoval-vagy-nelkule": {
+    "src": "/assets/journal/cards/tengerpart-autoval-vagy-nelkule.jpg",
+    "width": 500,
+    "height": 366,
+    "bytes": 74513
+  },
+  "parti-szallas-elhelyezkedes": {
+    "src": "/assets/journal/cards/parti-szallas-elhelyezkedes.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 45323
+  },
+  "szeles-nap-tengerparton": {
+    "src": "/assets/journal/cards/szeles-nap-tengerparton.jpg",
+    "width": 500,
+    "height": 281,
+    "bytes": 42826
+  },
+  "strandnap-csomag-lista": {
+    "src": "/assets/journal/cards/strandnap-csomag-lista.jpg",
+    "width": 500,
+    "height": 339,
+    "bytes": 50635
+  },
+  "szezonon-kivuli-part": {
+    "src": "/assets/journal/cards/szezonon-kivuli-part.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 46215
+  },
+  "pihenes-es-felfedezes": {
+    "src": "/assets/journal/cards/pihenes-es-felfedezes.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 76156
+  },
+  "utazasi-keret-felosztas": {
+    "src": "/assets/journal/cards/utazasi-keret-felosztas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 74156
+  },
+  "napi-koltesi-naplo": {
+    "src": "/assets/journal/cards/napi-koltesi-naplo.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 59939
+  },
+  "kozos-koltsegek-elszamolas": {
+    "src": "/assets/journal/cards/kozos-koltsegek-elszamolas.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 57506
+  },
+  "tartalekkeret-utazashoz": {
+    "src": "/assets/journal/cards/tartalekkeret-utazashoz.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 44748
+  },
+  "olcso-ut-dragabb-napok": {
+    "src": "/assets/journal/cards/olcso-ut-dragabb-napok.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 68107
+  },
+  "ejszakak-es-teljes-napok": {
+    "src": "/assets/journal/cards/ejszakak-es-teljes-napok.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 38942
+  },
+  "utazasi-extrak-rangsora": {
+    "src": "/assets/journal/cards/utazasi-extrak-rangsora.jpg",
+    "width": 500,
+    "height": 400,
+    "bytes": 76054
+  },
+  "foglalasi-reszletek-naploja": {
+    "src": "/assets/journal/cards/foglalasi-reszletek-naploja.jpg",
+    "width": 500,
+    "height": 287,
+    "bytes": 30750
+  },
+  "ajandekok-emlekek-kerete": {
+    "src": "/assets/journal/cards/ajandekok-emlekek-kerete.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 86602
+  },
+  "koltsegterv-utolagos-atnezes": {
+    "src": "/assets/journal/cards/koltsegterv-utolagos-atnezes.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 30463
+  },
+  "akadalymentesseg-konkrett-kerdesek": {
+    "src": "/assets/journal/cards/akadalymentesseg-konkrett-kerdesek.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 65913
+  },
+  "pihenoidos-utvonal": {
+    "src": "/assets/journal/cards/pihenoidos-utvonal.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 77054
+  },
+  "helyi-kozossegek-tisztelete": {
+    "src": "/assets/journal/cards/helyi-kozossegek-tisztelete.jpg",
+    "width": 500,
+    "height": 284,
+    "bytes": 45041
+  },
+  "kevesebb-egyszer-hasznalatos": {
+    "src": "/assets/journal/cards/kevesebb-egyszer-hasznalatos.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 64998
+  },
+  "zsufoltsag-elkerulese": {
+    "src": "/assets/journal/cards/zsufoltsag-elkerulese.jpg",
+    "width": 500,
+    "height": 266,
+    "bytes": 60733
+  },
+  "helyi-szolgaltatok-valasztasa": {
+    "src": "/assets/journal/cards/helyi-szolgaltatok-valasztasa.jpg",
+    "width": 500,
+    "height": 281,
+    "bytes": 64692
+  },
+  "termeszetjaro-program-hatarai": {
+    "src": "/assets/journal/cards/termeszetjaro-program-hatarai.jpg",
+    "width": 500,
+    "height": 253,
+    "bytes": 29753
+  },
+  "utazasi-fotozas-figyelemmel": {
+    "src": "/assets/journal/cards/utazasi-fotozas-figyelemmel.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 46382
+  },
+  "elteto-igenyek-utazasban": {
+    "src": "/assets/journal/cards/elteto-igenyek-utazasban.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 84992
+  },
+  "lassabb-kozlekedes-merlegelese": {
+    "src": "/assets/journal/cards/lassabb-kozlekedes-merlegelese.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 60968
+  },
+  "utazasi-osszehasonlito-tabla": {
+    "src": "/assets/journal/cards/utazasi-osszehasonlito-tabla.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 32026
+  },
+  "terkep-mentett-helyek": {
+    "src": "/assets/journal/cards/terkep-mentett-helyek.jpg",
+    "width": 500,
+    "height": 336,
+    "bytes": 71006
+  },
+  "offline-utazasi-csomag": {
+    "src": "/assets/journal/cards/offline-utazasi-csomag.jpg",
+    "width": 500,
+    "height": 332,
+    "bytes": 48611
+  },
+  "foglalasi-informaciok-rendje": {
+    "src": "/assets/journal/cards/foglalasi-informaciok-rendje.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 46399
+  },
+  "utazasi-naptar-idopontok": {
+    "src": "/assets/journal/cards/utazasi-naptar-idopontok.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 41416
+  },
+  "ajanlat-forras-es-idobelyeg": {
+    "src": "/assets/journal/cards/ajanlat-forras-es-idobelyeg.jpg",
+    "width": 500,
+    "height": 281,
+    "bytes": 41357
+  },
+  "utazasi-kutatas-idokeret": {
+    "src": "/assets/journal/cards/utazasi-kutatas-idokeret.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 83348
+  },
+  "utazasi-inspiracio-szures": {
+    "src": "/assets/journal/cards/utazasi-inspiracio-szures.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 106740
+  },
+  "kozos-utazasi-dokumentum": {
+    "src": "/assets/journal/cards/kozos-utazasi-dokumentum.jpg",
+    "width": 500,
+    "height": 333,
+    "bytes": 43102
+  },
+  "ai-utazasterv-ellenorzese": {
+    "src": "/assets/journal/cards/ai-utazasterv-ellenorzese.jpg",
+    "width": 500,
+    "height": 375,
+    "bytes": 57369
+  }
+}

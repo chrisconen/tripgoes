@@ -21,11 +21,15 @@ export async function loadArticles({draft=false}={}){
  let files=[];try{files=(await readdir('content/blog')).filter(f=>f.endsWith('.json')).sort()}catch(e){if(!draft)throw e}
  const articles=await Promise.all(files.map(async f=>JSON.parse(await readFile(`content/blog/${f}`,'utf8'))));
  let artwork={};try{artwork=JSON.parse(await readFile('content/article-images.json','utf8'))}catch(error){if(error.code!=='ENOENT')throw error}
+ const cards=JSON.parse(await readFile('content/article-card-images.json','utf8'));
  const slugs=new Set();
  for(const a of articles){
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.slug)||slugs.has(a.slug))throw Error(`Invalid/duplicate slug: ${a.slug}`);
   slugs.add(a.slug);
   if(artwork[a.slug])a.artwork=artwork[a.slug];
+  const card=cards[a.slug];
+  if(!card||card.src!==`/assets/journal/cards/${a.slug}.jpg`||!Number.isInteger(card.width)||card.width<300||card.width>800||!Number.isInteger(card.height)||card.height<100||!Number.isInteger(card.bytes)||card.bytes<1)throw Error(`Invalid card image: ${a.slug}`);
+  a.cardArtwork=card;
   if(!/^\d{4}-\d{2}-\d{2}$/.test(a.updated)||!Number.isFinite(Date.parse(a.updated))||new Date(a.updated).toISOString().slice(0,10)!==a.updated)throw Error(`Invalid article date: ${a.slug}`);
   if(!categories[a.category])throw Error(`Unknown category: ${a.slug} ${a.category}`);
   for(const lang of ['hu','en']){
@@ -42,7 +46,7 @@ const e=escapeHTML;
 export function journalCard(a,lang,{featured=false}={}){
  const c=a[lang],minutes=Math.max(2,Math.ceil(wordCount(articleText(a,lang))/200));
  return `<article class="journal-card${featured?' featured-story':''}" data-journal-card data-category="${e(a.category)}" data-search="${e(`${c.title} ${c.excerpt} ${categoryLabel(a.category,lang)}`.toLocaleLowerCase(lang))}">
- <a href="/${lang}/blog/${a.slug}/"><div class="journal-photo"><img src="${articleImage(a)}" width="700" height="480" loading="lazy" alt=""><span class="journal-arrow" aria-hidden="true">↗</span></div>
+ <a href="/${lang}/blog/${a.slug}/"><div class="journal-photo"><img src="${a.cardArtwork?.src||articleImage(a)}" width="${a.cardArtwork?.width||700}" height="${a.cardArtwork?.height||480}" loading="lazy" decoding="async" alt=""><span class="journal-arrow" aria-hidden="true">↗</span></div>
  <div class="journal-card-body"><div class="journal-meta"><span>${e(categoryLabel(a.category,lang))}</span><span>${minutes} ${lang==='hu'?'perc':'min'}</span></div><h3>${e(c.title)}</h3><p>${e(c.excerpt)}</p></div></a>${a.artwork?.credit?`<p class="journal-credit">${lang==='hu'?'Fotó':'Photo'}: <a href="${e(a.artwork.credit.url)}" target="_blank" rel="noopener noreferrer">${e(a.artwork.credit.author)}</a> · <a href="${e(a.artwork.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${e(a.artwork.credit.license)}</a></p>`:''}</article>`;
 }
 export function journalIndex(articles,lang){

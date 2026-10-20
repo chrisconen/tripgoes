@@ -5,14 +5,18 @@ Live at **https://tripgoes.com**. An original bilingual travel journal and trans
 ## What works
 
 - TripScore Lab in Hungarian and English: complete per-person costs, dated price history, median comparison, separate evidence coverage, up to three side-by-side analyses and JSON export.
+- Optional local score drafts preserve partial inputs across visits. Loading never restores a score or the comparison confirmation; sample data remains labelled.
+- A bilingual trip planner compares up to three user-entered offers: per-person and group totals, extras, cost per usable hour/night and group-budget differences. Currencies remain separate; local saving is explicit and deletable.
 - 100 original bilingual guides: 200 static article pages, ten topics, accent-insensitive search, progressive browsing, contents navigation and related reading.
 - 100 distinct locally hosted article photographs, with bilingual descriptions, author/source links and individual reuse licences. The same article uses the same photograph in both languages.
+- Cards use 100 smaller official Wikimedia thumbnails, totalling 5.43 MB versus 28.85 MB for the cover set. Covers retain their larger files. Individual thumbnail sources are recorded in `assets/journal/CARD-SOURCES.md`.
 - Every page includes 12 recommended articles, manual carousel controls, keyboard navigation, touch scrolling and a gallery view.
 - Facebook, X, WhatsApp, Telegram, LinkedIn and Pinterest sharing, copy-link fallback and optional native sharing. No social SDK is loaded, and shared links exclude queries, fragments and form entries.
 - Responsive editorial interface, reduced-motion support, local fonts and licensed destination photography.
 - Sample trip discovery, filters, saved trips and the original complete-cost calculator.
 - Explicit direct provider links with no affiliate tracking or claimed commercial relationship.
 - Canonical URLs, matching locale alternates, article Open Graph metadata and a sitemap.
+- Complete static page content, navigation and footer; browser code preserves the existing document and loads score, planner and journal interactions only on their relevant routes.
 
 ## What the score means
 
@@ -26,7 +30,7 @@ The median earns 50 points, with 1.5 points per percentage point below or above 
 
 The guides are original AI-assisted editorial work, not first-hand travel reports or independently expert-reviewed publications. The international reading room contains short attributed summaries, not full translations of third-party articles.
 
-Homepage trips, fares and histories remain labelled examples. There are no authenticated provider feeds, active affiliate IDs, email delivery, payments or booking services. Operator/contact details must be completed before a commercial launch. The new guides and checker are indexable; sample-led and pre-commercial information pages remain noindex.
+Homepage trips, fares and histories remain labelled examples. There are no authenticated provider feeds, active affiliate IDs, email delivery, payments or booking services. Operator/contact details must be completed before a commercial launch. The guides, checker and planner are indexable; sample-led and pre-commercial information pages remain noindex.
 
 ## Run and verify
 
