@@ -14,6 +14,8 @@ Live at **https://tripgoes.com**. An original bilingual travel journal and trans
 - Facebook, X, WhatsApp, Telegram, LinkedIn and Pinterest sharing, copy-link fallback and optional native sharing. No social SDK is loaded, and shared links exclude queries, fragments and form entries.
 - Responsive editorial interface, reduced-motion support, local fonts and licensed destination photography.
 - Sample trip discovery, filters, saved trips and the original complete-cost calculator.
+- Worldwide free-text city entry in discovery, the calculator, preferences and the trip planner; 34,173 optional GeoNames suggestions with country/region context and Unicode aliases. The catalogue loads only when needed. Smaller places can be entered without a catalogue match.
+- Budapest remains the Hungarian homepage default. Unknown departure costs never fall back to Budapest: incomplete sample totals are labelled and excluded by finite budget filters. The calculator accepts an explicit return ground-transport cost, including a known zero.
 - Explicit direct provider links with no affiliate tracking or claimed commercial relationship.
 - Canonical URLs, matching locale alternates, article Open Graph metadata and a sitemap.
 - Complete static page content, navigation and footer; browser code preserves the existing document and loads score, planner and journal interactions only on their relevant routes.
@@ -31,6 +33,8 @@ The median earns 50 points, with 1.5 points per percentage point below or above 
 The guides are original AI-assisted editorial work, not first-hand travel reports or independently expert-reviewed publications. The international reading room contains short attributed summaries, not full translations of third-party articles.
 
 Homepage trips, fares and histories remain labelled examples. There are no authenticated provider feeds, active affiliate IDs, email delivery, payments or booking services. Operator/contact details must be completed before a commercial launch. The guides, checker and planner are indexable; sample-led and pre-commercial information pages remain noindex.
+
+City suggestions are adapted from GeoNames under CC BY 4.0; sources and scope are documented in `assets/CITY-SOURCES.md`. Suggestions are not a complete list of every settlement. City entry does not retrieve new flights or change the fixed departure airports of illustrative homepage routes. Planner city labels do not determine costs.
 
 ## Run and verify
 

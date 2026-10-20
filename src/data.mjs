@@ -1,4 +1,3 @@
-export const cities=['Budapest','Győr','Debrecen','Szeged','Pécs'];
 export const deals=[
  {id:'amalfi',name:{hu:'Egy kis dolce vita.',en:'A little dolce vita.'},destination:{hu:'Amalfi-part',en:'Amalfi Coast'},country:{hu:'Olaszország',en:'Italy'},type:'holiday',airport:'BUD',arrival:'NAP',image:'amalfi',days:5,nights:4,base:89900,bag:16000,transfer:12000,port:0,score:94,history:[168,154,163,146,155,138,128,123],tag:{hu:'TENGERPART ÉS CITROMILLAT',en:'SEA BREEZE & LEMON TREES'}},
  {id:'barcelona',name:{hu:'Hola, hosszú hétvége!',en:'Hola, long weekend!'},destination:{hu:'Barcelona',en:'Barcelona'},country:{hu:'Spanyolország',en:'Spain'},type:'weekend',airport:'BUD',arrival:'BCN',image:'barcelona',days:8,nights:3,base:49900,bag:14000,transfer:6500,port:0,score:88,history:[98,105,95,88,94,82,78,74],tag:{hu:'VÁROS. TENGER. TAPAS.',en:'CITY. SEA. TAPAS.'}},

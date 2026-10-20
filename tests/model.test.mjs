@@ -4,7 +4,7 @@ import {calculate,selectDeals} from '../src/model.mjs';
 import {deals} from '../src/data.mjs';
 test('cost review fixes reject missing ground costs and use whole travellers',()=>{
  assert.equal(calculate(deals[0],{travelers:2.7}).travelers,2);
- assert.throws(()=>calculate({...deals[0],airport:'UNKNOWN'}),RangeError);
+ assert.equal(calculate({...deals[0],airport:'UNKNOWN'}).perPerson,null);
  assert.throws(()=>calculate({...deals[0],base:NaN}),RangeError);
 });
 test('Amalfi includes return transport, bag, transfer and group multiplication',()=>{
@@ -35,8 +35,21 @@ test('sorting is stable and does not mutate source',()=>{
  assert.equal(selectDeals(deals,{sort:'score'})[0].id,'amalfi');
  assert.deepEqual(deals.map(d=>d.id),ids);
 });
-test('traveller count is bounded and unknown city falls back safely',()=>{
+test('traveller count is bounded and unknown city never borrows Budapest costs',()=>{
  assert.equal(calculate(deals[0],{travelers:99}).travelers,8);
  assert.equal(calculate(deals[0],{travelers:0}).travelers,1);
- assert.equal(calculate(deals[0],{city:'unknown'}).perPerson,122700);
+ assert.equal(calculate(deals[0],{city:'unknown'}).perPerson,null);
+ assert.equal(calculate(deals[0],{city:'Tokyo, JP'}).lines.ground,null);
+ assert.equal(calculate(deals[0],{city:'Budapest, HU (Budapest)'}).perPerson,122700);
+ assert.equal(calculate(deals[0],{city:'Budapest, US'}).perPerson,null);
+});
+test('any international origin can use explicit return-transport costs including zero',()=>{
+ assert.equal(calculate(deals[0],{city:'東京, JP',ground:20000,travelers:3}).group,413700);
+ assert.equal(calculate(deals[0],{city:'São Paulo, BR',ground:0}).perPerson,117900);
+ for(const ground of [-1,NaN,Infinity,'',1e12])assert.throws(()=>calculate(deals[0],{city:'London',ground}),RangeError);
+});
+test('unknown totals are not treated as zero by budget filtering or price ordering',()=>{
+ assert.equal(selectDeals(deals,{city:'Nairobi',budget:Infinity}).length,6);
+ assert.equal(selectDeals(deals,{city:'Nairobi',budget:9999999}).length,0);
+ assert.deepEqual(selectDeals(deals,{city:'Nairobi',sort:'price'}).map(d=>d.id),deals.map(d=>d.id));
 });

@@ -15,6 +15,13 @@ const make = () => ({
 });
 const run = input => analyzeOffer(input, {now});
 
+test('score routes accept international city names and scripts without an airport whitelist',()=>{
+ for(const route of ['東京 → 서울','São Paulo → Cape Town','دبي → München']){
+  const input=make();input.route=route;input.history.forEach(row=>row.route=route);
+  assert.equal(run(input).status,'analyzed');
+ }
+});
+
 test('known all-in comparison gives transparent arithmetic, separate bounded confidence', () => {
   const result = run(make());
   assert.equal(result.status, 'analyzed');

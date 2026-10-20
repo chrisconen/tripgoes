@@ -7,7 +7,7 @@ import {
 } from '../src/planner.mjs';
 
 const offer = (changes = {}) => ({
-  name: 'Own trip', currency: 'EUR', base: '100', extras: '25', travelers: '2',
+  name: 'Own trip', origin: '', destination: '', currency: 'EUR', base: '100', extras: '25', travelers: '2',
   nights: '3', hours: '40', budget: '300', source: 'manual', ...changes,
 });
 const time = '2026-10-20T12:30:00.000Z';
@@ -237,4 +237,112 @@ test('both static pages expose labelled inputs, explicit load/save, formula and 
   assert.match(plannerPage('en'), /Your estimate/);
   assert.match(plannerPage('hu'), /saját becslésed/);
   assert.equal(initPlanner('hu'), false);
+});
+
+test('optional city fields accept international Unicode text without changing costs', () => {
+  for (const [origin, destination] of [['Budapest', 'São Paulo'], ['東京', 'مراكش'], ['München', 'Αθήνα'], ['', '']]) {
+    const result = calculatePlan(offer({ origin, destination }));
+    assert.equal(result.valid, true);
+    assert.equal(result.origin, origin);
+    assert.equal(result.destination, destination);
+    assert.equal(result.groupTotalMinor, 25000);
+  }
+  for (const key of ['origin', 'destination']) {
+    assert.equal(calculatePlan(offer({ [key]: '界'.repeat(120) })).valid, true);
+    for (const value of ['界'.repeat(121), null, 123, {}, []]) {
+      assert.equal(calculatePlan(offer({ [key]: value })).valid, false);
+      assert.throws(() => serializePlanner([offer({ [key]: value })], time), TypeError);
+    }
+  }
+});
+
+test('legacy version 1 plans migrate only absent city fields without writing or losing sample provenance', () => {
+  const legacy = offer({ name: 'Sample · edited title', source: 'sample' });
+  delete legacy.origin;
+  delete legacy.destination;
+  const raw = JSON.stringify({ version: 1, savedAt: time, offers: [legacy] });
+  let writes = 0;
+  const result = readPlannerStorage({ getItem: () => raw, setItem: () => writes++ });
+  assert.equal(result.ok, true);
+  assert.equal(writes, 0);
+  assert.deepEqual(result.value.offers, [{ origin: '', destination: '', ...legacy }]);
+  assert.equal(parseStoredPlanner(serializePlanner(result.value.offers, time)).value.offers[0].source, 'sample');
+  const partial = JSON.stringify({ version: 1, savedAt: time, offers: [{ ...legacy, origin: 'Zürich' }] });
+  assert.equal(parseStoredPlanner(partial).value.offers[0].origin, 'Zürich');
+  for (const value of [null, 1, [], 'a'.repeat(121)]) {
+    assert.equal(parseStoredPlanner(JSON.stringify({ version: 1, savedAt: time, offers: [{ ...legacy, origin: value }] })).ok, false);
+  }
+});
+
+test('city fields have bilingual labels, autocomplete hooks, bounds and accessible explanations', () => {
+  for (const lang of ['hu', 'en']) {
+    const html = plannerPage(lang);
+    const inputs = [...html.matchAll(/<input\b[^>]*data-city-input[^>]*>/g)].map(match => match[0]);
+    assert.equal(inputs.length, 4);
+    for (const input of inputs) {
+      assert.match(input, /maxlength="120"/);
+      assert.match(input, /autocomplete="off"/);
+      assert.match(input, /aria-describedby="[^"]*city-hint/);
+      assert.doesNotMatch(input, /inputmode="(?:numeric|decimal)"/);
+    }
+  }
+  assert.match(plannerPage('hu'), /Indulási város/);
+  assert.match(plannerPage('hu'), /Úti cél/);
+  assert.match(plannerPage('en'), /Departure city/);
+  assert.match(plannerPage('en'), /Cities are not verified/);
+});
+
+test('restored city text is HTML escaped and illustrative routes remain sample data when saved', () => {
+  const oldDocument = Object.getOwnPropertyDescriptor(globalThis, 'document');
+  const oldStorage = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  const payload = '東京"><img src=x onerror=alert(1)>';
+  let saved = serializePlanner([offer({ origin: payload, destination: "São Paulo & 'Lisboa'" })], time);
+  let reads = 0;
+  try {
+    for (const lang of ['hu', 'en']) {
+      const nodes = new Map();
+      const node = selector => {
+        if (!nodes.has(selector)) nodes.set(selector, {
+          dataset: {}, handlers: {}, innerHTML: '', textContent: '',
+          setAttribute() {}, focus() {},
+          addEventListener(type, callback) { this.handlers[type] = callback; },
+        });
+        return nodes.get(selector);
+      };
+      const root = { dataset: { plannerLang: lang }, querySelector: node };
+      Object.defineProperty(globalThis, 'document', { configurable: true, value: { getElementById: () => root } });
+      Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: {
+        getItem() { reads++; return saved; }, setItem(key, value) { saved = value; },
+      } });
+      const before = reads;
+      initPlanner(lang);
+      assert.equal(reads, before, 'initialization must not load saved cities');
+      node('[data-planner-load]').handlers.click();
+      if (lang === 'hu') {
+        assert.match(node('[data-planner-grid]').innerHTML, /東京&quot;&gt;&lt;img src=x onerror=alert\(1\)&gt;/);
+        assert.match(node('[data-planner-grid]').innerHTML, /São Paulo &amp; &#39;Lisboa&#39;/);
+        assert.doesNotMatch(node('[data-planner-grid]').innerHTML, /<img/);
+      }
+      node('[data-planner-sample]').handlers.click();
+      node('[data-planner-save]').handlers.click();
+      const restored = parseStoredPlanner(saved);
+      assert.equal(restored.ok, true);
+      for (const item of restored.value.offers) {
+        assert.equal(item.origin, lang === 'hu' ? 'Budapest' : 'London');
+        assert.equal(item.destination, 'Barcelona');
+        assert.equal(item.source, 'sample');
+        assert.match(item.name, lang === 'hu' ? /^Minta/ : /^Sample/);
+      }
+      node('[data-planner-grid]').handlers.input({ target: {
+        dataset: { plannerField: 'destination' }, value: '京都',
+        closest: () => ({ dataset: { plannerIndex: '0' } }),
+      } });
+      node('[data-planner-save]').handlers.click();
+      assert.equal(parseStoredPlanner(saved).value.offers[0].destination, '京都');
+      assert.equal(parseStoredPlanner(saved).value.offers[0].source, 'sample');
+    }
+  } finally {
+    if (oldDocument) Object.defineProperty(globalThis, 'document', oldDocument); else delete globalThis.document;
+    if (oldStorage) Object.defineProperty(globalThis, 'localStorage', oldStorage); else delete globalThis.localStorage;
+  }
 });

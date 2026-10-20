@@ -1,7 +1,8 @@
 export const PLANNER_STORAGE_KEY = 'tripgoes:planner:v1';
 export const PLANNER_VERSION = 1;
 export const PLANNER_CURRENCIES = Object.freeze(['HUF', 'EUR', 'USD', 'GBP', 'CHF']);
-const fields = ['name', 'currency', 'base', 'extras', 'travelers', 'nights', 'hours', 'budget'];
+const textFields = ['name', 'origin', 'destination'];
+const fields = [...textFields, 'currency', 'base', 'extras', 'travelers', 'nights', 'hours', 'budget'];
 const amountFields = ['base', 'extras', 'budget'];
 const e = value => String(value ?? '').replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -34,7 +35,9 @@ export function calculatePlan(offer = {}) {
   for (const [key, item] of Object.entries(parsed)) if (item.invalid) errors[key] = amountFields.includes(key) ? 'money' : key;
   if (parsed.travelers.value === 0) errors.travelers = 'travelers';
   if (!PLANNER_CURRENCIES.includes(offer.currency)) errors.currency = 'currency';
-  if (offer.name !== undefined && (typeof offer.name !== 'string' || offer.name.length > 120)) errors.name = 'name';
+  for (const key of textFields) {
+    if (offer[key] !== undefined && (typeof offer[key] !== 'string' || offer[key].length > 120)) errors[key] = 'name';
+  }
   const missing = ['base', 'extras', 'travelers'].filter(key => parsed[key].missing);
   const valid = Object.keys(errors).length === 0;
   const costsKnown = valid && parsed.base.value !== null && parsed.extras.value !== null;
@@ -46,6 +49,8 @@ export function calculatePlan(offer = {}) {
     currency: PLANNER_CURRENCIES.includes(offer.currency) ? offer.currency : null,
     source: offer.source === 'sample' ? 'sample' : 'manual',
     name: typeof offer.name === 'string' ? offer.name.trim() : '',
+    origin: typeof offer.origin === 'string' ? offer.origin.trim() : '',
+    destination: typeof offer.destination === 'string' ? offer.destination.trim() : '',
     baseMinor: parsed.base.value, extrasMinor: parsed.extras.value,
     travelers: parsed.travelers.value, nights: parsed.nights.value,
     hours: parsed.hours.value === null ? null : parsed.hours.value / 100,
@@ -70,7 +75,7 @@ export function comparePlans(offers) {
 }
 
 const blank = lang => ({
-  name: '', currency: lang === 'en' ? 'EUR' : 'HUF', base: '', extras: '',
+  name: '', origin: '', destination: '', currency: lang === 'en' ? 'EUR' : 'HUF', base: '', extras: '',
   travelers: '2', nights: '', hours: '', budget: '', source: 'manual',
 });
 
@@ -79,7 +84,7 @@ function validStoredOffer(offer) {
   if (Object.keys(offer).some(key => ![...fields, 'source'].includes(key))) return false;
   if (!fields.every(key => typeof offer[key] === 'string')) return false;
   if (!['manual', 'sample'].includes(offer.source)) return false;
-  if (fields.some(key => offer[key].length > (key === 'name' ? 120 : 32))) return false;
+  if (fields.some(key => offer[key].length > (textFields.includes(key) ? 120 : 32))) return false;
   return calculatePlan(offer).valid;
 }
 
@@ -100,6 +105,12 @@ export function parseStoredPlanner(raw) {
     if (!data || typeof data !== 'object' || Array.isArray(data)) return { ok: false, reason: 'invalid' };
     if (data.version !== PLANNER_VERSION) return { ok: false, reason: 'version' };
     if (Object.keys(data).some(key => !['version', 'savedAt', 'offers'].includes(key)) || typeof data.savedAt !== 'string') return { ok: false, reason: 'invalid' };
+    // Version 1 predates the optional city fields. Only absent fields migrate;
+    // explicit malformed values still fail validation, and no storage is written.
+    if (Array.isArray(data.offers)) data.offers = data.offers.map(offer => {
+      if (!offer || typeof offer !== 'object' || Array.isArray(offer)) return offer;
+      return { origin: '', destination: '', ...offer };
+    });
     serializePlanner(data.offers, data.savedAt);
     return { ok: true, value: data };
   } catch { return { ok: false, reason: 'invalid' }; }
@@ -136,6 +147,8 @@ const copy = {
     sampleNote: 'Kitalált mintaadatok. Szerkesztés és mentés után is mintaként jelöljük őket. Saját tervhez válaszd a Tiszta lap gombot.',
     manualNote: 'A bevitt adatok nincsenek szolgáltatónál ellenőrizve.',
     name: 'Az út neve', namePlaceholder: 'Pl. három nap egy városban', currency: 'Pénznem',
+    origin: 'Indulási város', destination: 'Úti cél',
+    cityHint: 'Opcionális, szabad szöveg. A városokat nem hitelesítjük, és nem számolunk belőlük árat.',
     base: 'Hirdetett ár / fő', extras: 'Minden extra összesen / fő',
     extrasHint: 'Add össze, ami még szükséges: poggyász, helyi eljutás, további szállás, díjak.',
     travelers: 'Utazók száma', nights: 'Szálláséjszakák', hours: 'Használható célállomási órák',
@@ -186,6 +199,8 @@ const copy = {
     sampleNote: 'Invented sample data. Editing and saving keep the sample label. Choose Start fresh to create your own plan.',
     manualNote: 'The entered information has not been checked with a provider.',
     name: 'Trip name', namePlaceholder: 'For example, three days in a city', currency: 'Currency',
+    origin: 'Departure city', destination: 'Destination',
+    cityHint: 'Optional free text. Cities are not verified and do not determine any price.',
     base: 'Headline price / person', extras: 'All extras combined / person',
     extrasHint: 'Add everything still needed: baggage, ground transport, additional accommodation and fees.',
     travelers: 'Number of travellers', nights: 'Accommodation nights', hours: 'Usable hours at the destination',
@@ -230,7 +245,9 @@ const copy = {
 function fieldHTML(index, field, offer, text, { hint, wide = false, integer = false } = {}) {
   const id = `planner-${index}-${field}`;
   const isName = field === 'name';
-  return `<label class="planner-field${wide ? ' planner-field-wide' : ''}" for="${id}"><span>${text[field]}</span><input id="${id}" name="${field}-${index}" data-planner-field="${field}" type="text" ${isName ? 'maxlength="120" autocomplete="off"' : `inputmode="${integer ? 'numeric' : 'decimal'}" maxlength="32" autocomplete="off"`} value="${e(offer[field])}" ${isName ? `placeholder="${e(text.namePlaceholder)}"` : 'placeholder="—"'} aria-describedby="${id}-error${hint ? ` ${id}-hint` : ''}">${hint ? `<small id="${id}-hint">${hint}</small>` : ''}<span class="planner-error" id="${id}-error"></span></label>`;
+  const isText = textFields.includes(field);
+  const isCity = field === 'origin' || field === 'destination';
+  return `<label class="planner-field${wide ? ' planner-field-wide' : ''}" for="${id}"><span>${text[field]}</span><input id="${id}" name="${field}-${index}" data-planner-field="${field}"${isCity ? ' data-city-input' : ''} type="text" ${isText ? 'maxlength="120" autocomplete="off"' : `inputmode="${integer ? 'numeric' : 'decimal'}" maxlength="32" autocomplete="off"`} value="${e(offer[field])}" ${isName ? `placeholder="${e(text.namePlaceholder)}"` : 'placeholder="—"'} aria-describedby="${id}-error${isCity ? ` planner-${index}-city-hint` : ''}${hint ? ` ${id}-hint` : ''}">${hint ? `<small id="${id}-hint">${hint}</small>` : ''}<span class="planner-error" id="${id}-error"></span></label>`;
 }
 
 function offerHTML(offer, index, count, text) {
@@ -239,6 +256,9 @@ function offerHTML(offer, index, count, text) {
     <p class="planner-provenance ${offer.source === 'sample' ? 'planner-provenance-sample' : ''}">${offer.source === 'sample' ? text.sampleBadge : text.manual}</p>
     <div class="planner-fields">
       ${fieldHTML(index, 'name', offer, text, { wide: true })}
+      ${fieldHTML(index, 'origin', offer, text)}
+      ${fieldHTML(index, 'destination', offer, text)}
+      <p class="planner-field-hint" id="planner-${index}-city-hint">${text.cityHint}</p>
       <label class="planner-field" for="planner-${index}-currency"><span>${text.currency}</span><select id="planner-${index}-currency" data-planner-field="currency" aria-describedby="planner-${index}-currency-error">${PLANNER_CURRENCIES.map(currency => `<option value="${currency}"${currency === offer.currency ? ' selected' : ''}>${currency}</option>`).join('')}</select><span class="planner-error" id="planner-${index}-currency-error"></span></label>
       ${fieldHTML(index, 'travelers', offer, text, { integer: true })}
       ${fieldHTML(index, 'base', offer, text, { wide: true })}
@@ -296,7 +316,7 @@ function samples(lang) {
     { name: hu ? 'Minta · rövid városi út' : 'Sample · short city break', base: hu ? '68000' : '170', extras: hu ? '22000' : '55', nights: '3', hours: '38' },
     { name: hu ? 'Minta · nyugodtabb hétvége' : 'Sample · slower weekend', base: hu ? '76000' : '190', extras: hu ? '12000' : '30', nights: '3', hours: '47' },
     { name: hu ? 'Minta · egy nappal tovább' : 'Sample · one extra day', base: hu ? '82000' : '205', extras: hu ? '28000' : '70', nights: '4', hours: '60' },
-  ].map(item => ({ ...blank(lang), ...item, budget: hu ? '200000' : '500', source: 'sample' }));
+  ].map(item => ({ ...blank(lang), ...item, origin: hu ? 'Budapest' : 'London', destination: 'Barcelona', budget: hu ? '200000' : '500', source: 'sample' }));
 }
 
 export function initPlanner(lang) {
