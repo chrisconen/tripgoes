@@ -6,6 +6,9 @@ Live at **https://tripgoes.com**. An original bilingual travel journal and trans
 
 - TripScore Lab in Hungarian and English: complete per-person costs, dated price history, median comparison, separate evidence coverage, up to three side-by-side analyses and JSON export.
 - 100 original bilingual guides: 200 static article pages, ten topics, accent-insensitive search, progressive browsing, contents navigation and related reading.
+- 100 distinct locally hosted article photographs, with bilingual descriptions, author/source links and individual reuse licences. The same article uses the same photograph in both languages.
+- Every page includes 12 recommended articles, manual carousel controls, keyboard navigation, touch scrolling and a gallery view.
+- Facebook, X, WhatsApp, Telegram, LinkedIn and Pinterest sharing, copy-link fallback and optional native sharing. No social SDK is loaded, and shared links exclude queries, fragments and form entries.
 - Responsive editorial interface, reduced-motion support, local fonts and licensed destination photography.
 - Sample trip discovery, filters, saved trips and the original complete-cost calculator.
 - Explicit direct provider links with no affiliate tracking or claimed commercial relationship.

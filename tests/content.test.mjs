@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadArticles,wordCount,articleText} from '../scripts/journal.mjs';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 
 test('100 distinct original bilingual articles have substantial complete bodies',async()=>{
  const articles=await loadArticles();
@@ -22,4 +24,27 @@ test('100 distinct original bilingual articles have substantial complete bodies'
    }
   }
  }
+});
+
+test('all 100 articles have distinct local photographs and complete reusable-image credits',async()=>{
+ const articles=await loadArticles(),paths=new Set(),hashes=new Set(),sources=new Set();
+ for(const a of articles){
+  const art=a.artwork;
+  assert.ok(art,`Missing image: ${a.slug}`);
+  assert.match(art.src,new RegExp(`^/assets/journal/${a.slug}\\.(?:jpg|webp)$`));
+  assert.ok(!paths.has(art.src),`Reused file: ${a.slug}`);paths.add(art.src);
+  const bytes=await readFile(art.src.slice(1));
+  assert.ok(bytes.length>5000,`Empty/invalid image: ${a.slug}`);
+  assert.ok(bytes.length<2500000,`Oversized image: ${a.slug}`);
+  const jpeg=bytes[0]===255&&bytes[1]===216&&bytes[2]===255;
+  const webp=bytes.subarray(0,4).toString()==='RIFF'&&bytes.subarray(8,12).toString()==='WEBP';
+  assert.ok(jpeg||webp,`Expected a raster image: ${a.slug}`);
+  const hash=createHash('sha256').update(bytes).digest('hex');
+  assert.ok(!hashes.has(hash),`Duplicate image bytes: ${a.slug}`);hashes.add(hash);
+  for(const lang of ['hu','en'])assert.ok(art.alt[lang].length>=8,`Missing localized alt: ${a.slug}`);
+  for(const key of ['author','title','license'])assert.ok(art.credit[key]?.trim(),`Missing ${key}: ${a.slug}`);
+  for(const key of ['url','licenseUrl'])assert.equal(new URL(art.credit[key]).protocol,'https:');
+  assert.ok(!sources.has(art.credit.url),`Reused source photo: ${a.slug}`);sources.add(art.credit.url);
+ }
+ assert.equal(hashes.size,100);
 });

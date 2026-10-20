@@ -1,7 +1,7 @@
 export function initJournal(lang){
  const search=document.getElementById('journal-search');
  if(!search)return;
- const category=document.getElementById('journal-category'),cards=[...document.querySelectorAll('[data-journal-card]')],more=document.getElementById('journal-more');
+ const category=document.getElementById('journal-category'),cards=[...document.querySelectorAll('.journal-library [data-journal-card]')],more=document.getElementById('journal-more');
  let limit=12;
  const normalize=s=>s.toLocaleLowerCase(lang).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
  function render(){

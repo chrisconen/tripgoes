@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile,stat,readdir } from 'node:fs/promises';
-import {loadArticles} from '../scripts/journal.mjs';
+import {loadArticles,articleImage,escapeHTML} from '../scripts/journal.mjs';
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){
@@ -34,6 +34,11 @@ test('every bilingual article is statically readable and has matching locale met
   assert.ok(html.includes(`hreflang="en" href="https://tripgoes.com/en/blog/${a.slug}/"`),path);
   assert.ok(html.includes(`hreflang="hu" href="https://tripgoes.com/hu/blog/${a.slug}/"`),path);
   assert.ok(sitemap.includes(`https://tripgoes.com${path}`));
+  assert.ok(a.artwork,`Missing article artwork: ${a.slug}`);
+  assert.ok(html.includes(`property="og:image" content="https://tripgoes.com${articleImage(a)}"`),path);
+  assert.ok(html.includes(`alt="${escapeHTML(a.artwork.alt[lang])}"`),path);
+  assert.ok(html.includes(`href="${escapeHTML(a.artwork.credit.url)}"`),path);
+  assert.ok(html.includes(`href="${escapeHTML(a.artwork.credit.licenseUrl)}"`),path);
   assert.ok(!html.includes('{{'));
  }
 });
@@ -53,4 +58,19 @@ test('generated HTML contains no broken local page or asset links',async()=>{
   }
  }
  assert.ok(checked.size>=205);
+});
+
+test('every page has one localized sharing bar and 12 static article recommendations',async()=>{
+ const files=(await readdir('dist',{recursive:true})).filter(path=>path.endsWith('.html'));
+ assert.ok(files.length>=222);
+ for(const file of files){
+  const html=await readFile(`dist/${file}`,'utf8');
+  assert.equal([...html.matchAll(/id="page-sharing"/g)].length,1,file);
+  assert.equal([...html.matchAll(/id="page-discovery"/g)].length,1,file);
+  assert.equal([...html.matchAll(/class="discovery-item"/g)].length,12,file);
+  assert.equal([...html.matchAll(/class="share-link share-/g)].length,6,file);
+  const lang=file.replaceAll('\\','/').startsWith('en/')?'en':'hu';
+  assert.ok(html.includes(`data-share-lang="${lang}"`),file);
+  assert.ok(html.includes('data-share-copy'),file);
+ }
 });

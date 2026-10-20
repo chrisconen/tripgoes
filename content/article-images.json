@@ -1,0 +1,1402 @@
+{
+  "utazas-tervezes-harom-korlattal": {
+    "src": "/assets/journal/utazas-tervezes-harom-korlattal.jpg",
+    "alt": {
+      "hu": "Utazó egy várostérképet olvas egy párizsi utcán.",
+      "en": "A traveller reading a city map on a Paris street."
+    },
+    "credit": {
+      "author": "Archibald Ballantine",
+      "title": "Man reading Paris city map.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Man_reading_Paris_city_map.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "rugalmas-datumablak": {
+    "src": "/assets/journal/rugalmas-datumablak.jpg",
+    "alt": {
+      "hu": "Nyitott, kézzel vezetett heti tervező színes jelölésekkel.",
+      "en": "An open handwritten weekly planner with colourful markings."
+    },
+    "credit": {
+      "author": "Nea.salo",
+      "title": "Bullet journal page.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bullet_journal_page.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "elso-kozos-utazas": {
+    "src": "/assets/journal/elso-kozos-utazas.jpg",
+    "alt": {
+      "hu": "Két utazó hátizsákkal egy zöld növényzettel körülvett ösvényen.",
+      "en": "Two travellers with backpacks on a path surrounded by greenery."
+    },
+    "credit": {
+      "author": "Artem Beliaikin",
+      "title": "Couple of tourist in the jungle of Bali island.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Couple_of_tourist_in_the_jungle_of_Bali_island.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "lassabb-utazas-kevesebb-bazissal": {
+    "src": "/assets/journal/lassabb-utazas-kevesebb-bazissal.jpg",
+    "alt": {
+      "hu": "Vidéki táj egy nagysebességű vonat étkezőkocsijának ablakából.",
+      "en": "Countryside seen through the dining-car window of a high-speed train."
+    },
+    "credit": {
+      "author": "TeaMeister",
+      "title": "Watching the world go by - from the buffet car of a French high-speed train - Flickr - TeaMeister.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Watching_the_world_go_by_-_from_the_buffet_car_of_a_French_high-speed_train_-_Flickr_-_TeaMeister.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "esos-nap-terv": {
+    "src": "/assets/journal/esos-nap-terv.jpg",
+    "alt": {
+      "hu": "Esőtől nedves városi utca, a burkolaton tükröződő fényekkel.",
+      "en": "A rain-soaked city street with lights reflected on the road."
+    },
+    "credit": {
+      "author": "Ralph Hockens",
+      "title": "New York City street on rainy afternoon.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:New_York_City_street_on_rainy_afternoon.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utazas-dontesi-naplo": {
+    "src": "/assets/journal/utazas-dontesi-naplo.jpg",
+    "alt": {
+      "hu": "Toll egy textilborítású jegyzetfüzet tetején.",
+      "en": "A pen resting on the fabric cover of a notebook."
+    },
+    "credit": {
+      "author": "Thomas Martinsen faceline",
+      "title": "Pen on a notebook (Unsplash).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Pen_on_a_notebook_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "csoportos-utazas-dontesi-szabalyok": {
+    "src": "/assets/journal/csoportos-utazas-dontesi-szabalyok.jpg",
+    "alt": {
+      "hu": "Látogatók sétálnak az epheszoszi romok között.",
+      "en": "Visitors walking among the ruins at Ephesus."
+    },
+    "credit": {
+      "author": "shankar s. from Dubai, united arab emirates",
+      "title": "Tourists walking along the Street of Curetes (15692672564).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Tourists_walking_along_the_Street_of_Curetes_(15692672564).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "csomagolas-tevekenysegekbol": {
+    "src": "/assets/journal/csomagolas-tevekenysegekbol.jpg",
+    "alt": {
+      "hu": "Nyitott, ruhákkal megtöltött bőrönd, benne egy fekete macskával.",
+      "en": "An open suitcase packed with clothes and a black cat sitting inside."
+    },
+    "credit": {
+      "author": "Sheila Sund from Salem, United States",
+      "title": "All Packed Up and Nowhere To Go (8255461007).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:All_Packed_Up_and_Nowhere_To_Go_(8255461007).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "utazas-elotti-utolso-nap": {
+    "src": "/assets/journal/utazas-elotti-utolso-nap.jpg",
+    "alt": {
+      "hu": "Önkiszolgáló poggyászfeladó pultok egy repülőtéri csarnokban.",
+      "en": "Self-service baggage-drop counters in an airport hall."
+    },
+    "credit": {
+      "author": "Wolfmann",
+      "title": "Bag drop self service Luggage check-in Baggage registration Conveyor belt (selvbetjent bagasjeinnlevering innsjekking automat rullebånd) Avinor SAS Norwegian Wideroe Bergen Airport Flesland, Norway 2019-11-29 DSC01301.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bag_drop_self_service_Luggage_check-in_Baggage_registration_Conveyor_belt_(selvbetjent_bagasjeinnlevering_innsjekking_automat_rulleb%C3%A5nd)_Avinor_SAS_Norwegian_Wideroe_Bergen_Airport_Flesland,_Norway_2019-11-29_DSC01301.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "hazateres-es-tanulsagok": {
+    "src": "/assets/journal/hazateres-es-tanulsagok.jpg",
+    "alt": {
+      "hu": "Nyitott füzet, telefon, szemüveg és laptop egy fehér asztalon.",
+      "en": "An open notebook, phone, glasses and laptop on a white desk."
+    },
+    "credit": {
+      "author": "JESHOOTS.COM jeshoots",
+      "title": "White work table with notes, smartphone and laptop (Unsplash).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:White_work_table_with_notes,_smartphone_and_laptop_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "lastminute-keszenleti-lista": {
+    "src": "/assets/journal/lastminute-keszenleti-lista.jpg",
+    "alt": {
+      "hu": "Hátizsákos túrázó egy erdei ösvényen.",
+      "en": "A backpacker standing on a woodland trail."
+    },
+    "credit": {
+      "author": "Jake Melara jakemelara",
+      "title": "Hiker with a large backpack (Unsplash).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Hiker_with_a_large_backpack_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "teljes-koltseg-lastminute": {
+    "src": "/assets/journal/teljes-koltseg-lastminute.jpg",
+    "alt": {
+      "hu": "Tágas indulási csarnok a bécsi repülőtéren.",
+      "en": "The spacious departure hall at Vienna Airport."
+    },
+    "credit": {
+      "author": "Asurnipal",
+      "title": "Vienna-Airport departure hall-01ASD.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vienna-Airport_departure_hall-01ASD.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "lastminute-ajanlat-ellenorzese": {
+    "src": "/assets/journal/lastminute-ajanlat-ellenorzese.jpg",
+    "alt": {
+      "hu": "Utasfelvételi pultok és kijelzők a frankfurti repülőtéren.",
+      "en": "Check-in counters and displays at Frankfurt Airport."
+    },
+    "credit": {
+      "author": "Saptarshi Pal",
+      "title": "Lufthansa Check-In counter at Frankfurt Airport (2007).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Lufthansa_Check-In_counter_at_Frankfurt_Airport_(2007).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "mikor-nem-jo-lastminute": {
+    "src": "/assets/journal/mikor-nem-jo-lastminute.jpg",
+    "alt": {
+      "hu": "Ülőhelyek és asztalok egy repülőtéri váróban.",
+      "en": "Seating and tables in an airport lounge."
+    },
+    "credit": {
+      "author": "Miya.m",
+      "title": "Changi Airport lounge02.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changi_Airport_lounge02.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "ket-ajanlat-azonos-alapon": {
+    "src": "/assets/journal/ket-ajanlat-azonos-alapon.jpg",
+    "alt": {
+      "hu": "Nagy járatinformációs kijelző a prágai repülőtéri csarnokban.",
+      "en": "A large flight information display in a Prague airport hall."
+    },
+    "credit": {
+      "author": "Unknown author Unknown author",
+      "title": "Prague Airport Flight Information Display (2018-06-03 14.48.52 Piqsels.com).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Prague_Airport_Flight_Information_Display_(2018-06-03_14.48.52_Piqsels.com).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "lastminute-dontesi-hatarido": {
+    "src": "/assets/journal/lastminute-dontesi-hatarido.jpg",
+    "alt": {
+      "hu": "Nagy analóg óra egy vasúti peron tetőszerkezete alatt.",
+      "en": "A large analogue clock beneath a railway platform roof."
+    },
+    "credit": {
+      "author": "Geof Sheppard",
+      "title": "2019 at Penrith station - platform clock.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:2019_at_Penrith_station_-_platform_clock.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "indulasi-repter-rugalmassaga": {
+    "src": "/assets/journal/indulasi-repter-rugalmassaga.jpg",
+    "alt": {
+      "hu": "Két utasszállító repülőgép a bécsi repülőtér előterén.",
+      "en": "Two passenger aircraft on the apron at Vienna Airport."
+    },
+    "credit": {
+      "author": "Aron Szegedi",
+      "title": "Two Wizz Air aircraft parked at Vienna Airport.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Two_Wizz_Air_aircraft_parked_at_Vienna_Airport.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "lastminute-szallasbizonytalansag": {
+    "src": "/assets/journal/lastminute-szallasbizonytalansag.jpg",
+    "alt": {
+      "hu": "Kivilágított szállásépület kerttel az esti ég alatt.",
+      "en": "An illuminated accommodation building and garden beneath an evening sky."
+    },
+    "credit": {
+      "author": "Basile Morin",
+      "title": "Exterior facade of Residence Bassac at blue hour, town of Champasak, Laos.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Exterior_facade_of_Residence_Bassac_at_blue_hour,_town_of_Champasak,_Laos.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utitars-lastminute-egyeztetes": {
+    "src": "/assets/journal/utitars-lastminute-egyeztetes.jpg",
+    "alt": {
+      "hu": "Utazócsoport egy tengerparti kilátópont lépcsőin.",
+      "en": "A group of travellers on the steps of a coastal viewpoint."
+    },
+    "credit": {
+      "author": "Andy Li",
+      "title": "Tourists at a viewpoint in Arromanches-les-Bains 2025-03-25.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Tourists_at_a_viewpoint_in_Arromanches-les-Bains_2025-03-25.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "lastminute-ertesitesek-rendszere": {
+    "src": "/assets/journal/lastminute-ertesitesek-rendszere.jpg",
+    "alt": {
+      "hu": "Kézben tartott telefon térképes navigációval egy erdős tájon.",
+      "en": "A hand holding a phone with a navigation map in a wooded landscape."
+    },
+    "credit": {
+      "author": "Vyacheslav Argenberg",
+      "title": "Olkhon Island, GPS navigation, Smartphone, Lake Baikal, Russia.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Olkhon_Island,_GPS_navigation,_Smartphone,_Lake_Baikal,_Russia.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    }
+  },
+  "repulojegy-osszehasonlitas": {
+    "src": "/assets/journal/repulojegy-osszehasonlitas.jpg",
+    "alt": {
+      "hu": "Repülőgépszárny a felhők felett, kék ég alatt.",
+      "en": "An aircraft wing above clouds beneath a blue sky."
+    },
+    "credit": {
+      "author": "Tobias1984",
+      "title": "Airplane wing sky and clouds.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Airplane_wing_sky_and_clouds.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "kezipoggyasz-tervezes": {
+    "src": "/assets/journal/kezipoggyasz-tervezes.jpg",
+    "alt": {
+      "hu": "Nyitott repülőgépes felső poggyásztárolók, bennük táskákkal.",
+      "en": "Open overhead aircraft bins containing travel bags."
+    },
+    "credit": {
+      "author": "User:Mattes",
+      "title": "Luggage compartments Airbus.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Luggage_compartments_Airbus.JPG",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Luggage_compartments_Airbus.JPG"
+    }
+  },
+  "atszallasi-ido-gondolkodas": {
+    "src": "/assets/journal/atszallasi-ido-gondolkodas.jpg",
+    "alt": {
+      "hu": "Hosszú, üvegfalú gyalogos folyosó egy repülőtéren.",
+      "en": "A long pedestrian corridor with glass walls at an airport."
+    },
+    "credit": {
+      "author": "Calistemon",
+      "title": "Corridors of Perth Airport Terminal 2, December 2021.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Corridors_of_Perth_Airport_Terminal_2,_December_2021.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "kulon-jegyes-utvonal": {
+    "src": "/assets/journal/kulon-jegyes-utvonal.jpg",
+    "alt": {
+      "hu": "Vonat a frankfurti repülőtér vasútállomásán.",
+      "en": "A train at Frankfurt Airport railway station."
+    },
+    "credit": {
+      "author": "Smiley.toerist",
+      "title": "Flughafen Fernbahnhof Frankfurt 2023.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Flughafen_Fernbahnhof_Frankfurt_2023.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "hajnali-indulas-logisztika": {
+    "src": "/assets/journal/hajnali-indulas-logisztika.jpg",
+    "alt": {
+      "hu": "Vörös napkelte egy repülőtér látóhatára felett.",
+      "en": "A red sunrise above the horizon at an airport."
+    },
+    "credit": {
+      "author": "Rab Lawrence",
+      "title": "Red Sunrise - Schiphol Airport.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Red_Sunrise_-_Schiphol_Airport.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "kesoi-erkezes-terv": {
+    "src": "/assets/journal/kesoi-erkezes-terv.jpg",
+    "alt": {
+      "hu": "Kivilágított repülőtéri terminál és előtte az esti forgalom.",
+      "en": "An illuminated airport terminal with evening traffic outside."
+    },
+    "credit": {
+      "author": "Joe Ravi ( Shutterstock iStock Dreamstime )",
+      "title": "Washington Dulles International Airport at Dusk.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Washington_Dulles_International_Airport_at_Dusk.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "repteri-transzfer-osszehasonlitas": {
+    "src": "/assets/journal/repteri-transzfer-osszehasonlitas.jpg",
+    "alt": {
+      "hu": "Reptéri transzferbusz egy terminál előtti úton.",
+      "en": "An airport shuttle bus on a road outside a terminal."
+    },
+    "credit": {
+      "author": "Mx. Granger",
+      "title": "Airport shuttle bus at Wattay International Airport.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Airport_shuttle_bus_at_Wattay_International_Airport.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "repulesi-nap-idovonal": {
+    "src": "/assets/journal/repulesi-nap-idovonal.jpg",
+    "alt": {
+      "hu": "Utasok és kaputájékoztatók egy repülőtéri indulási területen.",
+      "en": "Passengers and gate information in an airport departure area."
+    },
+    "credit": {
+      "author": "Sdkb",
+      "title": "Manchester-Boston Airport departure gates 2.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Manchester-Boston_Airport_departure_gates_2.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "jaratvaltozas-informacios-rend": {
+    "src": "/assets/journal/jaratvaltozas-informacios-rend.jpg",
+    "alt": {
+      "hu": "Csatlakozó járatokat jelző képernyők egy repülőtéren.",
+      "en": "Screens showing connecting-flight information at an airport."
+    },
+    "credit": {
+      "author": "Asurnipal",
+      "title": "Munich-airport-Information board-01ASD.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Munich-airport-Information_board-01ASD.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "tobbvarosos-repulo-utvonal": {
+    "src": "/assets/journal/tobbvarosos-repulo-utvonal.jpg",
+    "alt": {
+      "hu": "Városi épületek és utcák látképe egy repülőgép ablakából.",
+      "en": "City buildings and streets seen from an aircraft window."
+    },
+    "credit": {
+      "author": "Jorge Láscar from Australia",
+      "title": "Lascar Ho Chi Minh city from the airplane (4607331775).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Lascar_Ho_Chi_Minh_city_from_the_airplane_(4607331775).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "szallas-kornyek-valasztas": {
+    "src": "/assets/journal/szallas-kornyek-valasztas.jpg",
+    "alt": {
+      "hu": "A Château Frontenac szálloda épülete alkonyatkor.",
+      "en": "The Château Frontenac hotel building at dusk."
+    },
+    "credit": {
+      "author": "Wilfredor",
+      "title": "Chateau Frontenac at dusk in Quebec City.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "szallas-ertekelesek-olvasasa": {
+    "src": "/assets/journal/szallas-ertekelesek-olvasasa.jpg",
+    "alt": {
+      "hu": "Világos szállodai társalgó faasztallal és ülőhelyekkel.",
+      "en": "A bright hotel lounge with a wooden table and seating."
+    },
+    "credit": {
+      "author": "Basile Morin",
+      "title": "Reception lounge at Amantaka luxury Resort & Hotel at blue hour in Luang Prabang Laos.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Reception_lounge_at_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "apartman-vagy-szalloda": {
+    "src": "/assets/journal/apartman-vagy-szalloda.jpg",
+    "alt": {
+      "hu": "Apartman nappalija kanapékkal és természetes fénnyel.",
+      "en": "An apartment living room with sofas and natural light."
+    },
+    "credit": {
+      "author": "Wilfredor",
+      "title": "Living room in apartment of Condomínio do Edifício Zaher, Le Blond, Rio de Janeiro, Brazil.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Living_room_in_apartment_of_Condom%C3%ADnio_do_Edif%C3%ADcio_Zaher,_Le_Blond,_Rio_de_Janeiro,_Brazil.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "szobatipus-ellenorzolista": {
+    "src": "/assets/journal/szobatipus-ellenorzolista.jpg",
+    "alt": {
+      "hu": "Két külön ágy egy modern szállodai szobában.",
+      "en": "Twin beds in a modern hotel room."
+    },
+    "credit": {
+      "author": "MeiOLA 2290 WMENSZ",
+      "title": "GD 廣東 Guangdong 廣州 Guangzhou Huangpu MUSTEL Hotel Knowledge City bed room double sigle beds June 2025 R12S 01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_%E5%BB%A3%E5%B7%9E_Guangzhou_Huangpu_MUSTEL_Hotel_Knowledge_City_bed_room_double_sigle_beds_June_2025_R12S_01.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "szallas-lemondasi-feltetelek": {
+    "src": "/assets/journal/szallas-lemondasi-feltetelek.jpg",
+    "alt": {
+      "hu": "Díszes szállodai fogadótér ülőhelyekkel és recepciós pulttal.",
+      "en": "An ornate hotel reception area with seating and a front desk."
+    },
+    "credit": {
+      "author": "Luca Sartoni from Vienna, Austria",
+      "title": "Reception desk in a parisian hotel (33206612983).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Reception_desk_in_a_parisian_hotel_(33206612983).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "reggeli-ellatas-erteke": {
+    "src": "/assets/journal/reggeli-ellatas-erteke.jpg",
+    "alt": {
+      "hu": "Szállodai reggelizőterem hosszú büfépulttal.",
+      "en": "A hotel breakfast room with a long buffet counter."
+    },
+    "credit": {
+      "author": "Kim",
+      "title": "Breakfast buffet Marriott Hotel Lima 01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Breakfast_buffet_Marriott_Hotel_Lima_01.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "hosszabb-tartozkodas-szallas": {
+    "src": "/assets/journal/hosszabb-tartozkodas-szallas.jpg",
+    "alt": {
+      "hu": "Apartman konyhája szekrényekkel és étkezőfelülettel.",
+      "en": "An apartment kitchen with cupboards and a dining surface."
+    },
+    "credit": {
+      "author": "Chris Olszewski",
+      "title": "Kitchen, Interior of apartment in Brisbane, 2025, 03.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Kitchen,_Interior_of_apartment_in_Brisbane,_2025,_03.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "csendes-szallas-kereses": {
+    "src": "/assets/journal/csendes-szallas-kereses.jpg",
+    "alt": {
+      "hu": "Pálmafákkal és növényekkel beültetett szállodai udvar.",
+      "en": "A hotel courtyard planted with palm trees and greenery."
+    },
+    "credit": {
+      "author": "w_lemay",
+      "title": "Garden Courtyard, Royal Hawaiian Hotel, Kalakaua Avenue, Waikiki, Honolulu, HI - 52273411059.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Garden_Courtyard,_Royal_Hawaiian_Hotel,_Kalakaua_Avenue,_Waikiki,_Honolulu,_HI_-_52273411059.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "csaladi-szallas-terek": {
+    "src": "/assets/journal/csaladi-szallas-terek.jpg",
+    "alt": {
+      "hu": "Több fekvőhelyet tartalmazó, világos szállodai családi szoba.",
+      "en": "A bright family hotel room with several sleeping places."
+    },
+    "credit": {
+      "author": "Cherryc032188",
+      "title": "Bridal Tea House Hotel - Modern Family Room.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bridal_Tea_House_Hotel_-_Modern_Family_Room.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "szallas-erkezes-kommunikacio": {
+    "src": "/assets/journal/szallas-erkezes-kommunikacio.jpg",
+    "alt": {
+      "hu": "Szállodai recepció bejárata egy érkezési út mellett.",
+      "en": "A hotel reception entrance beside an arrival driveway."
+    },
+    "credit": {
+      "author": "Kolforn ( Kolforn ) I'd appreciate if you could mail me (Kolforn@gmail.com) if you want to use this picture out of the Wikimedia project scope. This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true",
+      "title": "2017-08-05 Reception, Pine Cliffs Hotel.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:2017-08-05_Reception,_Pine_Cliffs_Hotel.JPG",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "elso-hajout-tervezes": {
+    "src": "/assets/journal/elso-hajout-tervezes.jpg",
+    "alt": {
+      "hu": "Tengeri üdülőhajó közeledik egy kikötő bejáratához.",
+      "en": "A cruise ship approaching a harbour entrance."
+    },
+    "credit": {
+      "author": "James Hills of Cruise West Coast",
+      "title": "Norwegian Bliss Cruise Ship Entering Puerto Vallarta Harbor.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Norwegian_Bliss_Cruise_Ship_Entering_Puerto_Vallarta_Harbor.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "kabinvalasztas-szempontok": {
+    "src": "/assets/journal/kabinvalasztas-szempontok.jpg",
+    "alt": {
+      "hu": "Hajókabin belső tere ággyal és két olvasólámpával.",
+      "en": "A cruise cabin interior with a bed and two reading lamps."
+    },
+    "credit": {
+      "author": "Dr Salvus",
+      "title": "MSC Opera Cruise cabin (July 2022).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:MSC_Opera_Cruise_cabin_(July_2022).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "hajout-kikotok-ritmusa": {
+    "src": "/assets/journal/hajout-kikotok-ritmusa.jpg",
+    "alt": {
+      "hu": "Üdülőhajó a vízen, a háttérben hegyekkel.",
+      "en": "A cruise ship on the water with mountains behind it."
+    },
+    "credit": {
+      "author": "Matthew T Rader",
+      "title": "Vision of The Seas cruise ship by Royal Caribbean International, in Alaska.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vision_of_The_Seas_cruise_ship_by_Royal_Caribbean_International,_in_Alaska.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "hajout-teljes-koltseg": {
+    "src": "/assets/journal/hajout-teljes-koltseg.jpg",
+    "alt": {
+      "hu": "Hajó étterme megterített asztalokkal és kék székekkel.",
+      "en": "A ship's dining room with set tables and blue chairs."
+    },
+    "credit": {
+      "author": "Roger Wollstadt from Sarasota, Florida, U.S.A.",
+      "title": "Rotterdam - Dining Room (3848581906).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Rotterdam_-_Dining_Room_(3848581906).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "beszallas-elotti-ejszaka": {
+    "src": "/assets/journal/beszallas-elotti-ejszaka.jpg",
+    "alt": {
+      "hu": "Kikötőparti épületek és szálloda a víz túloldalán.",
+      "en": "Harbour-side buildings and a hotel across the water."
+    },
+    "credit": {
+      "author": "Asurnipal",
+      "title": "Kos-Kos city-Harbour-Kostal Palace Hotel-03ASD.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Kos-Kos_city-Harbour-Kostal_Palace_Hotel-03ASD.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "kikotoi-nap-onallo-terv": {
+    "src": "/assets/journal/kikotoi-nap-onallo-terv.jpg",
+    "alt": {
+      "hu": "A lisszaboni hajóterminál épülete a folyóparton.",
+      "en": "The Lisbon cruise terminal building beside the river."
+    },
+    "credit": {
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "title": "Terminal de Cruzeiros de Lisboa - Portugal (51089561751).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Terminal_de_Cruzeiros_de_Lisboa_-_Portugal_(51089561751).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "hajout-csomagolas": {
+    "src": "/assets/journal/hajout-csomagolas.jpg",
+    "alt": {
+      "hu": "Régi bőrönd különböző úti célok címkéivel.",
+      "en": "A vintage suitcase covered with destination labels."
+    },
+    "credit": {
+      "author": "Bryan Ledgard",
+      "title": "Suitcase with luggage labels (178491614).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Suitcase_with_luggage_labels_(178491614).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "rovid-vagy-hosszu-hajout": {
+    "src": "/assets/journal/rovid-vagy-hosszu-hajout.jpg",
+    "alt": {
+      "hu": "Üdülőhajó sziluettje az aranyszínű naplementében.",
+      "en": "The silhouette of a cruise ship beneath a golden sunset."
+    },
+    "credit": {
+      "author": "Paul Harrison",
+      "title": "Cruise Ship Celebrity Summit against Grenada Sunset.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Cruise_Ship_Celebrity_Summit_against_Grenada_Sunset.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "hajout-tarsasag-egyeztetes": {
+    "src": "/assets/journal/hajout-tarsasag-egyeztetes.jpg",
+    "alt": {
+      "hu": "Fedett sétálófedélzet korláttal és sorban álló székekkel.",
+      "en": "A covered promenade deck with railings and rows of chairs."
+    },
+    "credit": {
+      "author": "Gary Bembridge",
+      "title": "P&O Cruises - MV Aurora - Promenade Deck.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:P%26O_Cruises_-_MV_Aurora_-_Promenade_Deck.JPG",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "hajout-ajanlat-adatlap": {
+    "src": "/assets/journal/hajout-ajanlat-adatlap.jpg",
+    "alt": {
+      "hu": "Hajókabinok erkélyei kültéri székekkel.",
+      "en": "Cruise cabin balconies with outdoor chairs."
+    },
+    "credit": {
+      "author": "Gillfoto",
+      "title": "Celebration Reflection Balcony 807.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Celebration_Reflection_Balcony_807.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "ketnapos-varoslatogatas": {
+    "src": "/assets/journal/ketnapos-varoslatogatas.jpg",
+    "alt": {
+      "hu": "A prágai Vencel tér épületekkel és városi forgalommal.",
+      "en": "Wenceslas Square in Prague with buildings and city traffic."
+    },
+    "credit": {
+      "author": "Dietmar Rabich",
+      "title": "Prag, Wenzelsplatz -- 2019 -- 6852.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Prag,_Wenzelsplatz_--_2019_--_6852.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "varosi-negyedek-utvonala": {
+    "src": "/assets/journal/varosi-negyedek-utvonala.jpg",
+    "alt": {
+      "hu": "Lisszaboni háztetők és templom a folyó felé nézve.",
+      "en": "Lisbon rooftops and a church overlooking the river."
+    },
+    "credit": {
+      "author": "Jimmy Baikovicius from Montevideo, Uruguay",
+      "title": "Alfama Lisbon - 160420-7249-jikatu (25940826644).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Alfama_Lisbon_-_160420-7249-jikatu_(25940826644).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "muzeumi-nap-ritmusa": {
+    "src": "/assets/journal/muzeumi-nap-ritmusa.jpg",
+    "alt": {
+      "hu": "Múzeumi nagycsarnok kiállításokkal és üvegtetővel.",
+      "en": "A museum's central hall with exhibits beneath a glass roof."
+    },
+    "credit": {
+      "author": "Diliff",
+      "title": "Oxford University Museum of Natural History, Oxford, UK - Diliff.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Oxford_University_Museum_of_Natural_History,_Oxford,_UK_-_Diliff.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    }
+  },
+  "varosnezes-gyaloglas-pihenes": {
+    "src": "/assets/journal/varosnezes-gyaloglas-pihenes.jpg",
+    "alt": {
+      "hu": "Fapadok egy fás városi park sétánya mellett.",
+      "en": "Wooden benches beside a path in a leafy city park."
+    },
+    "credit": {
+      "author": "Julian Lupyan",
+      "title": "Benches in Central Park, New York, 2025.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Benches_in_Central_Park,_New_York,_2025.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "elso-esti-varosi-seta": {
+    "src": "/assets/journal/elso-esti-varosi-seta.jpg",
+    "alt": {
+      "hu": "Budapesti utca házsorokkal és parkoló autókkal.",
+      "en": "A Budapest street lined with buildings and parked cars."
+    },
+    "credit": {
+      "author": "Mstyslav Chernov",
+      "title": "Murányi Street in the evening Budapest, Hungary, Eastern Europe, 22 October 2012.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Mur%C3%A1nyi_Street_in_the_evening_Budapest,_Hungary,_Eastern_Europe,_22_October_2012.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "varoslatogatas-rossz-idoben": {
+    "src": "/assets/journal/varoslatogatas-rossz-idoben.jpg",
+    "alt": {
+      "hu": "Esernyős gyalogos várakozik egy esős városi kereszteződésnél.",
+      "en": "A pedestrian with an umbrella waiting at a rainy city junction."
+    },
+    "credit": {
+      "author": "Panamitsu",
+      "title": "Umbrella in Wellington.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Umbrella_in_Wellington.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "varosi-etkezes-tervezes": {
+    "src": "/assets/journal/varosi-etkezes-tervezes.jpg",
+    "alt": {
+      "hu": "Bécsi kávéház terasza egy világos épület előtt.",
+      "en": "The terrace of a Viennese café outside a bright building."
+    },
+    "credit": {
+      "author": "ICOLEF / visualtravelguide.com",
+      "title": "Café Landtmann, Vienne (2025).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Landtmann,_Vienne_(2025).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "visszatero-varoslatogatas": {
+    "src": "/assets/journal/visszatero-varoslatogatas.jpg",
+    "alt": {
+      "hu": "Díszes városi lámpák és történelmi homlokzatok Barcelonában.",
+      "en": "Ornate street lamps and historic façades in Barcelona."
+    },
+    "credit": {
+      "author": "Craig Sunter from Manchester, UK",
+      "title": "Barcelona Architecture (7853048306).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Barcelona_Architecture_(7853048306).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "egynapos-kirandulas-varosbol": {
+    "src": "/assets/journal/egynapos-kirandulas-varosbol.jpg",
+    "alt": {
+      "hu": "Vasútállomás fedett előtere egy tengerparti településen.",
+      "en": "The covered forecourt of a railway station in a coastal town."
+    },
+    "credit": {
+      "author": "Mike Steele",
+      "title": "Cascais, coastal town (42651317412).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Cascais,_coastal_town_(42651317412).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "varosnezo-berlet-merlegeles": {
+    "src": "/assets/journal/varosnezo-berlet-merlegeles.jpg",
+    "alt": {
+      "hu": "Művészeti múzeum bejárata szabadtéri szoborral.",
+      "en": "An art museum entrance with an outdoor sculpture."
+    },
+    "credit": {
+      "author": "Mister Melville",
+      "title": "Muskegon Museum of Art entrance 2026.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Muskegon_Museum_of_Art_entrance_2026.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "strandnyaralas-ritmus": {
+    "src": "/assets/journal/strandnyaralas-ritmus.jpg",
+    "alt": {
+      "hu": "Napernyők és napágyak sorai a tengerparton.",
+      "en": "Rows of parasols and loungers beside the sea."
+    },
+    "credit": {
+      "author": "Jebulon",
+      "title": "Parasols, Evening, Beach, Rincon de la Victoria, Andalusia, Spain.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Parasols,_Evening,_Beach,_Rincon_de_la_Victoria,_Andalusia,_Spain.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "szigetvalasztas-kozlekedes": {
+    "src": "/assets/journal/szigetvalasztas-kozlekedes.jpg",
+    "alt": {
+      "hu": "Komp és kisebb hajók egy szigetek felé induló kikötőben.",
+      "en": "A ferry and smaller boats in a harbour serving island routes."
+    },
+    "credit": {
+      "author": "Andreas F. Borchert",
+      "title": "Cleggan Harbour Ferry “Island Discovery” 2018 09 03.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Cleggan_Harbour_Ferry_%E2%80%9CIsland_Discovery%E2%80%9D_2018_09_03.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "strand-tipus-valasztas": {
+    "src": "/assets/journal/strand-tipus-valasztas.jpg",
+    "alt": {
+      "hu": "Kavicsos tengerpart kék ég és nyugodt víz előtt.",
+      "en": "A pebble beach beneath a blue sky beside calm water."
+    },
+    "credit": {
+      "author": "bongo vongo",
+      "title": "Pebble Beach, Sea and Sky (164989113).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Pebble_Beach,_Sea_and_Sky_(164989113).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "ket-sziget-egy-utban": {
+    "src": "/assets/journal/ket-sziget-egy-utban.jpg",
+    "alt": {
+      "hu": "Komp halad a tengerben egy görög sziget meredek partja előtt.",
+      "en": "A ferry crossing the sea below the steep coast of a Greek island."
+    },
+    "credit": {
+      "author": "dronepicr",
+      "title": "Island hopping with a ferry in Santorini, Greece.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Island_hopping_with_a_ferry_in_Santorini,_Greece.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "tengerpart-autoval-vagy-nelkule": {
+    "src": "/assets/journal/tengerpart-autoval-vagy-nelkule.jpg",
+    "alt": {
+      "hu": "Kanyargó út, házak és teraszok egy meredek tengerparton.",
+      "en": "A winding road, houses and terraces on a steep coastline."
+    },
+    "credit": {
+      "author": "Tracey Hind from Aups, France",
+      "title": "Detailed shot of Amalfi Coast scenery - windy road, steep cliffs, terraced crops etc... (52786423094).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Detailed_shot_of_Amalfi_Coast_scenery_-_windy_road,_steep_cliffs,_terraced_crops_etc..._(52786423094).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "parti-szallas-elhelyezkedes": {
+    "src": "/assets/journal/parti-szallas-elhelyezkedes.jpg",
+    "alt": {
+      "hu": "Vízparti szálloda homlokzata a fokvárosi kikötőnegyedben.",
+      "en": "The façade of a waterfront hotel in Cape Town's harbour district."
+    },
+    "credit": {
+      "author": "Dietmar Rabich",
+      "title": "Cape Town (ZA), Waterfront, Victoria & Alfred Hotel Cape Town -- 2024 -- 2892.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Cape_Town_(ZA),_Waterfront,_Victoria_%26_Alfred_Hotel_Cape_Town_--_2024_--_2892.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "szeles-nap-tengerparton": {
+    "src": "/assets/journal/szeles-nap-tengerparton.jpg",
+    "alt": {
+      "hu": "Hullámok egy felhős ég alatti, szeles tengerparton.",
+      "en": "Waves along a windy shore beneath a cloudy sky."
+    },
+    "credit": {
+      "author": "Ciara Ní Riain",
+      "title": "Choppy winter waves at beach Skagen Denmark 01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Choppy_winter_waves_at_beach_Skagen_Denmark_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "strandnap-csomag-lista": {
+    "src": "/assets/journal/strandnap-csomag-lista.jpg",
+    "alt": {
+      "hu": "Strand felé sétáló ember könnyű táskával a kezében.",
+      "en": "A person walking towards the beach carrying a light bag."
+    },
+    "credit": {
+      "author": "Jules Verne Times Two",
+      "title": "Gabriel walking to the beach holding a bag with a snorkel, Agios Sostis, Tinos, Greece julesvernex2.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Gabriel_walking_to_the_beach_holding_a_bag_with_a_snorkel,_Agios_Sostis,_Tinos,_Greece_julesvernex2.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "szezonon-kivuli-part": {
+    "src": "/assets/journal/szezonon-kivuli-part.jpg",
+    "alt": {
+      "hu": "Tengerparti szálloda és sétány a nedves homok tükrében.",
+      "en": "A seaside hotel and promenade reflected in wet sand."
+    },
+    "credit": {
+      "author": "Dietmar Rabich",
+      "title": "Norderney, Weststrand, Hotel -- 2018 -- 1050.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Norderney,_Weststrand,_Hotel_--_2018_--_1050.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "pihenes-es-felfedezes": {
+    "src": "/assets/journal/pihenes-es-felfedezes.jpg",
+    "alt": {
+      "hu": "Kővel kirakott tengerparti gyalogösvény fák között.",
+      "en": "A stone-paved coastal footpath between trees."
+    },
+    "credit": {
+      "author": "Wolfmann",
+      "title": "Den italienske porten KOLABEKKSTRANDA Tjøme Norway Tønsbergfjorden Kystlandskap steinlagt tursti Svaberg eik Kveldslys skog Kløft Coastal nature Eroded smooth slopes of rock Paved hiking path etc 2021-06-17.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Den_italienske_porten_KOLABEKKSTRANDA_Tj%C3%B8me_Norway_T%C3%B8nsbergfjorden_Kystlandskap_steinlagt_tursti_Svaberg_eik_Kveldslys_skog_Kl%C3%B8ft_Coastal_nature_Eroded_smooth_slopes_of_rock_Paved_hiking_path_etc_2021-06-17.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utazasi-keret-felosztas": {
+    "src": "/assets/journal/utazasi-keret-felosztas.jpg",
+    "alt": {
+      "hu": "Euróérmék és különböző címletű bankjegyek.",
+      "en": "Euro coins and banknotes in several denominations."
+    },
+    "credit": {
+      "author": "Avij ( talk · contribs )",
+      "title": "Euro coins and banknotes.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Euro_coins_and_banknotes.jpg",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Euro_coins_and_banknotes.jpg"
+    }
+  },
+  "napi-koltesi-naplo": {
+    "src": "/assets/journal/napi-koltesi-naplo.jpg",
+    "alt": {
+      "hu": "Nyitott üres füzet és kávéscsésze egy faasztalon.",
+      "en": "An open blank notebook and a cup of coffee on a wooden table."
+    },
+    "credit": {
+      "author": "Freddy Castro readysetfreddy",
+      "title": "Coffee, notebooks and pen (Unsplash).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Coffee,_notebooks_and_pen_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "kozos-koltsegek-elszamolas": {
+    "src": "/assets/journal/kozos-koltsegek-elszamolas.jpg",
+    "alt": {
+      "hu": "Baráti társaság közös étkezése egy étteremben.",
+      "en": "Friends sharing a meal in a restaurant."
+    },
+    "credit": {
+      "author": "Infrogmation of New Orleans",
+      "title": "Meeting with some friends at Lager's in Metairie Louisiana November 2017 01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Meeting_with_some_friends_at_Lager%27s_in_Metairie_Louisiana_November_2017_01.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "tartalekkeret-utazashoz": {
+    "src": "/assets/journal/tartalekkeret-utazashoz.jpg",
+    "alt": {
+      "hu": "Érméket és bankjegyeket tartalmazó megtakarítási üveg.",
+      "en": "A savings jar containing coins and banknotes."
+    },
+    "credit": {
+      "author": "stevepb",
+      "title": "Piggy-bank-968302.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Piggy-bank-968302.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "olcso-ut-dragabb-napok": {
+    "src": "/assets/journal/olcso-ut-dragabb-napok.jpg",
+    "alt": {
+      "hu": "Nemzetközi vasúti jegyiroda utcai kirakata.",
+      "en": "The street-facing window of an international rail ticket office."
+    },
+    "credit": {
+      "author": "N509FZ",
+      "title": "Sino-Vietnamese train ticket counter at China Railway Travel Service Group (20250615175002).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sino-Vietnamese_train_ticket_counter_at_China_Railway_Travel_Service_Group_(20250615175002).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "ejszakak-es-teljes-napok": {
+    "src": "/assets/journal/ejszakak-es-teljes-napok.jpg",
+    "alt": {
+      "hu": "Napkelte egy szállodai ablakból, fák sziluettjével.",
+      "en": "Sunrise seen from a hotel window with silhouetted trees."
+    },
+    "credit": {
+      "author": "Graham Butcher",
+      "title": "Sunrise from window of Ardencote Hotel - geograph.org.uk - 2763089.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sunrise_from_window_of_Ardencote_Hotel_-_geograph.org.uk_-_2763089.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "utazasi-extrak-rangsora": {
+    "src": "/assets/journal/utazasi-extrak-rangsora.jpg",
+    "alt": {
+      "hu": "Bőséges reggeli egy kávézó kültéri asztalán.",
+      "en": "A substantial breakfast on an outdoor café table."
+    },
+    "credit": {
+      "author": "Acabashi",
+      "title": "Full English breakfast at the Chalet Cafe, Cowfold, West Sussex, England.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Full_English_breakfast_at_the_Chalet_Cafe,_Cowfold,_West_Sussex,_England.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "foglalasi-reszletek-naploja": {
+    "src": "/assets/journal/foglalasi-reszletek-naploja.jpg",
+    "alt": {
+      "hu": "Vasúti jegy érvényesítése egy jegykezelő gépnél.",
+      "en": "A railway ticket being validated in a ticket-stamping machine."
+    },
+    "credit": {
+      "author": "Nicolas Bouliane",
+      "title": "German train ticket validation at a VBB stamping machine.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:German_train_ticket_validation_at_a_VBB_stamping_machine.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "ajandekok-emlekek-kerete": {
+    "src": "/assets/journal/ajandekok-emlekek-kerete.jpg",
+    "alt": {
+      "hu": "Sokféle emléktárgy egy szabadtéri piaci standon.",
+      "en": "A variety of souvenirs displayed at an outdoor market stall."
+    },
+    "credit": {
+      "author": "QueenCityCebu",
+      "title": "Vibrant Souvenir Market Stall.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vibrant_Souvenir_Market_Stall.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "koltsegterv-utolagos-atnezes": {
+    "src": "/assets/journal/koltsegterv-utolagos-atnezes.jpg",
+    "alt": {
+      "hu": "Laptop és jegyzetfüzet egy világos íróasztalon.",
+      "en": "A laptop and notebook on a bright desk."
+    },
+    "credit": {
+      "author": "www.Pixel.la Free Stock Photos",
+      "title": "Coffee-desk-laptop-notebook (24244320481).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Coffee-desk-laptop-notebook_(24244320481).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "akadalymentesseg-konkrett-kerdesek": {
+    "src": "/assets/journal/akadalymentesseg-konkrett-kerdesek.jpg",
+    "alt": {
+      "hu": "Rámpás bejárat egy vasútállomás épületénél.",
+      "en": "A ramp leading to the entrance of a railway station."
+    },
+    "credit": {
+      "author": "Chongkian",
+      "title": "Darkhan-1 Railway Station - Wheelchair Ramp.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Darkhan-1_Railway_Station_-_Wheelchair_Ramp.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "pihenoidos-utvonal": {
+    "src": "/assets/journal/pihenoidos-utvonal.jpg",
+    "alt": {
+      "hu": "Pad egy vidéki park széles gyalogútja mellett.",
+      "en": "A bench beside a wide footpath in a rural park."
+    },
+    "credit": {
+      "author": "Philip Jeffrey",
+      "title": "Bench on the footpath into Stockley Park - geograph.org.uk - 8014179.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bench_on_the_footpath_into_Stockley_Park_-_geograph.org.uk_-_8014179.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "helyi-kozossegek-tisztelete": {
+    "src": "/assets/journal/helyi-kozossegek-tisztelete.jpg",
+    "alt": {
+      "hu": "Hagyományos házak egy szöuli lakónegyed utcáján.",
+      "en": "Traditional houses along a residential street in Seoul."
+    },
+    "credit": {
+      "author": "Basile Morin",
+      "title": "Traditional hanok houses at golden hour in Bukchon Hanok Village in Seoul.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Traditional_hanok_houses_at_golden_hour_in_Bukchon_Hanok_Village_in_Seoul.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "kevesebb-egyszer-hasznalatos": {
+    "src": "/assets/journal/kevesebb-egyszer-hasznalatos.jpg",
+    "alt": {
+      "hu": "Újratölthető fém vizespalack egy kültéri asztalon.",
+      "en": "A reusable metal water bottle on an outdoor table."
+    },
+    "credit": {
+      "author": "Jonathan Schilling",
+      "title": "Niksun stainless steel water bottle.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Niksun_stainless_steel_water_bottle.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "zsufoltsag-elkerulese": {
+    "src": "/assets/journal/zsufoltsag-elkerulese.jpg",
+    "alt": {
+      "hu": "Reggeli városi utca üzletekkel és kevés járókelővel.",
+      "en": "A morning city street with shops and few pedestrians."
+    },
+    "credit": {
+      "author": "Mike McBey",
+      "title": "Early morning, Hollywood Boulevard, LA (50310231498).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Early_morning,_Hollywood_Boulevard,_LA_(50310231498).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "helyi-szolgaltatok-valasztasa": {
+    "src": "/assets/journal/helyi-szolgaltatok-valasztasa.jpg",
+    "alt": {
+      "hu": "Friss zöldségek és gyümölcsök egy helyi piaci standon.",
+      "en": "Fresh vegetables and fruit at a local market stall."
+    },
+    "credit": {
+      "author": "IndayLiburan",
+      "title": "Vegetable stalls at Valencia Public Market 02.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vegetable_stalls_at_Valencia_Public_Market_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "termeszetjaro-program-hatarai": {
+    "src": "/assets/journal/termeszetjaro-program-hatarai.jpg",
+    "alt": {
+      "hu": "Folyók és hegyvidéki táj egy nemzeti park kilátópontjáról.",
+      "en": "Rivers and mountain scenery viewed from a national park viewpoint."
+    },
+    "credit": {
+      "author": "Martin Falbisoner",
+      "title": "View from Skaftafell National Park July 2014 -4.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:View_from_Skaftafell_National_Park_July_2014_-4.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utazasi-fotozas-figyelemmel": {
+    "src": "/assets/journal/utazasi-fotozas-figyelemmel.jpg",
+    "alt": {
+      "hu": "Fotós állványra szerelt fényképezőgéppel a szabadban.",
+      "en": "A photographer using a tripod-mounted camera outdoors."
+    },
+    "credit": {
+      "author": "ShenandoahNPS",
+      "title": "Photographer with Camera and Tripod (51832409816).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Photographer_with_Camera_and_Tripod_(51832409816).jpg",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Photographer_with_Camera_and_Tripod_(51832409816).jpg"
+    }
+  },
+  "elteto-igenyek-utazasban": {
+    "src": "/assets/journal/elteto-igenyek-utazasban.jpg",
+    "alt": {
+      "hu": "Két túrázó egy zöld dombok között vezető ösvényen.",
+      "en": "Two hikers on a trail through green hills."
+    },
+    "credit": {
+      "author": "Hawai‘i Volcanoes NPS",
+      "title": "Family hiking new Pali o Ka‘eo Trail in Kahuku Unit (28755303187).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_(28755303187).jpg",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_(28755303187).jpg"
+    }
+  },
+  "lassabb-kozlekedes-merlegelese": {
+    "src": "/assets/journal/lassabb-kozlekedes-merlegelese.jpg",
+    "alt": {
+      "hu": "Mezők és vidéki táj egy vonat ablakából nézve.",
+      "en": "Fields and countryside seen from a train window."
+    },
+    "credit": {
+      "author": "Kgbo",
+      "title": "Landscapes of central Poland from a train in September 2019, 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Landscapes_of_central_Poland_from_a_train_in_September_2019,_08.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utazasi-osszehasonlito-tabla": {
+    "src": "/assets/journal/utazasi-osszehasonlito-tabla.jpg",
+    "alt": {
+      "hu": "Laptop, üres jegyzetfüzet és toll egy faasztalon.",
+      "en": "A laptop, blank notebook and pen on a wooden table."
+    },
+    "credit": {
+      "author": "By StartupStockPhotos from Pixabay",
+      "title": "A laptop and a notebook on the wooden table (Pixabay).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:A_laptop_and_a_notebook_on_the_wooden_table_(Pixabay).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "terkep-mentett-helyek": {
+    "src": "/assets/journal/terkep-mentett-helyek.jpg",
+    "alt": {
+      "hu": "Szabadtéri turistatérkép és helyi tájékoztató tábla.",
+      "en": "An outdoor visitor map and local information board."
+    },
+    "credit": {
+      "author": "Kaitu",
+      "title": "Map and tourist information board on Valganna.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Map_and_tourist_information_board_on_Valganna.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "offline-utazasi-csomag": {
+    "src": "/assets/journal/offline-utazasi-csomag.jpg",
+    "alt": {
+      "hu": "Utazó papírtérképet olvas a szabadban.",
+      "en": "A traveller reading a paper map outdoors."
+    },
+    "credit": {
+      "author": "Pedro Ribeiro Simões from Lisboa, Portugal",
+      "title": "Tourist reading a map (8150135751).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Tourist_reading_a_map_(8150135751).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "foglalasi-informaciok-rendje": {
+    "src": "/assets/journal/foglalasi-informaciok-rendje.jpg",
+    "alt": {
+      "hu": "Zárt jegyzetfüzet tollal és zöld könyvjelzőszalaggal.",
+      "en": "A closed notebook with a pen and a green bookmark ribbon."
+    },
+    "credit": {
+      "author": "Guy Sie from Utrecht, Netherlands",
+      "title": "Moleskine Evernote Smart Notebook and pen (8401944314).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Moleskine_Evernote_Smart_Notebook_and_pen_(8401944314).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "utazasi-naptar-idopontok": {
+    "src": "/assets/journal/utazasi-naptar-idopontok.jpg",
+    "alt": {
+      "hu": "Nyitott gyűrűs tervező határidőnapló beosztott oldalakkal.",
+      "en": "An open ring-bound planner with ruled scheduling pages."
+    },
+    "credit": {
+      "author": "Old Photo Profile",
+      "title": "Personal organizer with metallic ring binder.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Personal_organizer_with_metallic_ring_binder.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "ajanlat-forras-es-idobelyeg": {
+    "src": "/assets/journal/ajanlat-forras-es-idobelyeg.jpg",
+    "alt": {
+      "hu": "Vonatindulási kijelző a bécsi főpályaudvaron.",
+      "en": "A train departure display at Vienna's main station."
+    },
+    "credit": {
+      "author": "Ravi Dwivedi",
+      "title": "Wien Hauptbahnhof departure board.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Wien_Hauptbahnhof_departure_board.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "utazasi-kutatas-idokeret": {
+    "src": "/assets/journal/utazasi-kutatas-idokeret.jpg",
+    "alt": {
+      "hu": "Könyvtári olvasóterem hosszú asztalokkal és könyvespolcokkal.",
+      "en": "A library reading room with long tables and bookshelves."
+    },
+    "credit": {
+      "author": "Dr. Marcus Gossler",
+      "title": "Graz University-Library reading-room.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Graz_University-Library_reading-room.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    }
+  },
+  "utazasi-inspiracio-szures": {
+    "src": "/assets/journal/utazasi-inspiracio-szures.jpg",
+    "alt": {
+      "hu": "Utazási útikönyvekkel teli polc egy könyvesboltban.",
+      "en": "A bookshop shelf filled with travel guidebooks."
+    },
+    "credit": {
+      "author": "松岡明芳",
+      "title": "Guide book-旅行ガイドブックPA024792.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Guide_book-%E6%97%85%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AFPA024792.jpg",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Guide_book-%E6%97%85%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AFPA024792.jpg"
+    }
+  },
+  "kozos-utazasi-dokumentum": {
+    "src": "/assets/journal/kozos-utazasi-dokumentum.jpg",
+    "alt": {
+      "hu": "Ember laptopon dolgozik egy ülőhelyen.",
+      "en": "A person working on a laptop while seated."
+    },
+    "credit": {
+      "author": "www.Pixel.la Free Stock Photos",
+      "title": "Hands-woman-laptop-notebook (24217008462).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Hands-woman-laptop-notebook_(24217008462).jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  },
+  "ai-utazasterv-ellenorzese": {
+    "src": "/assets/journal/ai-utazasterv-ellenorzese.jpg",
+    "alt": {
+      "hu": "Kézben tartott okostelefon térképes alkalmazással.",
+      "en": "A hand holding a smartphone displaying a map application."
+    },
+    "credit": {
+      "author": "Santeri Viinamäki",
+      "title": "Smartphone with navigation map app.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Smartphone_with_navigation_map_app.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  }
+}

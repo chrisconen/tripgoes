@@ -15,3 +15,5 @@ Photography is used as editorial illustration, never as evidence of inventory.
 Fonts: Manrope and DM Sans, distributed through Google Fonts. Font sources are fonts.gstatic.com. The upstream SIL Open Font Licenses are retained as `LICENSE-Manrope.txt` and `LICENSE-DMSans.txt`.
 
 Brand mark and interface icons are original inline SVG geometry in this project.
+
+The 100 separate article photographs in `journal/` retain their individual Wikimedia Commons source licences. Full author, source, licence and file records: [journal/SOURCES.md](journal/SOURCES.md). The site displays image attribution on article pages and cards. These photographs are topic illustrations, not evidence of a bookable service.

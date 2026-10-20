@@ -2,6 +2,8 @@ import {mkdir,cp,writeFile,readFile} from 'node:fs/promises';
 import {copy} from '../src/locales.mjs';
 import {loadArticles,journalIndex,journalArticle,articleImage,escapeHTML} from './journal.mjs';
 import {checkerPage} from '../src/checker.mjs';
+import {renderRecommendations} from './recommendations.mjs';
+import {renderSharing} from '../src/sharing.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
 if(new URL(origin).protocol!=='https:')throw Error('SITE_ORIGIN must use HTTPS.');
@@ -12,9 +14,11 @@ await cp('src','dist/src',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});
 const shell=(await readFile('index.html','utf8')).replaceAll('{{origin}}',origin);
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score'];
-function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',ogType='website'}){
+function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website'}){
  const path=route?`${route}/`:'';
- const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical:`${origin}/${lang}/${path}`,robots:indexable?'index,follow':'noindex,follow',content,image,ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
+ const canonical=`${origin}/${lang}/${path}`;
+ const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
+ const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:content+extras,image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
@@ -22,7 +26,7 @@ for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
   const title=route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;
-  await writeFile(`${dir}/index.html`,render({lang,route,title,content:route==='score'?checkerPage(lang):'',indexable:route==='score'}));
+  await writeFile(`${dir}/index.html`,render({lang,route,title,content:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:route==='score'}));
   if(route==='score')sitemap.push(`${origin}/${lang}/score/`);
  }
  await mkdir(`dist/${lang}/blog`,{recursive:true});
@@ -30,7 +34,7 @@ for(const lang of ['hu','en']){
  sitemap.push(`${origin}/${lang}/blog/`);
  for(const article of articles){
   const route=`blog/${article.slug}`,dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
-  await writeFile(`${dir}/index.html`,render({lang,route,title:`${article[lang].title} — TripGoes`,description:article[lang].excerpt,content:journalArticle(article,articles,lang),indexable:!draft,image:articleImage(article),ogType:'article'}));
+  await writeFile(`${dir}/index.html`,render({lang,route,title:`${article[lang].title} — TripGoes`,description:article[lang].excerpt,content:journalArticle(article,articles,lang),indexable:!draft,image:articleImage(article),imageAlt:article.artwork?.alt?.[lang],ogType:'article'}));
   sitemap.push(`${origin}/${lang}/${route}/`);
  }
 }
