@@ -5,7 +5,7 @@ import {loadArticles,articleImage,escapeHTML} from '../scripts/journal.mjs';
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){
-  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','blog/']){
+  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','offers/','blog/']){
    const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
    assert.ok(html.includes(`href="https://tripgoes.com/${lang}/${route}"`));
    assert.ok(html.includes(`hreflang="hu" href="https://tripgoes.com/hu/${route}"`));
@@ -37,7 +37,7 @@ test('deployment includes domain and assets without source-only private material
  for(const path of ['src/app.mjs','src/styles.css','src/score.mjs','src/platform.css','assets/hero.jpg','assets/manrope-bold.ttf','404.html','sitemap.xml']){
   assert.ok((await stat(`dist/${path}`)).size>0);
  }
- for(const path of ['master_plan.md','masterplan.md','.git/config','.openai/hosting.json']){
+ for(const path of ['master_plan.md','masterplan.md','.git/config','.openai/hosting.json','backend/worker.mjs','backend/migrations/0001_initial.sql','.tmp/cloudflare-session.json']){
   await assert.rejects(stat(`dist/${path}`),{code:'ENOENT'});
  }
 });

@@ -4,3 +4,7 @@ artifacts/
 dist/
 *.tar.gz
 __pycache__/
+.dev.vars*
+.env*
+.wrangler/
+*.sqlite*

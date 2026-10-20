@@ -1,0 +1,17 @@
+{
+  "name": "tripgoes-api",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-20",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {"enabled": false},
+  "logpush": false,
+  "vars": {
+    "DEPLOYMENT": "production",
+    "ALLOWED_ORIGINS": "https://tripgoes.com,https://www.tripgoes.com",
+    "SOURCES_JSON": "[]"
+  },
+  "ratelimits": [{"name":"RATE_LIMITER","namespace_id":"579326104","simple":{"limit":60,"period":60}}],
+  "triggers": {"crons": ["*/15 * * * *"]},
+  "d1_databases": [{"binding":"DB","database_name":"tripgoes-data","database_id":"131e9c39-a1cc-4767-b38e-43528685f5ab","migrations_dir":"migrations"}]
+}

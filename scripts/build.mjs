@@ -6,6 +6,8 @@ import {renderRecommendations} from './recommendations.mjs';
 import {renderSharing} from '../src/sharing.mjs';
 import {createView} from '../src/views.mjs';
 import {plannerPage} from '../src/planner.mjs';
+import {offersPage} from '../src/offers.mjs';
+import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
 if(new URL(origin).protocol!=='https:')throw Error('SITE_ORIGIN must use HTTPS.');
@@ -15,7 +17,8 @@ await mkdir('dist',{recursive:true});
 await cp('src','dist/src',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});
 const shell=(await readFile('index.html','utf8')).replaceAll('{{origin}}',origin);
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner'];
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers'];
+if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
  const canonical=`${origin}/${lang}/${path}`;
@@ -24,13 +27,18 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
- values.extraStyles=route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ values.connectSrc=route==='offers'&&apiBase?new URL(apiBase).origin:"'none'";
+ values.extraStyles=route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
 for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
+  if(route==='offers'){
+   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Ajánlatkereső — árak, időbélyeg és forrás | TripGoes':'Offer search — prices, timestamps and sources | TripGoes',content:`<main id="main">${offersPage(lang)}</main>`,indexable:false}));
+   continue;
+  }
   const title=route==='planner'?(lang==='hu'?'Úttervező — teljes költség, több szabadidő | TripGoes':'Trip planner — whole-trip costs, more time away | TripGoes'):route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;
   const description=route==='planner'?(lang==='hu'?'Hasonlíts össze három saját utazási ajánlatot: teljes költség, csoportkeret, éjszakák és használható órák. Számítás és választható mentés a böngésződben.':'Compare three travel offers of your own: whole-trip costs, group budget, nights and usable hours. Calculations and optional saving stay in your browser.'):undefined;
   await writeFile(`${dir}/index.html`,render({lang,route,title,description,content:route==='planner'?`<main id="main">${plannerPage(lang)}</main>`:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:route==='score'||route==='planner'}));
