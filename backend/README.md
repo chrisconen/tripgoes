@@ -4,13 +4,27 @@ This is the offer-data backend. It does not create user accounts, store personal
 
 ## Components
 
-- Cloudflare Worker: `worker.mjs`, `validation.mjs`, `repository.mjs`.
-- D1 schema: `migrations/0001_initial.sql` (a new database only).
+- Cloudflare Worker: `worker.mjs`, `validation.mjs`, `repository.mjs`, `aviasales.mjs`.
+- D1 schema: `migrations/0001_initial.sql` and additive `0002_flight_cache.sql`.
 - `sqlite.mjs` and `local.mjs`: Node 24+ local development, never uploaded to Workers.
 - `admin.mjs`: authenticated command-line ingestion, withdrawal and status.
 - `../src/offers.mjs`: public HU/EN reader, with no privileged credentials.
 
-The site stays on GitHub Pages. Only the offers page may connect to the API origin specified in `src/api-config.mjs`; other pages retain `connect-src 'none'`. Searches run on explicit interaction. The application does not retain searches or caller IPs in D1. Cloudflare handles technical request data and rate limiting.
+The site stays on GitHub Pages. Only the offers and flights pages may connect to the API origin specified in `src/api-config.mjs`. Travelpayouts Drive connections are separately allowed site-wide. Searches run on explicit interaction. Offer searches are not stored; flight queries and responses are shared in D1 for ten minutes without caller IPs or tokens. Cloudflare handles technical request data and rate limiting.
+
+## Aviasales cached flight prices
+
+`GET /v1/flights/status` returns `{configured,source:"aviasales-data"}`. Configuration is not a guarantee of provider availability. `GET /v1/flights` accepts `origin`, optional `destination` (uppercase IATA codes), `departureDate`, `returnDate`, `currency`, `direct`, and `oneWay`. Dates are ISO calendar dates from tomorrow through 365 days ahead, in UTC; one-way requests omit the return date. Supported currencies are EUR, HUF, USD, GBP and CHF. Results represent one adult in economy. Unknown and duplicate parameters are rejected.
+
+The server calls the fixed `https://api.travelpayouts.com/aviasales/v3/prices_for_dates` endpoint with the `X-Access-Token` header. Store `AVIASALES_API_TOKEN` and the Travelpayouts partner ID `AVIASALES_MARKER` as Worker secrets. The Drive project number is not necessarily the partner ID. Neither secret belongs in source or command arguments. The partner marker appears in booking links; the API token never reaches the browser. Requests reject redirects, time out after ten seconds and limit provider JSON to 512 KiB.
+
+Responses include at most 20 normalized flights, the canonical query, source, `asOf`, `fetchedAt`, `cacheUntil` and `hasMore`. The documented source window is up to 48 hours. `fetchedAt` is API retrieval time, and `cacheUntil` is our ten-minute reuse cutoff; neither establishes the age or expiry of a fare. Baggage and extras are unknown. Cached fares never enter the offer/history tables or produce an automatic TripScore. Final price and availability require confirmation at Aviasales. This integration does not use the separately approved real-time Flight Search API.
+
+D1 provides a shared ten-minute cache and an atomic upstream budget of 200 requests per UTC day and 30 per minute, across Worker isolates. Cache hits do not extend the retrieval time or spend upstream quota. Failed provider attempts consume quota; expired results are not served as a fallback. Out-of-order requests cannot reset budget windows backwards. The existing per-IP rate binding is additional abuse protection. Missing configuration, exhaustion, malformed provider data and provider failures have separate safe error codes.
+
+Anonymous cached query/response rows expire logically after ten minutes; the 15-minute maintenance job deletes up to 1,000 expired rows per run. Delayed maintenance can retain expired rows longer, but reads do not reuse them. The budget table contains aggregate counters only. Catalogue provenance is embedded in `assets/flight-cities.json`; it supplies IATA suggestions, not proof of route availability.
+
+Official contract: [Aviasales Data API](https://support.travelpayouts.com/hc/en-us/articles/203956163-Aviasales-Data-API), [affiliate links](https://support.travelpayouts.com/hc/en-us/articles/5711895629714-Aviasales-affiliate-links).
 
 ## Run locally
 

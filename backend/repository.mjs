@@ -1,4 +1,5 @@
 import {ApiError,fail,key,sha256,validateFreshBatch} from './validation.mjs';
+import {fetchFlightPrices,hasFlightCredentials} from './aviasales.mjs';
 const iso=now=>new Date(now).toISOString();
 export async function saveBatch(db,batch,now){
  const {source,batchId,offers}=batch;
@@ -79,6 +80,44 @@ export async function expire(db,now){
  const time=iso(now);
  await db.batch([
   db.prepare("UPDATE offers SET status='expired' WHERE id IN (SELECT id FROM offers WHERE status='active' AND (expires_at<=? OR departure_date<=?) LIMIT 1000)").bind(time,time.slice(0,10)),
-  db.prepare("INSERT INTO maintenance(name,completed_at) VALUES('expiry',?) ON CONFLICT(name) DO UPDATE SET completed_at=excluded.completed_at").bind(time)
+  db.prepare("INSERT INTO maintenance(name,completed_at) VALUES('expiry',?) ON CONFLICT(name) DO UPDATE SET completed_at=excluded.completed_at").bind(time),
+  db.prepare('DELETE FROM flight_cache WHERE query_key IN (SELECT query_key FROM flight_cache WHERE cache_until<=? LIMIT 1000)').bind(now)
  ]);
+}
+
+// Atomic global limits remain effective across Worker isolates. Failures consume a
+// reservation too: a broken/rejected provider must never cause an unbounded retry loop.
+export const FLIGHT_DAILY_LIMIT=200,FLIGHT_MINUTE_LIMIT=30;
+export async function reserveFlightFetch(db,now){
+ const day=iso(now).slice(0,10),minute=Math.floor(now/60000);
+ const row=await db.prepare(`INSERT INTO flight_provider_budget(provider,day_key,day_used,minute_key,minute_used)
+ VALUES('aviasales-data',?,1,?,1)
+ ON CONFLICT(provider) DO UPDATE SET
+ day_key=excluded.day_key,
+ day_used=CASE WHEN flight_provider_budget.day_key=excluded.day_key THEN flight_provider_budget.day_used+1 ELSE 1 END,
+ minute_key=excluded.minute_key,
+ minute_used=CASE WHEN flight_provider_budget.minute_key=excluded.minute_key THEN flight_provider_budget.minute_used+1 ELSE 1 END
+ WHERE flight_provider_budget.day_key<=excluded.day_key
+ AND flight_provider_budget.minute_key<=excluded.minute_key
+ AND (flight_provider_budget.day_key<>excluded.day_key OR flight_provider_budget.day_used<?)
+ AND (flight_provider_budget.minute_key<>excluded.minute_key OR flight_provider_budget.minute_used<?)
+ RETURNING day_used`).bind(day,minute,FLIGHT_DAILY_LIMIT,FLIGHT_MINUTE_LIMIT).first();
+ if(!row)fail('flight_provider_budget_exhausted',503);
+}
+export async function cachedFlightPrices(env,query,now,{fetchPrices=fetchFlightPrices}={}){
+ if(!hasFlightCredentials(env))fail('flight_provider_not_configured',503);
+ const cacheKey=await sha256(JSON.stringify(['aviasales-v1',env.AVIASALES_MARKER,query]));
+ const cached=await env.DB.prepare('SELECT payload,fetched_at,cache_until FROM flight_cache WHERE query_key=? AND cache_until>? AND fetched_at<=?').bind(cacheKey,now,now).first();
+ if(cached){
+  const data=JSON.parse(cached.payload);
+  return {...data,asOf:iso(now)};
+ }
+ await reserveFlightFetch(env.DB,now);
+ const data=await fetchPrices(query,env,{now});
+ const fetchedAt=Date.parse(data.fetchedAt),cacheUntil=Date.parse(data.cacheUntil);
+ if(!Number.isFinite(fetchedAt)||!Number.isFinite(cacheUntil)||cacheUntil<=now||cacheUntil>now+600000||fetchedAt>now)fail('flight_provider_invalid_response',502);
+ await env.DB.prepare(`INSERT INTO flight_cache(query_key,payload,fetched_at,cache_until) VALUES(?,?,?,?)
+ ON CONFLICT(query_key) DO UPDATE SET payload=excluded.payload,fetched_at=excluded.fetched_at,cache_until=excluded.cache_until
+ WHERE excluded.fetched_at>=flight_cache.fetched_at`).bind(cacheKey,JSON.stringify(data),fetchedAt,cacheUntil).run();
+ return data;
 }

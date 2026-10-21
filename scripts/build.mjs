@@ -8,6 +8,7 @@ import {renderSharing} from '../src/sharing.mjs';
 import {createView} from '../src/views.mjs';
 import {plannerPage} from '../src/planner.mjs';
 import {offersPage} from '../src/offers.mjs';
+import {flightPage} from '../src/flights.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
@@ -23,7 +24,7 @@ const travelpayoutsCode=template.match(/<script nowprocket[^>]*>([\s\S]*?)<\/scr
 if(!travelpayoutsCode)throw Error('Travelpayouts loader missing from shared head.');
 const travelpayoutsHash=createHash('sha256').update(travelpayoutsCode).digest('base64');
 const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayoutsHash}}',travelpayoutsHash);
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers'];
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights'];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
@@ -33,14 +34,18 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
- values.connectSrc=['https://emrldco.com','https://www.travelpayouts.com/check_auth',...(route==='offers'&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
- values.extraStyles=route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ values.connectSrc=['https://emrldco.com','https://www.travelpayouts.com/check_auth',...(route==='flights'?["'self'"]:[]),...(['offers','flights'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
+ values.extraStyles=route==='flights'?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
 for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
+  if(route==='flights'){
+   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Repülőjegy-kereső — Aviasales árak | TripGoes':'Flight finder — Aviasales fares | TripGoes',description:lang==='hu'?'Keress korábbi Aviasales-keresésekből származó jegyárakat Budapesttől a világ repülőtereiig. Az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'Explore fares from previous Aviasales searches, from Budapest to airports around the world. Confirm current prices and conditions with the provider.',content:`<main id="main">${flightPage(lang)}</main>`,indexable:false}));
+   continue;
+  }
   if(route==='offers'){
    await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Ajánlatkereső — árak, időbélyeg és forrás | TripGoes':'Offer search — prices, timestamps and sources | TripGoes',content:`<main id="main">${offersPage(lang)}</main>`,indexable:false}));
    continue;

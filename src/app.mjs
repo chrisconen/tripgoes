@@ -45,6 +45,7 @@ if(page==='score')import('./checker.mjs').then(({initChecker})=>initChecker(lang
 if(journalPage)import('./journal.mjs').then(({initJournal})=>initJournal(lang));
 if(page==='planner')import('./planner.mjs').then(({initPlanner})=>initPlanner(lang));
 if(page==='offers')Promise.all([import('./offers.mjs'),import('./api-config.mjs')]).then(([{initOffers},{apiBase}])=>initOffers(lang,{apiBase}));
+if(page==='flights')Promise.all([import('./flights.mjs'),import('./api-config.mjs')]).then(([{initFlights},{apiBase}])=>initFlights(lang,{apiBase}));
 initCities(lang);
 initDiscovery(lang);
 initSharing(lang);

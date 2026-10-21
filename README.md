@@ -17,6 +17,7 @@ Live at **https://tripgoes.com**. An original bilingual travel journal and trans
 - Worldwide free-text city entry in discovery, the calculator, preferences and the trip planner; 34,173 optional GeoNames suggestions with country/region context and Unicode aliases. The catalogue loads only when needed. Smaller places can be entered without a catalogue match.
 - A separate Workers/D1 offer-data API: source allowlists, transactional imports, immutable price observations, idempotent receipts, withdrawal and expiry handling, protected CLI administration and production rate limiting. Details: `backend/README.md`.
 - HU/EN offer search with source and timestamp disclosure, explicit request controls, price-history tables and expiry checks independent of the visitor's system clock. It shows an honest empty inventory until an approved data source is connected.
+- HU/EN Aviasales Data API flight search, Budapest default, 9,521 IATA city suggestions and explicit airport-code entry. One adult/economy, one-way or return, five currencies and optional destination discovery. Provider prices are cached search results, not live availability; final conditions are checked at Aviasales. The token stays in the Worker, with shared caching and atomic upstream quotas.
 - Budapest remains the Hungarian homepage default. Unknown departure costs never fall back to Budapest: incomplete sample totals are labelled and excluded by finite budget filters. The calculator accepts an explicit return ground-transport cost, including a known zero.
 - Travelpayouts Drive project 588496 loads from `emrldco.com` in the shared head on every page. Provider links may become affiliate links according to the project configuration; registration does not establish approval by every travel brand or an active offer feed.
 - Canonical URLs, matching locale alternates, article Open Graph metadata and a sitemap.
@@ -34,7 +35,7 @@ The median earns 50 points, with 1.5 points per percentage point below or above 
 
 The guides are original AI-assisted editorial work, not first-hand travel reports or independently expert-reviewed publications. The international reading room contains short attributed summaries, not full translations of third-party articles.
 
-Homepage trips, fares and histories remain labelled examples. There are no authenticated provider feeds, active affiliate IDs, user accounts, email delivery, payments or booking services. The backend source registry starts empty and does not ingest those homepage examples. Operator/contact details must be completed before a commercial launch. The guides, checker and planner are indexable; sample-led and pre-commercial information pages remain noindex.
+Homepage trips, fares and histories remain labelled examples. The separate flight finder uses Aviasales cached prices and partner links. There is no verified complete-trip price-history feed, user-account service, email delivery, payment processing or booking service. The offer/history source registry remains empty and does not ingest homepage examples or cached Aviasales prices. Operator/contact details must be completed before a commercial launch. The guides, checker, planner and flight finder are indexable; sample-led and pre-commercial information pages remain noindex.
 
 City suggestions are adapted from GeoNames under CC BY 4.0; sources and scope are documented in `assets/CITY-SOURCES.md`. Suggestions are not a complete list of every settlement. City entry does not retrieve new flights or change the fixed departure airports of illustrative homepage routes. Planner city labels do not determine costs.
 
@@ -57,7 +58,7 @@ The build requires at least 100 complete bilingual source articles. `DRAFT_BUILD
 
 Cloudflare manages the domain and DNS. GitHub Pages serves the site; a push to `main` runs the tests, builds the static files and publishes through the pinned GitHub Actions workflow. HTTPS is enforced.
 
-The data API is a separate Cloudflare Worker with a dedicated D1 database. Backend code is tested in GitHub CI, but backend deployment is a separate operator action; no Cloudflare account token is stored in the public repository or frontend. Only the offer-search route allows connections to its exact public API origin. All other pages retain their no-network application policy.
+The data API is a separate Cloudflare Worker with a dedicated D1 database. Backend code is tested in GitHub CI, but backend deployment is a separate operator action; no Cloudflare account token or Aviasales API token is stored in the public repository or frontend. Only the offer and flight search routes allow connections to the exact public API origin. Travelpayouts Drive has a separate, restricted site-wide content-security policy.
 
 Only application sources, assets, editorial JSON, tests and build configuration belong in this repository. Local CLI state, credentials, planning files and prior hosting configuration are excluded.
 

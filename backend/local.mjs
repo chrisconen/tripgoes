@@ -7,6 +7,7 @@ import worker from './worker.mjs';
 mkdirSync('.tmp/backend',{recursive:true});
 const DB=createSqlite('.tmp/backend/local.sqlite');
 DB.exec(readFileSync(new URL('./migrations/0001_initial.sql',import.meta.url),'utf8'));
+DB.exec(readFileSync(new URL('./migrations/0002_flight_cache.sql',import.meta.url),'utf8'));
 const config=existsSync('.tmp/backend/local-config.json')?JSON.parse(readFileSync('.tmp/backend/local-config.json','utf8')):{};
 const env={DB,ALLOWED_ORIGINS:'http://127.0.0.1:4173,http://localhost:4173',SOURCES_JSON:'[]',...config,INGEST_TOKEN:process.env.TRIPGOES_INGEST_TOKEN||config.INGEST_TOKEN||''};
 const server=http.createServer(async(req,res)=>{

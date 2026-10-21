@@ -5,8 +5,8 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
-    "test": "node --test --test-isolation=none tests/model.test.mjs tests/score.test.mjs tests/platform.test.mjs tests/content.test.mjs tests/discovery.test.mjs tests/sharing.test.mjs tests/rendering.test.mjs tests/score-draft.test.mjs tests/planner.test.mjs tests/cities.test.mjs tests/backend.test.mjs tests/offers.test.mjs",
+    "test": "node --test --test-isolation=none tests/model.test.mjs tests/score.test.mjs tests/platform.test.mjs tests/content.test.mjs tests/discovery.test.mjs tests/sharing.test.mjs tests/rendering.test.mjs tests/score-draft.test.mjs tests/planner.test.mjs tests/cities.test.mjs tests/backend.test.mjs tests/offers.test.mjs tests/aviasales.test.mjs tests/flight-cache.test.mjs tests/flights.test.mjs",
     "backend:dev": "node backend/local.mjs",
-    "backend:test": "node --test --test-isolation=none tests/backend.test.mjs"
+    "backend:test": "node --test --test-isolation=none tests/backend.test.mjs tests/aviasales.test.mjs tests/flight-cache.test.mjs"
   }
 }

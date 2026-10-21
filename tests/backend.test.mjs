@@ -9,6 +9,7 @@ const token='test-only-token-not-for-production-1234567890';
 const source={id:'example',name:'Example source',kind:'editorial',allowedHosts:['travel.example.com'],maxAgeMinutes:120,enabled:true};
 function setup(){
  const DB=createSqlite(':memory:');DB.exec(readFileSync(new URL('../backend/migrations/0001_initial.sql',import.meta.url),'utf8'));
+ DB.exec(readFileSync(new URL('../backend/migrations/0002_flight_cache.sql',import.meta.url),'utf8'));
  return {DB,INGEST_TOKEN:token,SOURCES_JSON:JSON.stringify([source]),ALLOWED_ORIGINS:'https://tripgoes.com'};
 }
 const offer=(changes={})=>({externalId:'route-1',title:'Budapest to Tokyo',origin:'Budapest',destination:'東京',departureDate:'2026-11-10',returnDate:'2026-11-17',travelers:2,currency:'EUR',totalPriceMinor:65000,inclusions:'Return flight and mandatory fees; no checked bag',bookingUrl:'https://travel.example.com/offers/tokyo',observedAt:'2026-10-20T11:30:00.000Z',expiresAt:'2026-10-20T13:00:00.000Z',...changes});

@@ -1,5 +1,6 @@
 import {ApiError,fail,sources,validateBatch,validateWithdrawal,filters,sha256,readJSON} from './validation.mjs';
-import {saveBatch,withdrawBatch,listOffers,offerHistory,status,expire} from './repository.mjs';
+import {saveBatch,withdrawBatch,listOffers,offerHistory,status,expire,cachedFlightPrices} from './repository.mjs';
+import {parseFlightQuery,hasFlightCredentials} from './aviasales.mjs';
 
 function response(data,status,origin,requestId,extra={}){
  const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; frame-ancestors 'none'",'X-Request-ID':requestId,Vary:'Origin',...extra};
@@ -31,7 +32,7 @@ export async function handleRequest(request,env,now=Date.now()){
    if(!success)fail('rate_limited',429);
   }
   const history=/^\/v1\/offers\/([a-f0-9]{64})\/history$/.exec(url.pathname);
-  const publicRoute=['/v1/health','/v1/offers'].includes(url.pathname)||history;
+  const publicRoute=['/v1/health','/v1/offers','/v1/flights','/v1/flights/status'].includes(url.pathname)||history;
   const ingest=url.pathname==='/v1/admin/ingest',withdraw=url.pathname==='/v1/admin/withdraw',adminStatus=url.pathname==='/v1/admin/status';
   if(!publicRoute&&!ingest&&!withdraw&&!adminStatus)fail('not_found',404);
   if(request.method==='OPTIONS'&&publicRoute)return response(null,204,allowedOrigin,requestId,{'Access-Control-Allow-Methods':'GET, OPTIONS','Access-Control-Max-Age':'600'});
@@ -44,6 +45,11 @@ export async function handleRequest(request,env,now=Date.now()){
    await env.DB.prepare('SELECT 1 ok FROM offers LIMIT 1').first();
    data={service:'tripgoes-data-api',version:1,status:'ok',asOf:new Date(now).toISOString(),enabledSources:registry.filter(s=>s.enabled).length};
   }else if(url.pathname==='/v1/offers')data=await listOffers(env.DB,registry,filters(url.searchParams),now);
+  else if(url.pathname==='/v1/flights/status'){
+   if(url.search)fail();
+   data={configured:hasFlightCredentials(env),source:'aviasales-data'};
+  }
+  else if(url.pathname==='/v1/flights')data=await cachedFlightPrices(env,parseFlightQuery(url.searchParams,now),now);
   else if(history)data=await offerHistory(env.DB,registry,history[1],now);
   else if(adminStatus)data=await status(env.DB,registry,now);
   else if(withdraw){data=await withdrawBatch(env.DB,validateWithdrawal(await readJSON(request),registry),now);httpStatus=data.replayed?200:201}
