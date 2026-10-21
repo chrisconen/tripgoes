@@ -1,4 +1,50 @@
 {
   "version": 1,
-  "sections": []
+  "widget": {
+    "src": "https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=3&locale=en&shmarker=793137.793137&trs=588496",
+    "hosts": {
+      "script": ["https://tpscr.com", "https://wegotrip.com"],
+      "img": ["https://tpscr.com"],
+      "frame": ["https://wegotrip.com"],
+      "connect": ["https://tpo.gg"]
+    }
+  },
+  "sections": [
+    {
+      "id": "budapest",
+      "cityId": "3054643",
+      "hu": {
+        "title": "Budapest",
+        "intro": "Belépők, séták és vezetett programok a városban. Hasznos, ha egy napod marad, vagy ha vendéget viszel körbe a saját városodban."
+      },
+      "en": {
+        "title": "Budapest",
+        "intro": "Tickets, walks and guided activities in the city. Useful when you have a single day, or when you are showing a visitor around your own town."
+      }
+    },
+    {
+      "id": "vienna",
+      "cityId": "2761369",
+      "hu": {
+        "title": "Bécs",
+        "intro": "Vonattal három óra, autóval kettő és fél. Belépők és vezetett programok arra az esetre, ha a hétvégét ott töltöd."
+      },
+      "en": {
+        "title": "Vienna",
+        "intro": "Three hours by train from Budapest, two and a half by car. Tickets and guided activities for a weekend there."
+      }
+    },
+    {
+      "id": "rome",
+      "cityId": "3169070",
+      "hu": {
+        "title": "Róma",
+        "intro": "A legtöbb látnivalóhoz időpontos belépő kell, és a helyszíni sor hosszú. Érdemes előre megnézni, mi foglalható."
+      },
+      "en": {
+        "title": "Rome",
+        "intro": "Most sights need a timed ticket and the on-site queue is long. It is worth checking in advance what can be booked."
+      }
+    }
+  ]
 }

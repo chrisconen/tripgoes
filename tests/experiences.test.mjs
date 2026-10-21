@@ -1,79 +1,88 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateWidgetEmbed, validateExperiences, widgetDocument, experiencesPage, WIDGET_SCRIPT_HOSTS } from '../src/experiences.mjs';
+import { readFile } from 'node:fs/promises';
+import { validateWidget, validateExperiences, widgetPolicy, experiencesPage, WIDGET_HOSTS } from '../src/experiences.mjs';
 
-const embed = '<div id="tp-widget"></div><script async src="https://tp.media/content?promo_id=1&shmarker=793137" charset="utf-8"></script>';
+const widget = (changes = {}) => ({
+  src: 'https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=3&locale=en&shmarker=793137.793137&trs=588496',
+  hosts: { script: ['https://tpscr.com', 'https://wegotrip.com'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'], connect: ['https://tpo.gg'] },
+  ...changes,
+});
 const section = (changes = {}) => ({
-  id: 'budapest', height: 420,
-  hu: { title: 'Budapest', intro: 'Belépők és séták a városban, foglalható időpontokkal és a szolgáltató saját feltételeivel.' },
-  en: { title: 'Budapest', intro: 'Tickets and walking tours in the city, with bookable times and the provider’s own conditions.' },
-  embed, ...changes,
+  id: 'budapest', cityId: '3054643',
+  hu: { title: 'Budapest', intro: 'Belépők, séták és vezetett programok a városban, foglalható időpontokkal.' },
+  en: { title: 'Budapest', intro: 'Tickets, walks and guided activities in the city, with bookable times.' },
+  ...changes,
 });
-const config = (changes = {}) => ({ version: 1, sections: [section()], ...changes });
+const config = (changes = {}) => ({ version: 1, widget: widget(), sections: [section()], ...changes });
 
-test('a widget snippet may only load scripts from allowed partner hosts', () => {
-  const result = validateWidgetEmbed(embed);
-  assert.equal(result.sources.length, 1);
-  assert.ok(WIDGET_SCRIPT_HOSTS.includes(new URL(result.sources[0]).hostname));
+test('the widget template is checked against allowed hosts and parameters', () => {
+  const parsed = validateWidget(widget());
+  assert.ok(WIDGET_HOSTS.includes(new URL(parsed.src).hostname));
+  assert.deepEqual(parsed.hosts.frame, ['https://wegotrip.com']);
   for (const broken of [
-    '', '   ', 42,
-    '<script async src="https://evil.example/widget.js"></script>',
-    '<script async src="http://tp.media/content"></script>',
-    '<script>alert(1)</script>',
-    '<script async src="https://tp.media/content">doSomething()</script>',
-    '<div onclick="alert(1)"></div><script async src="https://tp.media/content"></script>',
-    '<iframe src="https://tp.media/content"></iframe>',
-    '<script async src="https://tp.media/content" onload="x()"></script>',
-    '<div id="x"></div>',
-    '<p>Marketing copy we did not write</p><script async src="https://tp.media/content"></script>',
-  ]) assert.throws(() => validateWidgetEmbed(broken), TypeError, String(broken).slice(0, 40));
+    undefined, { src: 'not a url', hosts: widget().hosts },
+    widget({ src: 'http://tpscr.com/content?powered_by=false' }),
+    widget({ src: 'https://evil.example/content?powered_by=false' }),
+    // The attribution badge must stay off, and the city is never baked in.
+    widget({ src: 'https://tpscr.com/content?promo_id=4489&powered_by=true' }),
+    widget({ src: 'https://tpscr.com/content?promo_id=4489&powered_by=false&city_id=3054643' }),
+    widget({ src: 'https://tpscr.com/content?promo_id=4489&powered_by=false&redirect=https://evil.example' }),
+    widget({ hosts: { script: ['https://evil.example'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'], connect: ['https://tpo.gg'] } }),
+    widget({ hosts: { script: ['https://tpscr.com/path'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'], connect: ['https://tpo.gg'] } }),
+    widget({ hosts: { script: ['https://tpscr.com'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'] } }),
+    widget({ hosts: { script: ['https://tpscr.com'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'], connect: ['https://tpo.gg'], other: ['https://x.example'] } }),
+  ]) assert.throws(() => validateWidget(broken), TypeError, String(JSON.stringify(broken)).slice(0, 60));
 });
 
-test('configuration requires bilingual copy, a bounded height and unique ids', () => {
-  const sections = validateExperiences(config());
-  assert.equal(sections.length, 1);
-  assert.equal(sections[0].hu.title, 'Budapest');
+test('every section becomes the same template with its own city', () => {
+  const { sections } = validateExperiences(config({ sections: [section(), section({ id: 'rome', cityId: '3169070' })] }));
+  assert.equal(sections.length, 2);
+  assert.equal(new URL(sections[0].src).searchParams.get('city_id'), '3054643');
+  assert.equal(new URL(sections[1].src).searchParams.get('city_id'), '3169070');
+  assert.equal(new URL(sections[1].src).searchParams.get('powered_by'), 'false');
+  // Adding a destination is configuration, never a new snippet.
+  assert.equal(new URL(sections[0].src).origin, new URL(sections[1].src).origin);
+});
+
+test('configuration requires bilingual copy, unique ids and a plausible city', () => {
   for (const broken of [
-    null, { version: 2, sections: [section()] }, { version: 1, sections: [] },
+    null, { version: 2, widget: widget(), sections: [section()] }, config({ sections: [] }),
     config({ sections: [section(), section()] }),
     config({ sections: [section({ id: 'Budapest' })] }),
-    config({ sections: [section({ height: 10 })] }),
+    config({ sections: [section({ cityId: '12' })] }),
+    config({ sections: [section({ cityId: 3054643 })] }),
     config({ sections: [section({ hu: { title: 'Budapest', intro: 'Rövid.' } })] }),
     config({ sections: [section({ en: undefined })] }),
   ]) assert.throws(() => validateExperiences(broken), TypeError);
 });
 
-test('each widget gets its own sandboxed document with a policy of its own', () => {
-  const [parsed] = validateExperiences(config());
-  const html = widgetDocument(parsed, 'hu');
-  assert.ok(html.startsWith('<!doctype html>'));
-  assert.ok(html.includes('https://tp.media'));
-  assert.ok(html.includes("default-src 'none'"));
-  assert.ok(html.includes('name="robots" content="noindex"'));
-  assert.ok(html.includes(embed.split('><script')[1] ? 'tp.media/content' : 'tp.media'));
-  // The widget document is where third-party code is allowed, nowhere else.
-  assert.ok(!html.includes('tripgoes-api'));
+test('the policy widens only for the declared hosts', () => {
+  const { widget: parsed } = validateExperiences(config());
+  const policy = widgetPolicy(parsed);
+  assert.equal(policy.scriptExtra, ' https://tpscr.com https://wegotrip.com');
+  assert.equal(policy.imgExtra, ' https://tpscr.com');
+  assert.equal(policy.frameSrc, 'https://wegotrip.com');
+  assert.deepEqual(policy.connectExtra, ['https://tpo.gg']);
 });
 
-test('the page frames each widget without granting it this origin', () => {
-  const sections = validateExperiences(config());
-  const html = experiencesPage(sections, 'hu');
-  assert.ok(html.includes('src="/widgets/budapest-hu.html"'));
-  assert.ok(html.includes('sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"'));
-  assert.ok(!html.includes('allow-same-origin'));
-  assert.ok(html.includes('referrerpolicy="no-referrer"'));
-  assert.ok(html.includes('loading="lazy"'));
-  // Commission disclosure stays on the page itself, not inside the partner frame.
+test('the page carries the partner script, the disclosure and escaped copy', () => {
+  const parsed = validateExperiences(config());
+  const html = experiencesPage(parsed, 'hu');
+  assert.ok(html.includes('<script async src="https://tpscr.com/content?'));
+  assert.ok(html.includes('city_id=3054643'));
   assert.ok(html.includes('jutalékot kaphatunk'));
-  assert.ok(experiencesPage(sections, 'en').includes('src="/widgets/budapest-en.html"'));
-  assert.ok(experiencesPage(sections, 'en').includes('commission'));
-  assert.ok(!html.includes('<script'));
-  assert.throws(() => experiencesPage([], 'hu'), TypeError);
+  assert.ok(experiencesPage(parsed, 'en').includes('commission'));
+  assert.ok(html.includes('noscript'));
+  const injected = experiencesPage(validateExperiences(config({ sections: [section({ hu: { title: '<img src=x>', intro: 'Belépők, séták és vezetett programok a városban, foglalható időpontokkal.' } })] })), 'hu');
+  assert.ok(injected.includes('&lt;img src=x&gt;') && !injected.includes('<img src=x'));
+  assert.throws(() => experiencesPage({ sections: [] }, 'hu'), TypeError);
 });
 
-test('supplied copy is escaped before it reaches the page', () => {
-  const sections = validateExperiences(config({ sections: [section({ hu: { title: '<img src=x>', intro: 'Belépők és séták a városban, foglalható időpontokkal és a szolgáltató saját feltételeivel.' } })] }));
-  const html = experiencesPage(sections, 'hu');
-  assert.ok(html.includes('&lt;img src=x&gt;'));
-  assert.ok(!html.includes('<img src=x'));
+test('the shipped configuration is valid and every city is distinct', async () => {
+  const raw = JSON.parse(await readFile(new URL('../content/experiences.json', import.meta.url), 'utf8'));
+  const { sections } = validateExperiences(raw);
+  assert.ok(sections.length >= 1);
+  assert.equal(new Set(sections.map(s => s.cityId)).size, sections.length);
+  assert.ok(sections.some(s => s.id === 'budapest'));
 });
