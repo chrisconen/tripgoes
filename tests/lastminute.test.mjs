@@ -162,6 +162,16 @@ test('the frontend accepts a well-formed board and rejects every malformed one',
   for (const [index, broken] of rejected.entries()) assert.throws(() => validateLastMinutePayload(broken), TypeError, `case ${index}`);
 });
 
+test('validation output survives its own revalidation, as rendering requires', () => {
+  const once = validateLastMinutePayload(payload(), query);
+  const twice = validateLastMinutePayload(once, query);
+  assert.deepEqual(twice, once);
+  assert.ok(once.deals.every(deal => deal.returnAt === null));
+  // renderLastMinute revalidates, so it must accept an already validated board.
+  assert.ok(renderLastMinute(once, 'hu').includes('flights-card'));
+  assert.ok(renderLastMinute(validateLastMinutePayload(payload({ deals: [] })), 'en').includes('flights-state'));
+});
+
 test('the board URL is built only from a safe public endpoint', () => {
   assert.equal(buildLastMinuteUrl('https://api.example.com', query), 'https://api.example.com/v1/lastminute?origin=BUD&currency=EUR');
   assert.equal(buildLastMinuteUrl('https://api.example.com/base/', query), 'https://api.example.com/base/v1/lastminute?origin=BUD&currency=EUR');

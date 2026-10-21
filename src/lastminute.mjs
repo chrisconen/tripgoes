@@ -41,7 +41,9 @@ export function validateLastMinutePayload(data, expectedQuery) {
     for (const key of ['transfers', 'durationMinutes']) if (item[key] !== null && (!Number.isInteger(item[key]) || item[key] < 0 || item[key] > 100_000)) invalid();
     for (const key of ['airline', 'flightNumber']) if (item[key] !== null && (typeof item[key] !== 'string' || !item[key].trim() || item[key].length > 40)) invalid();
     seen.add(item.id); days.add(item.departureAt.slice(0, 10));
-    return { id: item.id, origin: item.origin, destination: item.destination, originAirport: item.originAirport, destinationAirport: item.destinationAirport, departureAt: item.departureAt, priceMinor: item.priceMinor, currency: item.currency, airline: item.airline, flightNumber: item.flightNumber, transfers: item.transfers, durationMinutes: item.durationMinutes, bookingUrl: safeFlightBookingUrl(item.bookingUrl) };
+    // returnAt stays in the normalized deal: rendering revalidates its own input,
+    // and a one-way fare must keep its explicit null rather than become undefined.
+    return { id: item.id, origin: item.origin, destination: item.destination, originAirport: item.originAirport, destinationAirport: item.destinationAirport, departureAt: item.departureAt, returnAt: null, priceMinor: item.priceMinor, currency: item.currency, airline: item.airline, flightNumber: item.flightNumber, transfers: item.transfers, durationMinutes: item.durationMinutes, bookingUrl: safeFlightBookingUrl(item.bookingUrl) };
   });
   // The board reports one fare per departure day, price ascending.
   if (deals.some((item, index) => index > 0 && item.priceMinor < deals[index - 1].priceMinor)) invalid();
