@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "widgets": [
+    {
+      "id": "esim",
+      "src": "https://tpscr.com/content?trs=588496&shmarker=793137&locale=en&powered_by=false&color_button=%23183E35&color_focused=%23183E35&secondary=%23FFFFFF&dark=%2311100f&light=%23FFFFFF&special=%23C4C4C4&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541",
+      "hosts": {
+        "script": [
+          "https://tpscr.com"
+        ],
+        "img": [
+          "https://tpscr.com",
+          "https://img.wway.io"
+        ],
+        "frame": [],
+        "connect": [
+          "https://tpo.gg",
+          "https://avsplow.com"
+        ]
+      },
+      "hu": {
+        "title": "Mobilnet külföldön",
+        "intro": "eSIM-adatcsomag több mint 200 országra. Nem kell kártyát cserélni, a telefon a leszállás után kapcsolódik."
+      },
+      "en": {
+        "title": "Mobile data abroad",
+        "intro": "eSIM data packs for more than 200 countries. No card to swap; the phone connects once you land."
+      }
+    },
+    {
+      "id": "transfer",
+      "src": "https://tpscr.com/content?currency=EUR&trs=588496&shmarker=793137&language=en&theme=1&powered_by=false&campaign_id=1&promo_id=1486",
+      "hosts": {
+        "script": [
+          "https://tpscr.com",
+          "https://widget.kiwitaxi.com"
+        ],
+        "img": [
+          "https://tpscr.com"
+        ],
+        "frame": [],
+        "connect": [
+          "https://tpo.gg",
+          "https://avsplow.com"
+        ]
+      },
+      "hu": {
+        "title": "Reptéri transzfer",
+        "intro": "Fix áras transzfer a reptérről a szállásig, előre lefoglalva. Az ár a kocsira szól, nem főre."
+      },
+      "en": {
+        "title": "Airport transfer",
+        "intro": "A fixed-price transfer from the airport to your accommodation, booked in advance. The price is per car, not per person."
+      }
+    },
+    {
+      "id": "car",
+      "src": "https://tp.media/content?campaign_id=222&promo_id=8813&shmarker=793137&trs=588496",
+      "hosts": {
+        "script": [
+          "https://tp.media"
+        ],
+        "img": [
+          "https://tp.media"
+        ],
+        "frame": [
+          "https://getrentacar.com"
+        ],
+        "connect": []
+      },
+      "hu": {
+        "title": "Autóbérlés",
+        "intro": "Bérautó-összehasonlítás több szolgáltató kínálatából. A biztosítást és a letét feltételeit a foglalás előtt érdemes elolvasni."
+      },
+      "en": {
+        "title": "Car hire",
+        "intro": "Compares rental cars across providers. Read the insurance and deposit terms before booking."
+      }
+    },
+    {
+      "id": "compensation",
+      "src": "https://tpscr.com/content?trs=588496&shmarker=793137&lang=en&powered_by=false&campaign_id=120&promo_id=8679",
+      "hosts": {
+        "script": [
+          "https://tpscr.com"
+        ],
+        "img": [
+          "https://tpscr.com"
+        ],
+        "frame": [
+          "https://static.airhelp.com"
+        ],
+        "connect": [
+          "https://tpo.gg",
+          "https://avsplow.com"
+        ]
+      },
+      "hu": {
+        "title": "Kártérítés késett járatra",
+        "intro": "Az EU 261/2004 rendelete szerint hosszabb késésért vagy törölt járatért kártérítés jár. Itt ellenőrizheted, jogosult vagy-e rá."
+      },
+      "en": {
+        "title": "Delayed flight compensation",
+        "intro": "EU regulation 261/2004 entitles you to compensation for long delays and cancellations. Check here whether your flight qualifies."
+      }
+    }
+  ]
+}

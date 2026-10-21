@@ -16,7 +16,12 @@ test('Travelpayouts runs once in every head under a matching, narrow CSP',async(
   assert.ok(head.includes(`'sha256-${hash}'`),file);
   for(const attribute of ['data-noptimize="1"','data-cfasync="false"','data-wpfc-render="false"','seraph-accel-crit="1"','data-no-defer="1"','data-cmp-ab="2"'])assert.ok(loaders[0][1].includes(attribute),file);
   assert.ok(head.indexOf('<script nowprocket')<head.indexOf('<script type="module"'),file);
-  assert.ok(!head.includes("'unsafe-inline'")&&!head.includes("'unsafe-eval'"),file);
+  assert.ok(!head.includes("'unsafe-eval'"),file);
+  // Inline styling is allowed on one route only, and only for style-src: the
+  // service widgets style themselves inline, including inside a shadow root.
+  const services=/services/.test(file);
+  assert.equal(head.includes("'unsafe-inline'"),services,file);
+  if(services)assert.ok(/style-src [^;]*'unsafe-inline'/.test(head)&&!/script-src [^;]*'unsafe-inline'/.test(head),file);
   const connect=head.match(/connect-src ([^;]+);/)[1];
   assert.ok(connect.includes('https://emrldco.com'),file);
   assert.equal(connect.includes('workers.dev'),/[/\\](?:offers|flights|last-minute)[/\\]/.test(file),file);

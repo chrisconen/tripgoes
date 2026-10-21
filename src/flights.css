@@ -37,3 +37,7 @@
 .city-map-controls button { width: 2rem; height: 2rem; display: grid; place-items: center; font-size: 1rem; line-height: 1; color: var(--ink); background: rgba(255, 255, 255, .92); border: 1px solid rgba(23, 63, 53, .2); border-radius: 8px; cursor: pointer; }
 .city-map-controls button:hover { background: #fff; border-color: rgba(23, 63, 53, .45); }
 @media (max-width: 640px) { .city-map svg { min-height: 46vh; } }
+.service-block { margin: 3rem 0; }
+.service-block h2 { margin: 0 0 .5rem; }
+.service-block > p { margin: 0 0 1.1rem; max-width: 64ch; }
+.service-widget { min-height: 80px; }

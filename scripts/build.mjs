@@ -11,6 +11,7 @@ import {offersPage} from '../src/offers.mjs';
 import {flightPage} from '../src/flights.mjs';
 import {lastMinutePage} from '../src/lastminute.mjs';
 import {validateExperiences,experiencesPage,widgetPolicy} from '../src/experiences.mjs';
+import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
@@ -34,7 +35,10 @@ const widgetCSP=experiences?widgetPolicy(experiences.widget):null;
 // The landing page shows real inventory, so it needs the real numbers.
 const highlights=experiences?{total:experiences.cities.length,
  cities:experiences.cities.slice(0,8).map(city=>({slug:city.slug,title:city.title.hu,titleEn:city.title.en,products:city.products,sample:city.samples[0]??''}))}:null;
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[])];
+const serviceConfig=JSON.parse(await readFile('content/services.json','utf8'));
+const services=serviceConfig.widgets?.length?validateServices(serviceConfig):null;
+const serviceCSP=services?servicePolicy(services):null;
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[]),...(services?['services']:[])];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
@@ -44,18 +48,25 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
- const widgets=route.split('/')[0]==='experiences'&&widgetCSP;
- values.scriptExtra=widgets?widgetCSP.scriptExtra:'';
- values.imgExtra=widgets?widgetCSP.imgExtra:'';
- values.frameSrc=widgets?widgetCSP.frameSrc:"'none'";
- values.connectSrc=[...(widgets?widgetCSP.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
- values.extraStyles=['flights','last-minute','experiences'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ const section=route.split('/')[0];
+ const widgets=section==='experiences'?widgetCSP:section==='services'?serviceCSP:null;
+ values.scriptExtra=widgets?widgets.scriptExtra:'';
+ values.imgExtra=widgets?widgets.imgExtra:'';
+ values.frameSrc=widgets?widgets.frameSrc:"'none'";
+ values.styleExtra=widgets?.styleExtra??'';
+ values.connectSrc=[...(widgets?widgets.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
+ values.extraStyles=['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
 for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
+  if(route==='services'){
+   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Útikellékek — mobilnet, transzfer, bérautó, kártérítés | TripGoes':'Travel essentials — data, transfers, car hire, compensation | TripGoes',description:lang==='hu'?'Mobilnet, reptéri transzfer, bérautó és kártérítés késett járatra. A keresés és a foglalás a szolgáltató oldalán zárul.':'Mobile data, airport transfers, car hire and delayed-flight compensation. Search and booking finish on the provider’s site.',content:`<main id="main">${servicesPage(services,lang)}</main>`,indexable:true}));
+   sitemap.push(`${origin}/${lang}/${route}/`);
+   continue;
+  }
   if(route==='experiences'){
    const hubTitle=lang==='hu'?`Élmények — foglalható programok ${experiences.cities.length} városban | TripGoes`:`Experiences — bookable activities in ${experiences.cities.length} cities | TripGoes`;
    await writeFile(`${dir}/index.html`,render({lang,route,title:hubTitle,description:lang==='hu'?'Válassz várost, és nézd meg a foglalható belépőket, sétákat és vezetett programokat. A foglalás és a fizetés a szolgáltató oldalán történik.':'Pick a city and see the bookable tickets, walks and guided activities. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang)}</main>`,indexable:true}));
