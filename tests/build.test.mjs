@@ -112,3 +112,20 @@ test('every page has one localized sharing bar and 12 static article recommendat
   assert.ok(html.includes('data-share-copy'),file);
  }
 });
+
+// The commission wording is a deliberate business decision, not an oversight:
+// it is kept off every page a visitor browses. Only the dedicated affiliate
+// page, which exists to state the relationship, may carry it.
+test('no page outside the affiliate notice tells visitors about commission',async()=>{
+ const files=(await readdir('dist',{recursive:true})).filter(path=>path.endsWith('.html'));
+ const banned=[/jutalékot kaphatunk/i,/jutalék mértéke/i,/earn a commission/i,/receive a commission/i,/commission size/i];
+ const allowed=/affiliate/;
+ let checked=0;
+ for(const file of files){
+  if(allowed.test(file))continue;
+  checked++;
+  const html=await readFile(`dist/${file}`,'utf8');
+  for(const pattern of banned)assert.ok(!pattern.test(html),`${file} still carries ${pattern}`);
+ }
+ assert.ok(checked>300,`only ${checked} pages checked`);
+});

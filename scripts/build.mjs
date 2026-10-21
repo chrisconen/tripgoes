@@ -1,4 +1,4 @@
-import {mkdir,cp,writeFile,readFile} from 'node:fs/promises';
+import {mkdir,cp,writeFile,readFile,rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {copy} from '../src/locales.mjs';
 import {loadArticles,journalIndex,journalArticle,articleImage,escapeHTML} from './journal.mjs';
@@ -17,6 +17,8 @@ const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'')
 if(new URL(origin).protocol!=='https:')throw Error('SITE_ORIGIN must use HTTPS.');
 const draft=process.env.DRAFT_BUILD==='1';
 const articles=await loadArticles({draft});
+// Start clean: a renamed or dropped page would otherwise linger and ship.
+await rm('dist',{recursive:true,force:true});
 await mkdir('dist',{recursive:true});
 await cp('src','dist/src',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});

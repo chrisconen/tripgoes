@@ -133,8 +133,12 @@ test('the hub reaches every city but loads a single widget', () => {
   for (const slug of ['budapest', 'rome']) assert.ok(html.includes(`href="/hu/experiences/${slug}/"`));
   assert.ok(!html.includes('city-picker'));
   assert.ok(experiencesPage(parsed, 'en').includes('href="/en/experiences/rome/"'));
-  assert.ok(html.includes('jutalékot kaphatunk'));
-  assert.ok(experiencesPage(parsed, 'en').includes('commission'));
+  // The commission wording is deliberately not shown to visitors; keep it out.
+  for (const page of [html, experiencesPage(parsed, 'en'), experiencesPage(parsed, 'hu', 'rome')]) {
+    for (const banned of ['jutalék', 'commission', 'affiliate', 'disclosure']) {
+      assert.ok(!page.toLowerCase().includes(banned), `"${banned}" is back on the experiences page`);
+    }
+  }
   assert.ok(html.includes('noscript'));
 });
 

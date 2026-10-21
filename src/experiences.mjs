@@ -131,7 +131,6 @@ const copy = {
     source: 'A programlistákat partnerünk állítja össze és frissíti; a kínálat nem teljes, és tételesen nem ellenőrizzük. A listák angol nyelvűek, az árak euróban értendők. A foglalás és a fizetés a szolgáltató oldalán történik.',
     featured: 'A legnagyobb választék',
     samples: 'A listán például', asOf: date => `A példák a ${date}-i állapotot tükrözik; az aktuális kínálat alább látható.`,
-    affiliate: 'Partneri programlista. A rajta keresztüli foglalás után jutalékot kaphatunk; ez nem befolyásolja, mit írunk.',
     fallback: 'A programlisták betöltéséhez JavaScript szükséges. A térkép pontjai nélküle is kattinthatók, csak nem mozgatható.',
     all: 'Összes város', guides: 'Utazási útmutatók', lastMinute: 'Last minute jegyárak',
   },
@@ -142,7 +141,6 @@ const copy = {
     source: 'These lists are compiled and updated by our partner; the selection is not exhaustive and we do not verify it item by item. Prices are shown in euro. Booking and payment take place on the provider’s website.',
     featured: 'The widest selection',
     samples: 'The list includes, for example', asOf: date => `These examples reflect ${date}; the current selection is shown below.`,
-    affiliate: 'Partner activity list. We may earn a commission on bookings made through it; it does not influence what we write.',
     fallback: 'The activity lists require JavaScript. The map’s dots stay clickable without it; only panning and zooming need it.',
     all: 'All cities', guides: 'Travel guides', lastMinute: 'Last-minute fares',
   },
@@ -161,7 +159,7 @@ function block(city, lang, heading, generated) {
   const samples = city.samples?.length
     ? `<p class="experiences-samples">${text.samples}: ${city.samples.map(escape).join(' · ')}.${generated ? ` <span>${text.asOf(generated)}</span>` : ''}</p>`
     : '';
-  return `<section class="experiences-block" aria-labelledby="experience-${city.slug}"><h2 id="experience-${city.slug}">${heading}</h2>${samples}<div class="experiences-widget"><script async src="${escape(city.src)}" charset="utf-8"></script></div><small class="experiences-disclosure">${text.affiliate}</small></section>`;
+  return `<section class="experiences-block" aria-labelledby="experience-${city.slug}"><h2 id="experience-${city.slug}">${heading}</h2>${samples}<div class="experiences-widget"><script async src="${escape(city.src)}" charset="utf-8"></script></div></section>`;
 }
 
 export function experiencesPage(data, lang = 'hu', slug = '') {
