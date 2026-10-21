@@ -7,7 +7,7 @@ import { FLIGHT_CITY_SOURCE, validateFlightCities, findFlightCities, flightCityL
 const now = Date.parse('2026-10-21T12:00:00.000Z');
 const query = (changes = {}) => ({ origin: 'BUD', destination: 'LON', departureDate: '2026-12-01', returnDate: '2026-12-05', currency: 'EUR', direct: false, oneWay: false, ...changes });
 const flight = (changes = {}) => ({ id: 'a'.repeat(64), origin: 'BUD', destination: 'LON', originAirport: 'BUD', destinationAirport: 'LHR', departureAt: '2026-12-01T10:30:00+01:00', returnAt: '2026-12-05T19:30:00Z', priceMinor: 12345, currency: 'EUR', airline: 'XX', flightNumber: '123', transfers: 0, returnTransfers: 0, durationMinutes: 300, bookingUrl: 'https://www.aviasales.com/search/BUD0112LON05121?marker=12345', ...changes });
-const response = (changes = {}) => ({ asOf: '2026-10-21T12:00:00.000Z', fetchedAt: '2026-10-21T11:59:00.000Z', cacheUntil: '2026-10-21T12:09:00.000Z', source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 }, query: query(), flights: [flight()], hasMore: false, ...changes });
+const response = (changes = {}) => ({ asOf: '2026-10-21T12:00:00.000Z', fetchedAt: '2026-10-21T11:59:00.000Z', cacheUntil: '2026-10-21T12:09:00.000Z', source: { id: 'cached-fares', name: 'Cached partner fares', kind: 'cached_search', maxProviderAgeHours: 48 }, query: query(), flights: [flight()], hasMore: false, ...changes });
 
 test('official compact city catalogue is bounded, unique and retains provenance', async () => {
   const raw = JSON.parse(await readFile(new URL('../assets/flight-cities.json', import.meta.url), 'utf8'));
@@ -66,8 +66,10 @@ test('search URLs carry only normalized explicit query values and omit one-way r
 });
 
 test('status response accepts only the documented provider and boolean configuration flag', () => {
-  assert.deepEqual(validateFlightStatus({ configured: false, source: 'aviasales-data' }), { configured: false, source: 'aviasales-data' });
-  for (const input of [null, {}, { configured: 'true', source: 'aviasales-data' }, { configured: true, source: 'other' }]) assert.throws(() => validateFlightStatus(input));
+  assert.deepEqual(validateFlightStatus({ configured: false, source: 'cached-fares' }), { configured: false, source: 'cached-fares' });
+  // Retired identifier, still accepted while previously served modules expire.
+  assert.deepEqual(validateFlightStatus({ configured: true, source: 'aviasales-data' }), { configured: true, source: 'aviasales-data' });
+  for (const input of [null, {}, { configured: 'true', source: 'cached-fares' }, { configured: true, source: 'other' }]) assert.throws(() => validateFlightStatus(input));
 });
 
 test('normalized response preserves cached-source provenance and distinguishes airport from city routes', () => {

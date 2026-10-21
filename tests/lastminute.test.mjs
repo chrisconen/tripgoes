@@ -22,7 +22,7 @@ const fare = (destination, priceMinor, departureDate, extra = {}) => ({ id: hex(
 // prefer the cheapest day rather than the first one retrieved.
 const provider = ({ departureDate }, env, options) => ({
   asOf: new Date(options.now).toISOString(), fetchedAt: new Date(options.now).toISOString(), cacheUntil: new Date(options.now + 600000).toISOString(),
-  source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 },
+  source: { id: 'cached-fares', name: 'Cached partner fares', kind: 'cached_search', maxProviderAgeHours: 48 },
   query: { origin: 'BUD', destination: null, departureDate, returnDate: null, currency: 'EUR', direct: false, oneWay: true },
   flights: [fare('LIS', 40000 - dates.indexOf(departureDate) * 1000, departureDate), fare('GDN', 12000 + dates.indexOf(departureDate) * 100, departureDate)], hasMore: false,
 });
@@ -131,13 +131,15 @@ test('the public route accepts only an origin and a known currency', async () =>
 
 const payload = (changes = {}) => ({
   asOf: '2026-10-21T12:00:00.000Z', fetchedAt: '2026-10-21T12:00:00.000Z', cacheUntil: '2026-10-21T18:00:00.000Z',
-  source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 },
+  source: { id: 'cached-fares', name: 'Cached partner fares', kind: 'cached_search', maxProviderAgeHours: 48 },
   query: { origin: 'BUD', currency: 'EUR' }, dates, deals: [fare('GDN', 12000, dates[0]), fare('LIS', 34000, dates[3])],
   completedDays: LAST_MINUTE_DAYS, requestedDays: LAST_MINUTE_DAYS, ...changes,
 });
 
 test('the frontend accepts a well-formed board and rejects every malformed one', () => {
   const valid = validateLastMinutePayload(payload(), query);
+  // Retired identifier, still accepted while previously served modules expire.
+  assert.equal(validateLastMinutePayload(payload({ source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 } }), query).source.id, 'cached-fares');
   assert.equal(valid.deals.length, 2);
   assert.equal(valid.deals[0].destination, 'GDN');
   assert.throws(() => validateLastMinutePayload(payload(), { origin: 'DEB', currency: 'EUR' }));

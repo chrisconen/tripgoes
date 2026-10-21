@@ -150,7 +150,7 @@ export async function fetchFlightPrices(input,env,{fetchImpl=fetch,now=Date.now(
    const flights=[...new Map(normalized.map(row=>[row.id,row])).values()].slice(0,RESULT_LIMIT);
    const fetchedAt=new Date(now).toISOString();
    const result={asOf:fetchedAt,fetchedAt,cacheUntil:new Date(now+10*60000).toISOString(),
-    source:{id:'aviasales-data',name:'Aviasales Data API',kind:'cached_search',maxProviderAgeHours:48},
+    source:{id:'cached-fares',name:'Cached partner fares',kind:'cached_search',maxProviderAgeHours:48},
     query,flights,hasMore:normalized.length>RESULT_LIMIT};
    if(JSON.stringify(result).includes(env.AVIASALES_API_TOKEN))invalid();
    return result;

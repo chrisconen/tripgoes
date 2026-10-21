@@ -47,7 +47,7 @@ export async function handleRequest(request,env,now=Date.now()){
   }else if(url.pathname==='/v1/offers')data=await listOffers(env.DB,registry,filters(url.searchParams),now);
   else if(url.pathname==='/v1/flights/status'){
    if(url.search)fail();
-   data={configured:hasFlightCredentials(env),source:'aviasales-data'};
+   data={configured:hasFlightCredentials(env),source:'cached-fares'};
   }
   else if(url.pathname==='/v1/flights')data=await cachedFlightPrices(env,parseFlightQuery(url.searchParams,now),now);
   else if(url.pathname==='/v1/lastminute')data=await lastMinuteBoard(env,parseLastMinuteQuery(url.searchParams),now);

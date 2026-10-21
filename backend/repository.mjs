@@ -160,7 +160,7 @@ export async function lastMinuteBoard(env,query,now,{fetchPrices=fetchFlightPric
  }
  const deals=[...cheapest.values()].sort((a,b)=>a.priceMinor-b.priceMinor||(a.id<b.id?-1:1)).slice(0,LAST_MINUTE_LIMIT);
  const data={asOf:iso(now),fetchedAt:iso(now),cacheUntil:iso(now+LAST_MINUTE_TTL),
-  source:{id:'aviasales-data',name:'Aviasales Data API',kind:'cached_search',maxProviderAgeHours:48},
+  source:{id:'cached-fares',name:'Cached partner fares',kind:'cached_search',maxProviderAgeHours:48},
   query,dates,deals,completedDays:completed.length,requestedDays:dates.length};
  await env.DB.prepare(`INSERT INTO flight_cache(query_key,payload,fetched_at,cache_until) VALUES(?,?,?,?)
  ON CONFLICT(query_key) DO UPDATE SET payload=excluded.payload,fetched_at=excluded.fetched_at,cache_until=excluded.cache_until

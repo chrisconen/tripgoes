@@ -11,7 +11,7 @@ function setup(){
  for(const file of ['0001_initial.sql','0002_flight_cache.sql'])DB.exec(readFileSync(new URL('../backend/migrations/'+file,import.meta.url),'utf8'));
  return {DB,AVIASALES_API_TOKEN:'test-only-aviasales-token-12345678',AVIASALES_MARKER:'123456',SOURCES_JSON:'[]',ALLOWED_ORIGINS:'https://tripgoes.com'};
 }
-function result(query,env,{now}){return {asOf:new Date(now).toISOString(),fetchedAt:new Date(now).toISOString(),cacheUntil:new Date(now+600000).toISOString(),source:{id:'aviasales-data',name:'Aviasales Data API',kind:'cached_search',maxProviderAgeHours:48},query,flights:[],hasMore:false}}
+function result(query,env,{now}){return {asOf:new Date(now).toISOString(),fetchedAt:new Date(now).toISOString(),cacheUntil:new Date(now+600000).toISOString(),source:{id:'cached-fares',name:'Cached partner fares',kind:'cached_search',maxProviderAgeHours:48},query,flights:[],hasMore:false}}
 test('fresh shared cache avoids upstream requests and never refreshes retrieval time',async()=>{
  const env=setup();let calls=0;const fetchPrices=(...args)=>{calls++;return result(...args)};
  const first=await cachedFlightPrices(env,query,now,{fetchPrices});
@@ -64,7 +64,7 @@ test('missing credentials fail before spending provider budget, while public sta
  await assert.rejects(cachedFlightPrices(env,query,now),e=>e.code==='flight_provider_not_configured');
  assert.equal((await env.DB.prepare('SELECT count(*) n FROM flight_provider_budget').first()).n,0);
  const request=(path,options)=>handleRequest(new Request('https://api.example.com'+path,options),env,now);
- const status=await request('/v1/flights/status');assert.equal(status.status,200);assert.deepEqual(await status.json(),{configured:false,source:'aviasales-data'});
+ const status=await request('/v1/flights/status');assert.equal(status.status,200);assert.deepEqual(await status.json(),{configured:false,source:'cached-fares'});
  const denied=await request('/v1/flights/status',{headers:{Origin:'https://evil.example'}});assert.equal(denied.status,403);
  const invalid=await request('/v1/flights?token=must-not-be-used');assert.equal(invalid.status,400);
  const preflight=await request('/v1/flights',{method:'OPTIONS',headers:{Origin:'https://tripgoes.com'}});assert.equal(preflight.status,204);env.DB.close();

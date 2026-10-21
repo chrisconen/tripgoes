@@ -66,7 +66,7 @@ test('normalized source and times disclose retrieval/cache cutoff, not invented 
  const out=await fetchRows([fixture()]);
  assert.equal(out.asOf,'2026-10-21T12:00:00.000Z');assert.equal(out.fetchedAt,out.asOf);
  assert.equal(out.cacheUntil,'2026-10-21T12:10:00.000Z');
- assert.deepEqual(out.source,{id:'aviasales-data',name:'Aviasales Data API',kind:'cached_search',maxProviderAgeHours:48});
+ assert.deepEqual(out.source,{id:'cached-fares',name:'Cached partner fares',kind:'cached_search',maxProviderAgeHours:48});
  const row=out.flights[0];assert.match(row.id,/^[0-9a-f]{64}$/);
  assert.equal(row.departureAt,'2026-12-01T00:30:00+01:00');
  assert.equal(row.destination,'LON');assert.equal(row.destinationAirport,'LHR');

@@ -1,7 +1,8 @@
-import { safeFlightBookingUrl, validateFlightStatus, buildFlightsUrl, flightValue } from './flights.mjs';
+import { safeFlightBookingUrl, validateFlightStatus, buildFlightsUrl, flightValue, SOURCE_IDS, SOURCE_NAMES } from './flights.mjs';
 import { createOfferClock } from './offers.mjs';
 
 const { escape, isObject, iata, day, timestamp, invalid, currencies } = flightValue;
+const source = () => ({ id: SOURCE_IDS[0], name: SOURCE_NAMES[0], kind: 'cached_search', maxProviderAgeHours: 48 });
 const REUSE_WINDOW = 21_600_000;
 // ponytail: one fixed origin keeps a public board at seven provider requests per
 // six hours and currency. Add an origin picker when the quota budget allows it.
@@ -22,7 +23,7 @@ export function validateLastMinutePayload(data, expectedQuery) {
   if (!isObject(data) || !timestamp(data.asOf) || !timestamp(data.fetchedAt) || !timestamp(data.cacheUntil)
     || Date.parse(data.fetchedAt) > Date.parse(data.asOf) || Date.parse(data.cacheUntil) <= Date.parse(data.fetchedAt)
     || Date.parse(data.cacheUntil) - Date.parse(data.fetchedAt) > REUSE_WINDOW
-    || !isObject(data.source) || data.source.id !== 'aviasales-data' || data.source.name !== 'Aviasales Data API' || data.source.kind !== 'cached_search' || data.source.maxProviderAgeHours !== 48
+    || !isObject(data.source) || !SOURCE_IDS.includes(data.source.id) || !SOURCE_NAMES.includes(data.source.name) || data.source.kind !== 'cached_search' || data.source.maxProviderAgeHours !== 48
     || !isObject(data.query) || !iata(data.query.origin) || !currencies.includes(data.query.currency)
     || !Array.isArray(data.dates) || !data.dates.length || data.dates.length > 31 || data.dates.some((value, index) => !day(value) || (index > 0 && value <= data.dates[index - 1]))
     || !Array.isArray(data.deals) || data.deals.length > 20
@@ -47,12 +48,12 @@ export function validateLastMinutePayload(data, expectedQuery) {
   });
   // The board reports one fare per departure day, price ascending.
   if (deals.some((item, index) => index > 0 && item.priceMinor < deals[index - 1].priceMinor)) invalid();
-  return { asOf: data.asOf, fetchedAt: data.fetchedAt, cacheUntil: data.cacheUntil, source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 }, query: { origin: data.query.origin, currency: data.query.currency }, dates: [...data.dates], deals, completedDays: data.completedDays, requestedDays: data.requestedDays };
+  return { asOf: data.asOf, fetchedAt: data.fetchedAt, cacheUntil: data.cacheUntil, source: source(), query: { origin: data.query.origin, currency: data.query.currency }, dates: [...data.dates], deals, completedDays: data.completedDays, requestedDays: data.requestedDays };
 }
 
 const copy = {
   hu: {
-    eye: 'LAST MINUTE / AVIASALES DATA API', title: 'Hét nap.<br><em>Egy döntés.</em>', intro: 'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára Budapestről, napi egy ajánlattal.',
+    eye: 'LAST MINUTE / TÁROLT ÁRAK', title: 'Hét nap.<br><em>Egy döntés.</em>', intro: 'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára Budapestről, napi egy ajánlattal.',
     source: 'Gyorsítótárazott keresési adatok, legfeljebb 48 órás forrásablakból. Nem utazási csomag, nem tartalmaz szállást, és nem élő ár vagy foglalhatósági ígéret. Egy felnőtt, turistaosztály, csak odaút; a poggyász és a további díjak nem ismertek.',
     window: 'Vizsgált indulási napok', refresh: 'Lista frissítése', statusRetry: 'Kapcsolat újraellenőrzése',
     privacy: 'Az oldal megnyitásakor egy névtelen lekérés indul a TripGoes API-hoz. A lista hat órán át közös gyorsítótárból érkezik, felhasználói azonosítás nélkül.',
@@ -63,11 +64,11 @@ const copy = {
     results: 'Legolcsóbb tárolt árak', count: 'Megjelenített napok', retrieved: 'API-lekérés ideje', reuse: 'TripGoes újrahasználati határ', timing: 'A lekérés ideje nem az ár felfedezésének időpontja. A forrás nem ad megbízható, egyedi ármegfigyelési időt.',
     partial: 'nap adatai hiányoznak a vizsgált hétből; a lista ennyivel kevesebb napra épül.',
     fare: 'Tárolt egyirányú jegyár · 1 felnőtt', departureLabel: 'Indulás', airport: 'Jelzett repülőterek', airline: 'Légitársaság / járat', stops: 'Átszállások', duration: 'Jelzett repülési idő', minutes: 'perc', unknown: 'Nem közölt',
-    extras: 'A visszautat, a poggyászt és a további díjakat a szolgáltatónál állítsd össze és ellenőrizd. Teljes utazási költséget nem számolunk belőle, és TripScore-t sem adunk rá.', book: 'Ellenőrzés az Aviasales oldalán', affiliate: 'Partnerlink. A végleges árat és feltételeket a foglalási oldalon látod.',
+    extras: 'A visszautat, a poggyászt és a további díjakat a szolgáltatónál állítsd össze és ellenőrizd. Teljes utazási költséget nem számolunk belőle, és TripScore-t sem adunk rá.', book: 'Ajánlat megnyitása a foglalási oldalon', affiliate: 'Partnerlink. A végleges árat és feltételeket a foglalási oldalon látod.',
     planner: 'Saját teljes költség megtervezése', flights: 'Saját repülőjegy-keresés', noJS: 'A listához JavaScript szükséges.',
   },
   en: {
-    eye: 'LAST MINUTE / AVIASALES DATA API', title: 'Seven days.<br><em>One decision.</em>', intro: 'The cheapest cached one-way fare from Budapest for each of the next seven departure days, one per day.',
+    eye: 'LAST MINUTE / CACHED FARES', title: 'Seven days.<br><em>One decision.</em>', intro: 'The cheapest cached one-way fare from Budapest for each of the next seven departure days, one per day.',
     source: 'Cached search data from a provider window of up to 48 hours. This is not a package, includes no accommodation, and is not a live price or an availability promise. One adult, economy, one way; baggage and additional fees are unknown.',
     window: 'Departure days covered', refresh: 'Refresh the list', statusRetry: 'Check connection again',
     privacy: 'Opening this page starts one anonymous request to the TripGoes API. The list is served from a shared six-hour cache, with no user identification.',
@@ -78,7 +79,7 @@ const copy = {
     results: 'Cheapest cached fares', count: 'Days displayed', retrieved: 'API retrieval time', reuse: 'TripGoes reuse cutoff', timing: 'Retrieval time is not when a fare was discovered. The source does not provide a reliable observation timestamp for each individual price.',
     partial: 'day(s) of the covered week are missing; the list is built from fewer days.',
     fare: 'Cached one-way fare · 1 adult', departureLabel: 'Departure', airport: 'Reported airports', airline: 'Airline / flight', stops: 'Stops', duration: 'Reported flight time', minutes: 'min', unknown: 'Not provided',
-    extras: 'Arrange and confirm the return leg, baggage and additional fees with the provider. We do not calculate a complete trip cost or assign a TripScore from this fare.', book: 'Check on Aviasales', affiliate: 'Affiliate link. Confirm the final price and conditions on the booking page.',
+    extras: 'Arrange and confirm the return leg, baggage and additional fees with the provider. We do not calculate a complete trip cost or assign a TripScore from this fare.', book: 'Open on the booking site', affiliate: 'Affiliate link. Confirm the final price and conditions on the booking page.',
     planner: 'Plan your complete trip cost', flights: 'Search flights yourself', noJS: 'The list requires JavaScript.',
   },
 };
@@ -95,7 +96,7 @@ export function renderLastMinute(data, lang = 'hu') {
   const shown = value => value === null ? text.unknown : escape(value);
   const missing = payload.requestedDays - payload.completedDays;
   const price = item => escape(new Intl.NumberFormat(locale(language), { style: 'currency', currency: item.currency }).format(item.priceMinor / 100));
-  return `<div class="flights-timing"><div><span>${text.window}</span><strong>${escape(payload.dates[0])} – ${escape(payload.dates[payload.dates.length - 1])}</strong></div><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}${missing ? ` ${missing} ${text.partial}` : ''}</p></div><div class="flights-grid">${payload.deals.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">Aviasales Data API · ${text.fare}</p><h3>${item.origin} <span aria-hidden="true">→</span> ${item.destination}</h3><strong class="flights-price">${price(item)}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div><div><dt>${text.airport}</dt><dd>${shown(item.originAirport)} → ${shown(item.destinationAirport)}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>`;
+  return `<div class="flights-timing"><div><span>${text.window}</span><strong>${escape(payload.dates[0])} – ${escape(payload.dates[payload.dates.length - 1])}</strong></div><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}${missing ? ` ${missing} ${text.partial}` : ''}</p></div><div class="flights-grid">${payload.deals.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">${text.fare}</p><h3>${item.origin} <span aria-hidden="true">→</span> ${item.destination}</h3><strong class="flights-price">${price(item)}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div><div><dt>${text.airport}</dt><dd>${shown(item.originAirport)} → ${shown(item.destinationAirport)}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>`;
 }
 
 export function lastMinutePage(lang = 'hu') {

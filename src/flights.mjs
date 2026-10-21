@@ -8,6 +8,10 @@ const iata = value => typeof value === 'string' && /^[A-Z]{3}$/.test(value);
 const day = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 const timestamp = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/.test(value) && day(value.slice(0, 10)) && Number.isFinite(Date.parse(value));
 const invalid = () => { throw new TypeError('Invalid flight data.'); };
+// Retired public identifier, accepted until cached modules expire.
+export const SOURCE_IDS = ['cached-fares', 'aviasales-data'];
+export const SOURCE_NAMES = ['Cached partner fares', 'Aviasales Data API'];
+const publicSource = () => ({ id: SOURCE_IDS[0], name: SOURCE_NAMES[0], kind: 'cached_search', maxProviderAgeHours: 48 });
 export function flightDateBounds(now = Date.now()) {
   if (!Number.isFinite(now)) invalid();
   const today = new Date(now).toISOString().slice(0, 10);
@@ -31,7 +35,7 @@ export function buildFlightsUrl(apiBase, query, now = Date.now()) {
   return url.href;
 }
 export function validateFlightStatus(data) {
-  if (!isObject(data) || typeof data.configured !== 'boolean' || data.source !== 'aviasales-data') invalid();
+  if (!isObject(data) || typeof data.configured !== 'boolean' || !SOURCE_IDS.includes(data.source)) invalid();
   return { configured: data.configured, source: data.source };
 }
 export function safeFlightBookingUrl(value) {
@@ -47,7 +51,7 @@ export function validateFlightsPayload(data, expectedQuery) {
   if (!isObject(data) || !timestamp(data.asOf) || !timestamp(data.fetchedAt) || !timestamp(data.cacheUntil)
     || Date.parse(data.fetchedAt) > Date.parse(data.asOf) || Date.parse(data.cacheUntil) <= Date.parse(data.fetchedAt)
     || Date.parse(data.cacheUntil) - Date.parse(data.fetchedAt) > 600_000
-    || !isObject(data.source) || data.source.id !== 'aviasales-data' || data.source.name !== 'Aviasales Data API' || data.source.kind !== 'cached_search' || data.source.maxProviderAgeHours !== 48
+    || !isObject(data.source) || !SOURCE_IDS.includes(data.source.id) || !SOURCE_NAMES.includes(data.source.name) || data.source.kind !== 'cached_search' || data.source.maxProviderAgeHours !== 48
     || !Array.isArray(data.flights) || data.flights.length > 20 || typeof data.hasMore !== 'boolean') invalid();
   const query = validateFlightQuery(data.query, Date.parse(data.asOf));
   if (expectedQuery && Object.keys(query).some(key => query[key] !== expectedQuery[key])) invalid();
@@ -66,12 +70,12 @@ export function validateFlightsPayload(data, expectedQuery) {
     seen.add(item.id);
     return { id: item.id, origin: item.origin, destination: item.destination, originAirport: item.originAirport, destinationAirport: item.destinationAirport, departureAt: item.departureAt, returnAt: item.returnAt, priceMinor: item.priceMinor, currency: item.currency, airline: item.airline, flightNumber: item.flightNumber, transfers: item.transfers, returnTransfers: item.returnTransfers, durationMinutes: item.durationMinutes, bookingUrl: safeFlightBookingUrl(item.bookingUrl) };
   });
-  return { asOf: data.asOf, fetchedAt: data.fetchedAt, cacheUntil: data.cacheUntil, source: { id: 'aviasales-data', name: 'Aviasales Data API', kind: 'cached_search', maxProviderAgeHours: 48 }, query, flights, hasMore: data.hasMore };
+  return { asOf: data.asOf, fetchedAt: data.fetchedAt, cacheUntil: data.cacheUntil, source: publicSource(), query, flights, hasMore: data.hasMore };
 }
 
 const copy = {
   hu: {
-    eye: 'REPÜLŐJEGYEK / AVIASALES DATA API', title: 'Egy új út<br><em>első nyoma.</em>', intro: 'Nézz körül a korábbi keresésekből származó repülőjegyárak között. Egy konkrét úti célhoz vagy egy nyitott tervhez.',
+    eye: 'REPÜLŐJEGYEK / TÁROLT ÁRAK', title: 'Egy új út<br><em>első nyoma.</em>', intro: 'Nézz körül a korábbi keresésekből származó repülőjegyárak között. Egy konkrét úti célhoz vagy egy nyitott tervhez.',
     source: 'Gyorsítótárazott keresési adatok, legfeljebb 48 órás forrásablakból. Nem élő ár vagy foglalhatósági ígéret. Egy felnőtt, turistaosztály; a poggyász, díjak és helyi eljutás teljes költsége nem ismert.',
     departure: 'Indulás napja', return: 'Visszaút napja', currency: 'Pénznem', oneWay: 'Csak odaút', direct: 'Csak közvetlen járatok', search: 'Árak keresése', refresh: 'Újrakeresés', statusRetry: 'Kapcsolat újraellenőrzése',
     datesHint: 'Holnaptól legfeljebb egy évre előre, UTC naptári napok szerint. Az időpontokat a szolgáltatónál is ellenőrizd.',
@@ -84,10 +88,10 @@ const copy = {
     invalid: 'Válassz indulási IATA-kódot, érvényes dátumokat és pénznemet. Városnevet válassz a listából; tetszőleges szövegből nem találunk ki repülőteret.',
     results: 'Talált árak', count: 'Megjelenített találatok', retrieved: 'API-lekérés ideje', reuse: 'TripGoes újrahasználati határ', timing: 'A lekérés ideje nem az ár felfedezésének időpontja. A forrás nem ad megbízható, egyedi ármegfigyelési időt.',
     fare: 'Tárolt jegyár · 1 felnőtt', departureLabel: 'Odaút', returnLabel: 'Visszaút', airport: 'Jelzett repülőterek', airline: 'Légitársaság / járat', stops: 'Átszállások oda / vissza', duration: 'Jelzett teljes repülési idő', minutes: 'perc', unknown: 'Nem közölt', notApplicable: '—',
-    extras: 'A poggyász és további díjak feltételeit ellenőrizd. A teljes utazási költséget ebből nem számoljuk ki, és TripScore-t sem adunk rá.', book: 'Ellenőrzés az Aviasales oldalán', affiliate: 'Partnerlink. A végleges árat és feltételeket a foglalási oldalon látod.', more: 'További tárolt találatok is lehetnek. Szűkítsd a keresést; itt legfeljebb 20 jelenik meg.', planner: 'Saját teljes költség megtervezése', guides: 'Utazási útmutatók', noJS: 'A kereséshez JavaScript szükséges.',
+    extras: 'A poggyász és további díjak feltételeit ellenőrizd. A teljes utazási költséget ebből nem számoljuk ki, és TripScore-t sem adunk rá.', book: 'Ajánlat megnyitása a foglalási oldalon', affiliate: 'Partnerlink. A végleges árat és feltételeket a foglalási oldalon látod.', more: 'További tárolt találatok is lehetnek. Szűkítsd a keresést; itt legfeljebb 20 jelenik meg.', planner: 'Saját teljes költség megtervezése', guides: 'Utazási útmutatók', noJS: 'A kereséshez JavaScript szükséges.',
   },
   en: {
-    eye: 'FLIGHTS / AVIASALES DATA API', title: 'The first clue<br><em>to your next trip.</em>', intro: 'Explore flight prices from previous searches. Start with a destination in mind, or leave room for a new idea.',
+    eye: 'FLIGHTS / CACHED FARES', title: 'The first clue<br><em>to your next trip.</em>', intro: 'Explore flight prices from previous searches. Start with a destination in mind, or leave room for a new idea.',
     source: 'Cached search data from a provider window of up to 48 hours. This is not a live price or an availability promise. One adult, economy; complete baggage, fee and ground-transport costs are unknown.',
     departure: 'Departure date', return: 'Return date', currency: 'Currency', oneWay: 'One way', direct: 'Direct flights only', search: 'Search prices', refresh: 'Search again', statusRetry: 'Check connection again',
     datesHint: 'From tomorrow to 365 days ahead, using UTC calendar days. Confirm the actual flight times with the provider.',
@@ -100,7 +104,7 @@ const copy = {
     invalid: 'Choose a departure IATA code, valid dates and currency. Select city names from the suggestions; we do not guess an airport from arbitrary text.',
     results: 'Prices found', count: 'Results displayed', retrieved: 'API retrieval time', reuse: 'TripGoes reuse cutoff', timing: 'Retrieval time is not when a fare was discovered. The source does not provide a reliable observation timestamp for each individual price.',
     fare: 'Cached fare · 1 adult', departureLabel: 'Outbound', returnLabel: 'Return', airport: 'Reported airports', airline: 'Airline / flight', stops: 'Stops outbound / return', duration: 'Reported total flight time', minutes: 'min', unknown: 'Not provided', notApplicable: '—',
-    extras: 'Check baggage and additional fee conditions. We do not calculate a complete trip cost or assign a TripScore from this fare.', book: 'Check on Aviasales', affiliate: 'Affiliate link. Confirm the final price and conditions on the booking page.', more: 'More cached results may exist. Narrow your search; a maximum of 20 is displayed here.', planner: 'Plan your complete trip cost', guides: 'Travel guides', noJS: 'Searching requires JavaScript.',
+    extras: 'Check baggage and additional fee conditions. We do not calculate a complete trip cost or assign a TripScore from this fare.', book: 'Open on the booking site', affiliate: 'Affiliate link. Confirm the final price and conditions on the booking page.', more: 'More cached results may exist. Narrow your search; a maximum of 20 is displayed here.', planner: 'Plan your complete trip cost', guides: 'Travel guides', noJS: 'Searching requires JavaScript.',
   },
 };
 const langCode = lang => lang === 'en' ? 'en' : 'hu';
@@ -112,7 +116,7 @@ export function renderFlights(data, lang = 'hu') {
   const payload = validateFlightsPayload(data);
   if (!payload.flights.length) return stateHTML('empty', text, language);
   const shown = value => value === null ? text.unknown : escape(value);
-  return `<div class="flights-timing"><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}</p></div><div class="flights-grid">${payload.flights.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">Aviasales Data API · ${text.fare}</p><h3>${item.origin} <span aria-hidden="true">→</span> ${item.destination}</h3><strong class="flights-price">${escape(new Intl.NumberFormat(language === 'en' ? 'en-GB' : 'hu-HU', { style: 'currency', currency: item.currency }).format(item.priceMinor / 100))}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div>${item.returnAt ? `<div><dt>${text.returnLabel}</dt><dd>${scheduledTime(item.returnAt)}</dd></div>` : ''}<div><dt>${text.airport}</dt><dd>${shown(item.originAirport)} → ${shown(item.destinationAirport)}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)} / ${payload.query.oneWay ? text.notApplicable : shown(item.returnTransfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>${payload.hasMore ? `<p class="flights-more">${text.more}</p>` : ''}`;
+  return `<div class="flights-timing"><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}</p></div><div class="flights-grid">${payload.flights.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">${text.fare}</p><h3>${item.origin} <span aria-hidden="true">→</span> ${item.destination}</h3><strong class="flights-price">${escape(new Intl.NumberFormat(language === 'en' ? 'en-GB' : 'hu-HU', { style: 'currency', currency: item.currency }).format(item.priceMinor / 100))}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div>${item.returnAt ? `<div><dt>${text.returnLabel}</dt><dd>${scheduledTime(item.returnAt)}</dd></div>` : ''}<div><dt>${text.airport}</dt><dd>${shown(item.originAirport)} → ${shown(item.destinationAirport)}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)} / ${payload.query.oneWay ? text.notApplicable : shown(item.returnTransfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>${payload.hasMore ? `<p class="flights-more">${text.more}</p>` : ''}`;
 }
 export function flightPage(lang = 'hu') {
   const language = langCode(lang), text = copy[language];

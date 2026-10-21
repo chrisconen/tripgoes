@@ -48,7 +48,7 @@ for(const lang of ['hu','en']){
    continue;
   }
   if(route==='flights'){
-   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Repülőjegy-kereső — Aviasales árak | TripGoes':'Flight finder — Aviasales fares | TripGoes',description:lang==='hu'?'Keress korábbi Aviasales-keresésekből származó jegyárakat Budapesttől a világ repülőtereiig. Az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'Explore fares from previous Aviasales searches, from Budapest to airports around the world. Confirm current prices and conditions with the provider.',content:`<main id="main">${flightPage(lang)}</main>`,indexable:false}));
+   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Repülőjegy-kereső — tárolt jegyárak | TripGoes':'Flight finder — cached fares | TripGoes',description:lang==='hu'?'Keress korábbi keresésekből származó, tárolt jegyárakat Budapesttől a világ repülőtereiig. Az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'Explore cached fares from previous searches, from Budapest to airports around the world. Confirm current prices and conditions with the provider.',content:`<main id="main">${flightPage(lang)}</main>`,indexable:false}));
    continue;
   }
   if(route==='offers'){
