@@ -106,7 +106,7 @@ export async function reserveFlightFetch(db,now){
 }
 export async function cachedFlightPrices(env,query,now,{fetchPrices=fetchFlightPrices}={}){
  if(!hasFlightCredentials(env))fail('flight_provider_not_configured',503);
- const cacheKey=await sha256(JSON.stringify(['aviasales-v1',env.AVIASALES_MARKER,query]));
+ const cacheKey=await sha256(JSON.stringify(['fares-v2',env.AVIASALES_MARKER,query]));
  const cached=await env.DB.prepare('SELECT payload,fetched_at,cache_until FROM flight_cache WHERE query_key=? AND cache_until>? AND fetched_at<=?').bind(cacheKey,now,now).first();
  if(cached){
   const data=JSON.parse(cached.payload);
@@ -134,7 +134,7 @@ export function lastMinuteDates(now){
 export async function lastMinuteBoard(env,query,now,{fetchPrices=fetchFlightPrices}={}){
  if(!hasFlightCredentials(env))fail('flight_provider_not_configured',503);
  const dates=lastMinuteDates(now);
- const cacheKey=await sha256(JSON.stringify(['lastminute-v1',env.AVIASALES_MARKER,query,dates[0]]));
+ const cacheKey=await sha256(JSON.stringify(['board-v2',env.AVIASALES_MARKER,query,dates[0]]));
  const cached=await env.DB.prepare('SELECT payload FROM flight_cache WHERE query_key=? AND cache_until>? AND fetched_at<=?').bind(cacheKey,now,now).first();
  if(cached)return {...JSON.parse(cached.payload),asOf:iso(now)};
  const attempts=await Promise.allSettled(dates.map(async departureDate=>{
