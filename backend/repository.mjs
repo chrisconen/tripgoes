@@ -121,3 +121,49 @@ export async function cachedFlightPrices(env,query,now,{fetchPrices=fetchFlightP
  WHERE excluded.fetched_at>=flight_cache.fetched_at`).bind(cacheKey,JSON.stringify(data),fetchedAt,cacheUntil).run();
  return data;
 }
+
+// Last-minute board: one shared fan-out over the next departure days, cached far
+// longer than a single price search. A ten-minute window would spend up to 84
+// upstream requests per hour on page views alone; six hours keeps a public board
+// inside FLIGHT_DAILY_LIMIT. Days that fail are reported, never silently dropped.
+export const LAST_MINUTE_DAYS=7,LAST_MINUTE_TTL=21600000,LAST_MINUTE_LIMIT=20;
+export function lastMinuteDates(now){
+ const first=Math.floor(now/86400000)*86400000+86400000;
+ return Array.from({length:LAST_MINUTE_DAYS},(_,index)=>iso(first+index*86400000).slice(0,10));
+}
+export async function lastMinuteBoard(env,query,now,{fetchPrices=fetchFlightPrices}={}){
+ if(!hasFlightCredentials(env))fail('flight_provider_not_configured',503);
+ const dates=lastMinuteDates(now);
+ const cacheKey=await sha256(JSON.stringify(['lastminute-v1',env.AVIASALES_MARKER,query,dates[0]]));
+ const cached=await env.DB.prepare('SELECT payload FROM flight_cache WHERE query_key=? AND cache_until>? AND fetched_at<=?').bind(cacheKey,now,now).first();
+ if(cached)return {...JSON.parse(cached.payload),asOf:iso(now)};
+ const attempts=await Promise.allSettled(dates.map(async departureDate=>{
+  await reserveFlightFetch(env.DB,now);
+  // One adult, one way, any destination: the documented discovery form of the
+  // same cached-price endpoint. No return leg is invented for a one-way fare.
+  return fetchPrices({origin:query.origin,destination:null,departureDate,returnDate:null,currency:query.currency,direct:false,oneWay:true},env,{now});
+ }));
+ const completed=attempts.filter(attempt=>attempt.status==='fulfilled');
+ if(!completed.length){
+  const reason=attempts[0].reason;
+  throw reason instanceof ApiError?reason:new ApiError(502,'flight_provider_unavailable');
+ }
+ // The discovery form answers with the cheapest fare of a day (observed on the
+ // official API, 2026-10-21), so the board keeps one fare per departure day.
+ // Keying by destination instead would drop a whole day whenever two days share
+ // their cheapest destination.
+ const cheapest=new Map();
+ for(const {value} of completed)for(const flight of value.flights){
+  const departureDay=flight.departureAt.slice(0,10);
+  const current=cheapest.get(departureDay);
+  if(!current||flight.priceMinor<current.priceMinor||(flight.priceMinor===current.priceMinor&&flight.id<current.id))cheapest.set(departureDay,flight);
+ }
+ const deals=[...cheapest.values()].sort((a,b)=>a.priceMinor-b.priceMinor||(a.id<b.id?-1:1)).slice(0,LAST_MINUTE_LIMIT);
+ const data={asOf:iso(now),fetchedAt:iso(now),cacheUntil:iso(now+LAST_MINUTE_TTL),
+  source:{id:'aviasales-data',name:'Aviasales Data API',kind:'cached_search',maxProviderAgeHours:48},
+  query,dates,deals,completedDays:completed.length,requestedDays:dates.length};
+ await env.DB.prepare(`INSERT INTO flight_cache(query_key,payload,fetched_at,cache_until) VALUES(?,?,?,?)
+ ON CONFLICT(query_key) DO UPDATE SET payload=excluded.payload,fetched_at=excluded.fetched_at,cache_until=excluded.cache_until
+ WHERE excluded.fetched_at>=flight_cache.fetched_at`).bind(cacheKey,JSON.stringify(data),now,now+LAST_MINUTE_TTL).run();
+ return data;
+}

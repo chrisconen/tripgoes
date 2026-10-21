@@ -19,14 +19,14 @@ test('Travelpayouts runs once in every head under a matching, narrow CSP',async(
   assert.ok(!head.includes("'unsafe-inline'")&&!head.includes("'unsafe-eval'"),file);
   const connect=head.match(/connect-src ([^;]+);/)[1];
   assert.ok(connect.includes('https://emrldco.com'),file);
-  assert.equal(connect.includes('workers.dev'),/[/\\](?:offers|flights)[/\\]/.test(file),file);
+  assert.equal(connect.includes('workers.dev'),/[/\\](?:offers|flights|last-minute)[/\\]/.test(file),file);
   assert.equal(connect.includes("'self'"),/[/\\]flights[/\\]/.test(file),file);
  }
 });
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){
-  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','offers/','flights/','blog/']){
+  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','offers/','flights/','last-minute/','blog/']){
    const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
    assert.ok(html.includes(`href="https://tripgoes.com/${lang}/${route}"`));
    assert.ok(html.includes(`hreflang="hu" href="https://tripgoes.com/hu/${route}"`));

@@ -167,3 +167,11 @@ export async function fetchFlightPrices(input,env,{fetchImpl=fetch,now=Date.now(
   try{readerRef.current?.cancel().catch(()=>{})}catch{}
  }
 }
+
+const BOARD_FIELDS=['origin','currency'];
+export function parseLastMinuteQuery(params){
+ if(!(params instanceof URLSearchParams)||[...params.keys()].some(k=>!BOARD_FIELDS.includes(k)||params.getAll(k).length!==1))fail();
+ const origin=params.get('origin'),currency=params.get('currency');
+ if(!IATA.test(origin??'')||!currencies.includes(currency))fail();
+ return {origin,currency};
+}

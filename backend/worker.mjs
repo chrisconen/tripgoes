@@ -1,6 +1,6 @@
 import {ApiError,fail,sources,validateBatch,validateWithdrawal,filters,sha256,readJSON} from './validation.mjs';
-import {saveBatch,withdrawBatch,listOffers,offerHistory,status,expire,cachedFlightPrices} from './repository.mjs';
-import {parseFlightQuery,hasFlightCredentials} from './aviasales.mjs';
+import {saveBatch,withdrawBatch,listOffers,offerHistory,status,expire,cachedFlightPrices,lastMinuteBoard} from './repository.mjs';
+import {parseFlightQuery,parseLastMinuteQuery,hasFlightCredentials} from './aviasales.mjs';
 
 function response(data,status,origin,requestId,extra={}){
  const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; frame-ancestors 'none'",'X-Request-ID':requestId,Vary:'Origin',...extra};
@@ -32,7 +32,7 @@ export async function handleRequest(request,env,now=Date.now()){
    if(!success)fail('rate_limited',429);
   }
   const history=/^\/v1\/offers\/([a-f0-9]{64})\/history$/.exec(url.pathname);
-  const publicRoute=['/v1/health','/v1/offers','/v1/flights','/v1/flights/status'].includes(url.pathname)||history;
+  const publicRoute=['/v1/health','/v1/offers','/v1/flights','/v1/flights/status','/v1/lastminute'].includes(url.pathname)||history;
   const ingest=url.pathname==='/v1/admin/ingest',withdraw=url.pathname==='/v1/admin/withdraw',adminStatus=url.pathname==='/v1/admin/status';
   if(!publicRoute&&!ingest&&!withdraw&&!adminStatus)fail('not_found',404);
   if(request.method==='OPTIONS'&&publicRoute)return response(null,204,allowedOrigin,requestId,{'Access-Control-Allow-Methods':'GET, OPTIONS','Access-Control-Max-Age':'600'});
@@ -50,6 +50,7 @@ export async function handleRequest(request,env,now=Date.now()){
    data={configured:hasFlightCredentials(env),source:'aviasales-data'};
   }
   else if(url.pathname==='/v1/flights')data=await cachedFlightPrices(env,parseFlightQuery(url.searchParams,now),now);
+  else if(url.pathname==='/v1/lastminute')data=await lastMinuteBoard(env,parseLastMinuteQuery(url.searchParams),now);
   else if(history)data=await offerHistory(env.DB,registry,history[1],now);
   else if(adminStatus)data=await status(env.DB,registry,now);
   else if(withdraw){data=await withdrawBatch(env.DB,validateWithdrawal(await readJSON(request),registry),now);httpStatus=data.replayed?200:201}

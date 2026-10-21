@@ -211,3 +211,6 @@ export function initFlights(lang, { apiBase } = {}) {
   checkStatus();
   return () => { disposed = true; generation++; statusVersion++; searchController?.abort(); statusController?.abort(); clearTimeout(timer); cleanupCities(); document.removeEventListener('visibilitychange', visibility); };
 }
+
+// Shared with the last-minute board: one validation vocabulary for provider data.
+export const flightValue = { escape, isObject, iata, day, timestamp, invalid, currencies };
