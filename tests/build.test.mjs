@@ -2,6 +2,26 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile,stat,readdir } from 'node:fs/promises';
 import {loadArticles,articleImage,escapeHTML} from '../scripts/journal.mjs';
+import {createHash} from 'node:crypto';
+
+test('Travelpayouts runs once in every head under a matching, narrow CSP',async()=>{
+ const files=(await readdir('dist',{recursive:true})).filter(path=>path.endsWith('.html'));
+ for(const file of files){
+  const html=await readFile(`dist/${file}`,'utf8');
+  const head=html.split('</head>')[0];
+  const loaders=[...head.matchAll(/<script nowprocket([^>]*)>([\s\S]*?)<\/script>/g)];
+  assert.equal(loaders.length,1,file);
+  assert.equal(html.split('https://emrldco.com/NTg4NDk2.js?t=588496').length-1,1,file);
+  const hash=createHash('sha256').update(loaders[0][2].replaceAll('\r\n','\n')).digest('base64');
+  assert.ok(head.includes(`'sha256-${hash}'`),file);
+  for(const attribute of ['data-noptimize="1"','data-cfasync="false"','data-wpfc-render="false"','seraph-accel-crit="1"','data-no-defer="1"','data-cmp-ab="2"'])assert.ok(loaders[0][1].includes(attribute),file);
+  assert.ok(head.indexOf('<script nowprocket')<head.indexOf('<script type="module"'),file);
+  assert.ok(!head.includes("'unsafe-inline'")&&!head.includes("'unsafe-eval'"),file);
+  const connect=head.match(/connect-src ([^;]+);/)[1];
+  assert.ok(connect.includes('https://emrldco.com'),file);
+  assert.equal(connect.includes('workers.dev'),/[/\\]offers[/\\]/.test(file),file);
+ }
+});
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){

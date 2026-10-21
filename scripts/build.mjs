@@ -1,4 +1,5 @@
 import {mkdir,cp,writeFile,readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import {copy} from '../src/locales.mjs';
 import {loadArticles,journalIndex,journalArticle,articleImage,escapeHTML} from './journal.mjs';
 import {checkerPage} from '../src/checker.mjs';
@@ -16,7 +17,12 @@ const articles=await loadArticles({draft});
 await mkdir('dist',{recursive:true});
 await cp('src','dist/src',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});
-const shell=(await readFile('index.html','utf8')).replaceAll('{{origin}}',origin);
+// HTML parsing normalizes CRLF; hash the same bytes on Windows and in CI.
+const template=(await readFile('index.html','utf8')).replaceAll('\r\n','\n');
+const travelpayoutsCode=template.match(/<script nowprocket[^>]*>([\s\S]*?)<\/script>/)?.[1];
+if(!travelpayoutsCode)throw Error('Travelpayouts loader missing from shared head.');
+const travelpayoutsHash=createHash('sha256').update(travelpayoutsCode).digest('base64');
+const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayoutsHash}}',travelpayoutsHash);
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers'];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
@@ -27,7 +33,7 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
- values.connectSrc=route==='offers'&&apiBase?new URL(apiBase).origin:"'none'";
+ values.connectSrc=['https://emrldco.com',...(route==='offers'&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
  values.extraStyles=route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }

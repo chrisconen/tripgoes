@@ -18,7 +18,7 @@ Live at **https://tripgoes.com**. An original bilingual travel journal and trans
 - A separate Workers/D1 offer-data API: source allowlists, transactional imports, immutable price observations, idempotent receipts, withdrawal and expiry handling, protected CLI administration and production rate limiting. Details: `backend/README.md`.
 - HU/EN offer search with source and timestamp disclosure, explicit request controls, price-history tables and expiry checks independent of the visitor's system clock. It shows an honest empty inventory until an approved data source is connected.
 - Budapest remains the Hungarian homepage default. Unknown departure costs never fall back to Budapest: incomplete sample totals are labelled and excluded by finite budget filters. The calculator accepts an explicit return ground-transport cost, including a known zero.
-- Explicit direct provider links with no affiliate tracking or claimed commercial relationship.
+- Travelpayouts Drive project 588496 loads from `emrldco.com` in the shared head on every page. Provider links may become affiliate links according to the project configuration; registration does not establish approval by every travel brand or an active offer feed.
 - Canonical URLs, matching locale alternates, article Open Graph metadata and a sitemap.
 - Complete static page content, navigation and footer; browser code preserves the existing document and loads score, planner and journal interactions only on their relevant routes.
 
