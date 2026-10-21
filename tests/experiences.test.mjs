@@ -118,26 +118,25 @@ test('the policy widens only for the declared hosts', () => {
   assert.deepEqual(policy.connectExtra, ['https://tpo.gg']);
 });
 
-test('the hub offers every city but loads a single widget', () => {
+test('the hub reaches every city but loads a single widget', () => {
   const parsed = validateExperiences(config());
   const html = experiencesPage(parsed, 'hu');
   assert.equal(html.match(/tpscr\.com\/content\?/g).length, 1);
-  assert.ok(html.includes('<details class="city-picker" open>'));
+  // The map is the only picker now, so every city must be reachable from it.
   for (const slug of ['budapest', 'rome']) assert.ok(html.includes(`href="/hu/experiences/${slug}/"`));
-  assert.ok(html.includes('Magyarország') && html.includes('Olaszország'));
-  assert.ok(experiencesPage(parsed, 'en').includes('>Italy<') && experiencesPage(parsed, 'en').includes('href="/en/experiences/rome/"'));
+  assert.ok(!html.includes('city-picker'));
+  assert.ok(experiencesPage(parsed, 'en').includes('href="/en/experiences/rome/"'));
   assert.ok(html.includes('jutalékot kaphatunk'));
   assert.ok(experiencesPage(parsed, 'en').includes('commission'));
   assert.ok(html.includes('noscript'));
 });
 
-test('a city page shows that city only, with the picker collapsed', () => {
+test('a city page shows that city only, and keeps the map to switch', () => {
   const parsed = validateExperiences(config());
   const html = experiencesPage(parsed, 'hu', 'rome');
   assert.equal(html.match(/tpscr\.com\/content\?/g).length, 1);
   assert.ok(html.includes('city_id=3169070') && !html.includes('city_id=3054643'));
-  assert.ok(html.includes('<details class="city-picker">'));
-  assert.ok(html.includes('aria-current="page">Róma</a>'));
+  assert.ok(html.includes('aria-current="page"><title>Róma'));
   assert.ok(html.includes('href="/hu/experiences/"'));
   // The examples are dated, because the widget below them is live.
   assert.ok(html.includes('A listán például') && html.includes('2026-10-21'));
@@ -149,6 +148,8 @@ test('city copy is escaped wherever it is rendered', () => {
   const parsed = validateExperiences(config({ cities: [city({ hu: '<img src=x>', top: ['<svg onload=1>'] })] }));
   const html = experiencesPage(parsed, 'hu', 'budapest');
   assert.ok(html.includes('&lt;img src=x&gt;') && html.includes('&lt;svg onload=1&gt;'));
+  // The city name is also a tooltip inside the map.
+  assert.ok(html.includes('<title>&lt;img src=x&gt; — Magyarország</title>'));
   assert.ok(!html.includes('<img src=x') && !html.includes('<svg onload=1'));
 });
 
