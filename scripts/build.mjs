@@ -31,12 +31,15 @@ const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayouts
 const experienceConfig=JSON.parse(await readFile('content/experiences.json','utf8'));
 const experiences=experienceConfig.cities?.length?validateExperiences(experienceConfig):null;
 const widgetCSP=experiences?widgetPolicy(experiences.widget):null;
+// The landing page shows real inventory, so it needs the real numbers.
+const highlights=experiences?{total:experiences.cities.length,
+ cities:experiences.cities.slice(0,8).map(city=>({slug:city.slug,title:city.title.hu,titleEn:city.title.en,products:city.products,sample:city.samples[0]??''}))}:null;
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[])];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
  const canonical=`${origin}/${lang}/${path}`;
- const view=createView({lang,page:route.split('/')[0],pathname:`/${lang}/${path}`});
+ const view=createView({lang,page:route.split('/')[0],pathname:`/${lang}/${path}`,highlights:highlights&&{...highlights,cities:highlights.cities.map(city=>({...city,title:lang==='en'?city.titleEn:city.title}))}});
  const main=content||(route?view.infoPage():view.home());
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
