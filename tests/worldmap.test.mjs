@@ -10,6 +10,7 @@ function mapFixture({ dots = 3, box = { left: 0, top: 0, width: WIDTH, height: H
     const cx = 100 * (index + 1), cy = 40 * (index + 1);
     return {
       attrs: { cx, cy, r: '3' },
+      dataset: { r: index === 0 ? '11' : '3' },
       cx: { baseVal: { value: cx } }, cy: { baseVal: { value: cy } },
       setAttribute(name, value) { this.attrs[name] = value; },
       getAttribute(name) { return this.attrs[name]; },
@@ -47,7 +48,8 @@ test('zooming keeps the point under the cursor still and the dots the same size 
     assert.ok(Math.abs(map.view.y + focus.y / HEIGHT * map.view.height - focus.y) < 0.01);
     // Radius is divided back out, so a zoomed map separates cities instead of
     // growing blobs.
-    assert.equal(fixture.circles[0].attrs.r, (3 * map.view.width / WIDTH).toFixed(3));
+    assert.equal(fixture.circles[0].attrs.r, (11 * map.view.width / WIDTH).toFixed(3), 'the hit disc keeps its screen size');
+    assert.equal(fixture.circles[1].attrs.r, (3 * map.view.width / WIDTH).toFixed(3), 'the visible dot keeps its screen size');
     assert.equal(fixture.svg.dataset.zoomed, 'true');
     assert.ok(Math.abs(map.view.width / map.view.height - WIDTH / HEIGHT) < 1e-9);
   } finally { fixture.restore(); }

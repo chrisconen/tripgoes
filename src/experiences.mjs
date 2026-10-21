@@ -19,6 +19,11 @@ export const MIN_TOURS = 20;
 // Equirectangular, cropped north and south of anywhere we sell. These numbers
 // are also baked into assets/world.svg; change one and you change both.
 export const MAP = { north: 78, south: -58, width: 1000 };
+// A three-unit dot is a four-pixel target at world scale, which is not a thing
+// anyone can hit. The visible dot stays small; an invisible disc takes the click.
+export const DOT = 3, HIT = 11;
+// Below this the two dots are one pixel and the lower city can never be opened.
+export const MIN_SEPARATION = 0.4;
 MAP.height = round(MAP.width * (MAP.north - MAP.south) / 360);
 function round(value) { return Math.round(value * 10) / 10; }
 
@@ -97,6 +102,14 @@ export function validateExperiences(data) {
       x: round((city.lon + 180) / 360 * MAP.width), y: round((MAP.north - city.lat) / 360 * MAP.width),
       indexable: Boolean(city.notes || samples.length) };
   });
+  for (const [index, city] of cities.entries()) {
+    const clash = cities.slice(0, index).find(other => Math.hypot(other.x - city.x, other.y - city.y) < MIN_SEPARATION);
+    if (clash) invalid(`cities ${clash.slug} and ${city.slug} land on the same dot; drop one`);
+    // A disc may not reach past half way to its closest neighbour, or a dense
+    // cluster like northern Italy lets one city swallow every click near it.
+    const nearest = Math.min(...cities.filter(other => other !== city).map(other => Math.hypot(other.x - city.x, other.y - city.y)), Infinity);
+    city.hit = round(Math.max(DOT, Math.min(HIT, nearest / 2)));
+  }
   return { widget, countries, cities, generated: typeof data.generated === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(data.generated) ? data.generated : '' };
 }
 
@@ -140,7 +153,7 @@ const copy = {
 function worldMap({ countries, cities }, lang, slug) {
   const order = [...cities].sort((a, b) => Number(a.slug === slug) - Number(b.slug === slug));
   const label = city => `${city.title[lang]} — ${lang === 'hu' ? countries[city.country] : city.country}`;
-  return `<figure class="city-map"><svg viewBox="0 0 ${MAP.width} ${MAP.height}" role="group" aria-label="${copy[lang].map(cities.length)}"><image href="/assets/world.svg" x="0" y="0" width="${MAP.width}" height="${MAP.height}"></image>${order.map(city => `<a href="/${lang}/experiences/${city.slug}/"${city.slug === slug ? ' aria-current="page"' : ''}><title>${escape(label(city))}</title><circle cx="${city.x}" cy="${city.y}" r="3" vector-effect="non-scaling-stroke"></circle></a>`).join('')}</svg><figcaption>${copy[lang].map(cities.length)}</figcaption></figure>`;
+  return `<figure class="city-map"><svg viewBox="0 0 ${MAP.width} ${MAP.height}" role="group" aria-label="${copy[lang].map(cities.length)}"><image href="/assets/world.svg" x="0" y="0" width="${MAP.width}" height="${MAP.height}"></image>${order.map(city => `<a href="/${lang}/experiences/${city.slug}/"${city.slug === slug ? ' aria-current="page"' : ''}><title>${escape(label(city))}</title><circle class="city-hit" cx="${city.x}" cy="${city.y}" r="${city.hit}" data-r="${HIT}" data-max="${city.hit}"></circle><circle cx="${city.x}" cy="${city.y}" r="${DOT}" data-r="${DOT}" vector-effect="non-scaling-stroke"></circle></a>`).join('')}</svg><figcaption>${copy[lang].map(cities.length)}</figcaption></figure>`;
 }
 
 function block(city, lang, heading, generated) {

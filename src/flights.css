@@ -24,8 +24,9 @@
 .city-map { margin: 2rem 0 0; padding: 0; }
 .city-map svg { display: block; width: 100%; height: auto; background: var(--white); border: 1px solid rgba(23, 63, 53, .18); border-radius: 12px; }
 .city-map circle { fill: var(--ink); stroke: rgba(24, 62, 53, .18); stroke-width: 2; transition: fill .15s ease, stroke .15s ease, stroke-width .15s ease; }
-.city-map a:hover circle, .city-map a:focus circle { fill: #e18c43; stroke: rgba(225, 140, 67, .35); stroke-width: 9; }
-.city-map a[aria-current="page"] circle { fill: #e18c43; stroke: rgba(225, 140, 67, .4); stroke-width: 7; }
+.city-map circle.city-hit { fill: transparent; stroke: none; pointer-events: all; }
+.city-map a:hover circle:not(.city-hit), .city-map a:focus circle:not(.city-hit) { fill: #e18c43; stroke: rgba(225, 140, 67, .35); stroke-width: 9; }
+.city-map a[aria-current="page"] circle:not(.city-hit) { fill: #e18c43; stroke: rgba(225, 140, 67, .4); stroke-width: 7; }
 .city-map a:focus { outline: none; }
 .city-map figcaption { margin-top: .55rem; font-size: .82rem; opacity: .7; }
 /* The map is the only way to a city page, so it has to work on a phone too. */

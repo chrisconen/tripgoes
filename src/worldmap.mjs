@@ -31,8 +31,15 @@ export function initWorldMap(lang = 'hu') {
     view.x = clamp(view.x, base.x, base.x + base.width - view.width);
     view.y = clamp(view.y, base.y, base.y + base.height - view.height);
     svg.setAttribute('viewBox', `${view.x.toFixed(2)} ${view.y.toFixed(2)} ${view.width.toFixed(2)} ${view.height.toFixed(2)}`);
-    const radius = (DOT_RADIUS * view.width / base.width).toFixed(3);
-    for (const dot of dots) dot.setAttribute('r', radius);
+    // Both the visible dot and the invisible hit disc keep their screen size.
+    // Zooming pushes neighbours apart, so a capped hit disc may grow back to
+    // its full screen size once there is room for it.
+    const ratio = view.width / base.width;
+    for (const dot of dots) {
+      const wanted = (Number(dot.dataset.r) || DOT_RADIUS) * ratio;
+      const cap = Number(dot.dataset.max);
+      dot.setAttribute('r', (cap > 0 ? Math.min(wanted, cap) : wanted).toFixed(3));
+    }
     svg.dataset.zoomed = String(view.width < base.width - 0.5);
   }
 

@@ -38,8 +38,7 @@
   "Turkey": "Törökország",
   "United Arab Emirates": "Egyesült Arab Emírségek",
   "United Kingdom": "Egyesült Királyság",
-  "United States": "Egyesült Államok",
-  "Vatican": "Vatikán"
+  "United States": "Egyesült Államok"
  },
  "cities": [
   {
@@ -330,22 +329,6 @@
     "Vesuvius: Rountrip Transport from Pompeii + Skip The Line Entry",
     "Mount Vesuvius: Skip The Line Ticket + Roundtrip from Naples via Vesuvio Express",
     "The National Archaeological Museum of Naples: Entry Ticket"
-   ]
-  },
-  {
-   "slug": "vatican-city",
-   "cityId": "6691831",
-   "name": "Vatican City",
-   "country": "Vatican",
-   "products": 43,
-   "hu": "Vatikán",
-   "lat": 41.9027,
-   "lon": 12.4541,
-   "top": [
-    "Rome Pantheon: Fast Track Ticket",
-    "Vatican Museums: Fast Track Ticket",
-    "Welcome to Rome: Entry Ticket",
-    "Palazzo Doria Pamphilj: Entry Ticket"
    ]
   },
   {

@@ -103,6 +103,21 @@ const cities=kept.map(city=>{
   ...(city.top?.length?{top:city.top}:{}),
   ...(before.notes?{notes:before.notes}:{})};
 });
+// Two cities on the same pixel means the lower one can never be clicked: the
+// Vatican sits inside Rome, and its tours already appear in Rome's list.
+const MIN_KM=15;
+const km=(a,b)=>{const R=6371,rad=Math.PI/180,dLat=(b.lat-a.lat)*rad,dLon=(b.lon-a.lon)*rad,
+ h=Math.sin(dLat/2)**2+Math.cos(a.lat*rad)*Math.cos(b.lat*rad)*Math.sin(dLon/2)**2;
+ return 2*R*Math.asin(Math.min(1,Math.sqrt(h)));};
+const placed=[];
+for(const city of cities.slice()){
+ const clash=placed.find(other=>km(other,city)<MIN_KM);
+ if(clash){
+  console.log(`Dropping ${city.name}: ${Math.round(km(clash,city))} km from ${clash.name}, the dots would sit on top of each other.`);
+  cities.splice(cities.indexOf(city),1);
+ } else placed.push(city);
+}
+
 const used=new Set();
 for(const city of cities)if(used.size===used.add(city.slug).size)throw Error(`Duplicate slug: ${city.slug}`);
 const names={};

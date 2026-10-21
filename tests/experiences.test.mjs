@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validateWidget, validateExperiences, widgetPolicy, experiencesPage, WIDGET_HOSTS, MIN_TOURS, MAP } from '../src/experiences.mjs';
+import { validateWidget, validateExperiences, widgetPolicy, experiencesPage, WIDGET_HOSTS, MIN_TOURS, MAP, DOT, HIT, MIN_SEPARATION } from '../src/experiences.mjs';
 
 const widget = (changes = {}) => ({
   src: 'https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=20&locale=en&shmarker=793137.793137&trs=588496',
@@ -78,6 +78,8 @@ test('configuration requires a known country, enough products and usable copy', 
     // Reykjavík would sit above the cropped map, so it must be caught, not drawn off-canvas.
     config({ cities: [city({ lat: 80 })] }),
     config({ cities: [city({ lat: -70 })] }),
+    // The Vatican sat on Rome's pixel and made Rome unclickable.
+    config({ cities: [city(), city({ slug: 'vatican-city', cityId: '6691831', name: 'Vatican City', country: 'Hungary', lat: 47.4988, lon: 19.0411 })] }),
     config({ cities: [city({ notes: { hu: 'Rövid.', en: 'Short.' } })] }),
     config({ minProducts: 5 }),
     config({ countries: [] }),
@@ -100,7 +102,12 @@ test('the map carries one titled link per city, the current one drawn last', () 
   const parsed = validateExperiences(config());
   const html = experiencesPage(parsed, 'hu', 'rome');
   const map = html.match(/<figure class="city-map">[\s\S]*?<\/figure>/)[0];
-  assert.equal(map.match(/<circle /g).length, parsed.cities.length);
+  // Each city carries an invisible disc as well, because a four-pixel dot is
+  // not a target anyone can hit.
+  assert.equal(map.match(/<circle /g).length, parsed.cities.length * 2);
+  assert.equal(map.match(/class="city-hit"/g).length, parsed.cities.length);
+  assert.ok(HIT >= 3 * DOT);
+  assert.equal(map.match(new RegExp(`\\sr="${HIT}"`, 'g')).length, parsed.cities.length);
   assert.equal(map.match(/<title>/g).length, parsed.cities.length);
   assert.ok(map.includes('<title>Róma — Olaszország</title>'));
   assert.ok(map.includes('href="/assets/world.svg"'));
@@ -167,4 +174,13 @@ test('the shipped configuration is valid and every city clears the promised coun
     assert.ok(entry.x >= 0 && entry.x <= MAP.width && entry.y >= 0 && entry.y <= MAP.height, `${entry.slug} is off the map`);
   }
   assert.ok(cities.some(entry => entry.slug === 'budapest'));
+  // No two shipped dots may land on one pixel; close pairs separate on zoom,
+  // because the hit disc shrinks with the view.
+  for (const [index, entry] of cities.entries()) {
+    for (const other of cities.slice(0, index)) {
+      const gap = Math.hypot(other.x - entry.x, other.y - entry.y);
+      assert.ok(gap >= MIN_SEPARATION, `${entry.slug} and ${other.slug} are ${gap.toFixed(2)} units apart`);
+    }
+  }
+  assert.ok(!cities.some(entry => entry.slug === 'vatican-city'), 'the Vatican sits on Rome and hides it');
 });
