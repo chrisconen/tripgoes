@@ -31,11 +31,11 @@ test('catalogue has global, unique records and finds accented and non-Latin alia
 test('free city text is escaped in fields and all city pickers are open inputs',()=>{
  const value='"><img src=x onerror=alert(1)>';
  assert.ok(!cityInput({value}).includes('<img'));
+ // The homepage no longer carries a city field; the component itself must still be safe.
  for(const lang of ['hu','en']){
-  const html=createView({lang,filters:{city:value,days:30,type:'all',budget:Infinity,scoreOnly:false,sort:'recommended'},calcState:{city:value,travelers:2,bag:true,transfer:true}}).home();
+  const html=cityInput({value,lang});
   assert.ok(html.includes('data-city-input'));
   assert.ok(!html.includes('<select name="city"'));
-  assert.ok(!html.includes('<select id="calc-city"'));
   assert.ok(!html.includes('<img src=x'));
   assert.ok(!html.includes('NaN'));
  }

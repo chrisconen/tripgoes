@@ -7,7 +7,10 @@ test('home is readable without browser globals and includes working tool destina
   const view=createView({lang});
   const html=view.header()+view.home()+view.footer();
   assert.equal((html.match(/<main /g)||[]).length,1);
-  assert.equal((html.match(/class="deal-card"/g)||[]).length,6);
+  // The invented sample offers are gone; the homepage leads with real inventory.
+  assert.equal((html.match(/class="deal-card"/g)||[]).length,0);
+  assert.ok(!html.includes('id="deal-grid"')&&!html.includes('id="search-form"')&&!html.includes('id="calculator"'));
+  assert.ok(html.includes('class="bookable-now'));
   assert.ok(html.includes(`href="/${lang}/planner/"`));
   assert.ok(html.includes(`href="/${lang}/score/"`));
   assert.ok(html.includes(`href="/${lang}/blog/"`));

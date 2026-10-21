@@ -134,3 +134,17 @@ test('no page outside the affiliate notice tells visitors about commission',asyn
  }
  assert.ok(checked>300,`only ${checked} pages checked`);
 });
+
+// Deleting a line that happened to carry a closing tag once nested a whole
+// section inside the hero image. The tests passed; only the browser showed it.
+test('every page closes the containers it opens',async()=>{
+ const files=(await readdir('dist',{recursive:true})).filter(path=>path.endsWith('.html'));
+ for(const file of files){
+  const html=await readFile(`dist/${file}`,'utf8');
+  for(const tag of ['div','section','main','article','ul','li']){
+   const open=(html.match(new RegExp(`<${tag}[\\s>]`,'g'))||[]).length;
+   const close=(html.match(new RegExp(`</${tag}>`,'g'))||[]).length;
+   assert.equal(open,close,`${file}: ${open} <${tag}> vs ${close} </${tag}>`);
+  }
+ }
+});
