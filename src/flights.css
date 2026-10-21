@@ -12,3 +12,10 @@
 @media(max-width:650px){.flights-hero{grid-template-columns:1fr;gap:26px;padding:42px 0 30px}.flights-hero h1{font-size:46px}.flights-hero>div>p:not(.flights-eyebrow){font-size:15px;margin-bottom:14px}.flights-connection{align-items:start;gap:12px;flex-direction:column}.flights-search{padding:20px}.flights-route-fields,.flights-date-fields,.flights-grid{grid-template-columns:1fr}.flights-city>input,.flights-date-fields input,.flights-date-fields select{font-size:16px}.flights-date-fields{margin-top:22px}.flights-city-list{top:81px;max-height:270px}.flights-search-bottom{flex-direction:column;gap:16px}.flights-search-bottom>.flights-button{width:100%}.flights-toggles{flex-direction:row;gap:8px 18px}.flights-results{padding-top:30px}.flights-results h2{font-size:24px}.flights-state{padding:26px}.flights-state h3{font-size:23px}.flights-next{flex-direction:column;gap:12px}.flights-timing{grid-template-columns:1fr;padding:18px}.flights-timing p{grid-column:auto}.flights-facts>div{grid-template-columns:.8fr 1.2fr;gap:12px}.flights-price{font-size:38px}.flights-card-bottom .flights-button{width:100%}}
 @media(prefers-reduced-motion:reduce){.flights-page *{scroll-behavior:auto}}
 @media print{.flights-connection,.flights-search,.flights-results-head button,.flights-card-bottom{display:none}.flights-hero{padding:20px 0}.flights-grid{grid-template-columns:1fr}.flights-card{break-inside:avoid}.flights-card-top{background:transparent;color:#173f35}.flights-source{color:#173f35}}
+
+/* Partner activity frames: isolated documents, sized by configuration. */
+.experiences-block { margin: 3rem 0; }
+.experiences-block h2 { margin: 0 0 .5rem; }
+.experiences-block > p { margin: 0 0 1rem; max-width: 60ch; }
+.experiences-frame { display: block; width: 100%; border: 1px solid rgba(23, 63, 53, .18); border-radius: 12px; background: #fff; }
+.experiences-disclosure { display: block; margin-top: .6rem; opacity: .75; }

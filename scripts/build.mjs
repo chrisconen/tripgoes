@@ -10,6 +10,7 @@ import {plannerPage} from '../src/planner.mjs';
 import {offersPage} from '../src/offers.mjs';
 import {flightPage} from '../src/flights.mjs';
 import {lastMinutePage} from '../src/lastminute.mjs';
+import {validateExperiences,experiencesPage,widgetDocument} from '../src/experiences.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
@@ -25,7 +26,9 @@ const travelpayoutsCode=template.match(/<script nowprocket[^>]*>([\s\S]*?)<\/scr
 if(!travelpayoutsCode)throw Error('Travelpayouts loader missing from shared head.');
 const travelpayoutsHash=createHash('sha256').update(travelpayoutsCode).digest('base64');
 const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayoutsHash}}',travelpayoutsHash);
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute'];
+const experienceConfig=JSON.parse(await readFile('content/experiences.json','utf8'));
+const experiences=experienceConfig.sections.length?validateExperiences(experienceConfig):[];
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences.length?['experiences']:[])];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
@@ -35,6 +38,7 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
+ values.frameSrc=route==='experiences'?"'self'":"'none'";
  values.connectSrc=['https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
  values.extraStyles=['flights','last-minute'].includes(route)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
@@ -43,6 +47,11 @@ const sitemap=[];
 for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
+  if(route==='experiences'){
+   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Élmények — foglalható programok és belépők | TripGoes':'Experiences — bookable tours and tickets | TripGoes',description:lang==='hu'?'Foglalható belépők, séták és kirándulások partnereink kínálatából, városonként. A foglalás és a fizetés a szolgáltató oldalán történik.':'Bookable tickets, walks and day trips from our partners, city by city. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang)}</main>`,indexable:true}));
+   sitemap.push(`${origin}/${lang}/${route}/`);
+   continue;
+  }
   if(route==='last-minute'){
    await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Last minute — tárolt repülőjegyárak a következő hét napra | TripGoes':'Last minute — cached fares for the next seven days | TripGoes',description:lang==='hu'?'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára Budapestről, napi egy ajánlattal. Nem utazási csomag; az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'The cheapest cached one-way fare from Budapest for each of the next seven departure days. Not a package; confirm current prices and conditions with the provider.',content:`<main id="main">${lastMinutePage(lang)}</main>`,indexable:false}));
    continue;
@@ -68,6 +77,10 @@ for(const lang of ['hu','en']){
   await writeFile(`${dir}/index.html`,render({lang,route,title:`${article[lang].title} — TripGoes`,description:article[lang].excerpt,content:journalArticle(article,articles,lang),indexable:!draft,image:articleImage(article),imageAlt:article.artwork?.alt?.[lang],ogType:'article'}));
   sitemap.push(`${origin}/${lang}/${route}/`);
  }
+}
+if(experiences.length){
+ await mkdir('dist/widgets',{recursive:true});
+ for(const section of experiences)for(const lang of ['hu','en'])await writeFile(`dist/widgets/${section.id}-${lang}.html`,widgetDocument(section,lang));
 }
 await writeFile('dist/index.html',render({lang:'hu',title:copy.hu.metaTitle}));
 await writeFile('dist/404.html',render({lang:'hu',title:'404 — TripGoes',content:createView({lang:'hu',page:'404'}).infoPage(),pageOverride:'404'}));
