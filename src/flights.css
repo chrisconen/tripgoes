@@ -19,3 +19,13 @@
 .experiences-block > p { margin: 0 0 1rem; max-width: 60ch; }
 .experiences-frame { display: block; width: 100%; border: 1px solid rgba(23, 63, 53, .18); border-radius: 12px; background: #fff; }
 .experiences-disclosure { display: block; margin-top: .6rem; opacity: .75; }
+.city-picker { margin: 2rem 0 0; border: 1px solid rgba(23, 63, 53, .18); border-radius: 12px; background: #fff; }
+.city-picker > summary { padding: .9rem 1.1rem; font-weight: 600; cursor: pointer; }
+.city-picker-grid { display: grid; gap: 1.2rem 1.6rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); padding: 0 1.1rem 1.2rem; border-top: 1px solid rgba(23, 63, 53, .12); }
+.city-picker-grid h2 { margin: 1rem 0 .4rem; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; opacity: .6; }
+.city-picker-grid ul { margin: 0; padding: 0; list-style: none; }
+.city-picker-grid li + li { margin-top: .15rem; }
+.city-picker-grid a { display: block; padding: .2rem 0; }
+.city-picker-grid a[aria-current="page"] { font-weight: 700; }
+.experiences-samples { margin: 0 0 1rem; max-width: 70ch; }
+.experiences-samples span { display: block; margin-top: .35rem; font-size: .82rem; opacity: .7; }

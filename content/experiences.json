@@ -1,50 +1,629 @@
 {
-  "version": 1,
-  "widget": {
-    "src": "https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=3&locale=en&shmarker=793137.793137&trs=588496",
-    "hosts": {
-      "script": ["https://tpscr.com", "https://wegotrip.com"],
-      "img": ["https://tpscr.com"],
-      "frame": ["https://wegotrip.com"],
-      "connect": ["https://tpo.gg"]
-    }
+ "version": 2,
+ "widget": {
+  "src": "https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=20&locale=en&shmarker=793137.793137&trs=588496",
+  "hosts": {
+   "script": [
+    "https://tpscr.com",
+    "https://wegotrip.com"
+   ],
+   "img": [
+    "https://tpscr.com"
+   ],
+   "frame": [
+    "https://wegotrip.com"
+   ],
+   "connect": [
+    "https://tpo.gg"
+   ]
+  }
+ },
+ "countries": {
+  "Australia": "Ausztrália",
+  "Austria": "Ausztria",
+  "Belgium": "Belgium",
+  "Czechia": "Csehország",
+  "France": "Franciaország",
+  "Germany": "Németország",
+  "Greece": "Görögország",
+  "Hungary": "Magyarország",
+  "Italy": "Olaszország",
+  "Japan": "Japán",
+  "Netherlands": "Hollandia",
+  "Poland": "Lengyelország",
+  "Portugal": "Portugália",
+  "Singapore": "Szingapúr",
+  "South Africa": "Dél-afrikai Köztársaság",
+  "Spain": "Spanyolország",
+  "Turkey": "Törökország",
+  "United Arab Emirates": "Egyesült Arab Emírségek",
+  "United Kingdom": "Egyesült Királyság",
+  "United States": "Egyesült Államok",
+  "Vatican": "Vatikán"
+ },
+ "cities": [
+  {
+   "slug": "paris",
+   "cityId": "2988507",
+   "name": "Paris",
+   "country": "France",
+   "products": 239,
+   "hu": "Párizs",
+   "top": [
+    "Arc de Triomphe Ticket & Audio Tour",
+    "Les Invalides Skip-the-Line Access Ticket & Army Museum Audio Tour",
+    "Pantheon Ticket & National Pride Audio Tour",
+    "Exploring Paris: Landmarks and Hidden Gems with The World Of Banksy Expo Ticket"
+   ]
   },
-  "sections": [
-    {
-      "id": "budapest",
-      "cityId": "3054643",
-      "hu": {
-        "title": "Budapest",
-        "intro": "Belépők, séták és vezetett programok a városban. Hasznos, ha egy napod marad, vagy ha vendéget viszel körbe a saját városodban."
-      },
-      "en": {
-        "title": "Budapest",
-        "intro": "Tickets, walks and guided activities in the city. Useful when you have a single day, or when you are showing a visitor around your own town."
-      }
-    },
-    {
-      "id": "vienna",
-      "cityId": "2761369",
-      "hu": {
-        "title": "Bécs",
-        "intro": "Vonattal három óra, autóval kettő és fél. Belépők és vezetett programok arra az esetre, ha a hétvégét ott töltöd."
-      },
-      "en": {
-        "title": "Vienna",
-        "intro": "Three hours by train from Budapest, two and a half by car. Tickets and guided activities for a weekend there."
-      }
-    },
-    {
-      "id": "rome",
-      "cityId": "3169070",
-      "hu": {
-        "title": "Róma",
-        "intro": "A legtöbb látnivalóhoz időpontos belépő kell, és a helyszíni sor hosszú. Érdemes előre megnézni, mi foglalható."
-      },
-      "en": {
-        "title": "Rome",
-        "intro": "Most sights need a timed ticket and the on-site queue is long. It is worth checking in advance what can be booked."
-      }
-    }
-  ]
+  {
+   "slug": "barcelona",
+   "cityId": "3128760",
+   "name": "Barcelona",
+   "country": "Spain",
+   "products": 166,
+   "top": [
+    "Montjuic Entry & Cable Car Audio Tour",
+    "Aquarium Ticket and a Self-Guided Audio Walk Through the City",
+    "Sant Pau Ticket & City Discovery Audio Tour",
+    "Mies van der Rohe Pavilion: Skip The Line Ticket"
+   ]
+  },
+  {
+   "slug": "berlin",
+   "cityId": "2950159",
+   "name": "Berlin",
+   "country": "Germany",
+   "products": 156,
+   "top": [
+    "IKONO Berlin: Entry Ticket",
+    "Neues Museum Ticket & Audio Tour with a City Walk",
+    "Berlin Highlights Tour with Neue Nationalgalerie Ticket",
+    "Neues Museum Entrance Ticket"
+   ]
+  },
+  {
+   "slug": "london",
+   "cityId": "2643743",
+   "name": "London",
+   "country": "United Kingdom",
+   "products": 153,
+   "top": [
+    "RHS Garden Wisley: Entry Ticket",
+    "Royal Observatory Greenwich Entry",
+    "Hampton Court Entry",
+    "London Zoo: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "new-york-city",
+   "cityId": "5128581",
+   "name": "New York City",
+   "country": "United States",
+   "products": 114,
+   "hu": "New York",
+   "top": [
+    "MoMa Ticket & City Landmarks Audio Tour",
+    "Bronx Zoo: Entry Ticket",
+    "American Museum of Natural History Ticket & Audio Tour",
+    "Empire State Observatory Ticket & Audio Tour"
+   ]
+  },
+  {
+   "slug": "amsterdam",
+   "cityId": "2759794",
+   "name": "Amsterdam",
+   "country": "Netherlands",
+   "products": 111,
+   "hu": "Amszterdam",
+   "top": [
+    "City & Region Travel Ticket",
+    "Royal Palace of Amsterdam: Entrance Ticket",
+    "Madame Tussauds Ticket and an Audio City Walk",
+    "Royal Palace Ticket, Audio Tour & City Walk"
+   ]
+  },
+  {
+   "slug": "rome",
+   "cityId": "3169070",
+   "name": "Rome",
+   "country": "Italy",
+   "products": 99,
+   "hu": "Róma",
+   "top": [
+    "Pantheon Entry Ticket & Audio Tour with a City Walk",
+    "Vatican Skip-the-Line Ticket & Audio Tour",
+    "Castel Sant'Angelo Ticket and City Discovery Audio Tour",
+    "Borghese Gallery Ticket & Highlights Audio Tour"
+   ],
+   "notes": {
+    "hu": "A legtöbb látnivalóhoz időpontos belépő kell, és a helyszíni sor hosszú. Érdemes előre megnézni, mi foglalható.",
+    "en": "Most sights need a timed ticket and the on-site queue is long. It is worth checking in advance what can be booked."
+   }
+  },
+  {
+   "slug": "madrid",
+   "cityId": "3117735",
+   "name": "Madrid",
+   "country": "Spain",
+   "products": 94,
+   "top": [
+    "Parque Warner Madrid: Entry Ticket",
+    "Zoo Aquarium Madrid: Entry Ticket",
+    "Bernabéu Tour & Museum: Direct Entrance",
+    "Prado Ticket & Masterpieces Audio Tour"
+   ]
+  },
+  {
+   "slug": "vienna",
+   "cityId": "2761369",
+   "name": "Vienna",
+   "country": "Austria",
+   "products": 86,
+   "hu": "Bécs",
+   "top": [
+    "Upper Belvedere Ticket & Highlights Audio Tour with a City Walk",
+    "Vienna City Highlights Tour with Kunsthistorisches Museum Ticket",
+    "Kunsthistorisches Museum Ticket & Highlights Audio Tour",
+    "Albertina Palace Ticket & Audio Tour"
+   ],
+   "notes": {
+    "hu": "Vonattal három óra Budapestről, autóval kettő és fél. Belépők és vezetett programok arra az esetre, ha a hétvégét ott töltöd.",
+    "en": "Three hours by train from Budapest, two and a half by car. Tickets and guided activities for a weekend there."
+   }
+  },
+  {
+   "slug": "prague",
+   "cityId": "3067696",
+   "name": "Prague",
+   "country": "Czechia",
+   "products": 83,
+   "hu": "Prága",
+   "top": [
+    "Castle Ticket & Stories of Old Audio Tour",
+    "Prague Castle Ticket",
+    "Prague Castle: Entry + Mobile Guide & 15-Minute Orientation",
+    "Hop-on Hop-off Historical Tram Ticket for Line 42"
+   ]
+  },
+  {
+   "slug": "milan",
+   "cityId": "3173435",
+   "name": "Milan",
+   "country": "Italy",
+   "products": 82,
+   "hu": "Milánó",
+   "top": [
+    "Duomo Ticket, Terrace by Lift, Museum & Audio Tour",
+    "Duomo Ticket & Audio Tour with a City Walk",
+    "Duomo di Milano: Entry Ticket",
+    "Duomo Rooftop Ticket & City Highlights Audio Tour"
+   ]
+  },
+  {
+   "slug": "florence",
+   "cityId": "3176959",
+   "name": "Florence",
+   "country": "Italy",
+   "products": 78,
+   "hu": "Firenze",
+   "top": [
+    "Brunelleschi's Dome Ticket & City Landmarks Audio Tour",
+    "Accademia Gallery: Priority Entrance Ticket",
+    "Leonardo da Vinci Interactive Museum® Ticket and an Audio City Tour",
+    "Pitti Palace, Boboli & Bardini Gardens Ticket & Sightseeing Audio Tour"
+   ]
+  },
+  {
+   "slug": "chicago",
+   "cityId": "4887398",
+   "name": "Chicago",
+   "country": "United States",
+   "products": 78,
+   "top": [
+    "Willis Tower Skydeck Ticket & Audio Tour with a City Walk",
+    "Navy Pier Ticket & City Landmarks Audio Tour",
+    "Field Museum Ticket & Audio Tour",
+    "Art Institute Ticket & Audio Tour"
+   ]
+  },
+  {
+   "slug": "dubai",
+   "cityId": "292223",
+   "name": "Dubai",
+   "country": "United Arab Emirates",
+   "products": 67,
+   "hu": "Dubaj",
+   "top": [
+    "Burj Khalifa: SKY Level 148 Tickets",
+    "Burj Khalifa: Level 124/125 Ticket",
+    "Burj Khalifa 124&125 Floors Ticket",
+    "La Perle by Dragone: Show Ticket"
+   ]
+  },
+  {
+   "slug": "venice",
+   "cityId": "3164603",
+   "name": "Venice",
+   "country": "Italy",
+   "products": 66,
+   "hu": "Velence",
+   "top": [
+    "Doge's Palace: Fast Track Ticket",
+    "Doge's Palace Ticket & Audio Tour with St. Mark's Square Walk",
+    "A Journey of Discovery with St. Mark's Campanile Ticket",
+    "La Fenice Theatre Sightseeing Ticket and Self-Guided Audio Tour"
+   ]
+  },
+  {
+   "slug": "los-angeles",
+   "cityId": "5368361",
+   "name": "Los Angeles",
+   "country": "United States",
+   "products": 66,
+   "top": [
+    "Academy Museum of Motion Pictures: Entry Ticket",
+    "Battleship IOWA Museum: General Access Tickets",
+    "Natural History Museum of Los Angeles County: Entry Ticket",
+    "Ripley’s Believe It or Not! Hollywood: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "lisbon",
+   "cityId": "2267057",
+   "name": "Lisbon",
+   "country": "Portugal",
+   "products": 63,
+   "hu": "Lisszabon",
+   "top": [
+    "Pena Palace Entrance Ticket",
+    "Pena Palace Ticket & Portuguese Fairy Tale Audio Tour",
+    "Jeronimos Monastery Ticket",
+    "Lisbon Zoo: Fast Track Ticket"
+   ]
+  },
+  {
+   "slug": "naples",
+   "cityId": "3172394",
+   "name": "Naples",
+   "country": "Italy",
+   "products": 50,
+   "hu": "Nápoly",
+   "top": [
+    "Mount Vesuvius: Entry + Roundtrip from Ercolano by Vesuvio Express",
+    "Vesuvius: Rountrip Transport from Pompeii + Skip The Line Entry",
+    "Mount Vesuvius: Skip The Line Ticket + Roundtrip from Naples via Vesuvio Express",
+    "The National Archaeological Museum of Naples: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "vatican-city",
+   "cityId": "6691831",
+   "name": "Vatican City",
+   "country": "Vatican",
+   "products": 43,
+   "hu": "Vatikán",
+   "top": [
+    "Rome Pantheon: Fast Track Ticket",
+    "Vatican Museums: Fast Track Ticket",
+    "Welcome to Rome: Entry Ticket",
+    "Palazzo Doria Pamphilj: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "istanbul",
+   "cityId": "745044",
+   "name": "Istanbul",
+   "country": "Turkey",
+   "products": 41,
+   "hu": "Isztambul",
+   "top": [
+    "Hagia Sophia & Topkapi Palace: Skip The Line Tickets",
+    "Istanbul Whirling Dervishes Ceremony: Entry Ticket",
+    "Istanbul Sapphire Observation Deck: Entry Ticket",
+    "Emaar Aquarium & Underwater Zoo Entry Ticket"
+   ]
+  },
+  {
+   "slug": "athens",
+   "cityId": "264371",
+   "name": "Athens",
+   "country": "Greece",
+   "products": 41,
+   "hu": "Athén",
+   "top": [
+    "Acropolis Museum Ticket",
+    "Acropolis Ticket & City Walk Audio Tour",
+    "National Archaeological Museum Ticket & Audio Tour",
+    "Pub Crawl + Unlimited Drinks + Nightclub Entry"
+   ]
+  },
+  {
+   "slug": "sydney",
+   "cityId": "2147714",
+   "name": "Sydney",
+   "country": "Australia",
+   "products": 41,
+   "top": [
+    "SEA LIFE Sydney Aquarium: Entry Ticket",
+    "Sydney Tower Eye Ticket & City Sights Audio Tour",
+    "Taronga Zoo Sydney: Entry Ticket + Return Ferry",
+    "Symbio Wildlife Park: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "sevilla",
+   "cityId": "2510911",
+   "name": "Sevilla",
+   "country": "Spain",
+   "products": 39,
+   "top": [
+    "Royal Alcazar Ticket & City Walk Audio Tour",
+    "Alcazar General Admission Ticket",
+    "Seville Cathedral and Giralda Tower Ticket",
+    "Seville: Alcazar Ticket & Audio Tour of the Palace"
+   ]
+  },
+  {
+   "slug": "san-francisco",
+   "cityId": "5391959",
+   "name": "San Francisco",
+   "country": "United States",
+   "products": 39,
+   "top": [
+    "California Academy of Sciences: Entry Ticket",
+    "Aquarium of the Bay: Entry Ticket",
+    "de Young Museum: Entry Ticket",
+    "The Walt Disney Family Museum: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "palma",
+   "cityId": "2512989",
+   "name": "Palma",
+   "country": "Spain",
+   "products": 34,
+   "top": [
+    "Cathedral Ticket and an Audio Guide with a City Walk",
+    "Palma Aquarium: Skip The Line Ticket",
+    "Fundació Miró Mallorca: Entry Ticket",
+    "Rafa Nadal Museum Xperience: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "washington-dc",
+   "cityId": "4140963",
+   "name": "Washington, D.C.",
+   "country": "United States",
+   "products": 34,
+   "hu": "Washington",
+   "top": [
+    "Museum of the Bible: Entry Ticket",
+    "Washington DC: Hop-on Hop-off Old Town Trolley Ticket",
+    "Washington D.C.: Smithsonian National Museum of Natural History Audio Tour",
+    "Smithsonian National Museum of American History Audio Tour"
+   ]
+  },
+  {
+   "slug": "singapore",
+   "cityId": "1880252",
+   "name": "Singapore",
+   "country": "Singapore",
+   "products": 32,
+   "hu": "Szingapúr",
+   "top": [
+    "Singapore’s Architectural Wonders with SkyPark Observation Deck Ticket",
+    "Singapore Zoo: Entry Ticket",
+    "Wild Wild Wet: Skip The Line Ticket",
+    "Singapore's Heritage Walk with Asian Civilisations Museum Ticket"
+   ]
+  },
+  {
+   "slug": "valencia",
+   "cityId": "2509954",
+   "name": "Valencia",
+   "country": "Spain",
+   "products": 32,
+   "top": [
+    "Bioparc Valencia: Fast Track Ticket",
+    "Hortensia Herrero Art Center: Entry Ticket",
+    "Oceanogràfic de Valencia: Entry Ticket",
+    "Oceanogràfic & Science Museum: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "brussels",
+   "cityId": "2800866",
+   "name": "Brussels",
+   "country": "Belgium",
+   "products": 31,
+   "hu": "Brüsszel",
+   "top": [
+    "Atomium Ticket & Audio Tour with a City Walk",
+    "Aqualibi: Entry Ticket",
+    "Mini-Europe Ticket & Expo Village Audio Tour",
+    "Brussels Sightseeing Adventure with Train World Ticket"
+   ]
+  },
+  {
+   "slug": "las-vegas",
+   "cityId": "5506956",
+   "name": "Las Vegas",
+   "country": "United States",
+   "products": 30,
+   "top": [
+    "The Eiffel Tower Experience Las Vegas: Entry Ticket",
+    "LINQ High Roller: Entry Ticket",
+    "Las Vegas Natural History Museum: Entry Ticket",
+    "The Mob Museum: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "miami",
+   "cityId": "4164138",
+   "name": "Miami",
+   "country": "United States",
+   "products": 28,
+   "top": [
+    "Zoo Miami: Skip The Line Ticket",
+    "Phillip & Patricia Frost Museum of Science, Aquarium & Planetarium: Entry Ticket",
+    "Museum of Ice Cream Miami: Entry Ticket",
+    "Everglades Holiday Park: Half-Day Trip from Miami with Entry + Transport"
+   ]
+  },
+  {
+   "slug": "abu-dhabi",
+   "cityId": "292968",
+   "name": "Abu Dhabi",
+   "country": "United Arab Emirates",
+   "products": 27,
+   "hu": "Abu-Dzabi",
+   "top": [
+    "Louvre Ticket & Cultural District Walk Audio Tour",
+    "Ferrari World: Entry Ticket + Shuttle Service",
+    "Etihad Tower Observation Deck Admission + Food & Beverage Packages",
+    "Yas Island Abu Dhabi: 2 Park Ticket"
+   ]
+  },
+  {
+   "slug": "budapest",
+   "cityId": "3054643",
+   "name": "Budapest",
+   "country": "Hungary",
+   "products": 27,
+   "hu": "Budapest",
+   "top": [
+    "Dohany Synagogue Ticket & Sightseeing Audio Tour",
+    "St. Stephen's Basilica Ticket & City Walk Audio Tour",
+    "Széchenyi Spa: Full Day with Optional Tasting",
+    "Twin Cities Unveiled Audio Tour"
+   ],
+   "notes": {
+    "hu": "Belépők, séták és vezetett programok a városban. Hasznos, ha egy napod marad, vagy ha vendéget viszel körbe a saját városodban.",
+    "en": "Tickets, walks and guided activities in the city. Useful when you have a single day, or when you are showing a visitor around your own town."
+   }
+  },
+  {
+   "slug": "bologna",
+   "cityId": "3181928",
+   "name": "Bologna",
+   "country": "Italy",
+   "products": 26,
+   "top": [
+    "Lamborghini Automobile Museum: Entry Ticket",
+    "Enzo Ferrari Museums Modena: Entry Ticket",
+    "Ferruccio Lamborghini Museum: Entry Ticket",
+    "Lamborghini and Ferrari Museum Entry Ticket"
+   ]
+  },
+  {
+   "slug": "san-antonio",
+   "cityId": "4726206",
+   "name": "San Antonio",
+   "country": "United States",
+   "products": 26,
+   "top": [
+    "San Antonio Zoo Flexible Any-Day Entry Ticket",
+    "San Antonio Aquarium: Entry Ticket",
+    "SeaWorld San Antonio: Fast Track Ticket",
+    "LEGOLAND® Discovery Center & SEA LIFE San Antonio Combo Ticket"
+   ]
+  },
+  {
+   "slug": "cape-town",
+   "cityId": "3369157",
+   "name": "Cape Town",
+   "country": "South Africa",
+   "products": 25,
+   "hu": "Fokváros",
+   "top": [
+    "Table Mountain: Fast Track Ticket + Skip The Line Cable Car Access",
+    "Scenic Highlights Audio Tour",
+    "Boschendal: Self-Guided Audio Walk through Cape Wine Heritage",
+    "Robben Island & Groot Constantia: Entry Ticket + Boat Transfer"
+   ]
+  },
+  {
+   "slug": "malaga",
+   "cityId": "2514256",
+   "name": "Málaga",
+   "country": "Spain",
+   "products": 24,
+   "top": [
+    "Museo Picasso Entry & Self-Guided City Walk",
+    "Teleférico Benalmádena: Entry Ticket",
+    "Selwo Marina: Entry Ticket",
+    "Picasso Birthplace Museum: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "krakow",
+   "cityId": "3094802",
+   "name": "Kraków",
+   "country": "Poland",
+   "products": 23,
+   "hu": "Krakkó",
+   "top": [
+    "Auschwitz-Birkenau: Entry + Transport",
+    "City Pub Crawl Krakow: Open Bar, VIP Entry, Welcome Shots",
+    "House of Attractions: Glass Maze, 7D Cinema Ride & Vortex Tunnel Entry",
+    "Krakow Ethnographic Museum – Esterka's House: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "melbourne",
+   "cityId": "2158177",
+   "name": "Melbourne",
+   "country": "Australia",
+   "products": 22,
+   "top": [
+    "SEA LIFE Melbourne Aquarium: Entry Ticket",
+    "Metartworld Admission",
+    "Scienceworks Melbourne: Entry Ticket",
+    "LEGOLAND® Discovery Centre Melbourne: Entry Ticket"
+   ]
+  },
+  {
+   "slug": "houston",
+   "cityId": "4699066",
+   "name": "Houston",
+   "country": "United States",
+   "products": 22,
+   "top": [
+    "Downtown Aquarium Houston: Entry Ticket",
+    "Cockrell Butterfly Center at the Houston Museum of Natural Science: Entry Ticket",
+    "Houston Museum of Natural Science Entrance Ticket",
+    "Museum of Natural Science Ticket & Audio Tour"
+   ]
+  },
+  {
+   "slug": "tokyo",
+   "cityId": "1850147",
+   "name": "Tokyo",
+   "country": "Japan",
+   "products": 21,
+   "hu": "Tokió",
+   "top": [
+    "Tokyo Landmarks Tour with Tokyo Skytree Ticket",
+    "Tokyo Skytree & 24-Hour Tokyo Subway Ticket",
+    "Tokyo Tower: Main Deck Admission + Tokyo Subway Ticket",
+    "Spa LaQua Admission & Tokyo Subway Ticket (24-hour)"
+   ]
+  },
+  {
+   "slug": "edinburgh",
+   "cityId": "2650225",
+   "name": "Edinburgh",
+   "country": "United Kingdom",
+   "products": 21,
+   "top": [
+    "Palace of Holyroodhouse Ticket & Royal Mile Walk Audio Tour",
+    "The Real Mary King's Close: Entry Ticket",
+    "Edinburgh Sightseeing Tour with The Edinburgh Dungeon Ticket",
+    "The Edinburgh Dungeon: Entry Ticket"
+   ]
+  }
+ ],
+ "generated": "2026-10-21",
+ "minProducts": 20
 }

@@ -27,7 +27,7 @@ if(!travelpayoutsCode)throw Error('Travelpayouts loader missing from shared head
 const travelpayoutsHash=createHash('sha256').update(travelpayoutsCode).digest('base64');
 const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayoutsHash}}',travelpayoutsHash);
 const experienceConfig=JSON.parse(await readFile('content/experiences.json','utf8'));
-const experiences=experienceConfig.sections.length?validateExperiences(experienceConfig):null;
+const experiences=experienceConfig.cities?.length?validateExperiences(experienceConfig):null;
 const widgetCSP=experiences?widgetPolicy(experiences.widget):null;
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[])];
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
@@ -39,12 +39,12 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
- const widgets=route==='experiences'&&widgetCSP;
+ const widgets=route.split('/')[0]==='experiences'&&widgetCSP;
  values.scriptExtra=widgets?widgetCSP.scriptExtra:'';
  values.imgExtra=widgets?widgetCSP.imgExtra:'';
  values.frameSrc=widgets?widgetCSP.frameSrc:"'none'";
  values.connectSrc=[...(widgets?widgetCSP.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
- values.extraStyles=['flights','last-minute'].includes(route)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ values.extraStyles=['flights','last-minute','experiences'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
@@ -52,8 +52,16 @@ for(const lang of ['hu','en']){
  for(const route of routes){
   const dir=`dist/${lang}/${route}`;await mkdir(dir,{recursive:true});
   if(route==='experiences'){
-   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Élmények — foglalható programok és belépők | TripGoes':'Experiences — bookable tours and tickets | TripGoes',description:lang==='hu'?'Foglalható belépők, séták és kirándulások partnereink kínálatából, városonként. A foglalás és a fizetés a szolgáltató oldalán történik.':'Bookable tickets, walks and day trips from our partners, city by city. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang)}</main>`,indexable:true}));
+   const hubTitle=lang==='hu'?`Élmények — foglalható programok ${experiences.cities.length} városban | TripGoes`:`Experiences — bookable activities in ${experiences.cities.length} cities | TripGoes`;
+   await writeFile(`${dir}/index.html`,render({lang,route,title:hubTitle,description:lang==='hu'?'Válassz várost, és nézd meg a foglalható belépőket, sétákat és vezetett programokat. A foglalás és a fizetés a szolgáltató oldalán történik.':'Pick a city and see the bookable tickets, walks and guided activities. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang)}</main>`,indexable:true}));
    sitemap.push(`${origin}/${lang}/${route}/`);
+   // One page per city: the picker navigates, so a visitor loads one widget.
+   for(const city of experiences.cities){
+    const cityRoute=`${route}/${city.slug}`,cityDir=`dist/${lang}/${cityRoute}`;await mkdir(cityDir,{recursive:true});
+    const name=city.title[lang];
+    await writeFile(`${cityDir}/index.html`,render({lang,route:cityRoute,pageOverride:'experiences',title:lang==='hu'?`${name} — foglalható programok és belépők | TripGoes`:`${name} — bookable activities and tickets | TripGoes`,description:city.intro[lang],content:`<main id="main">${experiencesPage(experiences,lang,city.slug)}</main>`,indexable:city.indexable}));
+    if(city.indexable)sitemap.push(`${origin}/${lang}/${cityRoute}/`);
+   }
    continue;
   }
   if(route==='last-minute'){
