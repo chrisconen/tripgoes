@@ -72,8 +72,20 @@ const kept=measured.filter(city=>city.products>=MIN_PRODUCTS).sort((a,b)=>b.prod
 // A few real program names per city, so the page says something of its own
 // before the widget loads. The catalogue order is fixed, so pick the
 // best-reviewed and keep the title as the partner writes it.
+// The full product records: these render as our own cards, so we need the
+// picture, the price and the rating, not just a title.
+const CARDS=12;
+const catalogue={};
 const samples=await pool(kept,4,async city=>{
  const {results}=await get(`products/?city_id=${city.id}&limit=40`);
+ catalogue[city.id]=results
+  .filter(product=>product.status==='approved'&&product.title&&product.slug&&product.locale?.code==='en'&&(product.price??0)>0)
+  .sort((a,b)=>(b.ratings_count??0)*(b.rating??0)-(a.ratings_count??0)*(a.rating??0))
+  .slice(0,CARDS)
+  .map(product=>({id:product.id,slug:product.slug,title:product.title.trim().slice(0,160),
+   price:Math.round(product.price*100)/100,currency:product.request_currency?.code??'EUR',
+   rating:product.rating??0,ratings:product.ratings_count??0,
+   image:product.preview||product.cover||''}));
  return results
   .filter(product=>product.status==='approved'&&product.title&&product.locale?.code==='en')
   .sort((a,b)=>(b.ratings_count??0)*(b.rating??0)-(a.ratings_count??0)*(a.rating??0))
@@ -96,7 +108,7 @@ const cities=kept.map(city=>{
  const before=previous.get(String(city.id))??{};
  // Their slug sometimes carries the id; ours is a plain name.
  const slug=city.slug.replace(new RegExp(`-${city.id}$`),'');
- return {slug:before.slug??slug,cityId:String(city.id),name:city.name,country:city.country,products:city.products,
+ return {slug:before.slug??slug,cityId:String(city.id),providerSlug:city.slug,name:city.name,country:city.country,products:city.products,
   ...(before.hu??HU_CITIES[city.name]?{hu:before.hu??HU_CITIES[city.name]}:{}),
   lat:Number((before.lat??located.get(String(city.id)).lat).toFixed(4)),
   lon:Number((before.lon??located.get(String(city.id)).lon).toFixed(4)),
@@ -123,6 +135,8 @@ for(const city of cities)if(used.size===used.add(city.slug).size)throw Error(`Du
 const names={};
 for(const name of [...new Set(cities.map(city=>city.country))].sort())names[name]=current.countries?.[name]??HU_COUNTRIES[name]??name;
 
+await writeFile('content/activities.json',JSON.stringify({version:1,generated:new Date().toISOString().slice(0,10),
+ cities:Object.fromEntries(cities.map(city=>[city.slug,catalogue[Number(city.cityId)]??[]]))},null,1));
 await writeFile('content/experiences.json',JSON.stringify({...current,version:2,generated:new Date().toISOString().slice(0,10),minProducts:MIN_PRODUCTS,countries:names,cities},null,1)+'\n');
 console.log(`Kept ${cities.length} cities in ${Object.keys(names).length} countries (${cities.at(-1).products}–${cities[0].products} products each).`);
 const missing=cities.filter(city=>!city.hu).map(city=>city.name);

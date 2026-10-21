@@ -44,6 +44,7 @@
   {
    "slug": "paris",
    "cityId": "2988507",
+   "providerSlug": "paris",
    "name": "Paris",
    "country": "France",
    "products": 239,
@@ -60,6 +61,7 @@
   {
    "slug": "barcelona",
    "cityId": "3128760",
+   "providerSlug": "barcelona",
    "name": "Barcelona",
    "country": "Spain",
    "products": 166,
@@ -75,6 +77,7 @@
   {
    "slug": "berlin",
    "cityId": "2950159",
+   "providerSlug": "berlin",
    "name": "Berlin",
    "country": "Germany",
    "products": 156,
@@ -90,6 +93,7 @@
   {
    "slug": "london",
    "cityId": "2643743",
+   "providerSlug": "london",
    "name": "London",
    "country": "United Kingdom",
    "products": 153,
@@ -105,6 +109,7 @@
   {
    "slug": "new-york-city",
    "cityId": "5128581",
+   "providerSlug": "new-york-city",
    "name": "New York City",
    "country": "United States",
    "products": 114,
@@ -121,6 +126,7 @@
   {
    "slug": "amsterdam",
    "cityId": "2759794",
+   "providerSlug": "amsterdam",
    "name": "Amsterdam",
    "country": "Netherlands",
    "products": 111,
@@ -137,6 +143,7 @@
   {
    "slug": "rome",
    "cityId": "3169070",
+   "providerSlug": "rome",
    "name": "Rome",
    "country": "Italy",
    "products": 99,
@@ -157,9 +164,10 @@
   {
    "slug": "madrid",
    "cityId": "3117735",
+   "providerSlug": "madrid",
    "name": "Madrid",
    "country": "Spain",
-   "products": 94,
+   "products": 96,
    "lat": 40.4084,
    "lon": -3.6876,
    "top": [
@@ -172,6 +180,7 @@
   {
    "slug": "vienna",
    "cityId": "2761369",
+   "providerSlug": "vienna",
    "name": "Vienna",
    "country": "Austria",
    "products": 86,
@@ -192,6 +201,7 @@
   {
    "slug": "prague",
    "cityId": "3067696",
+   "providerSlug": "prague",
    "name": "Prague",
    "country": "Czechia",
    "products": 83,
@@ -208,6 +218,7 @@
   {
    "slug": "milan",
    "cityId": "3173435",
+   "providerSlug": "milan",
    "name": "Milan",
    "country": "Italy",
    "products": 82,
@@ -224,6 +235,7 @@
   {
    "slug": "florence",
    "cityId": "3176959",
+   "providerSlug": "florence",
    "name": "Florence",
    "country": "Italy",
    "products": 78,
@@ -240,6 +252,7 @@
   {
    "slug": "chicago",
    "cityId": "4887398",
+   "providerSlug": "chicago",
    "name": "Chicago",
    "country": "United States",
    "products": 78,
@@ -255,6 +268,7 @@
   {
    "slug": "dubai",
    "cityId": "292223",
+   "providerSlug": "dubai",
    "name": "Dubai",
    "country": "United Arab Emirates",
    "products": 67,
@@ -271,6 +285,7 @@
   {
    "slug": "venice",
    "cityId": "3164603",
+   "providerSlug": "venice",
    "name": "Venice",
    "country": "Italy",
    "products": 66,
@@ -287,6 +302,7 @@
   {
    "slug": "los-angeles",
    "cityId": "5368361",
+   "providerSlug": "los-angeles-5368361",
    "name": "Los Angeles",
    "country": "United States",
    "products": 66,
@@ -302,6 +318,7 @@
   {
    "slug": "lisbon",
    "cityId": "2267057",
+   "providerSlug": "lisbon",
    "name": "Lisbon",
    "country": "Portugal",
    "products": 63,
@@ -318,6 +335,7 @@
   {
    "slug": "naples",
    "cityId": "3172394",
+   "providerSlug": "naples",
    "name": "Naples",
    "country": "Italy",
    "products": 50,
@@ -334,6 +352,7 @@
   {
    "slug": "istanbul",
    "cityId": "745044",
+   "providerSlug": "istanbul",
    "name": "Istanbul",
    "country": "Turkey",
    "products": 41,
@@ -350,6 +369,7 @@
   {
    "slug": "athens",
    "cityId": "264371",
+   "providerSlug": "athens",
    "name": "Athens",
    "country": "Greece",
    "products": 41,
@@ -366,6 +386,7 @@
   {
    "slug": "sydney",
    "cityId": "2147714",
+   "providerSlug": "sydney",
    "name": "Sydney",
    "country": "Australia",
    "products": 41,
@@ -381,6 +402,7 @@
   {
    "slug": "sevilla",
    "cityId": "2510911",
+   "providerSlug": "sevilla-2510911",
    "name": "Sevilla",
    "country": "Spain",
    "products": 39,
@@ -396,6 +418,7 @@
   {
    "slug": "san-francisco",
    "cityId": "5391959",
+   "providerSlug": "san-francisco-5391959",
    "name": "San Francisco",
    "country": "United States",
    "products": 39,
@@ -411,6 +434,7 @@
   {
    "slug": "palma",
    "cityId": "2512989",
+   "providerSlug": "palma",
    "name": "Palma",
    "country": "Spain",
    "products": 34,
@@ -426,6 +450,7 @@
   {
    "slug": "washington-dc",
    "cityId": "4140963",
+   "providerSlug": "washington-dc",
    "name": "Washington, D.C.",
    "country": "United States",
    "products": 34,
@@ -442,6 +467,7 @@
   {
    "slug": "singapore",
    "cityId": "1880252",
+   "providerSlug": "singapore",
    "name": "Singapore",
    "country": "Singapore",
    "products": 32,
@@ -458,6 +484,7 @@
   {
    "slug": "valencia",
    "cityId": "2509954",
+   "providerSlug": "valencia-2509954",
    "name": "Valencia",
    "country": "Spain",
    "products": 32,
@@ -473,6 +500,7 @@
   {
    "slug": "brussels",
    "cityId": "2800866",
+   "providerSlug": "brussels",
    "name": "Brussels",
    "country": "Belgium",
    "products": 31,
@@ -489,6 +517,7 @@
   {
    "slug": "las-vegas",
    "cityId": "5506956",
+   "providerSlug": "las-vegas-5506956",
    "name": "Las Vegas",
    "country": "United States",
    "products": 30,
@@ -504,6 +533,7 @@
   {
    "slug": "miami",
    "cityId": "4164138",
+   "providerSlug": "miami",
    "name": "Miami",
    "country": "United States",
    "products": 28,
@@ -519,6 +549,7 @@
   {
    "slug": "abu-dhabi",
    "cityId": "292968",
+   "providerSlug": "abu-dhabi",
    "name": "Abu Dhabi",
    "country": "United Arab Emirates",
    "products": 27,
@@ -535,6 +566,7 @@
   {
    "slug": "budapest",
    "cityId": "3054643",
+   "providerSlug": "budapest",
    "name": "Budapest",
    "country": "Hungary",
    "products": 27,
@@ -555,6 +587,7 @@
   {
    "slug": "bologna",
    "cityId": "3181928",
+   "providerSlug": "bologna",
    "name": "Bologna",
    "country": "Italy",
    "products": 26,
@@ -570,6 +603,7 @@
   {
    "slug": "san-antonio",
    "cityId": "4726206",
+   "providerSlug": "san-antonio-4726206",
    "name": "San Antonio",
    "country": "United States",
    "products": 26,
@@ -585,6 +619,7 @@
   {
    "slug": "cape-town",
    "cityId": "3369157",
+   "providerSlug": "cape-town",
    "name": "Cape Town",
    "country": "South Africa",
    "products": 25,
@@ -601,6 +636,7 @@
   {
    "slug": "malaga",
    "cityId": "2514256",
+   "providerSlug": "malaga",
    "name": "Málaga",
    "country": "Spain",
    "products": 24,
@@ -616,6 +652,7 @@
   {
    "slug": "krakow",
    "cityId": "3094802",
+   "providerSlug": "krakow",
    "name": "Kraków",
    "country": "Poland",
    "products": 23,
@@ -632,6 +669,7 @@
   {
    "slug": "melbourne",
    "cityId": "2158177",
+   "providerSlug": "melbourne",
    "name": "Melbourne",
    "country": "Australia",
    "products": 22,
@@ -647,6 +685,7 @@
   {
    "slug": "houston",
    "cityId": "4699066",
+   "providerSlug": "houston-4699066",
    "name": "Houston",
    "country": "United States",
    "products": 22,
@@ -662,6 +701,7 @@
   {
    "slug": "tokyo",
    "cityId": "1850147",
+   "providerSlug": "tokyo",
    "name": "Tokyo",
    "country": "Japan",
    "products": 21,
@@ -678,6 +718,7 @@
   {
    "slug": "edinburgh",
    "cityId": "2650225",
+   "providerSlug": "edinburgh",
    "name": "Edinburgh",
    "country": "United Kingdom",
    "products": 21,

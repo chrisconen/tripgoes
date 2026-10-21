@@ -10,7 +10,8 @@ import {plannerPage} from '../src/planner.mjs';
 import {offersPage} from '../src/offers.mjs';
 import {flightPage} from '../src/flights.mjs';
 import {lastMinutePage} from '../src/lastminute.mjs';
-import {validateExperiences,experiencesPage,widgetPolicy} from '../src/experiences.mjs';
+import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
+import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
@@ -31,7 +32,10 @@ const travelpayoutsHash=createHash('sha256').update(travelpayoutsCode).digest('b
 const shell=template.replaceAll('{{origin}}',origin).replaceAll('{{travelpayoutsHash}}',travelpayoutsHash);
 const experienceConfig=JSON.parse(await readFile('content/experiences.json','utf8'));
 const experiences=experienceConfig.cities?.length?validateExperiences(experienceConfig):null;
-const widgetCSP=experiences?widgetPolicy(experiences.widget):null;
+const activityConfig=JSON.parse(await readFile('content/activities.json','utf8'));
+const activities=experiences?validateActivities(activityConfig,experiences.cities):null;
+// Our own cards, so the route needs the picture host and nothing else.
+const widgetCSP=experiences?{scriptExtra:'',imgExtra:IMAGE_HOSTS.map(host=>` ${host}`).join(''),frameSrc:"'none'",connectExtra:[]}:null;
 // The landing page shows real inventory, so it needs the real numbers.
 const highlights=experiences?{total:experiences.cities.length,
  cities:experiences.cities.slice(0,8).map(city=>({slug:city.slug,title:city.title.hu,titleEn:city.title.en,products:city.products,sample:city.samples[0]??''}))}:null;
@@ -69,13 +73,13 @@ for(const lang of ['hu','en']){
   }
   if(route==='experiences'){
    const hubTitle=lang==='hu'?`Élmények — foglalható programok ${experiences.cities.length} városban | TripGoes`:`Experiences — bookable activities in ${experiences.cities.length} cities | TripGoes`;
-   await writeFile(`${dir}/index.html`,render({lang,route,title:hubTitle,description:lang==='hu'?'Válassz várost, és nézd meg a foglalható belépőket, sétákat és vezetett programokat. A foglalás és a fizetés a szolgáltató oldalán történik.':'Pick a city and see the bookable tickets, walks and guided activities. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang)}</main>`,indexable:true}));
+   await writeFile(`${dir}/index.html`,render({lang,route,title:hubTitle,description:lang==='hu'?'Válassz várost, és nézd meg a foglalható belépőket, sétákat és vezetett programokat. A foglalás és a fizetés a szolgáltató oldalán történik.':'Pick a city and see the bookable tickets, walks and guided activities. Booking and payment take place on the provider’s website.',content:`<main id="main">${experiencesPage(experiences,lang,'',activityCards(activities.catalogue.get(experiences.cities[0].slug)??[],lang,{city:experiences.cities[0].title[lang],generated:activities.generated}))}</main>`,indexable:true}));
    sitemap.push(`${origin}/${lang}/${route}/`);
    // One page per city: the picker navigates, so a visitor loads one widget.
    for(const city of experiences.cities){
     const cityRoute=`${route}/${city.slug}`,cityDir=`dist/${lang}/${cityRoute}`;await mkdir(cityDir,{recursive:true});
     const name=city.title[lang];
-    await writeFile(`${cityDir}/index.html`,render({lang,route:cityRoute,pageOverride:'experiences',title:lang==='hu'?`${name} — foglalható programok és belépők | TripGoes`:`${name} — bookable activities and tickets | TripGoes`,description:city.intro[lang],content:`<main id="main">${experiencesPage(experiences,lang,city.slug)}</main>`,indexable:city.indexable}));
+    await writeFile(`${cityDir}/index.html`,render({lang,route:cityRoute,pageOverride:'experiences',title:lang==='hu'?`${name} — foglalható programok és belépők | TripGoes`:`${name} — bookable activities and tickets | TripGoes`,description:city.intro[lang],content:`<main id="main">${experiencesPage(experiences,lang,city.slug,activityCards(activities.catalogue.get(city.slug)??[],lang,{city:city.title[lang],generated:activities.generated}))}</main>`,indexable:city.indexable}));
     if(city.indexable)sitemap.push(`${origin}/${lang}/${cityRoute}/`);
    }
    continue;
