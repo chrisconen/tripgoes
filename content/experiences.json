@@ -49,6 +49,8 @@
    "country": "France",
    "products": 239,
    "hu": "Párizs",
+   "lat": 48.8567,
+   "lon": 2.3522,
    "top": [
     "Arc de Triomphe Ticket & Audio Tour",
     "Les Invalides Skip-the-Line Access Ticket & Army Museum Audio Tour",
@@ -62,6 +64,8 @@
    "name": "Barcelona",
    "country": "Spain",
    "products": 166,
+   "lat": 41.3826,
+   "lon": 2.1771,
    "top": [
     "Montjuic Entry & Cable Car Audio Tour",
     "Aquarium Ticket and a Self-Guided Audio Walk Through the City",
@@ -75,6 +79,8 @@
    "name": "Berlin",
    "country": "Germany",
    "products": 156,
+   "lat": 52.5167,
+   "lon": 13.3833,
    "top": [
     "IKONO Berlin: Entry Ticket",
     "Neues Museum Ticket & Audio Tour with a City Walk",
@@ -88,6 +94,8 @@
    "name": "London",
    "country": "United Kingdom",
    "products": 153,
+   "lat": 51.5072,
+   "lon": -0.1275,
    "top": [
     "RHS Garden Wisley: Entry Ticket",
     "Royal Observatory Greenwich Entry",
@@ -102,6 +110,8 @@
    "country": "United States",
    "products": 114,
    "hu": "New York",
+   "lat": 40.7128,
+   "lon": -74.0061,
    "top": [
     "MoMa Ticket & City Landmarks Audio Tour",
     "Bronx Zoo: Entry Ticket",
@@ -116,6 +126,8 @@
    "country": "Netherlands",
    "products": 111,
    "hu": "Amszterdam",
+   "lat": 52.3667,
+   "lon": 4.8833,
    "top": [
     "City & Region Travel Ticket",
     "Royal Palace of Amsterdam: Entrance Ticket",
@@ -130,6 +142,8 @@
    "country": "Italy",
    "products": 99,
    "hu": "Róma",
+   "lat": 41.8931,
+   "lon": 12.4828,
    "top": [
     "Pantheon Entry Ticket & Audio Tour with a City Walk",
     "Vatican Skip-the-Line Ticket & Audio Tour",
@@ -147,6 +161,8 @@
    "name": "Madrid",
    "country": "Spain",
    "products": 94,
+   "lat": 40.4084,
+   "lon": -3.6876,
    "top": [
     "Parque Warner Madrid: Entry Ticket",
     "Zoo Aquarium Madrid: Entry Ticket",
@@ -161,6 +177,8 @@
    "country": "Austria",
    "products": 86,
    "hu": "Bécs",
+   "lat": 48.2083,
+   "lon": 16.3725,
    "top": [
     "Upper Belvedere Ticket & Highlights Audio Tour with a City Walk",
     "Vienna City Highlights Tour with Kunsthistorisches Museum Ticket",
@@ -179,6 +197,8 @@
    "country": "Czechia",
    "products": 83,
    "hu": "Prága",
+   "lat": 50.0875,
+   "lon": 14.4214,
    "top": [
     "Castle Ticket & Stories of Old Audio Tour",
     "Prague Castle Ticket",
@@ -193,6 +213,8 @@
    "country": "Italy",
    "products": 82,
    "hu": "Milánó",
+   "lat": 45.4669,
+   "lon": 9.19,
    "top": [
     "Duomo Ticket, Terrace by Lift, Museum & Audio Tour",
     "Duomo Ticket & Audio Tour with a City Walk",
@@ -207,6 +229,8 @@
    "country": "Italy",
    "products": 78,
    "hu": "Firenze",
+   "lat": 43.7698,
+   "lon": 11.2556,
    "top": [
     "Brunelleschi's Dome Ticket & City Landmarks Audio Tour",
     "Accademia Gallery: Priority Entrance Ticket",
@@ -220,6 +244,8 @@
    "name": "Chicago",
    "country": "United States",
    "products": 78,
+   "lat": 41.8819,
+   "lon": -87.6278,
    "top": [
     "Willis Tower Skydeck Ticket & Audio Tour with a City Walk",
     "Navy Pier Ticket & City Landmarks Audio Tour",
@@ -234,6 +260,8 @@
    "country": "United Arab Emirates",
    "products": 67,
    "hu": "Dubaj",
+   "lat": 25.2697,
+   "lon": 55.3094,
    "top": [
     "Burj Khalifa: SKY Level 148 Tickets",
     "Burj Khalifa: Level 124/125 Ticket",
@@ -248,6 +276,8 @@
    "country": "Italy",
    "products": 66,
    "hu": "Velence",
+   "lat": 45.4389,
+   "lon": 12.3309,
    "top": [
     "Doge's Palace: Fast Track Ticket",
     "Doge's Palace Ticket & Audio Tour with St. Mark's Square Walk",
@@ -261,6 +291,8 @@
    "name": "Los Angeles",
    "country": "United States",
    "products": 66,
+   "lat": 34.0522,
+   "lon": -118.2437,
    "top": [
     "Academy Museum of Motion Pictures: Entry Ticket",
     "Battleship IOWA Museum: General Access Tickets",
@@ -275,6 +307,8 @@
    "country": "Portugal",
    "products": 63,
    "hu": "Lisszabon",
+   "lat": 38.708,
+   "lon": -9.139,
    "top": [
     "Pena Palace Entrance Ticket",
     "Pena Palace Ticket & Portuguese Fairy Tale Audio Tour",
@@ -289,6 +323,8 @@
    "country": "Italy",
    "products": 50,
    "hu": "Nápoly",
+   "lat": 40.8563,
+   "lon": 14.2464,
    "top": [
     "Mount Vesuvius: Entry + Roundtrip from Ercolano by Vesuvio Express",
     "Vesuvius: Rountrip Transport from Pompeii + Skip The Line Entry",
@@ -303,6 +339,8 @@
    "country": "Vatican",
    "products": 43,
    "hu": "Vatikán",
+   "lat": 41.9027,
+   "lon": 12.4541,
    "top": [
     "Rome Pantheon: Fast Track Ticket",
     "Vatican Museums: Fast Track Ticket",
@@ -317,6 +355,8 @@
    "country": "Turkey",
    "products": 41,
    "hu": "Isztambul",
+   "lat": 41.01,
+   "lon": 28.9603,
    "top": [
     "Hagia Sophia & Topkapi Palace: Skip The Line Tickets",
     "Istanbul Whirling Dervishes Ceremony: Entry Ticket",
@@ -331,6 +371,8 @@
    "country": "Greece",
    "products": 41,
    "hu": "Athén",
+   "lat": 37.9842,
+   "lon": 23.7281,
    "top": [
     "Acropolis Museum Ticket",
     "Acropolis Ticket & City Walk Audio Tour",
@@ -344,6 +386,8 @@
    "name": "Sydney",
    "country": "Australia",
    "products": 41,
+   "lat": -33.8678,
+   "lon": 151.21,
    "top": [
     "SEA LIFE Sydney Aquarium: Entry Ticket",
     "Sydney Tower Eye Ticket & City Sights Audio Tour",
@@ -357,6 +401,8 @@
    "name": "Sevilla",
    "country": "Spain",
    "products": 39,
+   "lat": 37.3862,
+   "lon": -5.9925,
    "top": [
     "Royal Alcazar Ticket & City Walk Audio Tour",
     "Alcazar General Admission Ticket",
@@ -370,6 +416,8 @@
    "name": "San Francisco",
    "country": "United States",
    "products": 39,
+   "lat": 37.775,
+   "lon": -122.4194,
    "top": [
     "California Academy of Sciences: Entry Ticket",
     "Aquarium of the Bay: Entry Ticket",
@@ -383,6 +431,8 @@
    "name": "Palma",
    "country": "Spain",
    "products": 34,
+   "lat": 39.5696,
+   "lon": 2.6501,
    "top": [
     "Cathedral Ticket and an Audio Guide with a City Walk",
     "Palma Aquarium: Skip The Line Ticket",
@@ -397,6 +447,8 @@
    "country": "United States",
    "products": 34,
    "hu": "Washington",
+   "lat": 38.895,
+   "lon": -77.0367,
    "top": [
     "Museum of the Bible: Entry Ticket",
     "Washington DC: Hop-on Hop-off Old Town Trolley Ticket",
@@ -411,6 +463,8 @@
    "country": "Singapore",
    "products": 32,
    "hu": "Szingapúr",
+   "lat": 1.2897,
+   "lon": 103.8501,
    "top": [
     "Singapore’s Architectural Wonders with SkyPark Observation Deck Ticket",
     "Singapore Zoo: Entry Ticket",
@@ -424,6 +478,8 @@
    "name": "Valencia",
    "country": "Spain",
    "products": 32,
+   "lat": 39.4561,
+   "lon": -0.3546,
    "top": [
     "Bioparc Valencia: Fast Track Ticket",
     "Hortensia Herrero Art Center: Entry Ticket",
@@ -438,6 +494,8 @@
    "country": "Belgium",
    "products": 31,
    "hu": "Brüsszel",
+   "lat": 50.8467,
+   "lon": 4.3517,
    "top": [
     "Atomium Ticket & Audio Tour with a City Walk",
     "Aqualibi: Entry Ticket",
@@ -451,6 +509,8 @@
    "name": "Las Vegas",
    "country": "United States",
    "products": 30,
+   "lat": 36.1672,
+   "lon": -115.1486,
    "top": [
     "The Eiffel Tower Experience Las Vegas: Entry Ticket",
     "LINQ High Roller: Entry Ticket",
@@ -464,6 +524,8 @@
    "name": "Miami",
    "country": "United States",
    "products": 28,
+   "lat": 25.7742,
+   "lon": -80.1936,
    "top": [
     "Zoo Miami: Skip The Line Ticket",
     "Phillip & Patricia Frost Museum of Science, Aquarium & Planetarium: Entry Ticket",
@@ -478,6 +540,8 @@
    "country": "United Arab Emirates",
    "products": 27,
    "hu": "Abu-Dzabi",
+   "lat": 24.4511,
+   "lon": 54.3969,
    "top": [
     "Louvre Ticket & Cultural District Walk Audio Tour",
     "Ferrari World: Entry Ticket + Shuttle Service",
@@ -492,6 +556,8 @@
    "country": "Hungary",
    "products": 27,
    "hu": "Budapest",
+   "lat": 47.4983,
+   "lon": 19.0408,
    "top": [
     "Dohany Synagogue Ticket & Sightseeing Audio Tour",
     "St. Stephen's Basilica Ticket & City Walk Audio Tour",
@@ -509,6 +575,8 @@
    "name": "Bologna",
    "country": "Italy",
    "products": 26,
+   "lat": 44.4938,
+   "lon": 11.3387,
    "top": [
     "Lamborghini Automobile Museum: Entry Ticket",
     "Enzo Ferrari Museums Modena: Entry Ticket",
@@ -522,6 +590,8 @@
    "name": "San Antonio",
    "country": "United States",
    "products": 26,
+   "lat": 29.425,
+   "lon": -98.4939,
    "top": [
     "San Antonio Zoo Flexible Any-Day Entry Ticket",
     "San Antonio Aquarium: Entry Ticket",
@@ -536,6 +606,8 @@
    "country": "South Africa",
    "products": 25,
    "hu": "Fokváros",
+   "lat": -33.9253,
+   "lon": 18.4239,
    "top": [
     "Table Mountain: Fast Track Ticket + Skip The Line Cable Car Access",
     "Scenic Highlights Audio Tour",
@@ -549,6 +621,8 @@
    "name": "Málaga",
    "country": "Spain",
    "products": 24,
+   "lat": 36.7202,
+   "lon": -4.4203,
    "top": [
     "Museo Picasso Entry & Self-Guided City Walk",
     "Teleférico Benalmádena: Entry Ticket",
@@ -563,6 +637,8 @@
    "country": "Poland",
    "products": 23,
    "hu": "Krakkó",
+   "lat": 50.0614,
+   "lon": 19.9372,
    "top": [
     "Auschwitz-Birkenau: Entry + Transport",
     "City Pub Crawl Krakow: Open Bar, VIP Entry, Welcome Shots",
@@ -576,6 +652,8 @@
    "name": "Melbourne",
    "country": "Australia",
    "products": 22,
+   "lat": -37.8142,
+   "lon": 144.9631,
    "top": [
     "SEA LIFE Melbourne Aquarium: Entry Ticket",
     "Metartworld Admission",
@@ -589,6 +667,8 @@
    "name": "Houston",
    "country": "United States",
    "products": 22,
+   "lat": 29.7628,
+   "lon": -95.3831,
    "top": [
     "Downtown Aquarium Houston: Entry Ticket",
     "Cockrell Butterfly Center at the Houston Museum of Natural Science: Entry Ticket",
@@ -603,6 +683,8 @@
    "country": "Japan",
    "products": 21,
    "hu": "Tokió",
+   "lat": 35.6894,
+   "lon": 139.6917,
    "top": [
     "Tokyo Landmarks Tour with Tokyo Skytree Ticket",
     "Tokyo Skytree & 24-Hour Tokyo Subway Ticket",
@@ -616,6 +698,8 @@
    "name": "Edinburgh",
    "country": "United Kingdom",
    "products": 21,
+   "lat": 55.9533,
+   "lon": -3.1892,
    "top": [
     "Palace of Holyroodhouse Ticket & Royal Mile Walk Audio Tour",
     "The Real Mary King's Close: Entry Ticket",

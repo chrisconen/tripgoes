@@ -1,15 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validateWidget, validateExperiences, widgetPolicy, experiencesPage, WIDGET_HOSTS, MIN_TOURS } from '../src/experiences.mjs';
+import { validateWidget, validateExperiences, widgetPolicy, experiencesPage, WIDGET_HOSTS, MIN_TOURS, MAP } from '../src/experiences.mjs';
 
 const widget = (changes = {}) => ({
   src: 'https://tpscr.com/content?promo_id=4489&campaign_id=150&powered_by=false&tours=20&locale=en&shmarker=793137.793137&trs=588496',
   hosts: { script: ['https://tpscr.com', 'https://wegotrip.com'], img: ['https://tpscr.com'], frame: ['https://wegotrip.com'], connect: ['https://tpo.gg'] },
   ...changes,
 });
-const city = (changes = {}) => ({ slug: 'budapest', cityId: '3054643', name: 'Budapest', country: 'Hungary', products: 27, hu: 'Budapest', top: ['Dohany Synagogue Ticket'], ...changes });
-const rome = (changes = {}) => city({ slug: 'rome', cityId: '3169070', name: 'Rome', country: 'Italy', products: 99, hu: 'Róma', ...changes });
+const city = (changes = {}) => ({ slug: 'budapest', cityId: '3054643', name: 'Budapest', country: 'Hungary', products: 27, hu: 'Budapest', lat: 47.4983, lon: 19.0408, top: ['Dohany Synagogue Ticket'], ...changes });
+const rome = (changes = {}) => city({ slug: 'rome', cityId: '3169070', name: 'Rome', country: 'Italy', products: 99, hu: 'Róma', lat: 41.8933, lon: 12.4828, ...changes });
 const config = (changes = {}) => ({
   version: 2, generated: '2026-10-21', minProducts: 20, widget: widget(),
   countries: { Hungary: 'Magyarország', Italy: 'Olaszország' },
@@ -72,11 +72,42 @@ test('configuration requires a known country, enough products and usable copy', 
     config({ cities: [city({ hu: '' })] }),
     config({ cities: [city({ top: [] })] }),
     config({ cities: [city({ top: 'Ticket' })] }),
+    config({ cities: [city({ lat: undefined })] }),
+    config({ cities: [city({ lon: '19.04' })] }),
+    config({ cities: [city({ lat: 95 })] }),
+    // Reykjavík would sit above the cropped map, so it must be caught, not drawn off-canvas.
+    config({ cities: [city({ lat: 80 })] }),
+    config({ cities: [city({ lat: -70 })] }),
     config({ cities: [city({ notes: { hu: 'Rövid.', en: 'Short.' } })] }),
     config({ minProducts: 5 }),
     config({ countries: [] }),
     config({ countries: { Hungary: '' } }),
   ]) assert.throws(() => validateExperiences(broken), TypeError, JSON.stringify(broken).slice(0, 70));
+});
+
+test('cities are projected onto the same grid as the map backdrop', () => {
+  const { cities } = validateExperiences(config());
+  const [budapest] = cities;
+  assert.equal(budapest.x, Math.round((19.0408 + 180) / 360 * MAP.width * 10) / 10);
+  assert.equal(budapest.y, Math.round((MAP.north - 47.4983) / 360 * MAP.width * 10) / 10);
+  for (const entry of cities) {
+    assert.ok(entry.x >= 0 && entry.x <= MAP.width, `${entry.slug} x=${entry.x}`);
+    assert.ok(entry.y >= 0 && entry.y <= MAP.height, `${entry.slug} y=${entry.y}`);
+  }
+});
+
+test('the map carries one titled link per city, the current one drawn last', () => {
+  const parsed = validateExperiences(config());
+  const html = experiencesPage(parsed, 'hu', 'rome');
+  const map = html.match(/<figure class="city-map">[\s\S]*?<\/figure>/)[0];
+  assert.equal(map.match(/<circle /g).length, parsed.cities.length);
+  assert.equal(map.match(/<title>/g).length, parsed.cities.length);
+  assert.ok(map.includes('<title>Róma — Olaszország</title>'));
+  assert.ok(map.includes('href="/assets/world.svg"'));
+  assert.equal(map.match(/viewBox="0 0 (\S+) (\S+)"/)[1], String(MAP.width));
+  // Painted last, so the selected dot is never hidden under a neighbour.
+  assert.ok(map.lastIndexOf('aria-current="page"') > map.lastIndexOf('/experiences/budapest/'));
+  assert.ok(experiencesPage(parsed, 'en', 'rome').includes('<title>Rome — Italy</title>'));
 });
 
 test('the policy widens only for the declared hosts', () => {
@@ -132,6 +163,7 @@ test('the shipped configuration is valid and every city clears the promised coun
     assert.ok(entry.products >= MIN_TOURS, `${entry.slug} carries ${entry.products} products`);
     assert.ok(entry.samples.length, `${entry.slug} has no sample titles`);
     assert.ok(countries[entry.country], `${entry.slug} has no localized country`);
+    assert.ok(entry.x >= 0 && entry.x <= MAP.width && entry.y >= 0 && entry.y <= MAP.height, `${entry.slug} is off the map`);
   }
   assert.ok(cities.some(entry => entry.slug === 'budapest'));
 });

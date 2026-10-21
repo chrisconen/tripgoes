@@ -3,6 +3,7 @@
 // Curated notes and localized names already in the file are kept.
 import {readFile,writeFile} from 'node:fs/promises';
 const API='https://wegotrip.com/api/v1';
+const AGENT='tripgoes-config/1.0 (https://tripgoes.com)';
 const MIN_PRODUCTS=20;
 
 const HU_CITIES={Paris:'Párizs','New York City':'New York',Amsterdam:'Amszterdam',Rome:'Róma',Vienna:'Bécs',Prague:'Prága',Milan:'Milánó',Florence:'Firenze',Dubai:'Dubaj',Venice:'Velence',Lisbon:'Lisszabon',Naples:'Nápoly','Vatican City':'Vatikán',Istanbul:'Isztambul',Athens:'Athén',Singapore:'Szingapúr',Brussels:'Brüsszel','Abu Dhabi':'Abu-Dzabi','Cape Town':'Fokváros','Kraków':'Krakkó',Tokyo:'Tokió','Washington, D.C.':'Washington',Munich:'München',Cologne:'Köln',Warsaw:'Varsó',Moscow:'Moszkva',Copenhagen:'Koppenhága',Geneva:'Genf',Zurich:'Zürich',Turin:'Torino',Genoa:'Genova',Seville:'Sevilla',Lyon:'Lyon',Nice:'Nizza',Dresden:'Drezda',Leipzig:'Lipcse',Nuremberg:'Nürnberg',Bratislava:'Pozsony',Belgrade:'Belgrád',Bucharest:'Bukarest',Sofia:'Szófia',Zagreb:'Zágráb',Kyiv:'Kijev','Saint Petersburg':'Szentpétervár','Mexico City':'Mexikóváros',Cairo:'Kairó',Jerusalem:'Jeruzsálem',Beijing:'Peking',Seoul:'Szöul',Bangkok:'Bangkok'};
@@ -12,7 +13,7 @@ const HU_COUNTRIES={Australia:'Ausztrália',Austria:'Ausztria',Belgium:'Belgium'
 async function get(path,tries=4){
  for(let attempt=1;;attempt++){
   try{
-   const response=await fetch(`${API}/${path}`,{headers:{'User-Agent':'tripgoes-config/1.0'}});
+   const response=await fetch(`${API}/${path}`,{headers:{'User-Agent':AGENT}});
    if(!response.ok)throw Error(`HTTP ${response.status}`);
    return await response.json();
   }catch(error){
@@ -36,6 +37,28 @@ const pool=async(items,size,worker)=>{
  }));
  return results;
 };
+
+// Map coordinates, by GeoNames id so nothing is matched on a name.
+async function wikidataCoordinates(ids){
+ const query=`SELECT ?geo ?coord WHERE { VALUES ?geo {${ids.map(id=>`"${id}"`).join(' ')}} ?city wdt:P1566 ?geo; wdt:P625 ?coord. }`;
+ const response=await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`,{headers:{'User-Agent':AGENT,Accept:'application/sparql-results+json'}});
+ if(!response.ok)throw Error(`Wikidata HTTP ${response.status}`);
+ const found=new Map();
+ for(const row of (await response.json()).results.bindings){
+  const point=/^Point\((-?[\d.]+) (-?[\d.]+)\)$/.exec(row.coord.value);
+  if(point&&!found.has(row.geo.value))found.set(row.geo.value,{lat:Number(point[2]),lon:Number(point[1])});
+ }
+ return found;
+}
+async function nominatimCoordinates(name,country){
+ const query=new URLSearchParams({city:name,country,format:'json',limit:'1'});
+ const response=await fetch(`https://nominatim.openstreetmap.org/search?${query}`,{headers:{'User-Agent':AGENT}});
+ if(!response.ok)throw Error(`Nominatim HTTP ${response.status}`);
+ const [hit]=await response.json();
+ // One request per second is the published courtesy limit.
+ await new Promise(resolve=>setTimeout(resolve,1200));
+ return hit?{lat:Number(hit.lat),lon:Number(hit.lon)}:null;
+}
 
 const current=JSON.parse(await readFile('content/experiences.json','utf8'));
 const countries=(await pages('countries/')).filter(country=>(country.products_count??0)>=MIN_PRODUCTS);
@@ -62,12 +85,21 @@ const samples=await pool(kept,4,async city=>{
 kept.forEach((city,index)=>{city.top=samples[index];});
 
 const previous=new Map(current.cities?.map(city=>[city.cityId,city])??[]);
+const unplaced=kept.filter(city=>!previous.get(String(city.id))?.lat);
+const located=unplaced.length?await wikidataCoordinates(unplaced.map(city=>String(city.id))):new Map();
+for(const city of unplaced){
+ const point=located.get(String(city.id))??await nominatimCoordinates(city.name,city.country);
+ if(!point)throw Error(`No coordinates for ${city.name} (${city.id}); add them by hand.`);
+ located.set(String(city.id),point);
+}
 const cities=kept.map(city=>{
  const before=previous.get(String(city.id))??{};
  // Their slug sometimes carries the id; ours is a plain name.
  const slug=city.slug.replace(new RegExp(`-${city.id}$`),'');
  return {slug:before.slug??slug,cityId:String(city.id),name:city.name,country:city.country,products:city.products,
   ...(before.hu??HU_CITIES[city.name]?{hu:before.hu??HU_CITIES[city.name]}:{}),
+  lat:Number((before.lat??located.get(String(city.id)).lat).toFixed(4)),
+  lon:Number((before.lon??located.get(String(city.id)).lon).toFixed(4)),
   ...(city.top?.length?{top:city.top}:{}),
   ...(before.notes?{notes:before.notes}:{})};
 });

@@ -16,4 +16,6 @@ Fonts: Manrope and DM Sans, distributed through Google Fonts. Font sources are f
 
 Brand mark and interface icons are original inline SVG geometry in this project.
 
+`world.svg` is the land silhouette behind the experiences city picker. It is derived from Natural Earth 1:110m physical land (public domain, no attribution required), taken from the GeoJSON mirror at `https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/physical/ne_110m_land.json` and projected equirectangularly onto a 1000-unit width, cropped to 78°N–58°S. The same three numbers live in `MAP` in `src/experiences.mjs`, which places the city dots; changing one without the other moves every dot off its country. City coordinates come from Wikidata by GeoNames id (`scripts/sync-experiences.mjs`), with OpenStreetMap Nominatim as the fallback for ids Wikidata does not carry.
+
 The 100 separate article photographs in `journal/` retain their individual Wikimedia Commons source licences. Full author, source, licence and file records: [journal/SOURCES.md](journal/SOURCES.md). The site displays image attribution on article pages and cards. These photographs are topic illustrations, not evidence of a bookable service.

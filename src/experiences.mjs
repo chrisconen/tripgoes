@@ -16,6 +16,11 @@ const WIDGET_PARAMS = ['promo_id', 'campaign_id', 'powered_by', 'tours', 'show_m
 const HOST_KINDS = ['script', 'img', 'frame', 'connect'];
 // The brief: at least twenty bookable programs visible per city.
 export const MIN_TOURS = 20;
+// Equirectangular, cropped north and south of anywhere we sell. These numbers
+// are also baked into assets/world.svg; change one and you change both.
+export const MAP = { north: 78, south: -58, width: 1000 };
+MAP.height = round(MAP.width * (MAP.north - MAP.south) / 360);
+function round(value) { return Math.round(value * 10) / 10; }
 
 function origin(value) {
   let url;
@@ -68,6 +73,11 @@ export function validateExperiences(data) {
     if (typeof city.name !== 'string' || !city.name.trim() || city.name.length > 80) invalid(`city ${city.slug} needs a name`);
     if (!Object.hasOwn(countries, city.country)) invalid(`city ${city.slug} names an unlisted country`);
     if (!Number.isInteger(city.products) || city.products < data.minProducts) invalid(`city ${city.slug} must carry at least ${data.minProducts} products`);
+    for (const axis of ['lat', 'lon']) {
+      const limit = axis === 'lat' ? 90 : 180;
+      if (typeof city[axis] !== 'number' || !Number.isFinite(city[axis]) || Math.abs(city[axis]) > limit) invalid(`city ${city.slug} needs a numeric ${axis}`);
+    }
+    if (city.lat > MAP.north || city.lat < MAP.south) invalid(`city ${city.slug} falls outside the map`);
     if (city.hu !== undefined && (typeof city.hu !== 'string' || !city.hu.trim() || city.hu.length > 80)) invalid(`city ${city.slug} has an unusable Hungarian name`);
     if (city.top !== undefined && (!Array.isArray(city.top) || !city.top.length || city.top.length > 8
       || city.top.some(title => typeof title !== 'string' || title.trim().length < 3 || title.length > 120))) invalid(`city ${city.slug} has unusable sample titles`);
@@ -83,7 +93,9 @@ export function validateExperiences(data) {
     url.searchParams.set('city_id', city.cityId);
     const samples = (city.top ?? []).map(sample => sample.trim());
     // A page with no text of its own beyond the generated line stays out of the index.
-    return { slug: city.slug, cityId: city.cityId, country: city.country, products: city.products, src: url.href, title, intro, samples, indexable: Boolean(city.notes || samples.length) };
+    return { slug: city.slug, cityId: city.cityId, country: city.country, products: city.products, src: url.href, title, intro, samples,
+      x: round((city.lon + 180) / 360 * MAP.width), y: round((MAP.north - city.lat) / 360 * MAP.width),
+      indexable: Boolean(city.notes || samples.length) };
   });
   return { widget, countries, cities, generated: typeof data.generated === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(data.generated) ? data.generated : '' };
 }
@@ -100,7 +112,8 @@ export function widgetPolicy(widget) {
 
 const copy = {
   hu: {
-    eye: 'ÉLMÉNYEK / FOGLALHATÓ PROGRAMOK', heading: 'Amit<br><em>csinálni fogsz.</em>', citySuffix: 'foglalható programok.',
+    eye: 'ÉLMÉNYEK / FOGLALHATÓ PROGRAMOK', heading: 'Mi legyen<br><em>az úticél?</em>', citySuffix: 'foglalható programok.',
+    map: 'Világtérkép a városokkal. Vidd a kurzort egy pont fölé a város nevéért, és kattints a programjaiért.',
     intro: count => `Belépők, séták és vezetett programok ${count} városban, városonként legalább ${MIN_TOURS} ajánlattal. Válassz várost, és csak annak a kínálata jelenik meg.`,
     source: 'A programlistákat partnerünk állítja össze és frissíti; a kínálat nem teljes, és tételesen nem ellenőrizzük. A listák angol nyelvűek, az árak euróban értendők. A foglalás és a fizetés a szolgáltató oldalán történik.',
     picker: count => `Városválasztó — ${count} város`, featured: 'A legnagyobb választék',
@@ -110,7 +123,8 @@ const copy = {
     all: 'Összes város', guides: 'Utazási útmutatók', lastMinute: 'Last minute jegyárak',
   },
   en: {
-    eye: 'EXPERIENCES / BOOKABLE THINGS TO DO', heading: 'What you<br><em>will actually do.</em>', citySuffix: 'bookable activities.',
+    eye: 'EXPERIENCES / BOOKABLE THINGS TO DO', heading: 'Where are<br><em>you headed?</em>', citySuffix: 'bookable activities.',
+    map: 'World map of the cities. Hover a dot for the city name, click it for that city’s activities.',
     intro: count => `Tickets, walks and guided activities in ${count} cities, with at least ${MIN_TOURS} options in each. Pick a city and only its selection is shown.`,
     source: 'These lists are compiled and updated by our partner; the selection is not exhaustive and we do not verify it item by item. Prices are shown in euro. Booking and payment take place on the provider’s website.',
     picker: count => `City picker — ${count} cities`, featured: 'The widest selection',
@@ -120,6 +134,14 @@ const copy = {
     all: 'All cities', guides: 'Travel guides', lastMinute: 'Last-minute fares',
   },
 };
+
+// Dots on a shared backdrop. No script and no map library: an SVG <title> is
+// the browser's own tooltip, and an SVG <a> is an ordinary link.
+function worldMap({ countries, cities }, lang, slug) {
+  const order = [...cities].sort((a, b) => Number(a.slug === slug) - Number(b.slug === slug));
+  const label = city => `${city.title[lang]} — ${lang === 'hu' ? countries[city.country] : city.country}`;
+  return `<figure class="city-map"><svg viewBox="0 0 ${MAP.width} ${MAP.height}" role="group" aria-label="${copy[lang].map}"><image href="/assets/world.svg" x="0" y="0" width="${MAP.width}" height="${MAP.height}"></image>${order.map(city => `<a href="/${lang}/experiences/${city.slug}/"${city.slug === slug ? ' aria-current="page"' : ''}><title>${escape(label(city))}</title><circle cx="${city.x}" cy="${city.y}" r="3"></circle></a>`).join('')}</svg><figcaption>${copy[lang].map}</figcaption></figure>`;
+}
 
 function picker({ countries, cities }, lang, slug) {
   const groups = new Map();
@@ -150,5 +172,5 @@ export function experiencesPage(data, lang = 'hu', slug = '') {
   const hero = city
     ? `<h1>${escape(city.title[language])}<br><em>${text.citySuffix}</em></h1>`
     : `<h1>${text.heading}</h1>`;
-  return `<div id="trip-experiences" class="flights-page container"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p>${hero}</div><div><p>${city ? escape(city.intro[language]) : text.intro(cities.length)}</p><small>${text.source}</small></div></section>${picker(data, language, slug)}${block(featured, language, city ? escape(city.title[language]) : `${text.featured}: ${escape(featured.title[language])}`, data.generated)}<p class="flights-more">${slug ? `<a href="/${language}/experiences/">${text.all} ↗</a> · ` : ''}<a href="/${language}/last-minute/">${text.lastMinute} ↗</a> · <a href="/${language}/blog/">${text.guides} ↗</a></p><noscript><p>${text.fallback}</p></noscript></div>`;
+  return `<div id="trip-experiences" class="flights-page container"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p>${hero}</div><div><p>${city ? escape(city.intro[language]) : text.intro(cities.length)}</p><small>${text.source}</small></div></section>${worldMap(data, language, slug)}${picker(data, language, slug)}${block(featured, language, city ? escape(city.title[language]) : `${text.featured}: ${escape(featured.title[language])}`, data.generated)}<p class="flights-more">${slug ? `<a href="/${language}/experiences/">${text.all} ↗</a> · ` : ''}<a href="/${language}/last-minute/">${text.lastMinute} ↗</a> · <a href="/${language}/blog/">${text.guides} ↗</a></p><noscript><p>${text.fallback}</p></noscript></div>`;
 }
