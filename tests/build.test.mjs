@@ -20,7 +20,7 @@ test('Travelpayouts runs once in every head under a matching, narrow CSP',async(
   const connect=head.match(/connect-src ([^;]+);/)[1];
   assert.ok(connect.includes('https://emrldco.com'),file);
   assert.equal(connect.includes('workers.dev'),/[/\\](?:offers|flights|last-minute)[/\\]/.test(file),file);
-  assert.equal(connect.includes("'self'"),/[/\\]flights[/\\]/.test(file),file);
+  assert.equal(connect.includes("'self'"),/[/\\](?:flights|last-minute)[/\\]/.test(file),file);
  }
 });
 

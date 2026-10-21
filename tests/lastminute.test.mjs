@@ -5,7 +5,7 @@ import { createSqlite } from '../backend/sqlite.mjs';
 import { lastMinuteBoard, lastMinuteDates, reserveFlightFetch, LAST_MINUTE_DAYS, LAST_MINUTE_TTL, LAST_MINUTE_LIMIT, FLIGHT_MINUTE_LIMIT } from '../backend/repository.mjs';
 import { parseLastMinuteQuery } from '../backend/aviasales.mjs';
 import { handleRequest } from '../backend/worker.mjs';
-import { buildLastMinuteUrl, validateLastMinutePayload, renderLastMinute, lastMinutePage, lastMinuteCurrency, LAST_MINUTE_ORIGIN } from '../src/lastminute.mjs';
+import { buildLastMinuteUrl, validateLastMinutePayload, renderLastMinute, lastMinutePage, lastMinuteCurrency, cityNames, LAST_MINUTE_ORIGIN } from '../src/lastminute.mjs';
 
 const now = Date.parse('2026-10-21T12:00:00.000Z');
 const dates = lastMinuteDates(now);
@@ -193,6 +193,25 @@ test('rendering escapes provider text and states partial coverage', () => {
   assert.ok(injected.includes('&lt;img src=x onerror=alert(1)&gt;'));
   assert.ok(!injected.includes('<img src=x'));
   assert.ok(renderLastMinute(payload({ deals: [] }), 'hu').includes('flights-state'));
+});
+
+test('cards name the cities and keep the codes, falling back when unknown', () => {
+  const cities = cityNames([['Budapest', 'BUD', 'HU'], ['Corfu', 'CFU', 'GR']]);
+  const html = renderLastMinute(payload({ deals: [fare('CFU', 10774, dates[0]), fare('GDN', 12000, dates[1])] }), 'hu', cities);
+  assert.ok(html.includes('Budapest <span aria-hidden="true">→</span> Corfu'));
+  assert.ok(html.includes('BUD → CFU'));
+  // An unlisted code still renders, as the code itself.
+  assert.ok(html.includes('Budapest <span aria-hidden="true">→</span> GDN'));
+  assert.ok(renderLastMinute(payload(), 'hu').includes('BUD <span aria-hidden="true">→</span> GDN'));
+  assert.equal(cityNames([]).size, 0);
+});
+
+test('the page offers a departure city and describes no request plumbing', () => {
+  for (const page of [lastMinutePage('hu'), lastMinutePage('en')]) {
+    assert.ok(page.includes('data-lastminute-form') && page.includes('data-lastminute-submit'));
+    assert.ok(page.includes('data-flight-city') && page.includes('data-flight-code="BUD"'));
+    assert.doesNotMatch(page, /API|TripGoes API|gyorsítótárból érkezik|shared six-hour cache/);
+  }
 });
 
 test('both pages declare the same fixed origin and a language currency', () => {

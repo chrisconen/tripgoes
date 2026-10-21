@@ -1,5 +1,6 @@
 import { safeFlightBookingUrl, validateFlightStatus, buildFlightsUrl, flightValue, SOURCE_IDS, SOURCE_NAMES } from './flights.mjs';
 import { createOfferClock } from './offers.mjs';
+import { flightCityField, flightCityCode, initFlightCities, validateFlightCities } from './flight-cities.mjs';
 
 const { escape, isObject, iata, day, timestamp, invalid, currencies } = flightValue;
 const source = () => ({ id: SOURCE_IDS[0], name: SOURCE_NAMES[0], kind: 'cached_search', maxProviderAgeHours: 48 });
@@ -8,6 +9,23 @@ const REUSE_WINDOW = 21_600_000;
 // six hours and currency. Add an origin picker when the quota budget allows it.
 export const LAST_MINUTE_ORIGIN = 'BUD';
 export const lastMinuteCurrency = lang => lang === 'en' ? 'EUR' : 'HUF';
+
+// Names make a card readable: a code alone does not say where CFU is. The list
+// is the catalogue the finder already loads, so this costs no new asset.
+let catalogue;
+export function cityNames(rows) {
+  const map = new Map();
+  for (const row of rows) map.set(row[1], row);
+  return map;
+}
+export function loadCityNames(fetchImpl = typeof fetch === 'function' ? fetch : null) {
+  if (!fetchImpl) return Promise.resolve(null);
+  catalogue ||= fetchImpl('/assets/flight-cities.json', { credentials: 'omit', referrerPolicy: 'no-referrer' })
+    .then(response => { if (!response.ok) throw new Error('Catalogue unavailable.'); return response.json(); })
+    .then(data => cityNames(validateFlightCities(data)))
+    .catch(() => { catalogue = undefined; return null; });
+  return catalogue;
+}
 
 export function buildLastMinuteUrl(apiBase, query) {
   if (typeof apiBase !== 'string' || !apiBase.trim() || !isObject(query) || !iata(query.origin) || !currencies.includes(query.currency)) invalid();
@@ -53,32 +71,32 @@ export function validateLastMinutePayload(data, expectedQuery) {
 
 const copy = {
   hu: {
-    eye: 'LAST MINUTE / TÁROLT ÁRAK', title: 'Hét nap.<br><em>Egy döntés.</em>', intro: 'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára Budapestről, napi egy ajánlattal.',
+    eye: 'LAST MINUTE / TÁROLT ÁRAK', title: 'Hét nap.<br><em>Egy döntés.</em>', intro: 'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára, napi egy ajánlattal. Az indulási várost te választod meg; alapértelmezés Budapest.',
     source: 'Gyorsítótárazott keresési adatok, legfeljebb 48 órás forrásablakból. Nem utazási csomag, nem tartalmaz szállást, és nem élő ár vagy foglalhatósági ígéret. Egy felnőtt, turistaosztály, csak odaút; a poggyász és a további díjak nem ismertek.',
     window: 'Vizsgált indulási napok', refresh: 'Lista frissítése', statusRetry: 'Kapcsolat újraellenőrzése',
-    privacy: 'Az oldal megnyitásakor egy névtelen lekérés indul a TripGoes API-hoz. A lista hat órán át közös gyorsítótárból érkezik, felhasználói azonosítás nélkül.',
+    search: 'Lista lekérése', invalid: 'Válassz indulási várost a listából, vagy írj be három betűs IATA-kódot.',
     checking: 'Az adatkapcsolat ellenőrzése…', checkingBody: 'A lista az ellenőrzés után töltődik be.', unconfigured: 'Az adatkapcsolat még nincs beállítva.', unconfiguredBody: 'A repülőjegy-adatforrás nincs bekapcsolva. Itt most nem mutatunk árakat vagy mintaajánlatokat.', unavailable: 'Az adatkapcsolat most nem érhető el.', unavailableBody: 'A kapcsolat állapotát nem sikerült ellenőrizni. Ez nem azt jelenti, hogy nincs járat.',
     loading: 'Tárolt árak lekérése a következő hét napra…', empty: 'Most nincs tárolt találat erre a hétre.', emptyBody: 'Az adatforrás nem adott vissza árat ezekre a napokra. Ez nem teljes járatlista, és nem bizonyítja, hogy nincs foglalható repülőjegy.',
     error: 'A listát most nem sikerült lekérni.', errorBody: 'Adatforrás- vagy kapcsolati hiba történt. Próbáld újra később; ezt nem kezeljük üres találatként.', limited: 'A lekérdezési korlátot most elértük.', limitedBody: 'Az adatforrás vagy a TripGoes átmeneti lekérdezési korlátja miatt most nem frissíthető a lista. Próbáld meg később.',
     stale: 'A lista újrahasználati ideje lejárt.', staleBody: 'Frissíts a gombbal újabb adatokért. Ez a TripGoes gyorsítótárának határa, nem a jegyárak lejárati ideje.',
-    results: 'Legolcsóbb tárolt árak', count: 'Megjelenített napok', retrieved: 'API-lekérés ideje', reuse: 'TripGoes újrahasználati határ', timing: 'A lekérés ideje nem az ár felfedezésének időpontja. A forrás nem ad megbízható, egyedi ármegfigyelési időt.',
+    results: 'Legolcsóbb tárolt árak', count: 'Megjelenített napok', retrieved: 'Lekérdezés ideje', reuse: 'A lista eddig érvényes', timing: 'A lekérdezés ideje nem az ár felfedezésének időpontja. A forrás nem ad megbízható, egyedi ármegfigyelési időt.',
     partial: 'nap adatai hiányoznak a vizsgált hétből; a lista ennyivel kevesebb napra épül.',
-    fare: 'Tárolt egyirányú jegyár · 1 felnőtt', departureLabel: 'Indulás', airport: 'Jelzett repülőterek', airline: 'Légitársaság / járat', stops: 'Átszállások', duration: 'Jelzett repülési idő', minutes: 'perc', unknown: 'Nem közölt',
+    fare: 'Tárolt egyirányú jegyár · 1 felnőtt', departureLabel: 'Indulás', airport: 'Repülőtéri kódok', airline: 'Légitársaság / járat', stops: 'Átszállások', duration: 'Jelzett repülési idő', minutes: 'perc', unknown: 'Nem közölt',
     extras: 'A visszautat, a poggyászt és a további díjakat a szolgáltatónál állítsd össze és ellenőrizd. Teljes utazási költséget nem számolunk belőle, és TripScore-t sem adunk rá.', book: 'Ajánlat megnyitása a foglalási oldalon', affiliate: 'Partnerlink. A végleges árat és feltételeket a foglalási oldalon látod.',
     planner: 'Saját teljes költség megtervezése', flights: 'Saját repülőjegy-keresés', noJS: 'A listához JavaScript szükséges.',
   },
   en: {
-    eye: 'LAST MINUTE / CACHED FARES', title: 'Seven days.<br><em>One decision.</em>', intro: 'The cheapest cached one-way fare from Budapest for each of the next seven departure days, one per day.',
+    eye: 'LAST MINUTE / CACHED FARES', title: 'Seven days.<br><em>One decision.</em>', intro: 'The cheapest cached one-way fare for each of the next seven departure days, one per day. Choose your departure city; Budapest is the default.',
     source: 'Cached search data from a provider window of up to 48 hours. This is not a package, includes no accommodation, and is not a live price or an availability promise. One adult, economy, one way; baggage and additional fees are unknown.',
     window: 'Departure days covered', refresh: 'Refresh the list', statusRetry: 'Check connection again',
-    privacy: 'Opening this page starts one anonymous request to the TripGoes API. The list is served from a shared six-hour cache, with no user identification.',
+    search: 'Show the list', invalid: 'Choose a departure city from the suggestions, or enter a three-letter IATA code.',
     checking: 'Checking the data connection…', checkingBody: 'The list loads after this check.', unconfigured: 'The data connection is not configured yet.', unconfiguredBody: 'The flight data source is not enabled. No prices or sample offers are displayed here.', unavailable: 'The data connection is unavailable right now.', unavailableBody: 'We could not check the connection status. This does not mean that no flights exist.',
     loading: 'Retrieving cached prices for the next seven days…', empty: 'No cached results for this week right now.', emptyBody: 'The source returned no prices for these days. This is not a complete flight inventory and does not establish that no bookable flight exists.',
     error: 'The list could not be retrieved right now.', errorBody: 'The data source or connection failed. Try again later; this is not an empty result.', limited: 'The request limit has been reached.', limitedBody: 'A temporary provider or TripGoes request limit prevents a refresh right now. Please try again later.',
     stale: 'This list’s reuse window has ended.', staleBody: 'Refresh to request newer data. This is the TripGoes cache cutoff, not the expiry time of a fare.',
-    results: 'Cheapest cached fares', count: 'Days displayed', retrieved: 'API retrieval time', reuse: 'TripGoes reuse cutoff', timing: 'Retrieval time is not when a fare was discovered. The source does not provide a reliable observation timestamp for each individual price.',
+    results: 'Cheapest cached fares', count: 'Days displayed', retrieved: 'Retrieved', reuse: 'List valid until', timing: 'Retrieval time is not when a fare was discovered. The source does not provide a reliable observation timestamp for each individual price.',
     partial: 'day(s) of the covered week are missing; the list is built from fewer days.',
-    fare: 'Cached one-way fare · 1 adult', departureLabel: 'Departure', airport: 'Reported airports', airline: 'Airline / flight', stops: 'Stops', duration: 'Reported flight time', minutes: 'min', unknown: 'Not provided',
+    fare: 'Cached one-way fare · 1 adult', departureLabel: 'Departure', airport: 'Airport codes', airline: 'Airline / flight', stops: 'Stops', duration: 'Reported flight time', minutes: 'min', unknown: 'Not provided',
     extras: 'Arrange and confirm the return leg, baggage and additional fees with the provider. We do not calculate a complete trip cost or assign a TripScore from this fare.', book: 'Open on the booking site', affiliate: 'Affiliate link. Confirm the final price and conditions on the booking page.',
     planner: 'Plan your complete trip cost', flights: 'Search flights yourself', noJS: 'The list requires JavaScript.',
   },
@@ -89,19 +107,20 @@ const utcTime = (value, lang) => `${new Intl.DateTimeFormat(locale(lang), { date
 const scheduledTime = value => `${value.slice(0, 10)} · ${value.slice(11, 16)} (UTC${value.endsWith('Z') ? '' : value.slice(-6)})`;
 const stateHTML = (state, text, lang) => `<div class="flights-state"><span class="flights-state-mark" aria-hidden="true">↗</span><h3>${text[state]}</h3><p>${text[`${state}Body`]}</p><div class="flights-next"><a href="/${lang}/flights/">${text.flights} ↗</a><a href="/${lang}/planner/">${text.planner} ↗</a></div></div>`;
 
-export function renderLastMinute(data, lang = 'hu') {
+export function renderLastMinute(data, lang = 'hu', cities = null) {
   const language = langCode(lang), text = copy[language];
   const payload = validateLastMinutePayload(data);
+  const place = code => escape(cities?.get?.(code)?.[0] ?? code);
   if (!payload.deals.length) return stateHTML('empty', text, language);
   const shown = value => value === null ? text.unknown : escape(value);
   const missing = payload.requestedDays - payload.completedDays;
   const price = item => escape(new Intl.NumberFormat(locale(language), { style: 'currency', currency: item.currency }).format(item.priceMinor / 100));
-  return `<div class="flights-timing"><div><span>${text.window}</span><strong>${escape(payload.dates[0])} – ${escape(payload.dates[payload.dates.length - 1])}</strong></div><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}${missing ? ` ${missing} ${text.partial}` : ''}</p></div><div class="flights-grid">${payload.deals.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">${text.fare}</p><h3>${item.origin} <span aria-hidden="true">→</span> ${item.destination}</h3><strong class="flights-price">${price(item)}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div><div><dt>${text.airport}</dt><dd>${shown(item.originAirport)} → ${shown(item.destinationAirport)}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>`;
+  return `<div class="flights-timing"><div><span>${text.window}</span><strong>${escape(payload.dates[0])} – ${escape(payload.dates[payload.dates.length - 1])}</strong></div><div><span>${text.retrieved}</span><strong>${utcTime(payload.fetchedAt, language)}</strong></div><div><span>${text.reuse}</span><strong>${utcTime(payload.cacheUntil, language)}</strong></div><p>${text.timing}${missing ? ` ${missing} ${text.partial}` : ''}</p></div><div class="flights-grid">${payload.deals.map(item => `<article class="flights-card"><div class="flights-card-top"><p class="flights-source">${text.fare}</p><h3>${place(item.origin)} <span aria-hidden="true">→</span> ${place(item.destination)}</h3><strong class="flights-price">${price(item)}</strong></div><dl class="flights-facts"><div><dt>${text.departureLabel}</dt><dd>${scheduledTime(item.departureAt)}</dd></div><div><dt>${text.airport}</dt><dd>${escape(item.origin)} → ${escape(item.destination)}${item.destinationAirport && item.destinationAirport !== item.destination ? ` (${escape(item.destinationAirport)})` : ''}</dd></div><div><dt>${text.airline}</dt><dd>${shown(item.airline)} / ${shown(item.flightNumber)}</dd></div><div><dt>${text.stops}</dt><dd>${shown(item.transfers)}</dd></div><div><dt>${text.duration}</dt><dd>${item.durationMinutes === null ? text.unknown : `${item.durationMinutes} ${text.minutes}`}</dd></div></dl><p class="flights-extras">${text.extras}</p><div class="flights-card-bottom"><a class="flights-button flights-button-dark" data-flight-booking href="${escape(item.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" referrerpolicy="no-referrer">${text.book} ↗</a><small>${text.affiliate}</small></div></article>`).join('')}</div>`;
 }
 
 export function lastMinutePage(lang = 'hu') {
   const language = langCode(lang), text = copy[language];
-  return `<div id="trip-lastminute" class="flights-page container" data-lastminute-lang="${language}" data-lastminute-origin="${LAST_MINUTE_ORIGIN}" data-lastminute-currency="${lastMinuteCurrency(language)}"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p><h1>${text.title}</h1></div><div><p>${text.intro}</p><small>${text.source}</small></div></section><div class="flights-connection"><p data-lastminute-connection role="status" aria-live="polite">${text.checking}</p><button type="button" class="flights-button flights-button-text" data-lastminute-check hidden>${text.statusRetry}</button></div><p class="flights-privacy">${text.privacy}</p><section class="flights-results" aria-labelledby="lastminute-results-heading"><div class="flights-results-head"><h2 id="lastminute-results-heading">${text.results}</h2><button type="button" class="flights-button flights-button-outline" data-lastminute-refresh hidden>${text.refresh}</button></div><p data-lastminute-status class="flights-status" role="status" aria-live="polite" aria-atomic="true"></p><div data-lastminute-results>${stateHTML('checking', text, language)}</div></section><noscript><p>${text.noJS}</p></noscript></div>`;
+  return `<div id="trip-lastminute" class="flights-page container" data-lastminute-lang="${language}" data-lastminute-origin="${LAST_MINUTE_ORIGIN}" data-lastminute-currency="${lastMinuteCurrency(language)}"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p><h1>${text.title}</h1></div><div><p>${text.intro}</p><small>${text.source}</small></div></section><div class="flights-connection"><p data-lastminute-connection role="status" aria-live="polite">${text.checking}</p><button type="button" class="flights-button flights-button-text" data-lastminute-check hidden>${text.statusRetry}</button></div><form class="flights-search" data-lastminute-form><div class="flights-route-fields">${flightCityField('origin', language, true)}</div><div class="flights-search-bottom"><button type="submit" class="flights-button flights-button-dark" data-lastminute-submit disabled>${text.search}</button></div></form><section class="flights-results" aria-labelledby="lastminute-results-heading"><div class="flights-results-head"><h2 id="lastminute-results-heading">${text.results}</h2><button type="button" class="flights-button flights-button-outline" data-lastminute-refresh hidden>${text.refresh}</button></div><p data-lastminute-status class="flights-status" role="status" aria-live="polite" aria-atomic="true"></p><div data-lastminute-results>${stateHTML('checking', text, language)}</div></section><noscript><p>${text.noJS}</p></noscript></div>`;
 }
 
 export function initLastMinute(lang, { apiBase } = {}) {
@@ -111,11 +130,14 @@ export function initLastMinute(lang, { apiBase } = {}) {
   root.dataset.lastminuteBound = 'true';
   const language = langCode(lang || root.dataset.lastminuteLang), text = copy[language];
   const query = { origin: root.dataset.lastminuteOrigin || LAST_MINUTE_ORIGIN, currency: root.dataset.lastminuteCurrency || lastMinuteCurrency(language) };
+  const form = root.querySelector('[data-lastminute-form]'), submit = root.querySelector('[data-lastminute-submit]');
   const results = root.querySelector('[data-lastminute-results]'), status = root.querySelector('[data-lastminute-status]');
   const connection = root.querySelector('[data-lastminute-connection]'), refresh = root.querySelector('[data-lastminute-refresh]'), check = root.querySelector('[data-lastminute-check]');
-  let statusUrl, boardUrl;
-  try { statusUrl = buildFlightsUrl(apiBase); boardUrl = buildLastMinuteUrl(apiBase, query); }
-  catch { connection.textContent = text.unconfigured; results.innerHTML = stateHTML('unconfigured', text, language); return false; }
+  form.addEventListener('submit', event => event.preventDefault());
+  const cleanupCities = initFlightCities(root, language);
+  let statusUrl;
+  try { statusUrl = buildFlightsUrl(apiBase); buildLastMinuteUrl(apiBase, query); }
+  catch { connection.textContent = text.unconfigured; results.innerHTML = stateHTML('unconfigured', text, language); return cleanupCities; }
   let configured = false, disposed = false, generation = 0, statusVersion = 0;
   let boardController, statusController, timer, serverNow, cacheUntil;
   const clearResult = state => { results.innerHTML = stateHTML(state, text, language); };
@@ -138,7 +160,7 @@ export function initLastMinute(lang, { apiBase } = {}) {
     status.textContent = text.loading; results.innerHTML = ''; results.setAttribute('aria-busy', 'true'); refresh.hidden = false;
     const requestStarted = monotonicNow();
     try {
-      const response = await fetch(boardUrl, requestOptions(boardController.signal));
+      const response = await fetch(buildLastMinuteUrl(apiBase, query), requestOptions(boardController.signal));
       if (!response.ok) {
         let code = ''; try { const errorBody = await response.json(); code = errorBody?.error?.code ?? errorBody?.error ?? errorBody?.code ?? ''; } catch { /* Status remains useful for non-JSON failures. */ }
         if (current !== generation || disposed || !root.isConnected) return;
@@ -152,7 +174,9 @@ export function initLastMinute(lang, { apiBase } = {}) {
       serverNow = createOfferClock(payload.asOf, { requestStarted, receivedAt, monotonicNow, minimumTime: serverNow?.() ?? 0 });
       cacheUntil = Date.parse(payload.cacheUntil);
       if (removeStale()) return;
-      results.innerHTML = renderLastMinute(payload, language); status.textContent = `${text.count}: ${payload.deals.length}.`; watchCache();
+      const cities = await loadCityNames().catch(() => null);
+      if (current !== generation || disposed || !root.isConnected) return;
+      results.innerHTML = renderLastMinute(payload, language, cities); status.textContent = `${text.count}: ${payload.deals.length}.`; watchCache();
     } catch (error) { if (current === generation && !disposed && root.isConnected && error.name !== 'AbortError') { clearResult('error'); status.textContent = text.error; } }
     finally { if (current === generation) results.setAttribute('aria-busy', 'false'); }
   };
@@ -160,19 +184,25 @@ export function initLastMinute(lang, { apiBase } = {}) {
     const current = ++statusVersion;
     generation++; boardController?.abort(); clearTimeout(timer); cacheUntil = null;
     statusController?.abort(); statusController = new AbortController();
-    configured = false; check.disabled = true; check.hidden = false; refresh.hidden = true;
+    configured = false; submit.disabled = true; check.disabled = true; check.hidden = false; refresh.hidden = true;
     connection.textContent = text.checking; status.textContent = ''; clearResult('checking');
     try {
       const response = await fetch(statusUrl, requestOptions(statusController.signal));
       if (!response.ok) throw new Error('Status failed.');
       const payload = validateFlightStatus(await response.json());
       if (disposed || !root.isConnected || current !== statusVersion) return;
-      configured = payload.configured; connection.textContent = configured ? '' : text.unconfigured;
+      configured = payload.configured; submit.disabled = !configured; connection.textContent = configured ? '' : text.unconfigured;
       if (!configured) { clearResult('unconfigured'); return; }
       await load();
     } catch (error) { if (!disposed && root.isConnected && current === statusVersion && error.name !== 'AbortError') { connection.textContent = text.unavailable; clearResult('unavailable'); } }
     finally { if (current === statusVersion) check.disabled = false; }
   };
+  form.addEventListener('submit', () => {
+    const field = form.elements.origin;
+    const origin = flightCityCode(field.value, field.dataset.flightCode, field.dataset.flightLabel);
+    if (!origin) { status.textContent = text.invalid; field.focus(); return; }
+    query.origin = origin; load();
+  });
   refresh.addEventListener('click', () => { load(); });
   check.addEventListener('click', checkStatus);
   const guardLinks = event => { if (event.target.closest('[data-flight-booking]') && removeStale()) event.preventDefault(); };
@@ -180,5 +210,5 @@ export function initLastMinute(lang, { apiBase } = {}) {
   const visibility = () => { if (document.visibilityState === 'visible' && root.isConnected) { removeStale(); watchCache(); } };
   document.addEventListener('visibilitychange', visibility);
   checkStatus();
-  return () => { disposed = true; generation++; statusVersion++; boardController?.abort(); statusController?.abort(); clearTimeout(timer); document.removeEventListener('visibilitychange', visibility); };
+  return () => { disposed = true; generation++; statusVersion++; boardController?.abort(); statusController?.abort(); clearTimeout(timer); cleanupCities(); document.removeEventListener('visibilitychange', visibility); };
 }

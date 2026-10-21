@@ -111,8 +111,10 @@ test('rendered cards escape supplied text and clearly label fare scope, source t
   assert.match(html, /&quot; &amp; test/);
   assert.match(html, /€123\.45/);
   assert.match(html, /rel="sponsored noopener noreferrer"/);
-  assert.match(html, /API retrieval time/);
-  assert.match(html, /TripGoes reuse cutoff/);
+  assert.match(html, /Retrieved/);
+  assert.match(html, /Results valid until/);
+  // The interface describes the data, never the supplier or the transport.
+  assert.doesNotMatch(html, /API/);
   assert.match(html, /not when a fare was discovered/);
   assert.match(html, /do not calculate a complete trip cost/);
   assert.match(html, /2026-12-01 · 10:30 \(UTC\+01:00\)/);
