@@ -13,6 +13,7 @@ import {lastMinutePage} from '../src/lastminute.mjs';
 import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
 import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
+import {validatePackages,packagesPage,packageGrid,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
@@ -39,10 +40,23 @@ const widgetCSP=experiences?{scriptExtra:'',imgExtra:IMAGE_HOSTS.map(host=>` ${h
 // The landing page shows real inventory, so it needs the real numbers.
 const highlights=experiences?{total:experiences.cities.length,
  cities:experiences.cities.slice(0,8).map(city=>({slug:city.slug,title:city.title.hu,titleEn:city.title.en,products:city.products,sample:city.samples[0]??''}))}:null;
+const packageConfig=JSON.parse(await readFile('content/packages.json','utf8'));
+const packages=packageConfig.offers?.length?validatePackages(packageConfig):null;
+// Complete trips are our own cards, so the route needs the picture host only.
+const packageCSP=packages?{scriptExtra:'',imgExtra:` ${PACKAGE_IMAGES}`,frameSrc:"'none'",connectExtra:[]}:null;
+// The landing page leads with real trips: the deepest discounts first, then
+// the long-haul ones. The feed is already sorted by discount.
+const tripView=packages?lang=>({
+ total:packages.offers.length,
+ deals:packageGrid(packages.offers.slice(0,8),lang,{}),
+ dream:packageGrid(packages.offers.filter(offer=>offer.source==='dream').slice(0,8),lang,{generated:packages.generated}),
+ destinations:packages.countries.filter(country=>country.count>=MIN_FOR_PAGE).slice(0,12)
+  .map(country=>`<a href="/${lang}/utak/${country.slug}/">${escapeHTML(country.title[lang])}<span>${country.count}</span></a>`).join(''),
+}):null;
 const serviceConfig=JSON.parse(await readFile('content/services.json','utf8'));
 const services=serviceConfig.widgets?.length?validateServices(serviceConfig):null;
 const serviceCSP=services?servicePolicy(services):null;
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[]),...(services?['services']:[])];
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','flights','last-minute',...(packages?['utak']:[]),...(experiences?['experiences']:[]),...(services?['services']:[])];
 // The homepage carried noindex, so the strongest page on the site was kept
 // out of search entirely. Trust pages are indexed too, because a commercial
 // site is judged on them; /guides/ stays out, it repeats the /blog/ list.
@@ -51,19 +65,19 @@ if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||ne
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
  const canonical=`${origin}/${lang}/${path}`;
- const view=createView({lang,page:route.split('/')[0],pathname:`/${lang}/${path}`,highlights:highlights&&{...highlights,cities:highlights.cities.map(city=>({...city,title:lang==='en'?city.titleEn:city.title}))}});
+ const view=createView({lang,page:route.split('/')[0],pathname:`/${lang}/${path}`,trips:route?null:tripView?.(lang),highlights:highlights&&{...highlights,cities:highlights.cities.map(city=>({...city,title:lang==='en'?city.titleEn:city.title}))}});
  const main=content||(route?view.infoPage():view.home());
  const extras=renderSharing({url:canonical,title,image:new URL(image,origin).href,lang})+renderRecommendations(articles,lang,{slug:route.startsWith('blog/')?route.slice(5):'',seed:route});
  const values={route:path,lang,title:escapeHTML(title),description:escapeHTML(description),canonical,robots:indexable?'index,follow':'noindex,follow',content:view.header()+main+extras+view.footer(),image,imageAlt:escapeHTML(imageAlt||(lang==='hu'?'TripGoes utazási inspiráció':'TripGoes travel inspiration')),ogType,preload:!route||ogType==='article'?`<link rel="preload" href="${image}" as="image">`:''};
  values.page=pageOverride??route.split('/')[0];
  const section=route.split('/')[0];
- const widgets=section==='experiences'?widgetCSP:section==='services'?serviceCSP:null;
+ const widgets=section==='experiences'?widgetCSP:section==='services'?serviceCSP:(section==='utak'||!section)?packageCSP:null;
  values.scriptExtra=widgets?widgets.scriptExtra:'';
  values.imgExtra=widgets?widgets.imgExtra:'';
  values.frameSrc=widgets?widgets.frameSrc:"'none'";
  values.styleExtra=widgets?.styleExtra??'';
  values.connectSrc=[...(widgets?widgets.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
- values.extraStyles=['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ values.extraStyles=(values.page==='utak'||values.page==='')?'<link rel="stylesheet" href="/src/packages.css">':['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
@@ -88,16 +102,31 @@ for(const lang of ['hu','en']){
    }
    continue;
   }
+  if(route==='utak'){
+   await writeFile(`${dir}/index.html`,render({lang,route,
+    title:lang==='hu'?`Komplett utazások — ${packages.offers.length} ajánlat repülőjeggyel és szállással | TripGoes`:`Complete trips — ${packages.offers.length} offers with flight and hotel | TripGoes`,
+    description:lang==='hu'?'Repülőjegy, szállás és ellátás egy árban. Szűrhető ár, hossz, ellátás és induló repülőtér szerint; a foglalás az utazásszervező oldalán zárul.':'Flight, hotel and board for one price. Filter by price, length, board and departure airport; booking finishes on the tour operator’s website.',
+    content:`<main id="main">${packagesPage(packages,lang)}</main>`,indexable:true}));
+   sitemap.push(`${origin}/${lang}/${route}/`);
+   // One page per destination: a country with a handful of offers stays in
+   // the full catalogue instead of becoming a thin page of its own.
+   for(const country of packages.countries.filter(entry=>entry.count>=MIN_FOR_PAGE)){
+    const countryRoute=`${route}/${country.slug}`,countryDir=`dist/${lang}/${countryRoute}`;await mkdir(countryDir,{recursive:true});
+    const name=country.title[lang];
+    await writeFile(`${countryDir}/index.html`,render({lang,route:countryRoute,pageOverride:'utak',
+     title:lang==='hu'?`${name} utazás — ${country.count} komplett ajánlat | TripGoes`:`${name} holidays — ${country.count} complete trips | TripGoes`,
+     description:lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira: repülőjegy, szállás és ellátás egy árban. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name}: flight, hotel and board for one price. Prices as of ${packages.generated}.`,
+     content:`<main id="main">${packagesPage(packages,lang,country.slug)}</main>`,indexable:true}));
+    sitemap.push(`${origin}/${lang}/${countryRoute}/`);
+   }
+   continue;
+  }
   if(route==='last-minute'){
    await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Last minute — tárolt repülőjegyárak a következő hét napra | TripGoes':'Last minute — cached fares for the next seven days | TripGoes',description:lang==='hu'?'A következő hét indulási nap legolcsóbb tárolt egyirányú jegyára Budapestről, napi egy ajánlattal. Nem utazási csomag; az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'The cheapest cached one-way fare from Budapest for each of the next seven departure days. Not a package; confirm current prices and conditions with the provider.',content:`<main id="main">${lastMinutePage(lang)}</main>`,indexable:false}));
    continue;
   }
   if(route==='flights'){
    await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Repülőjegy-kereső — tárolt jegyárak | TripGoes':'Flight finder — cached fares | TripGoes',description:lang==='hu'?'Keress korábbi keresésekből származó, tárolt jegyárakat Budapesttől a világ repülőtereiig. Az aktuális árat és feltételeket a szolgáltatónál ellenőrizd.':'Explore cached fares from previous searches, from Budapest to airports around the world. Confirm current prices and conditions with the provider.',content:`<main id="main">${flightPage(lang)}</main>`,indexable:false}));
-   continue;
-  }
-  if(route==='offers'){
-   await writeFile(`${dir}/index.html`,render({lang,route,title:lang==='hu'?'Ajánlatkereső — árak, időbélyeg és forrás | TripGoes':'Offer search — prices, timestamps and sources | TripGoes',content:`<main id="main">${offersPage(lang)}</main>`,indexable:false}));
    continue;
   }
   const title=route==='planner'?(lang==='hu'?'Úttervező — teljes költség, több szabadidő | TripGoes':'Trip planner — whole-trip costs, more time away | TripGoes'):route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;

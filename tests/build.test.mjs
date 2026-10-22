@@ -24,14 +24,14 @@ test('Travelpayouts runs once in every head under a matching, narrow CSP',async(
   if(services)assert.ok(/style-src [^;]*'unsafe-inline'/.test(head)&&!/script-src [^;]*'unsafe-inline'/.test(head),file);
   const connect=head.match(/connect-src ([^;]+);/)[1];
   assert.ok(connect.includes('https://emrldco.com'),file);
-  assert.equal(connect.includes('workers.dev'),/[/\\](?:offers|flights|last-minute)[/\\]/.test(file),file);
+  assert.equal(connect.includes('workers.dev'),/[/\\](?:flights|last-minute)[/\\]/.test(file),file);
   assert.equal(connect.includes("'self'"),/[/\\](?:flights|last-minute)[/\\]/.test(file),file);
  }
 });
 
 test('both locales have correct custom-domain metadata and complete templates',async()=>{
  for(const lang of ['hu','en']){
-  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','offers/','flights/','last-minute/','blog/']){
+  for(const route of ['', 'guides/', 'about/', 'contact/', 'imprint/', 'privacy/', 'cookies/', 'affiliate/','score/','planner/','flights/','last-minute/','blog/']){
    const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
    assert.ok(html.includes(`href="https://tripgoes.com/${lang}/${route}"`));
    assert.ok(html.includes(`hreflang="hu" href="https://tripgoes.com/hu/${route}"`));
@@ -154,9 +154,9 @@ test('every page closes the containers it opens',async()=>{
 // directly, in the meta tag and in the sitemap, so it cannot drift back.
 test('the pages we want found are indexable and listed in the sitemap',async()=>{
  const sitemap=await readFile('dist/sitemap.xml','utf8');
- const indexed=['','about/','contact/','imprint/','score/','planner/','experiences/','services/','blog/'];
+ const indexed=['','about/','contact/','imprint/','score/','planner/','experiences/','services/','blog/','utak/'];
  // Volatile fares, the commission notice and the duplicate journal index.
- const hidden=['privacy/','cookies/','affiliate/','guides/','flights/','last-minute/','offers/'];
+ const hidden=['privacy/','cookies/','affiliate/','guides/','flights/','last-minute/'];
  for(const lang of ['hu','en']){
   for(const route of indexed){
    const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
@@ -168,6 +168,15 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
    assert.ok(html.includes('content="noindex,follow"'),`/${lang}/${route} should stay out of search`);
    assert.ok(!sitemap.includes(`<loc>https://tripgoes.com/${lang}/${route}</loc>`),`/${lang}/${route} should stay out of the sitemap`);
   }
+ }
+ // Destination pages come and go with the feed, so check every one that was
+ // built rather than naming them.
+ const destinations=(await readdir('dist/hu/utak',{withFileTypes:true})).filter(entry=>entry.isDirectory()).map(entry=>entry.name);
+ assert.ok(destinations.length>=8,`only ${destinations.length} destination pages`);
+ for(const lang of ['hu','en'])for(const slug of destinations){
+  const html=await readFile(`dist/${lang}/utak/${slug}/index.html`,'utf8');
+  assert.ok(html.includes('content="index,follow"'),`/${lang}/utak/${slug}/ is noindex`);
+  assert.ok(sitemap.includes(`<loc>https://tripgoes.com/${lang}/utak/${slug}/</loc>`),`/${lang}/utak/${slug}/ is missing from the sitemap`);
  }
  // No empty path segments: a doubled slash is a separate, duplicate URL.
  assert.ok(!/\/\/<\/loc>/.test(sitemap),'the sitemap carries a doubled slash');
