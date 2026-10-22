@@ -61,7 +61,10 @@ const ART = {
   search: '<circle cx="34" cy="30" r="15"/><path d="M45 41 58 54"/><path d="M12 62h56"/><path d="M12 72h34"/>',
   clock: '<circle cx="40" cy="40" r="19"/><path d="M40 29v12l9 6"/><path d="M12 70h56"/>',
   chart: '<path d="M14 62 30 44l12 10 22-28"/><path d="M14 20v50h54"/><circle cx="64" cy="26" r="4"/>',
-  scales: '<path d="M40 16v50"/><path d="M18 30h44"/><path d="M18 30 8 52h20zM62 30 52 52h20z"/><path d="M26 70h28"/>',
+  // Three pans, because the planner weighs three offers against each other.
+  // Drafted by the codex colleague; the rest of its set lost legibility at
+  // 34 pixels, so only this one was taken.
+  scales: '<path d="M40 10V69M28 69h24M13 22h54"/><path d="M16 22 7 42h18zM7 42q9 12 18 0"/><path d="M40 22 31 42h18zM31 42q9 12 18 0"/><path d="M64 22 55 42h18zM55 42q9 12 18 0"/>',
   gauge: '<path d="M14 58a26 26 0 0 1 52 0"/><path d="M40 58 56 38"/><circle cx="40" cy="58" r="4"/><path d="M14 68h52"/>',
 };
 
