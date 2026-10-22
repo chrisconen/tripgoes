@@ -62,3 +62,28 @@
  .pkg-grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
  .trip-showcase,.trip-destinations{padding-top:38px}
 }
+
+/* The featured offer. One slot, and the rule that earned it is printed on
+   the card rather than left to taste. */
+.pkg-featured{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px;align-items:center;margin-top:54px;padding:26px;background:var(--white);border:1px solid var(--line);border-radius:16px}
+.pkg-featured-media img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:3/2}
+.pkg-featured-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.pkg-featured-thumbs img{aspect-ratio:3/2}
+.pkg-featured-body .eyebrow{color:#8a3d12}
+.pkg-featured-body .pkg-where{display:block;padding:14px 0 0}
+.pkg-featured-body h2{margin-top:6px;font-size:clamp(23px,2.8vw,32px)}
+.pkg-featured-body .pkg-stars{display:block;padding:6px 0 0;font-size:14px}
+.pkg-featured-facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:16px 0 0;padding:0}
+.pkg-featured-facts li{padding:5px 11px;border-radius:6px;background:#eef3ea;font-size:13px;font-weight:600}
+/* Outranks the plain fact chip above: a departure from abroad is the one
+   thing on this card that must not blend in. */
+.pkg-featured-facts li.pkg-abroad{background:#fdeadf;color:#8a3d12}
+.pkg-featured-price{margin-top:20px;font-family:var(--heading);font-size:17px;font-weight:600}
+.pkg-featured-price strong{font-size:29px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.pkg-featured-price small{font-family:var(--font);font-size:13px;font-weight:600;opacity:.6;margin-left:3px}
+.pkg-featured .button{margin-top:18px}
+.pkg-featured .pkg-note{margin-top:16px;max-width:52ch}
+@media(max-width:880px){
+ .pkg-featured{grid-template-columns:1fr;gap:20px;padding:18px;margin-top:36px}
+ .pkg-featured-thumbs{display:none}
+}

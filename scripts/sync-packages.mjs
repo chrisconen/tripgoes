@@ -43,14 +43,18 @@ function parseOffer(xml,source){
  // A card without a picture is not worth showing, and the handful that
  // carry none are the ones sold without a flight anyway.
  if(!price||price<=0||!photos.length)return null;
+ // <length> counts calendar days with both ends included, so it should be
+ // exactly one more than the nights the dates span. In about 7% of the feed
+ // it is not: some records carry a <to> before their <from>. Then neither
+ // number can be trusted, and an offer whose length we cannot state is not
+ // one we are willing to sell.
+ const nights=Math.round((Date.parse(to)-Date.parse(from))/86400000);
+ if(!(nights>=1)||nights!==num(tag(xml,'length'))-1)return null;
  return {
   id:`${hotelId}-${from}`,source,
   country:tag(xml,'country'),locality:tag(xml,'locality'),
   hotel:tag(xml,'hotel'),stars:num(tag(xml,'hotelinfo').match(/<stars>([\d.]+)<\/stars>/)?.[1]),
-  // The feed's <length> counts calendar days, arrival and departure
-  // included, so using it as nights overstated every trip by one. The
-  // dates are the authority, and the link's own nl_nights agrees with them.
-  from,to,nights:Math.round((Date.parse(to)-Date.parse(from))/86400000),
+  from,to,nights,
   price,currency:xml.match(/<totalprice currency="(\w+)"/)?.[1]??'HUF',
   discount:num(tag(xml,'discount'))??0,
   food:tag(xml,'food'),transport:tag(xml,'transportation'),
@@ -75,8 +79,10 @@ if(process.argv[1]?.endsWith('sync-packages.mjs')){
  for(const [source,url] of Object.entries(feeds)){
   const response=await fetch(url,{headers:{'User-Agent':'tripgoes-config/1.0 (https://tripgoes.com)'}});
   if(!response.ok)throw Error(`${source}: HTTP ${response.status}`);
-  const parsed=parseFeed(await response.text(),source);
-  console.log(`${source}: ${parsed.length} offers`);
+  const text=await response.text();
+  const parsed=parseFeed(text,source);
+  const total=(text.match(/<offer[\s>]/g)||[]).length;
+  console.log(`${source}: ${parsed.length} offers (${total-parsed.length} dropped: no picture, no price, or dates that contradict the stated length)`);
   // The dream feed repeats a few of the bargain feed's hotels; the first
   // one wins so an offer never appears twice in the same list.
   for(const offer of parsed)if(!seen.has(offer.id)){seen.add(offer.id);offers.push(offer);}

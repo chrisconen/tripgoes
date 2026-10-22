@@ -13,7 +13,7 @@ import {lastMinutePage} from '../src/lastminute.mjs';
 import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
 import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
-import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,hasPage,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
+import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,hasPage,featuredOffer,featuredCard,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
 import {toolsPage} from '../src/tools.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
@@ -49,9 +49,14 @@ const packageCSP=packages?{scriptExtra:'',imgExtra:` ${PACKAGE_IMAGES}`,frameSrc
 // the long-haul ones. The feed is already sorted by discount.
 const packageFrom=packages?Math.min(...packages.offers.map(offer=>offer.price)):0;
 const packageYears=packages?[...new Set(packages.offers.map(offer=>offer.from.slice(0,4)))].sort().join('–'):'';
+// The featured slot takes the deepest discount, so the band below it starts
+// at the next one rather than repeating it.
+const featured=packages?featuredOffer(packages.offers):null;
+const restOfOffers=packages?packages.offers.filter(offer=>offer!==featured):[];
 const tripView=packages?lang=>({
  total:packages.offers.length,
- deals:packageGrid(packages.offers.slice(0,8),lang,{}),
+ featured:featuredCard(featured,lang,{generated:packages.generated}),
+ deals:packageGrid(restOfOffers.slice(0,8),lang,{}),
  dream:packageGrid(packages.offers.filter(offer=>offer.source==='dream').slice(0,8),lang,{generated:packages.generated}),
  destinations:packages.countries.filter(country=>country.count>=MIN_FOR_PAGE).slice(0,12)
   .map(country=>`<a href="/${lang}/utak/${country.slug}/">${escapeHTML(country.title[lang])}<span>${country.count}</span></a>`).join(''),

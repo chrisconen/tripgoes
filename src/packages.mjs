@@ -269,3 +269,46 @@ export function packagesJsonLd(offers, lang, { name } = {}) {
   // A closing tag inside the JSON would end the script element early.
   return `<script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>`;
 }
+
+// One offer gets the top of the page. The rule is stated on the card rather
+// than left to taste: the deepest discount in the current feed. Below this
+// the claim would not be worth making, so the block simply does not render.
+export const FEATURE_MIN_DISCOUNT = 15;
+export const featuredOffer = offers =>
+  (offers?.[0]?.discount >= FEATURE_MIN_DISCOUNT ? offers[0] : null);
+
+const featureCopy = {
+  hu: { eye: discount => `A LEGNAGYOBB KEDVEZMÉNY MOST · −${discount}%`, open: 'Megnézem az ajánlatot', per: '/fő',
+    rule: 'A feed jelenlegi legnagyobb árengedménye. Az árat és a feltételeket a foglalási oldal mutatja.' },
+  en: { eye: discount => `THE DEEPEST DISCOUNT RIGHT NOW · −${discount}%`, open: 'See this trip', per: ' / person',
+    rule: 'The largest reduction in the current feed. The booking page shows the price and conditions.' },
+};
+
+export function featuredCard(offer, lang, { generated } = {}) {
+  if (!offer) return '';
+  const language = lang === 'en' ? 'en' : 'hu', text = featureCopy[language], card = copy[language];
+  const flight = offer.transport === 'Repülővel';
+  const departure = flight && offer.airport
+    ? (language === 'hu' ? DEPARTS_HU[offer.airport] ?? `${offer.airport}ból indul` : card.departs(AIRPORTS[offer.airport] ?? offer.airport))
+    : card.own;
+  const abroad = flight && offer.airport && offer.airport !== 'Budapest';
+  // The feed ships five pictures per offer and the grid shows one; the
+  // featured slot is where the rest earn their keep.
+  const thumbs = offer.photos.slice(1, 3)
+    .map(photo => `<img src="${escape(photo)}" alt="" loading="lazy" decoding="async" width="160" height="107">`).join('');
+  const fact = (value, extra = '') => `<li${extra}>${escape(value)}</li>`;
+  return `<section class="pkg-featured container" aria-labelledby="featured-title">`
+    + `<div class="pkg-featured-media"><img src="${escape(offer.image)}" alt="" width="450" height="300" decoding="async">`
+    + (thumbs ? `<div class="pkg-featured-thumbs">${thumbs}</div>` : '') + `</div>`
+    + `<div class="pkg-featured-body"><p class="eyebrow">${escape(text.eye(offer.discount))}</p>`
+    + `<span class="pkg-where">${escape(translate(COUNTRIES, offer.country, language))}${offer.locality ? ` · ${escape(offer.locality)}` : ''}</span>`
+    + `<h2 id="featured-title">${escape(offer.hotel)}</h2>`
+    + (offer.stars ? `<span class="pkg-stars" aria-label="${offer.stars}">${'★'.repeat(Math.round(offer.stars))}</span>` : '')
+    + `<ul class="pkg-featured-facts">`
+    + fact(when(offer.from, offer.to, language)) + fact(card.nights(offer.nights)) + fact(translate(FOOD, offer.food, language))
+    + fact(departure, abroad ? ' class="pkg-abroad"' : '') + `</ul>`
+    + `<p class="pkg-featured-price">${card.from} <strong>${money(offer.price, language)}</strong><small>${text.per}</small></p>`
+    + `<a class="button" href="${escape(offer.href)}" rel="sponsored noopener" target="_blank">${escape(text.open)} ↗</a>`
+    + `<p class="pkg-note">${escape(text.rule)}${generated ? ` ${card.asOf(generated)}` : ''}</p>`
+    + `</div></section>`;
+}

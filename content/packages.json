@@ -24,18 +24,18 @@
   "Kanári-szigetek": 24,
   "Spanyolország": 28,
   "Madeira": 2,
-  "Egyesült Arab Emírségek": 46,
+  "Egyesült Arab Emírségek": 40,
   "Törökország": 11,
   "Görögország": 9,
-  "Maldív-szigetek": 11,
+  "Maldív-szigetek": 10,
   "Portugália": 3,
-  "Bali": 12,
+  "Bali": 11,
   "Málta": 9,
-  "Egyiptom": 30,
-  "Thaiföld": 20,
+  "Egyiptom": 28,
+  "Thaiföld": 15,
   "Lengyelország": 1,
-  "Mauritius": 12,
-  "Seychelle-szigetek": 3,
+  "Mauritius": 10,
+  "Seychelle-szigetek": 2,
   "Franciaország": 1,
   "Egyesült Királyság (Nagy-Britannia)": 2,
   "Ciprus": 11,
@@ -49,7 +49,7 @@
   "Bulgária": 1,
   "Zöld-foki-szigetek": 1,
   "Mexikó": 1,
-  "Zanzibár": 2,
+  "Zanzibár": 1,
   "Dominikai Köztársaság": 1
  },
  "offers": [
@@ -295,33 +295,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/31/d0/57538477.jpg"
    ],
    "href": "https://www.invia.hu/hotel/torokorszag/side/side-moon-palace/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODE3MjA3OTkiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxNDQxLCJjaGVja0luRGF0ZSI6IjIwMjcwNDI4IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA1MDkiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjo0NTExNTUsInRvdXJJZCI6MTg4NjU2MCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6bnVsbCwibWVhbElkIjoxMSwiZGljdFJvb21JZCI6MTMwMjk0NTg5MSwiZmxpZ2h0SW5mb0lkIjoyMzAyMDQ4MDM3LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjMxLCJsb2NhbGl0eUlkIjoyMjMsIm9yaWdpbmFsVG90YWxQcmljZSI6NjUyMTYwLjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.gSxR85yLD9fGJr197wuNImcMm9vApxiCw8X-AxC4WDg&c_price_unit=326080&c_price_group=652160&nl_nights=11&aid=9426177"
-  },
-  {
-   "id": "56720-2027-04-05",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Dubai",
-   "hotel": "Ja The Resort - Ja Beach Hotel",
-   "stars": 5,
-   "from": "2027-04-05",
-   "to": "2027-04-15",
-   "nights": 10,
-   "price": 1202322,
-   "currency": "HUF",
-   "discount": 35,
-   "food": "All inclusive",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2017/10/16/d2/12360023.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2017/10/16/d2/12360023.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490423.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490425.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490427.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490429.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/ja-the-resort-ja-beach-hotel/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NjkzNDg5OTciLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwNDA1IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA0MTUiLCJkYXlzQ291bnQiOjExLCJob3RlbElkIjo1NjcyMCwidG91cklkIjoxODE2MjQzLCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA0MDVUMTYwNSIsIm1lYWxJZCI6NSwiZGljdFJvb21JZCI6MTI5NDI3NzQ4MCwiZmxpZ2h0SW5mb0lkIjoyMTUyNjkzNzE5LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2Miwib3JpZ2luYWxUb3RhbFByaWNlIjoyNDA0NjQ0LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.rlJwe_qlwgMo99vtxoPgApWgrYbedz5hrzYciluvGro&c_price_unit=1202322&c_price_group=2404644&nl_nights=10&aid=9426177"
   },
   {
    "id": "104303-2027-08-20",
@@ -808,33 +781,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/7/d15/57055105.jpg"
    ],
    "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/fujairah/intercontinental-fujairah-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODgyMDQ2NjAiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwNzI2IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA4MDMiLCJkYXlzQ291bnQiOjksImhvdGVsSWQiOjExNzgzNywidG91cklkIjoxODg2MTk4LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA3MjZUMTI1NSIsIm1lYWxJZCI6NSwiZGljdFJvb21JZCI6MTMwMTYxMDM1MywiZmxpZ2h0SW5mb0lkIjoyMzQ5MzkyODQ0LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2ODAsIm9yaWdpbmFsVG90YWxQcmljZSI6MTM4ODA5OC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.xW8nxjjJGpZvEqnmLyicHviBfNaj0R_zjmWzP_vC1-o&c_price_unit=694049&c_price_group=1388098&nl_nights=7&aid=9426177"
-  },
-  {
-   "id": "465691-2027-02-14",
-   "source": "dream",
-   "country": "Thaiföld",
-   "locality": "Pattaya",
-   "hotel": "Amari Bangsaen (Ex. The Tide Resort)",
-   "stars": 4,
-   "from": "2027-02-14",
-   "to": "2027-02-23",
-   "nights": 9,
-   "price": 828859,
-   "currency": "HUF",
-   "discount": 24,
-   "food": "Önellátás",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682243.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682243.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682244.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682246.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682247.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682250.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/thaifold/pattaya/amari-bangsaen-ex-the-tide-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NTE3ODkyODQiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMjE0IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMjMiLCJkYXlzQ291bnQiOjEwLCJob3RlbElkIjo0NjU2OTEsInRvdXJJZCI6MTkzNzY3OCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMjE0VDEzNTUiLCJtZWFsSWQiOjQsImRpY3RSb29tSWQiOjEyNTMyNDM1NjYsImZsaWdodEluZm9JZCI6MjM0MzgyMjQ2OSwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoxMiwibG9jYWxpdHlJZCI6NTAsIm9yaWdpbmFsVG90YWxQcmljZSI6MTY1NzcxOC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.H53RoVmyv6_uuKMm227n1zi_fznA2BvrcKeOLKh04po&c_price_unit=828859&c_price_group=1657718&nl_nights=8&aid=9426177"
   },
   {
    "id": "234999-2026-12-29",
@@ -1350,60 +1296,6 @@
    "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/millennium-place-barsha-heights/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODQzNjIwNjgiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwNzA5IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA3MTYiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjIzODA4NCwidG91cklkIjoxODg2MDg4LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA3MDlUMjI0MCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTMwMTYxMDQzMCwiZmxpZ2h0SW5mb0lkIjoyMzI2NjAwNzM1LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2Miwib3JpZ2luYWxUb3RhbFByaWNlIjo1NjIxMzguMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.gU5r8TDXQmIUjT7DTdO5_CSaxbGS2d7zd02tGXUYAUI&c_price_unit=281069&c_price_group=562138&nl_nights=6&aid=9426177"
   },
   {
-   "id": "106662-2026-11-13",
-   "source": "dream",
-   "country": "Egyiptom",
-   "locality": "Hurghada",
-   "hotel": "Jaz Aquaviva",
-   "stars": 5,
-   "from": "2026-11-13",
-   "to": "2026-11-17",
-   "nights": 4,
-   "price": 348449,
-   "currency": "HUF",
-   "discount": 16,
-   "food": "All inclusive",
-   "transport": "Repülővel",
-   "airport": "Pozsony",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/4/27/d0/28923552.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/4/27/d0/28923552.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d60/55687062.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d60/55687064.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d60/55687065.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d60/55687067.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyiptom/hurghada/jaz-aquaviva/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTA3MTg1ODAiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjYxMTEzIiwiY2hlY2tPdXREYXRlIjoiMjAyNjExMTciLCJkYXlzQ291bnQiOjUsImhvdGVsSWQiOjEwNjY2MiwidG91cklkIjoxODk4ODM5LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0Ijo1LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI2MTExM1QxNTQ1IiwibWVhbElkIjo1LCJkaWN0Um9vbUlkIjoxMjcxNzI3NzIwLCJmbGlnaHRJbmZvSWQiOjIzNjIxNzY4MTQsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTEsImxvY2FsaXR5SWQiOjMzLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjY5Njg5OC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.waPZprD-0zMvrR2xGJJl7WJG0XBfqvsBQNHtIjIc5P4&c_price_unit=348449&c_price_group=696898&nl_nights=3&aid=9426177"
-  },
-  {
-   "id": "442208-2027-03-29",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Dubai",
-   "hotel": "Voco Dubai The Palm",
-   "stars": 4,
-   "from": "2027-03-29",
-   "to": "2027-04-02",
-   "nights": 4,
-   "price": 616553,
-   "currency": "HUF",
-   "discount": 16,
-   "food": "Félpanzió",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/8/10/d5/39969650.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/8/10/d5/39969650.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d34/56491673.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d34/56491675.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d34/56491677.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d34/56491680.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/voco-dubai-the-palm/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NjkzNjIwMzYiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwMzI5IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA0MDIiLCJkYXlzQ291bnQiOjUsImhvdGVsSWQiOjQ0MjIwOCwidG91cklkIjoxODk0Njc3LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzAzMjlUMjI0MCIsIm1lYWxJZCI6MiwiZGljdFJvb21JZCI6MTI5NDI4MjUxNSwiZmxpZ2h0SW5mb0lkIjoyMTUyNzk3MDUyLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2Miwib3JpZ2luYWxUb3RhbFByaWNlIjoxMjMzMTA1LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.ttY1S0zvzhwPc_pn_X6_OomG1LsZ7juhbbKYunsMIX4&c_price_unit=616553&c_price_group=1233105&nl_nights=4&aid=9426177"
-  },
-  {
    "id": "97649-2027-02-28",
    "source": "dream",
    "country": "Thaiföld",
@@ -1780,33 +1672,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682250.jpg"
    ],
    "href": "https://www.invia.hu/hotel/thaifold/pattaya/amari-bangsaen-ex-the-tide-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODQxMTI1MTQiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMjE2IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMDIiLCJkYXlzQ291bnQiOjE1LCJob3RlbElkIjo0NjU2OTEsInRvdXJJZCI6MTkzNzY3OCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MzYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMjE2VDA5NDUiLCJtZWFsSWQiOjYsImRpY3RSb29tSWQiOjEyNTMyNDM1NjYsImZsaWdodEluZm9JZCI6MjQxMzIwOTM2MiwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoxMiwibG9jYWxpdHlJZCI6NTAsIm9yaWdpbmFsVG90YWxQcmljZSI6MTQ1NDA5OC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.dK37754RaJrmM7N0nYywGajIRlh9Oac8u-ijk0ECexU&c_price_unit=727049&c_price_group=1454098&nl_nights=12&aid=9426177"
-  },
-  {
-   "id": "69562-2027-03-07",
-   "source": "dream",
-   "country": "Mauritius",
-   "locality": "",
-   "hotel": "Heritage Le Telfair Golf & Spa Resort",
-   "stars": 5,
-   "from": "2027-03-07",
-   "to": "2027-03-14",
-   "nights": 7,
-   "price": 1410709,
-   "currency": "HUF",
-   "discount": 12,
-   "food": "All inclusive",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2014/7/9/d0/4756123.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2014/7/9/d0/4756123.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d8/55837824.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d8/55837825.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d8/55837826.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d8/55837827.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/mauritius/-/heritage-le-telfair-golf-spa-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTA4MjgxNDkiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMzA3IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMTQiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjY5NTYyLCJ0b3VySWQiOjE5Mzc3MDUsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDMwN1QyMDA1IiwibWVhbElkIjo1LCJkaWN0Um9vbUlkIjoxMjUzMjUwNTkzLCJmbGlnaHRJbmZvSWQiOjIzNjI1ODk0OTUsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTYsImxvY2FsaXR5SWQiOm51bGwsIm9yaWdpbmFsVG90YWxQcmljZSI6MjgyMTQxOC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.MfAdfpd_crGRrzxTU6Yb-ExJgitSjVuQwJGxClTkB2w&c_price_unit=1410709&c_price_group=2821418&nl_nights=5&aid=9426177"
   },
   {
    "id": "125737-2027-05-14",
@@ -2214,33 +2079,6 @@
    "href": "https://www.invia.hu/hotel/spanyolorszag/costa-del-sol/aluasoul-costa-malaga/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NTIxNzA2MzAiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjYxMjI3IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAxMDEiLCJkYXlzQ291bnQiOjYsImhvdGVsSWQiOjQzNDA0MiwidG91cklkIjoxODg2MjA2LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0Ijo1LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI2MTIyN1QxNTU1IiwibWVhbElkIjo2LCJkaWN0Um9vbUlkIjoxMjUzMjE3MzAzLCJmbGlnaHRJbmZvSWQiOjE5Njc5OTUxNjcsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MzAsImxvY2FsaXR5SWQiOjI3OSwib3JpZ2luYWxUb3RhbFByaWNlIjo2NTE1NTguMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.vdVWP79EqBp46OH95SdmXGOBeAELUVcL_4TBV1A_Gq8&c_price_unit=325779&c_price_group=651558&nl_nights=5&aid=9426177"
   },
   {
-   "id": "172087-2026-11-16",
-   "source": "dream",
-   "country": "Bali",
-   "locality": "",
-   "hotel": "Gaing Mas Jimbaran Villas",
-   "stars": 4,
-   "from": "2026-11-16",
-   "to": "2026-11-26",
-   "nights": 10,
-   "price": 520339,
-   "currency": "HUF",
-   "discount": 9,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Bécs",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968083.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968083.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968084.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968086.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968088.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/29/d10/57968090.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/bali/-/gaing-mas-jimbaran-villas/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTIwNjcwMTUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjYxMTE2IiwiY2hlY2tPdXREYXRlIjoiMjAyNjExMjYiLCJkYXlzQ291bnQiOjExLCJob3RlbElkIjoxNzIwODcsInRvdXJJZCI6MTk5NTUwMCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjYxMTE2VDIwMDUiLCJtZWFsSWQiOjYsImRpY3RSb29tSWQiOjEyNTU3Mjk1MTAsImZsaWdodEluZm9JZCI6MjM2NTQ3OTY0NSwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjo0MCwibG9jYWxpdHlJZCI6NjMsIm9yaWdpbmFsVG90YWxQcmljZSI6MTA0MDY3OC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.erURhrG_Me_De1xM4oTaMN1kHTd7V1IGXWAY3wuKLhg&c_price_unit=520339&c_price_group=1040678&nl_nights=8&aid=9426177"
-  },
-  {
    "id": "69417-2027-03-22",
    "source": "dream",
    "country": "Egyesült Arab Emírségek",
@@ -2349,60 +2187,6 @@
    "href": "https://www.invia.hu/hotel/thaifold/pattaya/signature-pattaya/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1Nzc5MjY1MDIiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMTExIiwiY2hlY2tPdXREYXRlIjoiMjAyNzAxMjIiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjoxODk4ODcsInRvdXJJZCI6MTkzNjk4NywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6Niwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzAxMTFUMTkyMCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTIzNDg5NzYwNSwiZmxpZ2h0SW5mb0lkIjoyMzkwMDMyNjE3LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo1MCwib3JpZ2luYWxUb3RhbFByaWNlIjoxMjMyMzM4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.9CN_fu-_t--UzsdoQyT7ZJeXQmS5AGEi9yKw720HA7Q&c_price_unit=616169&c_price_group=1232338&nl_nights=9&aid=9426177"
   },
   {
-   "id": "136582-2027-01-29",
-   "source": "dream",
-   "country": "Thaiföld",
-   "locality": "Pattaya",
-   "hotel": "The Bayview Pattaya",
-   "stars": 4,
-   "from": "2027-01-29",
-   "to": "2027-02-07",
-   "nights": 9,
-   "price": 738229,
-   "currency": "HUF",
-   "discount": 8,
-   "food": "Önellátás",
-   "transport": "Repülővel",
-   "airport": "Bécs",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/4/8/d19/28156367.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/4/8/d19/28156367.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55681966.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55681967.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55681968.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55681969.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/thaifold/pattaya/the-bayview-pattaya/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzY0MDAyNzUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMTI5IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMDciLCJkYXlzQ291bnQiOjEwLCJob3RlbElkIjoxMzY1ODIsInRvdXJJZCI6MTkzNjk4NiwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6Niwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzAxMjlUMTkyMCIsIm1lYWxJZCI6NCwiZGljdFJvb21JZCI6MTIzNDg5NzY4MywiZmxpZ2h0SW5mb0lkIjoyMzg5OTk0MDg0LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo1MCwib3JpZ2luYWxUb3RhbFByaWNlIjoxNDc2NDU4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.nTN39IZM8F_FD20dcQSy_LFu7OONQHxuUjoXFgXinAA&c_price_unit=738229&c_price_group=1476458&nl_nights=7&aid=9426177"
-  },
-  {
-   "id": "189607-2027-03-11",
-   "source": "dream",
-   "country": "Thaiföld",
-   "locality": "Pattaya",
-   "hotel": "Arden Hotel And Residence (Chonburi)",
-   "stars": 4,
-   "from": "2027-03-11",
-   "to": "2027-03-25",
-   "nights": 14,
-   "price": 897509,
-   "currency": "HUF",
-   "discount": 8,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Bécs",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/15/d6/47595203.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/15/d6/47595203.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55838961.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55838962.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55838963.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55838964.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/thaifold/pattaya/arden-hotel-and-residence-chonburi/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzYzMTU5MDMiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMzExIiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMjUiLCJkYXlzQ291bnQiOjE1LCJob3RlbElkIjoxODk2MDcsInRvdXJJZCI6MTkyMjIzMywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6Niwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzAzMTFUMTkxMCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTIyNDY3MTE0OCwiZmxpZ2h0SW5mb0lkIjoyMzkwMDIxNzExLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo1MCwib3JpZ2luYWxUb3RhbFByaWNlIjoxNzk1MDE4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.I4F1IwWNb42x6uTyqnli5AjFZpxQvvN7bIbRx18_ALY&c_price_unit=897509&c_price_group=1795018&nl_nights=12&aid=9426177"
-  },
-  {
    "id": "441148-2027-03-15",
    "source": "dream",
    "country": "Srí Lanka",
@@ -2455,33 +2239,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/9/9/d13/47019571.jpg"
    ],
    "href": "https://www.invia.hu/hotel/egyiptom/hurghada/rixos-premium-magawish-suites-villas/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODI4NDU1NzMiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxMzQ2LCJjaGVja0luRGF0ZSI6IjIwMjYxMTEwIiwiY2hlY2tPdXREYXRlIjoiMjAyNjExMjQiLCJkYXlzQ291bnQiOjE1LCJob3RlbElkIjoyMzY1MzksInRvdXJJZCI6MTgyMTcyOCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjYxMTEwVDA2MTAiLCJtZWFsSWQiOjExLCJkaWN0Um9vbUlkIjoxMzE5ODc1MjQ3LCJmbGlnaHRJbmZvSWQiOjIzMTQyMjY1NzYsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTEsImxvY2FsaXR5SWQiOjMzLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjMwOTA2NTYuMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.ho7s9g3NBhmZUtjc1dC2JXs9RsgtMQUGx3tLWNeAYJE&c_price_unit=1545328&c_price_group=3090656&nl_nights=14&aid=9426177"
-  },
-  {
-   "id": "438282-2027-07-07",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Dubai",
-   "hotel": "Vida Dubai Marina & Yacht Club",
-   "stars": 4,
-   "from": "2027-07-07",
-   "to": "2027-07-11",
-   "nights": 4,
-   "price": 483897,
-   "currency": "HUF",
-   "discount": 7,
-   "food": "Félpanzió",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/2/15/d21/35554648.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/2/15/d21/35554648.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/31/d0/52545357.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/31/d0/52545358.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/31/d0/52545359.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/31/d0/52545360.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/vida-dubai-marina-yacht-club/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzkyNzE5MTciLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwNzA3IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA3MTEiLCJkYXlzQ291bnQiOjUsImhvdGVsSWQiOjQzODI4MiwidG91cklkIjoxODE2MjcxLCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA3MDdUMTYwNSIsIm1lYWxJZCI6MiwiZGljdFJvb21JZCI6MTI5NDI3NTEzMCwiZmxpZ2h0SW5mb0lkIjoyMjc3MjkwMzEwLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2Miwib3JpZ2luYWxUb3RhbFByaWNlIjo5Njc3OTQuMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.OcW9xNZY8A6FBKVs0KP9acImzBb9uVlhK-7Sie5mohw&c_price_unit=483897&c_price_group=967794&nl_nights=4&aid=9426177"
   },
   {
    "id": "197580-2026-12-14",
@@ -2671,33 +2428,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d62/55688928.jpg"
    ],
    "href": "https://www.invia.hu/hotel/spanyolorszag/barcelona/vincci-mae/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzY1MDY1OTYiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMTI3IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMDYiLCJkYXlzQ291bnQiOjExLCJob3RlbElkIjoxMjI3MjUsInRvdXJJZCI6MTg3ODM3NywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMTI3VDE3MzUiLCJtZWFsSWQiOjQsImRpY3RSb29tSWQiOjExNTcyMzA2MTYsImZsaWdodEluZm9JZCI6MjI1NzQ0MTcyNCwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjozMCwibG9jYWxpdHlJZCI6NzE3LCJvcmlnaW5hbFRvdGFsUHJpY2UiOjE0MzY3NTguMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.VEE-QIYnxrprAZ3xaptIZ3n66ExYlRQ5W4HWPGthrBU&c_price_unit=718379&c_price_group=1436758&nl_nights=10&aid=9426177"
-  },
-  {
-   "id": "114400-2027-03-31",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Dubai",
-   "hotel": "Rixos Premium Dubai",
-   "stars": 5,
-   "from": "2027-03-31",
-   "to": "2027-04-11",
-   "nights": 11,
-   "price": 1179827,
-   "currency": "HUF",
-   "discount": 5,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/6/19/d127/29679294.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2021/6/19/d127/29679294.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d35/56491869.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d35/56491870.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d35/56491871.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d35/56491872.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/rixos-premium-dubai/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NjkzODYyNzMiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwMzMxIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA0MTEiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjoxMTQ0MDAsInRvdXJJZCI6MTk3NzUxNywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMzMxVDIyNDAiLCJtZWFsSWQiOjYsImRpY3RSb29tSWQiOjEyOTQyNzYwNTcsImZsaWdodEluZm9JZCI6MjI1NTUxNDczOCwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoxMywibG9jYWxpdHlJZCI6NjIsIm9yaWdpbmFsVG90YWxQcmljZSI6MjM1OTY1NS4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.6Pcg2_WYBfNOFev_2LvzT5ykQpaknYx0DvGFokYinTw&c_price_unit=1179827&c_price_group=2359655&nl_nights=11&aid=9426177"
   },
   {
    "id": "52672-2027-04-22",
@@ -3726,33 +3456,6 @@
    "href": "https://www.invia.hu/hotel/ciprus/agia-napa/asterias-beach/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTYxMjUxMzUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwNDE0IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA0MjUiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjo4NzU2NCwidG91cklkIjoxOTk2ODQ0LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA0MTRUMDYxMCIsIm1lYWxJZCI6NSwiZGljdFJvb21JZCI6MTM0NDc2MjIwNywiZmxpZ2h0SW5mb0lkIjoyMzg2NjI1NDAwLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjI5LCJsb2NhbGl0eUlkIjo3MzEsIm9yaWdpbmFsVG90YWxQcmljZSI6OTg3NTM4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.kI9LvoIJCC1AgeoFVZuVJw-z8_qhkiwt1pH2hPo7C7k&c_price_unit=493769&c_price_group=987538&nl_nights=10&aid=9426177"
   },
   {
-   "id": "135144-2027-09-22",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Dubai",
-   "hotel": "Golden Tulip Media (Al Barsha Heights)",
-   "stars": 4,
-   "from": "2027-09-22",
-   "to": "2027-09-28",
-   "nights": 6,
-   "price": 525099,
-   "currency": "HUF",
-   "discount": 1,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2022/1/7/d67/31833619.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2022/1/7/d67/31833619.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/7/d14/57054908.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/7/d14/57054909.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/7/d14/57054910.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/7/7/d14/57054911.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/dubai/golden-tulip-media-al-barsha-heights/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTA4NTE5NzUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwOTIyIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA5MjgiLCJkYXlzQ291bnQiOjcsImhvdGVsSWQiOjEzNTE0NCwidG91cklkIjoxODg2MDk3LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA5MjJUMjI0MCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTMwMTYwOTQ3MCwiZmxpZ2h0SW5mb0lkIjoyMzYzMDY1NDQxLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjo2Miwib3JpZ2luYWxUb3RhbFByaWNlIjoxMDUwMTk4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.n-XACVuwYRuofemDqRGAn0np8f4zUcj9S0qvNm-RN2U&c_price_unit=525099&c_price_group=1050198&nl_nights=5&aid=9426177"
-  },
-  {
    "id": "199183-2026-12-19",
    "source": "dream",
    "country": "Egyesült Arab Emírségek",
@@ -4698,33 +4401,6 @@
    "href": "https://www.invia.hu/hotel/malta/valletta/the-saint-john-a-boutique/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTkyOTI5NDIiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwNzEyIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA3MTgiLCJkYXlzQ291bnQiOjcsImhvdGVsSWQiOjEyMTQ2OCwidG91cklkIjoxODE2MjE5LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA3MTJUMTc0MCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6OTg1Nzc2NjA4LCJmbGlnaHRJbmZvSWQiOjI0MDgwOTExNjIsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MzUsImxvY2FsaXR5SWQiOjY2Niwib3JpZ2luYWxUb3RhbFByaWNlIjo3ODM1OTAuMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.974uOtGohPRK0xkRCvkOWDYuurBpU9mNxirtLgEkhcc&c_price_unit=391795&c_price_group=783590&nl_nights=6&aid=9426177"
   },
   {
-   "id": "98755-2027-03-02",
-   "source": "dream",
-   "country": "Egyiptom",
-   "locality": "Hurghada",
-   "hotel": "Steigenberger Aqua Magic",
-   "stars": 5,
-   "from": "2027-03-02",
-   "to": "2027-03-09",
-   "nights": 7,
-   "price": 393103,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "All inclusive",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2015/5/12/d7/6133851.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2015/5/12/d7/6133851.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/9/9/d14/47020853.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/9/9/d14/47020856.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/9/9/d14/47020858.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/9/9/d14/47020860.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyiptom/hurghada/steigenberger-aqua-magic/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODMwMDE1NjAiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxMzQ2LCJjaGVja0luRGF0ZSI6IjIwMjcwMzAyIiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMDkiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjk4NzU1LCJ0b3VySWQiOjE4MjE3NTIsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDMwMlQwNjEwIiwibWVhbElkIjo1LCJkaWN0Um9vbUlkIjoxMzIwMDU2NjI4LCJmbGlnaHRJbmZvSWQiOjIzOTY1MzkxNzEsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTEsImxvY2FsaXR5SWQiOjMzLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjc4NjIwNi4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.dadUEW8EOf0bOnBtHJPIF3yh2ATEMuhr45gIqR4WtoY&c_price_unit=393103&c_price_group=786206&nl_nights=7&aid=9426177"
-  },
-  {
    "id": "432184-2027-05-31",
    "source": "dream",
    "country": "Egyesült Arab Emírségek",
@@ -4993,33 +4669,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/10/7/d2/58029423.jpg"
    ],
    "href": "https://www.invia.hu/hotel/ciprus/agia-napa/marina/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTcwNDkzNDAiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwOTI5IiwiY2hlY2tPdXREYXRlIjoiMjAyNzEwMTAiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjo0NDExOTYsInRvdXJJZCI6MTk5Njg0MywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwOTI5VDA2MTAiLCJtZWFsSWQiOjEsImRpY3RSb29tSWQiOjEzNDQ3NjIxNjQsImZsaWdodEluZm9JZCI6MjM5MzkwNzkzNCwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoyOSwibG9jYWxpdHlJZCI6NzMxLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjk0OTQ5OC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.M6Uk0iIdEEi3_jHCrwx1LeYozqzSAbUdUf9NkcvzcKQ&c_price_unit=474749&c_price_group=949498&nl_nights=11&aid=9426177"
-  },
-  {
-   "id": "432669-2027-05-23",
-   "source": "dream",
-   "country": "Egyesült Arab Emírségek",
-   "locality": "Ras Al Khaimah",
-   "hotel": "Radisson Resort Ras Al Khaimah Marjan Island",
-   "stars": 4,
-   "from": "2027-05-23",
-   "to": "2027-05-26",
-   "nights": 3,
-   "price": 475584,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2022/12/18/d14/34666682.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2022/12/18/d14/34666682.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490384.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490386.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490388.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/11/d33/56490390.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/ras-al-khaimah/radisson-resort-ras-al-khaimah-marjan-island/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODU1MDIyNDUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwNTIzIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA1MjYiLCJkYXlzQ291bnQiOjQsImhvdGVsSWQiOjQzMjY2OSwidG91cklkIjoxODE2MjQyLCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA1MjNUMTYwNSIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTI5NDI4MjQ1NywiZmxpZ2h0SW5mb0lkIjoyMzM0MTAxODAyLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEzLCJsb2NhbGl0eUlkIjoyMTYsIm9yaWdpbmFsVG90YWxQcmljZSI6OTUxMTY3LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.8CbSFHJDwFeXlOrqO_veOpBHheCSS0aZqW-LfoF8Vzo&c_price_unit=475584&c_price_group=951167&nl_nights=3&aid=9426177"
   },
   {
    "id": "125625-2027-07-25",
@@ -5805,14 +5454,14 @@
    "href": "https://www.invia.hu/hotel/spanyolorszag/costa-blanca/sol-pelicanos-ocas/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODQzMjc2OTgiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwODAxIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA4MTEiLCJkYXlzQ291bnQiOjExLCJob3RlbElkIjozNjcyMywidG91cklkIjoxOTM5NTIwLCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzA4MDFUMDUxNSIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTI1NDk0NTk3NCwiZmxpZ2h0SW5mb0lkIjoyMzI2NTI4ODEyLCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjMwLCJsb2NhbGl0eUlkIjoyNywib3JpZ2luYWxUb3RhbFByaWNlIjoxMzk3MDc4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.4zaCcT_3frUYlHkqIAzrqnRPSEMQIa2ybqtwQfs8wWs&c_price_unit=698539&c_price_group=1397078&nl_nights=10&aid=9426177"
   },
   {
-   "id": "65583-2027-07-04",
+   "id": "65583-2027-12-22",
    "source": "dream",
    "country": "Egyesült Arab Emírségek",
    "locality": "Abu Dhabi",
    "hotel": "Khalidiya Palace Rayhaan",
    "stars": 5,
-   "from": "2027-07-04",
-   "to": "2027-07-11",
+   "from": "2027-12-22",
+   "to": "2027-12-29",
    "nights": 7,
    "price": 703383,
    "currency": "HUF",
@@ -5829,7 +5478,7 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/15/d19/52357190.jpg",
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2025/10/15/d19/52357191.jpg"
    ],
-   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/abu-dhabi/khalidiya-palace-rayhaan/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODU0OTkxNjgiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwNzA0IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA3MTEiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjY1NTgzLCJ0b3VySWQiOjE4MTYxOTEsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDcwNFQxNjA1IiwibWVhbElkIjoxLCJkaWN0Um9vbUlkIjoxMzIzMjU3OTMxLCJmbGlnaHRJbmZvSWQiOjIzMzQwOTI1MDYsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTMsImxvY2FsaXR5SWQiOjEyMSwib3JpZ2luYWxUb3RhbFByaWNlIjoxNDA2NzY1LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.66Sep36A1-UqXHfzaYAnTnrRdpbcY3Z83h6ZBRbsd0I&c_price_unit=703383&c_price_group=1406765&nl_nights=7&aid=9426177"
+   "href": "https://www.invia.hu/hotel/egyesult-arab-emirsegek/abu-dhabi/khalidiya-palace-rayhaan/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODU0OTkxNjgiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcxMjIyIiwiY2hlY2tPdXREYXRlIjoiMjAyNzEyMjkiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjY1NTgzLCJ0b3VySWQiOjE4MTYxOTEsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDcwNFQxNjA1IiwibWVhbElkIjoxLCJkaWN0Um9vbUlkIjoxMzIzMjU3OTMxLCJmbGlnaHRJbmZvSWQiOjIzMzQwOTI1MDYsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTMsImxvY2FsaXR5SWQiOjEyMSwib3JpZ2luYWxUb3RhbFByaWNlIjoxNDA2NzY1LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.nhf7iz2JWmW3SoRKfaos_nEVca4gy4mC8A13ujNLs5U&c_price_unit=703383&c_price_group=1406765&nl_nights=7&aid=9426177"
   },
   {
    "id": "191619-2027-08-30",
@@ -5884,33 +5533,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/4/10/d0/55075288.jpg"
    ],
    "href": "https://www.invia.hu/hotel/thaifold/krabi/krabi-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODUyMTU1MDQiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxODQxLCJjaGVja0luRGF0ZSI6IjIwMjcwMTI1IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMDMiLCJkYXlzQ291bnQiOjEwLCJob3RlbElkIjozOTExLCJ0b3VySWQiOjE5NjgwNDUsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOm51bGwsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6bnVsbCwiZmxpZ2h0SW5mb0lkIjoyMzMxNDE0NjA1LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo2MCwib3JpZ2luYWxUb3RhbFByaWNlIjoxNDYwOTQwLjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.QvUVtxaHFl0RgdPmQFh6njctzlF8Uub-Xm72YNw8sp4&c_price_unit=730470&c_price_group=1460940&aid=9426177"
-  },
-  {
-   "id": "23110-2027-01-14",
-   "source": "dream",
-   "country": "Mauritius",
-   "locality": "Flic en Flac",
-   "hotel": "La Pirogue Resort & Spa",
-   "stars": 4,
-   "from": "2027-01-14",
-   "to": "2027-01-20",
-   "nights": 6,
-   "price": 734264,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Félpanzió",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2016/10/20/d1/8337277.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2016/10/20/d1/8337277.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/30/d3/57978835.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/30/d3/57978836.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/30/d3/57978837.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/30/d3/57978838.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/mauritius/flic-en-flac/la-pirogue-resort-spa/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTI3NTk0MjQiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNjE4LCJjaGVja0luRGF0ZSI6IjIwMjcwMTE0IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAxMjAiLCJkYXlzQ291bnQiOjcsImhvdGVsSWQiOjIzMTEwLCJ0b3VySWQiOjE4MjUzOTgsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDExNFQxNTEwIiwibWVhbElkIjoyLCJkaWN0Um9vbUlkIjoxMDA3MDc2OTM3LCJmbGlnaHRJbmZvSWQiOjIzODY2MDg0MTksInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTYsImxvY2FsaXR5SWQiOjYzMywib3JpZ2luYWxUb3RhbFByaWNlIjoxNDY4NTI4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.VzxfJuV6hQ5DM33a1rN4X6mb1cadNC_ZZpRWYn9nU2g&c_price_unit=734264&c_price_group=1468528&nl_nights=4&aid=9426177"
   },
   {
    "id": "432669-2026-11-13",
@@ -6019,33 +5641,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/6/17/d7/56625793.jpg"
    ],
    "href": "https://www.invia.hu/hotel/egyiptom/hurghada/steigenberger-al-dau-beach-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODczNzE2NDMiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxNDQxLCJjaGVja0luRGF0ZSI6IjIwMjcwNjAxIiwiY2hlY2tPdXREYXRlIjoiMjAyNzA2MDgiLCJkYXlzQ291bnQiOjgsImhvdGVsSWQiOjI4NDY0LCJ0b3VySWQiOjE5NDU4MjYsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOm51bGwsIm1lYWxJZCI6MTEsImRpY3RSb29tSWQiOjEyNzA0MDQyMzcsImZsaWdodEluZm9JZCI6MjM0NDUzOTU2NiwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoxMSwibG9jYWxpdHlJZCI6MzMsIm9yaWdpbmFsVG90YWxQcmljZSI6MTUzNTcwNi4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.LYDzXtxhVzwR_lBQxmtNAPeump2yacQV6kuE6gJjgUc&c_price_unit=767853&c_price_group=1535706&nl_nights=7&aid=9426177"
-  },
-  {
-   "id": "482165-2027-01-27",
-   "source": "dream",
-   "country": "Thaiföld",
-   "locality": "Pattaya",
-   "hotel": "Manhattan Pattaya",
-   "stars": 4,
-   "from": "2027-01-27",
-   "to": "2027-02-09",
-   "nights": 13,
-   "price": 775629,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Bécs",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682490.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682490.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682491.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682492.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682494.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682495.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/thaifold/pattaya/manhattan-pattaya/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1Nzc5Mjk5NzkiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMTI3IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMDkiLCJkYXlzQ291bnQiOjE0LCJob3RlbElkIjo0ODIxNjUsInRvdXJJZCI6MTkzNzkyMywidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6Niwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNzAxMjdUMTkyMCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTI1Mzc4MzA0MywiZmxpZ2h0SW5mb0lkIjoyMzkwMDQ4ODY3LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo1MCwib3JpZ2luYWxUb3RhbFByaWNlIjoxNTUxMjU4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.D07n9QMFztiQ9WzqXEuc1qJuxCoq6flE82oDXtaxfw4&c_price_unit=775629&c_price_group=1551258&nl_nights=11&aid=9426177"
   },
   {
    "id": "55927-2027-03-25",
@@ -6318,33 +5913,6 @@
    "href": "https://www.invia.hu/hotel/mauritius/-/radisson-blu-poste-lafayette-poste-lafayette/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTQxNzU3NjkiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxODQxLCJjaGVja0luRGF0ZSI6IjIwMjcwMjExIiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMjIiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjoxMDcxNzQsInRvdXJJZCI6MTc1NTcwNiwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6bnVsbCwibWVhbElkIjoyLCJkaWN0Um9vbUlkIjpudWxsLCJmbGlnaHRJbmZvSWQiOjIzNzE1NjE0MzMsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTYsImxvY2FsaXR5SWQiOm51bGwsIm9yaWdpbmFsVG90YWxQcmljZSI6MTgyNjcwMC4wLCJvcmlnaW5hbEN1cnJlbmN5SWQiOjR9.v2JFb8nQ4yZKWogrw-Nub1yLlTf1z94fGZu5JGEKt9c&c_price_unit=913350&c_price_group=1826700&aid=9426177"
   },
   {
-   "id": "434420-2026-11-10",
-   "source": "dream",
-   "country": "Thaiföld",
-   "locality": "Pattaya",
-   "hotel": "Cross Pattaya Pratamnak",
-   "stars": 5,
-   "from": "2026-11-10",
-   "to": "2026-11-18",
-   "nights": 8,
-   "price": 941909,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Önellátás",
-   "transport": "Repülővel",
-   "airport": "Bécs",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/19/d5/47632498.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/19/d5/47632498.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55839316.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55839317.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55839318.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/18/d9/55839319.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/thaifold/pattaya/cross-pattaya-pratamnak/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzYzMTU5NTUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjYxMTEwIiwiY2hlY2tPdXREYXRlIjoiMjAyNjExMTgiLCJkYXlzQ291bnQiOjksImhvdGVsSWQiOjQzNDQyMCwidG91cklkIjoxOTQxNDMwLCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0Ijo2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI2MTExMFQxOTEwIiwibWVhbElkIjo0LCJkaWN0Um9vbUlkIjoxMjU2NTExNzE4LCJmbGlnaHRJbmZvSWQiOjIzNjc2NzcxNzIsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6MTIsImxvY2FsaXR5SWQiOjUwLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjE4ODM4MTguMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ._UU58D3g0XLAXw1EmuqnChkbf_FiBUdodurkY-2_CSk&c_price_unit=941909&c_price_group=1883818&nl_nights=6&aid=9426177"
-  },
-  {
    "id": "62980-2027-05-23",
    "source": "bombs",
    "country": "Spanyolország",
@@ -6451,33 +6019,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d56/55682603.jpg"
    ],
    "href": "https://www.invia.hu/hotel/thaifold/pattaya/brighton-grand-pattaya/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1Nzc4NzIyODQiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjYxMTA3IiwiY2hlY2tPdXREYXRlIjoiMjAyNjExMTkiLCJkYXlzQ291bnQiOjEzLCJob3RlbElkIjoxODk2MTcsInRvdXJJZCI6MTkzNzk5MCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6Niwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjoiMjAyNjExMDdUMTkxMCIsIm1lYWxJZCI6NiwiZGljdFJvb21JZCI6MTI1Mzc4MzE4NywiZmxpZ2h0SW5mb0lkIjoyNDEwNzk1OTQ1LCJwYXNzZW5nZXJzIjoiQUEiLCJjb3VudHJ5SWQiOjEyLCJsb2NhbGl0eUlkIjo1MCwib3JpZ2luYWxUb3RhbFByaWNlIjoyMDA4OTU4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.-ylhWcq-fB19k3UzSm6NdHFsVpEaHVvY8f6qnx9fOg8&c_price_unit=1004479&c_price_group=2008958&nl_nights=10&aid=9426177"
-  },
-  {
-   "id": "104696-2027-01-25",
-   "source": "dream",
-   "country": "Zanzibár",
-   "locality": "Uroa",
-   "hotel": "Jaz Adonia Beach Resort (Ex. Uroa Bay Beach Resort)",
-   "stars": 4,
-   "from": "2027-01-25",
-   "to": "2027-02-03",
-   "nights": 9,
-   "price": 1023269,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "All inclusive",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2020/9/23/d1/26640745.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2020/9/23/d1/26640745.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/11/d2/57773141.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/11/d2/57773142.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/11/d2/57773143.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/11/d2/57773144.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/zanzibar/uroa/jaz-adonia-beach-resort-ex-uroa-bay-beach-resort/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTQ2NzM4NjMiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMTI1IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAyMDMiLCJkYXlzQ291bnQiOjEwLCJob3RlbElkIjoxMDQ2OTYsInRvdXJJZCI6MTk3MTk1MCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMTI1VDIyMjAiLCJtZWFsSWQiOjUsImRpY3RSb29tSWQiOjEyOTQ3NjMwNzYsImZsaWdodEluZm9JZCI6MjM3NTAxMzA0NywicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoyNTEsImxvY2FsaXR5SWQiOjkxNywib3JpZ2luYWxUb3RhbFByaWNlIjoyMDQ2NTM4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.gWWMFEqzMWV3EL0Jctn7t5WKf0GwRhBZsMjx-uAqwLI&c_price_unit=1023269&c_price_group=2046538&nl_nights=8&aid=9426177"
   },
   {
    "id": "4767-2026-12-13",
@@ -6802,60 +6343,6 @@
     "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/10/14/d2/58065381.jpg"
    ],
    "href": "https://www.invia.hu/hotel/kanari-szigetek/tenerife/jardines-de-nivaria/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1OTg0NDI4MTUiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMjI2IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMDkiLCJkYXlzQ291bnQiOjEyLCJob3RlbElkIjoyMTAzLCJ0b3VySWQiOjE5OTc2NDUsInRyYW5zcG9ydGF0aW9uSWQiOjMsImRlcGFydHVyZUFpcnBvcnQiOjE2LCJvdXRib3VuZEZsaWdodERlcGFydHVyZURhdGUiOiIyMDI3MDIyNlQxMzQ1IiwibWVhbElkIjoyLCJkaWN0Um9vbUlkIjoxMzQ1NDA5NDY2LCJmbGlnaHRJbmZvSWQiOjI0MDIwNTA5MjUsInBhc3NlbmdlcnMiOiJBQSIsImNvdW50cnlJZCI6OSwibG9jYWxpdHlJZCI6MTkwLCJvcmlnaW5hbFRvdGFsUHJpY2UiOjI1MzEwOTguMCwib3JpZ2luYWxDdXJyZW5jeUlkIjo0fQ.40qfbWbiuz4OCxS8mgoJ6tztHFgCuQgwUGf-6nMlovM&c_price_unit=1265549&c_price_group=2531098&nl_nights=10&aid=9426177"
-  },
-  {
-   "id": "435419-2027-05-25",
-   "source": "dream",
-   "country": "Seychelle-szigetek",
-   "locality": "Mahé",
-   "hotel": "L'escale Resort Marina & Spa",
-   "stars": 5,
-   "from": "2027-05-25",
-   "to": "2027-06-02",
-   "nights": 8,
-   "price": 1267622,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/23/d6/47666205.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2024/10/23/d6/47666205.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/18/d0/57815755.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/18/d0/57815756.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/18/d0/57815758.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/9/18/d0/57815761.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/seychelle-szigetek/mahe/lescale-resort-marina-spa/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1ODcwMDc2NTYiLCJ0b3VyT3BlcmF0b3JJZCI6MTAxODQxLCJjaGVja0luRGF0ZSI6IjIwMjcwNTI1IiwiY2hlY2tPdXREYXRlIjoiMjAyNzA2MDIiLCJkYXlzQ291bnQiOjksImhvdGVsSWQiOjQzNTQxOSwidG91cklkIjoxOTkxODA1LCJ0cmFuc3BvcnRhdGlvbklkIjozLCJkZXBhcnR1cmVBaXJwb3J0IjoxNiwib3V0Ym91bmRGbGlnaHREZXBhcnR1cmVEYXRlIjpudWxsLCJtZWFsSWQiOjYsImRpY3RSb29tSWQiOm51bGwsImZsaWdodEluZm9JZCI6MjM0MjYwMTA2MywicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjoxMjcsImxvY2FsaXR5SWQiOjQyMiwib3JpZ2luYWxUb3RhbFByaWNlIjoyNTM1MjQ0LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.ubINsN1EDMKxVx7ecfEXkNSEHFWB3M78l4C3jw10KMY&c_price_unit=1267622&c_price_group=2535244&aid=9426177"
-  },
-  {
-   "id": "107436-2027-03-05",
-   "source": "dream",
-   "country": "Maldív-szigetek",
-   "locality": "",
-   "hotel": "The Barefoot Eco (Haa Dhaalu Atoll)",
-   "stars": 4,
-   "from": "2027-03-05",
-   "to": "2027-03-20",
-   "nights": 15,
-   "price": 1379719,
-   "currency": "HUF",
-   "discount": 0,
-   "food": "Reggeli",
-   "transport": "Repülővel",
-   "airport": "Budapest",
-   "type": "Üdülés",
-   "image": "https://dcontent.inviacdn.net/shared/img/affil-450x300/2015/12/17/d11/6941721.jpg",
-   "photos": [
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2015/12/17/d11/6941721.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d50/55676578.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d50/55676579.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d50/55676580.jpg",
-    "https://dcontent.inviacdn.net/shared/img/affil-450x300/2026/5/12/d50/55676581.jpg"
-   ],
-   "href": "https://www.invia.hu/hotel/maldiv-szigetek/-/the-barefoot-eco-haa-dhaalu-atoll/utazas/?s_offer_id=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlclByZWZpeCI6IklOVkYiLCJ0ZXJtSWQiOiI1NzAxNDc3MjgiLCJ0b3VyT3BlcmF0b3JJZCI6MTAyNTUwLCJjaGVja0luRGF0ZSI6IjIwMjcwMzA1IiwiY2hlY2tPdXREYXRlIjoiMjAyNzAzMjAiLCJkYXlzQ291bnQiOjE2LCJob3RlbElkIjoxMDc0MzYsInRvdXJJZCI6MTg4NjIxOCwidHJhbnNwb3J0YXRpb25JZCI6MywiZGVwYXJ0dXJlQWlycG9ydCI6MTYsIm91dGJvdW5kRmxpZ2h0RGVwYXJ0dXJlRGF0ZSI6IjIwMjcwMzA1VDIyMjAiLCJtZWFsSWQiOjYsImRpY3RSb29tSWQiOjEyMDI2NDc0MzAsImZsaWdodEluZm9JZCI6MjM4MzQ1MzkyNSwicGFzc2VuZ2VycyI6IkFBIiwiY291bnRyeUlkIjo3OSwibG9jYWxpdHlJZCI6bnVsbCwib3JpZ2luYWxUb3RhbFByaWNlIjoyNzU5NDM4LjAsIm9yaWdpbmFsQ3VycmVuY3lJZCI6NH0.TKXnZujIqjMpzJScrttYnGIaDwY_M882O8d3YWx-Z6c&c_price_unit=1379719&c_price_group=2759438&nl_nights=14&aid=9426177"
   },
   {
    "id": "434420-2026-11-22",

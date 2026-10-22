@@ -59,7 +59,7 @@ function tripShowcase(){
  const band=(eye,title,text,grid,id,link)=>`<section class="trip-showcase container" aria-labelledby="${id}">`
   +`<div class="section-heading"><div><p class="eyebrow">${eye}</p><h2 id="${id}">${title}</h2><p>${text}</p></div>`
   +(link?`<a class="text-link" href="${base}utak/">${link} ↗</a>`:'')+`</div>${grid}</section>`;
- return band(hu?'MOST ÉRI MEG':'BEST VALUE NOW',
+ return (trips.featured??'')+band(hu?'MOST ÉRI MEG':'BEST VALUE NOW',
    hu?'Komplett utak, a legnagyobb kedvezménnyel':'Complete trips, the deepest discounts',
    hu?'Repülőjegy, szállás és ellátás egy árban. Az induló repülőtér minden kártyán ott van.':'Flight, hotel and board for one price. Every card says which airport it departs from.',
    trips.deals,'deals-title',hu?`Mind a ${trips.total} utazás`:`All ${trips.total} trips`)
