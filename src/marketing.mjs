@@ -44,14 +44,34 @@ export function initPixel(id = PIXEL_ID) {
   fbq('track', 'PageView');
   // Every offer link is rel="sponsored": this is the hand-off to the
   // operator, and the last thing we can see.
-  document.addEventListener('click', event => {
-    const link = event.target.closest('a[rel~="sponsored"]');
-    if (!link) return;
+  //
+  // Reported on the press rather than on the click. A click on one of these
+  // navigates away at once, and the pixel's request can be cancelled in
+  // flight — losing exactly the event the whole measurement rests on. The
+  // press lands a moment earlier and delays nobody, since nothing here
+  // calls preventDefault.
+  const reported = new WeakSet();
+  const report = link => {
+    if (reported.has(link)) return;
+    reported.add(link);
     fbq('trackCustom', OUTBOUND_EVENT, {
       destination: link.closest('[data-country]')?.dataset.country ?? '',
       value: Number(link.closest('[data-price]')?.dataset.price) || undefined,
       currency: 'HUF',
     });
+  };
+  const sponsored = event => event.target?.closest?.('a[rel~="sponsored"]') ?? null;
+  document.addEventListener('pointerdown', event => {
+    // Left and middle open the link; right opens a menu and decides nothing.
+    if (event.button !== 0 && event.button !== 1) return;
+    const link = sponsored(event);
+    if (link) report(link);
+  }, { capture: true });
+  // Enter on a focused link never produces a pointer event, and the WeakSet
+  // keeps the ordinary press from being counted twice.
+  document.addEventListener('click', event => {
+    const link = sponsored(event);
+    if (link) report(link);
   }, { capture: true });
   return fbq;
 }
