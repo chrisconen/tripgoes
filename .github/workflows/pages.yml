@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Trip prices move daily, so the published site is rebuilt from a fresh feed
+  # every morning even when nothing was pushed.
+  schedule:
+    - cron: '30 4 * * *'
 
 permissions:
   contents: read
@@ -20,6 +24,17 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '24'
+      # Refreshes content/packages.json in the workspace only — it is never
+      # committed back. If the feed is unreachable the build falls back to the
+      # snapshot in the repository, whose date the cards already show.
+      - name: Refresh the trip feed
+        continue-on-error: true
+        run: node scripts/sync-packages.mjs
+        env:
+          INVIA_FEED_BOMBS: ${{ secrets.INVIA_FEED_BOMBS }}
+          INVIA_FEED_DREAM: ${{ secrets.INVIA_FEED_DREAM }}
+      # Runs after the refresh so a feed that returns unusable data fails here
+      # and leaves the previous deployment serving, rather than shipping it.
       - name: Test pricing, score engine, content and outbound links
         run: npm test
       - name: Build bilingual site
