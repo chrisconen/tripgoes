@@ -9,10 +9,15 @@
 // PIXEL_ID is empty until a real account exists. Empty means: no script, no
 // widened policy, no banner about tracking that does not happen.
 export const PIXEL_ID = '1628810374927155';
+// Five directives, because the pixel uses five routes out: the script, the
+// image beacon, fetch, and — the one that actually carries the events — a
+// hidden form posted into a hidden iframe.
 export const PIXEL_HOSTS = {
   script: 'https://connect.facebook.net',
   image: 'https://www.facebook.com',
   connect: 'https://www.facebook.com',
+  frame: 'https://www.facebook.com',
+  form: 'https://www.facebook.com',
 };
 export const OUTBOUND_EVENT = 'OutboundOffer';
 

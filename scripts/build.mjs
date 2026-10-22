@@ -99,7 +99,12 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  const widgets=section==='experiences'?widgetCSP:section==='services'?serviceCSP:(section==='utak'||!section)?packageCSP:null;
  values.scriptExtra=(widgets?widgets.scriptExtra:'')+(tracking?` ${PIXEL_HOSTS.script}`:'');
  values.imgExtra=(widgets?widgets.imgExtra:'')+(tracking?` ${PIXEL_HOSTS.image}`:'');
- values.frameSrc=widgets?widgets.frameSrc:"'none'";
+ // fbevents.js transmits by submitting a hidden form into a hidden iframe,
+ // so form-action and frame-src decide whether anything is sent at all. The
+ // pixel counted events happily while both were 'none' and posted none.
+ const frames=[...(widgets&&widgets.frameSrc!=="'none'"?[widgets.frameSrc]:[]),...(tracking?[PIXEL_HOSTS.frame]:[])];
+ values.frameSrc=frames.length?frames.join(' '):"'none'";
+ values.formAction=tracking?PIXEL_HOSTS.form:"'none'";
  values.styleExtra=widgets?.styleExtra??'';
  values.connectSrc=[...(widgets?widgets.connectExtra:[]),...(tracking?[PIXEL_HOSTS.connect]:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
  values.extraStyles=values.page==='eszkozok'?'<link rel="stylesheet" href="/src/tools.css">':(values.page==='utak'||values.page==='')?'<link rel="stylesheet" href="/src/packages.css"><link rel="stylesheet" href="/src/tools.css">':['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';

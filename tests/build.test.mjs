@@ -240,3 +240,20 @@ test('a configured pixel is disclosed on the page that explains it',async()=>{
  // The id itself never appears in the markup; it travels inside the module.
  if(pixelConfigured(PIXEL_ID))assert.ok(!home.includes(PIXEL_ID));
 });
+
+test('the page policy lets the pixel actually transmit, not just load',async()=>{
+ const {PIXEL_ID,PIXEL_HOSTS,pixelConfigured}=await import('../src/marketing.mjs');
+ const home=await readFile('dist/hu/index.html','utf8');
+ const csp=home.match(/Content-Security-Policy" content="([^"]+)"/)[1];
+ const directive=name=>csp.split(';').map(part=>part.trim()).find(part=>part.startsWith(name+' '))??'';
+ // fbevents.js posts a hidden form into a hidden iframe. With form-action or
+ // frame-src set to 'none' the pixel loads, sets its cookie, counts events
+ // and sends nothing at all — which is exactly what it did in production.
+ for(const name of ['form-action','frame-src','img-src','connect-src','script-src']){
+  const host=name==='script-src'?PIXEL_HOSTS.script:PIXEL_HOSTS.image;
+  assert.equal(directive(name).includes(host),pixelConfigured(PIXEL_ID),
+   `${name} must carry ${host} exactly when a pixel is configured: ${directive(name)}`);
+ }
+ if(pixelConfigured(PIXEL_ID))assert.ok(!directive('form-action').includes("'none'"),
+  `form-action still blocks everything: ${directive('form-action')}`);
+});
