@@ -103,7 +103,10 @@ function card(tool, lang, base) {
 
 export function toolsPage(lang) {
   const language = lang === 'en' ? 'en' : 'hu', text = copy[language], base = `/${language}/`;
+  // Decorative only, and deliberately not behind the heading: the artwork has
+  // a dark mass at one end, and text over it would be the first thing to suffer.
   return `<section class="tool-head container"><h1>${escape(text.title)}</h1><p>${escape(text.intro)}</p></section>`
+    + `<div class="tool-banner container" role="presentation"></div>`
     + `<section class="container tool-results"><ul class="tool-grid">${TOOLS.map(tool => card(tool, language, base)).join('')}</ul></section>`;
 }
 

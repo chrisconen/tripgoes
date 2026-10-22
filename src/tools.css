@@ -4,6 +4,10 @@
 .tool-head p{margin-top:14px;color:var(--muted);font-size:16px}
 .tool-results{padding-bottom:70px}
 
+/* Abstract flight-path artwork, generated to the site palette. Purely
+   decorative, so it carries no text and no alternative description. */
+.tool-banner{height:clamp(120px,18vw,210px);margin-bottom:34px;border-radius:14px;background:var(--line) url("/assets/tools-band.webp") center/cover no-repeat}
+
 .tool-band{padding:64px 0 10px}
 .tool-band .section-heading{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:26px}
 .tool-band .section-heading>div{max-width:620px}

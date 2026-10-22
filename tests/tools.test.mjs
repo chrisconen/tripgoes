@@ -29,6 +29,9 @@ test('the landing band carries the same cards and a way through to the page', ()
     assert.equal((band.match(/class="tool-card/g) || []).length, TOOLS.length);
     assert.ok(band.includes(`href="/${lang}/eszkozok/"`));
     assert.ok(!band.includes('<h1>'), 'the landing page already has its own h1');
+    // The artwork belongs to the tools page; repeating it on the landing page
+    // would compete with the trip photography that carries the offers.
+    assert.ok(!band.includes('tool-banner'));
     assert.ok(band.includes('<h2 '));
   }
 });
@@ -39,6 +42,10 @@ test('the artwork is drawn in code, never a photograph of somewhere we sell', ()
   // An <img> here would mean a generated or stock picture had crept in next to
   // real, bookable offers.
   assert.ok(!html.includes('<img'), 'tool artwork must stay vector, not imagery');
+  // The one raster on the page is the decorative banner, and it stays
+  // decorative: no alt text to read, nothing announced.
+  assert.equal((html.match(/class="tool-banner/g) || []).length, 1);
+  assert.ok(html.includes('role="presentation"'));
   // The mark repeats the name printed beside it, so it is decorative. It used
   // to carry a <title> naming the artwork key in English whatever the page
   // language was, which a Hungarian screen reader read out as "scales".
