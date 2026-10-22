@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, hasPage, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
+import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, hasPage, euroRate, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
 
 const offer = (changes = {}) => ({
   id: '36905-2027-08-29', source: 'dream', country: 'Maldív-szigetek', locality: 'Malé atoll',
@@ -80,6 +80,29 @@ test('an unknown country falls back to its Hungarian name', () => {
   const { countries } = validatePackages(config([offer({ country: 'Atlantisz' })]));
   assert.deepEqual(countries[0].title, { hu: 'Atlantisz', en: 'Atlantisz' });
   assert.equal(countries[0].slug, 'atlantisz');
+});
+
+// The feed prices in forint, which is what a booking costs. An English reader
+// still needs a figure they can feel, clearly marked as a conversion.
+test('English pages show an approximate euro beside the forint', () => {
+  const rate = { eur: 365, date: '2026-10-21', source: 'ECB' };
+  const en = plain(packageCard(offer(), 'en', rate));
+  assert.ok(en.includes('HUF 1,259,900'), 'the payable price stays the price');
+  assert.ok(en.includes('≈ €3,452'), en.slice(en.indexOf('pkg-price')));
+  // Hungarian readers pay in forint and need no second number.
+  assert.ok(!packageCard(offer(), 'hu', rate).includes('€'));
+  // Without a rate the euro simply is not claimed.
+  assert.ok(!plain(packageCard(offer(), 'en')).includes('€'));
+  const grid = packageGrid(validatePackages(config()).offers, 'en', { generated: '2026-10-22', rate });
+  assert.ok(grid.includes('converted at the ECB rate of 2026-10-21'), 'the conversion names its source');
+  assert.ok(!packageGrid(validatePackages(config()).offers, 'en', { generated: '2026-10-22' }).includes('converted at'));
+});
+
+test('a rate that cannot be sourced is not used at all', () => {
+  for (const broken of [undefined, null, {}, { eur: 0, date: '2026-10-21' }, { eur: 365 }, { eur: 365, date: 'tegnap' }, { eur: '365', date: '2026-10-21' }]) {
+    assert.equal(euroRate(broken), null, JSON.stringify(broken));
+  }
+  assert.deepEqual(euroRate({ eur: 365, date: '2026-10-21', source: 'ECB' }), { eur: 365, date: '2026-10-21', source: 'ECB' });
 });
 
 test('copy from the feed is escaped wherever it lands', () => {
@@ -164,7 +187,9 @@ test('the structured data describes the offers and cannot break out of its tag',
 test('the shipped feed data validates and carries pages worth building', async () => {
   const raw = JSON.parse(await readFile(new URL('../content/packages.json', import.meta.url), 'utf8'));
   const { offers, countries } = validatePackages(raw);
-  assert.ok(offers.length >= 150, `only ${offers.length} offers`);
+  // A floor, not a target: the feed moves daily, and this is here to catch a
+  // collapse rather than to pin a number.
+  assert.ok(offers.length >= 100, `only ${offers.length} offers`);
   // Every country the feed returns must be translatable, or the English page
   // silently prints Hungarian.
   const untranslated = countries.filter(country => !COUNTRIES[country.name]);

@@ -173,10 +173,15 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
  // built rather than naming them.
  const destinations=(await readdir('dist/hu/utak',{withFileTypes:true})).filter(entry=>entry.isDirectory()).map(entry=>entry.name);
  assert.ok(destinations.length>=8,`only ${destinations.length} destination pages`);
+ // A destination that drops out of the feed keeps its page so the URL does
+ // not 404, but an empty page is not offered to search. Indexing and sitemap
+ // membership therefore track whether the page actually has offers on it.
  for(const lang of ['hu','en'])for(const slug of destinations){
   const html=await readFile(`dist/${lang}/utak/${slug}/index.html`,'utf8');
-  assert.ok(html.includes('content="index,follow"'),`/${lang}/utak/${slug}/ is noindex`);
-  assert.ok(sitemap.includes(`<loc>https://tripgoes.com/${lang}/utak/${slug}/</loc>`),`/${lang}/utak/${slug}/ is missing from the sitemap`);
+  const hasOffers=html.includes('class="pkg-card"');
+  const where=`/${lang}/utak/${slug}/`;
+  assert.equal(html.includes('content="index,follow"'),hasOffers,`${where} indexing does not match what is on it`);
+  assert.equal(sitemap.includes(`<loc>https://tripgoes.com${where}</loc>`),hasOffers,`${where} sitemap entry does not match what is on it`);
  }
  // No empty path segments: a doubled slash is a separate, duplicate URL.
  assert.ok(!/\/\/<\/loc>/.test(sitemap),'the sitemap carries a doubled slash');

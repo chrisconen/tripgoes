@@ -10,6 +10,25 @@ import {readFile,writeFile} from 'node:fs/promises';
 export const AFFILIATE_ID='9426177';
 export const OFFER_HOST='www.invia.hu';
 export const IMAGE_HOST='https://dcontent.inviacdn.net';
+// The feed prices in forint, which is what the booking actually costs. The
+// English pages show an approximate euro beside it, and an approximation is
+// only worth printing when the rate behind it is real and dated.
+const ECB='https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
+async function euroRate(){
+ try{
+  const response=await fetch(ECB,{headers:{'User-Agent':'tripgoes-config/1.0 (https://tripgoes.com)'}});
+  if(!response.ok)throw Error(`HTTP ${response.status}`);
+  const xml=await response.text();
+  const eur=Number(xml.match(/currency=['"]HUF['"]\s+rate=['"]([\d.]+)['"]/)?.[1]);
+  const date=xml.match(/time=['"](\d{4}-\d{2}-\d{2})['"]/)?.[1];
+  if(!(eur>0)||!date)throw Error('no HUF rate in the ECB feed');
+  return {eur,date,source:'ECB'};
+ }catch(error){
+  // No rate beats a stale guess: the euro line simply stays off.
+  console.log(`No euro rate (${error.message}); English pages show forint only.`);
+  return null;
+ }
+}
 // Enough for a card and a small gallery; the feed ships ~70 per offer.
 const PHOTOS=5;
 
@@ -96,9 +115,11 @@ if(process.argv[1]?.endsWith('sync-packages.mjs')){
  const MIN=3;
  const qualifying=Object.entries(countries).filter(([,count])=>count>=MIN).map(([name])=>name);
  const published=[...new Set([...(before.published??[]),...qualifying])].sort();
+ const rate=await euroRate();
+ if(rate)console.log(`1 EUR = ${rate.eur} HUF (${rate.source}, ${rate.date}).`);
  await writeFile('content/packages.json',JSON.stringify({
   version:1,generated:new Date().toISOString().slice(0,10),
-  published,countries,offers,
+  rate,published,countries,offers,
  },null,1)+'\n');
  console.log(`${published.length} destinations keep a page (${published.length-qualifying.length} carried over from earlier feeds).`);
  const prices=offers.map(offer=>offer.price).sort((a,b)=>a-b);

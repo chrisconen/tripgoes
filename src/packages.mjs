@@ -75,6 +75,13 @@ export const countrySlug = name => name.toLowerCase()
 
 const translate = (table, value, lang) => (lang === 'en' ? table[value] ?? value : value);
 
+// A rate we cannot trust is worse than none: the euro line disappears rather
+// than quoting a number nobody can source.
+export function euroRate(rate) {
+  if (!rate || typeof rate.eur !== 'number' || !(rate.eur > 0) || !/^\d{4}-\d{2}-\d{2}$/.test(rate.date ?? '')) return null;
+  return { eur: rate.eur, date: rate.date, source: typeof rate.source === 'string' ? rate.source : '' };
+}
+
 export function validatePackages(data) {
   if (!data || data.version !== 1 || !Array.isArray(data.offers)) invalid('version 1 and an offers array are required');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.generated ?? '')) invalid('the catalogue needs a generated date');
@@ -119,7 +126,7 @@ export function validatePackages(data) {
       years: [...new Set(list.map(offer => offer.from.slice(0, 4)))].sort(),
     }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'hu'));
-  return { generated: data.generated, offers, countries };
+  return { generated: data.generated, rate: euroRate(data.rate), offers, countries };
 }
 
 const copy = {
@@ -145,12 +152,16 @@ const DEPARTS_HU = { 'Budapest': 'Budapestről indul', 'Bécs': 'Bécsből indul
 const money = (value, lang) => lang === 'hu'
   ? `${value.toLocaleString('hu-HU')} Ft`
   : `HUF ${value.toLocaleString('en-GB')}`;
+// The booking is paid in forint, so that stays the price. An English reader
+// still needs a number they can feel, and it is marked as the estimate it is.
+const approxEur = (value, lang, rate) =>
+  (lang === 'en' && rate ? `\≈ \€${Math.round(value / rate.eur).toLocaleString('en-GB')} ` : '');
 const when = (from, to, lang) => {
   const format = new Intl.DateTimeFormat(lang === 'hu' ? 'hu-HU' : 'en-GB', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   return `${format.format(new Date(from))} – ${format.format(new Date(to))}`;
 };
 
-export function packageCard(offer, lang) {
+export function packageCard(offer, lang, rate) {
   const text = copy[lang], hu = lang === 'hu';
   const flight = offer.transport === 'Repülővel';
   const departure = flight && offer.airport
@@ -170,16 +181,21 @@ export function packageCard(offer, lang) {
     + `<strong>${escape(offer.hotel)}</strong>${stars}`
     + `<span class="pkg-meta">${escape(when(offer.from, offer.to, lang))} · ${text.nights(offer.nights)} · ${escape(translate(FOOD, offer.food, lang))}</span>`
     + `<span class="pkg-depart${abroad ? ' pkg-abroad' : ''}">${escape(departure)}</span>`
-    + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<small>${text.per}</small><em>${text.open} ↗</em></span>`
+    + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<small>${approxEur(offer.price, lang, rate)}${text.per}</small><em>${text.open} ↗</em></span>`
     + `</a></li>`;
 }
 
-export function packageGrid(offers, lang, { generated } = {}) {
+export function packageGrid(offers, lang, { generated, rate } = {}) {
   const language = lang === 'en' ? 'en' : 'hu', text = copy[language];
   if (!Array.isArray(offers) || !offers.length) return `<p class="pkg-empty">${text.empty}</p>`;
-  return `<ul class="pkg-grid">${offers.map(offer => packageCard(offer, language)).join('')}</ul>`
-    + (generated ? `<p class="pkg-note">${text.asOf(generated)}</p>` : '');
+  return `<ul class="pkg-grid">${offers.map(offer => packageCard(offer, language, rate)).join('')}</ul>`
+    + (generated ? `<p class="pkg-note">${text.asOf(generated)}${rateNote(language, rate)}</p>` : '');
 }
+
+// Says where the euro figure comes from, so it reads as a conversion rather
+// than a second price.
+export const rateNote = (lang, rate) =>
+  (lang === 'en' && rate ? ` Euro amounts are approximate, converted at the ${rate.source || 'reference'} rate of ${rate.date}.` : '');
 
 // The catalogue page. Every card is rendered statically so the page reads
 // without JavaScript and search engines see the whole inventory; the filters
@@ -235,7 +251,7 @@ export function packagesPage(data, lang, slug = '') {
     + `<nav class="pkg-countries container" aria-label="${escape(text.all)}">`
     + `<a href="${base}"${slug ? '' : ' aria-current="page"'}>${escape(text.all)}<span>${data.offers.length}</span></a>${chips}</nav>`
     + (country ? '' : `<div class="container">${controls(data, language, text)}</div>`)
-    + `<section class="container pkg-results">${packageGrid(offers, language, { generated: data.generated })}</section>`;
+    + `<section class="container pkg-results">${packageGrid(offers, language, { generated: data.generated, rate: data.rate })}</section>`;
 }
 
 // Structured data, so a destination page can show its price in search results
@@ -284,7 +300,7 @@ const featureCopy = {
     rule: 'The largest reduction in the current feed. The booking page shows the price and conditions.' },
 };
 
-export function featuredCard(offer, lang, { generated } = {}) {
+export function featuredCard(offer, lang, { generated, rate } = {}) {
   if (!offer) return '';
   const language = lang === 'en' ? 'en' : 'hu', text = featureCopy[language], card = copy[language];
   const flight = offer.transport === 'Repülővel';
@@ -307,8 +323,8 @@ export function featuredCard(offer, lang, { generated } = {}) {
     + `<ul class="pkg-featured-facts">`
     + fact(when(offer.from, offer.to, language)) + fact(card.nights(offer.nights)) + fact(translate(FOOD, offer.food, language))
     + fact(departure, abroad ? ' class="pkg-abroad"' : '') + `</ul>`
-    + `<p class="pkg-featured-price">${card.from} <strong>${money(offer.price, language)}</strong><small>${text.per}</small></p>`
+    + `<p class="pkg-featured-price">${card.from} <strong>${money(offer.price, language)}</strong><small>${approxEur(offer.price, language, rate)}${text.per}</small></p>`
     + `<a class="button" href="${escape(offer.href)}" rel="sponsored noopener" target="_blank">${escape(text.open)} ↗</a>`
-    + `<p class="pkg-note">${escape(text.rule)}${generated ? ` ${card.asOf(generated)}` : ''}</p>`
+    + `<p class="pkg-note">${escape(text.rule)}${generated ? ` ${card.asOf(generated)}` : ''}${rateNote(language, rate)}</p>`
     + `</div></section>`;
 }

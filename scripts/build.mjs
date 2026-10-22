@@ -55,9 +55,9 @@ const featured=packages?featuredOffer(packages.offers):null;
 const restOfOffers=packages?packages.offers.filter(offer=>offer!==featured):[];
 const tripView=packages?lang=>({
  total:packages.offers.length,
- featured:featuredCard(featured,lang,{generated:packages.generated}),
- deals:packageGrid(restOfOffers.slice(0,8),lang,{}),
- dream:packageGrid(packages.offers.filter(offer=>offer.source==='dream').slice(0,8),lang,{generated:packages.generated}),
+ featured:featuredCard(featured,lang,{generated:packages.generated,rate:packages.rate}),
+ deals:packageGrid(restOfOffers.slice(0,8),lang,{rate:packages.rate}),
+ dream:packageGrid(packages.offers.filter(offer=>offer.source==='dream').slice(0,8),lang,{generated:packages.generated,rate:packages.rate}),
  destinations:packages.countries.filter(country=>country.count>=MIN_FOR_PAGE).slice(0,12)
   .map(country=>`<a href="/${lang}/utak/${country.slug}/">${escapeHTML(country.title[lang])}<span>${country.count}</span></a>`).join(''),
 }):null;
