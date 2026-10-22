@@ -31,6 +31,7 @@ if(page==='planner')import('./planner.mjs').then(({initPlanner})=>initPlanner(la
 if(page==='offers')Promise.all([import('./offers.mjs'),import('./api-config.mjs')]).then(([{initOffers},{apiBase}])=>initOffers(lang,{apiBase}));
 if(page==='flights')Promise.all([import('./flights.mjs'),import('./api-config.mjs')]).then(([{initFlights},{apiBase}])=>initFlights(lang,{apiBase}));
 if(page==='experiences')import('./worldmap.mjs').then(({initWorldMap})=>initWorldMap(lang));
+if(page==='utak')import('./packagefilter.mjs').then(({initPackageFilter})=>initPackageFilter(lang));
 if(page==='last-minute')Promise.all([import('./lastminute.mjs'),import('./api-config.mjs')]).then(([{initLastMinute},{apiBase}])=>initLastMinute(lang,{apiBase}));
 initCities(lang);
 initDiscovery(lang);
