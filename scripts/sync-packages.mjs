@@ -46,6 +46,13 @@ const tag=(xml,name)=>{
 };
 const all=(xml,name)=>[...xml.matchAll(new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)</${name}>`,'g'))].map(hit=>decode(hit[1]));
 const num=value=>{const parsed=Number(value);return Number.isFinite(parsed)?parsed:null;};
+// The feed is someone else's database, and now and then it sends a number
+// outside the range it promises: an unrated hotel as 0 stars, a discount
+// past 100. These fields only decorate a card, so an unreadable one falls
+// back rather than failing validation and halting every deploy.
+// null>=0 is true, so an unreadable number would slip through a range that
+// starts at zero. It has to be ruled out by name.
+const within=(value,min,max,fallback=null)=>{const parsed=num(value);return parsed!==null&&parsed>=min&&parsed<=max?parsed:fallback;};
 
 function parseOffer(xml,source){
  const url=tag(xml,'url');
@@ -72,10 +79,10 @@ function parseOffer(xml,source){
  return {
   id:`${hotelId}-${from}`,source,
   country:tag(xml,'country'),locality:tag(xml,'locality'),
-  hotel:tag(xml,'hotel'),stars:num(tag(xml,'hotelinfo').match(/<stars>([\d.]+)<\/stars>/)?.[1]),
+  hotel:tag(xml,'hotel'),stars:within(tag(xml,'hotelinfo').match(/<stars>([\d.]+)<\/stars>/)?.[1],1,5),
   from,to,nights,
   price,currency:xml.match(/<totalprice currency="(\w+)"/)?.[1]??'HUF',
-  discount:num(tag(xml,'discount'))??0,
+  discount:within(tag(xml,'discount'),0,99,0),
   food:tag(xml,'food'),transport:tag(xml,'transportation'),
   airport:all(xml,'airport')[0]??'',
   type:tag(xml,'type'),
