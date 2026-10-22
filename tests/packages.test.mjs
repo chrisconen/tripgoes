@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, boardTitle, boardDescription, hasPage, foodSlug, euroRate, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
+import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, boardTitle, boardDescription, hasPage, foodSlug, allByAir, euroRate, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
 
 const offer = (changes = {}) => ({
   id: '36905-2027-08-29', source: 'dream', country: 'Maldív-szigetek', locality: 'Malé atoll',
@@ -214,6 +214,32 @@ test('a board page survives its offers disappearing', () => {
   assert.ok(hasPage(gone));
   assert.ok(boardTitle(gone, 'hu').startsWith('Egyiptom all inclusive |'), 'an empty page promises no price');
   assert.ok(boardDescription(gone, 'hu').includes('nincs a betöltött kínálatban'));
+});
+
+// A few offers are sold without a flight. The card always said so; the page
+// around it promised a flight for everything on it.
+test('a page only promises a flight when everything on it has one', () => {
+  const flying = validatePackages(config([offer(), offer({ id: 'b' })]));
+  assert.ok(allByAir(flying.offers));
+  assert.ok(packagesPage(flying, 'hu').includes('Repülőjegy, szállás és ellátás egy árban'));
+  assert.ok(packagesPage(flying, 'en').includes('Flight, hotel and board for one price'));
+
+  const mixed = validatePackages(config([offer(), offer({ id: 'b', transport: 'Egyénileg' })]));
+  assert.ok(!allByAir(mixed.offers));
+  const hu = packagesPage(mixed, 'hu');
+  assert.ok(hu.includes('a legtöbbhöz repülőjeggyel'), hu.slice(0, 260));
+  assert.ok(!hu.includes('Repülőjegy, szállás és ellátás egy árban'), 'the unqualified promise must be gone');
+  assert.ok(packagesPage(mixed, 'en').includes('most of them with a flight'));
+  // The card carried the truth all along, and still does.
+  assert.ok(packageCard(mixed.offers.find(entry => entry.transport === 'Egyénileg'), 'hu').includes('Repülő nélkül'));
+
+  // A destination page follows the offers on that destination, not the feed.
+  const egypt = validatePackages(config([
+    offer({ id: 'e1', country: 'Egyiptom' }), offer({ id: 'e2', country: 'Egyiptom' }), offer({ id: 'e3', country: 'Egyiptom' }),
+    offer({ id: 'x', transport: 'Egyénileg' }),
+  ]));
+  assert.ok(packagesPage(egypt, 'hu', 'egyiptom').includes('repülőjegy, szállás és ellátás egy árban'));
+  assert.ok(packagesPage(egypt, 'hu').includes('a legtöbbhöz repülőjeggyel'));
 });
 
 test('the structured data describes the offers and cannot break out of its tag', () => {

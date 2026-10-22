@@ -13,7 +13,7 @@ import {lastMinutePage} from '../src/lastminute.mjs';
 import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
 import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
-import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,boardTitle,boardDescription,hasPage,foodSlug,featuredOffer,featuredCard,COUNTRIES as PACKAGE_COUNTRIES,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
+import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,boardTitle,boardDescription,hasPage,foodSlug,allByAir,featuredOffer,featuredCard,COUNTRIES as PACKAGE_COUNTRIES,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
 import {toolsPage} from '../src/tools.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
@@ -138,7 +138,7 @@ for(const lang of ['hu','en']){
     await writeFile(`${countryDir}/index.html`,render({lang,route:countryRoute,pageOverride:'utak',
      title:pageTitle(country,lang),
      description:country.count
-      ?(lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira, már ${country.from.toLocaleString('hu-HU')} Ft/fő-től: repülőjegy, szállás és ellátás egy árban. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name} from HUF ${country.from.toLocaleString('en-GB')} per person: flight, hotel and board for one price. Prices as of ${packages.generated}.`)
+      ?(lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira, már ${country.from.toLocaleString('hu-HU')} Ft/fő-től: ${allByAir(here)?'repülőjegy, szállás és ellátás egy árban':'szállás és ellátás egy árban, a legtöbbhöz repülőjeggyel'}. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name} from HUF ${country.from.toLocaleString('en-GB')} per person: ${allByAir(here)?'flight, hotel and board for one price':'hotel and board for one price, most of them with a flight'}. Prices as of ${packages.generated}.`)
       :(lang==='hu'?`${name} jelenleg nincs a betöltött kínálatban. Nézd meg a többi úti célt és az aktuális ajánlatokat.`:`${name} is not in the loaded catalogue right now. See the other destinations and what is currently on offer.`),
      content:`<main id="main">${packagesPage(packages,lang,country.slug)}<div class="container">${activitiesForCountry(country.name,lang)}</div>${packagesJsonLd(here,lang,{name})}</main>`,
      // A page with nothing on it stays reachable but is not offered to search.
@@ -151,7 +151,7 @@ for(const lang of ['hu','en']){
     const boardRoute=`${route}/${board.slug}/${board.foodSlug}`,boardDir=`dist/${lang}/${boardRoute}`;await mkdir(boardDir,{recursive:true});
     const here=packages.offers.filter(offer=>offer.slug===board.slug&&foodSlug(offer.food)===board.foodSlug);
     await writeFile(`${boardDir}/index.html`,render({lang,route:boardRoute,pageOverride:'utak',
-     title:boardTitle(board,lang),description:boardDescription(board,lang),
+     title:boardTitle(board,lang),description:boardDescription(board,lang,allByAir(here)),
      content:`<main id="main">${packagesPage(packages,lang,board.slug,board.foodSlug)}${packagesJsonLd(here,lang,{name:board.title[lang]})}</main>`,
      indexable:board.count>0}));
     if(board.count)sitemap.push(`${origin}/${lang}/${boardRoute}/`);

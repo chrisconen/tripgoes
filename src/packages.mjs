@@ -28,7 +28,7 @@ export function boardTitle(board, lang) {
     : `${name} ${phrase} ${years} — from ${price} | TripGoes`;
 }
 
-export function boardDescription(board, lang) {
+export function boardDescription(board, lang, every = true) {
   const language = lang === 'en' ? 'en' : 'hu';
   const name = board.title[language], phrase = boardPhrase(board, language);
   if (!board.count) {
@@ -38,8 +38,8 @@ export function boardDescription(board, lang) {
   }
   const price = language === 'hu' ? `${board.from.toLocaleString('hu-HU')} Ft/fő` : `HUF ${board.from.toLocaleString('en-GB')} per person`;
   return language === 'hu'
-    ? `${board.count} foglalható utazás ${name} célpontjaira ${phrase}, már ${price}-től: repülőjegy és szállás egy árban.`
-    : `${board.count} bookable trips to ${name} ${phrase}, from ${price}: flight and hotel for one price.`;
+    ? `${board.count} foglalható utazás ${name} célpontjaira ${phrase}, már ${price}-től: ${every ? 'repülőjegy és szállás egy árban' : 'szállás egy árban, a legtöbbhöz repülőjeggyel'}.`
+    : `${board.count} bookable trips to ${name} ${phrase}, from ${price}: ${every ? 'flight and hotel for one price' : 'hotel for one price, most of them with a flight'}.`;
 }
 
 export function pageTitle(country, lang) {
@@ -269,21 +269,25 @@ export const rateNote = (lang, rate) =>
 const page = {
   hu: {
     title: count => `${count} komplett utazás, egy helyen`,
-    intro: 'Repülőjegy, szállás és ellátás egy árban. A foglalás és a fizetés az utazásszervező oldalán történik.',
+    intro: every => every
+      ? 'Repülőjegy, szállás és ellátás egy árban. A foglalás és a fizetés az utazásszervező oldalán történik.'
+      : 'Szállás és ellátás egy árban, a legtöbbhöz repülőjeggyel — a kivételt a kártya jelzi. A foglalás és a fizetés az utazásszervező oldalán történik.',
     all: 'Összes úti cél', filters: 'Szűrés', budget: 'Ár', nights: 'Hossz', board: 'Ellátás',
     airport: 'Indulás', any: 'Mindegy', reset: 'Szűrők törlése', anyBoard: 'Összes ellátás',
     boardHeading: (name, food, count) => `${name}, ${food.toLowerCase()} — ${count} komplett utazás`,
     countryTitle: name => `${name} — komplett utazások repülővel`,
-    countryIntro: (name, count) => `${count} foglalható utazás ${name} célpontjaira: repülőjegy, szállás és ellátás egy árban.`,
+    countryIntro: (name, count, every) => `${count} foglalható utazás ${name} célpontjaira: ${every ? 'repülőjegy, szállás és ellátás egy árban' : 'szállás és ellátás egy árban, a legtöbbhöz repülőjeggyel'}.`,
   },
   en: {
     title: count => `${count} complete trips in one place`,
-    intro: 'Flight, hotel and board for one price. Booking and payment take place on the tour operator’s website.',
+    intro: every => every
+      ? 'Flight, hotel and board for one price. Booking and payment take place on the tour operator’s website.'
+      : 'Hotel and board for one price, most of them with a flight — the card says which do not. Booking and payment take place on the tour operator’s website.',
     all: 'All destinations', filters: 'Filter', budget: 'Price', nights: 'Length', board: 'Board',
     airport: 'Departure', any: 'Any', reset: 'Clear filters', anyBoard: 'All board types',
     boardHeading: (name, food, count) => `${name}, ${food.toLowerCase()} — ${count} complete trips`,
     countryTitle: name => `${name} — complete trips by air`,
-    countryIntro: (name, count) => `${count} bookable trips to ${name}: flight, hotel and board for one price.`,
+    countryIntro: (name, count, every) => `${count} bookable trips to ${name}: ${every ? 'flight, hotel and board for one price' : 'hotel and board for one price, most of them with a flight'}.`,
   },
 };
 const BUDGETS = [300000, 500000, 800000, 1500000];
@@ -332,8 +336,9 @@ export function packagesPage(data, lang, slug = '', food = '') {
   const heading = board
     ? text.boardHeading(name, board.board[language], offers.length)
     : country ? text.countryTitle(name) : text.title(offers.length);
-  const intro = board ? boardDescription(board, language)
-    : country ? text.countryIntro(name, offers.length) : text.intro;
+  const every = allByAir(offers);
+  const intro = board ? boardDescription(board, language, every)
+    : country ? text.countryIntro(name, offers.length, every) : text.intro(every);
   return `<section class="pkg-head container"><h1>${escape(heading)}</h1><p>${escape(intro)}</p></section>`
     + `<nav class="pkg-countries container" aria-label="${escape(text.all)}">`
     + `<a href="${base}"${slug ? '' : ' aria-current="page"'}>${escape(text.all)}<span>${data.offers.length}</span></a>${chips}</nav>`
@@ -378,6 +383,8 @@ export function packagesJsonLd(offers, lang, { name } = {}) {
 // than left to taste: the deepest discount in the current feed. Below this
 // the claim would not be worth making, so the block simply does not render.
 export const FEATURE_MIN_DISCOUNT = 15;
+export const BY_AIR = 'Repülővel';
+export const allByAir = offers => offers.every(offer => offer.transport === BY_AIR);
 export const featuredOffer = offers =>
   (offers?.[0]?.discount >= FEATURE_MIN_DISCOUNT ? offers[0] : null);
 
