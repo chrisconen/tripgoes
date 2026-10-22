@@ -41,12 +41,13 @@ test('refusing is offered as plainly as agreeing', () => {
   }
 });
 
-test('the pixel stays dormant until a real account configures it', () => {
-  assert.equal(pixelConfigured(PIXEL_ID), false, 'no pixel ships before there is an account');
-  for (const bad of ['', 'abc', '12345', null, undefined, '12345678901234567890123']) {
+test('only a plausible pixel id turns tracking on', () => {
+  for (const bad of ['', 'abc', '12345', null, undefined, '12345678901234567890123', '12 34567890']) {
     assert.equal(pixelConfigured(bad), false, String(bad));
   }
   assert.ok(pixelConfigured('1234567890123'));
+  // Whatever is shipped has to pass the same check as anything else.
+  assert.equal(pixelConfigured(PIXEL_ID), /^\d{6,20}$/.test(PIXEL_ID));
   // Without a document there is nothing to attach to, and nothing is faked.
   assert.equal(initPixel(''), null);
   assert.equal(OUTBOUND_EVENT, 'OutboundOffer');

@@ -8,7 +8,7 @@
 //
 // PIXEL_ID is empty until a real account exists. Empty means: no script, no
 // widened policy, no banner about tracking that does not happen.
-export const PIXEL_ID = '';
+export const PIXEL_ID = '1628810374927155';
 export const PIXEL_HOSTS = {
   script: 'https://connect.facebook.net',
   image: 'https://www.facebook.com',

@@ -224,3 +224,19 @@ test('every built article body links out to something bookable',async()=>{
   }
  }
 });
+
+// Tracking that is not written down is tracking nobody agreed to. If a pixel
+// is configured, the page the consent banner points at has to describe it,
+// and the policy has to admit the hosts it will reach for.
+test('a configured pixel is disclosed on the page that explains it',async()=>{
+ const {PIXEL_ID,PIXEL_HOSTS,pixelConfigured}=await import('../src/marketing.mjs');
+ const home=await readFile('dist/hu/index.html','utf8');
+ for(const lang of ['hu','en']){
+  const cookies=await readFile(`dist/${lang}/cookies/index.html`,'utf8');
+  assert.equal(/Meta/.test(cookies),pixelConfigured(PIXEL_ID),`/${lang}/cookies/ does not match whether a pixel ships`);
+  if(pixelConfigured(PIXEL_ID))assert.ok(cookies.includes('tripgoes-consent'),`/${lang}/cookies/ does not name the consent key`);
+ }
+ assert.equal(home.includes(PIXEL_HOSTS.script),pixelConfigured(PIXEL_ID),'script-src does not match whether a pixel ships');
+ // The id itself never appears in the markup; it travels inside the module.
+ if(pixelConfigured(PIXEL_ID))assert.ok(!home.includes(PIXEL_ID));
+});
