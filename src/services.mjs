@@ -1,3 +1,4 @@
+import {searchUrl} from './tools.mjs';
 // Partner service widgets: eSIM, airport transfer, car hire, flight
 // compensation. Unlike the experiences page these are four different vendors
 // with four different parameter sets, so the validator checks what actually
@@ -91,5 +92,5 @@ export function servicesPage({ widgets }, lang = 'hu') {
   const language = lang === 'en' ? 'en' : 'hu', text = copy[language];
   if (!Array.isArray(widgets) || !widgets.length) invalid('at least one widget is required to render the page');
   const blocks = widgets.map(widget => `<section class="service-block" aria-labelledby="service-${widget.id}"><h2 id="service-${widget.id}">${escape(widget[language].title)}</h2><p>${escape(widget[language].intro)}</p><div class="service-widget"><script async src="${escape(widget.src)}" charset="utf-8"></script></div></section>`).join('');
-  return `<div id="trip-services" class="flights-page container"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p><h1>${text.heading}</h1></div><div><p>${text.intro}</p><small>${text.source}</small></div></section>${blocks}<p class="flights-more"><a href="https://search.tripgoes.com/">${text.more} ↗</a> · <a href="/${language}/experiences/">${text.experiences} ↗</a></p><noscript><p>${text.fallback}</p></noscript></div>`;
+  return `<div id="trip-services" class="flights-page container"><section class="flights-hero"><div><p class="flights-eyebrow">${text.eye}</p><h1>${text.heading}</h1></div><div><p>${text.intro}</p><small>${text.source}</small></div></section>${blocks}<p class="flights-more"><a href="${searchUrl(language)}">${text.more} ↗</a> · <a href="/${language}/experiences/">${text.experiences} ↗</a></p><noscript><p>${text.fallback}</p></noscript></div>`;
 }

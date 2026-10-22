@@ -5,11 +5,15 @@
 // of the five work from cached or self-entered data rather than live prices.
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-export const SEARCH_URL = 'https://search.tripgoes.com/';
+// Two metasearch pages, one per language: the Travelpayouts White Label is
+// single-language, so an English visitor on the Hungarian one would get a
+// Hungarian page with no way to switch.
+export const SEARCH_URL = { hu: 'https://search.tripgoes.com/', en: 'https://flights.tripgoes.com/' };
+export const searchUrl = lang => SEARCH_URL[lang === 'en' ? 'en' : 'hu'];
 
 export const TOOLS = [
   {
-    id: 'search', art: 'search', href: SEARCH_URL, external: true,
+    id: 'search', art: 'search', external: true,
     hu: { name: 'Jegykereső', kicker: 'ÉLŐ KERESÉS',
       text: 'Élő repülőjegy-árak forintban, Budapestről előre kitöltve.',
       limit: 'A foglalás a szolgáltató oldalán zárul.' },
@@ -89,7 +93,7 @@ const copy = {
 
 function card(tool, lang, base) {
   const text = tool[lang];
-  const href = tool.external ? tool.href : `${base}${tool.href}`;
+  const href = tool.external ? searchUrl(lang) : `${base}${tool.href}`;
   const target = tool.external ? ' target="_blank" rel="noopener"' : '';
   return `<li class="tool-card tool-${tool.id}"><a href="${escape(href)}" aria-label="${escape(text.name)}"${target}>`
     + `<span class="tool-mark">${mark(tool.art)}</span>`

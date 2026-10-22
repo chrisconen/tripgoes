@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { toolsPage, toolsBand, TOOLS, SEARCH_URL } from '../src/tools.mjs';
+import { toolsPage, toolsBand, TOOLS, SEARCH_URL, searchUrl } from '../src/tools.mjs';
 
 test('every tool is reachable in both languages and names its own limit', () => {
   for (const lang of ['hu', 'en']) {
@@ -12,10 +12,13 @@ test('every tool is reachable in both languages and names its own limit', () => 
       // Four of the five run on cached or self-entered data. Saying so is the
       // whole reason these are allowed on the page at all.
       assert.ok(html.includes(tool[lang].limit), `${tool.id} hides its ${lang} limit`);
-      const href = tool.external ? tool.href : `/${lang}/${tool.href}`;
+      const href = tool.external ? searchUrl(lang) : `/${lang}/${tool.href}`;
       assert.ok(html.includes(`href="${href}"`), `${tool.id} links to the wrong place in ${lang}`);
     }
-    assert.ok(html.includes(SEARCH_URL) && html.includes('rel="noopener"'));
+    // The White Label is single-language, so each locale has its own page;
+    // sending an English visitor to the Hungarian one leaves them stuck.
+    assert.ok(html.includes(SEARCH_URL[lang]) && html.includes('rel="noopener"'));
+    assert.ok(!html.includes(SEARCH_URL[lang === 'en' ? 'hu' : 'en']), 'the other locale’s search page must not appear');
     // The whole card is one link; without a label its accessible name is every
     // word on the card, limit sentence included.
     for (const tool of TOOLS) assert.ok(html.includes(`aria-label="${tool[lang].name}"`), `${tool.id} has no ${lang} link label`);
