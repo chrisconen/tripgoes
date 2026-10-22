@@ -257,3 +257,19 @@ test('the page policy lets the pixel actually transmit, not just load',async()=>
  if(pixelConfigured(PIXEL_ID))assert.ok(!directive('form-action').includes("'none'"),
   `form-action still blocks everything: ${directive('form-action')}`);
 });
+
+// The imprint shipped for months saying the operator data "has not been
+// supplied" — on an indexed page, which is a legal exposure as soon as the
+// site trades, and a bad look to any partner who checks. Pin the mandatory
+// fields so an edit cannot quietly empty them again.
+test('the imprint carries the registered operator data in both languages',async()=>{
+ const required=['Conen','9134','54933347','56302415-1-28','HU56302415','info@tripgoes.com','799001','554001'];
+ for(const lang of ['hu','en']){
+  const html=await readFile(`dist/${lang}/imprint/index.html`,'utf8');
+  for(const value of required)assert.ok(html.includes(value),`/${lang}/imprint is missing ${value}`);
+  // Hosting and the complaint route are the two blocks easiest to drop.
+  assert.ok(/GitHub, Inc\./.test(html),`/${lang}/imprint names no hosting provider`);
+  assert.ok(/bekelteto\.testulet@gymsmkik\.hu/.test(html),`/${lang}/imprint names no conciliation board`);
+  assert.ok(!/indulás előtt|pre-launch/i.test(html),`/${lang}/imprint still reads as a draft`);
+ }
+});
