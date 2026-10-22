@@ -185,3 +185,19 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
  assert.ok(root.includes('content="noindex,follow"'));
  assert.ok(root.includes('rel="canonical" href="https://tripgoes.com/hu/"'));
 });
+
+// The hundred guides used to end on the affiliate notice and nothing else:
+// two hundred pages whose only outbound link was a legal disclosure.
+test('every built article body links out to something bookable',async()=>{
+ const commercial=/\/(utak|experiences|eszkozok)\/|tripgoes\.com\//;
+ for(const lang of ['hu','en']){
+  const slugs=(await readdir(`dist/${lang}/blog`,{withFileTypes:true})).filter(entry=>entry.isDirectory());
+  assert.ok(slugs.length>=100,`only ${slugs.length} articles in ${lang}`);
+  for(const {name} of slugs){
+   const html=await readFile(`dist/${lang}/blog/${name}/index.html`,'utf8');
+   const body=html.match(/<article class="article-prose">([\s\S]*?)<\/article>/)[1];
+   const hrefs=[...body.matchAll(/href="([^"]+)"/g)].map(hit=>hit[1]).filter(href=>!href.includes('/affiliate/'));
+   assert.ok(hrefs.some(href=>commercial.test(href)),`/${lang}/blog/${name}/ leads nowhere: ${hrefs.join(', ')||'no links at all'}`);
+  }
+ }
+});
