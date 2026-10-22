@@ -68,7 +68,7 @@ const ART = {
   gauge: '<path d="M14 58a26 26 0 0 1 52 0"/><path d="M40 58 56 38"/><circle cx="40" cy="58" r="4"/><path d="M14 68h52"/>',
 };
 
-const mark = (name, id) => `<svg class="tool-art" viewBox="0 0 80 80" role="img" aria-labelledby="art-${id}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><title id="art-${id}">${escape(name)}</title>${ART[name] ?? ART.search}</svg>`;
+const mark = name => `<svg class="tool-art" viewBox="0 0 80 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">${ART[name] ?? ART.search}</svg>`;
 
 const copy = {
   hu: {
@@ -91,8 +91,8 @@ function card(tool, lang, base) {
   const text = tool[lang];
   const href = tool.external ? tool.href : `${base}${tool.href}`;
   const target = tool.external ? ' target="_blank" rel="noopener"' : '';
-  return `<li class="tool-card tool-${tool.id}"><a href="${escape(href)}"${target}>`
-    + `<span class="tool-mark">${mark(tool.art, tool.id)}</span>`
+  return `<li class="tool-card tool-${tool.id}"><a href="${escape(href)}" aria-label="${escape(text.name)}"${target}>`
+    + `<span class="tool-mark">${mark(tool.art)}</span>`
     + `<span class="tool-kicker">${escape(text.kicker)}</span>`
     + `<strong>${escape(text.name)}</strong>`
     + `<span class="tool-text">${escape(text.text)}</span>`

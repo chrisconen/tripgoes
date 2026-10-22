@@ -16,6 +16,9 @@ test('every tool is reachable in both languages and names its own limit', () => 
       assert.ok(html.includes(`href="${href}"`), `${tool.id} links to the wrong place in ${lang}`);
     }
     assert.ok(html.includes(SEARCH_URL) && html.includes('rel="noopener"'));
+    // The whole card is one link; without a label its accessible name is every
+    // word on the card, limit sentence included.
+    for (const tool of TOOLS) assert.ok(html.includes(`aria-label="${tool[lang].name}"`), `${tool.id} has no ${lang} link label`);
     assert.ok(!html.includes('undefined'));
   }
 });
@@ -36,8 +39,11 @@ test('the artwork is drawn in code, never a photograph of somewhere we sell', ()
   // An <img> here would mean a generated or stock picture had crept in next to
   // real, bookable offers.
   assert.ok(!html.includes('<img'), 'tool artwork must stay vector, not imagery');
-  // Each mark is labelled, so the page is readable without seeing it.
-  assert.equal((html.match(/<title id="art-/g) || []).length, TOOLS.length);
+  // The mark repeats the name printed beside it, so it is decorative. It used
+  // to carry a <title> naming the artwork key in English whatever the page
+  // language was, which a Hungarian screen reader read out as "scales".
+  assert.equal((html.match(/aria-hidden="true"/g) || []).length, TOOLS.length);
+  assert.ok(!html.includes('<title'), 'the mark must not announce itself');
 });
 
 test('tool copy is escaped wherever it is rendered', () => {
