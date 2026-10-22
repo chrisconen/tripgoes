@@ -1,5 +1,6 @@
 import {readdir,readFile} from 'node:fs/promises';
 import {readingRoom} from './reading-room.mjs';
+import {articleCta} from '../src/articlecta.mjs';
 export const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const categories={
  planning:['Utazástervezés','Trip planning','hero'],
@@ -65,7 +66,7 @@ export function journalArticle(article,articles,lang){
  <div class="article-cover container"><img src="${articleImage(article)}" width="1200" height="800" alt="${e(article.artwork?.alt?.[lang]||(hu?'Hangulatkép az utazási útmutatóhoz':'Illustrative travel photograph'))}"><span>${hu?'Illusztráció · nem konkrét foglalható ajánlat':'Illustration · not a specific bookable offer'}</span></div>
  ${article.artwork?.credit?`<div class="container"><p class="article-credit">${hu?'Fotó':'Photo'}: <a href="${e(article.artwork.credit.url)}" target="_blank" rel="noopener noreferrer">${e(article.artwork.credit.title)}</a> · ${e(article.artwork.credit.author)} · <a href="${e(article.artwork.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${e(article.artwork.credit.license)}</a>${hu?' · A nézethez igazított kivágás.':' · Cropped to fit the layout.'}</p></div>`:''}
  <div class="article-layout container"><aside class="article-sidebar"><p class="eyebrow">${hu?'EBBEN A TÖRTÉNETBEN':'IN THIS STORY'}</p><nav aria-label="${hu?'Tartalomjegyzék':'Table of contents'}">${c.sections.map((s,i)=>`<a href="#section-${i+1}"><span>${String(i+1).padStart(2,'0')}</span>${e(s.heading)}</a>`).join('')}</nav><a class="article-score-link" href="/${lang}/score/"><span>TripScore ↗</span>${hu?'Egy jó árnál a teljes kép számít.':'A good price deserves the full picture.'}</a></aside>
- <article class="article-prose">${c.sections.map((s,i)=>`<section id="section-${i+1}"><h2>${e(s.heading)}</h2>${s.paragraphs.map(p=>`<p>${e(p)}</p>`).join('')}</section>`).join('')}
+ <article class="article-prose">${c.sections.map((s,i)=>`<section id="section-${i+1}"><h2>${e(s.heading)}</h2>${s.paragraphs.map(p=>`<p>${e(p)}</p>`).join('')}</section>`).join('')}${articleCta(article.category,lang)}
  ${article.sources?.length?`<section class="article-sources"><h2>${hu?'Források és további tájékozódás':'Sources & further reading'}</h2><ul>${article.sources.map(s=>`<li><a href="${e(s.url)}" rel="noopener noreferrer" target="_blank">${e(s.title)} ↗</a></li>`).join('')}</ul></section>`:''}
  <div class="editorial-note"><strong>${hu?'A cikk háttere':'About this guide'}</strong><p>${hu?'Eredeti, AI-val támogatott szerkesztőségi útmutató. Nem helyszíni beszámoló, nem fizetett partnerértékelés és nem foglalási ajánlat. A szolgáltatók változó feltételeit az eredeti forrásnál ellenőrizd.':'An original, AI-assisted editorial guide. This is not a first-hand trip report, paid partner review or booking offer. Check changing provider conditions at the original source.'}</p><a href="/${lang}/affiliate/">${hu?'Így kezeljük a partnerlinkeket':'How we handle partner links'}</a></div>
  </article></div></main>`;

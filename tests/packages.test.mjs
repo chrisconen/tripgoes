@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validatePackages, packageCard, packageGrid, packagesPage, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
+import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, hasPage, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
 
 const offer = (changes = {}) => ({
   id: '36905-2027-08-29', source: 'dream', country: 'Maldív-szigetek', locality: 'Malé atoll',
@@ -21,7 +21,8 @@ test('an offer is refused unless it can be rendered and paid for', () => {
   assert.equal(generated, '2026-10-22');
   assert.equal(offers.length, 1);
   assert.equal(offers[0].slug, 'maldiv-szigetek');
-  assert.deepEqual(countries[0], { name: 'Maldív-szigetek', count: 1, slug: 'maldiv-szigetek', title: { hu: 'Maldív-szigetek', en: 'Maldives' } });
+  assert.deepEqual(countries[0], { name: 'Maldív-szigetek', count: 1, slug: 'maldiv-szigetek', established: false,
+    title: { hu: 'Maldív-szigetek', en: 'Maldives' }, from: 1259900, years: ['2027'] });
   for (const broken of [
     null, { version: 2, generated: '2026-10-22', offers: [offer()] },
     { version: 1, offers: [offer()] },
@@ -63,6 +64,8 @@ test('the card prices, dates and translates its trip', () => {
   const hu = plain(packageCard(offer(), 'hu'));
   assert.ok(hu.includes('1 259 900 Ft'), hu);
   assert.ok(hu.includes('7 éjszaka') && hu.includes('All inclusive'));
+  // The feed price is for one person; without the unit it reads as the total.
+  assert.ok(hu.includes('/fő') && plain(packageCard(offer(), 'en')).includes('/ person'));
   assert.ok(hu.includes('★★★★★'));
   assert.ok(hu.includes('−25%'), 'a real discount is worth a badge');
   assert.ok(!packageCard(offer({ discount: 5 }), 'hu').includes('pkg-off'), 'a token discount is not');
@@ -105,6 +108,57 @@ test('the catalogue filters the whole list and a destination page does not', () 
   assert.ok(!egypt.includes('pkg-filters'), 'one destination needs no destination filter');
   assert.ok(egypt.includes('aria-current="page"'));
   assert.throws(() => packagesPage(data, 'hu', 'atlantisz'), TypeError);
+});
+
+// <length> in the feed counts calendar days, so every card claimed one night
+// more than the dates allow.
+test('the shipped nights match the dates, never the feed day count', async () => {
+  const raw = JSON.parse(await readFile(new URL('../content/packages.json', import.meta.url), 'utf8'));
+  const day = 86400000;
+  for (const entry of raw.offers) {
+    const nights = Math.round((Date.parse(entry.to) - Date.parse(entry.from)) / day);
+    assert.equal(entry.nights, nights, `${entry.id}: ${entry.from}–${entry.to} is ${nights} nights, not ${entry.nights}`);
+  }
+});
+
+// The Hungarian competition puts the year and the cheapest price straight in
+// the title, and both come from the data we already hold.
+test('a destination title carries its year and its cheapest price', () => {
+  const data = validatePackages(config([offer(), offer({ id: 'b', price: 899000, from: '2026-05-01', to: '2026-05-08' })]));
+  const [maldives] = data.countries;
+  assert.equal(maldives.from, 899000);
+  assert.deepEqual(maldives.years, ['2026', '2027']);
+  assert.equal(plain(pageTitle(maldives, 'hu')), 'Maldív-szigetek utazás 2026–2027 — már 899 000 Ft/fő | TripGoes');
+  assert.ok(pageTitle(maldives, 'en').startsWith('Maldives holidays 2026–2027 — from HUF 899,000 pp'));
+});
+
+// A destination page that has ranked must not disappear because today's feed
+// happens to carry nothing for it.
+test('a destination keeps its page after it drops out of the feed', () => {
+  const data = validatePackages({ ...config(), published: ['Maldív-szigetek', 'Egyiptom'] });
+  const egypt = data.countries.find(entry => entry.name === 'Egyiptom');
+  assert.ok(egypt, 'the established destination is gone');
+  assert.equal(egypt.count, 0);
+  assert.ok(hasPage(egypt), 'an established destination keeps its page');
+  assert.equal(pageTitle(egypt, 'hu'), 'Egyiptom utazás | TripGoes', 'an empty page promises no price');
+  // It renders rather than throwing, and says so plainly.
+  assert.ok(packagesPage(data, 'hu', 'egyiptom').includes('nincs utazás'));
+  // One offer is not enough on its own, but an established name is.
+  assert.ok(!hasPage({ count: 1, established: false }));
+  assert.ok(hasPage({ count: MIN_FOR_PAGE, established: false }));
+});
+
+test('the structured data describes the offers and cannot break out of its tag', () => {
+  const { offers } = validatePackages(config([offer({ hotel: '</script><img src=x>' })]));
+  const html = packagesJsonLd(offers, 'hu', { name: 'Maldív-szigetek' });
+  assert.ok(html.startsWith('<script type="application/ld+json">'));
+  assert.ok(!html.includes('</script><img'), 'a closing tag in the data would end the block early');
+  const parsed = JSON.parse(html.replace(/^<script[^>]*>|<\/script>$/g, '').replaceAll('\u003c', '<'));
+  assert.equal(parsed['@type'], 'ItemList');
+  assert.equal(parsed.numberOfItems, 1);
+  assert.equal(parsed.itemListElement[0].item.offers.priceCurrency, 'HUF');
+  assert.equal(parsed.itemListElement[0].item.offers.price, 1259900);
+  assert.equal(packagesJsonLd([], 'hu'), '', 'an empty page emits no structured data');
 });
 
 test('the shipped feed data validates and carries pages worth building', async () => {

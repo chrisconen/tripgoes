@@ -13,6 +13,19 @@ export const AFFILIATE_ID = '9426177';
 // A country needs enough offers to be worth its own page; below this it is
 // still reachable in the full catalogue.
 export const MIN_FOR_PAGE = 3;
+// Enough offers to be worth a page, or a page it already earned.
+export const hasPage = country => country.count >= MIN_FOR_PAGE || country.established === true;
+// "Maldív-szigetek 2027" and "már 1 112 439 Ft/fő" are what the Hungarian
+// competition puts in its titles, and both come straight from the data.
+export const yearLabel = country => country.years.length ? (country.years.length === 1 ? country.years[0] : `${country.years[0]}–${country.years.at(-1)}`) : '';
+export function pageTitle(country, lang) {
+  const name = country.title[lang === 'en' ? 'en' : 'hu'], years = yearLabel(country);
+  if (!country.count) return lang === 'hu' ? `${name} utazás | TripGoes` : `${name} holidays | TripGoes`;
+  const price = lang === 'hu' ? `${country.from.toLocaleString('hu-HU')} Ft/fő` : `HUF ${country.from.toLocaleString('en-GB')} pp`;
+  return lang === 'hu'
+    ? `${name} utazás ${years} — már ${price} | TripGoes`
+    : `${name} holidays ${years} — from ${price} | TripGoes`;
+}
 
 export const COUNTRIES = {
   'Egyesült Arab Emírségek': 'United Arab Emirates', 'Egyiptom': 'Egypt',
@@ -88,24 +101,37 @@ export function validatePackages(data) {
     return { ...offer, slug: countrySlug(offer.country) };
   });
   if (!offers.length) invalid('the catalogue is empty');
-  const counts = new Map();
-  for (const offer of offers) counts.set(offer.country, (counts.get(offer.country) ?? 0) + 1);
-  const countries = [...counts]
-    .map(([name, count]) => ({ name, count, slug: countrySlug(name), title: { hu: name, en: COUNTRIES[name] ?? name } }))
+  const grouped = new Map();
+  for (const offer of offers) {
+    if (!grouped.has(offer.country)) grouped.set(offer.country, []);
+    grouped.get(offer.country).push(offer);
+  }
+  // A destination that has ever had a page keeps it, even when today's feed
+  // carries nothing for it: a URL that ranked must not 404 overnight.
+  const published = new Set(data.published ?? []);
+  for (const name of published) if (!grouped.has(name)) grouped.set(name, []);
+  const countries = [...grouped]
+    .map(([name, list]) => ({
+      name, count: list.length, slug: countrySlug(name), established: published.has(name),
+      title: { hu: name, en: COUNTRIES[name] ?? name },
+      // The title carries these, because that is what the competition ranks on.
+      from: list.length ? Math.min(...list.map(offer => offer.price)) : 0,
+      years: [...new Set(list.map(offer => offer.from.slice(0, 4)))].sort(),
+    }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'hu'));
   return { generated: data.generated, offers, countries };
 }
 
 const copy = {
   hu: {
-    nights: count => `${count} éjszaka`, from: 'Már', open: 'Megnézem',
+    nights: count => `${count} éjszaka`, from: 'Már', open: 'Megnézem', per: '/fő',
     departs: airport => `${airport}ból indul`, own: 'Repülő nélkül',
     asOf: date => `Az árak a ${date}-i állapot szerintiek; a véglegeset a foglalási oldal mutatja.`,
     empty: 'Ehhez a szűréshez most nincs utazás.',
     off: value => `−${value}%`,
   },
   en: {
-    nights: count => `${count} nights`, from: 'From', open: 'Open',
+    nights: count => `${count} nights`, from: 'From', open: 'Open', per: ' / person',
     departs: airport => `Departs ${airport}`, own: 'No flight included',
     asOf: date => `Prices are as of ${date}; the booking page shows the final one.`,
     empty: 'No trips match this filter right now.',
@@ -144,7 +170,7 @@ export function packageCard(offer, lang) {
     + `<strong>${escape(offer.hotel)}</strong>${stars}`
     + `<span class="pkg-meta">${escape(when(offer.from, offer.to, lang))} · ${text.nights(offer.nights)} · ${escape(translate(FOOD, offer.food, lang))}</span>`
     + `<span class="pkg-depart${abroad ? ' pkg-abroad' : ''}">${escape(departure)}</span>`
-    + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<em>${text.open} ↗</em></span>`
+    + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<small>${text.per}</small><em>${text.open} ↗</em></span>`
     + `</a></li>`;
 }
 
@@ -201,7 +227,7 @@ export function packagesPage(data, lang, slug = '') {
   if (slug && !country) throw new TypeError(`Unknown destination: ${slug}`);
   const offers = country ? data.offers.filter(offer => offer.slug === slug) : data.offers;
   const name = country?.title[language] ?? '';
-  const chips = data.countries.filter(entry => entry.count >= MIN_FOR_PAGE).map(entry =>
+  const chips = data.countries.filter(entry => hasPage(entry)).map(entry =>
     `<a href="${base}${entry.slug}/"${entry.slug === slug ? ' aria-current="page"' : ''}>${escape(entry.title[language])}<span>${entry.count}</span></a>`).join('');
   return `<section class="pkg-head container">`
     + `<h1>${escape(country ? text.countryTitle(name) : text.title(offers.length))}</h1>`
@@ -210,4 +236,36 @@ export function packagesPage(data, lang, slug = '') {
     + `<a href="${base}"${slug ? '' : ' aria-current="page"'}>${escape(text.all)}<span>${data.offers.length}</span></a>${chips}</nav>`
     + (country ? '' : `<div class="container">${controls(data, language, text)}</div>`)
     + `<section class="container pkg-results">${packageGrid(offers, language, { generated: data.generated })}</section>`;
+}
+
+// Structured data, so a destination page can show its price in search results
+// rather than a bare blue link. Kept to what the feed actually gives us:
+// a name, a picture, a price and a link.
+export function packagesJsonLd(offers, lang, { name } = {}) {
+  if (!offers?.length) return '';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: name ?? (lang === 'hu' ? 'Komplett utazások' : 'Complete trips'),
+    numberOfItems: offers.length,
+    itemListElement: offers.map((offer, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: offer.hotel,
+        image: offer.image,
+        category: `${offer.country}${offer.locality ? ` / ${offer.locality}` : ''}`,
+        offers: {
+          '@type': 'Offer',
+          price: offer.price,
+          priceCurrency: offer.currency,
+          url: offer.href,
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    })),
+  };
+  // A closing tag inside the JSON would end the script element early.
+  return `<script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>`;
 }

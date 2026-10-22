@@ -13,7 +13,7 @@ import {lastMinutePage} from '../src/lastminute.mjs';
 import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
 import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
-import {validatePackages,packagesPage,packageGrid,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
+import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,hasPage,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
 import {toolsPage} from '../src/tools.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
@@ -47,6 +47,8 @@ const packages=packageConfig.offers?.length?validatePackages(packageConfig):null
 const packageCSP=packages?{scriptExtra:'',imgExtra:` ${PACKAGE_IMAGES}`,frameSrc:"'none'",connectExtra:[]}:null;
 // The landing page leads with real trips: the deepest discounts first, then
 // the long-haul ones. The feed is already sorted by discount.
+const packageFrom=packages?Math.min(...packages.offers.map(offer=>offer.price)):0;
+const packageYears=packages?[...new Set(packages.offers.map(offer=>offer.from.slice(0,4)))].sort().join('–'):'';
 const tripView=packages?lang=>({
  total:packages.offers.length,
  deals:packageGrid(packages.offers.slice(0,8),lang,{}),
@@ -105,20 +107,25 @@ for(const lang of ['hu','en']){
   }
   if(route==='utak'){
    await writeFile(`${dir}/index.html`,render({lang,route,
-    title:lang==='hu'?`Komplett utazások — ${packages.offers.length} ajánlat repülőjeggyel és szállással | TripGoes`:`Complete trips — ${packages.offers.length} offers with flight and hotel | TripGoes`,
+    title:lang==='hu'?`Komplett utazások ${packageYears} — ${packages.offers.length} ajánlat már ${packageFrom.toLocaleString('hu-HU')} Ft/fő-től | TripGoes`:`Complete trips ${packageYears} — ${packages.offers.length} offers from HUF ${packageFrom.toLocaleString('en-GB')} per person | TripGoes`,
     description:lang==='hu'?'Repülőjegy, szállás és ellátás egy árban. Szűrhető ár, hossz, ellátás és induló repülőtér szerint; a foglalás az utazásszervező oldalán zárul.':'Flight, hotel and board for one price. Filter by price, length, board and departure airport; booking finishes on the tour operator’s website.',
-    content:`<main id="main">${packagesPage(packages,lang)}</main>`,indexable:true}));
+    content:`<main id="main">${packagesPage(packages,lang)}${packagesJsonLd(packages.offers.slice(0,40),lang)}</main>`,indexable:true}));
    sitemap.push(`${origin}/${lang}/${route}/`);
    // One page per destination: a country with a handful of offers stays in
    // the full catalogue instead of becoming a thin page of its own.
-   for(const country of packages.countries.filter(entry=>entry.count>=MIN_FOR_PAGE)){
+   for(const country of packages.countries.filter(hasPage)){
     const countryRoute=`${route}/${country.slug}`,countryDir=`dist/${lang}/${countryRoute}`;await mkdir(countryDir,{recursive:true});
     const name=country.title[lang];
+    const here=packages.offers.filter(offer=>offer.slug===country.slug);
     await writeFile(`${countryDir}/index.html`,render({lang,route:countryRoute,pageOverride:'utak',
-     title:lang==='hu'?`${name} utazás — ${country.count} komplett ajánlat | TripGoes`:`${name} holidays — ${country.count} complete trips | TripGoes`,
-     description:lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira: repülőjegy, szállás és ellátás egy árban. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name}: flight, hotel and board for one price. Prices as of ${packages.generated}.`,
-     content:`<main id="main">${packagesPage(packages,lang,country.slug)}</main>`,indexable:true}));
-    sitemap.push(`${origin}/${lang}/${countryRoute}/`);
+     title:pageTitle(country,lang),
+     description:country.count
+      ?(lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira, már ${country.from.toLocaleString('hu-HU')} Ft/fő-től: repülőjegy, szállás és ellátás egy árban. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name} from HUF ${country.from.toLocaleString('en-GB')} per person: flight, hotel and board for one price. Prices as of ${packages.generated}.`)
+      :(lang==='hu'?`${name} jelenleg nincs a betöltött kínálatban. Nézd meg a többi úti célt és az aktuális ajánlatokat.`:`${name} is not in the loaded catalogue right now. See the other destinations and what is currently on offer.`),
+     content:`<main id="main">${packagesPage(packages,lang,country.slug)}${packagesJsonLd(here,lang,{name})}</main>`,
+     // A page with nothing on it stays reachable but is not offered to search.
+     indexable:country.count>0}));
+    if(country.count)sitemap.push(`${origin}/${lang}/${countryRoute}/`);
    }
    continue;
   }

@@ -33,6 +33,7 @@
    Nobody should discover that after booking. */
 .pkg-abroad{background:#fdeadf;color:#8a3d12}
 .pkg-price{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:auto;padding:16px 18px 18px;font-family:var(--heading);font-size:19px;font-weight:700;letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+.pkg-price small{font-family:var(--font);font-size:12px;font-weight:600;letter-spacing:0;opacity:.6;margin-left:2px}
 .pkg-price em{font-family:var(--font);font-size:13px;font-style:normal;font-weight:600;letter-spacing:0;white-space:nowrap}
 
 .pkg-note,.pkg-empty{margin-top:26px;color:var(--muted);font-size:13px}

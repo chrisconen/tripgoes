@@ -5,7 +5,7 @@
 //
 // Prices move daily, so the file carries the date it was read and the build
 // labels it — the same honesty the cached fares already use.
-import {writeFile} from 'node:fs/promises';
+import {readFile,writeFile} from 'node:fs/promises';
 
 export const AFFILIATE_ID='9426177';
 export const OFFER_HOST='www.invia.hu';
@@ -47,7 +47,10 @@ function parseOffer(xml,source){
   id:`${hotelId}-${from}`,source,
   country:tag(xml,'country'),locality:tag(xml,'locality'),
   hotel:tag(xml,'hotel'),stars:num(tag(xml,'hotelinfo').match(/<stars>([\d.]+)<\/stars>/)?.[1]),
-  from,to,nights:num(tag(xml,'length')),
+  // The feed's <length> counts calendar days, arrival and departure
+  // included, so using it as nights overstated every trip by one. The
+  // dates are the authority, and the link's own nl_nights agrees with them.
+  from,to,nights:Math.round((Date.parse(to)-Date.parse(from))/86400000),
   price,currency:xml.match(/<totalprice currency="(\w+)"/)?.[1]??'HUF',
   discount:num(tag(xml,'discount'))??0,
   food:tag(xml,'food'),transport:tag(xml,'transportation'),
@@ -81,10 +84,17 @@ if(process.argv[1]?.endsWith('sync-packages.mjs')){
  offers.sort((a,b)=>b.discount-a.discount||a.price-b.price);
  const countries={};
  for(const offer of offers)countries[offer.country]=(countries[offer.country]??0)+1;
+ // Destinations only ever get added to this list. A country that drops out of
+ // today's feed keeps its page, because the URL may already rank.
+ const before=await readFile('content/packages.json','utf8').then(JSON.parse).catch(()=>({}));
+ const MIN=3;
+ const qualifying=Object.entries(countries).filter(([,count])=>count>=MIN).map(([name])=>name);
+ const published=[...new Set([...(before.published??[]),...qualifying])].sort();
  await writeFile('content/packages.json',JSON.stringify({
   version:1,generated:new Date().toISOString().slice(0,10),
-  countries,offers,
+  published,countries,offers,
  },null,1)+'\n');
+ console.log(`${published.length} destinations keep a page (${published.length-qualifying.length} carried over from earlier feeds).`);
  const prices=offers.map(offer=>offer.price).sort((a,b)=>a-b);
  console.log(`Kept ${offers.length} offers in ${Object.keys(countries).length} countries (${prices[0].toLocaleString('hu')}–${prices.at(-1).toLocaleString('hu')} Ft).`);
 }
