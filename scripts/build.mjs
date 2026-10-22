@@ -43,6 +43,10 @@ const serviceConfig=JSON.parse(await readFile('content/services.json','utf8'));
 const services=serviceConfig.widgets?.length?validateServices(serviceConfig):null;
 const serviceCSP=services?servicePolicy(services):null;
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','offers','flights','last-minute',...(experiences?['experiences']:[]),...(services?['services']:[])];
+// The homepage carried noindex, so the strongest page on the site was kept
+// out of search entirely. Trust pages are indexed too, because a commercial
+// site is judged on them; /guides/ stays out, it repeats the /blog/ list.
+const INDEXED=new Set(['','about','contact','imprint','score','planner']);
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
@@ -98,8 +102,8 @@ for(const lang of ['hu','en']){
   }
   const title=route==='planner'?(lang==='hu'?'Úttervező — teljes költség, több szabadidő | TripGoes':'Trip planner — whole-trip costs, more time away | TripGoes'):route==='score'?(lang==='hu'?'TripScore — átlátható utazási ajánlatellenőrző':'TripScore — a transparent travel deal checker'):route?`${copy[lang][route==='guides'?'guideTitle':route]} — TripGoes`:copy[lang].metaTitle;
   const description=route==='planner'?(lang==='hu'?'Hasonlíts össze három saját utazási ajánlatot: teljes költség, csoportkeret, éjszakák és használható órák. Számítás és választható mentés a böngésződben.':'Compare three travel offers of your own: whole-trip costs, group budget, nights and usable hours. Calculations and optional saving stay in your browser.'):undefined;
-  await writeFile(`${dir}/index.html`,render({lang,route,title,description,content:route==='planner'?`<main id="main">${plannerPage(lang)}</main>`:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:route==='score'||route==='planner'}));
-  if(route==='score'||route==='planner')sitemap.push(`${origin}/${lang}/${route}/`);
+  await writeFile(`${dir}/index.html`,render({lang,route,title,description,content:route==='planner'?`<main id="main">${plannerPage(lang)}</main>`:route==='score'?checkerPage(lang):route==='guides'?journalIndex(articles,lang):'',indexable:INDEXED.has(route)}));
+  if(INDEXED.has(route))sitemap.push(`${origin}/${lang}/`+(route?`${route}/`:''));
  }
  await mkdir(`dist/${lang}/blog`,{recursive:true});
  await writeFile(`dist/${lang}/blog/index.html`,render({lang,route:'blog',title:lang==='hu'?'Útinapló — 100 eredeti utazási útmutató | TripGoes':'Travel Journal — 100 original travel guides | TripGoes',description:lang==='hu'?'Utazástervezés, repülés, hajóutak és átlátható költségek. Száz eredeti magyar–angol útmutató a tudatosabb döntéshez.':'Planning, flights, cruises and transparent travel costs. One hundred original Hungarian and English guides for more thoughtful decisions.',content:journalIndex(articles,lang),indexable:!draft}));

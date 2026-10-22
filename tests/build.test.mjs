@@ -148,3 +148,31 @@ test('every page closes the containers it opens',async()=>{
   }
  }
 });
+
+// The homepage shipped with noindex, which is why nothing could rank: the
+// strongest page on the site told Google to skip it. Assert the split
+// directly, in the meta tag and in the sitemap, so it cannot drift back.
+test('the pages we want found are indexable and listed in the sitemap',async()=>{
+ const sitemap=await readFile('dist/sitemap.xml','utf8');
+ const indexed=['','about/','contact/','imprint/','score/','planner/','experiences/','services/','blog/'];
+ // Volatile fares, the commission notice and the duplicate journal index.
+ const hidden=['privacy/','cookies/','affiliate/','guides/','flights/','last-minute/','offers/'];
+ for(const lang of ['hu','en']){
+  for(const route of indexed){
+   const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
+   assert.ok(html.includes('content="index,follow"'),`/${lang}/${route} is noindex`);
+   assert.ok(sitemap.includes(`<loc>https://tripgoes.com/${lang}/${route}</loc>`),`/${lang}/${route} is missing from the sitemap`);
+  }
+  for(const route of hidden){
+   const html=await readFile(`dist/${lang}/${route}index.html`,'utf8');
+   assert.ok(html.includes('content="noindex,follow"'),`/${lang}/${route} should stay out of search`);
+   assert.ok(!sitemap.includes(`<loc>https://tripgoes.com/${lang}/${route}</loc>`),`/${lang}/${route} should stay out of the sitemap`);
+  }
+ }
+ // No empty path segments: a doubled slash is a separate, duplicate URL.
+ assert.ok(!/\/\/<\/loc>/.test(sitemap),'the sitemap carries a doubled slash');
+ // The bare root repeats the Hungarian homepage, so it only points at it.
+ const root=await readFile('dist/index.html','utf8');
+ assert.ok(root.includes('content="noindex,follow"'));
+ assert.ok(root.includes('rel="canonical" href="https://tripgoes.com/hu/"'));
+});
