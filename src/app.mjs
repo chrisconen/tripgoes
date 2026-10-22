@@ -33,6 +33,12 @@ if(page==='flights')Promise.all([import('./flights.mjs'),import('./api-config.mj
 if(page==='experiences')import('./worldmap.mjs').then(({initWorldMap})=>initWorldMap(lang));
 if(page==='utak')import('./packagefilter.mjs').then(({initPackageFilter})=>initPackageFilter(lang));
 if(page==='utak'||page==='')import('./packagegallery.mjs').then(({initPackageGallery})=>initPackageGallery());
+// Nothing that tracks loads before someone has said yes to it.
+import('./marketing.mjs').then(({PIXEL_ID,pixelConfigured,initPixel})=>{
+ if(!pixelConfigured(PIXEL_ID))return;
+ return import('./consent.mjs').then(({askConsent,GRANTED})=>
+  askConsent(lang,{onDecision:choice=>{if(choice===GRANTED)initPixel();}}));
+});
 if(page==='last-minute')Promise.all([import('./lastminute.mjs'),import('./api-config.mjs')]).then(([{initLastMinute},{apiBase}])=>initLastMinute(lang,{apiBase}));
 initCities(lang);
 initDiscovery(lang);

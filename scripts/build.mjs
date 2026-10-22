@@ -16,6 +16,10 @@ import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
 import {validatePackages,packagesPage,packageGrid,packagesJsonLd,pageTitle,boardTitle,boardDescription,hasPage,foodSlug,allByAir,featuredOffer,featuredCard,COUNTRIES as PACKAGE_COUNTRIES,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
 import {toolsPage} from '../src/tools.mjs';
 import {apiBase} from '../src/api-config.mjs';
+import {PIXEL_ID,PIXEL_HOSTS,pixelConfigured} from '../src/marketing.mjs';
+// The policy only widens for a tracker that exists. No pixel configured, no
+// extra hosts, and nothing for a reader to be asked about.
+const tracking=pixelConfigured(PIXEL_ID);
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
 if(new URL(origin).protocol!=='https:')throw Error('SITE_ORIGIN must use HTTPS.');
@@ -93,11 +97,11 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  values.page=pageOverride??route.split('/')[0];
  const section=route.split('/')[0];
  const widgets=section==='experiences'?widgetCSP:section==='services'?serviceCSP:(section==='utak'||!section)?packageCSP:null;
- values.scriptExtra=widgets?widgets.scriptExtra:'';
- values.imgExtra=widgets?widgets.imgExtra:'';
+ values.scriptExtra=(widgets?widgets.scriptExtra:'')+(tracking?` ${PIXEL_HOSTS.script}`:'');
+ values.imgExtra=(widgets?widgets.imgExtra:'')+(tracking?` ${PIXEL_HOSTS.image}`:'');
  values.frameSrc=widgets?widgets.frameSrc:"'none'";
  values.styleExtra=widgets?.styleExtra??'';
- values.connectSrc=[...(widgets?widgets.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
+ values.connectSrc=[...(widgets?widgets.connectExtra:[]),...(tracking?[PIXEL_HOSTS.connect]:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
  values.extraStyles=values.page==='eszkozok'?'<link rel="stylesheet" href="/src/tools.css">':(values.page==='utak'||values.page==='')?'<link rel="stylesheet" href="/src/packages.css"><link rel="stylesheet" href="/src/tools.css">':['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
