@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, hasPage, euroRate, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
+import { validatePackages, packageCard, packageGrid, packagesPage, packagesJsonLd, pageTitle, boardTitle, boardDescription, hasPage, foodSlug, euroRate, countrySlug, COUNTRIES, IMAGE_HOST, AFFILIATE_ID, MIN_FOR_PAGE } from '../src/packages.mjs';
 
 const offer = (changes = {}) => ({
   id: '36905-2027-08-29', source: 'dream', country: 'Maldív-szigetek', locality: 'Malé atoll',
@@ -120,21 +120,33 @@ test('the grid labels its prices with a date and says so when empty', () => {
   assert.ok(packageGrid([], 'en').includes('No trips match'));
 });
 
-test('the catalogue filters the whole list and a destination page does not', () => {
-  const egyptian = count => Array.from({ length: count }, (unused, index) => offer({ id: `e${index}-2027-01-01`, country: 'Egyiptom', hotel: 'Steigenberger' }));
-  const data = validatePackages(config([offer(), ...egyptian(3)]));
+test('every list can be filtered, by the dimensions that list still has', () => {
+  const egyptian = count => Array.from({ length: count }, (unused, index) => offer({ id: `e${index}-2027-01-01`, country: 'Egyiptom', hotel: 'Steigenberger', food: index ? 'All inclusive' : 'Reggeli', airport: index % 2 ? 'Budapest' : 'Bécs' }));
+  const data = validatePackages(config([offer(), ...egyptian(4)]));
+  const count = html => (html.match(/<select /g) || []).length;
+
   const all = packagesPage(data, 'hu');
-  assert.ok(all.includes('pkg-filters') && all.includes('name="airport"'));
-  assert.equal((all.match(/class="pkg-card"/g) || []).length, 4);
+  assert.equal((all.match(/class="pkg-card"/g) || []).length, 5);
+  assert.equal(count(all), 4, 'price, length, board and departure');
+
+  // The destination pages used to carry no filters at all, which left 25
+  // cards on a page with nothing to narrow them by.
   const egypt = packagesPage(data, 'hu', 'egyiptom');
-  assert.equal((egypt.match(/class="pkg-card"/g) || []).length, 3);
-  assert.ok(!egypt.includes('pkg-filters'), 'one destination needs no destination filter');
+  assert.equal((egypt.match(/class="pkg-card"/g) || []).length, 4);
+  assert.equal(count(egypt), 4);
   assert.ok(egypt.includes('aria-current="page"'));
+
+  // Board is already fixed here, so offering it again would be furniture.
+  const board = packagesPage(data, 'hu', 'egyiptom', 'all-inclusive');
+  assert.equal((board.match(/class="pkg-card"/g) || []).length, 3);
+  assert.equal(count(board), 3, 'board is no longer a choice');
+  assert.ok(!board.includes('name="food"'));
+
+  // A single offer needs no filter bar either.
+  assert.equal(count(packagesPage(data, 'hu', 'maldiv-szigetek')), 0);
   assert.throws(() => packagesPage(data, 'hu', 'atlantisz'), TypeError);
 });
 
-// <length> in the feed counts calendar days, so every card claimed one night
-// more than the dates allow.
 test('the shipped nights match the dates, never the feed day count', async () => {
   const raw = JSON.parse(await readFile(new URL('../content/packages.json', import.meta.url), 'utf8'));
   const day = 86400000;
@@ -169,6 +181,39 @@ test('a destination keeps its page after it drops out of the feed', () => {
   // One offer is not enough on its own, but an established name is.
   assert.ok(!hasPage({ count: 1, established: false }));
   assert.ok(hasPage({ count: MIN_FOR_PAGE, established: false }));
+});
+
+// "egyiptom all inclusive" is a search, and the data already answers it.
+test('a destination splits into the board types it actually has', () => {
+  const data = validatePackages(config([
+    offer({ id: '1', country: 'Egyiptom', food: 'All inclusive' }),
+    offer({ id: '2', country: 'Egyiptom', food: 'All inclusive' }),
+    offer({ id: '3', country: 'Egyiptom', food: 'Reggeli' }),
+  ]));
+  const ai = data.boards.find(entry => entry.foodSlug === 'all-inclusive');
+  assert.equal(ai.count, 2);
+  assert.equal(ai.slug, 'egyiptom');
+  assert.equal(plain(boardTitle(ai, 'hu')), 'Egyiptom all inclusive 2027 — már 1 259 900 Ft/fő | TripGoes');
+  // The awkward one reads as Hungarian rather than as a filter value.
+  const breakfast = data.boards.find(entry => entry.foodSlug === 'reggeli');
+  assert.ok(boardTitle(breakfast, 'hu').startsWith('Egyiptom reggelivel'));
+  assert.ok(boardTitle(breakfast, 'en').startsWith('Egypt with breakfast'));
+  // The page shows only that board, and links to the siblings.
+  const page = packagesPage(data, 'hu', 'egyiptom', 'all-inclusive');
+  assert.equal((page.match(/class="pkg-card"/g) || []).length, 2);
+  assert.ok(page.includes('<h1>Egyiptom, all inclusive — 2 komplett utazás</h1>'));
+  assert.ok(page.includes('href="/hu/utak/egyiptom/"'), 'the board page links back to the destination');
+  assert.throws(() => packagesPage(data, 'hu', 'egyiptom', 'nincs-ilyen'), TypeError);
+  assert.equal(foodSlug('Ultra All inclusive'), 'ultra-all-inclusive');
+});
+
+test('a board page survives its offers disappearing', () => {
+  const data = validatePackages({ ...config(), publishedBoards: ['Egyiptom|All inclusive'] });
+  const gone = data.boards.find(entry => entry.key === 'Egyiptom|All inclusive');
+  assert.equal(gone.count, 0);
+  assert.ok(hasPage(gone));
+  assert.ok(boardTitle(gone, 'hu').startsWith('Egyiptom all inclusive |'), 'an empty page promises no price');
+  assert.ok(boardDescription(gone, 'hu').includes('nincs a betöltött kínálatban'));
 });
 
 test('the structured data describes the offers and cannot break out of its tag', () => {

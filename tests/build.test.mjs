@@ -183,6 +183,24 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
   assert.equal(html.includes('content="index,follow"'),hasOffers,`${where} indexing does not match what is on it`);
   assert.equal(sitemap.includes(`<loc>https://tripgoes.com${where}</loc>`),hasOffers,`${where} sitemap entry does not match what is on it`);
  }
+ // Destination-and-board pages follow the same rule, and must be reachable:
+ // a page nothing links to collects no visitors and no ranking signal.
+ let boardPages=0;
+ for(const lang of ['hu','en'])for(const slug of destinations){
+  const country=await readFile(`dist/${lang}/utak/${slug}/index.html`,'utf8');
+  const boards=(await readdir(`dist/${lang}/utak/${slug}`,{withFileTypes:true})).filter(entry=>entry.isDirectory());
+  for(const {name} of boards){
+   boardPages++;
+   const where=`/${lang}/utak/${slug}/${name}/`;
+   const html=await readFile(`dist${where}index.html`,'utf8');
+   const hasOffers=html.includes('class="pkg-card"');
+   assert.equal(html.includes('content="index,follow"'),hasOffers,`${where} indexing does not match what is on it`);
+   assert.equal(sitemap.includes(`<loc>https://tripgoes.com${where}</loc>`),hasOffers,`${where} sitemap entry does not match what is on it`);
+   assert.ok(country.includes(`href="${where}"`),`${where} is not linked from its destination page`);
+  }
+ }
+ assert.ok(boardPages>=20,`only ${boardPages} destination+board pages`);
+
  // No empty path segments: a doubled slash is a separate, duplicate URL.
  assert.ok(!/\/\/<\/loc>/.test(sitemap),'the sitemap carries a doubled slash');
  // The bare root repeats the Hungarian homepage, so it only points at it.

@@ -18,6 +18,30 @@ export const hasPage = country => country.count >= MIN_FOR_PAGE || country.estab
 // "Maldív-szigetek 2027" and "már 1 112 439 Ft/fő" are what the Hungarian
 // competition puts in its titles, and both come straight from the data.
 export const yearLabel = country => country.years.length ? (country.years.length === 1 ? country.years[0] : `${country.years[0]}–${country.years.at(-1)}`) : '';
+export function boardTitle(board, lang) {
+  const language = lang === 'en' ? 'en' : 'hu';
+  const name = board.title[language], phrase = boardPhrase(board, language), years = yearLabel(board);
+  if (!board.count) return `${name} ${phrase} | TripGoes`;
+  const price = language === 'hu' ? `${board.from.toLocaleString('hu-HU')} Ft/fő` : `HUF ${board.from.toLocaleString('en-GB')} pp`;
+  return language === 'hu'
+    ? `${name} ${phrase} ${years} — már ${price} | TripGoes`
+    : `${name} ${phrase} ${years} — from ${price} | TripGoes`;
+}
+
+export function boardDescription(board, lang) {
+  const language = lang === 'en' ? 'en' : 'hu';
+  const name = board.title[language], phrase = boardPhrase(board, language);
+  if (!board.count) {
+    return language === 'hu'
+      ? `${name} ${phrase} jelenleg nincs a betöltött kínálatban. Nézd meg a többi ellátást és úti célt.`
+      : `No ${name} trips ${phrase} are loaded right now. See the other board types and destinations.`;
+  }
+  const price = language === 'hu' ? `${board.from.toLocaleString('hu-HU')} Ft/fő` : `HUF ${board.from.toLocaleString('en-GB')} per person`;
+  return language === 'hu'
+    ? `${board.count} foglalható utazás ${name} célpontjaira ${phrase}, már ${price}-től: repülőjegy és szállás egy árban.`
+    : `${board.count} bookable trips to ${name} ${phrase}, from ${price}: flight and hotel for one price.`;
+}
+
 export function pageTitle(country, lang) {
   const name = country.title[lang === 'en' ? 'en' : 'hu'], years = yearLabel(country);
   if (!country.count) return lang === 'hu' ? `${name} utazás | TripGoes` : `${name} holidays | TripGoes`;
@@ -68,12 +92,29 @@ const TRANSPORT = { 'Repülővel': 'By air', 'Egyénileg': 'Own transport' };
 const AIRPORTS = { 'Budapest': 'Budapest', 'Bécs': 'Vienna', 'Pozsony': 'Bratislava', 'Temesvár': 'Timișoara' };
 const TYPES = { 'Üdülés': 'Beach holiday', 'Hajóutak': 'Cruise' };
 
+// Destination and board together is how the Hungarian competition is found:
+// "egyiptom all inclusive" is a search, not a filter nobody types.
+export const FOOD_SLUG = {
+  'All inclusive': 'all-inclusive', 'Ultra All inclusive': 'ultra-all-inclusive',
+  'Félpanzió': 'felpanzio', 'Teljes panzió': 'teljes-panzio',
+  'Reggeli': 'reggeli', 'Önellátás': 'onellatas',
+};
+
+const BOARD_PHRASE = {
+  hu: { 'Reggeli': 'reggelivel', 'Önellátás': 'önellátással' },
+  en: { 'Reggeli': 'with breakfast', 'Önellátás': 'self-catering' },
+};
+const boardPhrase = (board, lang) =>
+  BOARD_PHRASE[lang]?.[board.food] ?? board.board[lang].toLowerCase();
+
 const ACCENTS = { á: 'a', é: 'e', í: 'i', ó: 'o', ö: 'o', ő: 'o', ú: 'u', ü: 'u', ű: 'u' };
 export const countrySlug = name => name.toLowerCase()
   .replace(/[áéíóöőúüű]/g, c => ACCENTS[c])
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const translate = (table, value, lang) => (lang === 'en' ? table[value] ?? value : value);
+// A board type the feed has not used before still gets a usable path.
+export const foodSlug = food => FOOD_SLUG[food] ?? countrySlug(food);
 
 // A rate we cannot trust is worse than none: the euro line disappears rather
 // than quoting a number nobody can source.
@@ -126,12 +167,32 @@ export function validatePackages(data) {
       years: [...new Set(list.map(offer => offer.from.slice(0, 4)))].sort(),
     }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'hu'));
-  return { generated: data.generated, rate: euroRate(data.rate), offers, countries };
+  const boardGroups = new Map();
+  for (const offer of offers) {
+    const key = `${offer.country}|${offer.food}`;
+    if (!boardGroups.has(key)) boardGroups.set(key, []);
+    boardGroups.get(key).push(offer);
+  }
+  const publishedBoards = new Set(data.publishedBoards ?? []);
+  for (const key of publishedBoards) if (!boardGroups.has(key)) boardGroups.set(key, []);
+  const boards = [...boardGroups].map(([key, list]) => {
+    const [country, food] = key.split('|');
+    return {
+      key, country, food, count: list.length, established: publishedBoards.has(key),
+      slug: countrySlug(country), foodSlug: foodSlug(food),
+      title: { hu: country, en: COUNTRIES[country] ?? country },
+      board: { hu: food, en: FOOD[food] ?? food },
+      from: list.length ? Math.min(...list.map(offer => offer.price)) : 0,
+      years: [...new Set(list.map(offer => offer.from.slice(0, 4)))].sort(),
+    };
+  }).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'hu'));
+  return { generated: data.generated, rate: euroRate(data.rate), offers, countries, boards };
 }
 
 const copy = {
   hu: {
     nights: count => `${count} éjszaka`, from: 'Már', open: 'Megnézem', per: '/fő',
+    perNight: value => `${value}/éj`,
     departs: airport => `${airport}ból indul`, own: 'Repülő nélkül',
     asOf: date => `Az árak a ${date}-i állapot szerintiek; a véglegeset a foglalási oldal mutatja.`,
     empty: 'Ehhez a szűréshez most nincs utazás.',
@@ -139,6 +200,7 @@ const copy = {
   },
   en: {
     nights: count => `${count} nights`, from: 'From', open: 'Open', per: ' / person',
+    perNight: value => `${value} / night`,
     departs: airport => `Departs ${airport}`, own: 'No flight included',
     asOf: date => `Prices are as of ${date}; the booking page shows the final one.`,
     empty: 'No trips match this filter right now.',
@@ -170,17 +232,21 @@ export function packageCard(offer, lang, rate) {
   const stars = offer.stars ? `<span class="pkg-stars" aria-label="${offer.stars}">${'★'.repeat(Math.round(offer.stars))}</span>` : '';
   const abroad = flight && offer.airport && offer.airport !== 'Budapest';
   // The filters read these rather than re-parsing the rendered text.
+  const extra = (offer.photos ?? []).slice(1, 5).filter(photo => photo !== offer.image);
   const data = ` data-country="${escape(offer.slug ?? countrySlug(offer.country))}" data-price="${offer.price}"`
     + ` data-nights="${offer.nights}" data-food="${escape(offer.food)}" data-airport="${escape(offer.airport || '')}"`
-    + ` data-stars="${offer.stars ?? 0}"`;
+    + ` data-stars="${offer.stars ?? 0}"`
+    + (extra.length ? ` data-photos="${escape(extra.join('|'))}"` : '');
   return `<li class="pkg-card"${data}><a href="${escape(offer.href)}" rel="sponsored noopener" target="_blank">`
     + `<figure><img src="${escape(offer.image)}" alt="" loading="lazy" decoding="async" width="450" height="300">`
     + (offer.discount >= 10 ? `<figcaption class="pkg-off">${text.off(offer.discount)}</figcaption>` : '')
+    + (extra.length ? `<span class="pkg-dots" aria-hidden="true">${'<i></i>'.repeat(extra.length + 1)}</span>` : '')
     + `</figure>`
     + `<span class="pkg-where">${escape(translate(COUNTRIES, offer.country, lang))}${offer.locality ? ` · ${escape(offer.locality)}` : ''}</span>`
     + `<strong>${escape(offer.hotel)}</strong>${stars}`
     + `<span class="pkg-meta">${escape(when(offer.from, offer.to, lang))} · ${text.nights(offer.nights)} · ${escape(translate(FOOD, offer.food, lang))}</span>`
     + `<span class="pkg-depart${abroad ? ' pkg-abroad' : ''}">${escape(departure)}</span>`
+    + `<span class="pkg-unit">${escape(text.perNight(money(Math.round(offer.price / offer.nights), lang)))}</span>`
     + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<small>${approxEur(offer.price, lang, rate)}${text.per}</small><em>${text.open} ↗</em></span>`
     + `</a></li>`;
 }
@@ -205,7 +271,8 @@ const page = {
     title: count => `${count} komplett utazás, egy helyen`,
     intro: 'Repülőjegy, szállás és ellátás egy árban. A foglalás és a fizetés az utazásszervező oldalán történik.',
     all: 'Összes úti cél', filters: 'Szűrés', budget: 'Ár', nights: 'Hossz', board: 'Ellátás',
-    airport: 'Indulás', any: 'Mindegy', reset: 'Szűrők törlése',
+    airport: 'Indulás', any: 'Mindegy', reset: 'Szűrők törlése', anyBoard: 'Összes ellátás',
+    boardHeading: (name, food, count) => `${name}, ${food.toLowerCase()} — ${count} komplett utazás`,
     countryTitle: name => `${name} — komplett utazások repülővel`,
     countryIntro: (name, count) => `${count} foglalható utazás ${name} célpontjaira: repülőjegy, szállás és ellátás egy árban.`,
   },
@@ -213,7 +280,8 @@ const page = {
     title: count => `${count} complete trips in one place`,
     intro: 'Flight, hotel and board for one price. Booking and payment take place on the tour operator’s website.',
     all: 'All destinations', filters: 'Filter', budget: 'Price', nights: 'Length', board: 'Board',
-    airport: 'Departure', any: 'Any', reset: 'Clear filters',
+    airport: 'Departure', any: 'Any', reset: 'Clear filters', anyBoard: 'All board types',
+    boardHeading: (name, food, count) => `${name}, ${food.toLowerCase()} — ${count} complete trips`,
     countryTitle: name => `${name} — complete trips by air`,
     countryIntro: (name, count) => `${count} bookable trips to ${name}: flight, hotel and board for one price.`,
   },
@@ -221,36 +289,56 @@ const page = {
 const BUDGETS = [300000, 500000, 800000, 1500000];
 const LENGTHS = [[0, 4], [5, 7], [8, 10], [11, 60]];
 
-function controls(data, lang, text) {
-  const foods = [...new Set(data.offers.map(offer => offer.food))].sort();
-  const airports = [...new Set(data.offers.map(offer => offer.airport).filter(Boolean))].sort();
+// Built from the offers actually on the page: a destination page should not
+// offer an airport or a board type that nothing there departs from or serves.
+function controls(offers, lang, text, { board = true } = {}) {
+  const foods = [...new Set(offers.map(offer => offer.food))].sort();
+  const airports = [...new Set(offers.map(offer => offer.airport).filter(Boolean))].sort();
   const option = (value, label) => `<option value="${escape(value)}">${escape(label)}</option>`;
   const select = (name, label, options) =>
     `<label>${escape(label)}<select name="${name}">${option('', text.any)}${options}</select></label>`;
+  // Below two choices a dropdown is just furniture.
+  const worth = values => values.length > 1;
   return `<form class="pkg-filters" aria-label="${escape(text.filters)}">`
     + select('budget', text.budget, BUDGETS.map(limit => option(limit, `< ${money(limit, lang)}`)).join(''))
     + select('nights', text.nights, LENGTHS.map(([low, high]) => option(`${low}-${high}`, lang === 'hu' ? `${low || 1}–${high} éjszaka` : `${low || 1}–${high} nights`)).join(''))
-    + select('food', text.board, foods.map(food => option(food, translate(FOOD, food, lang))).join(''))
-    + select('airport', text.airport, airports.map(code => option(code, translate(AIRPORTS, code, lang))).join(''))
+    + (board && worth(foods) ? select('food', text.board, foods.map(food => option(food, translate(FOOD, food, lang))).join('')) : '')
+    + (worth(airports) ? select('airport', text.airport, airports.map(code => option(code, translate(AIRPORTS, code, lang))).join('')) : '')
     + `<button type="reset" class="pkg-reset">${escape(text.reset)}</button>`
     + `<output class="pkg-count" aria-live="polite"></output></form>`;
 }
 
-export function packagesPage(data, lang, slug = '') {
+export function packagesPage(data, lang, slug = '', food = '') {
   const language = lang === 'en' ? 'en' : 'hu', text = page[language];
   const base = `/${language}/utak/`;
   const country = slug ? data.countries.find(entry => entry.slug === slug) : null;
   if (slug && !country) throw new TypeError(`Unknown destination: ${slug}`);
-  const offers = country ? data.offers.filter(offer => offer.slug === slug) : data.offers;
+  const board = food ? data.boards.find(entry => entry.slug === slug && entry.foodSlug === food) : null;
+  if (food && !board) throw new TypeError(`Unknown board for ${slug}: ${food}`);
+  const offers = board
+    ? data.offers.filter(offer => offer.slug === slug && foodSlug(offer.food) === food)
+    : country ? data.offers.filter(offer => offer.slug === slug) : data.offers;
   const name = country?.title[language] ?? '';
+  // Every board a destination actually has, as links: without them these
+  // pages would be built and reachable by nobody.
+  const boardLinks = country ? data.boards.filter(entry => entry.slug === slug && hasPage(entry)).map(entry =>
+    `<a href="${base}${slug}/${entry.foodSlug}/"${entry.foodSlug === food ? ' aria-current="page"' : ''}>${escape(entry.board[language])}<span>${entry.count}</span></a>`).join('') : '';
+  const boardNav = boardLinks
+    ? `<nav class="pkg-boards container" aria-label="${escape(text.board)}">`
+      + `<a href="${base}${slug}/"${food ? '' : ' aria-current="page"'}>${escape(text.anyBoard)}<span>${country.count}</span></a>${boardLinks}</nav>`
+    : '';
   const chips = data.countries.filter(entry => hasPage(entry)).map(entry =>
     `<a href="${base}${entry.slug}/"${entry.slug === slug ? ' aria-current="page"' : ''}>${escape(entry.title[language])}<span>${entry.count}</span></a>`).join('');
-  return `<section class="pkg-head container">`
-    + `<h1>${escape(country ? text.countryTitle(name) : text.title(offers.length))}</h1>`
-    + `<p>${escape(country ? text.countryIntro(name, offers.length) : text.intro)}</p></section>`
+  const heading = board
+    ? text.boardHeading(name, board.board[language], offers.length)
+    : country ? text.countryTitle(name) : text.title(offers.length);
+  const intro = board ? boardDescription(board, language)
+    : country ? text.countryIntro(name, offers.length) : text.intro;
+  return `<section class="pkg-head container"><h1>${escape(heading)}</h1><p>${escape(intro)}</p></section>`
     + `<nav class="pkg-countries container" aria-label="${escape(text.all)}">`
     + `<a href="${base}"${slug ? '' : ' aria-current="page"'}>${escape(text.all)}<span>${data.offers.length}</span></a>${chips}</nav>`
-    + (country ? '' : `<div class="container">${controls(data, language, text)}</div>`)
+    + boardNav
+    + (offers.length > 2 ? `<div class="container">${controls(offers, language, text, { board: !board })}</div>` : '')
     + `<section class="container pkg-results">${packageGrid(offers, language, { generated: data.generated, rate: data.rate })}</section>`;
 }
 

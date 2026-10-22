@@ -115,13 +115,19 @@ if(process.argv[1]?.endsWith('sync-packages.mjs')){
  const MIN=3;
  const qualifying=Object.entries(countries).filter(([,count])=>count>=MIN).map(([name])=>name);
  const published=[...new Set([...(before.published??[]),...qualifying])].sort();
+ // The same promise for destination-and-board pages: once one has earned a
+ // URL it keeps it, whatever tomorrow's feed happens to carry.
+ const boardCounts={};
+ for(const offer of offers)boardCounts[`${offer.country}|${offer.food}`]=(boardCounts[`${offer.country}|${offer.food}`]??0)+1;
+ const qualifyingBoards=Object.entries(boardCounts).filter(([,count])=>count>=MIN).map(([key])=>key);
+ const publishedBoards=[...new Set([...(before.publishedBoards??[]),...qualifyingBoards])].sort();
  const rate=await euroRate();
  if(rate)console.log(`1 EUR = ${rate.eur} HUF (${rate.source}, ${rate.date}).`);
  await writeFile('content/packages.json',JSON.stringify({
   version:1,generated:new Date().toISOString().slice(0,10),
-  rate,published,countries,offers,
+  rate,published,publishedBoards,countries,offers,
  },null,1)+'\n');
- console.log(`${published.length} destinations keep a page (${published.length-qualifying.length} carried over from earlier feeds).`);
+ console.log(`${published.length} destinations and ${publishedBoards.length} destination+board pages (${published.length-qualifying.length}+${publishedBoards.length-qualifyingBoards.length} carried over from earlier feeds).`);
  const prices=offers.map(offer=>offer.price).sort((a,b)=>a-b);
  console.log(`Kept ${offers.length} offers in ${Object.keys(countries).length} countries (${prices[0].toLocaleString('hu')}–${prices.at(-1).toLocaleString('hu')} Ft).`);
 }

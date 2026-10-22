@@ -87,3 +87,19 @@
  .pkg-featured{grid-template-columns:1fr;gap:20px;padding:18px;margin-top:36px}
  .pkg-featured-thumbs{display:none}
 }
+
+/* Board types within a destination. Same shape as the destination chips, one
+   level down, so the two rows read as a hierarchy rather than a pile. */
+.pkg-boards{display:flex;flex-wrap:wrap;gap:8px;padding:0 0 22px;margin-top:-10px}
+.pkg-boards a{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px dashed var(--line);border-radius:999px;font-size:13px;font-weight:600;background:transparent;transition:border-color .2s,background .2s}
+.pkg-boards a:hover{border-color:var(--ink)}
+.pkg-boards a[aria-current]{background:var(--lime);border-style:solid;border-color:var(--lime)}
+.pkg-boards span{font-weight:500;opacity:.55;font-variant-numeric:tabular-nums}
+.pkg-unit{padding:6px 18px 0;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Photo position while a card cycles its pictures on hover. Decorative: the
+   card carries no controls, because the whole card is one link. */
+.pkg-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:5px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pkg-card a:hover .pkg-dots{opacity:1}
+.pkg-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 3px rgba(0,0,0,.4);transition:background .2s}
+.pkg-dots i.on{background:#fff}
