@@ -14,6 +14,7 @@ import {validateExperiences,experiencesPage} from '../src/experiences.mjs';
 import {validateActivities,activityCards,IMAGE_HOSTS} from '../src/activities.mjs';
 import {validateServices,servicesPage,servicePolicy} from '../src/services.mjs';
 import {validatePackages,packagesPage,packageGrid,IMAGE_HOST as PACKAGE_IMAGES,MIN_FOR_PAGE} from '../src/packages.mjs';
+import {toolsPage} from '../src/tools.mjs';
 import {apiBase} from '../src/api-config.mjs';
 
 const origin=(process.env.SITE_ORIGIN||'https://tripgoes.com').replace(/\/$/,'');
@@ -56,11 +57,11 @@ const tripView=packages?lang=>({
 const serviceConfig=JSON.parse(await readFile('content/services.json','utf8'));
 const services=serviceConfig.widgets?.length?validateServices(serviceConfig):null;
 const serviceCSP=services?servicePolicy(services):null;
-const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','flights','last-minute',...(packages?['utak']:[]),...(experiences?['experiences']:[]),...(services?['services']:[])];
+const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','flights','last-minute','eszkozok',...(packages?['utak']:[]),...(experiences?['experiences']:[]),...(services?['services']:[])];
 // The homepage carried noindex, so the strongest page on the site was kept
 // out of search entirely. Trust pages are indexed too, because a commercial
 // site is judged on them; /guides/ stays out, it repeats the /blog/ list.
-const INDEXED=new Set(['','about','contact','imprint','score','planner']);
+const INDEXED=new Set(['','about','contact','imprint','score','planner','eszkozok']);
 if(apiBase&&(new URL(apiBase).protocol!=='https:'||new URL(apiBase).username||new URL(apiBase).password||new URL(apiBase).search||new URL(apiBase).hash))throw Error('Invalid public API endpoint.');
 function render({lang,route='',title,description=copy[lang].metaDescription,content='',indexable=false,image='/assets/hero.jpg',imageAlt='',ogType='website',pageOverride}){
  const path=route?`${route}/`:'';
@@ -77,7 +78,7 @@ function render({lang,route='',title,description=copy[lang].metaDescription,cont
  values.frameSrc=widgets?widgets.frameSrc:"'none'";
  values.styleExtra=widgets?.styleExtra??'';
  values.connectSrc=[...(widgets?widgets.connectExtra:[]),'https://emrldco.com','https://www.travelpayouts.com/check_auth',...(['flights','last-minute'].includes(route)?["'self'"]:[]),...(['offers','flights','last-minute'].includes(route)&&apiBase?[new URL(apiBase).origin]:[])].join(' ');
- values.extraStyles=(values.page==='utak'||values.page==='')?'<link rel="stylesheet" href="/src/packages.css">':['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
+ values.extraStyles=values.page==='eszkozok'?'<link rel="stylesheet" href="/src/tools.css">':(values.page==='utak'||values.page==='')?'<link rel="stylesheet" href="/src/packages.css"><link rel="stylesheet" href="/src/tools.css">':['flights','last-minute','experiences','services'].includes(values.page)?'<link rel="stylesheet" href="/src/flights.css">':route==='offers'?'<link rel="stylesheet" href="/src/offers.css">':route==='score'?'<link rel="stylesheet" href="/src/draft.css">':route==='planner'?'<link rel="stylesheet" href="/src/planner.css">':'';
  return shell.replace(/\{\{(\w+)\}\}/g,(match,key)=>values[key]??match);
 }
 const sitemap=[];
@@ -119,6 +120,14 @@ for(const lang of ['hu','en']){
      content:`<main id="main">${packagesPage(packages,lang,country.slug)}</main>`,indexable:true}));
     sitemap.push(`${origin}/${lang}/${countryRoute}/`);
    }
+   continue;
+  }
+  if(route==='eszkozok'){
+   await writeFile(`${dir}/index.html`,render({lang,route,
+    title:lang==='hu'?'Eszközök — jegykereső, úttervező, árnapló | TripGoes':'Tools — fare search, trip planner, price diary | TripGoes',
+    description:lang==='hu'?'Öt eszköz az utazási döntéshez: élő jegykereső, tárolt árak, last minute, teljes költség és saját árnapló. Mindegyik megmondja, honnan van az adata.':'Five tools for a travel decision: live fare search, cached prices, last minute, whole-trip costs and your own price diary. Each one names where its data comes from.',
+    content:`<main id="main">${toolsPage(lang)}</main>`,indexable:true}));
+   sitemap.push(`${origin}/${lang}/${route}/`);
    continue;
   }
   if(route==='last-minute'){

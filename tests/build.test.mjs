@@ -154,7 +154,7 @@ test('every page closes the containers it opens',async()=>{
 // directly, in the meta tag and in the sitemap, so it cannot drift back.
 test('the pages we want found are indexable and listed in the sitemap',async()=>{
  const sitemap=await readFile('dist/sitemap.xml','utf8');
- const indexed=['','about/','contact/','imprint/','score/','planner/','experiences/','services/','blog/','utak/'];
+ const indexed=['','about/','contact/','imprint/','score/','planner/','experiences/','services/','blog/','utak/','eszkozok/'];
  // Volatile fares, the commission notice and the duplicate journal index.
  const hidden=['privacy/','cookies/','affiliate/','guides/','flights/','last-minute/'];
  for(const lang of ['hu','en']){
