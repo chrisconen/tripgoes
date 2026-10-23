@@ -197,7 +197,12 @@ for(const lang of ['hu','en']){
   sitemap.push(`${origin}/${lang}/${route}/`);
  }
 }
-await writeFile('dist/index.html',render({lang:'hu',title:copy.hu.metaTitle}));
+// The bare apex duplicates the Hungarian homepage, and it used to say so
+// with noindex while its canonical pointed at /hu/ — two opposite
+// instructions on the one URL people type, link to and paste into auditing
+// tools. The canonical alone is what resolves a duplicate: it hands the
+// apex's standing to /hu/ instead of deleting the apex from search.
+await writeFile('dist/index.html',render({lang:'hu',title:copy.hu.metaTitle,indexable:true}));
 await writeFile('dist/404.html',render({lang:'hu',title:'404 — TripGoes',content:createView({lang:'hu',page:'404'}).infoPage(),pageOverride:'404'}));
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemap.map(url=>`<url><loc>${url}</loc></url>`).join('')}</urlset>\n`);

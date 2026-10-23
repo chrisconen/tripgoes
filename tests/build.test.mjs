@@ -203,10 +203,13 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
 
  // No empty path segments: a doubled slash is a separate, duplicate URL.
  assert.ok(!/\/\/<\/loc>/.test(sitemap),'the sitemap carries a doubled slash');
- // The bare root repeats the Hungarian homepage, so it only points at it.
+ // The bare root repeats the Hungarian homepage, so its canonical points
+ // there. It must not also carry noindex: a noindex page whose canonical
+ // names another URL gives Google two contradictory instructions, and every
+ // SEO audit of the apex fails on the blocking directive.
  const root=await readFile('dist/index.html','utf8');
- assert.ok(root.includes('content="noindex,follow"'));
  assert.ok(root.includes('rel="canonical" href="https://tripgoes.com/hu/"'));
+ assert.ok(!root.includes('noindex'),'the bare root carries noindex beside a canonical pointing elsewhere');
 });
 
 // The hundred guides used to end on the affiliate notice and nothing else:
