@@ -212,6 +212,30 @@ test('the pages we want found are indexable and listed in the sitemap',async()=>
  assert.ok(!root.includes('noindex'),'the bare root carries noindex beside a canonical pointing elsewhere');
 });
 
+// Every destination link previewed the same hero photograph, so a shared
+// Egypt page and a shared Maldives page looked identical in a feed.
+test('every destination page previews a photograph of its own destination',async()=>{
+ const pictures=JSON.parse(await readFile('content/destination-images.json','utf8'));
+ for(const [slug,picture] of Object.entries(pictures)){
+  assert.equal(picture.src,`/assets/destinations/${slug}.jpg`,`${slug} names a picture that is not its own`);
+  assert.ok((await stat(`dist${picture.src}`)).size>0,`${picture.src} never reached the build`);
+  assert.ok(picture.alt.hu&&picture.alt.en,`${slug} has no bilingual description`);
+  assert.ok(picture.credit.url&&picture.credit.license,`${slug} has no source or licence on record`);
+ }
+ let checked=0;
+ for(const lang of ['hu','en']){
+  for(const page of (await readdir(`dist/${lang}/utak`,{recursive:true})).filter(path=>path.endsWith('index.html'))){
+   const picture=pictures[page.replaceAll('\\','/').split('/')[0]];
+   if(!picture)continue;
+   const html=await readFile(`dist/${lang}/utak/${page}`,'utf8'),where=`/${lang}/utak/${page}`;
+   assert.ok(html.includes(`property="og:image" content="https://tripgoes.com${picture.src}"`),`${where} previews a different destination`);
+   assert.ok(html.includes(`property="og:image:alt" content="${escapeHTML(picture.alt[lang])}"`),`${where} has no ${lang} preview description`);
+   checked++;
+  }
+ }
+ assert.ok(checked>=40,`only ${checked} destination pages carry their own preview picture`);
+});
+
 // The hundred guides used to end on the affiliate notice and nothing else:
 // two hundred pages whose only outbound link was a legal disclosure.
 test('every built article body links out to something bookable',async()=>{

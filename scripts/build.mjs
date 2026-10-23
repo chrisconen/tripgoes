@@ -79,6 +79,13 @@ const tripView=packages?lang=>({
   .map(country=>`<a href="/${lang}/utak/${country.slug}/">${escapeHTML(country.title[lang])}<span>${country.count}</span></a>`).join(''),
 }):null;
 const serviceConfig=JSON.parse(await readFile('content/services.json','utf8'));
+// Every destination page shared one hero photograph in its link preview, so a
+// shared Egypt link looked exactly like a Maldives one. These are CC0
+// photographs of the destination itself; a country without one keeps the
+// default, which is what a newly loaded destination gets until it is given a
+// picture of its own.
+const destinationPictures=JSON.parse(await readFile('content/destination-images.json','utf8'));
+const destinationPreview=(slug,lang)=>{const picture=destinationPictures[slug];return picture?{image:picture.src,imageAlt:picture.alt[lang]}:{};};
 const services=serviceConfig.widgets?.length?validateServices(serviceConfig):null;
 const serviceCSP=services?servicePolicy(services):null;
 const routes=['','about','contact','imprint','privacy','cookies','affiliate','guides','score','planner','flights','last-minute','eszkozok',...(packages?['utak']:[]),...(experiences?['experiences']:[]),...(services?['services']:[])];
@@ -150,6 +157,7 @@ for(const lang of ['hu','en']){
       ?(lang==='hu'?`${country.count} foglalható utazás ${name} célpontjaira, már ${country.from.toLocaleString('hu-HU')} Ft/fő-től: ${allByAir(here)?'repülőjegy, szállás és ellátás egy árban':'szállás és ellátás egy árban, a legtöbbhöz repülőjeggyel'}. Az árak a ${packages.generated}-i állapot szerintiek.`:`${country.count} bookable trips to ${name} from HUF ${country.from.toLocaleString('en-GB')} per person: ${allByAir(here)?'flight, hotel and board for one price':'hotel and board for one price, most of them with a flight'}. Prices as of ${packages.generated}.`)
       :(lang==='hu'?`${name} jelenleg nincs a betöltött kínálatban. Nézd meg a többi úti célt és az aktuális ajánlatokat.`:`${name} is not in the loaded catalogue right now. See the other destinations and what is currently on offer.`),
      content:`<main id="main">${packagesPage(packages,lang,country.slug)}<div class="container">${activitiesForCountry(country.name,lang)}</div>${packagesJsonLd(here,lang,{name})}</main>`,
+     ...destinationPreview(country.slug,lang),
      // A page with nothing on it stays reachable but is not offered to search.
      indexable:country.count>0}));
     if(country.count)sitemap.push(`${origin}/${lang}/${countryRoute}/`);
@@ -162,6 +170,7 @@ for(const lang of ['hu','en']){
     await writeFile(`${boardDir}/index.html`,render({lang,route:boardRoute,pageOverride:'utak',
      title:boardTitle(board,lang),description:boardDescription(board,lang,allByAir(here)),
      content:`<main id="main">${packagesPage(packages,lang,board.slug,board.foodSlug)}${packagesJsonLd(here,lang,{name:board.title[lang]})}</main>`,
+     ...destinationPreview(board.slug,lang),
      indexable:board.count>0}));
     if(board.count)sitemap.push(`${origin}/${lang}/${boardRoute}/`);
    }

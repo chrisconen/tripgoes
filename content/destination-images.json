@@ -1,0 +1,282 @@
+{
+ "bali": {
+  "src": "/assets/destinations/bali.jpg",
+  "alt": {
+   "hu": "Tengerparti balinéz szentély Canggu homokos partján, mögötte a hullámokkal.",
+   "en": "A Balinese shrine on the sand at Canggu beach, the surf breaking behind it."
+  },
+  "credit": {
+   "title": "Canggu beach 4.jpg",
+   "author": "Mx. Granger",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Canggu_beach_4.jpg"
+  }
+ },
+ "ciprus": {
+  "src": "/assets/destinations/ciprus.jpg",
+  "alt": {
+   "hu": "Tengerparti ortodox templom Ayia Napánál, a felhők mögül kitörő napsugarakkal.",
+   "en": "A seaside Orthodox church near Ayia Napa, under sunbeams breaking through the clouds."
+  },
+  "credit": {
+   "title": "Cyprus, Ayia Napa. 2017-12-30.jpg",
+   "author": "dimitrisvetsikas1969",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Cyprus,_Ayia_Napa._2017-12-30.jpg"
+  }
+ },
+ "egyesult-arab-emirsegek": {
+  "src": "/assets/destinations/egyesult-arab-emirsegek.jpg",
+  "alt": {
+   "hu": "Dubaj esti látképe a víz tükrében, középen a Burdzs Kalifával.",
+   "en": "The Dubai skyline at dusk, mirrored in the water with the Burj Khalifa at its centre."
+  },
+  "credit": {
+   "title": "Dubai skyline unsplash.jpg",
+   "author": "Robert Bock",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Dubai_skyline_unsplash.jpg"
+  }
+ },
+ "egyesult-kiralysag-nagy-britannia": {
+  "src": "/assets/destinations/egyesult-kiralysag-nagy-britannia.jpg",
+  "alt": {
+   "hu": "A Big Ben és a Parlament alkonyatkor, a Westminster híd felől nézve.",
+   "en": "Big Ben and the Houses of Parliament at dusk, seen from Westminster Bridge."
+  },
+  "credit": {
+   "title": "Big Ben and Westminster Bridge at dusk 2017-unsplash.jpg",
+   "author": "Pedro Carballo",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Big_Ben_and_Westminster_Bridge_at_dusk_2017-unsplash.jpg"
+  }
+ },
+ "egyiptom": {
+  "src": "/assets/destinations/egyiptom.jpg",
+  "alt": {
+   "hu": "A gízai piramisok a sivatagi fennsíkon, látogatókkal az ösvényen.",
+   "en": "The pyramids of Giza on the desert plateau, with visitors on the path below."
+  },
+  "credit": {
+   "title": "Les Anderson 2016-11-26 (Unsplash).jpg",
+   "author": "Les Anderson lesanderson",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Les_Anderson_2016-11-26_(Unsplash).jpg"
+  }
+ },
+ "gorogorszag": {
+  "src": "/assets/destinations/gorogorszag.jpg",
+  "alt": {
+   "hu": "Kék kupolás fehér templom Firában, virágzó bougainvillea ágai alatt.",
+   "en": "A white, blue-domed church in Fira, framed by flowering bougainvillea."
+  },
+  "credit": {
+   "title": "Fira, Greece (Unsplash 0PaCPIKmXgs).jpg",
+   "author": "Chris Lawton chrislawton",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Fira,_Greece_(Unsplash_0PaCPIKmXgs).jpg"
+  }
+ },
+ "kanari-szigetek": {
+  "src": "/assets/destinations/kanari-szigetek.jpg",
+  "alt": {
+   "hu": "A Timanfaya vulkanikus tája Lanzarotén, kialudt kráterekkel.",
+   "en": "The volcanic landscape of Timanfaya on Lanzarote, with its dormant craters."
+  },
+  "credit": {
+   "title": "Timanfaya on Lanzarote in Canary Islands 2017-01-16.jpg",
+   "author": "Bernd Hildebrandt. (Barni1 on Pixabay) https://pixabay.com/en/users/Barni1-773830/",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Timanfaya_on_Lanzarote_in_Canary_Islands_2017-01-16.jpg"
+  }
+ },
+ "madeira": {
+  "src": "/assets/destinations/madeira.jpg",
+  "alt": {
+   "hu": "Napkelte Funchal fölött, háttérben Madeira hegyeivel.",
+   "en": "Sunrise over Funchal, with the mountains of Madeira behind it."
+  },
+  "credit": {
+   "title": "Madeira Island rooftop at sunrise-or-sunset (Unsplash).jpg",
+   "author": "Tiago Aguiar tiagoaguiar",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Madeira_Island_rooftop_at_sunrise-or-sunset_(Unsplash).jpg"
+  }
+ },
+ "magyarorszag": {
+  "src": "/assets/destinations/magyarorszag.jpg",
+  "alt": {
+   "hu": "A kivilágított Lánchíd és a Parlament a Duna fölött, éjszaka.",
+   "en": "The illuminated Chain Bridge and Parliament above the Danube at night."
+  },
+  "credit": {
+   "title": "Széchenyi Chain Bridge in Budapest at night.jpg",
+   "author": "Wilfredor",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg"
+  }
+ },
+ "maldiv-szigetek": {
+  "src": "/assets/destinations/maldiv-szigetek.jpg",
+  "alt": {
+   "hu": "Légifelvétel egy maldív-szigeteki homokpadról és a türkiz lagúnáról.",
+   "en": "An aerial view of a Maldivian sandbank and its turquoise lagoon."
+  },
+  "credit": {
+   "title": "An island in the beautiful atoll of Dhaalu (Unsplash).jpg",
+   "author": "Ishan @seefromthesky seefromthesky",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:An_island_in_the_beautiful_atoll_of_Dhaalu_(Unsplash).jpg"
+  }
+ },
+ "malta": {
+  "src": "/assets/destinations/malta.jpg",
+  "alt": {
+   "hu": "Valletta kőházai és templomkupolája, Málta fővárosában.",
+   "en": "The stone houses and church dome of Valletta, the capital of Malta."
+  },
+  "credit": {
+   "title": "Malta (Unsplash 4uIhvrOvgN0).jpg",
+   "author": "Lee Dobson leedobson",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Malta_(Unsplash_4uIhvrOvgN0).jpg"
+  }
+ },
+ "mauritius": {
+  "src": "/assets/destinations/mauritius.jpg",
+  "alt": {
+   "hu": "A Le Morne Brabant hegye az óceán felől nézve, Mauritiuson.",
+   "en": "Le Morne Brabant seen from the ocean, Mauritius."
+  },
+  "credit": {
+   "title": "Le Morne Brabant depuis l'océan.jpg",
+   "author": "Benoît Prieur",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Le_Morne_Brabant_depuis_l%27oc%C3%A9an.jpg"
+  }
+ },
+ "mexiko": {
+  "src": "/assets/destinations/mexiko.jpg",
+  "alt": {
+   "hu": "A chichén itzái lépcsős piramis a Yucatán-félszigeten.",
+   "en": "The stepped pyramid of Chichén Itzá on the Yucatán Peninsula."
+  },
+  "credit": {
+   "title": "Chichén Itzá, Mexico. Pixabay 3774303.jpg",
+   "author": "Makalu from Pixabay",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Chich%C3%A9n_Itz%C3%A1,_Mexico._Pixabay_3774303.jpg"
+  }
+ },
+ "olaszorszag": {
+  "src": "/assets/destinations/olaszorszag.jpg",
+  "alt": {
+   "hu": "Sziklás öböl az Amalfi-parton, türkiz vízzel.",
+   "en": "A rocky cove on the Amalfi Coast, with turquoise water."
+  },
+  "credit": {
+   "title": "Amalfi Coast, Amalfi, Italy (Unsplash QVU 5fjXWe0).jpg",
+   "author": "Jan Tielens jtlns",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Amalfi_Coast,_Amalfi,_Italy_(Unsplash_QVU_5fjXWe0).jpg"
+  }
+ },
+ "portugalia": {
+  "src": "/assets/destinations/portugalia.jpg",
+  "alt": {
+   "hu": "A Szent Vince-fok sziklái Sagres mellett, az Algarve partján.",
+   "en": "The cliffs of Cape St Vincent near Sagres, on the Algarve coast."
+  },
+  "credit": {
+   "title": "Cape St. Vincent, Sagres, Portugal (Unsplash).jpg",
+   "author": "Nick Kane nickkane",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Cape_St._Vincent,_Sagres,_Portugal_(Unsplash).jpg"
+  }
+ },
+ "seychelle-szigetek": {
+  "src": "/assets/destinations/seychelle-szigetek.jpg",
+  "alt": {
+   "hu": "Kókuszpálma dől a fehér homokpart fölé a Seychelle-szigeteken.",
+   "en": "A coconut palm leaning over the white sand of a Seychelles beach."
+  },
+  "credit": {
+   "title": "Typically view of Seychelles beach (islands of Mahe).jpg",
+   "author": "Vasilii Martynov",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Typically_view_of_Seychelles_beach_(islands_of_Mahe).jpg"
+  }
+ },
+ "spanyolorszag": {
+  "src": "/assets/destinations/spanyolorszag.jpg",
+  "alt": {
+   "hu": "Cadaqués fehér házai a Costa Brava partján.",
+   "en": "The white houses of Cadaqués on the Costa Brava."
+  },
+  "credit": {
+   "title": "Cadaqués Costa Brava Catalunya.jpg",
+   "author": "ALcp",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Cadaqu%C3%A9s_Costa_Brava_Catalunya.jpg"
+  }
+ },
+ "sri-lanka": {
+  "src": "/assets/destinations/sri-lanka.jpg",
+  "alt": {
+   "hu": "Pálmafák sziluettje naplementekor egy Srí Lanka-i tengerparton.",
+   "en": "Palm trees silhouetted at sunset on a Sri Lankan beach."
+  },
+  "credit": {
+   "title": "Negombo Beach resort pool (Unsplash).jpg",
+   "author": "Recal Media recalmedia",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Negombo_Beach_resort_pool_(Unsplash).jpg"
+  }
+ },
+ "thaifold": {
+  "src": "/assets/destinations/thaifold.jpg",
+  "alt": {
+   "hu": "A Phi Phi-szigetek öblei madártávlatból, Thaiföldön.",
+   "en": "The bays of the Phi Phi Islands seen from above, Thailand."
+  },
+  "credit": {
+   "title": "Phi Phi From Above (Unsplash).jpg",
+   "author": "Jakob Owens jakobowens1",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:Phi_Phi_From_Above_(Unsplash).jpg"
+  }
+ },
+ "torokorszag": {
+  "src": "/assets/destinations/torokorszag.jpg",
+  "alt": {
+   "hu": "Hőlégballonok Kappadókia tufakúpjai fölött.",
+   "en": "Hot-air balloons over the tuff cones of Cappadocia."
+  },
+  "credit": {
+   "title": "CAPPADOCIA Göreme National Park and the Rock Sites. World Heritage List. Turkey. Hot Air Ballooning Cappadocia.jpg",
+   "author": "Feridun F. Alkaya",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "url": "https://commons.wikimedia.org/wiki/File:CAPPADOCIA_G%C3%B6reme_National_Park_and_the_Rock_Sites._World_Heritage_List._Turkey._Hot_Air_Ballooning_Cappadocia.jpg"
+  }
+ }
+}
