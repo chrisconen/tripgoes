@@ -33,6 +33,7 @@ if(page==='flights')Promise.all([import('./flights.mjs'),import('./api-config.mj
 if(page==='experiences')import('./worldmap.mjs').then(({initWorldMap})=>initWorldMap(lang));
 if(page==='utak')import('./packagefilter.mjs').then(({initPackageFilter})=>initPackageFilter(lang));
 if(page==='utak'||page==='')import('./packagegallery.mjs').then(({initPackageGallery})=>initPackageGallery());
+if(page==='utak'||page==='')import('./packagedetail.mjs').then(({initPackageDetail})=>initPackageDetail(lang));
 // The campaign label on the outgoing links: how the operator's own order
 // report tells our adverts apart. No consent gate, because it profiles
 // nobody — see src/campaign.mjs.

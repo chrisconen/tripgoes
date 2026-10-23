@@ -103,3 +103,52 @@
 .pkg-card a:hover .pkg-dots{opacity:1}
 .pkg-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 3px rgba(0,0,0,.4);transition:background .2s}
 .pkg-dots i.on{background:#fff}
+
+/* The detail panel: a native dialog, so the focus trap, the Esc key and the
+   backdrop come from the browser rather than from us. */
+.pkg-card{position:relative}
+.pkg-more{position:absolute;top:12px;right:12px;z-index:2;padding:6px 12px;border:0;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);font-family:var(--font);font-size:12.5px;font-weight:700;box-shadow:0 2px 8px rgba(24,62,53,.18);cursor:pointer;transition:background .2s}
+.pkg-more:hover,.pkg-more:focus-visible{background:var(--lime)}
+
+.pkg-detail{width:min(94vw,860px);max-height:90dvh;padding:0;border:0;border-radius:16px;background:var(--paper);color:var(--ink);overflow:auto;box-shadow:0 30px 70px rgba(24,62,53,.3)}
+.pkg-detail::backdrop{background:rgba(24,62,53,.55)}
+/* The backdrop blocks clicks but not the wheel, and a page scrolling behind
+   an open panel is disorienting on a phone. */
+html:has(.pkg-detail[open]){overflow:hidden}
+.pkg-detail-close{position:absolute;top:10px;right:14px;z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(24,62,53,.18)}
+.pkg-detail-close:hover,.pkg-detail-close:focus-visible{background:var(--lime)}
+.pkg-detail-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.pkg-detail-gallery{align-self:start;margin:0;background:var(--line)}
+.pkg-detail-photo{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.pkg-detail-thumbs{display:flex;gap:6px;padding:8px;margin:0;list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;background:var(--white)}
+.pkg-detail-thumbs li{flex:0 0 auto}
+.pkg-detail-thumb{padding:0;border:2px solid transparent;border-radius:6px;background:none;cursor:pointer;line-height:0}
+.pkg-detail-thumb img{display:block;width:62px;height:42px;object-fit:cover;border-radius:4px;background:var(--line)}
+.pkg-detail-thumb.on{border-color:var(--ink)}
+
+.pkg-detail-facts{padding:26px 26px 24px}
+.pkg-detail-where{margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pkg-detail-facts h2{margin:6px 0 0;font-family:var(--heading);font-size:22px;line-height:1.2;letter-spacing:-.4px}
+.pkg-detail-list{display:grid;gap:1px;margin:18px 0 0;padding:0;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pkg-detail-list div{display:flex;justify-content:space-between;gap:14px;padding:9px 13px;background:var(--white)}
+.pkg-detail-list dt{font-size:13px;color:var(--muted)}
+.pkg-detail-list dd{margin:0;font-size:13.5px;font-weight:600;text-align:right}
+.pkg-detail-price{margin:18px 0 0;font-family:var(--heading);font-size:26px;font-weight:800;letter-spacing:-.6px}
+.pkg-detail-price small{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0}
+.pkg-detail-unit{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.pkg-detail-note{margin:12px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.pkg-detail-go{display:block;margin-top:16px;padding:13px 18px;border-radius:9px;background:var(--ink);color:var(--white);text-align:center;font-size:15px;font-weight:700}
+.pkg-detail-go:hover{background:#12302a}
+.pkg-detail-links{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 0;font-size:13px;font-weight:600}
+.pkg-detail-links a{text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:720px){
+ .pkg-detail{width:100vw;max-width:100vw;max-height:94dvh;border-radius:16px 16px 0 0;margin:auto auto 0}
+ .pkg-detail-body{grid-template-columns:1fr}
+ .pkg-detail-facts{padding:20px 18px 24px}
+ /* One column means the panel scrolls, and a close button that scrolls away
+    with it leaves a phone with no way out: there is no Esc key and the
+    backdrop is a sliver. The dialog is in the top layer, so fixed here means
+    fixed to the panel the reader is looking at. */
+ .pkg-detail-close{position:fixed;top:14px;right:16px}
+}

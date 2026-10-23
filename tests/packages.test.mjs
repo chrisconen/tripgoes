@@ -75,6 +75,38 @@ test('the card prices, dates and translates its trip', () => {
   assert.ok(packageCard(offer({ food: 'Félpanzió' }), 'en').includes('Half board'));
 });
 
+test('the card carries its detail panel without swallowing the link', () => {
+  const hu = packageCard(offer({ coords: [4.17, 73.5], hotelUrl: `https://www.invia.hu/hotel/kuramathi/?aid=${AFFILIATE_ID}` }), 'hu');
+  // The trigger sits after the link closes: a button inside an anchor is
+  // invalid markup and a keyboard trap.
+  assert.ok(hu.indexOf('</a>') < hu.indexOf('pkg-more'), 'the detail button is inside the booking link');
+  assert.ok(hu.includes('aria-haspopup="dialog"') && hu.includes('hidden'), 'the button is offered before it can do anything');
+  assert.ok(hu.includes('data-from="2027-08-29"') && hu.includes('data-to="2027-09-05"'));
+  assert.ok(hu.includes('data-coords="4.17,73.5"') && hu.includes('data-hotel-url="https://www.invia.hu/hotel/kuramathi/?aid=9426177"'));
+  assert.ok(hu.includes('data-discount="25"') && hu.includes('data-type="Üdülés"'));
+  // Nothing optional is invented for an offer that did not carry it.
+  const bare = packageCard(offer({ coords: null, hotelUrl: '', type: '' }), 'hu');
+  assert.ok(!bare.includes('data-coords') && !bare.includes('data-hotel-url') && !bare.includes('data-type'));
+  // An English reader gets English values, not the feed's Hungarian ones.
+  const en = packageCard(offer({ type: 'Üdülés', food: 'Reggeli' }), 'en');
+  assert.ok(en.includes('Details') && en.includes('data-type="Beach holiday"'));
+  assert.ok(en.includes('data-board="Breakfast"') && en.includes('data-food="Reggeli"'),
+    'the filter still needs the feed wording, the panel needs the local one');
+  assert.ok(!packageCard(offer({ food: 'Reggeli' }), 'hu').includes('data-board'), 'Hungarian repeats itself');
+});
+
+// A hotel link that pays someone else is worse than no hotel link.
+test('an untagged or foreign hotel link stops the build', () => {
+  for (const hotelUrl of ['https://www.invia.hu/hotel/x/', 'http://www.invia.hu/hotel/x/?aid=9426177',
+    `https://example.com/hotel/?aid=${AFFILIATE_ID}`, 'not-a-url']) {
+    assert.throws(() => validatePackages(config([offer({ hotelUrl })])), /hotel link|links its hotel/, hotelUrl);
+  }
+  for (const coords of [[91, 0], [0, 181], ['x', 'y'], [1]]) {
+    assert.throws(() => validatePackages(config([offer({ coords })])), /coordinates/, String(coords));
+  }
+  assert.doesNotThrow(() => validatePackages(config([offer({ coords: null, hotelUrl: '' })])));
+});
+
 // A country we have never seen must not take the build down with it.
 test('an unknown country falls back to its Hungarian name', () => {
   const { countries } = validatePackages(config([offer({ country: 'Atlantisz' })]));

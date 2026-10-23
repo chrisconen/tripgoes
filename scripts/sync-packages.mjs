@@ -29,8 +29,10 @@ async function euroRate(){
   return null;
  }
 }
-// Enough for a card and a small gallery; the feed ships ~70 per offer.
-const PHOTOS=5;
+// Five ran the card's hover gallery. The detail panel shows them one at a
+// time and five is thin there, while the extra URLs differ only in their last
+// digits, so they cost the catalogue page a few hundred compressed bytes.
+const PHOTOS=12;
 
 const ENTITIES={amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' '};
 const decode=value=>value
@@ -76,10 +78,22 @@ function parseOffer(xml,source){
  // one we are willing to sell.
  const nights=Math.round((Date.parse(to)-Date.parse(from))/86400000);
  if(!(nights>=1)||nights!==num(tag(xml,'length'))-1)return null;
+ // The hotel's own coordinates and page. The detail panel turns the first
+ // into a map link and the second into "other dates at this property"; both
+ // are optional, and an offer missing them simply shows neither.
+ const info=tag(xml,'hotelinfo');
+ const lat=num(info.match(/<lat>(-?[\d.]+)<\/lat>/)?.[1]),lng=num(info.match(/<lng>(-?[\d.]+)<\/lng>/)?.[1]);
+ const coords=lat!==null&&lng!==null&&Math.abs(lat)<=90&&Math.abs(lng)<=180?[lat,lng]:null;
+ let hotelUrl='';
+ try{
+  const candidate=new URL(info.match(/<url>([\s\S]*?)<\/url>/)?.[1]??'');
+  // Same rule as the offer link: a hand-off without our id earns nothing.
+  if(candidate.protocol==='https:'&&candidate.hostname===OFFER_HOST&&candidate.searchParams.get('aid')===AFFILIATE_ID)hotelUrl=candidate.toString();
+ }catch{/* no hotel page in this record */}
  return {
   id:`${hotelId}-${from}`,source,
   country:tag(xml,'country'),locality:tag(xml,'locality'),
-  hotel:tag(xml,'hotel'),stars:within(tag(xml,'hotelinfo').match(/<stars>([\d.]+)<\/stars>/)?.[1],1,5),
+  hotel:tag(xml,'hotel'),stars:within(info.match(/<stars>([\d.]+)<\/stars>/)?.[1],1,5),
   from,to,nights,
   price,currency:xml.match(/<totalprice currency="(\w+)"/)?.[1]??'HUF',
   discount:within(tag(xml,'discount'),0,99,0),
@@ -87,6 +101,7 @@ function parseOffer(xml,source){
   airport:all(xml,'airport')[0]??'',
   type:tag(xml,'type'),
   image:photos[0]??'',photos,
+  coords,hotelUrl,
   href:url,
  };
 }

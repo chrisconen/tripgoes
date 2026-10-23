@@ -146,6 +146,18 @@ export function validatePackages(data) {
     try { link = new URL(offer.href); } catch { invalid(`${offer.id} has no usable link`); }
     if (link.protocol !== 'https:' || link.hostname !== OFFER_HOST) invalid(`${offer.id} links to ${link.hostname}`);
     if (link.searchParams.get('aid') !== AFFILIATE_ID) invalid(`${offer.id} carries no affiliate id`);
+    // Both optional, and both have to be wrong loudly rather than quietly: a
+    // bad coordinate puts the map pin in the sea, and an untagged hotel link
+    // is a hand-off that earns nothing.
+    if (offer.coords != null && !(Array.isArray(offer.coords) && offer.coords.length === 2
+      && Number.isFinite(offer.coords[0]) && Number.isFinite(offer.coords[1])
+      && Math.abs(offer.coords[0]) <= 90 && Math.abs(offer.coords[1]) <= 180)) invalid(`${offer.id} has impossible coordinates`);
+    if (offer.hotelUrl) {
+      let hotel;
+      try { hotel = new URL(offer.hotelUrl); } catch { invalid(`${offer.id} has an unusable hotel link`); }
+      if (hotel.protocol !== 'https:' || hotel.hostname !== OFFER_HOST) invalid(`${offer.id} links its hotel to ${hotel.hostname}`);
+      if (hotel.searchParams.get('aid') !== AFFILIATE_ID) invalid(`${offer.id} has an untagged hotel link`);
+    }
     return { ...offer, slug: countrySlug(offer.country) };
   });
   if (!offers.length) invalid('the catalogue is empty');
@@ -197,6 +209,7 @@ const copy = {
     asOf: date => `Az árak a ${date}-i állapot szerintiek; a véglegeset a foglalási oldal mutatja.`,
     empty: 'Ehhez a szűréshez most nincs utazás.',
     off: value => `−${value}%`,
+    more: 'Részletek', about: hotel => `${hotel} részletes adatai`,
   },
   en: {
     nights: count => `${count} nights`, from: 'From', open: 'Open', per: ' / person',
@@ -205,6 +218,7 @@ const copy = {
     asOf: date => `Prices are as of ${date}; the booking page shows the final one.`,
     empty: 'No trips match this filter right now.',
     off: value => `−${value}%`,
+    more: 'Details', about: hotel => `Details of ${hotel}`,
   },
 };
 // "Bécs" takes -ből, "Budapest" takes -ról: pick the suffix per airport so the
@@ -233,10 +247,24 @@ export function packageCard(offer, lang, rate) {
   const abroad = flight && offer.airport && offer.airport !== 'Budapest';
   // The filters read these rather than re-parsing the rendered text.
   const extra = (offer.photos ?? []).slice(1, 5).filter(photo => photo !== offer.image);
+  // The hover gallery cycles four; a dozen dots on a card would be noise, so
+  // the rest wait in their own attribute for the panel that can show them.
+  const rest = (offer.photos ?? []).slice(5).filter(photo => photo !== offer.image);
+  const board = translate(FOOD, offer.food, lang);
   const data = ` data-country="${escape(offer.slug ?? countrySlug(offer.country))}" data-price="${offer.price}"`
     + ` data-nights="${offer.nights}" data-food="${escape(offer.food)}" data-airport="${escape(offer.airport || '')}"`
     + ` data-stars="${offer.stars ?? 0}"`
-    + (extra.length ? ` data-photos="${escape(extra.join('|'))}"` : '');
+    // Read by the detail panel, which builds itself from the card rather
+    // than from a second copy of the catalogue.
+    + ` data-from="${escape(offer.from)}" data-to="${escape(offer.to)}" data-discount="${offer.discount ?? 0}"`
+    // The filter matches data-food against the feed's own wording, so the
+    // reader's wording travels separately and only when it differs.
+    + (board !== offer.food ? ` data-board="${escape(board)}"` : '')
+    + (offer.type ? ` data-type="${escape(translate(TYPES, offer.type, lang))}"` : '')
+    + (offer.coords ? ` data-coords="${escape(offer.coords.join(','))}"` : '')
+    + (offer.hotelUrl ? ` data-hotel-url="${escape(offer.hotelUrl)}"` : '')
+    + (extra.length ? ` data-photos="${escape(extra.join('|'))}"` : '')
+    + (rest.length ? ` data-more="${escape(rest.join('|'))}"` : '');
   return `<li class="pkg-card"${data}><a href="${escape(offer.href)}" rel="sponsored noopener" target="_blank">`
     + `<figure><img src="${escape(offer.image)}" alt="" loading="lazy" decoding="async" width="450" height="300">`
     + (offer.discount >= 10 ? `<figcaption class="pkg-off">${text.off(offer.discount)}</figcaption>` : '')
@@ -248,7 +276,12 @@ export function packageCard(offer, lang, rate) {
     + `<span class="pkg-depart${abroad ? ' pkg-abroad' : ''}">${escape(departure)}</span>`
     + `<span class="pkg-unit">${escape(text.perNight(money(Math.round(offer.price / offer.nights), lang)))}</span>`
     + `<span class="pkg-price">${text.from} ${money(offer.price, lang)}<small>${approxEur(offer.price, lang, rate)}${text.per}</small><em>${text.open} ↗</em></span>`
-    + `</a></li>`;
+    + `</a>`
+    // Outside the <a>: a control inside a link is invalid markup and a
+    // keyboard trap. It stays hidden until the script that gives it
+    // something to open has loaded.
+    + `<button type="button" class="pkg-more" hidden aria-haspopup="dialog" aria-label="${escape(text.about(offer.hotel))}">${text.more}</button>`
+    + `</li>`;
 }
 
 export function packageGrid(offers, lang, { generated, rate } = {}) {
