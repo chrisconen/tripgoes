@@ -380,9 +380,15 @@ export function packagesPage(data, lang, slug = '', food = '') {
     + `<section class="container pkg-results">${packageGrid(offers, language, { generated: data.generated, rate: data.rate })}</section>`;
 }
 
-// Structured data, so a destination page can show its price in search results
-// rather than a bare blue link. Kept to what the feed actually gives us:
-// a name, a picture, a price and a link.
+// Structured data, so a destination page says what it lists. A holiday is not
+// a retail product, and typing it as one made Google read these pages as shop
+// listings and ask for a return policy, a shipping cost and a GTIN: three
+// things a trip does not have and we would have had to invent.
+//
+// The price went with it. Google caches what it reads here, while the feed
+// replaces nearly every offer overnight, so a price in the markup is a promise
+// that has already expired by the time anyone is shown it. The prices on the
+// page are dated in view of the reader instead.
 export function packagesJsonLd(offers, lang, { name } = {}) {
   if (!offers?.length) return '';
   const data = {
@@ -394,17 +400,10 @@ export function packagesJsonLd(offers, lang, { name } = {}) {
       '@type': 'ListItem',
       position: index + 1,
       item: {
-        '@type': 'Product',
+        '@type': 'TouristTrip',
         name: offer.hotel,
         image: offer.image,
-        category: `${offer.country}${offer.locality ? ` / ${offer.locality}` : ''}`,
-        offers: {
-          '@type': 'Offer',
-          price: offer.price,
-          priceCurrency: offer.currency,
-          url: offer.href,
-          availability: 'https://schema.org/InStock',
-        },
+        itinerary: { '@type': 'Place', name: `${offer.country}${offer.locality ? ` / ${offer.locality}` : ''}` },
       },
     })),
   };

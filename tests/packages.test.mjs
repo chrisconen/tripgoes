@@ -282,8 +282,14 @@ test('the structured data describes the offers and cannot break out of its tag',
   const parsed = JSON.parse(html.replace(/^<script[^>]*>|<\/script>$/g, '').replaceAll('\u003c', '<'));
   assert.equal(parsed['@type'], 'ItemList');
   assert.equal(parsed.numberOfItems, 1);
-  assert.equal(parsed.itemListElement[0].item.offers.priceCurrency, 'HUF');
-  assert.equal(parsed.itemListElement[0].item.offers.price, 1259900);
+  assert.equal(parsed.itemListElement[0].item['@type'], 'TouristTrip');
+  assert.equal(parsed.itemListElement[0].item.itinerary.name, 'Maldív-szigetek / Malé atoll');
+  // A trip typed as a retail product is read as a shop listing, and a shop
+  // listing owes Google a return policy, a shipping cost and a GTIN.
+  assert.ok(!html.includes('Product'), 'a holiday is being sold as a retail product again');
+  // The feed replaces nearly every offer overnight; a cached price would
+  // outlive the offer it was read from.
+  assert.ok(!html.includes('price'), 'a price in the markup outlives its offer');
   assert.equal(packagesJsonLd([], 'hu'), '', 'an empty page emits no structured data');
 });
 
